@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/brand-spec/1.0.0",
+  "title": "Brand Specification",
+  "description": "Logo concepts explored, the one selected, and the applications to produce. Geometry comes from parameters, colour and type from the Experience DNA.",
+  "type": "object",
+  "required": ["schemaVersion", "wordmark", "concepts", "selected", "applications", "strategy"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "wordmark": {
+      "type": "object", "required": ["text", "weight"], "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 32 },
+        "weight": { "type": "integer", "minimum": 100, "maximum": 900 },
+        "tracking": { "type": "number", "minimum": -0.1, "maximum": 0.4 },
+        "font": { "enum": ["display", "text"] }
+      }
+    },
+    "concepts": {
+      "type": "array", "minItems": 2, "maxItems": 6,
+      "items": {
+        "type": "object", "required": ["id", "title", "kind", "rationale"], "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "title": { "type": "string" },
+          "kind": { "enum": ["symbol", "monogram"] },
+          "motif": { "enum": ["arc", "orbit", "strata", "grid", "contour"] },
+          "letter": { "type": "string", "minLength": 1, "maxLength": 1 },
+          "params": { "type": "object", "additionalProperties": { "type": "number" } },
+          "rationale": { "type": "string", "minLength": 20 }
+        }
+      }
+    },
+    "selected": { "type": "string" },
+    "selectionReason": { "type": "string" },
+    "clearSpace": { "type": "number", "minimum": 0.25, "maximum": 1 },
+    "minSizePx": { "type": "object", "additionalProperties": false, "properties": { "symbol": { "type": "integer", "minimum": 12 }, "lockup": { "type": "integer", "minimum": 48 } } },
+    "applications": { "type": "array", "uniqueItems": true, "items": { "enum": ["business-card", "social-square", "og-image", "story", "app-icon", "presentation-title"] } },
+    "contact": { "type": "object", "additionalProperties": { "type": "string" } },
+    "headline": { "type": "string", "maxLength": 60 },
+    "strategy": {
+      "type": "object", "required": ["differentiation", "territories"], "additionalProperties": false,
+      "properties": {
+        "differentiation": { "type": "string", "minLength": 20 },
+        "territories": { "type": "array", "items": { "type": "string" } },
+        "competitorNotes": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "daylight-ledger",
+  "title": "Daylight Ledger",
+  "concept": "A household's energy told as one day: sunrise, noon, dusk, night. Warm paper grounds, a serif with some life in it, and a single arc that the sun travels in every deliverable.",
+  "rationale": "Homeowners think about energy in terms of their day, not in kilowatts. A warm editorial language separates Haldora from both the industrial and the gadget ends of the category, and the day arc gives the logo, the scroll story, the chart, the app dial and the product light one shared idea.",
+  "emotionalIntent": "Calm confidence: the feeling of a house that is taken care of.",
+  "palette": { "bg": "#F6F1E7", "text": "#1C1B18", "primary": "#2A2D66", "accent": "#E9A23B", "support": ["#E58A6B", "#14152B", "#2F6B4F"] },
+  "typography": { "display": "Fraunces", "text": "Instrument Sans", "character": "A soft, slightly old-style serif against a plain modern sans" },
+  "layoutGrammar": "editorial",
+  "motion": { "intensity": "balanced", "personality": "Unhurried, like light moving across a room" },
+  "imagery": { "style": "Flat, layered landscape horizons with paper grain; no photography of people or homes", "motifs": ["arc", "horizon", "grain"] },
+  "signature": "The day arc: a sun on a dashed arc above a horizon, positioned by the time of day.",
+  "usabilityImplications": ["Warm low-chroma grounds keep long reading comfortable.", "Time-of-day colour shifts must never carry meaning on their own; labels do."],
+  "technicalRequirements": ["Scroll-linked timeline on the marketing page", "Light and dark schemes mapped to day and night", "Arabic typeface with matching weight range"],
+  "risks": ["A serif display face can read as traditional; needs the indigo and the arc geometry to stay modern.", "Amber on paper fails text contrast, so amber is reserved for fills and marks."],
+  "effort": "medium",
+  "fitScore": { "audienceFit": 5, "differentiation": 4, "feasibility": 4, "accessibility": 4 }
+}

@@ -1,0 +1,404 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "haldora-launch",
+  "createdAt": "2026-11-11T22:17:00.464Z",
+  "classification": {
+    "scope": "cross-disciplinary",
+    "disciplines": [
+      "brand",
+      "web",
+      "web-app",
+      "mobile",
+      "imagery",
+      "3d",
+      "motion"
+    ],
+    "flags": [
+      "rtl",
+      "multilingual",
+      "fictional-client",
+      "open-questions"
+    ],
+    "suggestions": []
+  },
+  "tasks": [
+    {
+      "id": "intake",
+      "title": "Validate the brief and record open questions",
+      "skill": "intake-discovery",
+      "phase": "intake",
+      "dependsOn": [],
+      "produces": [
+        {
+          "path": ".cis/brief.json",
+          "schema": "brief"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "command": "creative-studio brief check"
+    },
+    {
+      "id": "research",
+      "title": "Research audience, competitors and conventions",
+      "skill": "research-evidence",
+      "phase": "intake",
+      "dependsOn": [
+        "intake"
+      ],
+      "produces": [
+        {
+          "path": ".cis/research.json",
+          "schema": "research-log"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "command": "creative-studio research add"
+    },
+    {
+      "id": "directions",
+      "title": "Propose distinct creative directions",
+      "skill": "art-direction",
+      "phase": "direction",
+      "dependsOn": [
+        "research"
+      ],
+      "produces": [
+        {
+          "path": ".cis/directions",
+          "kind": "dir"
+        },
+        {
+          "path": ".cis/reports/directions.html"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G0-brief",
+      "command": "creative-studio directions check && creative-studio directions board"
+    },
+    {
+      "id": "dna",
+      "title": "Author the Experience DNA from the approved direction",
+      "skill": "experience-dna",
+      "phase": "system",
+      "dependsOn": [
+        "directions"
+      ],
+      "produces": [
+        {
+          "path": ".cis/dna/experience-dna.json",
+          "schema": "experience-dna"
+        },
+        {
+          "path": "design-system/tokens.css"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G1-direction",
+      "command": "creative-studio dna check && creative-studio dna tokens"
+    },
+    {
+      "id": "motion-spec",
+      "title": "Decide and specify motion per interaction",
+      "skill": "motion-intelligence",
+      "phase": "system",
+      "dependsOn": [
+        "dna"
+      ],
+      "produces": [
+        {
+          "path": ".cis/motion-spec.json",
+          "schema": "motion-spec"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio motion check"
+    },
+    {
+      "id": "brand",
+      "title": "Produce the logo system, exports and guidelines",
+      "skill": "brand-identity",
+      "phase": "production",
+      "dependsOn": [
+        "dna"
+      ],
+      "produces": [
+        {
+          "path": "brand/logo",
+          "kind": "dir"
+        },
+        {
+          "path": "brand/guidelines.html"
+        },
+        {
+          "path": "brand/brand-manifest.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio brand build"
+    },
+    {
+      "id": "images",
+      "title": "Generate, inspect and register visual assets",
+      "skill": "image-asset-factory",
+      "phase": "production",
+      "dependsOn": [
+        "dna",
+        "brand"
+      ],
+      "produces": [
+        {
+          "path": "assets/generated",
+          "kind": "dir"
+        },
+        {
+          "path": ".cis/assets/registry.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio images generate"
+    },
+    {
+      "id": "scene-3d",
+      "title": "Build the 3D asset and interactive scene",
+      "skill": "3d-experience",
+      "phase": "production",
+      "dependsOn": [
+        "dna",
+        "motion-spec"
+      ],
+      "produces": [
+        {
+          "path": "scene/public/models",
+          "kind": "dir"
+        },
+        {
+          "path": "scene/package.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio 3d build"
+    },
+    {
+      "id": "website",
+      "title": "Build the marketing website",
+      "skill": "web-experience",
+      "phase": "production",
+      "dependsOn": [
+        "dna",
+        "images",
+        "motion-spec",
+        "brand",
+        "scene-3d"
+      ],
+      "produces": [
+        {
+          "path": "web/package.json"
+        },
+        {
+          "path": "web/src/content.json",
+          "schema": "content-web"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio website scaffold"
+    },
+    {
+      "id": "web-app",
+      "title": "Build the web application",
+      "skill": "web-application",
+      "phase": "production",
+      "dependsOn": [
+        "dna",
+        "motion-spec",
+        "brand"
+      ],
+      "produces": [
+        {
+          "path": "app/package.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio website scaffold --kind app"
+    },
+    {
+      "id": "mobile",
+      "title": "Build the mobile application",
+      "skill": "mobile-experience",
+      "phase": "production",
+      "dependsOn": [
+        "dna",
+        "motion-spec",
+        "brand"
+      ],
+      "produces": [
+        {
+          "path": "mobile/package.json"
+        },
+        {
+          "path": "mobile/app.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G2-system",
+      "command": "creative-studio mobile scaffold"
+    },
+    {
+      "id": "qa",
+      "title": "Run functional, visual, accessibility, performance and security checks",
+      "skill": "quality-assurance",
+      "phase": "quality",
+      "dependsOn": [
+        "brand",
+        "images",
+        "scene-3d",
+        "website",
+        "web-app",
+        "mobile"
+      ],
+      "produces": [
+        {
+          "path": ".cis/reports/qa-summary.json",
+          "schema": "qa-summary"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "command": "creative-studio test && creative-studio audit"
+    },
+    {
+      "id": "consistency",
+      "title": "Verify every deliverable carries the same Experience DNA",
+      "skill": "experience-dna",
+      "phase": "quality",
+      "dependsOn": [
+        "brand",
+        "images",
+        "scene-3d",
+        "website",
+        "web-app",
+        "mobile"
+      ],
+      "produces": [
+        {
+          "path": ".cis/reports/consistency.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "command": "creative-studio dna consistency"
+    },
+    {
+      "id": "creative-review",
+      "title": "Independent creative review against the rubric",
+      "skill": "creative-review",
+      "phase": "quality",
+      "dependsOn": [
+        "qa",
+        "consistency"
+      ],
+      "produces": [
+        {
+          "path": ".cis/reports/creative-review.json",
+          "schema": "creative-review"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "command": "creative-studio review check"
+    },
+    {
+      "id": "export",
+      "title": "Package deliverables, licences and evidence",
+      "skill": "delivery",
+      "phase": "delivery",
+      "dependsOn": [
+        "creative-review"
+      ],
+      "produces": [
+        {
+          "path": "export/delivery-manifest.json"
+        }
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "maxAttempts": 3,
+      "gate": "G6-quality",
+      "command": "creative-studio export"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G0-brief",
+      "title": "Brief, rights and approver confirmed",
+      "requires": [
+        "intake"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "G1-direction",
+      "title": "Creative direction chosen by the client",
+      "requires": [
+        "directions"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "G2-system",
+      "title": "Experience DNA and design system approved",
+      "requires": [
+        "dna"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "G6-quality",
+      "title": "Quality evidence reviewed",
+      "requires": [
+        "qa",
+        "consistency"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "G7-acceptance",
+      "title": "Client accepts the delivery",
+      "requires": [
+        "export"
+      ],
+      "status": "pending"
+    }
+  ],
+  "updatedAt": "2026-11-11T22:17:00.465Z"
+}

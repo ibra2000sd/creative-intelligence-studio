@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "haldora-launch",
+  "clientId": "haldora",
+  "name": "Haldora launch: brand, site, portal, app and product experience",
+  "createdAt": "2026-11-11T22:17:00.221Z",
+  "createdWith": "creative-intelligence-studio@0.1.0",
+  "policy": {
+    "externalUploads": "ask",
+    "budgetUsd": 5,
+    "allowedProviders": [
+      "local-procedural"
+    ]
+  }
+}

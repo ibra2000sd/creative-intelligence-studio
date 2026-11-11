@@ -1,0 +1,451 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/content-web/1.0.0",
+  "title": "Marketing Website Content",
+  "description": "All copy for the marketing site, per locale. Templates render this; nothing user-visible is hard-coded in template source.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "defaultLocale",
+    "locales"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "cta": {
+      "type": "object",
+      "required": [
+        "label",
+        "href"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "href": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "locale": {
+      "type": "object",
+      "required": [
+        "dir",
+        "meta",
+        "nav",
+        "hero",
+        "story",
+        "features",
+        "product",
+        "proof",
+        "contact",
+        "footer",
+        "ui"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dir": {
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "title",
+            "description"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "maxLength": 70
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 170
+            }
+          }
+        },
+        "nav": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/cta"
+          }
+        },
+        "hero": {
+          "type": "object",
+          "required": [
+            "eyebrow",
+            "headline",
+            "sub",
+            "primaryCta"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "eyebrow": {
+              "type": "string"
+            },
+            "headline": {
+              "type": "string"
+            },
+            "sub": {
+              "type": "string"
+            },
+            "primaryCta": {
+              "$ref": "#/$defs/cta"
+            },
+            "secondaryCta": {
+              "$ref": "#/$defs/cta"
+            },
+            "imageAlt": {
+              "type": "string"
+            }
+          }
+        },
+        "story": {
+          "type": "object",
+          "required": [
+            "title",
+            "intro",
+            "chapters"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "intro": {
+              "type": "string"
+            },
+            "chapters": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 6,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "time",
+                  "title",
+                  "body",
+                  "stat"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]*$"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "stat": {
+                    "type": "object",
+                    "required": [
+                      "value",
+                      "unit",
+                      "label"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      },
+                      "unit": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]*$",
+                    "description": "Asset id; defaults to story-<chapter id>."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "features": {
+          "type": "object",
+          "required": [
+            "title",
+            "items"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "intro": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "object",
+                "required": [
+                  "icon",
+                  "title",
+                  "body"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "icon": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]*$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "product": {
+          "type": "object",
+          "required": [
+            "title",
+            "body",
+            "finishLabel",
+            "specs",
+            "fallbackAlt"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            },
+            "finishLabel": {
+              "type": "string"
+            },
+            "hint": {
+              "type": "string"
+            },
+            "fallbackAlt": {
+              "type": "string"
+            },
+            "specs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "proof": {
+          "type": "object",
+          "required": [
+            "title",
+            "disclaimer",
+            "quotes"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "disclaimer": {
+              "type": "string",
+              "minLength": 10,
+              "description": "Demo content must say that quotes are illustrative."
+            },
+            "quotes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "quote",
+                  "name",
+                  "role"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "quote": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "required": [
+            "title",
+            "body",
+            "fields",
+            "submit",
+            "success",
+            "errors"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            },
+            "submit": {
+              "type": "string"
+            },
+            "success": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "object",
+              "required": [
+                "name",
+                "email",
+                "home",
+                "homeOptions"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "home": {
+                  "type": "string"
+                },
+                "homeOptions": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "errors": {
+              "type": "object",
+              "required": [
+                "required",
+                "email",
+                "summary"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "required": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "footer": {
+          "type": "object",
+          "required": [
+            "legal"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "legal": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "ui": {
+          "type": "object",
+          "required": [
+            "skip",
+            "theme",
+            "language",
+            "menu",
+            "scrollHint"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "skip": {
+              "type": "string"
+            },
+            "theme": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "menu": {
+              "type": "string"
+            },
+            "scrollHint": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "defaultLocale": {
+      "type": "string"
+    },
+    "locales": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/locale"
+      }
+    }
+  }
+}

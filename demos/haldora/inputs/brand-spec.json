@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "wordmark": { "text": "Haldora", "weight": 600, "tracking": -0.012, "font": "display" },
+  "concepts": [
+    { "id": "day-arc", "title": "Day arc", "kind": "symbol", "motif": "arc", "params": { "corner": 0.28, "sunAngle": 116, "weight": 5.2 }, "rationale": "The sun mid-morning on its arc above a horizon, held in a cell. It is the brand idea in one mark and it can be animated: the sun moves." },
+    { "id": "stored-layers", "title": "Stored layers", "kind": "symbol", "motif": "strata", "params": { "weight": 6, "corner": 0.22 }, "rationale": "Three layers for store, use and reserve. Clear as a battery metaphor, but generic: it could belong to any storage product." },
+    { "id": "h-field", "title": "H field", "kind": "monogram", "letter": "H", "params": { "corner": 0.5 }, "rationale": "The initial cut from a solid disc. Strong at small sizes, but says nothing about energy or time." }
+  ],
+  "selected": "day-arc",
+  "selectionReason": "Only the day arc carries the direction's signature, and it is the one concept that every other deliverable can echo: scroll story, chart, app dial and the light on the product.",
+  "clearSpace": 0.5,
+  "minSizePx": { "symbol": 16, "lockup": 96 },
+  "applications": ["business-card", "social-square", "og-image", "story", "app-icon", "presentation-title"],
+  "contact": { "name": "Mira Solberg", "title": "Brand lead", "email": "mira@haldora.example", "phone": "+44 20 0000 0000", "web": "haldora.example" },
+  "headline": "Your home's energy, from sunrise to night",
+  "strategy": {
+    "differentiation": "The category speaks either like industrial equipment or like a gadget. Haldora speaks like a household: it describes energy as a day and uses warm, editorial design where competitors use dark dashboards or white gloss.",
+    "territories": ["Daylight Ledger (selected)", "Grid Instrument (rejected: the category default)", "Quiet Current (rejected: gadget minimalism, needs renders the client lacks)"],
+    "competitorNotes": ["Competitor descriptions are category conventions taken from the brief; no competitor audit was performed for this demonstration."]
+  }
+}

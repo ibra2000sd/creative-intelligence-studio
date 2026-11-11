@@ -1,0 +1,69 @@
+{
+  "dnaRevision": 1,
+  "finishes": [
+    {
+      "id": "chalk",
+      "name": "Chalk",
+      "baseColor": "#F6F1E7",
+      "metalness": 0.05,
+      "roughness": 0.62,
+      "accent": "#E9A23B"
+    },
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "baseColor": "#2A2D66",
+      "metalness": 0.2,
+      "roughness": 0.48,
+      "accent": "#E9A23B"
+    },
+    {
+      "id": "ember",
+      "name": "Ember",
+      "baseColor": "#B5381F",
+      "metalness": 0.1,
+      "roughness": 0.55,
+      "accent": "#FFFDF8"
+    }
+  ],
+  "environment": {
+    "keyLight": "#FFFDF8",
+    "fillLight": "#E9A23B",
+    "background": "#F6F1E7",
+    "exposure": 1.05
+  },
+  "semantic": {
+    "light": {
+      "bg": "#F6F1E7",
+      "surface": "#EDE6D6",
+      "surfaceRaised": "#FFFDF8",
+      "text": "#1C1B18",
+      "textMuted": "#5E5A50",
+      "primary": "#2A2D66",
+      "onPrimary": "#FFFDF8",
+      "accent": "#E9A23B",
+      "onAccent": "#1C1B18",
+      "border": "#D9D0BC",
+      "focus": "#2A2D66",
+      "success": "#2F6B4F",
+      "warning": "#8A5800",
+      "danger": "#B5381F"
+    },
+    "dark": {
+      "bg": "#14152B",
+      "surface": "#1D1F3D",
+      "surfaceRaised": "#272A4F",
+      "text": "#F3EEE2",
+      "textMuted": "#B4AFC4",
+      "primary": "#E9A23B",
+      "onPrimary": "#1C1B18",
+      "accent": "#E58A6B",
+      "onAccent": "#1C1B18",
+      "border": "#3A3D66",
+      "focus": "#E9A23B",
+      "success": "#6FBF95",
+      "warning": "#E9A23B",
+      "danger": "#F0876A"
+    }
+  }
+}

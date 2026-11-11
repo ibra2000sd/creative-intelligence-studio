@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "grid-instrument",
+  "title": "Grid Instrument",
+  "concept": "The battery as a precision instrument. Graphite panels, a phosphor signal colour, monospaced numerals and measured grids: every surface looks like a readout.",
+  "rationale": "Speaks to the technically curious buyer and makes the software feel exact. It is the convention of the category, which makes it instantly legible as energy technology but hard to tell apart from it.",
+  "emotionalIntent": "Control and precision.",
+  "palette": { "bg": "#111417", "text": "#E8ECEF", "primary": "#7CF0B2", "accent": "#F2C14E", "support": ["#1D2328", "#5B6B78"] },
+  "typography": { "display": "JetBrains Mono", "text": "Instrument Sans", "character": "Monospaced headings, tabular numerals everywhere" },
+  "layoutGrammar": "instrument",
+  "motion": { "intensity": "subtle", "personality": "Instant and mechanical, like a gauge settling" },
+  "imagery": { "style": "Technical line drawings and measured grids", "motifs": ["grid", "contour"] },
+  "signature": "A live tick ruler along the edge of every surface.",
+  "usabilityImplications": ["Dense information suits the portal but intimidates first-time visitors.", "Dark default raises glare problems outdoors on phones."],
+  "technicalRequirements": ["Tabular numeral font features", "Dark-first theming"],
+  "risks": ["Looks like every other energy dashboard: the brief asks to avoid green-on-black.", "Cold tone works against the 'belongs in a home' goal."],
+  "effort": "low",
+  "fitScore": { "audienceFit": 2, "differentiation": 1, "feasibility": 5, "accessibility": 3 }
+}

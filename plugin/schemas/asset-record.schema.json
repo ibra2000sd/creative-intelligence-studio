@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/asset-record/1.0.0",
+  "title": "Asset Record",
+  "description": "Registry entry with provenance and rights for one produced or sourced asset.",
+  "type": "object",
+  "required": ["schemaVersion", "id", "kind", "purpose", "files", "origin", "rights", "qa", "clientApproval", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "kind": { "enum": ["vector", "raster", "model-3d", "document", "motion", "font", "code"] },
+    "purpose": { "type": "string" },
+    "dnaRevision": { "type": "integer", "minimum": 1 },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "bytes"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "format": { "type": "string" },
+          "width": { "type": "integer" },
+          "height": { "type": "integer" },
+          "role": { "enum": ["source", "export", "preview", "fallback"] }
+        }
+      }
+    },
+    "origin": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type", "provider", "parameters"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "generated" },
+            "provider": { "type": "string" },
+            "model": { "type": "string" },
+            "parameters": { "type": "object" },
+            "prompt": { "type": "string" },
+            "seed": { "type": ["integer", "string"] },
+            "references": { "type": "array", "items": { "type": "string" } },
+            "costUsd": { "type": "number", "minimum": 0 },
+            "simulated": { "type": "boolean", "description": "True when a mock provider produced this file. Never shippable." }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "source", "license", "verifiedOn"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "external" },
+            "source": { "type": "string" },
+            "author": { "type": "string" },
+            "url": { "type": "string", "format": "uri" },
+            "license": { "type": "string" },
+            "version": { "type": "string" },
+            "attribution": { "type": "string" },
+            "commercialUse": { "enum": ["allowed", "restricted", "prohibited", "unknown"] },
+            "modification": { "enum": ["allowed", "prohibited", "unknown"] },
+            "redistribution": { "enum": ["allowed", "restricted", "prohibited", "unknown"] },
+            "verifiedOn": { "type": "string", "format": "date" }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "suppliedBy"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "client-supplied" },
+            "suppliedBy": { "type": "string" },
+            "rights": { "enum": ["client-owned", "licensed", "unknown"] }
+          }
+        }
+      ]
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["at", "action"],
+        "additionalProperties": false,
+        "properties": {
+          "at": { "type": "string", "format": "date-time" },
+          "action": { "type": "string" },
+          "by": { "type": "string" },
+          "revisionId": { "type": "string" }
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["cleared", "restricted", "unknown"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["pending", "passed", "failed"] },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "pass"],
+            "additionalProperties": false,
+            "properties": { "id": { "type": "string" }, "pass": { "type": "boolean" }, "detail": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "clientApproval": { "enum": ["not-required", "pending", "approved", "rejected"] },
+    "usedIn": { "type": "array", "items": { "type": "string" } },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

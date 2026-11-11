@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Product in 3D</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="stage" id="stage">
+      <div class="viewport" id="viewport">
+        <canvas id="scene" tabindex="0" role="img" aria-describedby="scene-help"></canvas>
+        <img id="fallback" class="fallback" alt="" hidden width="900" height="900" />
+        <p id="scene-help" class="help"></p>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </div>
+      <form class="panel" id="panel" aria-labelledby="panel-title" onsubmit="return false">
+        <h1 id="panel-title"></h1>
+        <fieldset class="finishes">
+          <legend id="finish-legend"></legend>
+          <div id="finishes" class="swatches"></div>
+        </fieldset>
+        <div class="field" id="time-field">
+          <label for="time" id="time-label"></label>
+          <input id="time" type="range" min="6" max="22" step="0.25" value="10" />
+          <output id="time-out" for="time"></output>
+        </div>
+        <button type="button" id="reset" class="button"></button>
+      </form>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

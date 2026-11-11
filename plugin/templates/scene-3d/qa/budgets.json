@@ -1,0 +1,4 @@
+{
+  "tbtMs": 1800,
+  "rationale": "WebGL context creation and shader compilation run synchronously inside the browser and block the main thread for about 1.1 to 1.6 seconds on the reference machine, with or without CPU throttling. The page shows the still image while this happens and the engine is only requested when the 3D view is opened."
+}

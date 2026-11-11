@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/motion-spec/1.0.0",
+  "title": "Motion Specification",
+  "description": "One entry per animated behaviour. `decision: none` is a valid, recorded outcome: choosing not to animate is a design decision.",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "dnaRevision", "motions"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "projectId": { "type": "string" },
+    "dnaRevision": { "type": "integer", "minimum": 1 },
+    "motions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "surface", "intent", "trigger", "frequency", "decision"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "surface": { "enum": ["marketing", "application", "mobile", "3d"] },
+          "target": { "type": "string" },
+          "intent": { "enum": ["orientation", "feedback", "continuity", "explanation", "storytelling", "delight", "status"] },
+          "trigger": { "enum": ["load", "scroll", "hover", "press", "drag", "state-change", "route-change", "data-update", "in-view"] },
+          "frequency": { "enum": ["constant", "frequent", "occasional", "rare", "once"], "description": "How often one user meets this motion. Drives the animate / do-not-animate rule." },
+          "properties": { "type": "array", "items": { "enum": ["transform", "opacity", "color", "filter", "clip-path", "layout", "svg-path", "camera", "material"] } },
+          "interruptible": { "type": "boolean" },
+          "gestureDriven": { "type": "boolean" },
+          "decision": { "enum": ["animate", "none"] },
+          "runtime": { "enum": ["css", "waapi", "view-transitions", "motion", "gsap", "gsap-scrolltrigger", "rive", "lottie", "three", "reanimated", "native"] },
+          "duration": { "enum": ["instant", "fast", "base", "slow", "cinematic", "scrubbed", "spring"] },
+          "easing": { "enum": ["standard", "enter", "exit", "emphasized", "spring", "linear"] },
+          "reducedMotionFallback": { "enum": ["remove", "crossfade", "static-composition", "not-applicable"] },
+          "keyboardEquivalent": { "type": "boolean" },
+          "rationale": { "type": "string" },
+          "status": { "enum": ["proposed", "implemented", "verified"] }
+        },
+        "if": { "properties": { "decision": { "const": "animate" } } },
+        "then": { "required": ["runtime", "duration", "easing", "reducedMotionFallback", "interruptible", "rationale"] }
+      }
+    }
+  }
+}

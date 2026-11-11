@@ -1,0 +1,1654 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-11T23:04:04.565Z",
+  "environment": {
+    "tool": "creative-studio 0.1.0",
+    "node": "v22.14.0",
+    "platform": "darwin 22.6.0 x64",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "browser": "Google Chrome"
+  },
+  "targets": [
+    {
+      "id": "scene",
+      "kind": "scene-3d",
+      "url": "served from scene/dist",
+      "checks": [
+        {
+          "id": "build:scene",
+          "category": "build",
+          "status": "pass",
+          "summary": "Built output present at scene/dist",
+          "measurement": "static"
+        },
+        {
+          "id": "bundle:scene",
+          "category": "performance",
+          "status": "pass",
+          "summary": "JS 167.5KB gzip, CSS 2.6KB gzip, 22 files, 1.11MB on disk",
+          "severity": "minor",
+          "measurement": "static",
+          "data": {
+            "jsGzipBytes": 171567,
+            "cssGzipBytes": 2673,
+            "totalBytes": 1166559,
+            "files": 22,
+            "biggest": [
+              {
+                "file": "assets/scene-DdLxwdzM.js",
+                "bytes": 670671
+              },
+              {
+                "file": "models/cell.source.glb",
+                "bytes": 205248
+              },
+              {
+                "file": "models/cell.glb",
+                "bytes": 57180
+              },
+              {
+                "file": "assets/fraunces-latin-600-normal-DL5QCzvS.woff",
+                "bytes": 22512
+              },
+              {
+                "file": "assets/fraunces-latin-400-normal-NUPT2cO8.woff",
+                "bytes": 22480
+              },
+              {
+                "file": "assets/instrument-sans-latin-600-normal-B9e8oLYv.woff",
+                "bytes": 21676
+              }
+            ]
+          }
+        },
+        {
+          "id": "load:scene@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 9
+          }
+        },
+        {
+          "id": "layout:scene@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene@mobile",
+          "category": "visual",
+          "status": "fail",
+          "summary": "13.25% of pixels differ from the accepted baseline",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.1325069874832908,
+            "regions": [
+              {
+                "row": 2,
+                "col": 4,
+                "changed": 0.9822872545244513
+              },
+              {
+                "row": 2,
+                "col": 3,
+                "changed": 0.9734669811320755
+              },
+              {
+                "row": 1,
+                "col": 4,
+                "changed": 0.9617103984450923
+              },
+              {
+                "row": 1,
+                "col": 3,
+                "changed": 0.9327380952380953
+              },
+              {
+                "row": 1,
+                "col": 5,
+                "changed": 0.6890184645286687
+              },
+              {
+                "row": 3,
+                "col": 4,
+                "changed": 0.6777453838678329
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-mobile.png",
+            ".cis/reports/qa/scene/scene-mobile.diff.png"
+          ]
+        },
+        {
+          "id": "target-size:scene@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:scene@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 9
+          }
+        },
+        {
+          "id": "layout:scene@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene@tablet",
+          "category": "visual",
+          "status": "fail",
+          "summary": "12.38% of pixels differ from the accepted baseline",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.12384923299153645,
+            "regions": [
+              {
+                "row": 4,
+                "col": 2,
+                "changed": 1
+              },
+              {
+                "row": 3,
+                "col": 2,
+                "changed": 0.9326171875
+              },
+              {
+                "row": 4,
+                "col": 1,
+                "changed": 0.9320475260416666
+              },
+              {
+                "row": 3,
+                "col": 1,
+                "changed": 0.85595703125
+              },
+              {
+                "row": 2,
+                "col": 2,
+                "changed": 0.7195638020833334
+              },
+              {
+                "row": 2,
+                "col": 1,
+                "changed": 0.6415201822916666
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-tablet.png",
+            ".cis/reports/qa/scene/scene-tablet.diff.png"
+          ]
+        },
+        {
+          "id": "load:scene@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 9
+          }
+        },
+        {
+          "id": "layout:scene@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene@desktop",
+          "category": "visual",
+          "status": "fail",
+          "summary": "11.52% of pixels differ from the accepted baseline",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.1152145061728395,
+            "regions": [
+              {
+                "row": 4,
+                "col": 3,
+                "changed": 0.9088003933136677
+              },
+              {
+                "row": 5,
+                "col": 3,
+                "changed": 0.9049107142857142
+              },
+              {
+                "row": 2,
+                "col": 3,
+                "changed": 0.8940511307767945
+              },
+              {
+                "row": 3,
+                "col": 3,
+                "changed": 0.8803571428571428
+              },
+              {
+                "row": 4,
+                "col": 2,
+                "changed": 0.7159783677482793
+              },
+              {
+                "row": 5,
+                "col": 2,
+                "changed": 0.7048611111111112
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-desktop.png",
+            ".cis/reports/qa/scene/scene-desktop.diff.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:scene:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "sample": [
+                  {
+                    "target": "#scene-help",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 21
+          }
+        },
+        {
+          "id": "a11y-axe:scene:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "sample": [
+                  {
+                    "target": "#scene-help",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 21
+          }
+        },
+        {
+          "id": "keyboard:scene",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "4 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 4,
+            "reached": 4,
+            "order": [
+              "canvas#scene:Interactive 3D model of ",
+              "input:finish",
+              "input#time:",
+              "button#reset:Reset view"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "reduced-motion:scene",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:scene",
+          "category": "performance",
+          "status": "fail",
+          "summary": "Over budget in the lab: TBT 1091ms > 300ms",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 968,
+            "cls": 0,
+            "tbtMs": 1091,
+            "interactionMs": 40,
+            "domContentLoadedMs": 657,
+            "domNodes": 38,
+            "requests": 9,
+            "conditions": "Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data."
+          }
+        },
+        {
+          "id": "load:scene-still@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 7
+          }
+        },
+        {
+          "id": "layout:scene-still@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene-still@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:scene-still@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:scene-still@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 7
+          }
+        },
+        {
+          "id": "layout:scene-still@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene-still@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-tablet.png"
+          ]
+        },
+        {
+          "id": "load:scene-still@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 7
+          }
+        },
+        {
+          "id": "layout:scene-still@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:scene-still@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:scene-still:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "sample": [
+                  {
+                    "target": "#status",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 20
+          }
+        },
+        {
+          "id": "a11y-axe:scene-still:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "sample": [
+                  {
+                    "target": "#status",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 20
+          }
+        },
+        {
+          "id": "keyboard:scene-still",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "1 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 1,
+            "reached": 1,
+            "order": [
+              "input:finish"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "reduced-motion:scene-still",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:scene-still",
+          "category": "performance",
+          "status": "pass",
+          "summary": "Lab: LCP 452ms, CLS 0, TBT 0ms",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 452,
+            "cls": 0,
+            "tbtMs": 0,
+            "interactionMs": null,
+            "domContentLoadedMs": 189,
+            "domNodes": 38,
+            "requests": 7,
+            "conditions": "Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data."
+          }
+        },
+        {
+          "id": "flow:renders-webgl",
+          "category": "functional",
+          "status": "pass",
+          "summary": "The model loads and renders with WebGL: 7982 triangles in 8 draw calls; 25 distinct tones read back from the canvas",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 6070
+          }
+        },
+        {
+          "id": "flow:idle-costs-nothing",
+          "category": "performance",
+          "status": "pass",
+          "summary": "No frames are rendered while nothing changes",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3678
+          }
+        },
+        {
+          "id": "flow:finish-configurator",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Choosing a finish changes the product material: #f6f1e7 -> #2a2d66",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2803
+          }
+        },
+        {
+          "id": "flow:time-of-day",
+          "category": "functional",
+          "status": "pass",
+          "summary": "The time slider moves the sun along the arc on the product",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1519
+          }
+        },
+        {
+          "id": "flow:pointer-orbit",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Dragging turns the product, within limits",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2238
+          }
+        },
+        {
+          "id": "flow:keyboard-orbit",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "Arrow keys turn and zoom the product (keyboard alternative to dragging)",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2260
+          }
+        },
+        {
+          "id": "flow:scroll-camera",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Embedded mode: progress messages drive the camera choreography",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1941
+          }
+        },
+        {
+          "id": "flow:still-fallback",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Still-image mode works without WebGL and keeps the configurator",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 831
+          }
+        },
+        {
+          "id": "flow:context-loss",
+          "category": "functional",
+          "status": "pass",
+          "summary": "A lost WebGL context degrades to the still image",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 5049
+          }
+        },
+        {
+          "id": "flow:resource-cleanup",
+          "category": "performance",
+          "status": "pass",
+          "summary": "Disposing the scene releases GPU geometry and textures: 8 geometries and 2 textures released",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2398
+          }
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "kind": "website",
+      "url": "served from web/dist",
+      "checks": [
+        {
+          "id": "build:web",
+          "category": "build",
+          "status": "pass",
+          "summary": "Built output present at web/dist",
+          "measurement": "static"
+        },
+        {
+          "id": "bundle:web",
+          "category": "performance",
+          "status": "pass",
+          "summary": "JS 48.0KB gzip, CSS 5.4KB gzip, 72 files, 4.43MB on disk",
+          "severity": "minor",
+          "measurement": "static",
+          "data": {
+            "jsGzipBytes": 49166,
+            "cssGzipBytes": 5490,
+            "totalBytes": 4646810,
+            "files": 72,
+            "biggest": [
+              {
+                "file": "assets/campaign-story.png",
+                "bytes": 1594758
+              },
+              {
+                "file": "assets/campaign-square.png",
+                "bytes": 877854
+              },
+              {
+                "file": "assets/campaign-wide.png",
+                "bytes": 442374
+              },
+              {
+                "file": "assets/app-store-feature.png",
+                "bytes": 260411
+              },
+              {
+                "file": "assets/model-cell.glb",
+                "bytes": 205248
+              },
+              {
+                "file": "assets/gsap-C2W12wA9.js",
+                "bytes": 70358
+              }
+            ]
+          }
+        },
+        {
+          "id": "load:home@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 17
+          }
+        },
+        {
+          "id": "layout:home@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:home@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.174% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.0017407947502734232,
+            "regions": [
+              {
+                "row": 0,
+                "col": 6,
+                "changed": 0.03311513284559107
+              },
+              {
+                "row": 0,
+                "col": 4,
+                "changed": 0.03195995379283789
+              },
+              {
+                "row": 0,
+                "col": 5,
+                "changed": 0.025221409318444358
+              },
+              {
+                "row": 0,
+                "col": 7,
+                "changed": 0.020440251572327043
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:home@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:home@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 17
+          }
+        },
+        {
+          "id": "layout:home@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:home@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-tablet.png"
+          ]
+        },
+        {
+          "id": "load:home@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 25
+          }
+        },
+        {
+          "id": "layout:home@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:home@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.668% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.00667644732567829,
+            "regions": [
+              {
+                "row": 2,
+                "col": 5,
+                "changed": 0.07795280036133695
+              },
+              {
+                "row": 2,
+                "col": 6,
+                "changed": 0.06419941282746161
+              },
+              {
+                "row": 3,
+                "col": 5,
+                "changed": 0.04460269017746129
+              },
+              {
+                "row": 2,
+                "col": 4,
+                "changed": 0.04307813911472448
+              },
+              {
+                "row": 1,
+                "col": 5,
+                "changed": 0.041302136317395724
+              },
+              {
+                "row": 1,
+                "col": 4,
+                "changed": 0.037882898157567534
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:home:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 12,
+                "sample": [
+                  {
+                    "target": "li:nth-child(1) > a[href$=\"#day\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "a[href$=\"#how\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "li:nth-child(3) > a[href$=\"#cell\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "a11y-axe:home:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 12,
+                "sample": [
+                  {
+                    "target": "li:nth-child(1) > a[href$=\"#day\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "a[href$=\"#how\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "li:nth-child(3) > a[href$=\"#cell\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "keyboard:home",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 14,
+            "reached": 14,
+            "order": [
+              "a[#main]:Skip to content",
+              "a[#top]:",
+              "a[#day]:A day with Haldora",
+              "a[#how]:How it works",
+              "a[#cell]:The Cell",
+              "a[#contact]:Get in touch",
+              "a[ar/]:Language: العربية",
+              "button:Switch between light and",
+              "a[#day]:See a day with Haldora",
+              "a[#cell]:Meet the Cell",
+              "input#f-name:name",
+              "input#f-email:email",
+              "select#f-home:House with solar panelsH",
+              "button:Send my question"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "scroll-motion:home",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Scrolling 6967px: median frame 16.7ms, p95 16.7ms, 1 of 455 frames over 33ms, layout shift 0",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "samples": 455,
+            "medianMs": 16.69999999999891,
+            "p95Ms": 16.700000000000728,
+            "over33": 1,
+            "over50": 1,
+            "cls": 0,
+            "scrolledPx": 6967,
+            "engine": {
+              "engine": "gsap",
+              "version": "3.15.1",
+              "triggers": 12
+            },
+            "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
+          }
+        },
+        {
+          "id": "reduced-motion:home",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:home",
+          "category": "performance",
+          "status": "warn",
+          "summary": "Lab: LCP 1168ms, CLS 0, TBT 225ms, first tap 232ms (median of 3); first scripted tap took 232ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 1168,
+            "cls": 0,
+            "tbtMs": 225,
+            "interactionMs": 232,
+            "domNodes": 279,
+            "requests": 17,
+            "runs": [
+              {
+                "lcpMs": 1624,
+                "cls": 0,
+                "tbtMs": 225,
+                "interactionMs": 232
+              },
+              {
+                "lcpMs": 776,
+                "cls": 0,
+                "tbtMs": 172,
+                "interactionMs": 232
+              },
+              {
+                "lcpMs": 1168,
+                "cls": 0,
+                "tbtMs": 672,
+                "interactionMs": 248
+              }
+            ],
+            "conditions": "Median of 3 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data."
+          }
+        },
+        {
+          "id": "load:home-ar@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 16
+          }
+        },
+        {
+          "id": "layout:home-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:home-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:home-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.223% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.002229918580629481,
+            "regions": [
+              {
+                "row": 0,
+                "col": 1,
+                "changed": 0.0444743935309973
+              },
+              {
+                "row": 0,
+                "col": 2,
+                "changed": 0.04120138621486331
+              },
+              {
+                "row": 0,
+                "col": 0,
+                "changed": 0.029072006160954948
+              },
+              {
+                "row": 0,
+                "col": 3,
+                "changed": 0.027122641509433963
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-ar-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:home-ar@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:home-ar@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 16
+          }
+        },
+        {
+          "id": "layout:home-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:home-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:home-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-ar-tablet.png"
+          ]
+        },
+        {
+          "id": "load:home-ar@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 24
+          }
+        },
+        {
+          "id": "layout:home-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:home-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:home-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.579% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.005790532662173307,
+            "regions": [
+              {
+                "row": 2,
+                "col": 2,
+                "changed": 0.0706527919936313
+              },
+              {
+                "row": 2,
+                "col": 1,
+                "changed": 0.0566359604230638
+              },
+              {
+                "row": 3,
+                "col": 2,
+                "changed": 0.04115437158469945
+              },
+              {
+                "row": 2,
+                "col": 3,
+                "changed": 0.0395314454679859
+              },
+              {
+                "row": 1,
+                "col": 2,
+                "changed": 0.036221994768565906
+              },
+              {
+                "row": 1,
+                "col": 3,
+                "changed": 0.03441373820084158
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/home-ar-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:home-ar:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "li:nth-child(1) > a[href$=\"#day\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": ".lang",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": ".scroll-hint",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "a11y-axe:home-ar:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "li:nth-child(1) > a[href$=\"#day\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": ".lang",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": ".scroll-hint",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "keyboard:home-ar",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 14,
+            "reached": 14,
+            "order": [
+              "a[#main]:انتقل إلى المحتوى",
+              "a[#top]:",
+              "a[#day]:يوم مع هالدورا",
+              "a[#how]:كيف تعمل",
+              "a[#cell]:البطارية",
+              "a[#contact]:تواصل معنا",
+              "a[../]:اللغة: English",
+              "button:التبديل بين الوضعين الفا",
+              "a[#day]:شاهد يوماً مع هالدورا",
+              "a[#cell]:تعرّف على البطارية",
+              "input#f-name:name",
+              "input#f-email:email",
+              "select#f-home:بيت عليه ألواح شمسيةبيت ",
+              "button:أرسل سؤالي"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "scroll-motion:home-ar",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Scrolling 6914px: median frame 16.7ms, p95 16.7ms, 2 of 437 frames over 33ms, layout shift 0",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "samples": 437,
+            "medianMs": 16.69999999999891,
+            "p95Ms": 16.700000000000728,
+            "over33": 2,
+            "over50": 2,
+            "cls": 0,
+            "scrolledPx": 6914,
+            "engine": {
+              "engine": "gsap",
+              "version": "3.15.1",
+              "triggers": 12
+            },
+            "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
+          }
+        },
+        {
+          "id": "reduced-motion:home-ar",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:home-ar",
+          "category": "performance",
+          "status": "warn",
+          "summary": "Lab: LCP 1468ms, CLS 0.0123, TBT 200ms, first tap 248ms (median of 3); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 1468,
+            "cls": 0.0123,
+            "tbtMs": 200,
+            "interactionMs": 248,
+            "domNodes": 279,
+            "requests": 16,
+            "runs": [
+              {
+                "lcpMs": 1492,
+                "cls": 0.0127,
+                "tbtMs": 322,
+                "interactionMs": 248
+              },
+              {
+                "lcpMs": 1380,
+                "cls": 0,
+                "tbtMs": 152,
+                "interactionMs": 240
+              },
+              {
+                "lcpMs": 1468,
+                "cls": 0.0123,
+                "tbtMs": 200,
+                "interactionMs": 248
+              }
+            ],
+            "conditions": "Median of 3 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data."
+          }
+        },
+        {
+          "id": "flow:nav-anchors",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Primary navigation scrolls to each section: 4 links reach their targets",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 6394
+          }
+        },
+        {
+          "id": "flow:theme-toggle",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Colour scheme toggle switches, announces state and persists",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3126
+          }
+        },
+        {
+          "id": "flow:language-switch",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Language link opens the right-to-left Arabic page and returns",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3371
+          }
+        },
+        {
+          "id": "flow:story-scroll",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Scroll drives the day story: sun moves on its arc, chapters and frames change: 4 chapters, 5 sun positions, reversible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 9762
+          }
+        },
+        {
+          "id": "flow:form-validation",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Contact form reports errors accessibly and confirms success",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2248
+          }
+        },
+        {
+          "id": "flow:mobile-menu",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Mobile menu opens, closes with Escape and returns focus",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1232
+          }
+        },
+        {
+          "id": "flow:scene-embed",
+          "category": "functional",
+          "status": "pass",
+          "summary": "The 3D product loads lazily and scroll drives its camera: lazy-loaded, WebGL, camera follows scroll",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 4471
+          }
+        },
+        {
+          "id": "flow:no-script",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "With JavaScript disabled the whole page is still readable",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3559
+          }
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "pass": 81,
+    "fail": 4,
+    "warn": 2,
+    "skipped": 0,
+    "blocked": 0
+  },
+  "verdict": "fail",
+  "manualAuditsOutstanding": [
+    "Screen-reader walkthrough (VoiceOver, NVDA, TalkBack): automated rules cover only part of WCAG 2.2.",
+    "Testing on real phones and a low-powered laptop: frame timing here comes from one desktop GPU.",
+    "Field Core Web Vitals (75th percentile of real visits): only available after launch.",
+    "Native iOS and Android builds, device gestures and store review.",
+    "Copy review by a fluent Arabic editor and a legal review of claims."
+  ]
+}

@@ -1,0 +1,2693 @@
+{
+  "schemaVersion": "1.0.0",
+  "assets": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "app-store-feature",
+      "kind": "raster",
+      "purpose": "App store feature graphic",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/app-store-feature/app-store-feature-1024x500.png",
+          "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7",
+          "bytes": 260411,
+          "format": "png",
+          "width": 1024,
+          "height": 500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "orbit-rings",
+          "variant": null,
+          "layer": null,
+          "scheme": "dark",
+          "width": 1024,
+          "height": 500,
+          "dnaRevision": 1
+        },
+        "seed": "2",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:57.272Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1024x500, required 1024x500"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 18.0"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "1012220c48806060"
+          },
+          {
+            "id": "byte-budget:png",
+            "pass": true,
+            "detail": "260411 bytes, budget 500000"
+          },
+          {
+            "id": "text-is-vector",
+            "pass": true,
+            "detail": "headline and logo composited as outlined vector paths"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "mobile:store"
+      ],
+      "createdAt": "2026-11-11T22:20:57.273Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "bloom-ground",
+      "kind": "raster",
+      "purpose": "Soft background for portal sign-in and empty states",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/bloom-ground/bloom-ground-1600x1000.webp",
+          "sha256": "1df21026c6b8a95bf22b2221025ead00385e5f3b54461545617c0dd94768cada",
+          "bytes": 12268,
+          "format": "webp",
+          "width": 1600,
+          "height": 1000,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "bloom-mesh",
+          "variant": null,
+          "layer": null,
+          "scheme": "light",
+          "width": 1600,
+          "height": 1000,
+          "dnaRevision": 1
+        },
+        "seed": "6",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:58.840Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1000, required 1600x1000"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 33.1"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "3e7c7078b0828383"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12268 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "app:signin"
+      ],
+      "createdAt": "2026-11-11T22:20:58.840Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "brand-applications",
+      "kind": "vector",
+      "purpose": "Brand applications: stationery and social templates",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "brand/applications/business-card-front.svg",
+          "sha256": "3a0cf0b91373155bbef50cb181418db2b88a605bc6766b64a788255436c25c16",
+          "bytes": 4330,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/business-card-back.svg",
+          "sha256": "0c3ed5662a417d6c677429421fb61bda53c86a932b17b583915b7f57f53fbb98",
+          "bytes": 22263,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/social-square.svg",
+          "sha256": "0bd45320a4649b3742fa933eb2e37aefbbaa49e02b44e7ce815a8859dcce5d96",
+          "bytes": 28172,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/og-image.svg",
+          "sha256": "55e764bdf76cf5e6618b06bfb0e95ccfdfba740cb5345c0d67b9e730b1b57827",
+          "bytes": 27724,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/story.svg",
+          "sha256": "062e15bae194a9cc1d638312ee0a6675b96418a85f1cda5fad908dedd0a4f382",
+          "bytes": 28790,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/presentation-title.svg",
+          "sha256": "e7e68fcd570692673b34d5eeb35704a02e95dda0d68802ad768ee8f5953a1dd7",
+          "bytes": 33636,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/app-icon.svg",
+          "sha256": "29f1563836b42ba9033ee58f44db749131b2bc83beee421acb018da4e7220312",
+          "bytes": 868,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/png/social-square.png",
+          "sha256": "f27faf7cf01ee90a18136b5e8bba9d9ace50c551b04a7675ed56419d269b6512",
+          "bytes": 877891,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/social-square.webp",
+          "sha256": "5f52ba4fa29e39b699b773779a9cfba02d88d3650498d989986389cf96dc66cc",
+          "bytes": 31410,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/og-image.png",
+          "sha256": "fe6e1049d14c4783acee0275f4f47ae56a613c66a3fe071a703698e40f4bf734",
+          "bytes": 652480,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/og-image.webp",
+          "sha256": "7089b87692830c24c3a739b720720ca8af626cedf1b70959ee4970b51d574eef",
+          "bytes": 24814,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/story.png",
+          "sha256": "e97716fe45c9bc8379f8c9c14a4c55d5e6a489208610be528370aae311435334",
+          "bytes": 1584583,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/story.webp",
+          "sha256": "f88f0d35721deba37a4672187f13aaaa3ab3273ddd2b4a0beef03d9fca56532b",
+          "bytes": 40608,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/presentation-title.png",
+          "sha256": "1899939039e56b02283ff65a5a6d7549c555d347730eaff7f381934671931396",
+          "bytes": 1140105,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/presentation-title.webp",
+          "sha256": "89fb966292a3c7bfe61a5b6a629546f3c8fc18096d00da34b50f64dc196df244",
+          "bytes": 40292,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/app-icon.png",
+          "sha256": "f035bb747574d767902786077d1becdba9ad1d3583188462cfb70fb9df659d9d",
+          "bytes": 18918,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/pdf/business-card-front.pdf",
+          "sha256": "7d2a099d3da34e1520d1996861ac2a82244e4a71544d3d1d4422c812c23389a7",
+          "bytes": 9476,
+          "format": "pdf",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/pdf/business-card-back.pdf",
+          "sha256": "0eb7bfd2944d527eddcb61675d24b42106c26e016b68ea1792e62a601a56c71c",
+          "bytes": 33281,
+          "format": "pdf",
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-logo-1",
+        "parameters": {
+          "concept": "day-arc",
+          "wordmark": "Haldora",
+          "weight": 600
+        },
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:18:56.266Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-11T22:20:09.601Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        }
+      ],
+      "rights": {
+        "status": "restricted",
+        "notes": "Original geometry; wordmark outlined from a font under its recorded licence. No trademark clearance performed."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vector-integrity",
+            "pass": true
+          },
+          {
+            "id": "complete-set",
+            "pass": true
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "brand"
+      ],
+      "createdAt": "2026-11-11T22:20:09.601Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "brand-guidelines",
+      "kind": "document",
+      "purpose": "Brand guidelines document",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "brand/guidelines.html",
+          "sha256": "021e47bf11225c04c8b34ab07ba47648d319b415b7aef9ba8b328b235b18caa7",
+          "bytes": 581906,
+          "format": "html",
+          "role": "export"
+        },
+        {
+          "path": "brand/guidelines.pdf",
+          "sha256": "097f9eea1ac9f863306407e5b63c5f6ab97621bf48e24162e1cf2bc2a44c8eef",
+          "bytes": 4402719,
+          "format": "pdf",
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-logo-1",
+        "parameters": {
+          "concept": "day-arc",
+          "wordmark": "Haldora",
+          "weight": 600
+        },
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:18:56.303Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-11T22:20:09.631Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        }
+      ],
+      "rights": {
+        "status": "restricted",
+        "notes": "Original geometry; wordmark outlined from a font under its recorded licence. No trademark clearance performed."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vector-integrity",
+            "pass": true
+          },
+          {
+            "id": "complete-set",
+            "pass": true
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "brand"
+      ],
+      "createdAt": "2026-11-11T22:20:09.631Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "brand-icons",
+      "kind": "vector",
+      "purpose": "Icon family",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "brand/icons/sun.svg",
+          "sha256": "e6c588ba7306130682ce501ce73e9182bbaea9da53049f43de2fe25ab5d5413b",
+          "bytes": 476,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/moon.svg",
+          "sha256": "0aae22b7dfdf8d07413e570bdd3226c420e8100012db1b3fd91efe66f2fe44ec",
+          "bytes": 274,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/arc.svg",
+          "sha256": "b97c3d7af6a89d1e65f86ab7f87ff552588b21462a90707d2bc430b5f238601a",
+          "bytes": 308,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/battery.svg",
+          "sha256": "84387aef6af305736aa8f3d328b6e60812514c4304d332bf634d78ec2d177361",
+          "bytes": 420,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/home.svg",
+          "sha256": "10b8716db34023a1f051bbdc0641930e2576ce078ab42841a43cff02377fecaa",
+          "bytes": 345,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/grid.svg",
+          "sha256": "974630c6c2e8384062bed3c6e5b527d9d6579b9c77041e0b6b72a8c6b473dd0d",
+          "bytes": 376,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/bolt.svg",
+          "sha256": "f5957f4fb59fa73b93f88a0cf54afb50fcaad985d716d45b78750cbbe4295404",
+          "bytes": 267,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/leaf.svg",
+          "sha256": "98863847da14b3f9c73b8e4e3e865e59e21f34aab005518f45e8bca59fa4af2a",
+          "bytes": 292,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/clock.svg",
+          "sha256": "6bab9905ff0ae7164b1e03333d99bae912de87f1a4ef0106db9def0a4176ff3d",
+          "bytes": 282,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/sliders.svg",
+          "sha256": "8b9763696a2949d44e9f30cf1b43c332726c94d3d584fd035e5345f3ea66e0ff",
+          "bytes": 380,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/chart.svg",
+          "sha256": "c4ffd46d6ea51bc386e993b944cf83eeb3f361257679d1b7ae380f734aa18a76",
+          "bytes": 275,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/bell.svg",
+          "sha256": "5c16837a3aef90a9c650dff4c6c727a90d35f6b2b7c804ac79ebda0e70ef3d12",
+          "bytes": 291,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/device.svg",
+          "sha256": "88310a061decc7c5651344022a8ecebbe7e25d32b6711c0ceb33efa5e5bd2ca2",
+          "bytes": 382,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/plug.svg",
+          "sha256": "63e45414417b2afc972fd1e36ab4bfed55fb450c60653b92ba2f9f9e0a9faeda",
+          "bytes": 321,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/offline.svg",
+          "sha256": "fec46060ab0d84e53a86040db21f2f21c37b7c0d90042e075df8784f87927b17",
+          "bytes": 387,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/alert.svg",
+          "sha256": "e761f5bb03c8d767e4b6ab21d393101c48c8d7d31f20c4db9653030aa1fc365c",
+          "bytes": 311,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/check.svg",
+          "sha256": "9664ed5013217c61245a7695b420e149bb0dc8035a88e76e38e7518d615faedb",
+          "bytes": 244,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/plus.svg",
+          "sha256": "30376a37e5d2a87b812bd3746c1af3f78a04bb5009f04913d70063a9350a76df",
+          "bytes": 253,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/close.svg",
+          "sha256": "be64d927cae965d85d5af5f0ed3218dd5455e7471623a639d9e1979ed8a9fa26",
+          "bytes": 265,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/menu.svg",
+          "sha256": "74cff20e7dc86028b022a01f9262c175cbb1f66f07c411df41833c7cf36e656e",
+          "bytes": 276,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/arrow-right.svg",
+          "sha256": "59d2adf809213562f21dfb8d79a7f6ac9eccd24813dde8429b7bf921fe862752",
+          "bytes": 254,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/chevron-down.svg",
+          "sha256": "a196e7dafd51517796f1cd15969e124cc5181f48b6fd33a399021422f22569fa",
+          "bytes": 238,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/refresh.svg",
+          "sha256": "d8f2d1f30fbf689b7466c50b967c6f25cfa6a6495cf7facb5616afd83066ae54",
+          "bytes": 272,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/user.svg",
+          "sha256": "c430a46d518f30acd03434762438a46bb40fae91ff5903a6ffc57b6298fe3672",
+          "bytes": 291,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/history.svg",
+          "sha256": "34a98626ee345fbc82d79aaa762a750b96af9369b5e87f337b3f457e17d9e812",
+          "bytes": 292,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/car.svg",
+          "sha256": "cf9b8ae2fdb775b1818e4bdbf43044056091899756f3fe1be24dee6b657064c7",
+          "bytes": 329,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/icons/icons.json",
+          "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064",
+          "bytes": 3314,
+          "format": "json",
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-logo-1",
+        "parameters": {
+          "concept": "day-arc",
+          "wordmark": "Haldora",
+          "weight": 600
+        },
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:18:56.214Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-11T22:20:09.581Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        }
+      ],
+      "rights": {
+        "status": "restricted",
+        "notes": "Original geometry; wordmark outlined from a font under its recorded licence. No trademark clearance performed."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vector-integrity",
+            "pass": true
+          },
+          {
+            "id": "complete-set",
+            "pass": true
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "brand"
+      ],
+      "createdAt": "2026-11-11T22:20:09.581Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "brand-logo-system",
+      "kind": "vector",
+      "purpose": "Logo system: symbol, wordmark and lockups in colour, reversed and one-colour",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "brand/logo/haldora-symbol.svg",
+          "sha256": "655af8e2f7cde25d2d6aaf98d2d08f67641d0020ef8ac2941bb76d631dc998d1",
+          "bytes": 791,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-wordmark.svg",
+          "sha256": "2d2347ec7b73af0e9cfaa5e4bc6e68e4fae3f637bb315547f348b01a815bb1d7",
+          "bytes": 3606,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-horizontal.svg",
+          "sha256": "25be90c1276570991d144a049637f177652230ad61244bc49966e6a1431a513c",
+          "bytes": 4193,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-stacked.svg",
+          "sha256": "dc802447b71695f48808b4f85ef5eb6d76b23d45901d86eee98183f10f4aad3c",
+          "bytes": 4208,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-symbol-reversed.svg",
+          "sha256": "b2e78398a787d168d646b1368f4fdc8aac76a9add6ed851a4b524bda19c5a746",
+          "bytes": 800,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-wordmark-reversed.svg",
+          "sha256": "fa3639551842b1c1b96551e6f43478c4f64d023900c37e9c0e7f4a9822f55579",
+          "bytes": 3615,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-horizontal-reversed.svg",
+          "sha256": "0586dfd090420a9c9279ec336fffb35bb766b04af75ae5652f8bca852cc11ac8",
+          "bytes": 4175,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-stacked-reversed.svg",
+          "sha256": "769f23f8fbac37be42171e475efe2bf015090b0a6dbb6e2a8c31a434fb5e7bc9",
+          "bytes": 4190,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-symbol-mono-ink.svg",
+          "sha256": "c8ff1f381305f5cc72c1ab51d562028115d61b5e092a7cb481c7a3ee237ef6b6",
+          "bytes": 772,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-horizontal-mono-ink.svg",
+          "sha256": "84261665a1861ecfc212eb59ffbd9dbd88748b35a5cddb0a6d3bbce62c41bdd7",
+          "bytes": 4174,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-stacked-mono-ink.svg",
+          "sha256": "f9a1cad78d8f1f2be9397e1f1f56f294da41899a78e4d767df019ddba61fcdec",
+          "bytes": 4190,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-symbol-mono-paper.svg",
+          "sha256": "20754656ba7c1c4cd7b30913a0ed25db04381248b182caff27d8ac3ac1762b5d",
+          "bytes": 774,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-horizontal-mono-paper.svg",
+          "sha256": "4059ee5125fbe90f79a721f3e58abbf5d4b626ba8b82b943ec465b6a3976517a",
+          "bytes": 4176,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/haldora-lockup-stacked-mono-paper.svg",
+          "sha256": "979576d80fae17013f251be238ca0a087acb96ea7e68a6d999b76aaffc638cce",
+          "bytes": 4192,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/favicon.svg",
+          "sha256": "6e28a85bd31aff7eeb186b205a597d062396ae91ebb0eff6d4b5e31f4e2d498f",
+          "bytes": 699,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/png/symbol-512.png",
+          "sha256": "98a42163ac4c10139a75d0407e952363cc75743b874ba3ea65a1a2c17a7beb9b",
+          "bytes": 6692,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/png/symbol-192.png",
+          "sha256": "8fa3c6d183bfbdc2f571f9e99d3f89dd7b9a4ca74ce9a3b19ca17df7bbfcf6ff",
+          "bytes": 2193,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/png/favicon-32.png",
+          "sha256": "9bef8f52db69b0a2e99378204f8c4d7e9b8d7d69b73ec0f678e2036046c4d67a",
+          "bytes": 652,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/png/apple-touch-icon-180.png",
+          "sha256": "ea9282391fec39789e0171b9875e86c91b17bae3fe502923b013e0f9665fb261",
+          "bytes": 3595,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/png/lockup-horizontal-1200.png",
+          "sha256": "dcaa1b4cadc70fc0dc7e9f67b29b05a2e0d34a80ae524c1f42d9043e5bcb29c1",
+          "bytes": 19168,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/webp/lockup-horizontal-1200.webp",
+          "sha256": "92491aaa513183f56295499f7c6cef1bad2c57133c4c69a8a3f1ac6ecea0bcf6",
+          "bytes": 10500,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/png/lockup-horizontal-reversed-1200.png",
+          "sha256": "cc9fccc2f6882fa3bffb6819bdd47ec8638b514c86fee17159c5c8db8e563bfd",
+          "bytes": 19347,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/webp/lockup-horizontal-reversed-1200.webp",
+          "sha256": "1d2d7da98f324759fb3ebd96eee26460667c6fdfc7d525d11f457c5aec892202",
+          "bytes": 11330,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/logo/pdf/haldora-lockup-horizontal.pdf",
+          "sha256": "028ec78f846ad51d58cc820a43fb26a29e1adf860c1c19af6c0a6b2e43850be9",
+          "bytes": 10620,
+          "format": "pdf",
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-logo-1",
+        "parameters": {
+          "concept": "day-arc",
+          "wordmark": "Haldora",
+          "weight": 600
+        },
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:18:56.197Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-11T22:20:09.549Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        }
+      ],
+      "rights": {
+        "status": "restricted",
+        "notes": "Original geometry; wordmark outlined from a font under its recorded licence. No trademark clearance performed."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vector-integrity",
+            "pass": true
+          },
+          {
+            "id": "complete-set",
+            "pass": true
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "brand"
+      ],
+      "createdAt": "2026-11-11T22:20:09.549Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "campaign-square",
+      "kind": "raster",
+      "purpose": "Launch campaign, social square",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/campaign-square/campaign-square-1080x1080.png",
+          "sha256": "ae23b3c6d02b67a652b289bb1e70f696dc763657ae47829152fbacce9bc38809",
+          "bytes": 877854,
+          "format": "png",
+          "width": 1080,
+          "height": 1080,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/campaign-square/campaign-square-1080x1080.webp",
+          "sha256": "cf69e103b3d5156288dab4b000e0fbc77c1fffc08a7dcb012b2dc5a88a786370",
+          "bytes": 24894,
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dusk",
+          "layer": null,
+          "scheme": "light",
+          "width": 1080,
+          "height": 1080,
+          "dnaRevision": 1
+        },
+        "seed": "campaign",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:48.418Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1080x1080, required 1080x1080"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 78.9"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "7074623961635931"
+          },
+          {
+            "id": "byte-budget:png",
+            "pass": true,
+            "detail": "877854 bytes, budget 900000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "24894 bytes, budget 900000"
+          },
+          {
+            "id": "text-is-vector",
+            "pass": true,
+            "detail": "headline and logo composited as outlined vector paths"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "social"
+      ],
+      "createdAt": "2026-11-11T22:20:48.418Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "campaign-story",
+      "kind": "raster",
+      "purpose": "Launch campaign, vertical story",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/campaign-story/campaign-story-1080x1920.png",
+          "sha256": "6f6ccd6ca5fd817807a60dfb514b5cc9725efe6591fb5e2b44170fa16c5e5b13",
+          "bytes": 1594758,
+          "format": "png",
+          "width": 1080,
+          "height": 1920,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/campaign-story/campaign-story-1080x1920.webp",
+          "sha256": "337545ba0edac44cff2e79cade33f406211cc6c27f7d6a469ab633f108425018",
+          "bytes": 30226,
+          "format": "webp",
+          "width": 1080,
+          "height": 1920,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dawn",
+          "layer": null,
+          "scheme": "light",
+          "width": 1080,
+          "height": 1920,
+          "dnaRevision": 1
+        },
+        "seed": "campaign",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:53.365Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-11T22:35:34.218Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1080x1920, required 1080x1920"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 85.7"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "6010075e63635911"
+          },
+          {
+            "id": "byte-budget:png",
+            "pass": true,
+            "detail": "1594758 bytes, budget 2200000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "30226 bytes, budget 2200000"
+          },
+          {
+            "id": "text-is-vector",
+            "pass": true,
+            "detail": "headline and logo composited as outlined vector paths"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "social"
+      ],
+      "createdAt": "2026-11-11T22:35:34.219Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "campaign-wide",
+      "kind": "raster",
+      "purpose": "Launch campaign, link preview and banner",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/campaign-wide/campaign-wide-1200x630.png",
+          "sha256": "a40dbe26b4bd0c8817698833ca4d72ad0c23b46420b9cf144da3ec90be00bf11",
+          "bytes": 442374,
+          "format": "png",
+          "width": 1200,
+          "height": 630,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/campaign-wide/campaign-wide-1200x630.webp",
+          "sha256": "1e13d33cf5a9dd7c0bf991965f87920f75a6d129415825dd438db2cb79c15178",
+          "bytes": 21746,
+          "format": "webp",
+          "width": 1200,
+          "height": 630,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 630,
+          "dnaRevision": 1
+        },
+        "seed": "campaign",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:55.743Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x630, required 1200x630"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 40.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "e4eb4b56480e1b31"
+          },
+          {
+            "id": "byte-budget:png",
+            "pass": true,
+            "detail": "442374 bytes, budget 600000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "21746 bytes, budget 600000"
+          },
+          {
+            "id": "text-is-vector",
+            "pass": true,
+            "detail": "headline and logo composited as outlined vector paths"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "social",
+        "web:og"
+      ],
+      "createdAt": "2026-11-11T22:20:55.743Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-contour",
+      "kind": "vector",
+      "purpose": "Feature illustration: the home's energy map",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/feature-contour/feature-contour-1200x900.svg",
+          "sha256": "703cb3b20dc6e20db1c0088d83ba33703bc6531d9e0335ab90c510a4a0a20e01",
+          "bytes": 29712,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-contour/feature-contour-1200x900.webp",
+          "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17",
+          "bytes": 62966,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "contour-map",
+          "variant": null,
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 1
+        },
+        "seed": "4",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:43.494Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 12.3"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "40c0c0c0c8e0c0e0"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "62966 bytes, budget 260000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-11T22:20:43.494Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-instrument",
+      "kind": "vector",
+      "purpose": "Feature illustration: the day curve",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/feature-instrument/feature-instrument-1200x900.svg",
+          "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da",
+          "bytes": 7759,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-instrument/feature-instrument-1200x900.webp",
+          "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c",
+          "bytes": 16048,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "grid-instrument",
+          "variant": null,
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 1
+        },
+        "seed": "3",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:45.343Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 16.1"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00103032746cd800"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "16048 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features",
+        "app:empty-state"
+      ],
+      "createdAt": "2026-11-11T22:20:45.343Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-strata",
+      "kind": "vector",
+      "purpose": "Feature illustration: stored energy",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/feature-strata/feature-strata-1200x900.svg",
+          "sha256": "fd120d12bb328f2d5543950f9733f35c3870d6aa1cf95dd4385cd4d046d23e7d",
+          "bytes": 3984,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-strata/feature-strata-1200x900.webp",
+          "sha256": "e4ea467b8b2223bbf724eaa2604181f2d1564fb4602dcab9b094ab1b152588bd",
+          "bytes": 16200,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "strata-bands",
+          "variant": null,
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 1
+        },
+        "seed": "9",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:44.389Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 80.0"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0039963cf49a7000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "16200 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-11T22:20:44.389Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-arc",
+      "kind": "vector",
+      "purpose": "Website hero, arc and sun plane on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-arc/hero-arc-2400x1500.svg",
+          "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae",
+          "bytes": 910,
+          "format": "svg",
+          "width": 2400,
+          "height": 1500,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/hero-arc/hero-arc-2400x1500.webp",
+          "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927",
+          "bytes": 25210,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "arc",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:20.801Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 51.5"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0c0c080000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "25210 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-11T22:20:20.801Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-far",
+      "kind": "raster",
+      "purpose": "Website hero, far hills on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-far/hero-far-2400x1500.webp",
+          "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75",
+          "bytes": 12338,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "far",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:21.925Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 100.8"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000405d0000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12338 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-11T22:20:21.925Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-mid",
+      "kind": "raster",
+      "purpose": "Website hero, middle hills on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-mid/hero-mid-2400x1500.webp",
+          "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d",
+          "bytes": 12732,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "mid",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:23.034Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 80.2"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000000a5a00"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12732 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-11T22:20:23.034Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-mobile",
+      "kind": "raster",
+      "purpose": "Website hero, single composed image for small screens and reduced motion",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-mobile/hero-mobile-1080x1440.webp",
+          "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb",
+          "bytes": 15112,
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/hero-mobile/hero-mobile-1080x1440.avif",
+          "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0",
+          "bytes": 8148,
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": null,
+          "scheme": "light",
+          "width": 1080,
+          "height": 1440,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:27.064Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1080x1440, required 1080x1440"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 39.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "30301448a2b23736"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "15112 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "8148 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero",
+        "mobile:onboarding"
+      ],
+      "createdAt": "2026-11-11T22:20:27.064Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-near",
+      "kind": "raster",
+      "purpose": "Website hero, near hills on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-near/hero-near-2400x1500.webp",
+          "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b",
+          "bytes": 12350,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "near",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:24.143Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 55.5"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000000088c9"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12350 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-11T22:20:24.143Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-sky",
+      "kind": "raster",
+      "purpose": "Website hero, back plane: sky gradient",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-sky/hero-sky-2400x1500.webp",
+          "sha256": "08c8171acf139d14e9791874a2a7968953b9d0fb01d5865287e70f0ed4251684",
+          "bytes": 12346,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/hero-sky/hero-sky-2400x1500.avif",
+          "sha256": "fed1a97fa6681b23dc95639c4bd5c003684228dc055ef7a10ce1c4b9009194a4",
+          "bytes": 2089,
+          "format": "avif",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "sky",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:19.574Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 14.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12346 bytes, budget 220000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "2089 bytes, budget 220000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-11T22:20:19.575Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "model-cell",
+      "kind": "model-3d",
+      "purpose": "Product model for the interactive 3D experience",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "scene/public/models/cell.glb",
+          "sha256": "f3100a5c24d4fdc6cd3418ae1526f5be32ff6c5daec488f147059afce9f43b9f",
+          "bytes": 57180,
+          "format": "glb",
+          "role": "export"
+        },
+        {
+          "path": "scene/public/models/cell.source.glb",
+          "sha256": "3b2c57e62481bddca69cc0d95687f4345f0624ac5f8ca8642f49523ae274c08c",
+          "bytes": 205248,
+          "format": "glb",
+          "role": "source"
+        },
+        {
+          "path": "scene/public/fallback/cell-chalk.svg",
+          "sha256": "00875f9b72bd0fa00657995c6223549fbdec4b972c1805313953382c93b6225f",
+          "bytes": 935,
+          "format": "svg",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-chalk.webp",
+          "sha256": "8cab50b8df37d40d6a04768080c4be4973d259b826c3fe079d145cf85ebd594b",
+          "bytes": 3900,
+          "format": "webp",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-dusk.svg",
+          "sha256": "a81609b6c701f985e36683ee56a0817bfb817d1d5dbc74f1ea5d25e281e972a2",
+          "bytes": 934,
+          "format": "svg",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-dusk.webp",
+          "sha256": "2e9cda9004a80dda72c90b4c704ca604e4d28dceda3bfe929949e4ec47a3b31a",
+          "bytes": 5440,
+          "format": "webp",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-ember.svg",
+          "sha256": "4902f68e41bf88d3af325431e4d72be42cf1bb23f091acead6103747f9b0336c",
+          "bytes": 935,
+          "format": "svg",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-ember.webp",
+          "sha256": "a397e8be0cf5f37152d0f4c0fee0302e75ec9113535481f8a4fcafbf259d5f19",
+          "bytes": 5422,
+          "format": "webp",
+          "role": "fallback"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-geometry-1",
+        "parameters": {
+          "dimensionsM": {
+            "width": 0.62,
+            "height": 1.02,
+            "depth": 0.16
+          },
+          "optimisation": "dedup + weld + prune + vertex reorder + EXT_meshopt_compression (quantised)"
+        },
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:28:04.779Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-11T22:28:31.435Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-11T22:35:35.761Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-11T22:42:44.828Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-11T22:45:01.300Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-11T22:47:39.778Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Original procedural geometry; no third-party model, texture or HDRI."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "gltf-validator-source",
+            "pass": true,
+            "detail": "0 errors, 0 warnings"
+          },
+          {
+            "id": "gltf-validator-optimised",
+            "pass": true,
+            "detail": "0 errors, 0 warnings"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "scene",
+        "web:product"
+      ],
+      "createdAt": "2026-11-11T22:47:39.778Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "pattern-arc",
+      "kind": "vector",
+      "purpose": "Brand pattern for section grounds and packaging",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/pattern-arc/pattern-arc-1200x1200.svg",
+          "sha256": "e5b9448e616d7534767b72edb0bf92b9476999bea36e9ca8e8fb431304233ca1",
+          "bytes": 6258,
+          "format": "svg",
+          "width": 1200,
+          "height": 1200,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/pattern-arc/pattern-arc-1200x1200.webp",
+          "sha256": "c5f4a2e49b5a5a27355430a8d37e14dbe75ac7192f40360e25847c7fcf9d8397",
+          "bytes": 55792,
+          "format": "webp",
+          "width": 1200,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "pattern-tile",
+          "variant": null,
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "11",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:42.489Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x1200, required 1200x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 51.8"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "49493a6969134969"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "55792 bytes, budget 260000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:contact",
+        "brand"
+      ],
+      "createdAt": "2026-11-11T22:20:42.489Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dawn",
+      "kind": "raster",
+      "purpose": "Scroll story chapter: sunrise",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dawn/story-dawn-1600x1200.webp",
+          "sha256": "4f0d40d43eb0cd7bb368c35f83c3d2f9b0f7fd5d97b18e9f9ed2ee085e6e96dd",
+          "bytes": 21376,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/story-dawn/story-dawn-1600x1200.avif",
+          "sha256": "e87d2dac885e90b7870d5ec8e158e8d321dcd1f988f2e32768e67ee29cafa46e",
+          "bytes": 9894,
+          "format": "avif",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dawn",
+          "layer": null,
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:30.814Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 85.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000404065e34104"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "21376 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "9894 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-11T22:20:30.814Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dusk",
+      "kind": "raster",
+      "purpose": "Scroll story chapter: dusk",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dusk/story-dusk-1600x1200.webp",
+          "sha256": "f204ac0d17614f126773da9d23e99feb518dea0d763da101b3234a023cb62192",
+          "bytes": 21188,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/story-dusk/story-dusk-1600x1200.avif",
+          "sha256": "3ccae8c3e52ee6cd0ff0dc4d7cc1791796e13abf7039e8b56346fe54e81ed764",
+          "bytes": 9889,
+          "format": "avif",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dusk",
+          "layer": null,
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:38.071Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 77.5"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000410565e34204"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "21188 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "9889 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-11T22:20:38.071Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-night",
+      "kind": "raster",
+      "purpose": "Scroll story chapter: night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-night/story-night-1600x1200.webp",
+          "sha256": "88d7c26ae2d786a9481a7f7e751dcd8e871636f92eaac2aa1e89118e8ed18cfe",
+          "bytes": 14186,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/story-night/story-night-1600x1200.avif",
+          "sha256": "e492a6e036322ccacca24612354d34bf047a70fb153827f13c87e65f1706bce1",
+          "bytes": 7242,
+          "format": "avif",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": null,
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:42.009Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 15.4"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000b2b00002dc540"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "14186 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "7242 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-11T22:20:42.009Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-noon",
+      "kind": "raster",
+      "purpose": "Scroll story chapter: noon",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-noon/story-noon-1600x1200.webp",
+          "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1",
+          "bytes": 18426,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/story-noon/story-noon-1600x1200.avif",
+          "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf",
+          "bytes": 9506,
+          "format": "avif",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": null,
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-11T22:20:34.244Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 39.4"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "3032308221634104"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "18426 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "9506 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-11T22:20:34.244Z"
+    }
+  ]
+}

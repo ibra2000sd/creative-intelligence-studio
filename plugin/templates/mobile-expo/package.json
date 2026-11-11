@@ -1,0 +1,49 @@
+{
+  "name": "cis-mobile-app",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --ci",
+    "export:native": "expo export --platform ios --platform android --output-dir dist-native",
+    "export:web": "expo export --platform web --output-dir dist-web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/fraunces": "0.4.1",
+    "@expo-google-fonts/ibm-plex-sans-arabic": "0.4.2",
+    "@expo-google-fonts/instrument-sans": "0.4.2",
+    "@expo/metro-runtime": "~58.0.17",
+    "expo": "~58.0.24",
+    "expo-constants": "~58.0.16",
+    "expo-font": "~58.0.12",
+    "expo-linking": "~58.0.17",
+    "expo-localization": "~58.0.5",
+    "expo-router": "~58.0.31",
+    "expo-splash-screen": "~58.0.14",
+    "expo-status-bar": "~58.0.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-gesture-handler": "~3.3.0",
+    "react-native-reanimated": "4.7.1",
+    "react-native-safe-area-context": "~5.11.1",
+    "react-native-screens": "~4.30.1",
+    "react-native-svg": "15.16.0",
+    "react-native-web": "~0.21.4",
+    "react-native-worklets": "0.13.0"
+  },
+  "devDependencies": {
+    "@react-native/jest-preset": "^0.88.1",
+    "@testing-library/react-native": "^14.1.0",
+    "@types/jest": "^30.0.0",
+    "@types/react": "~19.3.0",
+    "jest": "^30.0.0",
+    "jest-expo": "~58.0.14",
+    "typescript": "~5.9.0"
+  }
+}

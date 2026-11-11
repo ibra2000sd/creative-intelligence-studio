@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/research-log/1.0.0",
+  "title": "Research Log",
+  "description": "Dated, sourced findings. A finding of kind `fact` must cite a URL; an `inference` must say what it is inferred from.",
+  "type": "object",
+  "required": ["schemaVersion", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "topic", "kind", "finding", "recordedOn"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^r-[0-9]{3,}$" },
+          "topic": { "enum": ["audience", "competitor", "convention", "technology", "accessibility", "legal", "content"] },
+          "kind": { "enum": ["fact", "inference", "client-statement"] },
+          "finding": { "type": "string", "minLength": 10 },
+          "source": { "type": "string", "format": "uri" },
+          "basis": { "type": "string" },
+          "recordedOn": { "type": "string", "format": "date" },
+          "implication": { "type": "string" }
+        },
+        "allOf": [
+          { "if": { "properties": { "kind": { "const": "fact" } } }, "then": { "required": ["source"] } },
+          { "if": { "properties": { "kind": { "const": "inference" } } }, "then": { "required": ["basis"] } }
+        ]
+      }
+    }
+  }
+}

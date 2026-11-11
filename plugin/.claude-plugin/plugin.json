@@ -1,0 +1,9 @@
+{
+  "name": "creative-intelligence-studio",
+  "displayName": "Creative Intelligence Studio",
+  "version": "0.1.0",
+  "description": "Creative engineering studio for Claude Code: one Experience DNA drives brand identity, websites, web apps, mobile apps, generated imagery, motion and 3D, with approval gates and evidence-backed QA.",
+  "author": { "name": "Creative Intelligence Studio contributors" },
+  "license": "MIT",
+  "keywords": ["design", "brand", "frontend", "motion", "3d", "mobile", "qa", "design-system"]
+}

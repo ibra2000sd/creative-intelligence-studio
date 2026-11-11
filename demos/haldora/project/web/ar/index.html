@@ -1,0 +1,18 @@
+<!doctype html>
+<html data-locale="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <!--head-->
+    <script>
+      // Apply a saved colour scheme before first paint to avoid a flash.
+      try { const s = localStorage.getItem('scheme'); if (s === 'light' || s === 'dark') document.documentElement.dataset.scheme = s; } catch {}
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <!--app-->
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/direction/1.0.0",
+  "title": "Creative Direction Proposal",
+  "description": "One art-direction territory. A project proposes two or three that must differ on recorded axes before any is approved.",
+  "type": "object",
+  "required": ["schemaVersion", "id", "title", "concept", "rationale", "emotionalIntent", "palette", "typography", "layoutGrammar", "motion", "imagery", "signature", "risks", "effort"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "title": { "type": "string", "minLength": 2 },
+    "concept": { "type": "string", "minLength": 40 },
+    "rationale": { "type": "string", "minLength": 40 },
+    "emotionalIntent": { "type": "string" },
+    "palette": {
+      "type": "object",
+      "required": ["bg", "text", "primary", "accent"],
+      "additionalProperties": false,
+      "properties": {
+        "bg": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "text": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "primary": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "support": { "type": "array", "items": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" } }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "required": ["display", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "display": { "type": "string" },
+        "text": { "type": "string" },
+        "character": { "type": "string" }
+      }
+    },
+    "layoutGrammar": { "enum": ["editorial", "cinematic", "product-showcase", "conversion", "catalogue", "instrument"] },
+    "motion": {
+      "type": "object",
+      "required": ["intensity", "personality"],
+      "additionalProperties": false,
+      "properties": {
+        "intensity": { "enum": ["none", "subtle", "balanced", "expressive"] },
+        "personality": { "type": "string" }
+      }
+    },
+    "imagery": {
+      "type": "object",
+      "required": ["style", "motifs"],
+      "additionalProperties": false,
+      "properties": {
+        "style": { "type": "string" },
+        "motifs": { "type": "array", "minItems": 1, "items": { "enum": ["arc", "horizon", "contour", "grid", "orbit", "strata", "grain", "bloom"] } }
+      }
+    },
+    "signature": { "type": "string", "minLength": 10 },
+    "usabilityImplications": { "type": "array", "items": { "type": "string" } },
+    "technicalRequirements": { "type": "array", "items": { "type": "string" } },
+    "risks": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "effort": { "enum": ["low", "medium", "high"] },
+    "fitScore": {
+      "type": "object",
+      "description": "Agent's own evaluation against the brief. An evaluation, never an approval.",
+      "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 5 }
+    }
+  }
+}

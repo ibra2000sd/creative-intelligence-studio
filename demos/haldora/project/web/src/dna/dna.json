@@ -1,0 +1,119 @@
+{
+  "dnaRevision": 1,
+  "name": "Haldora",
+  "tagline": "Your home's energy, from sunrise to night",
+  "locales": [
+    "en",
+    "ar"
+  ],
+  "defaultLocale": "en",
+  "motion": {
+    "intensity": "balanced",
+    "durationMs": {
+      "instant": 80,
+      "fast": 160,
+      "base": 280,
+      "slow": 520,
+      "cinematic": 1100
+    },
+    "easing": {
+      "standard": [
+        0.3,
+        0,
+        0.2,
+        1
+      ],
+      "enter": [
+        0.16,
+        1,
+        0.3,
+        1
+      ],
+      "exit": [
+        0.5,
+        0,
+        0.8,
+        0.2
+      ],
+      "emphasized": [
+        0.2,
+        0.8,
+        0.2,
+        1
+      ]
+    },
+    "spring": {
+      "stiffness": 170,
+      "damping": 22,
+      "mass": 1
+    },
+    "staggerMs": 60,
+    "reducedMotion": "crossfade"
+  },
+  "dataViz": [
+    "#E9A23B",
+    "#5A61C9",
+    "#B5381F",
+    "#3E9B76"
+  ],
+  "finishes": [
+    {
+      "id": "chalk",
+      "name": "Chalk",
+      "baseColor": "#F6F1E7",
+      "metalness": 0.05,
+      "roughness": 0.62,
+      "accent": "#E9A23B"
+    },
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "baseColor": "#2A2D66",
+      "metalness": 0.2,
+      "roughness": 0.48,
+      "accent": "#E9A23B"
+    },
+    {
+      "id": "ember",
+      "name": "Ember",
+      "baseColor": "#B5381F",
+      "metalness": 0.1,
+      "roughness": 0.55,
+      "accent": "#FFFDF8"
+    }
+  ],
+  "color": {
+    "light": {
+      "bg": "#F6F1E7",
+      "surface": "#EDE6D6",
+      "surfaceRaised": "#FFFDF8",
+      "text": "#1C1B18",
+      "textMuted": "#5E5A50",
+      "primary": "#2A2D66",
+      "onPrimary": "#FFFDF8",
+      "accent": "#E9A23B",
+      "onAccent": "#1C1B18",
+      "border": "#D9D0BC",
+      "focus": "#2A2D66",
+      "success": "#2F6B4F",
+      "warning": "#8A5800",
+      "danger": "#B5381F"
+    },
+    "dark": {
+      "bg": "#14152B",
+      "surface": "#1D1F3D",
+      "surfaceRaised": "#272A4F",
+      "text": "#F3EEE2",
+      "textMuted": "#B4AFC4",
+      "primary": "#E9A23B",
+      "onPrimary": "#1C1B18",
+      "accent": "#E58A6B",
+      "onAccent": "#1C1B18",
+      "border": "#3A3D66",
+      "focus": "#E9A23B",
+      "success": "#6FBF95",
+      "warning": "#E9A23B",
+      "danger": "#F0876A"
+    }
+  }
+}

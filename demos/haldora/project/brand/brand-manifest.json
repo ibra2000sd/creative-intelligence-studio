@@ -1,0 +1,606 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-11T22:20:09.488Z",
+  "dnaRevision": 1,
+  "brand": "Haldora",
+  "selectedConcept": "day-arc",
+  "files": [
+    {
+      "path": "brand/applications/app-icon.svg",
+      "bytes": 868,
+      "sha256": "29f1563836b42ba9033ee58f44db749131b2bc83beee421acb018da4e7220312"
+    },
+    {
+      "path": "brand/applications/business-card-back.svg",
+      "bytes": 22263,
+      "sha256": "0c3ed5662a417d6c677429421fb61bda53c86a932b17b583915b7f57f53fbb98"
+    },
+    {
+      "path": "brand/applications/business-card-front.svg",
+      "bytes": 4330,
+      "sha256": "3a0cf0b91373155bbef50cb181418db2b88a605bc6766b64a788255436c25c16"
+    },
+    {
+      "path": "brand/applications/og-image.svg",
+      "bytes": 27724,
+      "sha256": "55e764bdf76cf5e6618b06bfb0e95ccfdfba740cb5345c0d67b9e730b1b57827"
+    },
+    {
+      "path": "brand/applications/pdf/business-card-back.pdf",
+      "bytes": 33281,
+      "sha256": "0eb7bfd2944d527eddcb61675d24b42106c26e016b68ea1792e62a601a56c71c"
+    },
+    {
+      "path": "brand/applications/pdf/business-card-front.pdf",
+      "bytes": 9476,
+      "sha256": "7d2a099d3da34e1520d1996861ac2a82244e4a71544d3d1d4422c812c23389a7"
+    },
+    {
+      "path": "brand/applications/png/app-icon.png",
+      "bytes": 18918,
+      "sha256": "f035bb747574d767902786077d1becdba9ad1d3583188462cfb70fb9df659d9d"
+    },
+    {
+      "path": "brand/applications/png/og-image.png",
+      "bytes": 652480,
+      "sha256": "fe6e1049d14c4783acee0275f4f47ae56a613c66a3fe071a703698e40f4bf734"
+    },
+    {
+      "path": "brand/applications/png/presentation-title.png",
+      "bytes": 1140105,
+      "sha256": "1899939039e56b02283ff65a5a6d7549c555d347730eaff7f381934671931396"
+    },
+    {
+      "path": "brand/applications/png/social-square.png",
+      "bytes": 877891,
+      "sha256": "f27faf7cf01ee90a18136b5e8bba9d9ace50c551b04a7675ed56419d269b6512"
+    },
+    {
+      "path": "brand/applications/png/story.png",
+      "bytes": 1584583,
+      "sha256": "e97716fe45c9bc8379f8c9c14a4c55d5e6a489208610be528370aae311435334"
+    },
+    {
+      "path": "brand/applications/presentation-title.svg",
+      "bytes": 33636,
+      "sha256": "e7e68fcd570692673b34d5eeb35704a02e95dda0d68802ad768ee8f5953a1dd7"
+    },
+    {
+      "path": "brand/applications/social-square.svg",
+      "bytes": 28172,
+      "sha256": "0bd45320a4649b3742fa933eb2e37aefbbaa49e02b44e7ce815a8859dcce5d96"
+    },
+    {
+      "path": "brand/applications/story.svg",
+      "bytes": 28790,
+      "sha256": "062e15bae194a9cc1d638312ee0a6675b96418a85f1cda5fad908dedd0a4f382"
+    },
+    {
+      "path": "brand/applications/webp/og-image.webp",
+      "bytes": 24814,
+      "sha256": "7089b87692830c24c3a739b720720ca8af626cedf1b70959ee4970b51d574eef"
+    },
+    {
+      "path": "brand/applications/webp/presentation-title.webp",
+      "bytes": 40292,
+      "sha256": "89fb966292a3c7bfe61a5b6a629546f3c8fc18096d00da34b50f64dc196df244"
+    },
+    {
+      "path": "brand/applications/webp/social-square.webp",
+      "bytes": 31410,
+      "sha256": "5f52ba4fa29e39b699b773779a9cfba02d88d3650498d989986389cf96dc66cc"
+    },
+    {
+      "path": "brand/applications/webp/story.webp",
+      "bytes": 40608,
+      "sha256": "f88f0d35721deba37a4672187f13aaaa3ab3273ddd2b4a0beef03d9fca56532b"
+    },
+    {
+      "path": "brand/guidelines.html",
+      "bytes": 581906,
+      "sha256": "021e47bf11225c04c8b34ab07ba47648d319b415b7aef9ba8b328b235b18caa7"
+    },
+    {
+      "path": "brand/guidelines.pdf",
+      "bytes": 4402719,
+      "sha256": "097f9eea1ac9f863306407e5b63c5f6ab97621bf48e24162e1cf2bc2a44c8eef"
+    },
+    {
+      "path": "brand/icons/alert.svg",
+      "bytes": 311,
+      "sha256": "e761f5bb03c8d767e4b6ab21d393101c48c8d7d31f20c4db9653030aa1fc365c"
+    },
+    {
+      "path": "brand/icons/arc.svg",
+      "bytes": 308,
+      "sha256": "b97c3d7af6a89d1e65f86ab7f87ff552588b21462a90707d2bc430b5f238601a"
+    },
+    {
+      "path": "brand/icons/arrow-right.svg",
+      "bytes": 254,
+      "sha256": "59d2adf809213562f21dfb8d79a7f6ac9eccd24813dde8429b7bf921fe862752"
+    },
+    {
+      "path": "brand/icons/battery.svg",
+      "bytes": 420,
+      "sha256": "84387aef6af305736aa8f3d328b6e60812514c4304d332bf634d78ec2d177361"
+    },
+    {
+      "path": "brand/icons/bell.svg",
+      "bytes": 291,
+      "sha256": "5c16837a3aef90a9c650dff4c6c727a90d35f6b2b7c804ac79ebda0e70ef3d12"
+    },
+    {
+      "path": "brand/icons/bolt.svg",
+      "bytes": 267,
+      "sha256": "f5957f4fb59fa73b93f88a0cf54afb50fcaad985d716d45b78750cbbe4295404"
+    },
+    {
+      "path": "brand/icons/car.svg",
+      "bytes": 329,
+      "sha256": "cf9b8ae2fdb775b1818e4bdbf43044056091899756f3fe1be24dee6b657064c7"
+    },
+    {
+      "path": "brand/icons/chart.svg",
+      "bytes": 275,
+      "sha256": "c4ffd46d6ea51bc386e993b944cf83eeb3f361257679d1b7ae380f734aa18a76"
+    },
+    {
+      "path": "brand/icons/check.svg",
+      "bytes": 244,
+      "sha256": "9664ed5013217c61245a7695b420e149bb0dc8035a88e76e38e7518d615faedb"
+    },
+    {
+      "path": "brand/icons/chevron-down.svg",
+      "bytes": 238,
+      "sha256": "a196e7dafd51517796f1cd15969e124cc5181f48b6fd33a399021422f22569fa"
+    },
+    {
+      "path": "brand/icons/clock.svg",
+      "bytes": 282,
+      "sha256": "6bab9905ff0ae7164b1e03333d99bae912de87f1a4ef0106db9def0a4176ff3d"
+    },
+    {
+      "path": "brand/icons/close.svg",
+      "bytes": 265,
+      "sha256": "be64d927cae965d85d5af5f0ed3218dd5455e7471623a639d9e1979ed8a9fa26"
+    },
+    {
+      "path": "brand/icons/device.svg",
+      "bytes": 382,
+      "sha256": "88310a061decc7c5651344022a8ecebbe7e25d32b6711c0ceb33efa5e5bd2ca2"
+    },
+    {
+      "path": "brand/icons/grid.svg",
+      "bytes": 376,
+      "sha256": "974630c6c2e8384062bed3c6e5b527d9d6579b9c77041e0b6b72a8c6b473dd0d"
+    },
+    {
+      "path": "brand/icons/history.svg",
+      "bytes": 292,
+      "sha256": "34a98626ee345fbc82d79aaa762a750b96af9369b5e87f337b3f457e17d9e812"
+    },
+    {
+      "path": "brand/icons/home.svg",
+      "bytes": 345,
+      "sha256": "10b8716db34023a1f051bbdc0641930e2576ce078ab42841a43cff02377fecaa"
+    },
+    {
+      "path": "brand/icons/icons.json",
+      "bytes": 3314,
+      "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064"
+    },
+    {
+      "path": "brand/icons/leaf.svg",
+      "bytes": 292,
+      "sha256": "98863847da14b3f9c73b8e4e3e865e59e21f34aab005518f45e8bca59fa4af2a"
+    },
+    {
+      "path": "brand/icons/menu.svg",
+      "bytes": 276,
+      "sha256": "74cff20e7dc86028b022a01f9262c175cbb1f66f07c411df41833c7cf36e656e"
+    },
+    {
+      "path": "brand/icons/moon.svg",
+      "bytes": 274,
+      "sha256": "0aae22b7dfdf8d07413e570bdd3226c420e8100012db1b3fd91efe66f2fe44ec"
+    },
+    {
+      "path": "brand/icons/offline.svg",
+      "bytes": 387,
+      "sha256": "fec46060ab0d84e53a86040db21f2f21c37b7c0d90042e075df8784f87927b17"
+    },
+    {
+      "path": "brand/icons/plug.svg",
+      "bytes": 321,
+      "sha256": "63e45414417b2afc972fd1e36ab4bfed55fb450c60653b92ba2f9f9e0a9faeda"
+    },
+    {
+      "path": "brand/icons/plus.svg",
+      "bytes": 253,
+      "sha256": "30376a37e5d2a87b812bd3746c1af3f78a04bb5009f04913d70063a9350a76df"
+    },
+    {
+      "path": "brand/icons/refresh.svg",
+      "bytes": 272,
+      "sha256": "d8f2d1f30fbf689b7466c50b967c6f25cfa6a6495cf7facb5616afd83066ae54"
+    },
+    {
+      "path": "brand/icons/sliders.svg",
+      "bytes": 380,
+      "sha256": "8b9763696a2949d44e9f30cf1b43c332726c94d3d584fd035e5345f3ea66e0ff"
+    },
+    {
+      "path": "brand/icons/sun.svg",
+      "bytes": 476,
+      "sha256": "e6c588ba7306130682ce501ce73e9182bbaea9da53049f43de2fe25ab5d5413b"
+    },
+    {
+      "path": "brand/icons/user.svg",
+      "bytes": 291,
+      "sha256": "c430a46d518f30acd03434762438a46bb40fae91ff5903a6ffc57b6298fe3672"
+    },
+    {
+      "path": "brand/logo/concepts/day-arc.svg",
+      "bytes": 4185,
+      "sha256": "a19c5a21bf519a1ffe2fdbd44645a6dec66882a46aa6b98dd9501172ba3b9707"
+    },
+    {
+      "path": "brand/logo/concepts/h-field.svg",
+      "bytes": 4310,
+      "sha256": "04259e63d6fbca10ac2da401b36d5a4040d1963c1be047b8297de11b6da36ad9"
+    },
+    {
+      "path": "brand/logo/concepts/stored-layers.svg",
+      "bytes": 4020,
+      "sha256": "e55e67f7d65a6e667503e3f25e1db9039f63a7ec8f3bedc137b31756a5a2b5cc"
+    },
+    {
+      "path": "brand/logo/favicon.svg",
+      "bytes": 699,
+      "sha256": "6e28a85bd31aff7eeb186b205a597d062396ae91ebb0eff6d4b5e31f4e2d498f"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-horizontal-mono-ink.svg",
+      "bytes": 4174,
+      "sha256": "84261665a1861ecfc212eb59ffbd9dbd88748b35a5cddb0a6d3bbce62c41bdd7"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-horizontal-mono-paper.svg",
+      "bytes": 4176,
+      "sha256": "4059ee5125fbe90f79a721f3e58abbf5d4b626ba8b82b943ec465b6a3976517a"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-horizontal-reversed.svg",
+      "bytes": 4175,
+      "sha256": "0586dfd090420a9c9279ec336fffb35bb766b04af75ae5652f8bca852cc11ac8"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-horizontal.svg",
+      "bytes": 4193,
+      "sha256": "25be90c1276570991d144a049637f177652230ad61244bc49966e6a1431a513c"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-stacked-mono-ink.svg",
+      "bytes": 4190,
+      "sha256": "f9a1cad78d8f1f2be9397e1f1f56f294da41899a78e4d767df019ddba61fcdec"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-stacked-mono-paper.svg",
+      "bytes": 4192,
+      "sha256": "979576d80fae17013f251be238ca0a087acb96ea7e68a6d999b76aaffc638cce"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-stacked-reversed.svg",
+      "bytes": 4190,
+      "sha256": "769f23f8fbac37be42171e475efe2bf015090b0a6dbb6e2a8c31a434fb5e7bc9"
+    },
+    {
+      "path": "brand/logo/haldora-lockup-stacked.svg",
+      "bytes": 4208,
+      "sha256": "dc802447b71695f48808b4f85ef5eb6d76b23d45901d86eee98183f10f4aad3c"
+    },
+    {
+      "path": "brand/logo/haldora-symbol-mono-ink.svg",
+      "bytes": 772,
+      "sha256": "c8ff1f381305f5cc72c1ab51d562028115d61b5e092a7cb481c7a3ee237ef6b6"
+    },
+    {
+      "path": "brand/logo/haldora-symbol-mono-paper.svg",
+      "bytes": 774,
+      "sha256": "20754656ba7c1c4cd7b30913a0ed25db04381248b182caff27d8ac3ac1762b5d"
+    },
+    {
+      "path": "brand/logo/haldora-symbol-reversed.svg",
+      "bytes": 800,
+      "sha256": "b2e78398a787d168d646b1368f4fdc8aac76a9add6ed851a4b524bda19c5a746"
+    },
+    {
+      "path": "brand/logo/haldora-symbol.svg",
+      "bytes": 791,
+      "sha256": "655af8e2f7cde25d2d6aaf98d2d08f67641d0020ef8ac2941bb76d631dc998d1"
+    },
+    {
+      "path": "brand/logo/haldora-wordmark-reversed.svg",
+      "bytes": 3615,
+      "sha256": "fa3639551842b1c1b96551e6f43478c4f64d023900c37e9c0e7f4a9822f55579"
+    },
+    {
+      "path": "brand/logo/haldora-wordmark.svg",
+      "bytes": 3606,
+      "sha256": "2d2347ec7b73af0e9cfaa5e4bc6e68e4fae3f637bb315547f348b01a815bb1d7"
+    },
+    {
+      "path": "brand/logo/pdf/haldora-lockup-horizontal.pdf",
+      "bytes": 10620,
+      "sha256": "028ec78f846ad51d58cc820a43fb26a29e1adf860c1c19af6c0a6b2e43850be9"
+    },
+    {
+      "path": "brand/logo/png/apple-touch-icon-180.png",
+      "bytes": 3595,
+      "sha256": "ea9282391fec39789e0171b9875e86c91b17bae3fe502923b013e0f9665fb261"
+    },
+    {
+      "path": "brand/logo/png/favicon-32.png",
+      "bytes": 652,
+      "sha256": "9bef8f52db69b0a2e99378204f8c4d7e9b8d7d69b73ec0f678e2036046c4d67a"
+    },
+    {
+      "path": "brand/logo/png/lockup-horizontal-1200.png",
+      "bytes": 19168,
+      "sha256": "dcaa1b4cadc70fc0dc7e9f67b29b05a2e0d34a80ae524c1f42d9043e5bcb29c1"
+    },
+    {
+      "path": "brand/logo/png/lockup-horizontal-reversed-1200.png",
+      "bytes": 19347,
+      "sha256": "cc9fccc2f6882fa3bffb6819bdd47ec8638b514c86fee17159c5c8db8e563bfd"
+    },
+    {
+      "path": "brand/logo/png/symbol-192.png",
+      "bytes": 2193,
+      "sha256": "8fa3c6d183bfbdc2f571f9e99d3f89dd7b9a4ca74ce9a3b19ca17df7bbfcf6ff"
+    },
+    {
+      "path": "brand/logo/png/symbol-512.png",
+      "bytes": 6692,
+      "sha256": "98a42163ac4c10139a75d0407e952363cc75743b874ba3ea65a1a2c17a7beb9b"
+    },
+    {
+      "path": "brand/logo/webp/lockup-horizontal-1200.webp",
+      "bytes": 10500,
+      "sha256": "92491aaa513183f56295499f7c6cef1bad2c57133c4c69a8a3f1ac6ecea0bcf6"
+    },
+    {
+      "path": "brand/logo/webp/lockup-horizontal-reversed-1200.webp",
+      "bytes": 11330,
+      "sha256": "1d2d7da98f324759fb3ebd96eee26460667c6fdfc7d525d11f457c5aec892202"
+    }
+  ],
+  "checks": {
+    "vectorIntegrity": [
+      {
+        "file": "logo/concepts/day-arc.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/concepts/stored-layers.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/concepts/h-field.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-symbol.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-wordmark.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-horizontal.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-stacked.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-symbol-reversed.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-wordmark-reversed.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-horizontal-reversed.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-stacked-reversed.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-symbol-mono-ink.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-horizontal-mono-ink.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-stacked-mono-ink.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-symbol-mono-paper.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-horizontal-mono-paper.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/haldora-lockup-stacked-mono-paper.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "logo/favicon.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/business-card-front.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/business-card-back.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/social-square.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/og-image.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/story.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/presentation-title.svg",
+        "pass": true,
+        "failed": []
+      },
+      {
+        "file": "applications/app-icon.svg",
+        "pass": true,
+        "failed": []
+      }
+    ],
+    "rasterDimensions": [
+      {
+        "file": "logo/png/symbol-512.png",
+        "pass": true,
+        "detail": "512x512 png"
+      },
+      {
+        "file": "logo/png/symbol-192.png",
+        "pass": true,
+        "detail": "192x192 png"
+      },
+      {
+        "file": "logo/png/favicon-32.png",
+        "pass": true,
+        "detail": "32x32 png"
+      },
+      {
+        "file": "logo/png/apple-touch-icon-180.png",
+        "pass": true,
+        "detail": "180x180 png"
+      },
+      {
+        "file": "logo/png/lockup-horizontal-1200.png",
+        "pass": true,
+        "detail": "1200x501 png"
+      },
+      {
+        "file": "logo/webp/lockup-horizontal-1200.webp",
+        "pass": true,
+        "detail": "1200x501 webp"
+      },
+      {
+        "file": "logo/png/lockup-horizontal-reversed-1200.png",
+        "pass": true,
+        "detail": "1200x501 png"
+      },
+      {
+        "file": "logo/webp/lockup-horizontal-reversed-1200.webp",
+        "pass": true,
+        "detail": "1200x501 webp"
+      },
+      {
+        "file": "applications/png/social-square.png",
+        "pass": true,
+        "detail": "1080x1080 png"
+      },
+      {
+        "file": "applications/webp/social-square.webp",
+        "pass": true,
+        "detail": "1080x1080 webp"
+      },
+      {
+        "file": "applications/png/og-image.png",
+        "pass": true,
+        "detail": "1200x630 png"
+      },
+      {
+        "file": "applications/webp/og-image.webp",
+        "pass": true,
+        "detail": "1200x630 webp"
+      },
+      {
+        "file": "applications/png/story.png",
+        "pass": true,
+        "detail": "1080x1920 png"
+      },
+      {
+        "file": "applications/webp/story.webp",
+        "pass": true,
+        "detail": "1080x1920 webp"
+      },
+      {
+        "file": "applications/png/presentation-title.png",
+        "pass": true,
+        "detail": "1920x1080 png"
+      },
+      {
+        "file": "applications/webp/presentation-title.webp",
+        "pass": true,
+        "detail": "1920x1080 webp"
+      },
+      {
+        "file": "applications/png/app-icon.png",
+        "pass": true,
+        "detail": "1024x1024 png"
+      }
+    ],
+    "missingAssets": [],
+    "missingFonts": [],
+    "minimumSize": {
+      "pass": true,
+      "detail": "thinnest feature is 1.30px at the 16px minimum size"
+    }
+  },
+  "notes": [
+    "No trademark search or clearance has been performed.",
+    "Print colour (CMYK or spot) is not specified; proof against the chosen press and stock."
+  ],
+  "ok": true
+}

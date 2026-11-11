@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/brief/1.0.0",
+  "title": "Project Brief",
+  "description": "Client brief. Every non-obvious field can be traced to a source through `sourceOfTruth`, so agent assumptions are never mistaken for client facts.",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "client", "name", "objective", "deliverables", "audiences", "locales", "constraints"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "projectId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,62}$" },
+    "client": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,62}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "industry": { "type": "string" },
+        "fictional": { "type": "boolean", "description": "True for demo and benchmark briefs." }
+      }
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 20 },
+    "background": { "type": "string" },
+    "deliverables": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["brand-identity", "marketing-website", "web-application", "mobile-application", "image-assets", "motion-system", "3d-experience", "social-assets", "design-system"]
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "needs"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "needs": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "contexts": { "type": "array", "items": { "type": "string" } },
+          "accessNeeds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "desiredPerception": { "type": "array", "items": { "type": "string" } },
+    "avoid": { "type": "array", "items": { "type": "string" } },
+    "locales": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" } },
+    "platforms": { "type": "array", "items": { "enum": ["web", "ios", "android", "print"] } },
+    "existingAssets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "rights"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "kind": { "type": "string" },
+          "rights": { "enum": ["client-owned", "licensed", "unknown"] }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": ["externalUploads", "motionLevel"],
+      "additionalProperties": false,
+      "properties": {
+        "externalUploads": { "enum": ["deny", "ask", "allow"], "description": "Whether client material may leave the machine for a third-party provider." },
+        "motionLevel": { "enum": ["none", "subtle", "balanced", "expressive"] },
+        "budgetUsd": { "type": "number", "minimum": 0, "description": "Ceiling for paid provider calls across the project." },
+        "accessibilityTarget": { "enum": ["WCAG 2.2 A", "WCAG 2.2 AA", "WCAG 2.2 AAA"] },
+        "deadline": { "type": "string", "format": "date" },
+        "technology": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "successMeasures": { "type": "array", "items": { "type": "string" } },
+    "approver": {
+      "type": "object",
+      "required": ["name", "role"],
+      "additionalProperties": false,
+      "properties": { "name": { "type": "string" }, "role": { "type": "string" } }
+    },
+    "sourceOfTruth": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "field": { "type": "string" },
+          "source": { "enum": ["client", "contract", "research", "assumption"] },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "openQuestions": { "type": "array", "items": { "type": "string" } }
+  }
+}

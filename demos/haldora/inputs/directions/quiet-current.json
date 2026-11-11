@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "quiet-current",
+  "title": "Quiet Current",
+  "concept": "Energy as something you never have to think about. Cool, pale surfaces, one saturated cobalt, a geometric sans and a great deal of empty space; the product is shown large and alone.",
+  "rationale": "Positions the Cell as a calm household appliance. Strong for product photography and for trust, weaker at explaining what the battery actually does through a day.",
+  "emotionalIntent": "Relief: nothing here needs your attention.",
+  "palette": { "bg": "#EEF2F6", "text": "#12161C", "primary": "#1F4FD8", "accent": "#9FB8FF", "support": ["#FFFFFF", "#C9D3DF"] },
+  "typography": { "display": "Instrument Sans", "text": "Instrument Sans", "character": "One geometric sans in two weights" },
+  "layoutGrammar": "product-showcase",
+  "motion": { "intensity": "subtle", "personality": "Slow fades and a gentle drift" },
+  "imagery": { "style": "Large product renders on seamless pale grounds", "motifs": ["orbit", "bloom"] },
+  "signature": "A soft ring that pulses once when power changes direction.",
+  "usabilityImplications": ["Very low visual noise helps scanning.", "Pale-on-pale surfaces need careful borders for low-vision users."],
+  "technicalRequirements": ["High-quality product renders for every viewport"],
+  "risks": ["Close to gadget minimalism, which the brief asks to avoid.", "Depends on product renders the client does not have yet."],
+  "effort": "high",
+  "fitScore": { "audienceFit": 3, "differentiation": 2, "feasibility": 2, "accessibility": 3 }
+}

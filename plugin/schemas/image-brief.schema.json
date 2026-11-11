@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/image-brief/1.0.0",
+  "title": "Image Production Brief",
+  "description": "What to produce. Each job states its purpose, exact dimensions and formats, so output can be checked against a requirement instead of against taste alone.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "jobs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "purpose",
+          "recipe",
+          "width",
+          "height",
+          "formats"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 5
+          },
+          "recipe": {
+            "enum": [
+              "horizon-field",
+              "contour-map",
+              "strata-bands",
+              "orbit-rings",
+              "bloom-mesh",
+              "pattern-tile",
+              "grid-instrument"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Used by model providers; the local engine uses `recipe` and `seed`."
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 16,
+            "maximum": 8192
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 16,
+            "maximum": 8192
+          },
+          "formats": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "svg",
+                "png",
+                "webp",
+                "avif",
+                "jpeg"
+              ]
+            }
+          },
+          "seed": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "scheme": {
+            "enum": [
+              "light",
+              "dark"
+            ]
+          },
+          "variant": {
+            "type": "string"
+          },
+          "transparent": {
+            "type": "boolean"
+          },
+          "maxBytes": {
+            "type": "integer",
+            "minimum": 1000
+          },
+          "overlay": {
+            "type": "object",
+            "description": "Verified text and vector marks composited on top. Brand text is never left to an image model.",
+            "additionalProperties": false,
+            "properties": {
+              "logo": {
+                "enum": [
+                  "none",
+                  "symbol",
+                  "lockup"
+                ]
+              },
+              "logoPosition": {
+                "enum": [
+                  "top-left",
+                  "top-right",
+                  "bottom-left",
+                  "bottom-right",
+                  "center"
+                ]
+              },
+              "headline": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "kicker": {
+                "type": "string",
+                "maxLength": 60
+              }
+            }
+          },
+          "usedIn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "layer": {
+            "enum": [
+              "all",
+              "sky",
+              "arc",
+              "far",
+              "mid",
+              "near"
+            ],
+            "description": "For layered recipes: render one plane on transparency for parallax."
+          },
+          "quality": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

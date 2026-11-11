@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/revision-request/1.0.0",
+  "title": "Revision Request",
+  "description": "A scoped change request. `preserve` lists aspects that must not change; the engines refuse a revision whose scope collides with it.",
+  "type": "object",
+  "required": ["schemaVersion", "id", "target", "feedback", "requestedChange", "preserve", "category", "status", "requestedBy", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "id": { "type": "string", "pattern": "^rev-[0-9]{3,}$" },
+    "target": {
+      "type": "object",
+      "required": ["type", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["asset", "dna", "deliverable", "direction"] },
+        "id": { "type": "string" },
+        "location": { "type": "string", "description": "Section, screen, component or DNA path the feedback points at." }
+      }
+    },
+    "feedback": { "type": "string", "minLength": 3 },
+    "requestedChange": {
+      "enum": ["color.adjust", "typography.adjust", "layout.adjust", "motion.adjust", "copy.edit", "asset.regenerate", "asset.replace", "logo.adjust", "scene.adjust", "function.fix", "scope.add"]
+    },
+    "parameters": { "type": "object" },
+    "preserve": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["layout", "typography", "brand_colors", "copy", "motion", "imagery", "logo", "structure", "materials"] }
+    },
+    "category": { "enum": ["functional", "visual", "performance", "content", "scope"] },
+    "requirementRef": { "type": "string" },
+    "status": { "enum": ["pending", "accepted", "in-progress", "applied", "verified", "declined"] },
+    "requestedBy": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "appliedAt": { "type": "string", "format": "date-time" },
+        "changedFiles": { "type": "array", "items": { "type": "string" } },
+        "untouchedVerified": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

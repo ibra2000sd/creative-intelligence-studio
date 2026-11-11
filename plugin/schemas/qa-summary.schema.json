@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/qa-summary/1.0.0",
+  "title": "QA Summary",
+  "description": "Machine-readable roll-up of every QA run. Lab measurements are labelled as such and are never presented as field data.",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "targets", "totals", "verdict"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "environment": { "type": "object" },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "checks"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "enum": ["website", "web-app", "scene-3d", "mobile-web", "mobile", "assets", "project"] },
+          "url": { "type": "string" },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "category", "status", "summary"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string" },
+                "category": { "enum": ["functional", "visual", "accessibility", "motion", "performance", "security", "delivery", "build"] },
+                "status": { "enum": ["pass", "fail", "warn", "skipped", "blocked"] },
+                "severity": { "enum": ["critical", "major", "minor", "info"] },
+                "summary": { "type": "string" },
+                "measurement": { "enum": ["lab", "field", "static", "manual-required"] },
+                "data": {},
+                "evidence": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["pass", "fail", "warn", "skipped", "blocked"],
+      "additionalProperties": false,
+      "properties": {
+        "pass": { "type": "integer" }, "fail": { "type": "integer" }, "warn": { "type": "integer" },
+        "skipped": { "type": "integer" }, "blocked": { "type": "integer" }
+      }
+    },
+    "verdict": { "enum": ["pass", "fail", "incomplete"] },
+    "manualAuditsOutstanding": { "type": "array", "items": { "type": "string" } }
+  }
+}

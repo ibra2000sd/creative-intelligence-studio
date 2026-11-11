@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-intelligence-studio.dev/schemas/project-state/1.0.0",
+  "title": "Project State",
+  "description": "The orchestrator's inspectable plan: tasks, dependencies, handoff contracts and approval gates.",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "classification", "tasks", "gates", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "projectId": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "classification": {
+      "type": "object",
+      "required": ["scope", "disciplines", "flags"],
+      "additionalProperties": false,
+      "properties": {
+        "scope": { "enum": ["single-discipline", "cross-disciplinary"] },
+        "disciplines": { "type": "array", "items": { "type": "string" } },
+        "flags": { "type": "array", "items": { "type": "string" } },
+        "suggestions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "skill", "phase", "dependsOn", "produces", "status", "attempts"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "title": { "type": "string" },
+          "skill": { "type": "string" },
+          "phase": { "enum": ["intake", "direction", "system", "production", "quality", "delivery"] },
+          "command": { "type": "string" },
+          "dependsOn": { "type": "array", "items": { "type": "string" } },
+          "gate": { "type": "string", "description": "Gate that must be approved before this task may start." },
+          "produces": {
+            "type": "array",
+            "description": "Handoff contract: paths that must exist (and validate) before the task can be marked done.",
+            "items": {
+              "type": "object",
+              "required": ["path"],
+              "additionalProperties": false,
+              "properties": {
+                "path": { "type": "string" },
+                "schema": { "type": "string" },
+                "kind": { "enum": ["file", "dir"] }
+              }
+            }
+          },
+          "status": { "enum": ["pending", "in-progress", "done", "failed", "escalated", "skipped"] },
+          "attempts": { "type": "integer", "minimum": 0 },
+          "maxAttempts": { "type": "integer", "minimum": 1 },
+          "startedAt": { "type": "string", "format": "date-time" },
+          "finishedAt": { "type": "string", "format": "date-time" },
+          "lastFailure": { "type": "string" },
+          "evidence": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "requires", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "requires": { "type": "array", "items": { "type": "string" } },
+          "status": { "enum": ["pending", "approved", "rejected", "changes-requested"] },
+          "decision": {
+            "type": "object",
+            "required": ["actor", "role", "at", "simulated"],
+            "additionalProperties": false,
+            "properties": {
+              "actor": { "type": "string" },
+              "role": { "type": "string" },
+              "at": { "type": "string", "format": "date-time" },
+              "note": { "type": "string" },
+              "evidence": { "type": "array", "items": { "type": "string" } },
+              "simulated": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

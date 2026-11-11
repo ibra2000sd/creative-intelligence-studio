@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "haldora-launch",
+  "client": { "id": "haldora", "name": "Haldora", "industry": "Home energy technology", "fictional": true },
+  "name": "Haldora launch: brand, site, portal, app and product experience",
+  "objective": "Launch Haldora, a home battery company, with one coherent identity across a marketing website, a customer energy portal, an iOS and Android app and an interactive 3D presentation of the Haldora Cell battery.",
+  "background": "Haldora sells the Cell, a wall-mounted home battery, and the software that decides when a household stores, uses or sells its solar power. Buyers are homeowners, not engineers. The category looks either like industrial equipment or like a gadget; Haldora wants to look like something that belongs in a home.",
+  "deliverables": ["brand-identity", "marketing-website", "web-application", "mobile-application", "image-assets", "social-assets", "3d-experience", "motion-system"],
+  "audiences": [
+    { "name": "Homeowners with rooftop solar", "needs": ["Understand what the battery does across a day", "Trust that it is safe and quiet", "See savings without reading a manual"], "contexts": ["Evening on a phone", "Weekend research on a laptop"], "accessNeeds": ["Readable at arm's length", "Works with reduced motion"] },
+    { "name": "Existing customers", "needs": ["Check the battery and today's flows at a glance", "Change the backup reserve", "Know when something needs attention"], "contexts": ["Daily, a few seconds at a time"] },
+    { "name": "Arabic-speaking households in the Gulf", "needs": ["Full right-to-left experience", "Arabic typography that is not an afterthought"], "contexts": ["Mobile first"] }
+  ],
+  "competitors": [
+    { "name": "Category convention: industrial energy brands", "notes": "Dark dashboards, green on black, technical language." },
+    { "name": "Category convention: consumer gadget brands", "notes": "White minimalism, glossy product renders, little explanation." }
+  ],
+  "desiredPerception": ["calm", "warm", "trustworthy", "quietly clever"],
+  "avoid": ["Green-on-black energy dashboards", "Gadget gloss", "Fear-based messaging about outages", "Imitating any existing technology brand"],
+  "locales": ["en", "ar"],
+  "platforms": ["web", "ios", "android", "print"],
+  "existingAssets": [],
+  "constraints": {
+    "externalUploads": "ask",
+    "motionLevel": "balanced",
+    "budgetUsd": 5,
+    "accessibilityTarget": "WCAG 2.2 AA",
+    "technology": ["React for the portal", "Expo for mobile", "Three.js for 3D"]
+  },
+  "successMeasures": ["A first-time visitor can say what the product does after one scroll", "A customer can read battery level and change the reserve in under ten seconds"],
+  "approver": { "name": "Mira Solberg", "role": "Brand lead, Haldora (fictional)" },
+  "sourceOfTruth": [
+    { "field": "locales", "source": "client", "note": "Launch markets are the UK and the UAE." },
+    { "field": "constraints.motionLevel", "source": "client" },
+    { "field": "audiences", "source": "assumption", "note": "Derived from the brief's description; no user research has been run." },
+    { "field": "competitors", "source": "assumption", "note": "Category conventions, not named companies. No competitor audit was performed." }
+  ],
+  "openQuestions": ["Final product dimensions and finishes for the Cell are placeholders until industrial design signs off."]
+}

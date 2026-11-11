@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultLocale": "en",
+  "locales": {
+    "en": {
+      "dir": "ltr",
+      "meta": {
+        "title": "Haldora: your home's energy, from sunrise to night",
+        "description": "The Haldora Cell stores the sun your roof collects at noon and gives it back in the evening. See where your home's energy goes across one day."
+      },
+      "nav": [
+        {
+          "label": "A day with Haldora",
+          "href": "#day"
+        },
+        {
+          "label": "How it works",
+          "href": "#how"
+        },
+        {
+          "label": "The Cell",
+          "href": "#cell"
+        },
+        {
+          "label": "Get in touch",
+          "href": "#contact"
+        }
+      ],
+      "hero": {
+        "eyebrow": "Haldora Cell home battery",
+        "headline": "Your home's energy, from sunrise to night",
+        "sub": "A battery that keeps the sun your roof collects at noon and hands it back when the lights come on.",
+        "primaryCta": {
+          "label": "See a day with Haldora",
+          "href": "#day"
+        },
+        "secondaryCta": {
+          "label": "Meet the Cell",
+          "href": "#cell"
+        }
+      },
+      "story": {
+        "title": "One day, four moments",
+        "intro": "Follow the sun across a typical spring day in a home with a 5 kW roof and one Haldora Cell.",
+        "chapters": [
+          {
+            "id": "dawn",
+            "time": "06:10",
+            "title": "The roof wakes first",
+            "body": "Before anyone is up, the first light reaches the panels. The Cell finishes the night with charge to spare and starts the kettle from its reserve.",
+            "stat": {
+              "value": 22,
+              "unit": "%",
+              "label": "left in the Cell at sunrise"
+            }
+          },
+          {
+            "id": "noon",
+            "time": "12:40",
+            "title": "Noon is for storing",
+            "body": "The house needs little at midday and the roof makes a lot. Instead of selling the surplus cheaply, the Cell keeps it.",
+            "stat": {
+              "value": 4.8,
+              "unit": "kW",
+              "label": "flowing from roof to Cell"
+            }
+          },
+          {
+            "id": "dusk",
+            "time": "18:30",
+            "title": "Evening runs on noon",
+            "body": "Cooking, washing, the car on charge. The busiest hours in the house are covered by what the roof made six hours ago.",
+            "stat": {
+              "value": 91,
+              "unit": "%",
+              "label": "of the evening powered from the Cell"
+            }
+          },
+          {
+            "id": "night",
+            "time": "02:00",
+            "title": "A quiet reserve",
+            "body": "Overnight the Cell holds back the share you chose, so the fridge and the heating never notice if the street goes dark.",
+            "stat": {
+              "value": 30,
+              "unit": "%",
+              "label": "kept back, by your choice"
+            }
+          }
+        ]
+      },
+      "features": {
+        "title": "Clever, and happy to explain itself",
+        "intro": "The Cell makes a few hundred small decisions a day. You can read every one of them in plain words.",
+        "items": [
+          {
+            "icon": "home",
+            "image": "feature-contour",
+            "title": "It learns the shape of your day",
+            "body": "After a week the Cell knows when your home is busy and plans the battery around it."
+          },
+          {
+            "icon": "battery",
+            "image": "feature-strata",
+            "title": "A reserve you set once",
+            "body": "Choose how much to hold back for an outage. Change it from the app whenever you like."
+          },
+          {
+            "icon": "chart",
+            "image": "feature-instrument",
+            "title": "The day, drawn as a curve",
+            "body": "One chart shows what the roof made, what the house used and what the Cell kept."
+          },
+          {
+            "icon": "leaf",
+            "title": "Less from the grid",
+            "body": "Every stored hour is an hour you did not buy at the evening price."
+          }
+        ]
+      },
+      "product": {
+        "title": "The Cell",
+        "body": "A powder-coated slab that hangs in a garage or a hallway. The only light on it is the arc: a small sun that shows where your day has got to.",
+        "finishLabel": "Finish",
+        "hint": "Loading the interactive model…",
+        "fallbackAlt": "The Haldora Cell battery in the Chalk finish, front view, with the day arc light on its face.",
+        "specs": [
+          {
+            "label": "Usable capacity",
+            "value": "13.5 kWh"
+          },
+          {
+            "label": "Continuous power",
+            "value": "5 kW"
+          },
+          {
+            "label": "Size",
+            "value": "62 × 102 × 16 cm"
+          },
+          {
+            "label": "Noise",
+            "value": "< 30 dB"
+          }
+        ]
+      },
+      "proof": {
+        "title": "What we hope people will say",
+        "disclaimer": "Haldora is a fictional company created to demonstrate Creative Intelligence Studio. These quotes are illustrative, not real customer statements, and product figures are placeholders.",
+        "quotes": [
+          {
+            "quote": "I stopped thinking about the battery in the first week. That was the point.",
+            "name": "Illustrative customer",
+            "role": "Four-person household"
+          },
+          {
+            "quote": "The arc on the wall tells the children what time the sun thinks it is.",
+            "name": "Illustrative customer",
+            "role": "Terraced house, 4 kW roof"
+          },
+          {
+            "quote": "It explained my bill better than my supplier does.",
+            "name": "Illustrative customer",
+            "role": "Retired, works from home"
+          }
+        ]
+      },
+      "contact": {
+        "title": "Ask about your roof",
+        "body": "Tell us about your home and we will reply with what a Cell would store on a day like today.",
+        "fields": {
+          "name": "Your name",
+          "email": "Email address",
+          "home": "Your home",
+          "homeOptions": [
+            "House with solar panels",
+            "House, no panels yet",
+            "Flat or apartment",
+            "Something else"
+          ]
+        },
+        "submit": "Send my question",
+        "success": "Thank you. This demonstration does not send anything; in a real site your message would now be on its way.",
+        "errors": {
+          "required": "This field is needed.",
+          "email": "Enter an email address like name@example.com.",
+          "summary": "Two things need fixing before we can send this. The first one is selected for you."
+        }
+      },
+      "footer": {
+        "legal": "© 2026 Haldora (fictional). Demonstration project.",
+        "note": "Built from one Experience DNA with Creative Intelligence Studio."
+      },
+      "ui": {
+        "skip": "Skip to content",
+        "theme": "Switch between light and dark",
+        "language": "Language",
+        "menu": "Menu",
+        "scrollHint": "Scroll to follow the day"
+      }
+    },
+    "ar": {
+      "dir": "rtl",
+      "meta": {
+        "title": "هالدورا: طاقة بيتك من شروق الشمس إلى الليل",
+        "description": "بطارية هالدورا سِل تخزّن ما يجمعه سطح بيتك من الشمس ظهراً وتعيده لك مساءً. تابع أين تذهب طاقة بيتك على مدار يوم كامل."
+      },
+      "nav": [
+        {
+          "label": "يوم مع هالدورا",
+          "href": "#day"
+        },
+        {
+          "label": "كيف تعمل",
+          "href": "#how"
+        },
+        {
+          "label": "البطارية",
+          "href": "#cell"
+        },
+        {
+          "label": "تواصل معنا",
+          "href": "#contact"
+        }
+      ],
+      "hero": {
+        "eyebrow": "بطارية هالدورا سِل المنزلية",
+        "headline": "طاقة بيتك، من شروق الشمس إلى الليل",
+        "sub": "بطارية تحفظ ما يجمعه سطح بيتك من الشمس وقت الظهيرة، وتعيده إليك حين تُضاء الأنوار.",
+        "primaryCta": {
+          "label": "شاهد يوماً مع هالدورا",
+          "href": "#day"
+        },
+        "secondaryCta": {
+          "label": "تعرّف على البطارية",
+          "href": "#cell"
+        }
+      },
+      "story": {
+        "title": "يوم واحد، أربع لحظات",
+        "intro": "تابع الشمس خلال يوم ربيعي عادي في بيت على سطحه ألواح بقدرة ٥ كيلوواط وبطارية هالدورا واحدة.",
+        "chapters": [
+          {
+            "id": "dawn",
+            "time": "06:10",
+            "title": "السطح يستيقظ أولاً",
+            "body": "قبل أن يستيقظ أحد يصل أول الضوء إلى الألواح. تنهي البطارية ليلتها وفيها ما يكفي، وتشغّل غلّاية الصباح من مخزونها.",
+            "stat": {
+              "value": 22,
+              "unit": "%",
+              "label": "المتبقي في البطارية عند الشروق"
+            }
+          },
+          {
+            "id": "noon",
+            "time": "12:40",
+            "title": "الظهيرة وقت التخزين",
+            "body": "يحتاج البيت القليل وقت الظهر وينتج السطح الكثير. وبدل أن يُباع الفائض بثمن زهيد تحتفظ به البطارية.",
+            "stat": {
+              "value": 4.8,
+              "unit": "kW",
+              "label": "تتدفق من السطح إلى البطارية"
+            }
+          },
+          {
+            "id": "dusk",
+            "time": "18:30",
+            "title": "المساء يعمل بطاقة الظهيرة",
+            "body": "الطبخ والغسيل وشحن السيارة. أكثر ساعات البيت انشغالاً تغطيها الطاقة التي أنتجها السطح قبل ست ساعات.",
+            "stat": {
+              "value": 91,
+              "unit": "%",
+              "label": "من طاقة المساء مصدرها البطارية"
+            }
+          },
+          {
+            "id": "night",
+            "time": "02:00",
+            "title": "احتياطي هادئ",
+            "body": "في الليل تُبقي البطارية النسبة التي اخترتها أنت، فلا تشعر الثلاجة ولا التدفئة إن انقطعت الكهرباء عن الحي.",
+            "stat": {
+              "value": 30,
+              "unit": "%",
+              "label": "محفوظة باختيارك"
+            }
+          }
+        ]
+      },
+      "features": {
+        "title": "ذكية، ويسعدها أن تشرح ما تفعل",
+        "intro": "تتخذ البطارية مئات القرارات الصغيرة كل يوم، وتستطيع قراءة كل قرار منها بلغة واضحة.",
+        "items": [
+          {
+            "icon": "home",
+            "image": "feature-contour",
+            "title": "تتعلّم إيقاع يومك",
+            "body": "بعد أسبوع تعرف البطارية متى ينشغل بيتك، وتنظّم شحنها على هذا الأساس."
+          },
+          {
+            "icon": "battery",
+            "image": "feature-strata",
+            "title": "احتياطي تحدده مرة واحدة",
+            "body": "اختر النسبة التي تريد حفظها لحالات الانقطاع، وغيّرها من التطبيق متى شئت."
+          },
+          {
+            "icon": "chart",
+            "image": "feature-instrument",
+            "title": "يومك مرسوماً في منحنى",
+            "body": "مخطط واحد يبيّن ما أنتجه السطح وما استهلكه البيت وما احتفظت به البطارية."
+          },
+          {
+            "icon": "leaf",
+            "title": "اعتماد أقل على الشبكة",
+            "body": "كل ساعة مخزّنة هي ساعة لم تشترها بسعر المساء."
+          }
+        ]
+      },
+      "product": {
+        "title": "البطارية",
+        "body": "لوح مطليّ بطلاء غير لامع يُعلّق في المرآب أو الممر. الضوء الوحيد عليه هو القوس: شمس صغيرة تدلّك أين وصل يومك.",
+        "finishLabel": "اللون",
+        "hint": "جارٍ تحميل النموذج التفاعلي…",
+        "fallbackAlt": "بطارية هالدورا سِل باللون الطباشيري من الأمام، وعلى وجهها ضوء قوس النهار.",
+        "specs": [
+          {
+            "label": "السعة القابلة للاستخدام",
+            "value": "13.5 kWh"
+          },
+          {
+            "label": "القدرة المستمرة",
+            "value": "5 kW"
+          },
+          {
+            "label": "الأبعاد",
+            "value": "62 × 102 × 16 cm"
+          },
+          {
+            "label": "مستوى الصوت",
+            "value": "< 30 dB"
+          }
+        ]
+      },
+      "proof": {
+        "title": "ما نرجو أن يقوله الناس",
+        "disclaimer": "هالدورا شركة خيالية أُنشئت لعرض إمكانات Creative Intelligence Studio. هذه الاقتباسات توضيحية وليست أقوال عملاء حقيقيين، وأرقام المنتج افتراضية.",
+        "quotes": [
+          {
+            "quote": "توقفت عن التفكير في البطارية منذ الأسبوع الأول، وهذا هو المطلوب.",
+            "name": "عميل افتراضي",
+            "role": "أسرة من أربعة أفراد"
+          },
+          {
+            "quote": "القوس على الجدار يخبر الأطفال كم الساعة عند الشمس.",
+            "name": "عميل افتراضي",
+            "role": "بيت متلاصق، ألواح ٤ كيلوواط"
+          },
+          {
+            "quote": "شرحت لي فاتورتي أفضل مما يشرحها مزوّد الكهرباء.",
+            "name": "عميل افتراضي",
+            "role": "متقاعد يعمل من البيت"
+          }
+        ]
+      },
+      "contact": {
+        "title": "اسأل عن سطح بيتك",
+        "body": "أخبرنا عن بيتك ونردّ عليك بما كانت البطارية ستخزّنه في يوم مثل هذا اليوم.",
+        "fields": {
+          "name": "الاسم",
+          "email": "البريد الإلكتروني",
+          "home": "نوع البيت",
+          "homeOptions": [
+            "بيت عليه ألواح شمسية",
+            "بيت بلا ألواح حتى الآن",
+            "شقة",
+            "غير ذلك"
+          ]
+        },
+        "submit": "أرسل سؤالي",
+        "success": "شكراً لك. هذا عرض تجريبي لا يرسل أي بيانات؛ في موقع حقيقي كانت رسالتك ستصلنا الآن.",
+        "errors": {
+          "required": "هذا الحقل مطلوب.",
+          "email": "اكتب بريداً إلكترونياً بصيغة name@example.com.",
+          "summary": "هناك ما يحتاج إلى تصحيح قبل الإرسال. نقلناك إلى أول حقل منها."
+        }
+      },
+      "footer": {
+        "legal": "© 2026 هالدورا (شركة خيالية). مشروع تجريبي.",
+        "note": "بُني من «حمض نووي للتجربة» واحد باستخدام Creative Intelligence Studio."
+      },
+      "ui": {
+        "skip": "انتقل إلى المحتوى",
+        "theme": "التبديل بين الوضعين الفاتح والداكن",
+        "language": "اللغة",
+        "menu": "القائمة",
+        "scrollHint": "مرّر لتتابع اليوم"
+      }
+    }
+  }
+}
