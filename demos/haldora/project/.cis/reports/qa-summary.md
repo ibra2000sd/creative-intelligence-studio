@@ -1,10 +1,64 @@
 # QA summary
 
-Generated 2026-11-11T23:04:04.565Z by creative-studio 0.1.0. Verdict: **fail**.
+Generated 2026-11-12T21:47:07.360Z by creative-studio 0.1.0. Verdict: **fail**.
 
-Pass 81 · Fail 4 · Warn 2 · Blocked 0 · Skipped 0
+Pass 128 · Fail 5 · Warn 3 · Blocked 0 · Skipped 0
 
 Measurements labelled *lab* were taken in headless Chrome on the build machine. They are not field data and say nothing about real users' devices or networks.
+
+## app (web-app)
+
+| Status | Check | Category | Result |
+|---|---|---|---|
+| pass | `build:app` | build (static) | Built output present at app/dist |
+| pass | `bundle:app` | performance (static) | JS 112.6KB gzip, CSS 5.3KB gzip, 69 files, 4.42MB on disk |
+| pass | `load:portal@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal@mobile` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:portal@mobile` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `target-size:portal@mobile` | accessibility (lab) | All pointer targets are at least 24x24 CSS px |
+| pass | `load:portal@tablet` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal@tablet` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:portal@tablet` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `load:portal@desktop` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal@desktop` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:portal@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `a11y-axe:portal:light` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review) |
+| pass | `a11y-axe:portal:dark` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review) |
+| pass | `keyboard:portal` | accessibility (lab) | 14 tab stops reached in order, each with a visible focus indicator and none obscured |
+| pass | `scroll-motion:portal` | motion (lab) | Scrolling 55px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0 |
+| pass | `reduced-motion:portal` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
+| warn | `web-vitals-lab:portal` | performance (lab) | Lab: LCP 1680ms, CLS 0.0009, TBT 515ms, first tap 384ms (median of 3). Over the default budget (TBT 515ms > 300ms) but within this deliverable's documented exception: Application shell: evaluating the React runtime and rendering the first screen takes roughly 0.5 seconds of main-thread time under 4x CPU throttling on the reference machine and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Reduce further with route-level code splitting if field data shows slow first interactions. |
+| pass | `load:portal-ar@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal-ar@mobile` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `rtl:portal-ar@mobile` | visual (lab) | Document direction is rtl (computed rtl), language ar |
+| pass | `visual-regression:portal-ar@mobile` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `target-size:portal-ar@mobile` | accessibility (lab) | All pointer targets are at least 24x24 CSS px |
+| pass | `load:portal-ar@tablet` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal-ar@tablet` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `rtl:portal-ar@tablet` | visual (lab) | Document direction is rtl (computed rtl), language ar |
+| pass | `visual-regression:portal-ar@tablet` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `load:portal-ar@desktop` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:portal-ar@desktop` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `rtl:portal-ar@desktop` | visual (lab) | Document direction is rtl (computed rtl), language ar |
+| pass | `visual-regression:portal-ar@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `a11y-axe:portal-ar:light` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review) |
+| pass | `a11y-axe:portal-ar:dark` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review) |
+| pass | `keyboard:portal-ar` | accessibility (lab) | 14 tab stops reached in order, each with a visible focus indicator and none obscured |
+| pass | `scroll-motion:portal-ar` | motion (lab) | Scrolling 69px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0 |
+| pass | `reduced-motion:portal-ar` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
+| fail | `web-vitals-lab:portal-ar` | performance (lab) | Over budget in the lab: TBT 676ms > 650ms |
+| pass | `flow:navigation` | functional (lab) | Every section is reachable, updates the title and moves focus to its heading |
+| pass | `flow:chart-scrub` | motion (lab) | The time slider drives the readout, the cursor and the sun on its arc: battery 30% at 07:00, 100% at 13:00, 39% at 22:00 |
+| pass | `flow:chart-alternatives` | accessibility (lab) | Chart series can be toggled and the data is available as a table |
+| pass | `flow:devices-states` | functional (lab) | Devices: loading state, list, and an accessible expand/collapse |
+| pass | `flow:devices-error-recovery` | functional (lab) | Devices: a failed request shows an error and Try again recovers |
+| pass | `flow:devices-empty` | functional (lab) | Devices: the empty state explains itself |
+| pass | `flow:history-table` | functional (lab) | History: sorting announces its direction; filter, empty result and paging work |
+| pass | `flow:settings-save` | functional (lab) | Settings: validation, save confirmation, and the reserve reaches the overview |
+| pass | `flow:settings-rollback` | functional (lab) | Settings: a failed save reports the failure and restores the previous values |
+| pass | `flow:rtl-layout` | functional (lab) | Arabic: navigation sits on the right, the chart keeps time left to right |
+| pass | `flow:mobile-nav` | functional (lab) | Phone: bottom navigation is reachable and content clears it |
+| pass | `flow:reduced-motion` | motion (lab) | Reduced motion: figures and markers change without travelling |
 
 ## scene (scene-3d)
 
@@ -107,10 +161,11 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 
 | Status | Severity | Where | Runs failing | Summary |
 |---|---|---|---|---|
-| escalated | major | `scene/web-vitals-lab:scene` | 6 | Over budget in the lab: TBT 1091ms > 300ms |
-| escalated | major | `scene/visual-regression:scene@mobile` | 5 | 13.25% of pixels differ from the accepted baseline |
-| escalated | major | `scene/visual-regression:scene@tablet` | 5 | 12.38% of pixels differ from the accepted baseline |
-| escalated | major | `scene/visual-regression:scene@desktop` | 5 | 11.52% of pixels differ from the accepted baseline |
+| escalated | major | `scene/web-vitals-lab:scene` | 8 | Over budget in the lab: TBT 1091ms > 300ms |
+| escalated | major | `scene/visual-regression:scene@mobile` | 7 | 13.25% of pixels differ from the accepted baseline |
+| escalated | major | `scene/visual-regression:scene@tablet` | 7 | 12.38% of pixels differ from the accepted baseline |
+| escalated | major | `scene/visual-regression:scene@desktop` | 7 | 11.52% of pixels differ from the accepted baseline |
+| open | major | `app/web-vitals-lab:portal-ar` | 2 | Over budget in the lab: TBT 676ms > 650ms |
 
 ## Not covered by automation
 

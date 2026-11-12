@@ -2,7 +2,7 @@
 // requirement -> policy -> cache -> provider -> inspect -> convert -> register.
 import fs from 'node:fs';
 import path from 'node:path';
-import { CisError, EXIT, readJson, writeJson, writeFileAtomic, exists, sha256, sha256File, nowIso } from './util.mjs';
+import { CisError, EXIT, readJson, writeJson, writeFileAtomic, exists, sha256, sha256File, nowIso, safeJoin } from './util.mjs';
 import { assertValid } from './schema.mjs';
 import { paths, appendEvent, loadProject } from './project.mjs';
 import { getProvider } from './providers.mjs';
@@ -37,7 +37,13 @@ export function verifyRegistry(root) {
   for (const a of reg.assets) {
     assertValid('asset-record', a, `Asset record "${a.id}"`);
     for (const f of a.files) {
-      const abs = path.join(root, f.path);
+      let abs;
+      try {
+        abs = safeJoin(root, f.path); // a registry entry may never point outside the project
+      } catch {
+        problems.push({ asset: a.id, file: f.path, problem: 'path escapes the project directory' });
+        continue;
+      }
       if (!exists(abs)) problems.push({ asset: a.id, file: f.path, problem: 'missing' });
       else if (sha256File(abs) !== f.sha256) problems.push({ asset: a.id, file: f.path, problem: 'modified since registration' });
     }

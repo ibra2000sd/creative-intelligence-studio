@@ -8,9 +8,9 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "cs": "node plugin/cli/main.mjs",
-    "test": "node --test tests/unit tests/integration tests/security",
-    "test:unit": "node --test tests/unit",
-    "test:e2e": "node --test --test-concurrency=1 tests/e2e",
+    "test": "node --test \"tests/unit/*.test.mjs\" \"tests/integration/*.test.mjs\" \"tests/security/*.test.mjs\"",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:e2e": "node --test --test-concurrency=1 \"tests/e2e/*.test.mjs\"",
     "validate:plugin": "claude plugin validate ./plugin && claude plugin validate ."
   },
   "devDependencies": {

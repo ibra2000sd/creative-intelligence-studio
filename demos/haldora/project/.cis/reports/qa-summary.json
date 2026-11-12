@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-11T23:04:04.565Z",
+  "generatedAt": "2026-11-12T21:47:07.360Z",
   "environment": {
     "tool": "creative-studio 0.1.0",
     "node": "v22.14.0",
@@ -9,6 +9,837 @@
     "browser": "Google Chrome"
   },
   "targets": [
+    {
+      "id": "app",
+      "kind": "web-app",
+      "url": "served from app/dist",
+      "checks": [
+        {
+          "id": "build:app",
+          "category": "build",
+          "status": "pass",
+          "summary": "Built output present at app/dist",
+          "measurement": "static"
+        },
+        {
+          "id": "bundle:app",
+          "category": "performance",
+          "status": "pass",
+          "summary": "JS 112.6KB gzip, CSS 5.3KB gzip, 69 files, 4.42MB on disk",
+          "severity": "minor",
+          "measurement": "static",
+          "data": {
+            "jsGzipBytes": 115320,
+            "cssGzipBytes": 5398,
+            "totalBytes": 4630781,
+            "files": 69,
+            "biggest": [
+              {
+                "file": "assets/campaign-story.png",
+                "bytes": 1594758
+              },
+              {
+                "file": "assets/campaign-square.png",
+                "bytes": 877854
+              },
+              {
+                "file": "assets/campaign-wide.png",
+                "bytes": 442374
+              },
+              {
+                "file": "assets/index-DCnECcub.js",
+                "bytes": 307885
+              },
+              {
+                "file": "assets/app-store-feature.png",
+                "bytes": 260411
+              },
+              {
+                "file": "assets/feature-contour.webp",
+                "bytes": 62966
+              }
+            ]
+          }
+        },
+        {
+          "id": "load:portal@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:portal@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:portal@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:portal@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:portal@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-tablet.png"
+          ]
+        },
+        {
+          "id": "load:portal@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:portal@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:portal:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "text[x=\"28\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"197.531914893617\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"367.063829787234\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "a11y-axe:portal:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "text[x=\"28\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"197.531914893617\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"367.063829787234\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "keyboard:portal",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 14,
+            "reached": 14,
+            "order": [
+              "a[#main]:Skip to content",
+              "a[#/overview]:Haldora",
+              "a[#/overview]:Today",
+              "a[#/devices]:Devices",
+              "a[#/history]:History",
+              "a[#/settings]:Settings",
+              "a[/?lang=ar]:العربية",
+              "button:Switch between light and",
+              "button:Refresh",
+              "button:Roof",
+              "button:Home",
+              "button:Battery level",
+              "input#hour:",
+              "button:Show the data as a table"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "scroll-motion:portal",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Scrolling 55px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "samples": 151,
+            "medianMs": 16.69999999999891,
+            "p95Ms": 16.700000000000728,
+            "over33": 0,
+            "over50": 0,
+            "cls": 0,
+            "scrolledPx": 55,
+            "engine": null,
+            "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
+          }
+        },
+        {
+          "id": "reduced-motion:portal",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:portal",
+          "category": "performance",
+          "status": "warn",
+          "summary": "Lab: LCP 1680ms, CLS 0.0009, TBT 515ms, first tap 384ms (median of 3). Over the default budget (TBT 515ms > 300ms) but within this deliverable's documented exception: Application shell: evaluating the React runtime and rendering the first screen takes roughly 0.5 seconds of main-thread time under 4x CPU throttling on the reference machine and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Reduce further with route-level code splitting if field data shows slow first interactions.",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 1680,
+            "cls": 0.0009,
+            "tbtMs": 515,
+            "interactionMs": 384,
+            "domNodes": 221,
+            "requests": 13,
+            "runs": [
+              {
+                "lcpMs": 2024,
+                "cls": 0.0009,
+                "tbtMs": 974,
+                "interactionMs": 368
+              },
+              {
+                "lcpMs": 1364,
+                "cls": 0.0009,
+                "tbtMs": 515,
+                "interactionMs": 400
+              },
+              {
+                "lcpMs": 1680,
+                "cls": 0.0009,
+                "tbtMs": 475,
+                "interactionMs": 384
+              }
+            ],
+            "conditions": "Median of 3 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
+            "exception": {
+              "tbtMs": 650,
+              "rationale": "Application shell: evaluating the React runtime and rendering the first screen takes roughly 0.5 seconds of main-thread time under 4x CPU throttling on the reference machine and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Reduce further with route-level code splitting if field data shows slow first interactions."
+            }
+          }
+        },
+        {
+          "id": "load:portal-ar@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:portal-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:portal-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-ar-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:portal-ar@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:portal-ar@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:portal-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:portal-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-ar-tablet.png"
+          ]
+        },
+        {
+          "id": "load:portal-ar@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:portal-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "rtl:portal-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Document direction is rtl (computed rtl), language ar",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "dir": "rtl",
+            "lang": "ar",
+            "computed": "rtl"
+          }
+        },
+        {
+          "id": "visual-regression:portal-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-ar-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:portal-ar:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "text[x=\"28\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"197.531914893617\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"367.063829787234\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "a11y-axe:portal-ar:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (1 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 4,
+                "sample": [
+                  {
+                    "target": "text[x=\"28\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"197.531914893617\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  },
+                  {
+                    "target": "text[x=\"367.063829787234\"]",
+                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
+                  }
+                ]
+              }
+            ],
+            "passes": 29
+          }
+        },
+        {
+          "id": "keyboard:portal-ar",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 14,
+            "reached": 14,
+            "order": [
+              "a[#main]:انتقل إلى المحتوى",
+              "a[#/overview]:Haldora",
+              "a[#/overview]:اليوم",
+              "a[#/devices]:الأجهزة",
+              "a[#/history]:السجل",
+              "a[#/settings]:الإعدادات",
+              "a[/]:English",
+              "button:التبديل بين الوضعين الفا",
+              "button:تحديث",
+              "button:السطح",
+              "button:البيت",
+              "button:مستوى البطارية",
+              "input#hour:",
+              "button:اعرض البيانات في جدول"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "scroll-motion:portal-ar",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Scrolling 69px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "samples": 151,
+            "medianMs": 16.699999999999818,
+            "p95Ms": 16.700000000000728,
+            "over33": 0,
+            "over50": 0,
+            "cls": 0,
+            "scrolledPx": 69,
+            "engine": null,
+            "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
+          }
+        },
+        {
+          "id": "reduced-motion:portal-ar",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "web-vitals-lab:portal-ar",
+          "category": "performance",
+          "status": "fail",
+          "summary": "Over budget in the lab: TBT 676ms > 650ms",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "lcpMs": 2228,
+            "cls": 0.001,
+            "tbtMs": 676,
+            "interactionMs": 424,
+            "domNodes": 221,
+            "requests": 13,
+            "runs": [
+              {
+                "lcpMs": 1788,
+                "cls": 0.001,
+                "tbtMs": 476,
+                "interactionMs": 424
+              },
+              {
+                "lcpMs": 2228,
+                "cls": 0.001,
+                "tbtMs": 829,
+                "interactionMs": 384
+              },
+              {
+                "lcpMs": 2584,
+                "cls": 0.001,
+                "tbtMs": 676,
+                "interactionMs": 568
+              }
+            ],
+            "conditions": "Median of 3 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data."
+          }
+        },
+        {
+          "id": "flow:navigation",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Every section is reachable, updates the title and moves focus to its heading",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3199
+          }
+        },
+        {
+          "id": "flow:chart-scrub",
+          "category": "motion",
+          "status": "pass",
+          "summary": "The time slider drives the readout, the cursor and the sun on its arc: battery 30% at 07:00, 100% at 13:00, 39% at 22:00",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 5376
+          }
+        },
+        {
+          "id": "flow:chart-alternatives",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "Chart series can be toggled and the data is available as a table",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2651
+          }
+        },
+        {
+          "id": "flow:devices-states",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Devices: loading state, list, and an accessible expand/collapse",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1571
+          }
+        },
+        {
+          "id": "flow:devices-error-recovery",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Devices: a failed request shows an error and Try again recovers",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1859
+          }
+        },
+        {
+          "id": "flow:devices-empty",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Devices: the empty state explains itself",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1312
+          }
+        },
+        {
+          "id": "flow:history-table",
+          "category": "functional",
+          "status": "pass",
+          "summary": "History: sorting announces its direction; filter, empty result and paging work",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1425
+          }
+        },
+        {
+          "id": "flow:settings-save",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Settings: validation, save confirmation, and the reserve reaches the overview",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3860
+          }
+        },
+        {
+          "id": "flow:settings-rollback",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Settings: a failed save reports the failure and restores the previous values",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1302
+          }
+        },
+        {
+          "id": "flow:rtl-layout",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Arabic: navigation sits on the right, the chart keeps time left to right",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1773
+          }
+        },
+        {
+          "id": "flow:mobile-nav",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Phone: bottom navigation is reachable and content clears it",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1972
+          }
+        },
+        {
+          "id": "flow:reduced-motion",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Reduced motion: figures and markers change without travelling",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2226
+          }
+        }
+      ]
+    },
     {
       "id": "scene",
       "kind": "scene-3d",
@@ -1637,9 +2468,9 @@
     }
   ],
   "totals": {
-    "pass": 81,
-    "fail": 4,
-    "warn": 2,
+    "pass": 128,
+    "fail": 5,
+    "warn": 3,
     "skipped": 0,
     "blocked": 0
   },

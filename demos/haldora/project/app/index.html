@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Portal</title>
+    <link rel="icon" href="./brand/favicon.svg" type="image/svg+xml" />
+    <script>
+      try { const s = localStorage.getItem('scheme'); if (s === 'light' || s === 'dark') document.documentElement.dataset.scheme = s; } catch {}
+      if (new URLSearchParams(location.search).get('lang') === 'ar') { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript><p style="padding:2rem;font-family:system-ui">This application needs JavaScript to show live data.</p></noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

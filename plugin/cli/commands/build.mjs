@@ -5,8 +5,8 @@
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
-import { CisError, EXIT, PLUGIN_ROOT, readJson, writeJson, writeFileAtomic, exists, print, table, walk, slugify, nowIso, fmtBytes } from '../lib/util.mjs';
-import { assertValid } from '../lib/schema.mjs';
+import { CisError, EXIT, PLUGIN_ROOT, readJson, writeJson, writeFileAtomic, exists, print, table, walk, slugify, nowIso, fmtBytes, safeJoin, sha256File } from '../lib/util.mjs';
+import { assertValid, validate } from '../lib/schema.mjs';
 import { requireProject, paths, appendEvent } from '../lib/project.mjs';
 import { loadDna, tokensCss, tokensTs, deriveTokens } from '../lib/dna.mjs';
 import { iconSet } from '../lib/icons.mjs';
@@ -99,12 +99,20 @@ function syncWebAssets(root, dest, dna) {
     ['logo/png/symbol-512.png', 'brand/icon-512.png'],
   ];
   for (const [from, to] of marks) if (copyIfExists(path.join(brandDir, from), path.join(dest, 'public', to))) linked.push(to);
+  // The registry is a file inside the project and could have been edited by hand or by
+  // untrusted content, so every record is re-validated, every path is confined to the
+  // project, and a file is only copied if it still matches its registered hash.
+  const assetsDir = path.join(dest, 'public', 'assets');
   for (const a of loadRegistry(root).assets) {
+    if (!validate('asset-record', a).valid) continue;
     if (a.origin.type !== 'generated' || a.qa.status !== 'passed' || a.id.startsWith('brand-')) continue;
     for (const f of a.files) {
-      const ext = path.extname(f.path);
-      const to = `assets/${a.id}${ext}`;
-      if (copyIfExists(path.join(root, f.path), path.join(dest, 'public', to))) linked.push(to);
+      const ext = path.extname(f.path).toLowerCase();
+      if (!/^\.(webp|avif|png|jpg|svg)$/.test(ext)) continue;
+      const from = safeJoin(root, f.path);
+      if (!exists(from) || sha256File(from) !== f.sha256) continue;
+      const to = safeJoin(assetsDir, `${a.id}${ext}`);
+      if (copyIfExists(from, to)) linked.push(`assets/${a.id}${ext}`);
     }
   }
   return linked;

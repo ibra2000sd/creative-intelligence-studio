@@ -1,0 +1,36 @@
+// Interface copy. The energy domain here is example content: replace the
+// strings and the mock API together when adapting the template to a brief.
+export const STRINGS = {
+  en: {
+    skip: 'Skip to content', nav: 'Sections', theme: 'Switch between light and dark', language: 'العربية', otherLang: 'ar',
+    routes: { overview: 'Today', devices: 'Devices', history: 'History', settings: 'Settings' },
+    overview: {
+      title: 'Today at home', battery: 'In the battery', solar: 'From the roof', home: 'Used by the home', grid: 'Bought from the grid', selfPowered: 'self-powered so far',
+      chartTitle: 'The day so far', chartDesc: 'Solar generation, home use and battery level in half-hour steps. Use the time slider to read any moment.',
+      time: 'Time', series: { solar: 'Roof', home: 'Home', battery: 'Battery level' }, showTable: 'Show the data as a table', hideTable: 'Hide the table', seriesToggle: 'Series shown',
+      flowTitle: 'Right now', flowSolar: 'Roof', flowHome: 'Home', flowBattery: 'Battery', flowGrid: 'Grid', charging: 'charging', discharging: 'powering the home', idle: 'holding', refresh: 'Refresh', updated: 'Updated',
+    },
+    devices: { title: 'Devices', online: 'Online', offline: 'Offline', attention: 'Needs attention', details: 'Details', firmware: 'Firmware', serial: 'Serial', lastSeen: 'Last seen', emptyTitle: 'No devices yet', emptyBody: 'When your installer pairs a Cell, it will appear here.', errorTitle: 'We could not reach your devices', errorBody: 'Your battery keeps working. This page just cannot show it right now.', retry: 'Try again', loading: 'Loading devices' },
+    history: { title: 'History', search: 'Filter by date', searchHint: 'For example 2026-10', date: 'Date', solar: 'Roof (kWh)', used: 'Used (kWh)', grid: 'Grid (kWh)', self: 'Self-powered', sortBy: 'Sort by', page: 'Page', of: 'of', prev: 'Previous', next: 'Next', empty: 'No days match that filter.', clear: 'Clear the filter', rows: 'days' },
+    settings: { title: 'Settings', reserve: 'Backup reserve', reserveHelp: 'The share of the battery kept back for a power cut.', alerts: 'Email me when something needs attention', email: 'Email address', save: 'Save changes', saving: 'Saving…', saved: 'Settings saved.', failed: 'Could not save. Your previous settings are still in place.', errRange: 'Choose a reserve between 10% and 100%.', errRequired: 'An email address is needed for alerts.', errFormat: 'Enter an email address like name@example.com.', demo: 'Demonstration data. Nothing is sent anywhere.' },
+    units: { kw: 'kW', kwh: 'kWh', pct: '%' },
+  },
+  ar: {
+    skip: 'انتقل إلى المحتوى', nav: 'الأقسام', theme: 'التبديل بين الوضعين الفاتح والداكن', language: 'English', otherLang: 'en',
+    routes: { overview: 'اليوم', devices: 'الأجهزة', history: 'السجل', settings: 'الإعدادات' },
+    overview: {
+      title: 'بيتك اليوم', battery: 'في البطارية', solar: 'من السطح', home: 'استهلاك البيت', grid: 'مشتراة من الشبكة', selfPowered: 'اكتفاء ذاتي حتى الآن',
+      chartTitle: 'اليوم حتى الآن', chartDesc: 'إنتاج الألواح واستهلاك البيت ومستوى البطارية كل نصف ساعة. استخدم شريط الوقت لقراءة أي لحظة.',
+      time: 'الوقت', series: { solar: 'السطح', home: 'البيت', battery: 'مستوى البطارية' }, showTable: 'اعرض البيانات في جدول', hideTable: 'أخفِ الجدول', seriesToggle: 'السلاسل المعروضة',
+      flowTitle: 'الآن', flowSolar: 'السطح', flowHome: 'البيت', flowBattery: 'البطارية', flowGrid: 'الشبكة', charging: 'تُشحن', discharging: 'تغذّي البيت', idle: 'ثابتة', refresh: 'تحديث', updated: 'آخر تحديث',
+    },
+    devices: { title: 'الأجهزة', online: 'متصل', offline: 'غير متصل', attention: 'يحتاج إلى انتباه', details: 'التفاصيل', firmware: 'إصدار البرنامج', serial: 'الرقم التسلسلي', lastSeen: 'آخر ظهور', emptyTitle: 'لا توجد أجهزة بعد', emptyBody: 'سيظهر الجهاز هنا عندما يربطه فنّي التركيب.', errorTitle: 'تعذّر الوصول إلى أجهزتك', errorBody: 'بطاريتك تواصل عملها، لكن هذه الصفحة لا تستطيع عرضها الآن.', retry: 'حاول مرة أخرى', loading: 'جارٍ تحميل الأجهزة' },
+    history: { title: 'السجل', search: 'تصفية حسب التاريخ', searchHint: 'مثال: 2026-10', date: 'التاريخ', solar: 'السطح (ك.و.س)', used: 'الاستهلاك (ك.و.س)', grid: 'الشبكة (ك.و.س)', self: 'الاكتفاء الذاتي', sortBy: 'ترتيب حسب', page: 'صفحة', of: 'من', prev: 'السابق', next: 'التالي', empty: 'لا توجد أيام مطابقة لهذه التصفية.', clear: 'إلغاء التصفية', rows: 'يوماً' },
+    settings: { title: 'الإعدادات', reserve: 'احتياطي الطوارئ', reserveHelp: 'النسبة التي تُحفظ في البطارية لحالات انقطاع الكهرباء.', alerts: 'أرسل لي بريداً عندما يحتاج شيء إلى انتباه', email: 'البريد الإلكتروني', save: 'حفظ التغييرات', saving: 'جارٍ الحفظ…', saved: 'تم حفظ الإعدادات.', failed: 'تعذّر الحفظ. إعداداتك السابقة ما زالت كما هي.', errRange: 'اختر نسبة احتياطي بين 10% و100%.', errRequired: 'نحتاج إلى بريد إلكتروني لإرسال التنبيهات.', errFormat: 'اكتب بريداً إلكترونياً بصيغة name@example.com.', demo: 'بيانات تجريبية. لا يُرسل أي شيء إلى أي مكان.' },
+    units: { kw: 'kW', kwh: 'kWh', pct: '%' },
+  },
+};
+
+export function localeFromUrl() {
+  return new URLSearchParams(location.search).get('lang') === 'ar' ? 'ar' : 'en';
+}
