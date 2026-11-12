@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-11-12T21:47:07.370Z",
+  "updatedAt": "2026-11-12T22:51:20.798Z",
   "maxAttempts": 3,
   "defects": [
     {
@@ -10,9 +10,9 @@
       "category": "performance",
       "severity": "major",
       "summary": "Over budget in the lab: TBT 1091ms > 300ms",
-      "attempts": 8,
+      "attempts": 10,
       "firstSeen": "2026-11-11T22:44:15.995Z",
-      "lastSeen": "2026-11-12T21:47:07.370Z",
+      "lastSeen": "2026-11-12T22:51:20.798Z",
       "status": "escalated",
       "regression": false
     },
@@ -23,9 +23,9 @@
       "category": "visual",
       "severity": "major",
       "summary": "13.25% of pixels differ from the accepted baseline",
-      "attempts": 7,
+      "attempts": 9,
       "firstSeen": "2026-11-11T22:46:26.561Z",
-      "lastSeen": "2026-11-12T21:47:07.370Z",
+      "lastSeen": "2026-11-12T22:51:20.798Z",
       "status": "escalated",
       "regression": false
     },
@@ -36,9 +36,9 @@
       "category": "visual",
       "severity": "major",
       "summary": "12.38% of pixels differ from the accepted baseline",
-      "attempts": 7,
+      "attempts": 9,
       "firstSeen": "2026-11-11T22:46:26.561Z",
-      "lastSeen": "2026-11-12T21:47:07.370Z",
+      "lastSeen": "2026-11-12T22:51:20.798Z",
       "status": "escalated",
       "regression": false
     },
@@ -49,9 +49,9 @@
       "category": "visual",
       "severity": "major",
       "summary": "11.52% of pixels differ from the accepted baseline",
-      "attempts": 7,
+      "attempts": 9,
       "firstSeen": "2026-11-11T22:46:26.561Z",
-      "lastSeen": "2026-11-12T21:47:07.370Z",
+      "lastSeen": "2026-11-12T22:51:20.798Z",
       "status": "escalated",
       "regression": false
     },
@@ -62,11 +62,37 @@
       "category": "performance",
       "severity": "major",
       "summary": "Over budget in the lab: TBT 676ms > 650ms",
-      "attempts": 2,
+      "attempts": 4,
       "firstSeen": "2026-11-12T21:42:37.768Z",
-      "lastSeen": "2026-11-12T21:47:07.370Z",
-      "status": "open",
+      "lastSeen": "2026-11-12T22:51:20.798Z",
+      "status": "escalated",
       "regression": false
+    },
+    {
+      "key": "mobile-web/flow:offline-reconnect",
+      "target": "mobile-web",
+      "check": "flow:offline-reconnect",
+      "category": "functional",
+      "severity": "critical",
+      "summary": "Offline: a banner explains the state and Reconnect clears it: locator.waitFor: Error: strict mode violation: locator('[data-testid=\"offline-banner\"]') resolved to 2 elements:",
+      "attempts": 1,
+      "firstSeen": "2026-11-12T22:49:39.757Z",
+      "lastSeen": "2026-11-12T22:49:39.757Z",
+      "status": "fixed",
+      "fixedAt": "2026-11-12T22:51:20.798Z"
+    },
+    {
+      "key": "mobile-web/flow:arabic",
+      "target": "mobile-web",
+      "check": "flow:arabic",
+      "category": "functional",
+      "severity": "critical",
+      "summary": "Language: switching to Arabic translates the interface and mirrors the layout: radio state: got null, expected \"true\"",
+      "attempts": 1,
+      "firstSeen": "2026-11-12T22:49:39.757Z",
+      "lastSeen": "2026-11-12T22:49:39.757Z",
+      "status": "fixed",
+      "fixedAt": "2026-11-12T22:51:20.798Z"
     },
     {
       "key": "app/a11y-axe:portal:light",

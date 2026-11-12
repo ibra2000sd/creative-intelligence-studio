@@ -1,8 +1,8 @@
 # QA summary
 
-Generated 2026-11-12T21:47:07.360Z by creative-studio 0.1.0. Verdict: **fail**.
+Generated 2026-11-12T22:51:20.791Z by creative-studio 0.1.0. Verdict: **fail**.
 
-Pass 128 · Fail 5 · Warn 3 · Blocked 0 · Skipped 0
+Pass 153 · Fail 5 · Warn 4 · Blocked 2 · Skipped 0
 
 Measurements labelled *lab* were taken in headless Chrome on the build machine. They are not field data and say nothing about real users' devices or networks.
 
@@ -59,6 +59,44 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `flow:rtl-layout` | functional (lab) | Arabic: navigation sits on the right, the chart keeps time left to right |
 | pass | `flow:mobile-nav` | functional (lab) | Phone: bottom navigation is reachable and content clears it |
 | pass | `flow:reduced-motion` | motion (lab) | Reduced motion: figures and markers change without travelling |
+
+## mobile-native (mobile)
+
+| Status | Check | Category | Result |
+|---|---|---|---|
+| pass | `typecheck:mobile` | build (static) | TypeScript type check: ok |
+| pass | `unit-tests:mobile` | functional (static) | Jest unit and component tests: ok (19 passed, 19 total) |
+| pass | `bundles:mobile` | build (static) | Production JS bundles exist for iOS and Android (ios 3.85MB, android 3.84MB) |
+| blocked | `native-ios:mobile` | build (manual-required) | Native iOS build and simulator tests cannot run: full Xcode is not installed on this machine. Needs macOS with Xcode, then `npx expo run:ios`; store builds also need an Apple signing identity. |
+| blocked | `native-android:mobile` | build (manual-required) | Native Android build and emulator tests cannot run: the Android SDK is not installed on this machine. Needs Android Studio / SDK and an emulator or device, then `npx expo run:android`; store builds also need a signing keystore. |
+
+## mobile-web (mobile-web)
+
+| Status | Check | Category | Result |
+|---|---|---|---|
+| pass | `build:mobile` | build (static) | Built output present at mobile/dist-web |
+| warn | `bundle:mobile` | performance (static) | JS 530KB gzip > 300KB |
+| pass | `load:app-web@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:app-web@mobile` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:app-web@mobile` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `target-size:app-web@mobile` | accessibility (lab) | All pointer targets are at least 24x24 CSS px |
+| pass | `load:app-web@tablet` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:app-web@tablet` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:app-web@tablet` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `load:app-web@desktop` | functional (lab) | No console errors, exceptions, failed requests or broken images |
+| pass | `layout:app-web@desktop` | visual (lab) | No horizontal overflow or clipped text |
+| pass | `visual-regression:app-web@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `a11y-axe:app-web:light` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (0 item(s) need manual review) |
+| pass | `a11y-axe:app-web:dark` | accessibility (lab) | No WCAG 2.2 A/AA violations detectable by axe-core (0 item(s) need manual review) |
+| pass | `keyboard:app-web` | accessibility (lab) | 2 tab stops reached in order, each with a visible focus indicator and none obscured |
+| pass | `reduced-motion:app-web` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
+| pass | `flow:onboarding-swipe` | motion (lab) | Onboarding: a horizontal drag turns the page and the indicator follows: Page 1 of 3 -> Page 2 of 3 -> back |
+| pass | `flow:onboarding-buttons` | functional (lab) | Onboarding: Next walks every page and Get started opens the app |
+| pass | `flow:tabs-and-detail` | functional (lab) | Tabs switch screens; a device opens its detail and Back returns |
+| pass | `flow:time-stepper` | motion (lab) | Today: stepping time updates the clock, the state line and the dial description |
+| pass | `flow:reserve-slider` | functional (lab) | Settings: the reserve responds to dragging and to the single-tap buttons: 30 -> 35 by tap -> 90 by drag |
+| pass | `flow:offline-reconnect` | functional (lab) | Offline: a banner explains the state and Reconnect clears it |
+| pass | `flow:arabic` | functional (lab) | Language: switching to Arabic translates the interface and mirrors the layout |
 
 ## scene (scene-3d)
 
@@ -161,11 +199,11 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 
 | Status | Severity | Where | Runs failing | Summary |
 |---|---|---|---|---|
-| escalated | major | `scene/web-vitals-lab:scene` | 8 | Over budget in the lab: TBT 1091ms > 300ms |
-| escalated | major | `scene/visual-regression:scene@mobile` | 7 | 13.25% of pixels differ from the accepted baseline |
-| escalated | major | `scene/visual-regression:scene@tablet` | 7 | 12.38% of pixels differ from the accepted baseline |
-| escalated | major | `scene/visual-regression:scene@desktop` | 7 | 11.52% of pixels differ from the accepted baseline |
-| open | major | `app/web-vitals-lab:portal-ar` | 2 | Over budget in the lab: TBT 676ms > 650ms |
+| escalated | major | `scene/web-vitals-lab:scene` | 10 | Over budget in the lab: TBT 1091ms > 300ms |
+| escalated | major | `scene/visual-regression:scene@mobile` | 9 | 13.25% of pixels differ from the accepted baseline |
+| escalated | major | `scene/visual-regression:scene@tablet` | 9 | 12.38% of pixels differ from the accepted baseline |
+| escalated | major | `scene/visual-regression:scene@desktop` | 9 | 11.52% of pixels differ from the accepted baseline |
+| escalated | major | `app/web-vitals-lab:portal-ar` | 4 | Over budget in the lab: TBT 676ms > 650ms |
 
 ## Not covered by automation
 

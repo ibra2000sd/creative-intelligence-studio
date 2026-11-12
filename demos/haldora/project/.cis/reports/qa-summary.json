@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-12T21:47:07.360Z",
+  "generatedAt": "2026-11-12T22:51:20.791Z",
   "environment": {
     "tool": "creative-studio 0.1.0",
     "node": "v22.14.0",
@@ -836,6 +836,402 @@
           "measurement": "lab",
           "data": {
             "ms": 2226
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-native",
+      "kind": "mobile",
+      "checks": [
+        {
+          "id": "typecheck:mobile",
+          "category": "build",
+          "status": "pass",
+          "summary": "TypeScript type check: ok",
+          "severity": "critical",
+          "measurement": "static",
+          "data": {
+            "tail": "> cis-mobile-app@1.0.0 typecheck\n> tsc --noEmit"
+          }
+        },
+        {
+          "id": "unit-tests:mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Jest unit and component tests: ok (19 passed, 19 total)",
+          "severity": "critical",
+          "measurement": "static",
+          "data": {
+            "tail": "> cis-mobile-app@1.0.0 test\n> jest --ci\n\n\n\nTest Suites: 3 passed, 3 total\nTests:       19 passed, 19 total\nSnapshots:   0 total\nTime:        8.609 s\nRan all test suites."
+          }
+        },
+        {
+          "id": "bundles:mobile",
+          "category": "build",
+          "status": "pass",
+          "summary": "Production JS bundles exist for iOS and Android (ios 3.85MB, android 3.84MB)",
+          "severity": "critical",
+          "measurement": "static",
+          "data": {
+            "bundles": [
+              {
+                "platform": "ios",
+                "files": [
+                  {
+                    "file": "entry-34b744580cf86156f32ce1a4353eeacb.hbc",
+                    "bytes": 4035226
+                  }
+                ]
+              },
+              {
+                "platform": "android",
+                "files": [
+                  {
+                    "file": "entry-1b65ef5474921458d5b7e3a8a25da1c1.hbc",
+                    "bytes": 4025133
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "native-ios:mobile",
+          "category": "build",
+          "status": "blocked",
+          "summary": "Native iOS build and simulator tests cannot run: full Xcode is not installed on this machine. Needs macOS with Xcode, then `npx expo run:ios`; store builds also need an Apple signing identity.",
+          "severity": "major",
+          "measurement": "manual-required"
+        },
+        {
+          "id": "native-android:mobile",
+          "category": "build",
+          "status": "blocked",
+          "summary": "Native Android build and emulator tests cannot run: the Android SDK is not installed on this machine. Needs Android Studio / SDK and an emulator or device, then `npx expo run:android`; store builds also need a signing keystore.",
+          "severity": "major",
+          "measurement": "manual-required"
+        }
+      ]
+    },
+    {
+      "id": "mobile-web",
+      "kind": "mobile-web",
+      "url": "served from mobile/dist-web",
+      "checks": [
+        {
+          "id": "build:mobile",
+          "category": "build",
+          "status": "pass",
+          "summary": "Built output present at mobile/dist-web",
+          "measurement": "static"
+        },
+        {
+          "id": "bundle:mobile",
+          "category": "performance",
+          "status": "warn",
+          "summary": "JS 530KB gzip > 300KB",
+          "severity": "minor",
+          "measurement": "static",
+          "data": {
+            "jsGzipBytes": 542651,
+            "cssGzipBytes": 0,
+            "totalBytes": 2281533,
+            "files": 13,
+            "biggest": [
+              {
+                "file": "_expo/static/js/web/entry-8438e0f87c2bb01e845b6938b95ecf13.js",
+                "bytes": 1117111
+              },
+              {
+                "file": "_expo/static/js/web/__common-dddc7b072110410263fa131d5052a327.js",
+                "bytes": 1093638
+              },
+              {
+                "file": "_expo/static/js/web/_layout-1ef2d657c44c9c4543483cbb5a0f25ac.js",
+                "bytes": 28406
+              },
+              {
+                "file": "favicon.ico",
+                "bytes": 14510
+              },
+              {
+                "file": "_expo/static/js/web/settings-863fe49f5087d185400e5a42aab7891e.js",
+                "bytes": 7158
+              },
+              {
+                "file": "_expo/static/js/web/index-60c047d34f7f8a209469513743ec44f2.js",
+                "bytes": 5732
+              }
+            ]
+          }
+        },
+        {
+          "id": "load:app-web@mobile",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:app-web@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:app-web@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-web-mobile.png"
+          ]
+        },
+        {
+          "id": "target-size:app-web@mobile",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "All pointer targets are at least 24x24 CSS px",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "small": []
+          }
+        },
+        {
+          "id": "load:app-web@tablet",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:app-web@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:app-web@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-web-tablet.png"
+          ]
+        },
+        {
+          "id": "load:app-web@desktop",
+          "category": "functional",
+          "status": "pass",
+          "summary": "No console errors, exceptions, failed requests or broken images",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "problems": [],
+            "requests": 13
+          }
+        },
+        {
+          "id": "layout:app-web@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:app-web@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-web-desktop.png"
+          ]
+        },
+        {
+          "id": "a11y-axe:app-web:light",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (0 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [],
+            "passes": 19
+          }
+        },
+        {
+          "id": "a11y-axe:app-web:dark",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core (0 item(s) need manual review)",
+          "severity": "minor",
+          "measurement": "lab",
+          "data": {
+            "violations": [],
+            "incomplete": [],
+            "passes": 19
+          }
+        },
+        {
+          "id": "keyboard:app-web",
+          "category": "accessibility",
+          "status": "pass",
+          "summary": "2 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "expected": 2,
+            "reached": 2,
+            "order": [
+              "button:Skip",
+              "button:Next"
+            ],
+            "noIndicator": [],
+            "obscured": []
+          }
+        },
+        {
+          "id": "reduced-motion:app-web",
+          "category": "motion",
+          "status": "pass",
+          "summary": "With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "running": [],
+            "hidden": [],
+            "engine": null
+          }
+        },
+        {
+          "id": "flow:onboarding-swipe",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Onboarding: a horizontal drag turns the page and the indicator follows: Page 1 of 3 -> Page 2 of 3 -> back",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2070
+          }
+        },
+        {
+          "id": "flow:onboarding-buttons",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Onboarding: Next walks every page and Get started opens the app",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2238
+          }
+        },
+        {
+          "id": "flow:tabs-and-detail",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Tabs switch screens; a device opens its detail and Back returns",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3726
+          }
+        },
+        {
+          "id": "flow:time-stepper",
+          "category": "motion",
+          "status": "pass",
+          "summary": "Today: stepping time updates the clock, the state line and the dial description",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2812
+          }
+        },
+        {
+          "id": "flow:reserve-slider",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Settings: the reserve responds to dragging and to the single-tap buttons: 30 -> 35 by tap -> 90 by drag",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 3402
+          }
+        },
+        {
+          "id": "flow:offline-reconnect",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Offline: a banner explains the state and Reconnect clears it",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2968
+          }
+        },
+        {
+          "id": "flow:arabic",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Language: switching to Arabic translates the interface and mirrors the layout",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2471
           }
         }
       ]
@@ -2468,11 +2864,11 @@
     }
   ],
   "totals": {
-    "pass": 128,
+    "pass": 153,
     "fail": 5,
-    "warn": 3,
+    "warn": 4,
     "skipped": 0,
-    "blocked": 0
+    "blocked": 2
   },
   "verdict": "fail",
   "manualAuditsOutstanding": [

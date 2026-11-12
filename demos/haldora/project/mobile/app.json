@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Haldora",
+    "slug": "haldora",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "haldora",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "example.haldora.app"
+    },
+    "android": {
+      "package": "example.haldora.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#14152B"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "supportsRTL": true,
+      "dnaRevision": 1
+    }
+  }
+}

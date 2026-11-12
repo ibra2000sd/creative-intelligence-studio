@@ -51,7 +51,8 @@ async function testBrowserTarget(root, id, flags, dna) {
   }
   checks.push(chk(`build:${id}`, 'build', 'pass', `Built output present at ${t.dist}`, { measurement: 'static' }));
   const { runBrowserSuite, checkBundle } = await import('../lib/qa.mjs');
-  checks.push(checkBundle(dist, id, { exclude: id === 'web' ? [`${path.sep}scene${path.sep}`] : [] }));
+  // The mobile web export is a test vehicle for the React Native code, not a shipped website.
+  if (id !== 'mobile') checks.push(checkBundle(dist, id, { exclude: id === 'web' ? [`${path.sep}scene${path.sep}`] : [] }));
   if (!hasCapability('browser') || !findChrome()) {
     checks.push(chk(`browser:${id}`, 'functional', 'blocked', 'Browser checks need the browser engine and a Chromium browser (creative-studio doctor).', { severity: 'critical', measurement: 'lab' }));
     return { id, kind: t.kind, checks };

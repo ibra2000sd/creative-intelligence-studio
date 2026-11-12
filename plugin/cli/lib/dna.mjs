@@ -420,6 +420,7 @@ export function consistency(root, dna, deliverables) {
     const seen = new Map();
     for (const file of walk(dir, { ignore: ['dist', 'public', '.expo', 'assets', 'qa', 'coverage', '__tests__'] })) {
       if (!SOURCE_EXT.has(path.extname(file)) || skipTokens.has(file)) continue;
+      if (file.includes(`${path.sep}src${path.sep}dna${path.sep}`)) continue; // generated from the DNA itself
       if (/package(-lock)?\.json$|tsconfig|app\.json$|content\.json$|\.config\./.test(file)) continue;
       const text = fs.readFileSync(file, 'utf8');
       res.filesScanned++;
