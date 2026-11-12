@@ -170,7 +170,8 @@ export function redact(text) {
   let out = String(text);
   for (const [, rx] of SECRET_PATTERNS) {
     rx.lastIndex = 0;
-    out = out.replace(rx, (m, g1) => (g1 ? m.replace(g1, '[REDACTED]') : '[REDACTED]'));
+    // For patterns without a capture group the second argument is the match offset, not text.
+    out = out.replace(rx, (m, g1) => (typeof g1 === 'string' ? m.replace(g1, '[REDACTED]') : '[REDACTED]'));
   }
   return out;
 }

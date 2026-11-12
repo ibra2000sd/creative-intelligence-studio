@@ -121,7 +121,7 @@ function testProject(root, dna) {
   const present = DELIVERABLE_DIRS.filter((d) => exists(path.join(root, d.dir)));
   const con = consistency(root, dna, present);
   writeJson(path.join(paths(root).reports, 'consistency.json'), con);
-  const drift = con.deliverables.filter((d) => d.tokens !== 'current' && d.id !== 'brand' || d.offPalette.length || d.foreignFonts.length);
+  const drift = con.deliverables.filter((d) => !['current', 'not-applicable'].includes(d.tokens) || d.offPalette.length || d.foreignFonts.length);
   checks.push(chk('dna-consistency', 'visual', drift.length ? 'fail' : 'pass', drift.length ? `Deliverables drifting from the DNA: ${drift.map((d) => `${d.id} (tokens ${d.tokens}, ${d.offPalette.length} off-palette colours, ${d.foreignFonts.length} foreign fonts)`).join('; ')}` : `${con.deliverables.length} deliverables carry tokens generated from DNA r${dna.revision}, with no off-palette colours or foreign fonts in their source`, { severity: 'major', measurement: 'static', data: { deliverables: con.deliverables.map((d) => ({ id: d.id, tokens: d.tokens, filesScanned: d.filesScanned, offPalette: d.offPalette.slice(0, 5), foreignFonts: d.foreignFonts.slice(0, 5) })) }, evidence: ['.cis/reports/consistency.json'] }));
   const reg = verifyRegistry(root);
   checks.push(chk('asset-registry', 'delivery', reg.problems.length ? 'fail' : 'pass', reg.problems.length ? `${reg.problems.length} asset problem(s): ${reg.problems.slice(0, 3).map((p) => `${p.asset} ${p.problem}`).join('; ')}` : `${reg.count} assets, ${reg.files} files: every file exists and matches its registered hash`, { severity: 'major', measurement: 'static', data: { problems: reg.problems.slice(0, 20) } }));

@@ -165,23 +165,24 @@ export async function diff(aInput, bInput, { threshold = 0.1, grid = 8, heatmap 
 
 /** Dominant colours by coarse quantisation. Used for design-reference analysis. */
 export async function dominantColors(input, count = 6) {
-  const { data } = await raw(input, 64);
+  const { data } = await sharp()(input).resize(96, 96, { fit: 'fill', kernel: 'nearest' }).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  // Group similar colours, then report the most frequent exact colour of each group,
+  // so a flat brand colour comes back as itself and not as an average with its edges.
   const buckets = new Map();
   for (let i = 0; i < data.length; i += 4) {
     if (data[i + 3] < 40) continue;
     const key = `${data[i] >> 4},${data[i + 1] >> 4},${data[i + 2] >> 4}`;
-    const b = buckets.get(key) || { n: 0, r: 0, g: 0, b: 0 };
+    const b = buckets.get(key) || { n: 0, exact: new Map() };
     b.n++;
-    b.r += data[i];
-    b.g += data[i + 1];
-    b.b += data[i + 2];
+    const hex = rgbToHex([data[i], data[i + 1], data[i + 2]]);
+    b.exact.set(hex, (b.exact.get(hex) || 0) + 1);
     buckets.set(key, b);
   }
   const total = [...buckets.values()].reduce((s, b) => s + b.n, 0) || 1;
   return [...buckets.values()]
     .sort((x, y) => y.n - x.n)
     .slice(0, count)
-    .map((b) => ({ hex: rgbToHex([b.r / b.n, b.g / b.n, b.b / b.n]), share: Number((b.n / total).toFixed(3)) }));
+    .map((b) => ({ hex: [...b.exact.entries()].sort((x, y) => y[1] - x[1])[0][0], share: Number((b.n / total).toFixed(3)) }));
 }
 
 /**

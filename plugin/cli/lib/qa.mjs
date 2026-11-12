@@ -87,8 +87,15 @@ async function checkAxe(page, label) {
     return { violations: r.violations.map(slim), incomplete: r.incomplete.map(slim), passes: r.passes?.length ?? null };
   });
   const serious = res.violations.filter((v) => ['critical', 'serious'].includes(v.impact));
-  const status = serious.length ? 'fail' : res.violations.length ? 'warn' : 'pass';
-  return check(`a11y-axe:${label}`, 'accessibility', status, res.violations.length ? `${res.violations.length} axe violation(s): ${res.violations.map((v) => `${v.id} (${v.impact}, ${v.nodes})`).join(', ')}` : `No WCAG 2.2 A/AA violations detectable by axe-core (${res.incomplete.length} item(s) need manual review)`, { severity: serious.length ? 'critical' : 'minor', measurement: 'lab', data: res });
+  // "Incomplete" means axe could not decide a rule (for example contrast over an image or an
+  // overlapping element). That is not a pass: it is reported as a warning naming the rules.
+  const undecided = res.incomplete.map((v) => `${v.id} (${v.nodes})`);
+  const status = serious.length ? 'fail' : res.violations.length || undecided.length ? 'warn' : 'pass';
+  const parts = [];
+  if (res.violations.length) parts.push(`${res.violations.length} axe violation(s): ${res.violations.map((v) => `${v.id} (${v.impact}, ${v.nodes})`).join(', ')}`);
+  if (undecided.length) parts.push(`${undecided.length} rule(s) axe could not decide and a person must check: ${undecided.join(', ')}`);
+  if (!parts.length) parts.push('No WCAG 2.2 A/AA violations detectable by axe-core');
+  return check(`a11y-axe:${label}`, 'accessibility', status, parts.join('; '), { severity: serious.length ? 'critical' : 'minor', measurement: 'lab', data: res });
 }
 
 async function checkKeyboard(page, label) {

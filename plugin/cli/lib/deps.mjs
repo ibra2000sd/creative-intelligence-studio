@@ -49,7 +49,15 @@ export const CAPABILITIES = {
   model3d: { packages: ['@gltf-transform/core', '@gltf-transform/functions', '@gltf-transform/extensions', 'meshoptimizer', 'gltf-validator'], enables: 'GLB authoring, optimisation and validation' },
 };
 
+// Test seam: CIS_DISABLE_ENGINES=raster,browser makes those engines look uninstalled,
+// so missing-dependency behaviour can be exercised without uninstalling anything.
+function disabled(name) {
+  const off = (process.env.CIS_DISABLE_ENGINES || '').split(',').filter(Boolean);
+  return off.some((cap) => CAPABILITIES[cap]?.packages.some((p) => name === p || name.startsWith(p + '/')));
+}
+
 export function resolveDep(name) {
+  if (disabled(name)) return null;
   for (const { base, within } of bases()) {
     try {
       const req = createRequire(path.join(base, 'noop.js'));

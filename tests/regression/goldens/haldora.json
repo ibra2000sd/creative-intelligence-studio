@@ -1,0 +1,28 @@
+{
+  "tokensCss": "d5380d006b168950",
+  "tokensTs": "a8ad6bb0c7529253",
+  "planShape": "a6c087579ca5e29e",
+  "planTasks": 15,
+  "gates": [
+    "G0-brief",
+    "G1-direction",
+    "G2-system",
+    "G6-quality",
+    "G7-acceptance"
+  ],
+  "recipes": {
+    "horizon-field": "1a6bb85daf8a31aa",
+    "contour-map": "68a4e911e9c5e241",
+    "pattern-tile": "14bd0450fe18eb8e"
+  },
+  "symbolArc": "06af3df48d2bd439",
+  "modelTriangles": {
+    "Body": 2700,
+    "Fascia": 1364,
+    "ArcLight": 1120,
+    "Horizon": 532,
+    "Sun": 520,
+    "Bracket": 588,
+    "Conduit": 972
+  }
+}

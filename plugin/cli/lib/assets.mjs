@@ -149,11 +149,13 @@ export async function produce(root, brief, dna, { providerId, consent = false, s
     }
     const estimate = provider.estimateCostUsd(job);
     let reserved = false;
+    let charged = false; // true once the provider has returned output: that call is paid for, whatever QA says
     try {
       reserveCost(root, { provider: provider.id, jobId: job.id, estimateUsd: estimate });
       reserved = estimate > 0;
       const overlayMarkup = job.overlay && overlayFor ? await overlayFor(job) : '';
       const out = await provider.generate(job, { dna, signal, overlayMarkup });
+      charged = true;
       fs.mkdirSync(dir, { recursive: true });
       const files = [];
       const checks = [];
@@ -235,7 +237,7 @@ export async function produce(root, brief, dna, { providerId, consent = false, s
         log(`  ${job.id}: stopped by budget`);
         continue;
       }
-      if (reserved) refundCost(root, { provider: provider.id, jobId: job.id, usd: estimate });
+      if (reserved && !charged) refundCost(root, { provider: provider.id, jobId: job.id, usd: estimate });
       appendEvent(root, { type: 'asset.failed', data: { id: job.id, provider: provider.id, code: e.code, message: e.message } });
       results.push({ id: job.id, status: e.code === 'E_CANCELLED' ? 'cancelled' : 'failed', error: e.message, code: e.code });
       log(`  ${job.id}: ${e.code === 'E_CANCELLED' ? 'cancelled' : 'FAILED'} (${e.code})`);

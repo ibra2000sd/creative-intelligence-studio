@@ -1,0 +1,14 @@
+{
+  "name": "creative-intelligence-studio",
+  "description": "Creative Intelligence Studio: creative engineering for Claude Code from one Experience DNA.",
+  "owner": { "name": "Creative Intelligence Studio contributors" },
+  "plugins": [
+    {
+      "name": "creative-intelligence-studio",
+      "source": "./plugin",
+      "description": "Brand identity, websites, web apps, mobile apps, generated imagery, motion and 3D from one Experience DNA, with approval gates and evidence-backed QA.",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  ]
+}
