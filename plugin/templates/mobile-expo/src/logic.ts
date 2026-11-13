@@ -51,11 +51,12 @@ export const clock = (h: number) => `${String(Math.floor(h)).padStart(2, '0')}:$
 // Product names are brand names and stay as written; a generic device and every place are keys
 // into the interface strings, so they are translated with the rest of the app.
 export type Place = 'garage' | 'fuseBoard' | 'driveway' | 'loft';
-export type Device = { id: string; kind: string; name?: string; nameKey?: 'carCharger' | 'roofInverter'; place: Place; status: 'online' | 'offline' | 'attention'; firmware: string };
+export type Device = { id: string; kind: string; name?: string; nameKey?: 'carCharger' | 'roofInverter'; place: Place; status: 'online' | 'offline' | 'attention'; firmware: string; serial: string; lastSeen: number; noteKey?: 'chargerNote' | 'inverterNote' };
 
+// The same four devices as the web portal. `lastSeen` is an hour of today in the demonstration's clock.
 export const DEVICES: Device[] = [
-  { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', place: 'garage', status: 'online', firmware: '2.4.1' },
-  { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', place: 'fuseBoard', status: 'online', firmware: '1.9.0' },
-  { id: 'ev-1', kind: 'car', nameKey: 'carCharger', place: 'driveway', status: 'attention', firmware: '3.0.2' },
-  { id: 'roof-1', kind: 'sun', nameKey: 'roofInverter', place: 'loft', status: 'offline', firmware: '5.2.0' },
+  { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', place: 'garage', status: 'online', firmware: '2.4.1', serial: 'HC-0193-2291', lastSeen: 13 },
+  { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', place: 'fuseBoard', status: 'online', firmware: '1.9.0', serial: 'HS-5510-0042', lastSeen: 13 },
+  { id: 'ev-1', kind: 'car', nameKey: 'carCharger', place: 'driveway', status: 'attention', firmware: '3.0.2', serial: 'EV-7781-1200', lastSeen: 12.5, noteKey: 'chargerNote' },
+  { id: 'roof-1', kind: 'sun', nameKey: 'roofInverter', place: 'loft', status: 'offline', firmware: '5.2.0', serial: 'IN-3301-8875', lastSeen: 7, noteKey: 'inverterNote' },
 ];

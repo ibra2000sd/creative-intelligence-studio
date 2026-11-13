@@ -37,17 +37,20 @@ function capsule(x, y, w, h) {
 //   holes: shapes cut out of the body (even-odd)
 //   accent: shapes filled with the accent colour (become holes in one-colour marks)
 const SYMBOLS = {
-  /** A sun travelling an arc above a horizon, inside a cell. */
+  /**
+   * A sun on its arc, the arc standing on a horizon, inside a cell. The arc is continuous and the
+   * sun sits on it; the horizon runs well past the arc's feet, so the mark reads as a sunrise over
+   * land rather than a dome on a plate.
+   */
   arc({ corner = 0.28, sunAngle = 122, weight = 5.2, radius = 15.5, sun = 5.4 }) {
     const cx = 32;
-    const cy = 41.5;
-    const gap = ((sun + weight * 0.75) / radius) * (180 / Math.PI);
-    const holes = [];
-    if (180 - (sunAngle + gap) > 6) holes.push(arcBand(cx, cy, radius, weight, 180, sunAngle + gap));
-    if (sunAngle - gap > 6) holes.push(arcBand(cx, cy, radius, weight, sunAngle - gap, 0));
-    holes.push(capsule(cx - radius - weight / 2, cy + 6.2, radius * 2 + weight, weight * 0.62));
+    const cy = 39;
+    const holes = [arcBand(cx, cy, radius, weight, 180, 0)];
+    const reach = radius + weight / 2 + 7.5;
+    // The horizon starts just above the arc's feet, so their rounded ends are inside it, not above it.
+    holes.push(capsule(cx - reach, cy - weight * 0.08, reach * 2, weight * 0.72));
     const [sx, sy] = pt(cx, cy, radius, sunAngle);
-    return { body: [roundedRect(4, 4, 56, 56, 56 * corner)], holes, accent: [circle(sx, sy, sun)], description: 'A sun on its arc above a horizon line, held inside a rounded cell.' };
+    return { body: [roundedRect(4, 4, 56, 56, 56 * corner)], holes, accent: [circle(sx, sy, sun)], description: 'A sun on its arc, the arc standing on a horizon, held inside a rounded cell.' };
   },
   /** Ring segments around a core. */
   orbit({ weight = 4.6, turn = 28 }) {
@@ -100,8 +103,18 @@ export function symbolMarkup(sym, { x = 0, y = 0, size = 64, primary, accent, mo
   return out;
 }
 
-export function svgDoc({ w, h, title, desc, body, bg }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f(w)} ${f(h)}" width="${f(w)}" height="${f(h)}" role="img"><title>${escapeXml(title)}</title>${desc ? `<desc>${escapeXml(desc)}</desc>` : ''}${bg ? `<path fill="${bg}" d="M0 0H${f(w)}V${f(h)}H0Z"/>` : ''}${body}</svg>\n`;
+/**
+ * The symbol as a full-bleed icon: the cell's colour fills the whole square and the arc, horizon and
+ * sun are scaled to it. Platforms apply their own corner mask, so the master has no tile of its own.
+ */
+export function iconMarkup(sym, { size, field, knockout, accent }) {
+  const s = size / 56;
+  const t = ` transform="translate(${f(-4 * s)} ${f(-4 * s)}) scale(${f(s)})"`;
+  return `<path fill="${field}" d="M0 0H${size}V${size}H0Z"/><path${t} fill="${knockout}" d="${sym.holes.join('')}"/><path${t} fill="${accent}" d="${sym.accent.join('')}"/>`;
+}
+
+export function svgDoc({ w, h, title, desc, body, bg, lang }) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f(w)} ${f(h)}" width="${f(w)}" height="${f(h)}" role="img"${lang ? ` xml:lang="${lang}"` : ''}><title>${escapeXml(title)}</title>${desc ? `<desc>${escapeXml(desc)}</desc>` : ''}${bg ? `<path fill="${bg}" d="M0 0H${f(w)}V${f(h)}H0Z"/>` : ''}${body}</svg>\n`;
 }
 
 export function escapeXml(s) {

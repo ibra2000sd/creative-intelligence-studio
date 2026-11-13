@@ -11,6 +11,10 @@ export function useTheme() {
   return {
     scheme,
     c: theme.color[scheme],
+    // The day-arc marker follows the brand's rules, not the scheme's accent: amber by day in both
+    // schemes, and at night a crescent that reads against the surface it sits on.
+    sun: theme.color.light.accent,
+    moon: scheme === 'dark' ? theme.color.dark.text : theme.color.light.primary,
     viz: theme.color.dataViz,
     space: theme.space,
     radius: theme.radius,

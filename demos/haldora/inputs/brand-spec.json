@@ -105,6 +105,17 @@
       "Never set Arabic words in the monospaced face. It is for figures and units only, which stay in Latin digits and read left to right inside right-to-left text.",
       "Arabic text is never letter-spaced and never set in capitals-style small sizes below 14px."
     ],
-    "lockupRule": "The logo is the Latin wordmark in every market; there is no Arabic lockup. In Arabic layouts the lockup sits at the reading (right) edge, and the name may be written out in Arabic in running text as هالدورا."
+    "lockupRule": "The logo is the Latin wordmark in every market; there is no Arabic lockup. In Arabic layouts the lockup sits at the reading (right) edge, and the name may be written out in Arabic in running text as هالدورا.",
+    "applications": {
+      "social-square": "السطح يستيقظ أولاً",
+      "og-image": "طاقة بيتك، من شروق الشمس إلى الليل",
+      "story": "الظهيرة وقت التخزين"
+    }
+  },
+  "headlines": {
+    "social-square": "Evening runs on noon",
+    "og-image": "Your home's energy, from sunrise to night",
+    "story": "The roof wakes first",
+    "presentation-title": "A quiet reserve for the night"
   }
 }

@@ -7,7 +7,7 @@ import dna from './dna/dna.json';
 import icons from './dna/icons.json';
 import { STRINGS, localeFromUrl } from './i18n.js';
 import { fetchDay, fetchDevices, fetchHistory, saveSettings } from './api.js';
-import { areaPath, batteryState, clock, filterRows, formatNumber, linePath, paginate, scalePoints, sortRows, sunOnAxis, totals, validateSettings } from './logic.js';
+import { areaPath, batteryState, clock, filterRows, formatNumber, friendlyDate, linePath, paginate, scalePoints, sortRows, sunOnAxis, totals, validateSettings } from './logic.js';
 
 const ROUTES = ['overview', 'devices', 'history', 'settings'];
 const ROUTE_ICON = { overview: 'arc', devices: 'device', history: 'history', settings: 'sliders' };
@@ -24,6 +24,19 @@ export function Icon({ name, size = 24 }) {
       {paths.map((d) => <path key={d} d={d} />)}
     </svg>
   );
+}
+
+/** The rendered width of an element, so a chart can be drawn at the size it is shown. */
+function useWidth() {
+  const ref = useRef(null);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    if (!ref.current) return undefined;
+    const ro = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width)));
+    ro.observe(ref.current);
+    return () => ro.disconnect();
+  }, []);
+  return [ref, width];
 }
 
 function useHashRoute() {
@@ -52,24 +65,18 @@ function Figure({ value, digits = 1, locale }) {
   return <motion.span className="figure">{text}</motion.span>;
 }
 
-function Stat({ icon, label, value, unit, digits, tone, locale }) {
-  return (
-    <div className={`stat tone-${tone}`}>
-      <span className="stat-icon"><Icon name={icon} /></span>
-      <p className="stat-label">{label}</p>
-      <p className="stat-value"><Figure value={value} digits={digits} locale={locale} /><span className="unit">{unit}</span></p>
-    </div>
-  );
-}
-
 function DayChart({ points, hour, now, onHour, t, locale }) {
   const [shown, setShown] = useState({ solar: true, home: true, battery: true });
   const [table, setTable] = useState(false);
   const descId = useId();
-  const W = 720;
-  const H = 320;
-  const PAD = 28;
-  const TOP = 78; // the series stop here; the band above belongs to the sun
+  // The chart is drawn at the width it is shown, so its labels are real 12 px text on a phone
+  // instead of a desktop drawing shrunk to a thumbnail. Narrow screens get a taller proportion.
+  const [boxRef, boxWidth] = useWidth();
+  const W = boxWidth || 720;
+  const narrow = W < 560;
+  const H = narrow ? Math.round(W * 0.86) : 320;
+  const PAD = narrow ? 22 : 28;
+  const TOP = narrow ? 64 : 78; // the series stop here; the band above belongs to the sun
   const max = Math.max(...points.map((p) => Math.max(p.solar, p.home)), 1) * 1.08;
   const xy = (key, m) => scalePoints(points, key, { width: W, height: H, pad: PAD, padTop: TOP, max: m });
   const solar = xy('solar', max);
@@ -102,7 +109,8 @@ function DayChart({ points, hour, now, onHour, t, locale }) {
       </header>
       <p id={descId} className="sr-only">{t.chartDesc}</p>
       {/* Time runs left to right in every locale: the chart depicts the sky, not reading order. */}
-      <svg className="plot" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="chart-title" aria-describedby={descId} dir="ltr">
+      <div ref={boxRef} className={`plot-box${narrow ? ' is-narrow' : ''}`}>
+      <svg className="plot" viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-labelledby="chart-title" aria-describedby={descId} dir="ltr">
         <path className="day-arc" d={`M${sun.left.toFixed(1)} ${H - PAD}A${sun.rx.toFixed(1)} ${H - PAD - 20} 0 0 1 ${sun.right.toFixed(1)} ${H - PAD}`} />
         {[0, 6, 12, 18].map((h) => <text key={h} className="tick" x={PAD + (h / 23.5) * (W - PAD * 2)} y={H - 6}>{clock(h)}</text>)}
         <line className="axis" x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} />
@@ -124,6 +132,7 @@ function DayChart({ points, hour, now, onHour, t, locale }) {
           <circle className="sun-core" r="7.5" />
         </motion.g>
       </svg>
+      </div>
       <div className="scrub">
         <label htmlFor="hour">{t.time}</label>
         <input id="hour" type="range" min="0" max="23.5" step="0.5" value={hour} onChange={(e) => onHour(Number(e.target.value))} aria-valuetext={clock(hour)} dir="ltr" />
@@ -202,17 +211,67 @@ function Overview({ t, locale, reserve }) {
           <button type="button" className="link-button" onClick={() => setHour(NOW)}>{o.backToNow}</button>
         </p>
       )}
-      <div className="stats">
-        <Stat icon="battery" label={o.battery} value={p.battery * 100} digits={0} unit="%" tone="2" locale={locale} />
-        <Stat icon="sun" label={o.solar} value={p.solar} unit="kW" tone="1" locale={locale} />
-        <Stat icon="home" label={o.home} value={p.home} unit="kW" tone="3" locale={locale} />
-        <Stat icon="grid" label={o.grid} value={sum.grid} unit="kWh" tone="4" locale={locale} />
-      </div>
+      {/* The moment in one sentence, figures in the mono face: a statement, not four dashboard tiles. */}
+      <p className="summary">
+        {o.summary({
+          time: <b className="fig" dir="ltr">{clock(hour)}</b>,
+          battery: <span className="fig stat-value" dir="ltr"><Figure value={p.battery * 100} digits={0} locale={locale} /><span className="unit">%</span></span>,
+          solar: <span className="fig" dir="ltr"><Figure value={p.solar} locale={locale} /><span className="unit">kW</span></span>,
+          home: <span className="fig" dir="ltr"><Figure value={p.home} locale={locale} /><span className="unit">kW</span></span>,
+          grid: <span className="fig" dir="ltr"><Figure value={sum.grid} locale={locale} /><span className="unit">kWh</span></span>,
+        })}
+      </p>
+      <a className="reserve-chip" href="#/settings">{o.reserve} <b dir="ltr">{reserve}%</b><span aria-hidden="true"> · </span>{o.change}</a>
       <div className="split">
         <DayChart points={points} hour={hour} now={NOW} onHour={setHour} t={o} locale={locale} />
         <Flow p={p} t={o} locale={locale} title={away ? `${o.at} ${clock(hour)}` : o.flowTitle} />
       </div>
     </>
+  );
+}
+
+/**
+ * The day arc across the top of every page: the date set in the display face, and a sun at the
+ * present moment on a dashed arc over a horizon. Time runs left to right in every language.
+ */
+function DayBand({ t, locale, now }) {
+  const date = friendlyDate('2026-11-13', locale, { weekday: 'long', day: 'numeric', month: 'long' });
+  const p = Math.max(0, Math.min(1, (now - 6) / 14));
+  const a = Math.PI * (1 - p);
+  const daylight = now >= 6 && now <= 20;
+  return (
+    <div className="day-band">
+      <p className="band-date">{date}<span className="band-time" dir="ltr">{clock(now)}</span></p>
+      <div className="band-art" aria-hidden="true" dir="ltr">
+        <svg viewBox="0 0 400 100" preserveAspectRatio="none">
+          <path className="band-arc" d="M20 96A180 86 0 0 1 380 96" vectorEffect="non-scaling-stroke" />
+          <path className="band-horizon" d="M0 96H400" vectorEffect="non-scaling-stroke" />
+        </svg>
+        {daylight && <span className="band-sun" style={{ left: `${(5 + 45 * (1 + Math.cos(a))).toFixed(2)}%`, top: `${(96 - 86 * Math.sin(a)).toFixed(2)}%` }} />}
+      </div>
+      <p className="sr-only">{t.band}</p>
+    </div>
+  );
+}
+
+/**
+ * One day as a small sky. The arc is the brand's, dashed and the same every day (never a progress
+ * bar); how self-powered the day was shows as the warmth of the sky under it.
+ */
+function DayTile({ row, locale, t }) {
+  const v = Math.max(0, Math.min(100, row.selfPowered)) / 100;
+  return (
+    <li className="day-tile">
+      <svg viewBox="0 0 72 40" aria-hidden="true">
+        <path className="tile-sky" d="M6 36A30 30 0 0 1 66 36Z" style={{ opacity: (0.08 + 0.62 * v).toFixed(2) }} />
+        <path className="tile-track" d="M6 36A30 30 0 0 1 66 36" />
+        <circle className="tile-sun" cx="36" cy="6" r="3.6" />
+        <path className="tile-horizon" d="M2 36H70" />
+      </svg>
+      <span className="tile-date">{friendlyDate(row.date, locale)}</span>
+      <span className="tile-value" dir="ltr">{row.selfPowered}%</span>
+      <span className="sr-only">{t.self}</span>
+    </li>
   );
 }
 
@@ -287,7 +346,9 @@ function History({ t, locale }) {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   useEffect(() => { fetchHistory().then(setRows); }, []);
-  const view = useMemo(() => (rows ? paginate(sortRows(filterRows(rows, query), sort.key, sort.dir), page, 8) : null), [rows, sort, query, page]);
+  const view = useMemo(() => (rows ? paginate(sortRows(filterRows(rows, query, locale), sort.key, sort.dir), page, 8) : null), [rows, sort, query, page, locale]);
+  // The last fortnight, oldest first: time runs left to right in every language.
+  const fortnight = useMemo(() => (rows ? [...rows].sort((a, b) => a.date.localeCompare(b.date)).slice(-14) : []), [rows]);
   if (!view) return <Skeleton label={h.title} rows={6} />;
   // On a phone the table keeps date, use and self-powered; the two supporting columns are dropped, not scrolled off-screen.
   const cols = [['date', h.date], ['solar', h.solar, 'optional'], ['used', h.used], ['grid', h.grid, 'optional'], ['selfPowered', h.self]];
@@ -295,6 +356,12 @@ function History({ t, locale }) {
   return (
     <>
       <div className="page-head"><h1 tabIndex={-1}>{h.title}</h1></div>
+      <section className="panel fortnight" aria-labelledby="fortnight-title">
+        <h2 id="fortnight-title">{h.fortnight}</h2>
+        <p className="muted">{h.fortnightHelp}</p>
+        <ol className="day-tiles" dir="ltr">{fortnight.map((r) => <DayTile key={r.id} row={r} locale={locale} t={h} />)}</ol>
+      </section>
+      <h2 className="table-title">{h.everyDay}</h2>
       <div className="toolbar">
         <div className="field inline"><label htmlFor="q">{h.search}</label><input id="q" type="search" value={query} placeholder={h.searchHint} onChange={(e) => { setQuery(e.target.value); setPage(1); }} dir="ltr" /></div>
         <p className="muted" role="status">{view.total} {h.rows}</p>
@@ -310,7 +377,7 @@ function History({ t, locale }) {
               </th>
             ))}</tr></thead>
             <tbody>{view.rows.map((r) => (
-              <tr key={r.id}><th scope="row" dir="ltr">{r.date}</th><td className="optional">{formatNumber(r.solar, locale)}</td><td>{formatNumber(r.used, locale)}</td><td className="optional">{formatNumber(r.grid, locale)}</td>
+              <tr key={r.id}><th scope="row"><time dateTime={r.date}>{friendlyDate(r.date, locale)}</time></th><td className="optional">{formatNumber(r.solar, locale)}</td><td>{formatNumber(r.used, locale)}</td><td className="optional">{formatNumber(r.grid, locale)}</td>
                 <td><span className="meter" style={{ '--v': `${r.selfPowered}%` }}><span>{r.selfPowered}%</span></span></td></tr>
             ))}</tbody>
           </table>
@@ -476,6 +543,7 @@ export default function App() {
           </div>
         </aside>
         <main id="main" ref={mainRef}>
+          <DayBand t={t} locale={locale} now={NOW} />
           <AnimatePresence mode="wait" initial={false}>
             <PageFrame key={route} route={route} announce={navigated}>
               {route === 'overview' && <Overview t={t} locale={locale} reserve={settings.reserve} />}

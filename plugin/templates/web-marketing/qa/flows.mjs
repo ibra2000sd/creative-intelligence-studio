@@ -177,7 +177,26 @@ export const flows = [
       const b = await fr.evaluate(() => window.__scene.view());
       expect.ok(Math.abs(a.az - b.az) + Math.abs(a.dist - b.dist) > 0.01, 'camera moved with page scroll');
       expect.ok((await inner.locator('input[name=finish]').count()) >= 1, 'finish controls are present inside the scene');
+      // Every control fits inside the embedded frame: nothing is cut off at its bottom edge.
+      const cut = await fr.evaluate(() => [...document.querySelectorAll('.panel button, .panel input, .panel output')].filter((el) => el.getClientRects().length && el.getBoundingClientRect().bottom > innerHeight + 1).map((el) => el.id || el.name || el.tagName));
+      expect.equal(cut.length, 0, `controls cut off by the embedded frame: ${cut.join(', ')}`);
       return 'lazy-loaded, WebGL, camera follows scroll';
+    },
+  },
+  {
+    id: 'scene-embed-phone',
+    viewport: 'mobile',
+    title: 'On a phone the embedded 3D product gets the full width, above its controls',
+    async run({ page, baseUrl, expect }) {
+      await page.goto(baseUrl + '/', { waitUntil: 'load' });
+      if (!(await page.locator('[data-scene]').getAttribute('data-scene'))) return 'no 3D deliverable in this project';
+      await page.locator('#cell').scrollIntoViewIfNeeded();
+      await page.waitForSelector('[data-scene].is-live', { timeout: 25000 });
+      const fr = page.frames().find((f) => f.url().includes('/scene/'));
+      const box = await fr.evaluate(() => { const c = document.querySelector('#scene:not([hidden]), #fallback:not([hidden])').getBoundingClientRect(); return { w: Math.round(c.width), h: Math.round(c.height), vw: innerWidth }; });
+      expect.ok(box.w >= box.vw - 2, `the product view spans the frame's width (${box.w} of ${box.vw}px)`);
+      expect.ok(box.h >= 280, `the product view is at least 280px tall (${box.h}px)`);
+      return `${box.w} by ${box.h}px`;
     },
   },
   {

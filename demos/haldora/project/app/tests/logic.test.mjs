@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { dayCurve, totals, scalePoints, linePath, areaPath, arcPoint, sunOnAxis, batteryState, history, sortRows, paginate, filterRows, validateSettings, formatNumber, clock } from '../src/logic.js';
+import { dayCurve, totals, scalePoints, linePath, areaPath, arcPoint, sunOnAxis, batteryState, friendlyDate, history, sortRows, paginate, filterRows, validateSettings, formatNumber, clock } from '../src/logic.js';
 
 test('dayCurve is deterministic and physically sensible', () => {
   const a = dayCurve(3);
@@ -96,4 +96,14 @@ test('scalePoints: head-room above the series when padTop is given', () => {
   const xy = scalePoints(pts, 'v', { width: 100, height: 100, pad: 10, padTop: 40, max: 10 });
   assert.deepEqual(xy[0], [10, 90]);
   assert.deepEqual(xy[1], [90, 40]);
+});
+
+test('friendlyDate and filtering by the date people read', () => {
+  assert.equal(friendlyDate('2026-10-31', 'en-GB'), 'Sat 31 Oct');
+  assert.match(friendlyDate('2026-10-31', 'ar'), /31/, 'Latin digits in Arabic');
+  const rows = [{ date: '2026-10-31' }, { date: '2026-10-30' }, { date: '2026-09-01' }];
+  assert.equal(filterRows(rows, '2026-10', 'en-GB').length, 2, 'ISO still works');
+  assert.equal(filterRows(rows, '31 oct', 'en-GB').length, 1, 'readable date works');
+  assert.equal(filterRows(rows, 'sat', 'en-GB').length, 1, 'weekday works');
+  assert.equal(filterRows(rows, '1999', 'en-GB').length, 0);
 });

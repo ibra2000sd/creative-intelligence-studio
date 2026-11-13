@@ -19,10 +19,10 @@ export async function fetchDevices() {
   if (scenario() === 'error' && attempts === 1) throw new Error('network');
   if (scenario() === 'empty') return [];
   return [
-    { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', location: 'Garage', status: 'online', firmware: '2.4.1', serial: 'HC-0193-2291', lastSeen: '2026-11-12T08:02:00Z' },
-    { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', location: 'Fuse board', status: 'online', firmware: '1.9.0', serial: 'HS-5510-0042', lastSeen: '2026-11-12T08:02:00Z' },
-    { id: 'ev-1', kind: 'car', name: 'Car charger', location: 'Driveway', status: 'attention', firmware: '3.0.2', serial: 'EV-7781-1200', lastSeen: '2026-11-12T07:40:00Z' },
-    { id: 'roof-1', kind: 'sun', name: 'Roof inverter', location: 'Loft', status: 'offline', firmware: '5.2.0', serial: 'IN-3301-8875', lastSeen: '2026-11-11T21:15:00Z' },
+    { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', location: 'Garage', status: 'online', firmware: '2.4.1', serial: 'HC-0193-2291', lastSeen: '2026-11-13T13:02:00Z' },
+    { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', location: 'Fuse board', status: 'online', firmware: '1.9.0', serial: 'HS-5510-0042', lastSeen: '2026-11-13T13:02:00Z' },
+    { id: 'ev-1', kind: 'car', name: 'Car charger', location: 'Driveway', status: 'attention', firmware: '3.0.2', serial: 'EV-7781-1200', lastSeen: '2026-11-13T12:30:00Z' },
+    { id: 'roof-1', kind: 'sun', name: 'Roof inverter', location: 'Loft', status: 'offline', firmware: '5.2.0', serial: 'IN-3301-8875', lastSeen: '2026-11-13T07:00:00Z' },
   ];
 }
 

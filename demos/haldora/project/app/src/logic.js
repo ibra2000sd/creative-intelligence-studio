@@ -94,7 +94,8 @@ export function history(days = 30, seed = 7) {
     const solar = round(8 + rand() * 22, 1);
     const used = round(11 + rand() * 9, 1);
     const grid = round(Math.max(0, used - solar * (0.55 + rand() * 0.3)), 1);
-    return { id: i + 1, date: new Date(Date.UTC(2026, 9, 31 - i)).toISOString().slice(0, 10), solar, used, grid, selfPowered: Math.round(Math.max(0, 1 - grid / used) * 100) };
+    // The demonstration's today is 13 November 2026: history runs up to yesterday.
+    return { id: i + 1, date: new Date(Date.UTC(2026, 10, 12 - i)).toISOString().slice(0, 10), solar, used, grid, selfPowered: Math.round(Math.max(0, 1 - grid / used) * 100) };
   });
 }
 
@@ -109,9 +110,16 @@ export function paginate(rows, page, size) {
   return { rows: rows.slice((current - 1) * size, current * size), page: current, pages, total: rows.length };
 }
 
-export function filterRows(rows, query) {
-  const q = query.trim();
-  return q ? rows.filter((r) => r.date.includes(q)) : rows;
+/** A date as people read it ("Fri 31 Oct"), with Latin digits in every locale. */
+export function friendlyDate(iso, locale, opts = { weekday: 'short', day: 'numeric', month: 'short' }) {
+  return new Intl.DateTimeFormat(locale === 'ar' ? 'ar-u-nu-latn' : locale, { ...opts, timeZone: 'UTC' }).format(new Date(`${iso}T12:00:00Z`));
+}
+
+/** Rows whose ISO date or readable date contains the query ("2026-10", "31 oct", "fri"). */
+export function filterRows(rows, query, locale) {
+  const q = query.trim().toLowerCase();
+  if (!q) return rows;
+  return rows.filter((r) => r.date.includes(q) || (locale && friendlyDate(r.date, locale).toLowerCase().includes(q)));
 }
 
 export function validateSettings(s) {

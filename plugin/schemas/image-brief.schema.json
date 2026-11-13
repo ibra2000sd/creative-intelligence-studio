@@ -168,6 +168,49 @@
             "minimum": 0,
             "maximum": 1,
             "description": "Where the sun (or, at night, the crescent) sits on the arc: 0 at sunrise, 1 at sunset. Defaults to the variant's time of day. Use it to keep the marker clear of text that sits on the picture."
+          },
+          "displayWidth": {
+            "type": "number",
+            "minimum": 50,
+            "maximum": 8000,
+            "description": "The width in CSS pixels at which the picture is mostly shown. Line work such as the arc is drawn to read at that size. Defaults to 60% of the file's width."
+          },
+          "clearZones": {
+            "type": "array",
+            "maxItems": 8,
+            "description": "Areas, as fractions of the picture, where typography will sit: no stars are drawn there and the arc stops at their edges.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "w": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "h": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
           }
         }
       }

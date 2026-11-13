@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13T13:02:42.830Z",
-  "dnaRevision": 1,
+  "generatedAt": "2026-11-13T17:41:19.299Z",
+  "dnaRevision": 2,
   "ok": true,
   "deliverables": [
     {
@@ -12,14 +12,14 @@
       "dnaRevision": null,
       "offPalette": [],
       "foreignFonts": [],
-      "filesScanned": 54
+      "filesScanned": 58
     },
     {
       "id": "website",
       "dir": "web",
       "present": true,
       "tokens": "current",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "offPalette": [],
       "foreignFonts": [],
       "filesScanned": 5
@@ -29,7 +29,7 @@
       "dir": "app",
       "present": true,
       "tokens": "current",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "offPalette": [],
       "foreignFonts": [],
       "filesScanned": 9
@@ -39,7 +39,7 @@
       "dir": "mobile",
       "present": true,
       "tokens": "current",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "offPalette": [],
       "foreignFonts": [],
       "filesScanned": 15
@@ -49,7 +49,7 @@
       "dir": "scene",
       "present": true,
       "tokens": "current",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "offPalette": [],
       "foreignFonts": [],
       "filesScanned": 5

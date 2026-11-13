@@ -69,8 +69,8 @@ export default function Onboarding() {
         <Svg width={280} height={150} style={{ direction: 'ltr' }}>
           <Path d={`M30 130A${R} ${R} 0 0 1 250 130`} stroke={th.c.border} strokeWidth={2} strokeDasharray="2 8" strokeLinecap="round" fill="none" />
           <Path d="M16 130H264" stroke={th.c.border} strokeWidth={2} strokeLinecap="round" />
-          <ACircle r={22} fill={th.c.accent} opacity={0.25} animatedProps={sun} />
-          <ACircle r={11} fill={th.c.accent} animatedProps={sun} />
+          <ACircle r={22} fill={th.sun} opacity={0.25} animatedProps={sun} />
+          <ACircle r={11} fill={th.sun} animatedProps={sun} />
         </Svg>
       </View>
       <GestureDetector gesture={pan}>

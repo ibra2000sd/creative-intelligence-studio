@@ -45,7 +45,7 @@ function bases() {
 export const CAPABILITIES = {
   raster: { packages: ['sharp'], enables: 'PNG/WebP/AVIF export, image inspection, visual diff' },
   browser: { packages: ['playwright-core', 'axe-core'], enables: 'browser QA, screenshots, accessibility scans, PDF export' },
-  vector: { packages: ['svgo', 'opentype.js'], enables: 'SVG optimisation and text-to-outline conversion' },
+  vector: { packages: ['svgo', 'opentype.js', 'harfbuzzjs'], enables: 'SVG optimisation, text-to-outline conversion and Arabic shaping' },
   model3d: { packages: ['@gltf-transform/core', '@gltf-transform/functions', '@gltf-transform/extensions', 'meshoptimizer', 'gltf-validator'], enables: 'GLB authoring, optimisation and validation' },
 };
 

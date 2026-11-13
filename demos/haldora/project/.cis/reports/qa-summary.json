@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13T13:02:34.585Z",
+  "generatedAt": "2026-11-13T17:41:09.754Z",
   "environment": {
     "tool": "creative-studio 0.1.0",
     "node": "v23.9.0",
@@ -25,34 +25,34 @@
           "id": "bundle:app",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 113.2KB gzip, CSS 5.5KB gzip, 89 files, 4.67MB on disk",
+          "summary": "JS 114.4KB gzip, CSS 6.1KB gzip, 101 files, 4.84MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 115953,
-            "cssGzipBytes": 5655,
-            "totalBytes": 4897696,
-            "files": 89,
+            "jsGzipBytes": 117117,
+            "cssGzipBytes": 6209,
+            "totalBytes": 5071660,
+            "files": 101,
             "biggest": [
               {
                 "file": "assets/campaign-story.png",
-                "bytes": 1580999
+                "bytes": 1588980
               },
               {
                 "file": "assets/campaign-square.png",
-                "bytes": 865444
+                "bytes": 870802
               },
               {
                 "file": "assets/campaign-wide.png",
-                "bytes": 442150
+                "bytes": 444944
               },
               {
-                "file": "assets/index-BPVP-hsJ.js",
-                "bytes": 310895
+                "file": "assets/index-D5m1eOOt.js",
+                "bytes": 314990
               },
               {
                 "file": "assets/app-store-feature.png",
-                "bytes": 260411
+                "bytes": 260415
               },
               {
                 "file": "assets/feature-contour.webp",
@@ -70,7 +70,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 14
           }
         },
         {
@@ -144,7 +144,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 14
           }
         },
         {
@@ -196,7 +196,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 14
           }
         },
         {
@@ -231,7 +231,7 @@
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "changedRatio": 0,
+            "changedRatio": 5.820992828536835e-7,
             "regions": [],
             "threshold": 0.015
           },
@@ -243,7 +243,7 @@
           "id": "a11y-axe:portal:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (5)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (6)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -253,18 +253,18 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 5,
+                "nodes": 6,
                 "sample": [
+                  {
+                    "target": ".reserve-chip > span[aria-hidden=\"true\"]",
+                    "summary": "Fix any of the following:   Element content is too short to determine if it is actual text content"
+                  },
                   {
                     "target": "text[x=\"28\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"197.531914893617\"]",
-                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
-                  },
-                  {
-                    "target": "text[x=\"367.063829787234\"]",
+                    "target": "text[x=\"183.7446808510638\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   }
                 ]
@@ -277,7 +277,7 @@
           "id": "a11y-axe:portal:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (5)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (6)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -287,18 +287,18 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 5,
+                "nodes": 6,
                 "sample": [
+                  {
+                    "target": ".reserve-chip > span[aria-hidden=\"true\"]",
+                    "summary": "Fix any of the following:   Element content is too short to determine if it is actual text content"
+                  },
                   {
                     "target": "text[x=\"28\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"197.531914893617\"]",
-                    "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
-                  },
-                  {
-                    "target": "text[x=\"367.063829787234\"]",
+                    "target": "text[x=\"183.7446808510638\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   }
                 ]
@@ -322,12 +322,12 @@
           "id": "keyboard:portal",
           "category": "accessibility",
           "status": "pass",
-          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "summary": "15 tab stops reached in order, each with a visible focus indicator and none obscured",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "expected": 14,
-            "reached": 14,
+            "expected": 15,
+            "reached": 15,
             "order": [
               "a[#main]:Skip to content",
               "a[#/overview]:Haldora",
@@ -338,6 +338,7 @@
               "a[/?lang=ar]:العربية",
               "button:Switch between light and",
               "button:Refresh",
+              "a[#/settings]:Backup reserve 30% · Cha",
               "button:Roof",
               "button:Home",
               "button:Battery level",
@@ -352,17 +353,17 @@
           "id": "scroll-motion:portal",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 110px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 293px: median frame 16.7ms, p95 16.8ms, 0 of 151 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
             "samples": 151,
             "medianMs": 16.69999999999891,
-            "p95Ms": 16.700000000000728,
+            "p95Ms": 16.799999999999272,
             "over33": 0,
             "over50": 0,
             "cls": 0,
-            "scrolledPx": 110,
+            "scrolledPx": 293,
             "engine": null,
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -384,53 +385,53 @@
           "id": "web-vitals-lab:portal",
           "category": "performance",
           "status": "warn",
-          "summary": "Lab: LCP 1140ms, CLS 0.0004, TBT 273ms, first tap 232ms (median of 5); first scripted tap took 232ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+          "summary": "Lab: LCP 1064ms, CLS 0.0001, TBT 277ms, first tap 224ms (median of 5); first scripted tap took 224ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
-            "lcpMs": 1140,
-            "cls": 0.0004,
-            "tbtMs": 273,
-            "interactionMs": 232,
-            "domNodes": 224,
-            "requests": 13,
+            "lcpMs": 1064,
+            "cls": 0.0001,
+            "tbtMs": 277,
+            "interactionMs": 224,
+            "domNodes": 198,
+            "requests": 14,
             "runs": [
               {
-                "lcpMs": 1140,
-                "cls": 0.0004,
-                "tbtMs": 310,
-                "interactionMs": 232
-              },
-              {
-                "lcpMs": 1008,
-                "cls": 0.0004,
-                "tbtMs": 242,
+                "lcpMs": 1164,
+                "cls": 0.0001,
+                "tbtMs": 324,
                 "interactionMs": 224
               },
               {
-                "lcpMs": 1084,
-                "cls": 0.0004,
-                "tbtMs": 264,
-                "interactionMs": 248
-              },
-              {
-                "lcpMs": 1208,
-                "cls": 0.0004,
-                "tbtMs": 273,
-                "interactionMs": 224
-              },
-              {
-                "lcpMs": 1176,
-                "cls": 0.0004,
-                "tbtMs": 304,
+                "lcpMs": 1064,
+                "cls": 0.0001,
+                "tbtMs": 277,
                 "interactionMs": 240
+              },
+              {
+                "lcpMs": 1100,
+                "cls": 0.0001,
+                "tbtMs": 280,
+                "interactionMs": 224
+              },
+              {
+                "lcpMs": 1064,
+                "cls": 0.0001,
+                "tbtMs": 273,
+                "interactionMs": 240
+              },
+              {
+                "lcpMs": 1064,
+                "cls": 0.0001,
+                "tbtMs": 269,
+                "interactionMs": 216
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.62,
+            "hostLoadPerCore": 0.63,
             "blockingTimeRangeMs": [
-              242,
-              310
+              269,
+              324
             ],
             "reliable": true
           }
@@ -673,11 +674,11 @@
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"197.531914893617\"]",
+                    "target": "text[x=\"183.7446808510638\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"367.063829787234\"]",
+                    "target": "text[x=\"339.4893617021276\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   }
                 ]
@@ -707,11 +708,11 @@
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"197.531914893617\"]",
+                    "target": "text[x=\"183.7446808510638\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   },
                   {
-                    "target": "text[x=\"367.063829787234\"]",
+                    "target": "text[x=\"339.4893617021276\"]",
                     "summary": "Fix any of the following:   Element's background color could not be determined because element contains an image node"
                   }
                 ]
@@ -735,12 +736,12 @@
           "id": "keyboard:portal-ar",
           "category": "accessibility",
           "status": "pass",
-          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "summary": "15 tab stops reached in order, each with a visible focus indicator and none obscured",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "expected": 14,
-            "reached": 14,
+            "expected": 15,
+            "reached": 15,
             "order": [
               "a[#main]:انتقل إلى المحتوى",
               "a[#/overview]:Haldora",
@@ -751,6 +752,7 @@
               "a[/]:English",
               "button:التبديل بين الوضعين الفا",
               "button:تحديث",
+              "a[#/settings]:احتياطي الطوارئ 30% · تغ",
               "button:السطح",
               "button:البيت",
               "button:مستوى البطارية",
@@ -765,7 +767,7 @@
           "id": "scroll-motion:portal-ar",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 125px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 344px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
@@ -775,7 +777,7 @@
             "over33": 0,
             "over50": 0,
             "cls": 0,
-            "scrolledPx": 125,
+            "scrolledPx": 344,
             "engine": null,
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -797,53 +799,53 @@
           "id": "web-vitals-lab:portal-ar",
           "category": "performance",
           "status": "warn",
-          "summary": "Lab: LCP 1084ms, CLS 0.0006, TBT 289ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+          "summary": "Lab: LCP 1056ms, CLS 0.0034, TBT 277ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
-            "lcpMs": 1084,
-            "cls": 0.0006,
-            "tbtMs": 289,
+            "lcpMs": 1056,
+            "cls": 0.0034,
+            "tbtMs": 277,
             "interactionMs": 248,
-            "domNodes": 224,
+            "domNodes": 198,
             "requests": 15,
             "runs": [
               {
-                "lcpMs": 1236,
-                "cls": 0.0006,
-                "tbtMs": 381,
-                "interactionMs": 248
+                "lcpMs": 1060,
+                "cls": 0.0034,
+                "tbtMs": 277,
+                "interactionMs": 232
               },
               {
-                "lcpMs": 1016,
-                "cls": 0.0006,
-                "tbtMs": 245,
-                "interactionMs": 240
-              },
-              {
-                "lcpMs": 1084,
-                "cls": 0.0006,
-                "tbtMs": 301,
+                "lcpMs": 1056,
+                "cls": 0.0034,
+                "tbtMs": 286,
                 "interactionMs": 256
               },
               {
-                "lcpMs": 992,
-                "cls": 0.0006,
-                "tbtMs": 235,
+                "lcpMs": 1020,
+                "cls": 0.0034,
+                "tbtMs": 260,
+                "interactionMs": 216
+              },
+              {
+                "lcpMs": 1088,
+                "cls": 0.0034,
+                "tbtMs": 302,
                 "interactionMs": 248
               },
               {
-                "lcpMs": 1100,
-                "cls": 0.0006,
-                "tbtMs": 289,
-                "interactionMs": 232
+                "lcpMs": 1040,
+                "cls": 0.0034,
+                "tbtMs": 254,
+                "interactionMs": 248
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.5,
+            "hostLoadPerCore": 0.61,
             "blockingTimeRangeMs": [
-              235,
-              381
+              254,
+              302
             ],
             "reliable": true
           }
@@ -1117,7 +1119,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2308
+            "ms": 2289
           }
         },
         {
@@ -1128,7 +1130,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 5009
+            "ms": 5032
           }
         },
         {
@@ -1139,7 +1141,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2210
+            "ms": 2054
           }
         },
         {
@@ -1150,7 +1152,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1592
+            "ms": 2127
           }
         },
         {
@@ -1161,7 +1163,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2005
+            "ms": 1593
           }
         },
         {
@@ -1172,7 +1174,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1039
+            "ms": 1033
           }
         },
         {
@@ -1183,7 +1185,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 859
+            "ms": 1010
           }
         },
         {
@@ -1194,7 +1196,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3977
+            "ms": 3918
           }
         },
         {
@@ -1205,7 +1207,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1330
+            "ms": 1307
           }
         },
         {
@@ -1216,7 +1218,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1370
+            "ms": 1399
           }
         },
         {
@@ -1227,7 +1229,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2061
+            "ms": 2101
           }
         },
         {
@@ -1238,18 +1240,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1914
+            "ms": 1911
           }
         },
         {
           "id": "flow:sun-above-cursor",
           "category": "functional",
           "status": "pass",
-          "summary": "Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset: checked at x = 395, 508, 226",
+          "summary": "Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset: checked at x = 365, 469, 210",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 6864
+            "ms": 6786
           }
         },
         {
@@ -1260,7 +1262,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1382
+            "ms": 1321
           }
         },
         {
@@ -1271,7 +1273,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2077
+            "ms": 2117
           }
         }
       ]
@@ -1299,7 +1301,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "> cis-mobile-app@1.0.0 test\n> jest --ci\n\n\n\nTest Suites: 3 passed, 3 total\nTests:       19 passed, 19 total\nSnapshots:   0 total\nTime:        4.713 s\nRan all test suites."
+            "tail": "> cis-mobile-app@1.0.0 test\n> jest --ci\n\n\n\nTest Suites: 3 passed, 3 total\nTests:       19 passed, 19 total\nSnapshots:   0 total\nTime:        4.767 s, estimated 6 s\nRan all test suites."
           }
         },
         {
@@ -1310,7 +1312,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "node_modules/expo-router/assets/react-navigation/elements/search-icon.png (7 variations | 592B)\nnode_modules/expo-router/assets/sitemap.png (465B)\nnode_modules/expo-router/assets/unmatched.png (4.8KB)\n\n› android bundles (1):\n_expo/static/js/android/entry-e463ce38cf7bc6a47cd2f7b24b97a1c6.hbc (4MB)\n\n› ios bundles (1):\n_expo/static/js/ios/entry-2d054fab7dec10e25a7eb853daff8cc0.hbc (4MB)\n\n› Files (1):\nmetadata.json (4.1KB)\n\nExported: dist-native"
+            "tail": "node_modules/expo-router/assets/react-navigation/elements/search-icon.png (7 variations | 592B)\nnode_modules/expo-router/assets/sitemap.png (465B)\nnode_modules/expo-router/assets/unmatched.png (4.8KB)\n\n› android bundles (1):\n_expo/static/js/android/entry-e560def7932236fee9cd37f4557618ce.hbc (4MB)\n\n› ios bundles (1):\n_expo/static/js/ios/entry-31755b66d9f3d208c648b3c468d093a0.hbc (4MB)\n\n› Files (1):\nmetadata.json (4.1KB)\n\nExported: dist-native"
           }
         },
         {
@@ -1321,7 +1323,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "_expo/static/js/web/_layout-dd966c67d759f00ff26aca46f2e2b6c8.js (1.2KB)\n_expo/static/js/web/[id]-d4e2a14132fd7defb3f6a6832ae2ae93.js (1.7KB)\n_expo/static/js/web/devices-1feb8b0f8f92ae56493af7f7c8f79bd2.js (2.1KB)\n_expo/static/js/web/entry-0dc35d250c21d138dafe466544aa43b1.js (1.1MB)\n_expo/static/js/web/index-60c047d34f7f8a209469513743ec44f2.js (5.7KB)\n_expo/static/js/web/onboarding-b78607604a1057e778b5153a7318ae9c.js (5KB)\n_expo/static/js/web/settings-23bd73faa004325499f11ec5f9a5e727.js (7KB)\n\n› Files (3):\nfavicon.ico (15KB)\nindex.html (1.4KB)\nmetadata.json (49B)\n\nExported: dist-web"
+            "tail": "_expo/static/js/web/_layout-dd966c67d759f00ff26aca46f2e2b6c8.js (1.2KB)\n_expo/static/js/web/[id]-7846b4f65a5303b4432125a78f237ebb.js (2.2KB)\n_expo/static/js/web/devices-c03b8219dcd8f405b5a4ff0db9c22a7c.js (2.2KB)\n_expo/static/js/web/entry-afb4749e463bb8e638be4a65a80b06b8.js (1.1MB)\n_expo/static/js/web/index-459577832d28c1a537843267a22f8910.js (6.1KB)\n_expo/static/js/web/onboarding-87a3a6cf09d48c00f8892487604a16aa.js (4.9KB)\n_expo/static/js/web/settings-23bd73faa004325499f11ec5f9a5e727.js (7KB)\n\n› Files (3):\nfavicon.ico (15KB)\nindex.html (1.4KB)\nmetadata.json (49B)\n\nExported: dist-web"
           }
         },
         {
@@ -1337,8 +1339,8 @@
                 "platform": "ios",
                 "files": [
                   {
-                    "file": "entry-2d054fab7dec10e25a7eb853daff8cc0.hbc",
-                    "bytes": 4036807
+                    "file": "entry-31755b66d9f3d208c648b3c468d093a0.hbc",
+                    "bytes": 4039950
                   }
                 ]
               },
@@ -1346,8 +1348,8 @@
                 "platform": "android",
                 "files": [
                   {
-                    "file": "entry-e463ce38cf7bc6a47cd2f7b24b97a1c6.hbc",
-                    "bytes": 4026685
+                    "file": "entry-e560def7932236fee9cd37f4557618ce.hbc",
+                    "bytes": 4029837
                   }
                 ]
               }
@@ -1932,18 +1934,12 @@
           "id": "visual-regression:capture:app-settings-ar-dark",
           "category": "visual",
           "status": "pass",
-          "summary": "Matches the accepted baseline (0.048% difference)",
+          "summary": "Matches the accepted baseline (0.000% difference)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "changedRatio": 0.00048000972171588285,
-            "regions": [
-              {
-                "row": 2,
-                "col": 5,
-                "changed": 0.030419715055833654
-              }
-            ],
+            "changedRatio": 0,
+            "regions": [],
             "threshold": 0.015
           },
           "evidence": [
@@ -1958,7 +1954,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1779
+            "ms": 1825
           }
         },
         {
@@ -1969,7 +1965,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2230
+            "ms": 2348
           }
         },
         {
@@ -1980,7 +1976,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3958
+            "ms": 4141
           }
         },
         {
@@ -1991,7 +1987,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2138
+            "ms": 2221
           }
         },
         {
@@ -2002,7 +1998,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3147
+            "ms": 2900
           }
         },
         {
@@ -2013,7 +2009,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3032
+            "ms": 2662
           }
         },
         {
@@ -2024,7 +2020,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2499
+            "ms": 2162
           }
         }
       ]
@@ -2037,7 +2033,7 @@
           "id": "ledger-integrity",
           "category": "delivery",
           "status": "pass",
-          "summary": "Event ledger hash chain intact (275 events)",
+          "summary": "Event ledger hash chain intact (426 events)",
           "severity": "critical",
           "measurement": "static"
         },
@@ -2045,7 +2041,7 @@
           "id": "dna-lint",
           "category": "visual",
           "status": "pass",
-          "summary": "Experience DNA r1: contrast, licences, motion and localisation rules hold",
+          "summary": "Experience DNA r2: contrast, licences, motion and localisation rules hold",
           "severity": "critical",
           "measurement": "static",
           "data": {
@@ -2056,7 +2052,7 @@
           "id": "dna-consistency",
           "category": "visual",
           "status": "pass",
-          "summary": "5 deliverables carry tokens generated from DNA r1, with no off-palette colours or foreign fonts in their source",
+          "summary": "5 deliverables carry tokens generated from DNA r2, with no off-palette colours or foreign fonts in their source",
           "severity": "major",
           "measurement": "static",
           "data": {
@@ -2064,7 +2060,7 @@
               {
                 "id": "brand",
                 "tokens": "not-applicable",
-                "filesScanned": 54,
+                "filesScanned": 58,
                 "offPalette": [],
                 "foreignFonts": []
               },
@@ -2106,7 +2102,7 @@
           "id": "asset-registry",
           "category": "delivery",
           "status": "pass",
-          "summary": "42 assets, 135 files: every file exists and matches its registered hash",
+          "summary": "46 assets, 153 files: every file exists and matches its registered hash",
           "severity": "major",
           "measurement": "static",
           "data": {
@@ -2131,26 +2127,26 @@
           "id": "bundle:scene",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 167.0KB gzip, CSS 2.7KB gzip, 25 files, 1.13MB on disk",
+          "summary": "JS 167.1KB gzip, CSS 2.8KB gzip, 25 files, 1.21MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 171031,
-            "cssGzipBytes": 2743,
-            "totalBytes": 1188311,
+            "jsGzipBytes": 171104,
+            "cssGzipBytes": 2819,
+            "totalBytes": 1266874,
             "files": 25,
             "biggest": [
               {
-                "file": "assets/scene-XkGCSQWt.js",
-                "bytes": 671546
+                "file": "assets/scene-Dyw3z4Kf.js",
+                "bytes": 671772
               },
               {
                 "file": "models/cell.source.glb",
-                "bytes": 198088
+                "bytes": 251100
               },
               {
                 "file": "models/cell.glb",
-                "bytes": 55224
+                "bytes": 69752
               },
               {
                 "file": "assets/fraunces-latin-600-normal-DL5QCzvS.woff",
@@ -2196,11 +2192,11 @@
           "id": "visual-regression:scene@mobile",
           "category": "visual",
           "status": "pass",
-          "summary": "Matches the accepted baseline (0.000% difference)",
+          "summary": "Matches the accepted baseline (0.001% difference)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "changedRatio": 0,
+            "changedRatio": 0.000012152144853566655,
             "regions": [],
             "threshold": 0.015
           },
@@ -2304,7 +2300,7 @@
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "changedRatio": 0,
+            "changedRatio": 0.0000015432098765432098,
             "regions": [],
             "threshold": 0.015
           },
@@ -2412,53 +2408,53 @@
           "id": "web-vitals-lab:scene",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 336ms, CLS 0, TBT 195ms, first tap 24ms (median of 5)",
+          "summary": "Lab: LCP 320ms, CLS 0, TBT 257ms, first tap 24ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 336,
+            "lcpMs": 320,
             "cls": 0,
-            "tbtMs": 195,
+            "tbtMs": 257,
             "interactionMs": 24,
             "domNodes": 38,
             "requests": 9,
             "runs": [
               {
-                "lcpMs": 384,
+                "lcpMs": 312,
                 "cls": 0,
-                "tbtMs": 228,
+                "tbtMs": 257,
+                "interactionMs": 24
+              },
+              {
+                "lcpMs": 324,
+                "cls": 0,
+                "tbtMs": 278,
                 "interactionMs": 16
               },
               {
                 "lcpMs": 352,
                 "cls": 0,
-                "tbtMs": 216,
+                "tbtMs": 286,
                 "interactionMs": 24
               },
               {
                 "lcpMs": 320,
                 "cls": 0,
-                "tbtMs": 137,
+                "tbtMs": 186,
                 "interactionMs": 24
               },
               {
-                "lcpMs": 304,
+                "lcpMs": 284,
                 "cls": 0,
-                "tbtMs": 175,
+                "tbtMs": 168,
                 "interactionMs": 24
-              },
-              {
-                "lcpMs": 336,
-                "cls": 0,
-                "tbtMs": 195,
-                "interactionMs": 16
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.46,
+            "hostLoadPerCore": 0.7,
             "blockingTimeRangeMs": [
-              137,
-              228
+              168,
+              286
             ],
             "reliable": true
           }
@@ -2705,11 +2701,11 @@
           "id": "web-vitals-lab:scene-still",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 260ms, CLS 0, TBT 0ms (median of 5)",
+          "summary": "Lab: LCP 264ms, CLS 0, TBT 0ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 260,
+            "lcpMs": 264,
             "cls": 0,
             "tbtMs": 0,
             "interactionMs": null,
@@ -2717,7 +2713,7 @@
             "requests": 7,
             "runs": [
               {
-                "lcpMs": 332,
+                "lcpMs": 296,
                 "cls": 0,
                 "tbtMs": 0,
                 "interactionMs": null
@@ -2729,7 +2725,13 @@
                 "interactionMs": null
               },
               {
-                "lcpMs": 232,
+                "lcpMs": 260,
+                "cls": 0,
+                "tbtMs": 0,
+                "interactionMs": null
+              },
+              {
+                "lcpMs": 268,
                 "cls": 0,
                 "tbtMs": 0,
                 "interactionMs": null
@@ -2739,16 +2741,10 @@
                 "cls": 0,
                 "tbtMs": 0,
                 "interactionMs": null
-              },
-              {
-                "lcpMs": 232,
-                "cls": 0,
-                "tbtMs": 0,
-                "interactionMs": null
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.45,
+            "hostLoadPerCore": 0.59,
             "blockingTimeRangeMs": [
               0,
               0
@@ -2934,11 +2930,11 @@
           "id": "flow:renders-webgl",
           "category": "functional",
           "status": "pass",
-          "summary": "The model loads and renders with WebGL: 7664 triangles in 9 draw calls; 20 distinct tones read back from the canvas",
+          "summary": "The model loads and renders with WebGL: 9466 triangles in 11 draw calls; 25 distinct tones read back from the canvas",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3972
+            "ms": 5513
           }
         },
         {
@@ -2949,7 +2945,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2836
+            "ms": 3018
           }
         },
         {
@@ -2960,7 +2956,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2201
+            "ms": 2236
           }
         },
         {
@@ -2971,7 +2967,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 754
+            "ms": 798
           }
         },
         {
@@ -2982,7 +2978,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1674
+            "ms": 1721
           }
         },
         {
@@ -2993,7 +2989,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1584
+            "ms": 1682
           }
         },
         {
@@ -3015,7 +3011,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 732
+            "ms": 712
           }
         },
         {
@@ -3026,18 +3022,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4411
+            "ms": 4419
           }
         },
         {
           "id": "flow:resource-cleanup",
           "category": "performance",
           "status": "pass",
-          "summary": "Disposing the scene releases GPU geometry and textures: 9 geometries and 2 textures released",
+          "summary": "Disposing the scene releases GPU geometry and textures: 11 geometries and 2 textures released",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1453
+            "ms": 1521
           }
         }
       ]
@@ -3050,7 +3046,7 @@
           "id": "secrets",
           "category": "security",
           "status": "pass",
-          "summary": "No secrets found in 201 text files",
+          "summary": "No secrets found in 225 text files",
           "severity": "critical",
           "measurement": "static",
           "data": {
@@ -3320,7 +3316,7 @@
           "id": "ledger-integrity",
           "category": "security",
           "status": "pass",
-          "summary": "Audit trail intact: 232 hash-chained events",
+          "summary": "Audit trail intact: 427 hash-chained events",
           "severity": "critical",
           "measurement": "static"
         },
@@ -3328,7 +3324,7 @@
           "id": "asset-rights",
           "category": "delivery",
           "status": "pass",
-          "summary": "All 42 registered assets have recorded origin and rights",
+          "summary": "All 46 registered assets have recorded origin and rights",
           "severity": "critical",
           "measurement": "static"
         },
@@ -3357,30 +3353,30 @@
           "id": "bundle:web",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 48.7KB gzip, CSS 5.7KB gzip, 95 files, 4.55MB on disk",
+          "summary": "JS 48.8KB gzip, CSS 5.7KB gzip, 103 files, 4.65MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 49914,
-            "cssGzipBytes": 5870,
-            "totalBytes": 4772582,
-            "files": 95,
+            "jsGzipBytes": 49963,
+            "cssGzipBytes": 5876,
+            "totalBytes": 4880528,
+            "files": 103,
             "biggest": [
               {
                 "file": "assets/campaign-story.png",
-                "bytes": 1580999
+                "bytes": 1588980
               },
               {
                 "file": "assets/campaign-square.png",
-                "bytes": 865444
+                "bytes": 870802
               },
               {
                 "file": "assets/campaign-wide.png",
-                "bytes": 442150
+                "bytes": 444944
               },
               {
                 "file": "assets/app-store-feature.png",
-                "bytes": 260411
+                "bytes": 260415
               },
               {
                 "file": "assets/gsap-C2W12wA9.js",
@@ -3575,7 +3571,7 @@
           "id": "a11y-axe:home:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (27)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (29)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -3585,7 +3581,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 27,
+                "nodes": 29,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -3609,7 +3605,7 @@
           "id": "a11y-axe:home:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (27)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (29)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -3619,7 +3615,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 27,
+                "nodes": 29,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -3681,14 +3677,14 @@
           "id": "scroll-motion:home",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 1 of 459 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 0 of 460 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "samples": 459,
+            "samples": 460,
             "medianMs": 16.69999999999709,
             "p95Ms": 16.799999999995634,
-            "over33": 1,
+            "over33": 0,
             "over50": 0,
             "cls": 0,
             "scrolledPx": 6967,
@@ -3717,53 +3713,53 @@
           "id": "web-vitals-lab:home",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 484ms, CLS 0, TBT 196ms, first tap 192ms (median of 5)",
+          "summary": "Lab: LCP 524ms, CLS 0, TBT 160ms, first tap 200ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 484,
+            "lcpMs": 524,
             "cls": 0,
-            "tbtMs": 196,
-            "interactionMs": 192,
-            "domNodes": 299,
+            "tbtMs": 160,
+            "interactionMs": 200,
+            "domNodes": 300,
             "requests": 18,
             "runs": [
               {
-                "lcpMs": 568,
+                "lcpMs": 540,
                 "cls": 0,
-                "tbtMs": 167,
-                "interactionMs": 208
+                "tbtMs": 89,
+                "interactionMs": 216
               },
               {
-                "lcpMs": 484,
+                "lcpMs": 552,
                 "cls": 0,
-                "tbtMs": 280,
-                "interactionMs": 176
+                "tbtMs": 160,
+                "interactionMs": 184
               },
               {
-                "lcpMs": 356,
+                "lcpMs": 504,
                 "cls": 0,
-                "tbtMs": 139,
-                "interactionMs": 192
+                "tbtMs": 219,
+                "interactionMs": 200
               },
               {
-                "lcpMs": 428,
+                "lcpMs": 524,
                 "cls": 0,
-                "tbtMs": 196,
-                "interactionMs": 192
+                "tbtMs": 140,
+                "interactionMs": 216
               },
               {
-                "lcpMs": 576,
+                "lcpMs": 460,
                 "cls": 0,
-                "tbtMs": 236,
+                "tbtMs": 233,
                 "interactionMs": 192
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.43,
+            "hostLoadPerCore": 0.62,
             "blockingTimeRangeMs": [
-              139,
-              280
+              89,
+              233
             ],
             "reliable": true
           }
@@ -3989,7 +3985,7 @@
           "id": "a11y-axe:home-ar:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (10)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (11)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -3999,7 +3995,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 10,
+                "nodes": 11,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -4023,7 +4019,7 @@
           "id": "a11y-axe:home-ar:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (10)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (11)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -4033,7 +4029,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 10,
+                "nodes": 11,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -4095,14 +4091,14 @@
           "id": "scroll-motion:home-ar",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 7007px: median frame 16.7ms, p95 16.7ms, 1 of 462 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 7007px: median frame 16.7ms, p95 16.7ms, 0 of 462 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
             "samples": 462,
             "medianMs": 16.69999999999709,
             "p95Ms": 16.700000000004366,
-            "over33": 1,
+            "over33": 0,
             "over50": 0,
             "cls": 0,
             "scrolledPx": 7007,
@@ -4131,53 +4127,53 @@
           "id": "web-vitals-lab:home-ar",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 416ms, CLS 0, TBT 229ms, first tap 192ms (median of 5)",
+          "summary": "Lab: LCP 456ms, CLS 0, TBT 204ms, first tap 200ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 416,
+            "lcpMs": 456,
             "cls": 0,
-            "tbtMs": 229,
-            "interactionMs": 192,
-            "domNodes": 299,
+            "tbtMs": 204,
+            "interactionMs": 200,
+            "domNodes": 300,
             "requests": 20,
             "runs": [
               {
-                "lcpMs": 372,
+                "lcpMs": 476,
                 "cls": 0,
-                "tbtMs": 301,
-                "interactionMs": 176
+                "tbtMs": 170,
+                "interactionMs": 232
               },
               {
-                "lcpMs": 468,
+                "lcpMs": 516,
                 "cls": 0,
-                "tbtMs": 229,
+                "tbtMs": 271,
                 "interactionMs": 192
               },
               {
-                "lcpMs": 508,
+                "lcpMs": 424,
                 "cls": 0,
-                "tbtMs": 248,
-                "interactionMs": 176
-              },
-              {
-                "lcpMs": 416,
-                "cls": 0,
-                "tbtMs": 189,
+                "tbtMs": 240,
                 "interactionMs": 200
               },
               {
-                "lcpMs": 392,
+                "lcpMs": 432,
                 "cls": 0,
-                "tbtMs": 216,
-                "interactionMs": 200
+                "tbtMs": 204,
+                "interactionMs": 184
+              },
+              {
+                "lcpMs": 456,
+                "cls": 0,
+                "tbtMs": 172,
+                "interactionMs": 208
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 0.68,
+            "hostLoadPerCore": 0.49,
             "blockingTimeRangeMs": [
-              189,
-              301
+              170,
+              271
             ],
             "reliable": true
           }
@@ -4431,33 +4427,12 @@
           "id": "visual-regression:capture:hero-1024",
           "category": "visual",
           "status": "pass",
-          "summary": "Matches the accepted baseline (0.334% difference)",
+          "summary": "Matches the accepted baseline (0.000% difference)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "changedRatio": 0.0033365885416666665,
-            "regions": [
-              {
-                "row": 4,
-                "col": 3,
-                "changed": 0.06363932291666667
-              },
-              {
-                "row": 4,
-                "col": 1,
-                "changed": 0.062093098958333336
-              },
-              {
-                "row": 4,
-                "col": 2,
-                "changed": 0.046468098958333336
-              },
-              {
-                "row": 4,
-                "col": 0,
-                "changed": 0.035725911458333336
-              }
-            ],
+            "changedRatio": 0,
+            "regions": [],
             "threshold": 0.015
           },
           "evidence": [
@@ -4588,7 +4563,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3046
+            "ms": 3107
           }
         },
         {
@@ -4599,7 +4574,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2390
+            "ms": 2479
           }
         },
         {
@@ -4610,7 +4585,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2756
+            "ms": 2696
           }
         },
         {
@@ -4621,7 +4596,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2309
+            "ms": 2243
           }
         },
         {
@@ -4632,7 +4607,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 8469
+            "ms": 8418
           }
         },
         {
@@ -4643,7 +4618,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2029
+            "ms": 2504
           }
         },
         {
@@ -4654,7 +4629,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1013
+            "ms": 1033
           }
         },
         {
@@ -4665,7 +4640,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2863
+            "ms": 2214
+          }
+        },
+        {
+          "id": "flow:scene-embed-phone",
+          "category": "functional",
+          "status": "pass",
+          "summary": "On a phone the embedded 3D product gets the full width, above its controls: 324 by 353px",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 786
           }
         },
         {
@@ -4676,14 +4662,14 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3120
+            "ms": 3180
           }
         }
       ]
     }
   ],
   "totals": {
-    "pass": 278,
+    "pass": 279,
     "fail": 0,
     "warn": 16,
     "skipped": 0,

@@ -72,6 +72,7 @@ Versions are the current npm releases on 12 November 2026.
 | Browser automation | playwright-core 1.65 driving the installed Chrome | Puppeteer, bundled browsers | No browser download; the machine had 2.9 GB free. |
 | Accessibility rules | axe-core 4.14 | Lighthouse | Rule-level results with element targets; Lighthouse adds weight for little extra here. |
 | Raster | sharp 0.35 | ImageMagick (not installed) | SVG rasterisation, AVIF/WebP, pixel access. |
+| Arabic shaping | harfbuzzjs 1.6.4 (MIT, HarfBuzz compiled to WebAssembly) | opentype.js alone | opentype.js maps characters to glyphs one by one, which leaves Arabic as disconnected letters; HarfBuzz applies the font's joining and ligature rules. Released 22 October 2026, from the HarfBuzz project's own repository |
 | Type outlining | opentype.js 1.3.4 | fontkit | Converts wordmarks and headlines to paths so logos never depend on installed fonts. |
 | Web build | Vite 8 | Next.js, Astro | Static, pre-rendered output with no server; a full framework is justified only when a project needs routing or data on the server. |
 | Schema validation | built-in validator | Ajv as a runtime dependency | Zero-dependency core; verdict parity with Ajv is a test. |

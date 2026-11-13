@@ -1,8 +1,8 @@
 # QA summary
 
-Generated 2026-11-13T13:02:34.585Z by creative-studio 0.1.0. Verdict: **incomplete**.
+Generated 2026-11-13T17:41:09.754Z by creative-studio 0.1.0. Verdict: **incomplete**.
 
-Pass 278 · Fail 0 · Warn 16 · Blocked 2 · Skipped 0
+Pass 279 · Fail 0 · Warn 16 · Blocked 2 · Skipped 0
 
 Measurements labelled *lab* were taken in headless Chrome on the build machine. They are not field data and say nothing about real users' devices or networks.
 
@@ -11,7 +11,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | Status | Check | Category | Result |
 |---|---|---|---|
 | pass | `build:app` | build (static) | Built output present at app/dist |
-| pass | `bundle:app` | performance (static) | JS 113.2KB gzip, CSS 5.5KB gzip, 89 files, 4.67MB on disk |
+| pass | `bundle:app` | performance (static) | JS 114.4KB gzip, CSS 6.1KB gzip, 101 files, 4.84MB on disk |
 | pass | `load:portal@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:portal@mobile` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `capture-complete:portal@mobile` | visual (lab) | Every text element was visible when the page was captured |
@@ -26,13 +26,13 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `layout:portal@desktop` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `capture-complete:portal@desktop` | visual (lab) | Every text element was visible when the page was captured |
 | pass | `visual-regression:portal@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
-| warn | `a11y-axe:portal:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (5) |
-| warn | `a11y-axe:portal:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (5) |
+| warn | `a11y-axe:portal:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (6) |
+| warn | `a11y-axe:portal:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (6) |
 | pass | `dark-scheme:portal@desktop` | visual (lab) | The page renders differently in the dark scheme |
-| pass | `keyboard:portal` | accessibility (lab) | 14 tab stops reached in order, each with a visible focus indicator and none obscured |
-| pass | `scroll-motion:portal` | motion (lab) | Scrolling 110px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0 |
+| pass | `keyboard:portal` | accessibility (lab) | 15 tab stops reached in order, each with a visible focus indicator and none obscured |
+| pass | `scroll-motion:portal` | motion (lab) | Scrolling 293px: median frame 16.7ms, p95 16.8ms, 0 of 151 frames over 33ms, layout shift 0 |
 | pass | `reduced-motion:portal` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| warn | `web-vitals-lab:portal` | performance (lab) | Lab: LCP 1140ms, CLS 0.0004, TBT 273ms, first tap 232ms (median of 5); first scripted tap took 232ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device) |
+| warn | `web-vitals-lab:portal` | performance (lab) | Lab: LCP 1064ms, CLS 0.0001, TBT 277ms, first tap 224ms (median of 5); first scripted tap took 224ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device) |
 | pass | `load:portal-ar@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:portal-ar@mobile` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `rtl:portal-ar@mobile` | visual (lab) | Document direction is rtl (computed rtl), language ar |
@@ -53,10 +53,10 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | warn | `a11y-axe:portal-ar:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (4) |
 | warn | `a11y-axe:portal-ar:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (4) |
 | pass | `dark-scheme:portal-ar@desktop` | visual (lab) | The page renders differently in the dark scheme |
-| pass | `keyboard:portal-ar` | accessibility (lab) | 14 tab stops reached in order, each with a visible focus indicator and none obscured |
-| pass | `scroll-motion:portal-ar` | motion (lab) | Scrolling 125px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0 |
+| pass | `keyboard:portal-ar` | accessibility (lab) | 15 tab stops reached in order, each with a visible focus indicator and none obscured |
+| pass | `scroll-motion:portal-ar` | motion (lab) | Scrolling 344px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0 |
 | pass | `reduced-motion:portal-ar` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| warn | `web-vitals-lab:portal-ar` | performance (lab) | Lab: LCP 1084ms, CLS 0.0006, TBT 289ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device) |
+| warn | `web-vitals-lab:portal-ar` | performance (lab) | Lab: LCP 1056ms, CLS 0.0034, TBT 277ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device) |
 | pass | `layout:capture:portal-devices` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:portal-devices` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:portal-history` | visual (lab) | No horizontal overflow or clipped text |
@@ -87,7 +87,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `flow:rtl-layout` | functional (lab) | Arabic: navigation sits on the right, the chart keeps time left to right |
 | pass | `flow:mobile-nav` | functional (lab) | Phone: bottom navigation is reachable and content clears it |
 | pass | `flow:reduced-motion` | motion (lab) | Reduced motion: figures and markers change without travelling |
-| pass | `flow:sun-above-cursor` | functional (lab) | Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset: checked at x = 395, 508, 226 |
+| pass | `flow:sun-above-cursor` | functional (lab) | Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset: checked at x = 365, 469, 210 |
 | pass | `flow:one-moment` | functional (lab) | Today describes one moment: update time, figures and battery state agree, and the forecast is labelled: now 13:00; battery "100%full" |
 | pass | `flow:phone-display-settings` | functional (lab) | Phone: language and appearance are in Settings, and History fits the screen |
 
@@ -146,7 +146,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `layout:capture:app-settings-ar` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:app-settings-ar` | visual (lab) | Matches the accepted baseline (0.048% difference) |
 | pass | `layout:capture:app-settings-ar-dark` | visual (lab) | No horizontal overflow or clipped text |
-| pass | `visual-regression:capture:app-settings-ar-dark` | visual (lab) | Matches the accepted baseline (0.048% difference) |
+| pass | `visual-regression:capture:app-settings-ar-dark` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `flow:onboarding-swipe` | motion (lab) | Onboarding: a horizontal drag turns the page and the indicator follows: Page 1 of 3 -> Page 2 of 3 -> back |
 | pass | `flow:onboarding-buttons` | functional (lab) | Onboarding: Next walks every page and Get started opens the app |
 | pass | `flow:tabs-and-detail` | functional (lab) | Tabs switch screens; a device opens its detail and Back returns |
@@ -159,20 +159,20 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 
 | Status | Check | Category | Result |
 |---|---|---|---|
-| pass | `ledger-integrity` | delivery (static) | Event ledger hash chain intact (275 events) |
-| pass | `dna-lint` | visual (static) | Experience DNA r1: contrast, licences, motion and localisation rules hold |
-| pass | `dna-consistency` | visual (static) | 5 deliverables carry tokens generated from DNA r1, with no off-palette colours or foreign fonts in their source |
-| pass | `asset-registry` | delivery (static) | 42 assets, 135 files: every file exists and matches its registered hash |
+| pass | `ledger-integrity` | delivery (static) | Event ledger hash chain intact (426 events) |
+| pass | `dna-lint` | visual (static) | Experience DNA r2: contrast, licences, motion and localisation rules hold |
+| pass | `dna-consistency` | visual (static) | 5 deliverables carry tokens generated from DNA r2, with no off-palette colours or foreign fonts in their source |
+| pass | `asset-registry` | delivery (static) | 46 assets, 153 files: every file exists and matches its registered hash |
 
 ## scene (scene-3d)
 
 | Status | Check | Category | Result |
 |---|---|---|---|
 | pass | `build:scene` | build (static) | Built output present at scene/dist |
-| pass | `bundle:scene` | performance (static) | JS 167.0KB gzip, CSS 2.7KB gzip, 25 files, 1.13MB on disk |
+| pass | `bundle:scene` | performance (static) | JS 167.1KB gzip, CSS 2.8KB gzip, 25 files, 1.21MB on disk |
 | pass | `load:scene@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:scene@mobile` | visual (lab) | No horizontal overflow or clipped text |
-| pass | `visual-regression:scene@mobile` | visual (lab) | Matches the accepted baseline (0.000% difference) |
+| pass | `visual-regression:scene@mobile` | visual (lab) | Matches the accepted baseline (0.001% difference) |
 | pass | `dark-scheme:scene@mobile` | visual (lab) | The page renders differently in the dark scheme |
 | pass | `target-size:scene@mobile` | accessibility (lab) | All pointer targets are at least 24x24 CSS px |
 | pass | `load:scene@tablet` | functional (lab) | No console errors, exceptions, failed requests or broken images |
@@ -186,7 +186,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `dark-scheme:scene@desktop` | visual (lab) | The page renders differently in the dark scheme |
 | pass | `keyboard:scene` | accessibility (lab) | 4 tab stops reached in order, each with a visible focus indicator and none obscured |
 | pass | `reduced-motion:scene` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| pass | `web-vitals-lab:scene` | performance (lab) | Lab: LCP 336ms, CLS 0, TBT 195ms, first tap 24ms (median of 5) |
+| pass | `web-vitals-lab:scene` | performance (lab) | Lab: LCP 320ms, CLS 0, TBT 257ms, first tap 24ms (median of 5) |
 | pass | `load:scene-still@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:scene-still@mobile` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:scene-still@mobile` | visual (lab) | Matches the accepted baseline (0.000% difference) |
@@ -203,7 +203,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `dark-scheme:scene-still@desktop` | visual (lab) | The page renders differently in the dark scheme |
 | pass | `keyboard:scene-still` | accessibility (lab) | 1 tab stops reached in order, each with a visible focus indicator and none obscured |
 | pass | `reduced-motion:scene-still` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| pass | `web-vitals-lab:scene-still` | performance (lab) | Lab: LCP 260ms, CLS 0, TBT 0ms (median of 5) |
+| pass | `web-vitals-lab:scene-still` | performance (lab) | Lab: LCP 264ms, CLS 0, TBT 0ms (median of 5) |
 | pass | `layout:capture:scene-finish-2` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:scene-finish-2` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:scene-finish-3` | visual (lab) | No horizontal overflow or clipped text |
@@ -216,7 +216,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `visual-regression:capture:scene-ar-mobile-dark` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:scene-still-dark` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:scene-still-dark` | visual (lab) | Matches the accepted baseline (0.000% difference) |
-| pass | `flow:renders-webgl` | functional (lab) | The model loads and renders with WebGL: 7664 triangles in 9 draw calls; 20 distinct tones read back from the canvas |
+| pass | `flow:renders-webgl` | functional (lab) | The model loads and renders with WebGL: 9466 triangles in 11 draw calls; 25 distinct tones read back from the canvas |
 | pass | `flow:idle-costs-nothing` | performance (lab) | No frames are rendered while nothing changes |
 | pass | `flow:finish-configurator` | functional (lab) | Choosing a finish changes the product material: #f6f1e7 -> #2a2d66 |
 | pass | `flow:time-of-day` | functional (lab) | The time slider moves the sun along the arc on the product |
@@ -225,13 +225,13 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `flow:scroll-camera` | motion (lab) | Embedded mode: progress messages drive the camera choreography |
 | pass | `flow:still-fallback` | functional (lab) | Still-image mode works without WebGL and keeps the configurator |
 | pass | `flow:context-loss` | functional (lab) | A lost WebGL context degrades to the still image |
-| pass | `flow:resource-cleanup` | performance (lab) | Disposing the scene releases GPU geometry and textures: 9 geometries and 2 textures released |
+| pass | `flow:resource-cleanup` | performance (lab) | Disposing the scene releases GPU geometry and textures: 11 geometries and 2 textures released |
 
 ## security (project)
 
 | Status | Check | Category | Result |
 |---|---|---|---|
-| pass | `secrets` | security (static) | No secrets found in 201 text files |
+| pass | `secrets` | security (static) | No secrets found in 225 text files |
 | pass | `env-files` | security (static) | No .env files in the project tree |
 | pass | `unsafe-patterns` | security (static) | No string-built markup, dynamic code, unsafe link targets or plain-http URLs in web, app, scene, mobile source |
 | pass | `third-party-requests:web` | security (static) | Built pages reference no third-party hosts (fonts and scripts are self-hosted) |
@@ -246,8 +246,8 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `vulnerabilities:scene` | security (static) | pnpm audit: 0 critical, 0 high, 0 moderate, 0 low (production dependencies) |
 | pass | `licences:mobile` | security (static) | 584 packages in the production tree, all under permissive licences |
 | warn | `vulnerabilities:mobile` | security (static) | pnpm audit: 0 critical, 0 high, 4 moderate, 1 low (production dependencies) |
-| pass | `ledger-integrity` | security (static) | Audit trail intact: 232 hash-chained events |
-| pass | `asset-rights` | delivery (static) | All 42 registered assets have recorded origin and rights |
+| pass | `ledger-integrity` | security (static) | Audit trail intact: 424 hash-chained events |
+| pass | `asset-rights` | delivery (static) | All 46 registered assets have recorded origin and rights |
 | pass | `upload-policy` | security (static) | External uploads policy: "ask"; budget $5. Remote providers are refused or need consent accordingly. |
 
 ## web (website)
@@ -255,7 +255,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | Status | Check | Category | Result |
 |---|---|---|---|
 | pass | `build:web` | build (static) | Built output present at web/dist |
-| pass | `bundle:web` | performance (static) | JS 48.7KB gzip, CSS 5.7KB gzip, 95 files, 4.55MB on disk |
+| pass | `bundle:web` | performance (static) | JS 48.8KB gzip, CSS 5.7KB gzip, 103 files, 4.65MB on disk |
 | pass | `load:home@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:home@mobile` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `capture-complete:home@mobile` | visual (lab) | Every text element was visible when the page was captured |
@@ -270,13 +270,13 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `layout:home@desktop` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `capture-complete:home@desktop` | visual (lab) | Every text element was visible when the page was captured |
 | pass | `visual-regression:home@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
-| warn | `a11y-axe:home:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (27) |
-| warn | `a11y-axe:home:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (27) |
+| warn | `a11y-axe:home:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (29) |
+| warn | `a11y-axe:home:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (29) |
 | pass | `dark-scheme:home@desktop` | visual (lab) | The page renders differently in the dark scheme |
 | pass | `keyboard:home` | accessibility (lab) | 11 tab stops reached in order, each with a visible focus indicator and none obscured |
-| pass | `scroll-motion:home` | motion (lab) | Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 1 of 459 frames over 33ms, layout shift 0 |
+| pass | `scroll-motion:home` | motion (lab) | Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 0 of 460 frames over 33ms, layout shift 0 |
 | pass | `reduced-motion:home` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| pass | `web-vitals-lab:home` | performance (lab) | Lab: LCP 484ms, CLS 0, TBT 196ms, first tap 192ms (median of 5) |
+| pass | `web-vitals-lab:home` | performance (lab) | Lab: LCP 524ms, CLS 0, TBT 160ms, first tap 200ms (median of 5) |
 | pass | `load:home-ar@mobile` | functional (lab) | No console errors, exceptions, failed requests or broken images |
 | pass | `layout:home-ar@mobile` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `rtl:home-ar@mobile` | visual (lab) | Document direction is rtl (computed rtl), language ar |
@@ -294,13 +294,13 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `rtl:home-ar@desktop` | visual (lab) | Document direction is rtl (computed rtl), language ar |
 | pass | `capture-complete:home-ar@desktop` | visual (lab) | Every text element was visible when the page was captured |
 | pass | `visual-regression:home-ar@desktop` | visual (lab) | Matches the accepted baseline (0.000% difference) |
-| warn | `a11y-axe:home-ar:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (10) |
-| warn | `a11y-axe:home-ar:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (10) |
+| warn | `a11y-axe:home-ar:light` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (11) |
+| warn | `a11y-axe:home-ar:dark` | accessibility (lab) | 1 rule(s) axe could not decide and a person must check: color-contrast (11) |
 | pass | `dark-scheme:home-ar@desktop` | visual (lab) | The page renders differently in the dark scheme |
 | pass | `keyboard:home-ar` | accessibility (lab) | 11 tab stops reached in order, each with a visible focus indicator and none obscured |
-| pass | `scroll-motion:home-ar` | motion (lab) | Scrolling 7007px: median frame 16.7ms, p95 16.7ms, 1 of 462 frames over 33ms, layout shift 0 |
+| pass | `scroll-motion:home-ar` | motion (lab) | Scrolling 7007px: median frame 16.7ms, p95 16.7ms, 0 of 462 frames over 33ms, layout shift 0 |
 | pass | `reduced-motion:home-ar` | motion (lab) | With reduced motion: no long-running animation, no scroll-linked engine loaded, all content visible |
-| pass | `web-vitals-lab:home-ar` | performance (lab) | Lab: LCP 416ms, CLS 0, TBT 229ms, first tap 192ms (median of 5) |
+| pass | `web-vitals-lab:home-ar` | performance (lab) | Lab: LCP 456ms, CLS 0, TBT 204ms, first tap 200ms (median of 5) |
 | pass | `layout:capture:story-chapter-1` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:story-chapter-1` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:story-chapter-2` | visual (lab) | No horizontal overflow or clipped text |
@@ -318,7 +318,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `layout:capture:hero-834-ar-dark` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:hero-834-ar-dark` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:hero-1024` | visual (lab) | No horizontal overflow or clipped text |
-| pass | `visual-regression:capture:hero-1024` | visual (lab) | Matches the accepted baseline (0.334% difference) |
+| pass | `visual-regression:capture:hero-1024` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:hero-1024-ar-dark` | visual (lab) | No horizontal overflow or clipped text |
 | pass | `visual-regression:capture:hero-1024-ar-dark` | visual (lab) | Matches the accepted baseline (0.000% difference) |
 | pass | `layout:capture:product` | visual (lab) | No horizontal overflow or clipped text |
@@ -335,6 +335,7 @@ Measurements labelled *lab* were taken in headless Chrome on the build machine. 
 | pass | `flow:form-validation` | functional (lab) | Contact form reports errors accessibly and confirms success |
 | pass | `flow:mobile-menu` | functional (lab) | Mobile menu opens, closes with Escape and returns focus |
 | pass | `flow:scene-embed` | functional (lab) | The 3D product loads lazily and scroll drives its camera: lazy-loaded, WebGL, camera follows scroll |
+| pass | `flow:scene-embed-phone` | functional (lab) | On a phone the embedded 3D product gets the full width, above its controls: 324 by 353px |
 | pass | `flow:no-script` | accessibility (lab) | With JavaScript disabled the whole page is still readable |
 
 ## Defects

@@ -254,7 +254,25 @@
         "lockupRule": {
           "type": "string",
           "maxLength": 300
+        },
+        "applications": {
+          "type": "object",
+          "description": "Arabic versions of applications, by key (social-square, og-image, story), each with its headline. They are set right to left and shaped with HarfBuzz.",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 120
+          }
         }
+      }
+    },
+    "headlines": {
+      "type": "object",
+      "description": "A headline per application (social-square, og-image, story, presentation-title), so each format can carry its own message. Defaults to `headline`.",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 120
       }
     }
   }

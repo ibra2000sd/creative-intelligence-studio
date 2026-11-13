@@ -57,9 +57,13 @@ function holeArc() {
       range.selectNodeContents(el);
       return union([...range.getClientRects()]);
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .sort((a, b) => a.top - b.top);
   if (!boxes.length) return;
-  const pad = 10; // less than half the space between blocks, so neighbouring holes never overlap
+  // Each hole reaches down to the next block, so no dash shows in the space between two blocks;
+  // widths stay those of each block's own text, so the sun beside the copy is never clipped.
+  for (let i = 0; i < boxes.length - 1; i++) boxes[i] = { ...boxes[i], height: Math.max(boxes[i].height, boxes[i + 1].top - boxes[i].top) };
+  const pad = 10;
   const fill = 'linear-gradient(#000, #000)';
   for (const plane of arcPlanes) {
     const p = plane.getBoundingClientRect();

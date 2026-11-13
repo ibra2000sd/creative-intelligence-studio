@@ -41,7 +41,7 @@ creative-studio setup --only raster,browser
 |---|---|---|
 | raster | sharp | PNG, WebP and AVIF export; image inspection; visual diff |
 | browser | playwright-core, axe-core | browser QA, screenshots, accessibility rules, PDF |
-| vector | svgo, opentype.js | SVG optimisation; outlining wordmarks and headlines |
+| vector | svgo, opentype.js, harfbuzzjs | SVG optimisation; outlining wordmarks and headlines; shaping Arabic headlines so their letters join |
 | model3d | @gltf-transform/core, functions, extensions; meshoptimizer; gltf-validator | GLB authoring, optimisation, validation |
 
 They are installed into the plugin's data directory (`CLAUDE_PLUGIN_DATA/runtime`), or `~/.creative-studio/runtime` outside Claude Code. No browser is downloaded: the installed Chrome is used.

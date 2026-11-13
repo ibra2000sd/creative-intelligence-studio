@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "revision": 1,
+  "revision": 2,
   "status": "approved",
   "project": {
     "id": "haldora-launch",
@@ -407,8 +407,8 @@
         "id": "dusk",
         "name": "Dusk",
         "baseColor": "#2A2D66",
-        "metalness": 0.2,
-        "roughness": 0.48,
+        "metalness": 0.04,
+        "roughness": 0.74,
         "accent": "#E9A23B",
         "names": {
           "ar": "غسق"
@@ -519,5 +519,5 @@
       "note": "Launch markets are the UK and the UAE."
     }
   ],
-  "updatedAt": "2026-11-13T10:59:26.470Z"
+  "updatedAt": "2026-11-13T17:14:16.479Z"
 }

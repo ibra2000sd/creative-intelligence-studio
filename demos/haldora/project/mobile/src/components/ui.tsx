@@ -105,6 +105,18 @@ export function Toggle({ value, onValueChange, testID, accessibilityLabel }: { v
   );
 }
 
+/** Device status as a pill: a coloured dot and a word, never colour alone. */
+export function StatusPill({ status, label }: { status: 'online' | 'offline' | 'attention'; label: string }) {
+  const th = useTheme();
+  const tone = { online: th.c.success, offline: th.c.textMuted, attention: th.c.warning }[status];
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: th.space[2], alignSelf: 'flex-start', paddingVertical: 4, paddingHorizontal: th.space[3], borderRadius: 999, backgroundColor: th.c.surface }}>
+      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: tone }} />
+      <T kind="label" style={{ color: th.c.text }}>{label}</T>
+    </View>
+  );
+}
+
 export function Card({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
   const th = useTheme();
   return <View style={[{ backgroundColor: th.c.surfaceRaised, borderColor: th.c.border, borderWidth: 1, borderRadius: th.radius.lg, padding: th.space[5], gap: th.space[2] }, style]}>{children}</View>;

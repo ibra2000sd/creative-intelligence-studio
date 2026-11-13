@@ -40,6 +40,11 @@
       "vertices": 315
     },
     {
+      "part": "Grille",
+      "triangles": 1560,
+      "vertices": 1296
+    },
+    {
       "part": "Bracket",
       "triangles": 588,
       "vertices": 384
@@ -48,17 +53,17 @@
   "files": {
     "source": {
       "path": "scene/public/models/cell.source.glb",
-      "bytes": 198088,
+      "bytes": 251100,
       "validation": {
         "errors": 0,
         "warnings": 0,
-        "infos": 6,
+        "infos": 7,
         "hints": 0,
         "messages": [],
         "stats": {
-          "triangles": 7648,
-          "vertices": 4572,
-          "drawCalls": 6,
+          "triangles": 9448,
+          "vertices": 5868,
+          "drawCalls": 7,
           "materials": 5,
           "extensions": [
             "KHR_materials_emissive_strength"
@@ -68,7 +73,7 @@
     },
     "optimised": {
       "path": "scene/public/models/cell.glb",
-      "bytes": 55224,
+      "bytes": 69752,
       "validation": {
         "errors": 0,
         "warnings": 0,
@@ -76,9 +81,9 @@
         "hints": 0,
         "messages": [],
         "stats": {
-          "triangles": 7648,
-          "vertices": 4396,
-          "drawCalls": 6,
+          "triangles": 9448,
+          "vertices": 5548,
+          "drawCalls": 7,
           "materials": 5,
           "extensions": [
             "EXT_meshopt_compression",
@@ -91,8 +96,8 @@
   },
   "optimisation": {
     "technique": "dedup + weld + prune + vertex reorder + EXT_meshopt_compression (quantised)",
-    "savedBytes": 142864,
-    "ratio": 0.279,
+    "savedBytes": 181348,
+    "ratio": 0.278,
     "requiresRuntimeDecoder": "MeshoptDecoder"
   },
   "valid": true,
@@ -104,6 +109,6 @@
     "scene/public/fallback/cell-ember.svg",
     "scene/public/fallback/cell-ember.webp"
   ],
-  "generatedAt": "2026-11-13T11:00:10.084Z",
-  "dnaRevision": 1
+  "generatedAt": "2026-11-13T17:16:07.466Z",
+  "dnaRevision": 2
 }

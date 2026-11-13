@@ -40,11 +40,21 @@ legend, label { font-size: var(--text-sm); font-weight: 600; padding: 0; margin-
 input[type='range'] { width: 100%; accent-color: var(--color-primary); min-height: 32px; margin: 0; direction: ltr; }
 input[type='range']:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; border-radius: var(--radius-sm); }
 output { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted); }
-.button { align-self: flex-start; min-height: 44px; padding: 0 var(--space-5); border-radius: 999px; border: 1px solid var(--color-border); background: transparent; color: inherit; font: inherit; font-size: var(--text-sm); cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard); }
+.button { align-self: flex-start; white-space: nowrap; min-height: 44px; padding: 0 var(--space-5); border-radius: 999px; border: 1px solid var(--color-border); background: transparent; color: inherit; font: inherit; font-size: var(--text-sm); cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard); }
 .button:hover { background: var(--color-surface); }
 .button:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
 
 .embed .panel h1 { font-size: var(--text-lg); }
+/* Embedded in a page section, everything must fit the frame it is given: a tighter panel, and on
+   narrow frames the panel takes the height it needs and the model the rest. */
+.embed .stage { grid-template-columns: minmax(0, 1fr) minmax(13rem, 16rem); }
+.embed .panel { gap: var(--space-4); padding: var(--space-5) var(--space-4); }
+.embed .help { display: none; }
+@media (max-width: 760px) {
+  .embed .stage { grid-template-columns: 1fr; grid-template-rows: minmax(18rem, 1fr) auto; }
+  .embed .panel { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: var(--space-3) var(--space-4); padding: var(--space-4); }
+  .embed .panel h1 { grid-column: 1 / -1; }
+}
 @media (max-width: 760px) {
   .stage { grid-template-columns: 1fr; grid-template-rows: minmax(55%, 1fr) auto; }
   .panel { border-inline-start: 0; border-top: 1px solid var(--color-border); padding: var(--space-5) var(--space-4); gap: var(--space-4); }

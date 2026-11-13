@@ -76,10 +76,12 @@ a { color: inherit; }
 }
 
 /* ------------------------------------------------------------------ hero */
-.hero { position: relative; isolation: isolate; min-height: min(100svh, 62rem); margin-block-start: -4.5rem; padding-block: 9rem 6rem; display: grid; align-items: center; overflow: clip; }
+/* The copy sits high, on clear sky; the artwork is drawn taller than the hero and anchored at the
+   bottom, which lowers its hills, so the subhead and buttons never sit on a ridge. */
+.hero { position: relative; isolation: isolate; min-height: min(100svh, 62rem); margin-block-start: -4.5rem; padding-block: clamp(7.5rem, 15vh, 9.5rem) 6rem; display: grid; align-items: start; overflow: clip; }
 .hero-art { position: absolute; inset: 0; z-index: -1; }
 .hero-scene { position: absolute; inset: 0; }
-.hero-art picture, .hero-art .plane { position: absolute; inset: 0; width: 100%; height: 108%; object-fit: cover; object-position: center bottom; }
+.hero-art picture, .hero-art .plane { position: absolute; inset: 0; width: 100%; height: 124%; object-fit: cover; object-position: center bottom; }
 /* The layered wide composition from tablet width up; the single composed picture on phones. */
 .planes { display: none; }
 @media (min-width: 600px) { .planes { display: block; } }

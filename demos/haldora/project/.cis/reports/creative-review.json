@@ -3,330 +3,376 @@
   "reviewer": "creative-reviewer agent",
   "independent": true,
   "evaluationOnly": true,
-  "reviewedAt": "2026-11-13T12:22:50.000Z",
+  "reviewedAt": "2026-11-13T17:52:34.000Z",
   "subject": [
     "brand",
     "web",
     "app",
     "mobile",
-    "scene",
-    "social"
+    "scene"
   ],
   "evidenceViewed": [
     ".cis/brief.json",
     ".cis/dna/experience-dna.json",
     ".cis/reports/qa-summary.md",
-    ".cis/reports/qa/web/home-desktop.png",
-    ".cis/reports/qa/web/home-desktop-dark.png",
-    ".cis/reports/qa/web/home-ar-desktop.png",
-    ".cis/reports/qa/web/home-ar-desktop-dark.png",
-    ".cis/reports/qa/web/home-mobile.png",
-    ".cis/reports/qa/web/home-mobile-dark.png",
-    ".cis/reports/qa/web/home-ar-mobile.png",
-    ".cis/reports/qa/web/home-ar-mobile-dark.png",
-    ".cis/reports/qa/web/home-tablet.png",
-    ".cis/reports/qa/web/home-ar-tablet.png",
-    ".cis/reports/qa/web/product.png",
-    ".cis/reports/qa/web/product-ar-dark.png",
-    ".cis/reports/qa/web/product-mobile.png",
-    ".cis/reports/qa/web/story-chapter-1.png",
-    ".cis/reports/qa/web/story-chapter-2.png",
-    ".cis/reports/qa/web/story-chapter-3.png",
-    ".cis/reports/qa/web/story-chapter-4.png",
-    ".cis/reports/qa/web/story-chapter-4-dark.png",
-    ".cis/reports/qa/web/story-chapter-1-ar.png",
-    ".cis/reports/qa/app/portal-desktop.png",
-    ".cis/reports/qa/app/portal-desktop-dark.png",
-    ".cis/reports/qa/app/portal-ar-desktop.png",
+    "brand/guidelines.html",
     ".cis/reports/qa/app/portal-ar-desktop-dark.png",
-    ".cis/reports/qa/app/portal-mobile.png",
-    ".cis/reports/qa/app/portal-mobile-dark.png",
-    ".cis/reports/qa/app/portal-ar-mobile.png",
+    ".cis/reports/qa/app/portal-ar-desktop.png",
     ".cis/reports/qa/app/portal-ar-mobile-dark.png",
-    ".cis/reports/qa/app/portal-tablet.png",
+    ".cis/reports/qa/app/portal-ar-mobile.png",
     ".cis/reports/qa/app/portal-ar-tablet.png",
-    ".cis/reports/qa/app/portal-devices.png",
+    ".cis/reports/qa/app/portal-desktop-dark.png",
+    ".cis/reports/qa/app/portal-desktop.png",
     ".cis/reports/qa/app/portal-devices-mobile.png",
+    ".cis/reports/qa/app/portal-devices.png",
     ".cis/reports/qa/app/portal-forecast.png",
-    ".cis/reports/qa/app/portal-history.png",
-    ".cis/reports/qa/app/portal-history-mobile.png",
     ".cis/reports/qa/app/portal-history-ar-mobile.png",
-    ".cis/reports/qa/app/portal-settings.png",
-    ".cis/reports/qa/app/portal-settings-mobile.png",
+    ".cis/reports/qa/app/portal-history-mobile.png",
+    ".cis/reports/qa/app/portal-history.png",
+    ".cis/reports/qa/app/portal-mobile-dark.png",
+    ".cis/reports/qa/app/portal-mobile.png",
     ".cis/reports/qa/app/portal-settings-ar-mobile-dark.png",
-    ".cis/reports/qa/mobile/app-today.png",
-    ".cis/reports/qa/mobile/app-today-evening.png",
-    ".cis/reports/qa/mobile/app-today-dark.png",
-    ".cis/reports/qa/mobile/app-today-ar.png",
-    ".cis/reports/qa/mobile/app-devices.png",
-    ".cis/reports/qa/mobile/app-devices-dark.png",
-    ".cis/reports/qa/mobile/app-devices-ar.png",
-    ".cis/reports/qa/mobile/app-device-detail.png",
-    ".cis/reports/qa/mobile/app-device-detail-dark.png",
+    ".cis/reports/qa/app/portal-settings-mobile.png",
+    ".cis/reports/qa/app/portal-settings.png",
+    ".cis/reports/qa/app/portal-tablet.png",
     ".cis/reports/qa/mobile/app-device-detail-ar.png",
-    ".cis/reports/qa/mobile/app-settings.png",
-    ".cis/reports/qa/mobile/app-settings-dark.png",
-    ".cis/reports/qa/mobile/app-settings-ar.png",
+    ".cis/reports/qa/mobile/app-device-detail-dark.png",
+    ".cis/reports/qa/mobile/app-device-detail.png",
+    ".cis/reports/qa/mobile/app-devices-ar.png",
+    ".cis/reports/qa/mobile/app-devices-dark.png",
+    ".cis/reports/qa/mobile/app-devices.png",
     ".cis/reports/qa/mobile/app-settings-ar-dark.png",
-    ".cis/reports/qa/mobile/app-web-mobile.png",
+    ".cis/reports/qa/mobile/app-settings-ar.png",
+    ".cis/reports/qa/mobile/app-settings-dark.png",
+    ".cis/reports/qa/mobile/app-settings.png",
+    ".cis/reports/qa/mobile/app-today-ar.png",
+    ".cis/reports/qa/mobile/app-today-dark.png",
+    ".cis/reports/qa/mobile/app-today-evening.png",
+    ".cis/reports/qa/mobile/app-today.png",
     ".cis/reports/qa/mobile/app-web-mobile-dark.png",
+    ".cis/reports/qa/mobile/app-web-mobile.png",
     ".cis/reports/qa/mobile/app-web-tablet.png",
-    ".cis/reports/qa/scene/scene-desktop.png",
+    ".cis/reports/qa/scene/scene-ar-mobile-dark.png",
+    ".cis/reports/qa/scene/scene-ar.png",
     ".cis/reports/qa/scene/scene-desktop-dark.png",
+    ".cis/reports/qa/scene/scene-desktop.png",
     ".cis/reports/qa/scene/scene-evening.png",
     ".cis/reports/qa/scene/scene-finish-2.png",
     ".cis/reports/qa/scene/scene-finish-3.png",
-    ".cis/reports/qa/scene/scene-ar.png",
-    ".cis/reports/qa/scene/scene-still-desktop.png",
+    ".cis/reports/qa/scene/scene-mobile-dark.png",
+    ".cis/reports/qa/scene/scene-mobile.png",
     ".cis/reports/qa/scene/scene-still-dark.png",
     ".cis/reports/qa/scene/scene-still-desktop-dark.png",
-    ".cis/reports/qa/scene/scene-mobile.png",
-    ".cis/reports/qa/scene/scene-mobile-dark.png",
-    ".cis/reports/qa/scene/scene-ar-mobile-dark.png",
-    ".cis/reports/qa/scene/scene-still-mobile.png",
+    ".cis/reports/qa/scene/scene-still-desktop.png",
     ".cis/reports/qa/scene/scene-still-mobile-dark.png",
-    ".cis/reports/qa/scene/scene-tablet.png",
+    ".cis/reports/qa/scene/scene-still-mobile.png",
     ".cis/reports/qa/scene/scene-still-tablet.png",
-    "brand/guidelines.html",
-    "brand/applications/png/og-image.png",
-    "brand/applications/png/presentation-title.png",
-    "brand/applications/png/social-square.png",
-    "brand/applications/png/story.png",
-    "brand/applications/png/app-icon.png",
-    "brand/logo/png/lockup-horizontal-1200.png",
-    "brand/logo/png/lockup-horizontal-reversed-1200.png",
-    "brand/logo/png/symbol-512.png",
-    "brand/logo/png/symbol-192.png",
+    ".cis/reports/qa/scene/scene-tablet.png",
+    ".cis/reports/qa/web/hero-1024-ar-dark.png",
+    ".cis/reports/qa/web/hero-1024.png",
+    ".cis/reports/qa/web/hero-834-ar-dark.png",
+    ".cis/reports/qa/web/hero-834.png",
+    ".cis/reports/qa/web/home-ar-desktop-dark.png",
+    ".cis/reports/qa/web/home-ar-desktop.png",
+    ".cis/reports/qa/web/home-ar-mobile-dark.png",
+    ".cis/reports/qa/web/home-ar-mobile.png",
+    ".cis/reports/qa/web/home-ar-tablet.png",
+    ".cis/reports/qa/web/home-desktop-dark.png",
+    ".cis/reports/qa/web/home-desktop.png",
+    ".cis/reports/qa/web/home-mobile-dark.png",
+    ".cis/reports/qa/web/home-mobile.png",
+    ".cis/reports/qa/web/home-tablet.png",
+    ".cis/reports/qa/web/product-ar-dark.png",
+    ".cis/reports/qa/web/product-mobile.png",
+    ".cis/reports/qa/web/product.png",
+    ".cis/reports/qa/web/story-chapter-1-ar.png",
+    ".cis/reports/qa/web/story-chapter-1.png",
+    ".cis/reports/qa/web/story-chapter-2.png",
+    ".cis/reports/qa/web/story-chapter-3.png",
+    ".cis/reports/qa/web/story-chapter-4-dark.png",
+    ".cis/reports/qa/web/story-chapter-4.png",
     "brand/logo/png/apple-touch-icon-180.png",
     "brand/logo/png/favicon-32.png",
-    "web/dist/index.html"
+    "brand/logo/png/lockup-horizontal-1200.png",
+    "brand/logo/png/lockup-horizontal-reversed-1200.png",
+    "brand/logo/png/symbol-192.png",
+    "brand/logo/png/symbol-512.png",
+    "brand/applications/png/app-icon.png",
+    "brand/applications/png/og-image-ar.png",
+    "brand/applications/png/og-image.png",
+    "brand/applications/png/presentation-title.png",
+    "brand/applications/png/social-square-ar.png",
+    "brand/applications/png/social-square.png",
+    "brand/applications/png/story-ar.png",
+    "brand/applications/png/story.png",
+    "mobile/app.json",
+    "mobile/assets/icon.png",
+    "web/dist/index.html",
+    "web/dist/ar/index.html",
+    "app/dist/index.html"
   ],
   "criteria": {
     "designCoherence": {
-      "score": 3,
-      "reason": "One palette, Fraunces/Instrument/JetBrains Mono and the day arc run through site, portal chart, app dial, scene decal and social set, but the system frays at the edges: the tablet hero (home-tablet.png) has no sun at all, the arc is crisp white dashes on desktop story cards (story-chapter-1.png) but near-invisible hairline dots on phone (home-mobile.png), the app Devices list (app-devices.png) is unstyled while the portal Devices page uses cards and pills, and History is a plain table with no trace of the direction."
+      "score": 4,
+      "reason": "One system holds across web, portal, app, 3D and exports: Paper/Indigo/Amber grounds, Fraunces statements, JetBrains Mono figures and the day arc appear in home-desktop, portal-desktop, app-today, scene-desktop and og-image alike. Deductions: the app icon is ink-on-amber while the symbol is cream-on-indigo (app-icon.png vs symbol-512.png), the portal Today screen draws two differently shaped arcs with two suns (portal-desktop.png header and chart), and the Arabic product name is 'هالدورا سِل' on the web but 'Haldora Cell' in the Arabic app (app-devices-ar.png)."
     },
     "brandAlignment": {
       "score": 4,
-      "reason": "Reads as calm, warm and plain-spoken and avoids both category conventions: warm paper and indigo instead of green-on-black, flat horizons instead of gloss, copy like 'Noon is for storing' and 'kept back, by your choice'. Nothing on the prohibited list appears. Points lost for breaking the brand's own day-arc rules at night (amber sun on the night cover of guidelines.html, grey sun at 21:00 in app-today-evening.png, stars inside the dark headline in home-desktop-dark.png)."
+      "reason": "Reads calm, warm and plain-spoken: the hero line, the four-moment story (story-chapter-1..4) and the portal's sentence 'At 13:00 the battery holds 100%...' follow 'say what happens, then the number'. No green-on-black, no gloss, no stock people, no fear copy. Held back from 5 by the 3D scene (scene-desktop.png), which uses none of the horizon/landscape language and looks like a generic configurator, and by the hazard-sign black-on-amber app icon."
     },
     "visualHierarchy": {
       "score": 3,
-      "reason": "Desktop web is well paced (big serif statement, mono figure, small plain label in story-chapter-1..4.png). Elsewhere the hierarchy slips: on portal Settings (portal-settings.png) the backup reserve, which the success measure depends on, is a 13px label with no heading; the phone portal chart (portal-mobile.png) shrinks to unreadable; the hero subcopy and CTAs sit on the hill crest (home-desktop.png); the app Devices list is one flat column of text."
+      "reason": "Strong first screen (home-desktop hero, hero-1024) and a clear portal lead sentence, but: battery level on the portal desktop is only a small mono value inside a sentence and in the 'Right now' card (portal-desktop.png), the sticky story panel leaves the bottom third of each viewport empty (story-chapter-1..4, y 610-900), the phone home page shows eight near-identical landscape panels in a row (home-mobile slices 1-3), and the footer is a 20px symbol with two lines of demo text (home-desktop bottom)."
     },
     "typography": {
-      "score": 4,
-      "reason": "Typography is the strongest part. Fraunces statements with tight tracking, Instrument Sans body and every figure in JetBrains Mono with a plain label (22 % / 'left in the Cell at sunrise'). Arabic is set in IBM Plex Sans Arabic at 700 with its own hierarchy, not as fake serif. Weak spots: Arabic eyebrow, stat labels and nav are about 11-13px, under the guideline's own 14px floor; the Arabic hero breaks 'شروق / الشمس' across lines; chart labels on the phone portal are about 5px."
+      "score": 3,
+      "reason": "Latin pairing is handled well: Fraunces display with tight tracking, Instrument Sans text, mono figures with small units in the portal sentence. Defects: in the app dial 'In the battery' runs into the ring stroke on both sides and '91%' is in the sans, not mono (app-today.png, app-today-dark.png, app-today-evening.png); Arabic small text renders at 10.4-13.3px in my render against the guidelines' 14px floor; the spec '62 x 102 x 16 cm' breaks with a dangling 'x' on phones in both locales (home-mobile, home-ar-mobile)."
     },
     "originality": {
-      "score": 3,
-      "reason": "The day arc is a real idea, and it works in the scroll story, as the sun-at-Now marker on the portal chart (portal-desktop.png) and as the app dial with the battery ring (app-today.png). Around those moments the work falls back on stock patterns: the portal is a sidebar, KPI tiles, accordions and a data table; the homepage feature cards use generic contour, rainbow-wave and bell-curve art; the symbol is an arc in a rounded app tile and reads as a cloche or speedometer at 24px."
+      "score": 4,
+      "reason": "The day arc is used for real work, not as decoration: as the chart's sun cursor (portal-desktop), the product's only light (scene-desktop), the app dial (app-today) and the scroll story where the sun travels chapter to chapter. The portal's narrated sentence and the history 'sky per day' tiles are not a dashboard template. Template moments remain: the four icon-chip feature cards (home-desktop slice 3), the Devices accordion and the Settings form cards."
     },
     "motionQuality": {
       "score": 3,
-      "reason": "Not assessed. I reviewed still screenshots and static renders only, so scroll-linked timing, easing, the sun's travel and the reduced-motion crossfade could not be judged. The four story-chapter stills do show coherent keyframes (06:10, 12:40, 18:30, 02:00). The score is a neutral placeholder.",
+      "reason": "Not assessable from stills; score is provisional. From my own frame captures of web/dist at 1440 (8 frames, 700ms apart) the sun does travel along the arc between chapters and the sky crossfades, which matches 'motion moves like light'. But the time chip changes to '18:30' while the sun is still high on the arc, so label and picture disagree mid-transition. Easing, frame pacing and the app's onboarding swipe could not be judged.",
       "notAssessed": true
     },
     "interactionClarity": {
       "score": 3,
-      "reason": "Good: the portal forecast state has a clear 'Showing 18:30 forecast · Back to now' banner (portal-forecast.png), device states carry icon plus label, and there is 'Show the data as a table'. Unclear: the app's time stepper (app-today-evening.png) uses tiny -/+ glyphs and gives no sign that 21:00 is a replay or forecast; the app reserve uses up/down chevrons on a horizontal slider; app device rows have no tap affordance; the reserve slider mirrors in the Arabic app but not in the Arabic portal."
+      "reason": "Good: the portal time scrubber drives readout, cursor and sun together and has a table alternative; RTL keeps time left-to-right. Weak: scrubbing past 'Now' rewrites the headline in present tense as fact (portal-forecast.png 'At 18:30 the battery holds 83%'); the app dial's '-'/'+' buttons are unlabelled 8px glyphs (app-today.png); the app reserve slider is driven by up/down chevrons and shows no filled segment in Arabic (app-settings-ar.png); the portal 'Backup reserve 30% · Change' chip gives 'Change' no link or button styling."
     },
     "assetQuality": {
       "score": 3,
-      "reason": "The social set (og-image, social-square, story, presentation-title PNGs) is cleanly built and follows the arc construction (horizon at about 66%, arc 80% wide). The logo system is complete. The 3D Cell (scene-desktop.png) is a featureless rounded box floating in a soft radial halo, and the Dusk finish renders as saturated ultramarine, not Indigo (scene-finish-2.png). The homepage illustrations are four unrelated styles."
+      "reason": "Logo system, icons and the layered-horizon plates (og-image, story, social-square, presentation-title) are clean and consistent. Weak: the 3D Cell is a plain rounded box with heavy black vent strokes and a decal-like arc, sitting over a skewed floor band (scene-desktop, scene-finish-2/3); at 21:00 the Chalk finish turns cardboard-tan (scene-evening). The Android adaptive icon reuses the full-bleed square icon, so the launcher mask would crop the horizon and arc feet (my simulation of mobile/assets/icon.png)."
     },
     "presentationPolish": {
       "score": 3,
-      "reason": "Desktop web, guidelines and social exports look finished. Visible rough edges: no sun and a cropped arc on the tablet hero; at 1024x768 the hero sun's halo is cut by a hard rectangular notch (own render); the app Devices and device-detail screens look unfinished; the 'Do not outline' misuse tile shows an empty square; client-facing pages carry demo scaffolding ('What we hope people will say', 'Built from one Experience DNA with Creative Intelligence Studio')."
+      "reason": "Many surfaces are clean (portal desktop, app devices, guidelines). Visible craft slips: orphan arc dashes beside hero copy (a dash above 'A battery' in home-desktop and home-desktop-dark; the Arabic right leg touching 'بطارية' in home-ar-desktop/-dark), the arc ending in mid-air at 1024 and breaking up at 834/768, a cropped dark-hill lump at the bottom edge of the dark hero (home-desktop-dark, home-ar-desktop-dark around x380-580), the dial label collision, 'Showing a still image.' as raw text on the 3D fallback (scene-still-*), and a near-empty footer."
     },
     "professionalReadiness": {
-      "score": 2,
-      "reason": "Not ready to show the client without another pass. Two of the brief's three audiences meet defects on their main device: the tablet hero lacks the signature, the phone portal chart cannot be read at arm's length, and the Arabic social assets do not exist. The portal and app secondary screens still look like a template, and native iOS and Android builds were never run (qa-summary: blocked)."
+      "score": 3,
+      "reason": "Strong enough to show as work in progress, not yet as finished launch work. Before a client sees it: fix the app dial and the hero arc fragments, write forecast states as forecasts, raise Arabic small text to the brand's own floor, give Android an adaptive foreground, and lift the 3D product presentation. Demo scaffolding is also visible in client-facing places: 'What we hope people will say', 'Simulate being offline' in app Settings, and 'Demonstration data. Nothing is sent anywhere.' next to Save in the portal."
     }
   },
   "findings": [
     {
       "severity": "major",
-      "where": "web home hero at tablet and small-laptop widths (home-tablet.png, home-ar-tablet.png; confirmed in own renders of web/dist at 768x1024, 834x1194 and 1024x768)",
-      "issue": "At 768 and 834px the hero picture is a band of hills with the horizon about 20% from the top. The sun is cropped off above the frame and only the two arc legs show as faint dots in the top corners, so the signature is missing from the first screen in both locales. That breaks the guideline's construction rule (horizon at 66%) and its 'large calm sky' composition. At 1024x768 the sun appears, but its outer halo is cut by a hard rectangular notch below-left of the disc (own render), apparently the text-block mask clipping it.",
-      "suggestion": "Design the tablet hero as its own composition: sky above, horizon in the lower third, sun placed by time. Make the text-block mask clip only the dashed arc, never the sun or its halo. Add 768, 834 and 1024 widths to the QA capture set."
+      "where": "Mobile app Today dial (.cis/reports/qa/mobile/app-today.png, app-today-dark.png, app-today-evening.png)",
+      "issue": "The label 'In the battery' is wider than the inside of the ring: its first and last letters sit on the iris ring stroke on both sides, in light, dark and evening. '91%' is set in the sans, not the mono that the DNA requires for figures. The sun at the apex also touches the top of the ring at 13:00. This is the app's signature element and the first thing a customer sees each day.",
+      "suggestion": "Shorten the label ('stored') or move it below the ring. Enlarge the ring's inner diameter or reduce the label size so there is at least 8px of clearance. Set the figure in JetBrains Mono. Leave a gap between the sun's path and the ring."
     },
     {
       "severity": "major",
-      "where": "day-arc stroke on phone and tablet (home-mobile.png, home-ar-mobile.png and their dark versions, home-tablet.png story cards and hero; brand/applications/png/story.png, social-square.png)",
-      "issue": "On desktop the story-card arc is a clear white dashed line (story-chapter-1.png). On phone and tablet the same arc is drawn as hairline dots that almost vanish against the sky. In the 06:10 card the sun seems to float with no path, and the phone hero arc is barely visible. The story and square exports have the same hairline arc at feed size. The guideline asks for one dashed arc ('dash one unit, gap about three'); it does not say the stroke may thin out on small formats.",
-      "suggestion": "Set a minimum on-screen stroke width and dash length for the arc (for example 1.5px stroke, dash 4 / gap 12 at 1x) and scale it per format, not with the viewBox. Re-export the story and square at that weight."
+      "where": "Website hero and exports, day arc against text (.cis/reports/qa/web/home-desktop.png, home-desktop-dark.png, home-ar-desktop.png, home-ar-desktop-dark.png, hero-1024.png, hero-834.png, home-tablet.png, brand/applications/png/presentation-title.png, og-image.png)",
+      "issue": "Where the arc is masked around copy, it leaves orphan fragments. At 1440 a single dash sits just above 'A battery', where it reads like a stray accent mark (about x100,y450, both schemes). In Arabic the right leg touches the first word of the subhead 'بطارية' (about x1362,y490-530). At 1024 both legs stop in mid-sky about 200px above the hills. At 834/768 the amber dashes vanish into the brightest band of sky, leaving gaps of 100px or more. On the presentation title a lone segment floats at x195-210,y600-660. The guidelines' construction (arc standing on the horizon) is not met in these compositions.",
+      "suggestion": "Compose so the arc clears the copy instead of being cut by it: shrink or reposition the arc per breakpoint so both feet land on the horizon outside the text block, or end it with deliberate terminals at the mask edge and suppress fragments shorter than about three dashes. Raise dash contrast where it crosses the pale band of sky. Re-export og-image and presentation-title."
     },
     {
       "severity": "major",
-      "where": "portal Today on a phone (portal-mobile.png, portal-mobile-dark.png, portal-ar-mobile.png, portal-ar-mobile-dark.png, chart card)",
-      "issue": "The 'The day so far' chart is the desktop SVG scaled into about 330x130px. Time labels (00:00, 06:00) and the 'Now' tag are about 4-5px, and the three series blur together. The brief asks for 'readable at arm's length' and the DNA says mobile compositions are designed separately, not scaled down. On the device customers use daily, the signature chart is decoration.",
-      "suggestion": "Build a phone chart: taller plot, at most four time labels at 12px or more, a thicker arc, the sun-at-Now readout as the main element, and the legend chips folded into the readout row."
+      "where": "Portal Today, forecast state (.cis/reports/qa/app/portal-forecast.png)",
+      "issue": "When the scrubber is moved past 'Now' to 18:30, the large serif sentence says 'At 18:30 the battery holds 83%, the roof is making 0.2 kW and the home is using 2.3 kW' in the present tense. It also keeps 'Bought from the grid so far today: 3.5 kWh', which is the value at Now. The side card becomes 'At 18:30 ... powering the home'. The only cue that this is a forecast is the small caption under the chart, so a prediction reads as fact in the most prominent text on the page.",
+      "suggestion": "Switch the sentence to forecast grammar when the cursor is after Now ('By 18:30 the battery should hold about 83%...') and show a visible 'Forecast' tag next to the time. Hide or relabel the 'so far today' clause, and retitle the side card 'Expected at 18:30'."
     },
     {
       "severity": "major",
-      "where": "portal History (portal-history.png, portal-history-mobile.png, portal-history-ar-mobile.png)",
-      "issue": "History is a paginated admin table with ISO dates (2026-10-31), a free-text filter that asks for 'For example 2026-10', and kWh columns. Nothing of the direction appears: no day arc, no horizon, no curve, although the homepage promises 'The day, drawn as a curve'. It reads like a template, not like Haldora, and dates written as '31 Oct' or 'Yesterday' would match the plain-language voice better.",
-      "suggestion": "Lead with a visual history, for example a strip of small day arcs or sky tiles per day, coloured by self-powered share and labelled in words. Keep the table as the 'Show as table' alternative. Use friendly dates and a date picker instead of a typed filter."
+      "where": "Android launcher icon (mobile/app.json android.adaptiveIcon, mobile/assets/icon.png = brand/applications/png/app-icon.png)",
+      "issue": "The adaptive icon's foreground is the full-bleed square amber icon, and its horizon bar runs to within about 4% of the edges. Android shows only the central safe zone of an adaptive foreground. In my circular-mask simulation (own render, not a QA screenshot) the horizon bar and both arc feet are cut off. The #14152B background never shows, because the foreground is opaque.",
+      "suggestion": "Export a transparent adaptive foreground with the arc, sun and horizon inside the central 66% safe zone, and set the background colour or a separate background layer. Check the result in circle, squircle and rounded-square masks."
     },
     {
       "severity": "major",
-      "where": "mobile app Devices and device detail (app-devices.png, app-devices-dark.png, app-devices-ar.png, app-device-detail*.png)",
-      "issue": "The list is a single left-aligned stack of icon tile, name, location and status text: no cards, no dividers, no chevron, and more than half the screen empty. Nothing shows that the rows can be tapped. The detail screen shows only Location and Firmware. The portal's Devices page has cards and status pills with icons, and the app's Today screen has cards, so this screen looks unfinished next to both.",
-      "suggestion": "Use the same row card as the portal (status pill with icon, chevron, 44pt or larger target) and show what 'Needs attention' means on the row. Give the detail screen useful content (state, last seen, what to do) instead of firmware alone."
+      "where": "3D product presentation (.cis/reports/qa/scene/scene-desktop.png, scene-desktop-dark.png, scene-evening.png, scene-finish-2.png, scene-finish-3.png, scene-ar.png, scene-mobile.png, scene-tablet.png)",
+      "issue": "The brief asks for an interactive 3D presentation of the Cell. The scene is a utility configurator: a rounded box with an inset panel, a printed-looking arc and seven heavy black vent strokes, in front of a flat diagonal floor band whose angle does not match the camera. There is no horizon or landscape, no brand mark and no narrative. At 21:00 the Chalk finish renders as cardboard tan, and the Dusk finish reads as saturated ultramarine rather than the muted Indigo it names. The finish chips wrap 'Ember' onto its own row in a panel that has room to spare (scene-desktop.png).",
+      "suggestion": "Refine the model (chamfered edges, a panel seam, matte powder-coat roughness, vents as recessed slots rather than black lines). Make the arc an emissive element that dims at night. Replace the floor band with a wall/floor plane lit from the upper left, and bring in the time of day through window light or a horizon. Add the lockup and a one-line caption per time of day. Keep the three finish chips on one row."
     },
     {
       "severity": "major",
-      "where": "night and dark-scheme behaviour of the signature (brand/guidelines.html cover; app-today-evening.png; app-today-dark.png; app-web-mobile-dark.png; portal-desktop-dark.png; home-desktop-dark.png hero)",
-      "issue": "Several places break the guideline's own day-arc rules. The guidelines cover puts an amber sun with a brown halo on a night sky, while the rules say the sun is parchment against night skies and that at night there is no sun above the horizon. At 21:00 the app dial shows a dark grey sun disc on the horizon instead of a crescent or nothing. In the dark scheme the sun on the portal chart, the app dial and onboarding is coral, which is neither amber nor parchment. In the dark web hero, stars sit inside the headline block (between 'energy' and 'from', and beside 'home's'), against 'stars are kept out of it'.",
-      "suggestion": "Write the night and dark rules into one shared sun component (amber by day, parchment at dawn and dusk, crescent or nothing after sunset) and use it in the app, portal and guidelines. Recolour the guidelines cover. Mask stars out of text blocks."
+      "where": "Arabic small text across web and portal (own render of web/dist/ar/ and app/dist/?lang=ar at 1440 and 390; visible in .cis/reports/qa/web/home-ar-desktop.png, home-ar-mobile.png, app/portal-ar-mobile.png, portal-history-ar-mobile.png)",
+      "issue": "The guidelines say Arabic is 'never set ... below 14px', and the brief asks for Arabic typography that is 'not an afterthought' and text 'readable at arm's length'. In my render the scroll cue 'مرّر لتتابع اليوم' and the portal phone tab labels (اليوم، الأجهزة، السجل، الإعدادات) are 10.4px, the chart label 'الآن' is 12px, and stat captions, spec labels, form labels, testimonial attributions and the portal 'آخر تحديث' line are 13.3px.",
+      "suggestion": "Set an Arabic floor of 14-15px for labels and captions (Arabic needs a larger size than Latin at the same nominal size), and 12px+ equivalents only for Latin. Re-check the tab bar and chart labels at 390px."
     },
     {
       "severity": "major",
-      "where": "3D product presentation (scene-desktop.png, scene-finish-2.png, scene-finish-3.png, scene-evening.png, scene-mobile.png)",
-      "issue": "The Cell is a plain rounded box with a printed arc decal and nothing else. There are no seams, no mounting, and nothing that makes it look like a product rather than a placeholder. It floats in front of the wall inside a soft radial grey halo instead of casting a contact shadow from upper-left light. The floor line is a steep diagonal that fights the near-frontal view of the product. The Dusk finish renders as saturated ultramarine with a bright top-edge highlight, far from Indigo #2A2D66 and close to the 'gloss' the brief rules out. For a launch deliverable this is the weakest piece.",
-      "suggestion": "Even before industrial design signs off, add believable detail (seam, wall bracket, a status window that holds the arc), ground the product with a contact shadow and a soft directional key light from the upper left, frame the wall and floor so they agree with the camera, and tune the Dusk material (lower saturation, higher roughness) until it reads as matte indigo."
+      "where": "Marketing page on phone: feature cards repeat the story art (.cis/reports/qa/web/home-mobile.png, home-mobile-dark.png, home-ar-mobile.png, home-ar-mobile-dark.png; also home-desktop.png slice 3)",
+      "issue": "On a phone the four story chapters (sunrise, noon, sunset, night panels) are followed immediately by four feature cards that use the same four landscape panels. That makes eight near-identical sky tiles in one scroll. The 'Clever, and happy to explain itself' section reads as filler, and the signature loses impact through repetition. The amber icon chip on each card adds a third visual layer that says nothing the picture does not.",
+      "suggestion": "Give the features their own visuals from the product and the data: a crop of the portal chart for 'The day, drawn as a curve', the reserve band for 'A reserve you set once', the app dial for 'It learns the shape of your day'. Alternatively drop the pictures from the cards on phone and keep the icon. Remove either the chip or the picture."
     },
     {
       "severity": "minor",
-      "where": "portal Settings and Today (portal-settings.png, portal-desktop.png)",
-      "issue": "Backup reserve is the control in the brief's success measure, but on Settings it is a 13px bold label without a heading, sitting above a long slider that needs 'Save changes'. The Display card below has a Fraunces heading, so the less important setting looks more important. Today has no route to the reserve at all.",
-      "suggestion": "Give Backup reserve a section heading and a large mono value. Consider saving on release, and add a reserve chip or link to Today, next to 'In the battery'."
+      "where": "Hero sun and header (.cis/reports/qa/web/home-desktop.png, hero-1024.png, hero-834.png, home-mobile.png, home-ar-mobile.png)",
+      "issue": "The sun's outer halo sits behind the navigation: at 1440 and 1024 it is behind 'A day with Haldora', and on phone and tablet the hamburger icon sits inside the halo. Header and illustration compete at the very top.",
+      "suggestion": "Drop the sun about 60px lower, or start the hero illustration below the header bar."
     },
     {
       "severity": "minor",
-      "where": "homepage feature cards, \"Clever, and happy to explain itself\" (home-desktop.png, home-desktop-dark.png, home-mobile.png)",
-      "issue": "The four cards use four unrelated illustration styles: topographic contour lines, a saturated stack of amber, iris, ember and fern waves, a bell-curve chart, and no picture at all on 'Less from the grid'. The wave stack breaks 'warm grounds, one deep colour, one bright one'. In the dark scheme the pictures stay on light paper and glare.",
-      "suggestion": "Draw all four from the approved motifs (arc, horizon, grain) in one style, give the fourth card a picture, and make dark-scheme variants."
+      "where": "Hero scroll cue (.cis/reports/qa/web/home-desktop.png, hero-1024.png, home-ar-desktop.png)",
+      "issue": "'SCROLL TO FOLLOW THE DAY' is about 10px pale text on the mid-taupe hill. Its contrast is low and it is barely visible. The Arabic cue is 10.4px.",
+      "suggestion": "Set it at 13px+ in Ink/Parchment on a flat area, or remove it."
     },
     {
       "severity": "minor",
-      "where": "homepage testimonials and footer (home-desktop.png, home-ar-desktop.png, home-mobile.png)",
-      "issue": "The section is headed 'What we hope people will say', and the footer reads 'Built from one Experience DNA with Creative Intelligence Studio'. Disclosing that the quotes are fictional is right, but the heading and the vendor credit read as demo scaffolding in a client-facing page. The footer also has no navigation, only a 16px symbol.",
-      "suggestion": "Keep the fictional-quote disclosure as a small footnote but give the section a brand heading, move the studio credit out of the client footer, and design a proper footer (lockup, links, language switch)."
+      "where": "Dark hero bottom edge (.cis/reports/qa/web/home-desktop-dark.png, home-ar-desktop-dark.png; light: home-desktop.png bottom right)",
+      "issue": "A cropped dark hill lump sits on the section boundary at about x380-580, y880-900 in the dark hero, and a dark sliver shows at the bottom right of the light hero. Both read as clipping artefacts.",
+      "suggestion": "Let the front range span the full width at the boundary, or clip the hills above the section edge."
     },
     {
       "severity": "minor",
-      "where": "Arabic typography details (home-ar-desktop.png hero and story labels, home-ar-mobile.png, product-ar-dark.png, portal-ar-desktop.png chart)",
-      "issue": "The Arabic eyebrow 'بطارية هالدورا سِل المنزلية', the stat labels under the mono figures, the nav items and the 'مرّر لتتابع اليوم' scroll hint are about 9-13px, under the 14px floor the guidelines set for Arabic. The hero headline breaks as 'طاقة بيتك، / من شروق / الشمس إلى الليل', which splits the phrase 'شروق الشمس' across lines. It looks as though the English three-line rhythm was reused. The 'الآن' tag on the portal chart is about 10px and collides with the Now line.",
-      "suggestion": "Raise Arabic labels to at least 14px, set Arabic line breaks by hand (for example 'طاقة بيتك، / من شروق الشمس / إلى الليل'), and give the chart tag a background and offset."
+      "where": "Scroll story layout and timing (.cis/reports/qa/web/story-chapter-1.png to story-chapter-4.png; own frame capture of web/dist)",
+      "issue": "The sticky picture panel sits in the top two thirds of the viewport, with about 290px of empty ground beneath it on every chapter. In my frame capture the time chip switches to the next chapter's time while the sun is still travelling, so for a moment the label and the sun disagree.",
+      "suggestion": "Centre the panel vertically, or let it fill the viewport height. Tween the time chip with the sun, or update it when the sun arrives."
     },
     {
       "severity": "minor",
-      "where": "reserve slider direction in Arabic (portal-settings-ar-mobile-dark.png vs app-settings-ar.png)",
-      "issue": "In the Arabic portal the reserve slider fills from the left. In the Arabic app it is mirrored and fills from the right. The guideline says only the day arc, charts and time controls keep left-to-right, so the portal slider is wrong and the two surfaces disagree.",
-      "suggestion": "Mirror the portal's reserve slider in RTL to match the app, and keep only time controls left-to-right."
+      "where": "Website footer (.cis/reports/qa/web/home-desktop.png, home-mobile.png, home-ar-desktop.png)",
+      "issue": "The footer is a 20px symbol and two lines of demonstration text below roughly 150px of blank space. There is no wordmark, navigation, language switch or contact line, so the page ends looking unfinished.",
+      "suggestion": "Design a footer: lockup, the four section links, language and appearance toggles, and a small horizon band to close the day."
     },
     {
       "severity": "minor",
-      "where": "mobile app Today time control (app-today.png, app-today-evening.png, app-today-ar.png)",
-      "issue": "The '-' and '+' buttons have 8px glyphs. Stepping to 21:00 changes the dial and the figures with no sign that this is a forecast or replay rather than live data. The portal handles the same state with a 'Showing 18:30 forecast · Back to now' banner.",
-      "suggestion": "Show the same 'Showing 21:00 forecast · Back to now' state in the app, enlarge the glyphs, and make clear that the time label can be tapped."
+      "where": "Contact section background ('Ask about your roof', .cis/reports/qa/web/home-desktop.png, home-desktop-dark.png, home-ar-desktop.png)",
+      "issue": "A tiled pattern of interlocking loops covers the section behind the headline and body copy. It is the busiest texture on the page, is not one of the DNA's motifs (arc, horizon, grain) and lowers the legibility of the lead text.",
+      "suggestion": "Replace it with paper grain or a low horizon band, or keep the pattern only behind the form card."
     },
     {
       "severity": "minor",
-      "where": "mobile app Settings (app-settings.png, app-settings-dark.png, app-settings-ar-dark.png)",
-      "issue": "'Simulate being offline' is a developer control shown in customer settings. In the dark scheme the off-state toggles (dark track on a dark card) almost disappear. The reserve uses up/down chevrons to move a horizontal slider, which is the wrong metaphor.",
-      "suggestion": "Hide demo controls behind a debug flag, give off-state toggles a visible track border in dark, and use -/+ or left/right steppers that match the slider's direction."
+      "where": "Testimonials headline (.cis/reports/qa/web/home-desktop.png, home-ar-desktop.png)",
+      "issue": "'What we hope people will say' / 'ما نرجو أن يقوله الناس' is honest for a demo, but on a launch page it undercuts the 'trustworthy' perception the brief asks for.",
+      "suggestion": "For client presentation, use a neutral headline and mark the quotes as placeholders in the presentation notes rather than on the page."
     },
     {
       "severity": "minor",
-      "where": "web hero composition (home-desktop.png, home-ar-desktop.png, home-desktop-dark.png)",
-      "issue": "The subcopy and both CTAs sit on the first hill crest, so the text overlaps the horizon, and the large calm sky the imagery spec asks for is crowded by the text column.",
-      "suggestion": "Lower the horizon a little or move the text block up so subcopy and CTAs sit on clean sky, as in og-image.png."
+      "where": "Portal Today, two arcs and two suns (.cis/reports/qa/app/portal-desktop.png, portal-desktop-dark.png, portal-ar-desktop.png, portal-tablet.png)",
+      "issue": "The header draws a very flat arc with a sun, and the chart draws a tall arc with a second sun, on the same screen. The guidelines say 'Do not draw two arcs or two suns in one picture', and the header arc does not follow the stated construction (50% of height).",
+      "suggestion": "On Today, let the chart's sun be the only sun: drop the header sun on this route, or turn the header into a plain time stamp."
     },
     {
       "severity": "minor",
-      "where": "portal Today KPI row (portal-desktop.png, portal-forecast.png, portal-mobile.png)",
-      "issue": "Identical cards mix instantaneous power ('Used by the home 0.4 kW') with a daily total ('Bought from the grid 3.5 kWh'), while 'Right now' shows Grid 0 kW. Side by side they read as a contradiction. In forecast mode the 3.5 kWh total does not change.",
-      "suggestion": "Label totals as totals ('Bought from the grid today'), or split 'right now' and 'so far today' into two visibly different groups."
+      "where": "Portal chart legibility (.cis/reports/qa/app/portal-desktop.png, portal-desktop-dark.png, portal-ar-desktop.png)",
+      "issue": "kW lines and the battery % line share one plot with no y-axis or scale, so the curve heights cannot be read, only compared. The 'Now' / 'الآن' label collides with the battery dashed line. In dark mode the roof fill turns a muddy brown (around x600,y850).",
+      "suggestion": "Add a light kW scale on one side and a % scale (or end labels) for the battery line. Offset the Now label. Use a translucent amber or a Rose tint for the dark-mode fill."
     },
     {
       "severity": "minor",
-      "where": "portal shell (portal-desktop.png, portal-devices.png, portal-settings.png)",
-      "issue": "Outside the chart the portal is a standard SaaS shell: sidebar, four pastel KPI tiles, accordions, form cards. The 'Right now' card is a list with tick marks where a simple roof-battery-home-grid flow drawing would have explained the house.",
-      "suggestion": "Bring one direction device into the shell (a horizon band with the sun at the current time on Today, a one-line serif summary of the day) and turn 'Right now' into a small flow picture."
+      "where": "Portal reserve shortcut (.cis/reports/qa/app/portal-desktop.png, portal-mobile.png)",
+      "issue": "'Backup reserve 30% · Change' is one pill and 'Change' has no link or button styling. The brief's success measure is changing the reserve in under ten seconds.",
+      "suggestion": "Make 'Change' a visible text button (underline or Indigo pill) that opens the reserve control in place."
     },
     {
       "severity": "minor",
-      "where": "brand guidelines and print applications (brand/guidelines.html Misuse; business-card-back in Applications)",
-      "issue": "The 'Do not outline' misuse tile shows an empty outlined rounded square with no symbol, so it does not show the misuse it names. The business-card back is the one application with no arc or horizon at all.",
-      "suggestion": "Draw the outlined symbol in the misuse tile and add a small arc or horizon device to the card back."
+      "where": "Portal History encoding and colour (.cis/reports/qa/app/portal-history.png, portal-history-mobile.png, portal-history-ar-mobile.png)",
+      "issue": "The fortnight tiles differ only by a slightly paler amber dome, so 46% and 100% days look nearly the same at a glance. Every tile shows the sun at noon. The 'Self-powered' bars in the table use a pale mint fill, which is a dark-scheme success colour, not a light-scheme data colour.",
+      "suggestion": "Encode the share in position (sun height or arc length) as well as tint. Use Amber or Iris for the table bars."
     },
     {
       "severity": "minor",
-      "where": "phone layout details (product-mobile.png, home-mobile.png The Cell; scene-desktop.png and scene-tablet.png finish chips)",
-      "issue": "Size wraps as '62 × 102 × / 16 cm', leaving the multiplication sign at the end of a line. The finish chips push 'Ember' onto a row of its own in the scene panel and on the phone product card.",
-      "suggestion": "Keep the dimension on one line (no-wrap, smaller size or a stacked W/H/D layout) and let the chips fit one row or use a segmented control."
+      "where": "App controls (.cis/reports/qa/mobile/app-today.png, app-settings.png, app-settings-ar.png, app-settings-ar-dark.png)",
+      "issue": "The '-' and '+' under the dial have no label and their glyphs are about 8px. The horizontal reserve slider is stepped with up/down chevrons. In Arabic the slider shows no filled segment at all, so 30% is not visible as a bar.",
+      "suggestion": "Label the stepper ('See another time') and use the brand plus/minus icons at 20px. Use minus/plus or start/end chevrons for the reserve. Fix the RTL fill."
     },
     {
       "severity": "minor",
-      "where": "portal theme toggle and story chapter 4 (portal-desktop-dark.png sidebar footer; story-chapter-4.png)",
-      "issue": "In the dark portal the theme toggle still shows a moon, while the web header switches to a sun. The 02:00 chapter's time label loses the pill background that 06:10, 12:40 and 18:30 have, and stars show through behind it.",
-      "suggestion": "Show the target scheme's icon consistently, and keep the time pill on every chapter."
+      "where": "App Settings demo control (.cis/reports/qa/mobile/app-settings.png, app-settings-dark.png, app-settings-ar.png)",
+      "issue": "'Simulate being offline' sits in customer-facing Settings, next to Alerts. A client will read it as a product feature.",
+      "suggestion": "Hide it behind a demo build flag or a developer menu."
+    },
+    {
+      "severity": "minor",
+      "where": "App night state (.cis/reports/qa/mobile/app-today-evening.png)",
+      "issue": "At 21:00 the crescent is drawn in dark Indigo on the light card. The guidelines specify a smaller pale crescent at night, and the moon sits at the arc's apex, which says nothing about the time.",
+      "suggestion": "Use the night card treatment (Night ground, Parchment crescent) after sunset, or a pale crescent placed by time."
+    },
+    {
+      "severity": "minor",
+      "where": "Arabic naming and units (.cis/reports/qa/mobile/app-devices-ar.png, app-device-detail-ar.png, web/home-ar-desktop.png)",
+      "issue": "The web's Arabic names the product 'هالدورا سِل', but the Arabic app lists 'Haldora Cell' and 'Haldora Sense' in Latin. The spec block uses kW/kWh/cm/dB while the Arabic body copy writes 'كيلوواط'.",
+      "suggestion": "Pick one rule for product names in Arabic (the guidelines allow هالدورا in running text) and apply it in the app and on the web. State the unit rule in the guidelines and follow it."
+    },
+    {
+      "severity": "minor",
+      "where": "Spec line breaks (.cis/reports/qa/web/home-mobile.png, home-ar-mobile.png, product-mobile.png)",
+      "issue": "'62 × 102 × 16 cm' breaks after '102 ×' on phones. In Arabic the dangling '×' ends up at the start of the run.",
+      "suggestion": "Join the dimensions with non-breaking spaces, or set them smaller on phone."
+    },
+    {
+      "severity": "minor",
+      "where": "3D still fallback (.cis/reports/qa/scene/scene-still-desktop.png, scene-still-mobile.png, scene-still-tablet.png, scene-still-dark.png)",
+      "issue": "The fallback shows 'Showing a still image.' as raw grey text in the top-left corner. It reads like a debug message, and the time control disappears without explanation.",
+      "suggestion": "Write it as a caption in the panel ('A still view. Turn on motion to explore.') and keep the finish chips working on the still."
+    },
+    {
+      "severity": "minor",
+      "where": "App icon colourway (brand/applications/png/app-icon.png, brand/logo/png/symbol-512.png)",
+      "issue": "The app icon is an ink arc on an amber field. Elsewhere the symbol is cream on Indigo, or Indigo on amber in dark contexts. Black on amber also reads as hazard signage, which is the opposite of 'calm, warm'.",
+      "suggestion": "Use the Indigo tile with a cream arc and an amber sun, as on the logo symbol and touch icon, or document the amber variant as a deliberate night/dark rule."
+    },
+    {
+      "severity": "minor",
+      "where": "Brand guidelines, day arc section (brand/guidelines.html)",
+      "issue": "The construction diagram draws three suns (dawn, noon, dusk) in one picture, directly above the rule 'Do not draw two arcs or two suns in one picture'. The 'Do not outline' misuse tile shows an empty rounded square, not an outlined mark.",
+      "suggestion": "Ghost the dawn and dusk positions as hollow markers and label the diagram as a construction drawing. Show the actual outlined symbol in the misuse tile."
     },
     {
       "severity": "note",
-      "where": "logo files (brand/logo/png/lockup-horizontal-1200.png, symbol-512.png, favicon-32.png)",
-      "issue": "The arc and horizon in the symbol are knock-outs (transparent), so they take on whatever ground the logo sits on. On a mid-grey ground they turn grey. At nav and favicon size the mark reads more like a service bell or a speedometer than a sunrise.",
-      "suggestion": "Consider filled chalk strokes in the master symbol, or document the knock-out behaviour and the grounds it is allowed on. Test recognition at 16-24px."
+      "where": "Localised social pairs (brand/applications/png/social-square.png vs social-square-ar.png; story.png vs story-ar.png)",
+      "issue": "The English square is 'Evening runs on noon' and the Arabic square is the sunrise chapter. The stories likewise pair sunrise with noon, so the set cannot run as one bilingual post.",
+      "suggestion": "If the pairs are meant for a bilingual campaign, export each scene in both languages."
     },
     {
       "severity": "note",
-      "where": "what works and should be protected (story-chapter-1..4.png, portal-desktop.png chart, app-today.png dial, social-square.png, story.png, home-ar-desktop.png)",
-      "issue": "The four story chapters are the best expression of the direction: one sun, a dashed arc, sky colour by time, and a mono figure with a plain label. The portal chart puts the sun on the arc at 'Now'. The app dial joins the arc and the battery ring well. The social set follows the construction rules. In Arabic the arc correctly keeps sunrise on the left, and chips, back arrows and pagination mirror correctly.",
-      "suggestion": "Use these as the reference when fixing the weaker surfaces."
+      "where": "Portal phone branding (.cis/reports/qa/app/portal-mobile.png, portal-ar-mobile.png)",
+      "issue": "On phone widths the portal shows no Haldora mark anywhere. The sidebar lockup disappears and the bottom tab bar has none.",
+      "suggestion": "Put the symbol at the start of the date row."
     },
     {
       "severity": "note",
-      "where": "native iOS and Android (qa-summary: native-ios and native-android blocked)",
-      "issue": "All app evidence comes from the web export. I could not check native navigation, the system tab bar or back behaviour, or Arabic shaping on device. The device-detail screen draws its own back arrow, which conflicts with the DNA's platform exceptions if the native build does the same.",
-      "suggestion": "Capture the app on an iOS simulator and an Android emulator before client review, and use the system navigation bar and back behaviour."
+      "where": "Arabic: designed or mirrored (.cis/reports/qa/web/home-ar-*.png, app/portal-ar-*.png, mobile/*-ar*.png, brand og-image-ar/story-ar/social-square-ar)",
+      "issue": "The Arabic reads as designed copy on a mirrored layout. The copy is idiomatic, not literal ('المساء يعمل بطاقة الظهيرة'). The arc, charts and time sliders correctly keep sunrise-to-sunset left to right. Navigation, the sidebar, tab bars, chevrons and pagination mirror correctly. Headings use IBM Plex Sans Arabic 700 with generous leading. The page compositions themselves are the English ones mirrored, and the Arabic loses the serif/sans contrast that gives the English its editorial voice. The guidelines accept this, but it makes the Arabic quotes and statements feel plainer.",
+      "suggestion": "Consider one Arabic-specific composition move (for example, statements set larger with more air, or quotes with an amber rule) so the Arabic has its own editorial voice."
     },
     {
       "severity": "note",
-      "where": "earlier review: arc through the hero headline",
-      "issue": "Fixed. At 1440px the arc now stops at the text block in both locales: in home-desktop.png the left half ends above the eyebrow and the right leg comes down clear of the copy, and home-ar-desktop.png mirrors this. A side effect at 1024x768 is that the mask cuts a rectangular notch in the sun's halo (own render); that is recorded as part of the new tablet-hero finding."
+      "where": "Prohibited patterns check (all deliverables)",
+      "issue": "None of the DNA's prohibited patterns appear: no green-on-black dashboards, no glossy renders on white, no neon glows or lens flares, no stock photography, no lightning-bolt imagery in use, no outage fear copy. The 'quiet reserve' copy talks about the street going dark as reassurance, not as a threat."
     },
     {
       "severity": "note",
-      "where": "earlier review: dark-hero moon over the headline",
-      "issue": "Fixed. In home-ar-desktop-dark.png the crescent sits at the top of the arc, well clear of 'طاقة بيتك'. On home-mobile-dark.png and home-ar-mobile-dark.png it is centred in the picture band above the headline and not cropped. Stars inside the English dark headline block remain (new finding)."
+      "where": "Strengths to protect",
+      "issue": "The hero line and first screen, the four-moment story with the sun travelling the arc, the portal's narrated sentence with mono figures, the chart's sun-above-the-cursor, the history 'sky per day' idea, and the warm night palette are distinctive and specific to this client. They should survive revision."
     },
     {
       "severity": "note",
-      "where": "earlier review: night state of the signature",
-      "issue": "Fixed for the places listed: the dark hero, the phone and tablet 02:00 story cards and presentation-title.png all use a pale crescent now. The night rule is still broken elsewhere (amber sun on the guidelines cover, grey sun at 21:00 in the app, coral sun in the dark scheme), which is recorded as a new finding."
+      "where": "earlier review: Cell configurator at phone width",
+      "issue": "Fixed. At 390px the viewer now stacks: the canvas is full card width (about 325x350) above the Finish and Time controls in home-mobile.png, home-mobile-dark.png, home-ar-mobile.png and product-mobile.png, and the Cell and its arc are fully visible."
     },
     {
       "severity": "note",
-      "where": "earlier review: app tab bar labels cut off",
-      "issue": "Fixed. In app-today.png, app-devices.png, app-settings.png and their dark and Arabic versions, tab icons and labels sit fully inside the bar with clear space below. Native rendering is still unverified."
+      "where": "earlier review: Portal History fortnight tiles",
+      "issue": "Partly fixed. The caption now matches the drawing ('The warmer the sky, the more of that day the home ran on its own power. The figure under each day gives the share.'). But every tile is still the same filled dome with the sun at the apex, and the value is still carried mainly by a subtle tint difference (Fri Nov 6, 46%, versus Sun Nov 1, 100%, in portal-history.png and portal-history-mobile.png)."
     },
     {
       "severity": "note",
-      "where": "earlier review: Arabic app content left in English",
-      "issue": "Fixed. app-devices-ar.png now shows translated locations and types (المرآب، لوحة الكهرباء، شاحن السيارة، ممر السيارة، محوّل الألواح، العلّية) with product names in Latin, and on app-device-detail-ar.png the back arrow sits on the right and points right."
+      "where": "earlier review: Website hero arc against the copy block",
+      "issue": "Partly fixed. The arc now appears masked around the text block. But a lone dash still sits just above 'A battery' at 1440 (home-desktop.png, home-desktop-dark.png). The Arabic right leg still touches 'بطارية' (home-ar-desktop.png, home-ar-desktop-dark.png around x1362,y490-530). At 1024 the legs still stop in mid-sky (hero-1024.png), and at 834/768 the arc still breaks up in the pale sky (hero-834.png, home-tablet.png)."
     },
     {
       "severity": "note",
-      "where": "earlier review: guidelines application previews show wrong artwork",
-      "issue": "Fixed (own render of brand/guidelines.html at 1440px). The og-image preview now shows the pale paper sky and presentation-title the night scene, both matching the exported PNGs. The social-square and story previews also match."
+      "where": "earlier review: Light-scheme horizon hills",
+      "issue": "Partly fixed. The far and middle ranges are now warm (sampled #E1D8C4 and #B2A998 in story-chapter-2.png and hero-834.png), and the first screen no longer reads cold. The front range is still a neutral grey-violet that is not in the palette (#4E4C56 on the web, #4B4B54 in og-image.png), and the middle taupe is also off-palette."
     },
     {
       "severity": "note",
-      "where": "earlier review: portal chart unreadable on a phone",
-      "issue": "Not fixed. portal-mobile.png and portal-ar-mobile.png still show the desktop chart scaled to about 330px wide, with time labels and the 'Now' tag around 4-5px. Recorded again as a new major finding."
+      "where": "earlier review: App icon masters",
+      "issue": "Partly fixed. The 1024 icon is now a full-bleed amber square (app-icon.png) and the 180 touch icon is full-bleed Indigo (apple-touch-icon-180.png), so the tile-inside-a-tile problem is gone. No separate Android adaptive foreground was produced: mobile/app.json reuses the same full-bleed icon as the adaptive foreground, which crops the artwork (see the new major finding)."
     },
     {
       "severity": "note",
-      "where": "earlier review: portal shell reads as a stock admin template",
-      "issue": "Not fixed. portal-desktop.png, portal-devices.png, portal-history.png and portal-settings.png keep the same sidebar, KPI tiles, accordion rows, data table and form cards. No horizon band or serif day summary was added, and History is still only a table."
+      "where": "earlier review: Mobile app Today dial",
+      "issue": "Partly fixed. The ring now sits fully above the horizon line (app-today.png), so the two metaphors no longer collide at the ground. '91%' is still set in the sans, not mono. The '-'/'+' stepper is still unlabelled with roughly 8px glyphs. A new collision has appeared: 'In the battery' overlaps the ring stroke."
     },
     {
       "severity": "note",
-      "where": "earlier review: brand applications English only",
-      "issue": "Not fixed. brand/applications/png still contains only English og-image, social-square, story and presentation-title, all with the same headline. There is no Arabic story, square or OG image for the Gulf audience."
+      "where": "earlier review: Feature cards look like a stock grid",
+      "issue": "Fixed as described. All four cards now carry day-arc landscape illustrations (noon, night, sunrise, sunset), card 4 has one, and the dark scheme uses the same night-friendly scenes on dark cards (home-desktop.png, home-desktop-dark.png, home-tablet.png, home-ar-desktop.png). The new problem is repetition of the story art (see the new major finding), and the amber icon chips keep a template feel."
     }
   ],
   "recommendation": "revise"

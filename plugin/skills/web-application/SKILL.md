@@ -24,7 +24,7 @@ See the description above for triggers. Skip this skill when the request is outs
 2. If an application already exists, inspect its framework, routing, state and tests and extend them. Preserve existing behaviour unless the change is authorised.
 3. Run `creative-studio website scaffold --kind app`, then in `app/`: install, `npm test`, build.
 4. The template's energy domain (`src/logic.js`, `src/api.js`, `src/i18n.js`) is example content. Replace the three together; keep the shell, the state handling and the chart and table patterns.
-5. Keep logic pure and tested in `src/logic.js`. Keep time axes left to right in every locale.
+5. Keep logic pure and tested in `src/logic.js`. Keep time axes left to right in every locale. Draw charts at the width they are shown (the template measures its container), never as a desktop drawing scaled down: labels must be at least 12 px on a phone.
 6. Motion in a tool must be functional. Use the DNA's spring and durations; animate opacity and transform, not layout.
 7. Run `creative-studio test app`. Add a flow for every state you add.
 

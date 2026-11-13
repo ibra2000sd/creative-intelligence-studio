@@ -7,14 +7,14 @@
     "client": "Haldora",
     "fictionalClient": true
   },
-  "generatedAt": "2026-11-13T13:02:35.125Z",
+  "generatedAt": "2026-11-13T17:55:29.680Z",
   "generatedWith": "creative-intelligence-studio@0.1.0",
-  "dnaRevision": 1,
+  "dnaRevision": 2,
   "deliverables": [
     {
       "id": "brand",
       "title": "Brand identity: logo system, icons, applications, guidelines",
-      "files": 75
+      "files": 85
     },
     {
       "id": "design-system",
@@ -24,17 +24,17 @@
     {
       "id": "assets",
       "title": "Generated visual assets with sources",
-      "files": 53
+      "files": 61
     },
     {
       "id": "web",
       "title": "Marketing website: source and production build",
-      "files": 227
+      "files": 257
     },
     {
       "id": "app",
       "title": "Web application: source and production build",
-      "files": 167
+      "files": 191
     },
     {
       "id": "scene",
@@ -92,7 +92,7 @@
   "quality": {
     "verdict": "incomplete",
     "totals": {
-      "pass": 278,
+      "pass": 279,
       "fail": 0,
       "warn": 16,
       "skipped": 0,
@@ -109,30 +109,30 @@
   "creativeReview": {
     "reviewer": "creative-reviewer agent",
     "independent": true,
-    "reviewedAt": "2026-11-13T12:22:50.000Z",
+    "reviewedAt": "2026-11-13T17:52:34.000Z",
     "recommendation": "revise",
     "findings": {
       "blocker": 0,
       "major": 7,
-      "minor": 13,
+      "minor": 19,
       "note": 12
     }
   },
   "openIssues": [
     "Gate G6-quality (quality evidence reviewed) has not been approved by a person.",
-    "REVIEW MAJOR web home hero at tablet and small-laptop widths (home-tablet.png, home-ar-tablet.png; confirmed in own renders of web/dist at 768x1024, 834x: At 768 and 834px the hero picture is a band of hills with the horizon about 20% from the top. The sun is cropped off above the frame and only the two arc legs show as faint dots in the top corners, so the signature is mi",
-    "REVIEW MAJOR day-arc stroke on phone and tablet (home-mobile.png, home-ar-mobile.png and their dark versions, home-tablet.png story cards and hero; brand: On desktop the story-card arc is a clear white dashed line (story-chapter-1.png). On phone and tablet the same arc is drawn as hairline dots that almost vanish against the sky. In the 06:10 card the sun seems to float wi",
-    "REVIEW MAJOR portal Today on a phone (portal-mobile.png, portal-mobile-dark.png, portal-ar-mobile.png, portal-ar-mobile-dark.png, chart card): The 'The day so far' chart is the desktop SVG scaled into about 330x130px. Time labels (00:00, 06:00) and the 'Now' tag are about 4-5px, and the three series blur together. The brief asks for 'readable at arm's length' a",
-    "REVIEW MAJOR portal History (portal-history.png, portal-history-mobile.png, portal-history-ar-mobile.png): History is a paginated admin table with ISO dates (2026-10-31), a free-text filter that asks for 'For example 2026-10', and kWh columns. Nothing of the direction appears: no day arc, no horizon, no curve, although the ho",
-    "REVIEW MAJOR mobile app Devices and device detail (app-devices.png, app-devices-dark.png, app-devices-ar.png, app-device-detail*.png): The list is a single left-aligned stack of icon tile, name, location and status text: no cards, no dividers, no chevron, and more than half the screen empty. Nothing shows that the rows can be tapped. The detail screen s",
-    "REVIEW MAJOR night and dark-scheme behaviour of the signature (brand/guidelines.html cover; app-today-evening.png; app-today-dark.png; app-web-mobile-dar: Several places break the guideline's own day-arc rules. The guidelines cover puts an amber sun with a brown halo on a night sky, while the rules say the sun is parchment against night skies and that at night there is no ",
-    "REVIEW MAJOR 3D product presentation (scene-desktop.png, scene-finish-2.png, scene-finish-3.png, scene-evening.png, scene-mobile.png): The Cell is a plain rounded box with a printed arc decal and nothing else. There are no seams, no mounting, and nothing that makes it look like a product rather than a placeholder. It floats in front of the wall inside a",
-    "WARN app/a11y-axe:portal:light: 1 rule(s) axe could not decide and a person must check: color-contrast (5)",
-    "WARN app/a11y-axe:portal:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (5)",
-    "WARN app/web-vitals-lab:portal: Lab: LCP 1140ms, CLS 0.0004, TBT 273ms, first tap 232ms (median of 5); first scripted tap took 232ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+    "REVIEW MAJOR Mobile app Today dial (.cis/reports/qa/mobile/app-today.png, app-today-dark.png, app-today-evening.png): The label 'In the battery' is wider than the inside of the ring: its first and last letters sit on the iris ring stroke on both sides, in light, dark and evening. '91%' is set in the sans, not the mono that the DNA requi",
+    "REVIEW MAJOR Website hero and exports, day arc against text (.cis/reports/qa/web/home-desktop.png, home-desktop-dark.png, home-ar-desktop.png, home-ar-de: Where the arc is masked around copy, it leaves orphan fragments. At 1440 a single dash sits just above 'A battery', where it reads like a stray accent mark (about x100,y450, both schemes). In Arabic the right leg touches",
+    "REVIEW MAJOR Portal Today, forecast state (.cis/reports/qa/app/portal-forecast.png): When the scrubber is moved past 'Now' to 18:30, the large serif sentence says 'At 18:30 the battery holds 83%, the roof is making 0.2 kW and the home is using 2.3 kW' in the present tense. It also keeps 'Bought from the ",
+    "REVIEW MAJOR Android launcher icon (mobile/app.json android.adaptiveIcon, mobile/assets/icon.png = brand/applications/png/app-icon.png): The adaptive icon's foreground is the full-bleed square amber icon, and its horizon bar runs to within about 4% of the edges. Android shows only the central safe zone of an adaptive foreground. In my circular-mask simula",
+    "REVIEW MAJOR 3D product presentation (.cis/reports/qa/scene/scene-desktop.png, scene-desktop-dark.png, scene-evening.png, scene-finish-2.png, scene-finis: The brief asks for an interactive 3D presentation of the Cell. The scene is a utility configurator: a rounded box with an inset panel, a printed-looking arc and seven heavy black vent strokes, in front of a flat diagonal",
+    "REVIEW MAJOR Arabic small text across web and portal (own render of web/dist/ar/ and app/dist/?lang=ar at 1440 and 390; visible in .cis/reports/qa/web/ho: The guidelines say Arabic is 'never set ... below 14px', and the brief asks for Arabic typography that is 'not an afterthought' and text 'readable at arm's length'. In my render the scroll cue 'مرّر لتتابع اليوم' and the",
+    "REVIEW MAJOR Marketing page on phone: feature cards repeat the story art (.cis/reports/qa/web/home-mobile.png, home-mobile-dark.png, home-ar-mobile.png, : On a phone the four story chapters (sunrise, noon, sunset, night panels) are followed immediately by four feature cards that use the same four landscape panels. That makes eight near-identical sky tiles in one scroll. Th",
+    "WARN app/a11y-axe:portal:light: 1 rule(s) axe could not decide and a person must check: color-contrast (6)",
+    "WARN app/a11y-axe:portal:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (6)",
+    "WARN app/web-vitals-lab:portal: Lab: LCP 1064ms, CLS 0.0001, TBT 277ms, first tap 224ms (median of 5); first scripted tap took 224ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
     "WARN app/a11y-axe:portal-ar:light: 1 rule(s) axe could not decide and a person must check: color-contrast (4)",
     "WARN app/a11y-axe:portal-ar:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (4)",
-    "WARN app/web-vitals-lab:portal-ar: Lab: LCP 1084ms, CLS 0.0006, TBT 289ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
+    "WARN app/web-vitals-lab:portal-ar: Lab: LCP 1056ms, CLS 0.0034, TBT 277ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
     "BLOCKED mobile-native/native-ios:mobile: Native iOS build and simulator tests cannot run: full Xcode is not installed on this machine. Needs macOS with Xcode, then `npx expo run:ios`; store builds also need an Apple signing identity.",
     "BLOCKED mobile-native/native-android:mobile: Native Android build and emulator tests cannot run: the Android SDK is not installed on this machine. Needs Android Studio / SDK and an emulator or device, then `npx expo run:android`; store builds also need a signing keystore.",
     "WARN scene/a11y-axe:scene:light: 1 rule(s) axe could not decide and a person must check: color-contrast (1)",
@@ -141,17 +141,17 @@
     "WARN scene/a11y-axe:scene-still:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (1)",
     "WARN security/licences:web: 5 packages; needs a human licence decision: gsap (Standard 'no charge' license: https://gsap.com/standard-license.)",
     "WARN security/vulnerabilities:mobile: pnpm audit: 0 critical, 0 high, 4 moderate, 1 low (production dependencies)",
-    "WARN web/a11y-axe:home:light: 1 rule(s) axe could not decide and a person must check: color-contrast (27)",
-    "WARN web/a11y-axe:home:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (27)",
-    "WARN web/a11y-axe:home-ar:light: 1 rule(s) axe could not decide and a person must check: color-contrast (10)",
-    "WARN web/a11y-axe:home-ar:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (10)"
+    "WARN web/a11y-axe:home:light: 1 rule(s) axe could not decide and a person must check: color-contrast (29)",
+    "WARN web/a11y-axe:home:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (29)",
+    "WARN web/a11y-axe:home-ar:light: 1 rule(s) axe could not decide and a person must check: color-contrast (11)",
+    "WARN web/a11y-axe:home-ar:dark: 1 rule(s) axe could not decide and a person must check: color-contrast (11)"
   ],
   "assets": {
-    "registered": 42,
-    "files": 135
+    "registered": 46,
+    "files": 153
   },
   "ledger": {
-    "events": 277,
+    "events": 431,
     "intact": true
   },
   "files": [
@@ -162,8 +162,8 @@
     },
     {
       "path": "deliverables/app/dist/assets/app-store-feature.png",
-      "bytes": 260411,
-      "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7"
+      "bytes": 260415,
+      "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9"
     },
     {
       "path": "deliverables/app/dist/assets/bloom-ground.webp",
@@ -172,33 +172,33 @@
     },
     {
       "path": "deliverables/app/dist/assets/campaign-square.png",
-      "bytes": 865444,
-      "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180"
+      "bytes": 870802,
+      "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45"
     },
     {
       "path": "deliverables/app/dist/assets/campaign-square.webp",
-      "bytes": 24752,
-      "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b"
+      "bytes": 25438,
+      "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8"
     },
     {
       "path": "deliverables/app/dist/assets/campaign-story.png",
-      "bytes": 1580999,
-      "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a"
+      "bytes": 1588980,
+      "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40"
     },
     {
       "path": "deliverables/app/dist/assets/campaign-story.webp",
-      "bytes": 29918,
-      "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951"
+      "bytes": 30430,
+      "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7"
     },
     {
       "path": "deliverables/app/dist/assets/campaign-wide.png",
-      "bytes": 442150,
-      "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31"
+      "bytes": 444944,
+      "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd"
     },
     {
       "path": "deliverables/app/dist/assets/campaign-wide.webp",
-      "bytes": 21766,
-      "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151"
+      "bytes": 22062,
+      "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb"
     },
     {
       "path": "deliverables/app/dist/assets/feature-contour.svg",
@@ -211,6 +211,26 @@
       "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17"
     },
     {
+      "path": "deliverables/app/dist/assets/feature-dawn.svg",
+      "bytes": 2829,
+      "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-dawn.webp",
+      "bytes": 15090,
+      "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-dusk.svg",
+      "bytes": 2832,
+      "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-dusk.webp",
+      "bytes": 14524,
+      "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443"
+    },
+    {
       "path": "deliverables/app/dist/assets/feature-instrument.svg",
       "bytes": 7759,
       "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da"
@@ -219,6 +239,26 @@
       "path": "deliverables/app/dist/assets/feature-instrument.webp",
       "bytes": 16048,
       "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-night.svg",
+      "bytes": 7793,
+      "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-night.webp",
+      "bytes": 10452,
+      "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-noon.svg",
+      "bytes": 2810,
+      "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1"
+    },
+    {
+      "path": "deliverables/app/dist/assets/feature-noon.webp",
+      "bytes": 13358,
+      "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798"
     },
     {
       "path": "deliverables/app/dist/assets/feature-strata.svg",
@@ -252,43 +292,43 @@
     },
     {
       "path": "deliverables/app/dist/assets/hero-arc.svg",
-      "bytes": 910,
-      "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae"
+      "bytes": 933,
+      "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab"
     },
     {
       "path": "deliverables/app/dist/assets/hero-arc.webp",
-      "bytes": 25210,
-      "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927"
+      "bytes": 28002,
+      "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9"
     },
     {
       "path": "deliverables/app/dist/assets/hero-far.webp",
-      "bytes": 12338,
-      "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75"
+      "bytes": 12720,
+      "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9"
     },
     {
       "path": "deliverables/app/dist/assets/hero-mid.webp",
-      "bytes": 12732,
-      "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d"
+      "bytes": 13394,
+      "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5"
     },
     {
       "path": "deliverables/app/dist/assets/hero-mobile.avif",
-      "bytes": 8148,
-      "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0"
+      "bytes": 8867,
+      "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8"
     },
     {
       "path": "deliverables/app/dist/assets/hero-mobile.webp",
-      "bytes": 15112,
-      "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb"
+      "bytes": 15884,
+      "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135"
     },
     {
       "path": "deliverables/app/dist/assets/hero-near.webp",
-      "bytes": 12350,
-      "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b"
+      "bytes": 12098,
+      "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce"
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-arc.webp",
-      "bytes": 17616,
-      "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c"
+      "bytes": 19508,
+      "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87"
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-far.webp",
@@ -302,13 +342,13 @@
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-mobile.avif",
-      "bytes": 6502,
-      "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26"
+      "bytes": 7350,
+      "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c"
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-mobile.webp",
-      "bytes": 12078,
-      "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9"
+      "bytes": 13194,
+      "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7"
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-near.webp",
@@ -317,13 +357,23 @@
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-sky.avif",
-      "bytes": 3100,
-      "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23"
+      "bytes": 2056,
+      "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb"
     },
     {
       "path": "deliverables/app/dist/assets/hero-night-sky.webp",
-      "bytes": 11580,
-      "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4"
+      "bytes": 10594,
+      "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023"
+    },
+    {
+      "path": "deliverables/app/dist/assets/hero-night-sun.webp",
+      "bytes": 12042,
+      "sha256": "cbadcf58143e6100ea138a5a3239382b5795a229d9a2567027d5d27a84ae2f8a"
+    },
+    {
+      "path": "deliverables/app/dist/assets/hero-night-track.webp",
+      "bytes": 15112,
+      "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486"
     },
     {
       "path": "deliverables/app/dist/assets/hero-sky.avif",
@@ -334,6 +384,16 @@
       "path": "deliverables/app/dist/assets/hero-sky.webp",
       "bytes": 12346,
       "sha256": "08c8171acf139d14e9791874a2a7968953b9d0fb01d5865287e70f0ed4251684"
+    },
+    {
+      "path": "deliverables/app/dist/assets/hero-sun.webp",
+      "bytes": 17010,
+      "sha256": "363927504b82151c7938663f2ffd4d3ee63890a20b9614aaf3085e2c12ae79db"
+    },
+    {
+      "path": "deliverables/app/dist/assets/hero-track.webp",
+      "bytes": 19838,
+      "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06"
     },
     {
       "path": "deliverables/app/dist/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2",
@@ -396,14 +456,14 @@
       "sha256": "14d664226fe6aba968ad8b6edd8fe2a97e4a783fb06bf97bc394e2859634695d"
     },
     {
-      "path": "deliverables/app/dist/assets/index-BPVP-hsJ.js",
-      "bytes": 310895,
-      "sha256": "c3a7ebdaa59b862f491fa271d5aa2de2271385fb442b25dcf94bb9c2e01dc1fb"
+      "path": "deliverables/app/dist/assets/index-D5m1eOOt.js",
+      "bytes": 314990,
+      "sha256": "453128395260d1eb23085a3a3ac23b3a4096067a20cfdde1d8d6455d09c84aad"
     },
     {
-      "path": "deliverables/app/dist/assets/index-DNNbgv5N.css",
-      "bytes": 24203,
-      "sha256": "ad050b31419a04ca47ef0317c9037f98998090c33e2e2691939289b2436882b9"
+      "path": "deliverables/app/dist/assets/index-DYRv0Ov2.css",
+      "bytes": 27388,
+      "sha256": "ca95f7bf49c8c4aca066ad14c189f87f5e813a8adda794e8fc397f37298b5757"
     },
     {
       "path": "deliverables/app/dist/assets/instrument-sans-latin-400-normal-D1W7dsQl.woff",
@@ -462,13 +522,13 @@
     },
     {
       "path": "deliverables/app/dist/assets/model-cell.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
-      "path": "deliverables/app/dist/assets/motion-features-B20PD8lb.js",
+      "path": "deliverables/app/dist/assets/motion-features-Cryg7QKM.js",
       "bytes": 42290,
-      "sha256": "afcc3d18a35842825ec4e3707fa39e911a2e8e0030187a6434a8a3ae5fde71fd"
+      "sha256": "8aee1252b1e605dbe7b4b4ed305ef302efa60e23526039a43d9e9b179a38a34e"
     },
     {
       "path": "deliverables/app/dist/assets/pattern-arc.svg",
@@ -492,13 +552,13 @@
     },
     {
       "path": "deliverables/app/dist/assets/story-dawn.avif",
-      "bytes": 9743,
-      "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4"
+      "bytes": 10400,
+      "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803"
     },
     {
       "path": "deliverables/app/dist/assets/story-dawn.webp",
-      "bytes": 21356,
-      "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b"
+      "bytes": 22112,
+      "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519"
     },
     {
       "path": "deliverables/app/dist/assets/story-dusk-ground.webp",
@@ -512,13 +572,13 @@
     },
     {
       "path": "deliverables/app/dist/assets/story-dusk.avif",
-      "bytes": 9800,
-      "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227"
+      "bytes": 10397,
+      "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e"
     },
     {
       "path": "deliverables/app/dist/assets/story-dusk.webp",
-      "bytes": 21214,
-      "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3"
+      "bytes": 22188,
+      "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc"
     },
     {
       "path": "deliverables/app/dist/assets/story-night-ground.webp",
@@ -532,18 +592,18 @@
     },
     {
       "path": "deliverables/app/dist/assets/story-night.avif",
-      "bytes": 7191,
-      "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b"
+      "bytes": 7874,
+      "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184"
     },
     {
       "path": "deliverables/app/dist/assets/story-night.webp",
-      "bytes": 14100,
-      "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84"
+      "bytes": 15252,
+      "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5"
     },
     {
       "path": "deliverables/app/dist/assets/story-noon-ground.webp",
-      "bytes": 10106,
-      "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003"
+      "bytes": 11684,
+      "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62"
     },
     {
       "path": "deliverables/app/dist/assets/story-noon-sky.webp",
@@ -552,58 +612,58 @@
     },
     {
       "path": "deliverables/app/dist/assets/story-noon.avif",
-      "bytes": 9506,
-      "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf"
+      "bytes": 9974,
+      "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465"
     },
     {
       "path": "deliverables/app/dist/assets/story-noon.webp",
-      "bytes": 18426,
-      "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1"
+      "bytes": 19434,
+      "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943"
     },
     {
       "path": "deliverables/app/dist/brand/apple-touch-icon.png",
-      "bytes": 3543,
-      "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1"
+      "bytes": 2455,
+      "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda"
     },
     {
       "path": "deliverables/app/dist/brand/favicon.svg",
-      "bytes": 695,
-      "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f"
+      "bytes": 596,
+      "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544"
     },
     {
       "path": "deliverables/app/dist/brand/icon-192.png",
-      "bytes": 2211,
-      "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75"
+      "bytes": 2281,
+      "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c"
     },
     {
       "path": "deliverables/app/dist/brand/icon-512.png",
-      "bytes": 6753,
-      "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561"
+      "bytes": 6808,
+      "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106"
     },
     {
       "path": "deliverables/app/dist/brand/lockup-reversed.svg",
-      "bytes": 4171,
-      "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a"
+      "bytes": 4083,
+      "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699"
     },
     {
       "path": "deliverables/app/dist/brand/lockup.svg",
-      "bytes": 4189,
-      "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792"
+      "bytes": 4101,
+      "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0"
     },
     {
       "path": "deliverables/app/dist/brand/symbol-reversed.svg",
-      "bytes": 796,
-      "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e"
+      "bytes": 708,
+      "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897"
     },
     {
       "path": "deliverables/app/dist/brand/symbol.svg",
-      "bytes": 787,
-      "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d"
+      "bytes": 699,
+      "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633"
     },
     {
       "path": "deliverables/app/dist/index.html",
       "bytes": 976,
-      "sha256": "eaee52dcf85c0d14fbbe752864e81432ce1045e9fb767e804754e92b6d0ea64b"
+      "sha256": "52ff571de6015c14f8ce513afa612e75695656e09879e1d5a6afa4684be1f65d"
     },
     {
       "path": "deliverables/app/index.html",
@@ -622,8 +682,8 @@
     },
     {
       "path": "deliverables/app/public/assets/app-store-feature.png",
-      "bytes": 260411,
-      "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7"
+      "bytes": 260415,
+      "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9"
     },
     {
       "path": "deliverables/app/public/assets/bloom-ground.webp",
@@ -632,33 +692,33 @@
     },
     {
       "path": "deliverables/app/public/assets/campaign-square.png",
-      "bytes": 865444,
-      "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180"
+      "bytes": 870802,
+      "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45"
     },
     {
       "path": "deliverables/app/public/assets/campaign-square.webp",
-      "bytes": 24752,
-      "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b"
+      "bytes": 25438,
+      "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8"
     },
     {
       "path": "deliverables/app/public/assets/campaign-story.png",
-      "bytes": 1580999,
-      "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a"
+      "bytes": 1588980,
+      "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40"
     },
     {
       "path": "deliverables/app/public/assets/campaign-story.webp",
-      "bytes": 29918,
-      "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951"
+      "bytes": 30430,
+      "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7"
     },
     {
       "path": "deliverables/app/public/assets/campaign-wide.png",
-      "bytes": 442150,
-      "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31"
+      "bytes": 444944,
+      "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd"
     },
     {
       "path": "deliverables/app/public/assets/campaign-wide.webp",
-      "bytes": 21766,
-      "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151"
+      "bytes": 22062,
+      "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb"
     },
     {
       "path": "deliverables/app/public/assets/feature-contour.svg",
@@ -671,6 +731,26 @@
       "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17"
     },
     {
+      "path": "deliverables/app/public/assets/feature-dawn.svg",
+      "bytes": 2829,
+      "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-dawn.webp",
+      "bytes": 15090,
+      "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-dusk.svg",
+      "bytes": 2832,
+      "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-dusk.webp",
+      "bytes": 14524,
+      "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443"
+    },
+    {
       "path": "deliverables/app/public/assets/feature-instrument.svg",
       "bytes": 7759,
       "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da"
@@ -679,6 +759,26 @@
       "path": "deliverables/app/public/assets/feature-instrument.webp",
       "bytes": 16048,
       "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-night.svg",
+      "bytes": 7793,
+      "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-night.webp",
+      "bytes": 10452,
+      "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-noon.svg",
+      "bytes": 2810,
+      "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1"
+    },
+    {
+      "path": "deliverables/app/public/assets/feature-noon.webp",
+      "bytes": 13358,
+      "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798"
     },
     {
       "path": "deliverables/app/public/assets/feature-strata.svg",
@@ -692,43 +792,43 @@
     },
     {
       "path": "deliverables/app/public/assets/hero-arc.svg",
-      "bytes": 910,
-      "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae"
+      "bytes": 933,
+      "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab"
     },
     {
       "path": "deliverables/app/public/assets/hero-arc.webp",
-      "bytes": 25210,
-      "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927"
+      "bytes": 28002,
+      "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9"
     },
     {
       "path": "deliverables/app/public/assets/hero-far.webp",
-      "bytes": 12338,
-      "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75"
+      "bytes": 12720,
+      "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9"
     },
     {
       "path": "deliverables/app/public/assets/hero-mid.webp",
-      "bytes": 12732,
-      "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d"
+      "bytes": 13394,
+      "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5"
     },
     {
       "path": "deliverables/app/public/assets/hero-mobile.avif",
-      "bytes": 8148,
-      "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0"
+      "bytes": 8867,
+      "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8"
     },
     {
       "path": "deliverables/app/public/assets/hero-mobile.webp",
-      "bytes": 15112,
-      "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb"
+      "bytes": 15884,
+      "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135"
     },
     {
       "path": "deliverables/app/public/assets/hero-near.webp",
-      "bytes": 12350,
-      "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b"
+      "bytes": 12098,
+      "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce"
     },
     {
       "path": "deliverables/app/public/assets/hero-night-arc.webp",
-      "bytes": 17616,
-      "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c"
+      "bytes": 19508,
+      "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87"
     },
     {
       "path": "deliverables/app/public/assets/hero-night-far.webp",
@@ -742,13 +842,13 @@
     },
     {
       "path": "deliverables/app/public/assets/hero-night-mobile.avif",
-      "bytes": 6502,
-      "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26"
+      "bytes": 7350,
+      "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c"
     },
     {
       "path": "deliverables/app/public/assets/hero-night-mobile.webp",
-      "bytes": 12078,
-      "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9"
+      "bytes": 13194,
+      "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7"
     },
     {
       "path": "deliverables/app/public/assets/hero-night-near.webp",
@@ -757,13 +857,23 @@
     },
     {
       "path": "deliverables/app/public/assets/hero-night-sky.avif",
-      "bytes": 3100,
-      "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23"
+      "bytes": 2056,
+      "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb"
     },
     {
       "path": "deliverables/app/public/assets/hero-night-sky.webp",
-      "bytes": 11580,
-      "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4"
+      "bytes": 10594,
+      "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023"
+    },
+    {
+      "path": "deliverables/app/public/assets/hero-night-sun.webp",
+      "bytes": 12042,
+      "sha256": "cbadcf58143e6100ea138a5a3239382b5795a229d9a2567027d5d27a84ae2f8a"
+    },
+    {
+      "path": "deliverables/app/public/assets/hero-night-track.webp",
+      "bytes": 15112,
+      "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486"
     },
     {
       "path": "deliverables/app/public/assets/hero-sky.avif",
@@ -776,14 +886,24 @@
       "sha256": "08c8171acf139d14e9791874a2a7968953b9d0fb01d5865287e70f0ed4251684"
     },
     {
+      "path": "deliverables/app/public/assets/hero-sun.webp",
+      "bytes": 17010,
+      "sha256": "363927504b82151c7938663f2ffd4d3ee63890a20b9614aaf3085e2c12ae79db"
+    },
+    {
+      "path": "deliverables/app/public/assets/hero-track.webp",
+      "bytes": 19838,
+      "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06"
+    },
+    {
       "path": "deliverables/app/public/assets/model-cell.svg",
       "bytes": 935,
       "sha256": "4902f68e41bf88d3af325431e4d72be42cf1bb23f091acead6103747f9b0336c"
     },
     {
       "path": "deliverables/app/public/assets/model-cell.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/app/public/assets/pattern-arc.svg",
@@ -807,13 +927,13 @@
     },
     {
       "path": "deliverables/app/public/assets/story-dawn.avif",
-      "bytes": 9743,
-      "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4"
+      "bytes": 10400,
+      "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803"
     },
     {
       "path": "deliverables/app/public/assets/story-dawn.webp",
-      "bytes": 21356,
-      "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b"
+      "bytes": 22112,
+      "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519"
     },
     {
       "path": "deliverables/app/public/assets/story-dusk-ground.webp",
@@ -827,13 +947,13 @@
     },
     {
       "path": "deliverables/app/public/assets/story-dusk.avif",
-      "bytes": 9800,
-      "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227"
+      "bytes": 10397,
+      "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e"
     },
     {
       "path": "deliverables/app/public/assets/story-dusk.webp",
-      "bytes": 21214,
-      "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3"
+      "bytes": 22188,
+      "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc"
     },
     {
       "path": "deliverables/app/public/assets/story-night-ground.webp",
@@ -847,18 +967,18 @@
     },
     {
       "path": "deliverables/app/public/assets/story-night.avif",
-      "bytes": 7191,
-      "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b"
+      "bytes": 7874,
+      "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184"
     },
     {
       "path": "deliverables/app/public/assets/story-night.webp",
-      "bytes": 14100,
-      "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84"
+      "bytes": 15252,
+      "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5"
     },
     {
       "path": "deliverables/app/public/assets/story-noon-ground.webp",
-      "bytes": 10106,
-      "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003"
+      "bytes": 11684,
+      "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62"
     },
     {
       "path": "deliverables/app/public/assets/story-noon-sky.webp",
@@ -867,53 +987,53 @@
     },
     {
       "path": "deliverables/app/public/assets/story-noon.avif",
-      "bytes": 9506,
-      "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf"
+      "bytes": 9974,
+      "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465"
     },
     {
       "path": "deliverables/app/public/assets/story-noon.webp",
-      "bytes": 18426,
-      "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1"
+      "bytes": 19434,
+      "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943"
     },
     {
       "path": "deliverables/app/public/brand/apple-touch-icon.png",
-      "bytes": 3543,
-      "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1"
+      "bytes": 2455,
+      "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda"
     },
     {
       "path": "deliverables/app/public/brand/favicon.svg",
-      "bytes": 695,
-      "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f"
+      "bytes": 596,
+      "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544"
     },
     {
       "path": "deliverables/app/public/brand/icon-192.png",
-      "bytes": 2211,
-      "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75"
+      "bytes": 2281,
+      "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c"
     },
     {
       "path": "deliverables/app/public/brand/icon-512.png",
-      "bytes": 6753,
-      "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561"
+      "bytes": 6808,
+      "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106"
     },
     {
       "path": "deliverables/app/public/brand/lockup-reversed.svg",
-      "bytes": 4171,
-      "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a"
+      "bytes": 4083,
+      "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699"
     },
     {
       "path": "deliverables/app/public/brand/lockup.svg",
-      "bytes": 4189,
-      "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792"
+      "bytes": 4101,
+      "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0"
     },
     {
       "path": "deliverables/app/public/brand/symbol-reversed.svg",
-      "bytes": 796,
-      "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e"
+      "bytes": 708,
+      "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897"
     },
     {
       "path": "deliverables/app/public/brand/symbol.svg",
-      "bytes": 787,
-      "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d"
+      "bytes": 699,
+      "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633"
     },
     {
       "path": "deliverables/app/qa/budgets.json",
@@ -928,17 +1048,17 @@
     {
       "path": "deliverables/app/src/api.js",
       "bytes": 1823,
-      "sha256": "a38d605976436b812ab02dc9895437941b9362e839c117fdc1f88932e9add35f"
+      "sha256": "eb2ac247d721d1af2a7a63fef366707cbdce0f3c9d2d6dbcb8d0dce3bc2fcbe6"
     },
     {
       "path": "deliverables/app/src/App.jsx",
-      "bytes": 28032,
-      "sha256": "5e4067fb90592d3b98502ad19491c92a0aef2d82186d0e2531e124b7e04416e7"
+      "bytes": 31828,
+      "sha256": "e0244e898bdeb7faee9163748057aec578de11d59cb403940742face58307829"
     },
     {
       "path": "deliverables/app/src/dna/dna.json",
-      "bytes": 2384,
-      "sha256": "2700f6918f4ecff15e4fb37987d18931ed703e0cf51fab85a72551effe38f895"
+      "bytes": 2385,
+      "sha256": "de6d6a83978824118ed2cab260b7fce7328bd06fefd7eaf99cb36caef94a1dfb"
     },
     {
       "path": "deliverables/app/src/dna/fonts.css",
@@ -948,22 +1068,22 @@
     {
       "path": "deliverables/app/src/dna/icons.json",
       "bytes": 3314,
-      "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064"
+      "sha256": "9651751bcc14597df5c7b9b60ded19e8da0f1058b2e8803cebe2e84241e7919e"
     },
     {
       "path": "deliverables/app/src/dna/tokens.css",
       "bytes": 5743,
-      "sha256": "d5380d006b168950f2c13902e98e14cd96fc42562bdff160f9d95653fb34562e"
+      "sha256": "ea006965946f14709fe99d73b1c58e4b4948cd204f511d90ffba9c935a6ca0bd"
     },
     {
       "path": "deliverables/app/src/i18n.js",
-      "bytes": 6848,
-      "sha256": "bdca0d14421182fd6f8681292e9d601e816986798533dbebdbffc3a741756211"
+      "bytes": 8007,
+      "sha256": "73a3f167c5670fb5e1c7998e3dd7e944e075d7f085e288b1d1045d98b269ff7e"
     },
     {
       "path": "deliverables/app/src/logic.js",
-      "bytes": 5572,
-      "sha256": "a40bd5079b5b74a6af615f035105bb6a9c30de92035c3ac443af0bad567c3261"
+      "bytes": 6189,
+      "sha256": "acb02e30f9e1ef86a516b7ed25f7e058b5ed5d85c9e118c473a1fd1581b6aadc"
     },
     {
       "path": "deliverables/app/src/main.jsx",
@@ -977,13 +1097,13 @@
     },
     {
       "path": "deliverables/app/src/styles.css",
-      "bytes": 18915,
-      "sha256": "19b86ee1886e78342747a34287a4b8e992b16988aa7d0599045c128688f8a16c"
+      "bytes": 22907,
+      "sha256": "88ecec6cba6fdc1bdac9c11a83db30c9bc0869b8d03002d44fe6d43a259ae2d5"
     },
     {
       "path": "deliverables/app/tests/logic.test.mjs",
-      "bytes": 4906,
-      "sha256": "bb56c2bcc73ade152c348a55b854b5b172ad753bb5dfa78478e93f4d6455ff41"
+      "bytes": 5537,
+      "sha256": "4b8b14049d0c6d74349fe7988f4eeb5d2d49adbff55e2acbb1f19af27d7923a4"
     },
     {
       "path": "deliverables/app/vite.config.js",
@@ -992,8 +1112,8 @@
     },
     {
       "path": "deliverables/assets/generated/app-store-feature/app-store-feature-1024x500.png",
-      "bytes": 260411,
-      "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7"
+      "bytes": 260415,
+      "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9"
     },
     {
       "path": "deliverables/assets/generated/bloom-ground/bloom-ground-1600x1000.webp",
@@ -1002,33 +1122,33 @@
     },
     {
       "path": "deliverables/assets/generated/campaign-square/campaign-square-1080x1080.png",
-      "bytes": 865444,
-      "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180"
+      "bytes": 870802,
+      "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45"
     },
     {
       "path": "deliverables/assets/generated/campaign-square/campaign-square-1080x1080.webp",
-      "bytes": 24752,
-      "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b"
+      "bytes": 25438,
+      "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8"
     },
     {
       "path": "deliverables/assets/generated/campaign-story/campaign-story-1080x1920.png",
-      "bytes": 1580999,
-      "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a"
+      "bytes": 1588980,
+      "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40"
     },
     {
       "path": "deliverables/assets/generated/campaign-story/campaign-story-1080x1920.webp",
-      "bytes": 29918,
-      "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951"
+      "bytes": 30430,
+      "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7"
     },
     {
       "path": "deliverables/assets/generated/campaign-wide/campaign-wide-1200x630.png",
-      "bytes": 442150,
-      "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31"
+      "bytes": 444944,
+      "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd"
     },
     {
       "path": "deliverables/assets/generated/campaign-wide/campaign-wide-1200x630.webp",
-      "bytes": 21766,
-      "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151"
+      "bytes": 22062,
+      "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb"
     },
     {
       "path": "deliverables/assets/generated/feature-contour/feature-contour-1200x900.svg",
@@ -1041,6 +1161,26 @@
       "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17"
     },
     {
+      "path": "deliverables/assets/generated/feature-dawn/feature-dawn-1200x900.svg",
+      "bytes": 2829,
+      "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-dawn/feature-dawn-1200x900.webp",
+      "bytes": 15090,
+      "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-dusk/feature-dusk-1200x900.svg",
+      "bytes": 2832,
+      "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-dusk/feature-dusk-1200x900.webp",
+      "bytes": 14524,
+      "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443"
+    },
+    {
       "path": "deliverables/assets/generated/feature-instrument/feature-instrument-1200x900.svg",
       "bytes": 7759,
       "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da"
@@ -1049,6 +1189,26 @@
       "path": "deliverables/assets/generated/feature-instrument/feature-instrument-1200x900.webp",
       "bytes": 16048,
       "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-night/feature-night-1200x900.svg",
+      "bytes": 7793,
+      "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-night/feature-night-1200x900.webp",
+      "bytes": 10452,
+      "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-noon/feature-noon-1200x900.svg",
+      "bytes": 2810,
+      "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1"
+    },
+    {
+      "path": "deliverables/assets/generated/feature-noon/feature-noon-1200x900.webp",
+      "bytes": 13358,
+      "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798"
     },
     {
       "path": "deliverables/assets/generated/feature-strata/feature-strata-1200x900.svg",
@@ -1062,43 +1222,43 @@
     },
     {
       "path": "deliverables/assets/generated/hero-arc/hero-arc-2400x1500.svg",
-      "bytes": 910,
-      "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae"
+      "bytes": 933,
+      "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab"
     },
     {
       "path": "deliverables/assets/generated/hero-arc/hero-arc-2400x1500.webp",
-      "bytes": 25210,
-      "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927"
+      "bytes": 28002,
+      "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9"
     },
     {
       "path": "deliverables/assets/generated/hero-far/hero-far-2400x1500.webp",
-      "bytes": 12338,
-      "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75"
+      "bytes": 12720,
+      "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9"
     },
     {
       "path": "deliverables/assets/generated/hero-mid/hero-mid-2400x1500.webp",
-      "bytes": 12732,
-      "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d"
+      "bytes": 13394,
+      "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5"
     },
     {
       "path": "deliverables/assets/generated/hero-mobile/hero-mobile-1080x1440.avif",
-      "bytes": 8148,
-      "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0"
+      "bytes": 8867,
+      "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8"
     },
     {
       "path": "deliverables/assets/generated/hero-mobile/hero-mobile-1080x1440.webp",
-      "bytes": 15112,
-      "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb"
+      "bytes": 15884,
+      "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135"
     },
     {
       "path": "deliverables/assets/generated/hero-near/hero-near-2400x1500.webp",
-      "bytes": 12350,
-      "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b"
+      "bytes": 12098,
+      "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce"
     },
     {
       "path": "deliverables/assets/generated/hero-night-arc/hero-night-arc-2400x1500.webp",
-      "bytes": 17616,
-      "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c"
+      "bytes": 19508,
+      "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87"
     },
     {
       "path": "deliverables/assets/generated/hero-night-far/hero-night-far-2400x1500.webp",
@@ -1112,13 +1272,13 @@
     },
     {
       "path": "deliverables/assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.avif",
-      "bytes": 6502,
-      "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26"
+      "bytes": 7350,
+      "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c"
     },
     {
       "path": "deliverables/assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.webp",
-      "bytes": 12078,
-      "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9"
+      "bytes": 13194,
+      "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7"
     },
     {
       "path": "deliverables/assets/generated/hero-night-near/hero-night-near-2400x1500.webp",
@@ -1127,13 +1287,13 @@
     },
     {
       "path": "deliverables/assets/generated/hero-night-sky/hero-night-sky-2400x1500.avif",
-      "bytes": 3100,
-      "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23"
+      "bytes": 2056,
+      "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb"
     },
     {
       "path": "deliverables/assets/generated/hero-night-sky/hero-night-sky-2400x1500.webp",
-      "bytes": 11580,
-      "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4"
+      "bytes": 10594,
+      "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023"
     },
     {
       "path": "deliverables/assets/generated/hero-night-sun/hero-night-sun-2400x1500.webp",
@@ -1142,8 +1302,8 @@
     },
     {
       "path": "deliverables/assets/generated/hero-night-track/hero-night-track-2400x1500.webp",
-      "bytes": 13148,
-      "sha256": "506817964f885f7820965cbd7c5c33627ae3493749535faedb4a53e617e5c92f"
+      "bytes": 15112,
+      "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486"
     },
     {
       "path": "deliverables/assets/generated/hero-sky/hero-sky-2400x1500.avif",
@@ -1162,8 +1322,8 @@
     },
     {
       "path": "deliverables/assets/generated/hero-track/hero-track-2400x1500.webp",
-      "bytes": 16900,
-      "sha256": "d6f8bdf0746449efc3bcd0f4bda18e0b921d7b999121998bb192743fd6f90a41"
+      "bytes": 19838,
+      "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06"
     },
     {
       "path": "deliverables/assets/generated/pattern-arc/pattern-arc-1200x1200.svg",
@@ -1187,13 +1347,13 @@
     },
     {
       "path": "deliverables/assets/generated/story-dawn/story-dawn-1600x1200.avif",
-      "bytes": 9743,
-      "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4"
+      "bytes": 10400,
+      "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803"
     },
     {
       "path": "deliverables/assets/generated/story-dawn/story-dawn-1600x1200.webp",
-      "bytes": 21356,
-      "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b"
+      "bytes": 22112,
+      "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519"
     },
     {
       "path": "deliverables/assets/generated/story-dusk-ground/story-dusk-ground-1600x1200.webp",
@@ -1207,13 +1367,13 @@
     },
     {
       "path": "deliverables/assets/generated/story-dusk/story-dusk-1600x1200.avif",
-      "bytes": 9800,
-      "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227"
+      "bytes": 10397,
+      "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e"
     },
     {
       "path": "deliverables/assets/generated/story-dusk/story-dusk-1600x1200.webp",
-      "bytes": 21214,
-      "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3"
+      "bytes": 22188,
+      "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc"
     },
     {
       "path": "deliverables/assets/generated/story-night-ground/story-night-ground-1600x1200.webp",
@@ -1227,18 +1387,18 @@
     },
     {
       "path": "deliverables/assets/generated/story-night/story-night-1600x1200.avif",
-      "bytes": 7191,
-      "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b"
+      "bytes": 7874,
+      "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184"
     },
     {
       "path": "deliverables/assets/generated/story-night/story-night-1600x1200.webp",
-      "bytes": 14100,
-      "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84"
+      "bytes": 15252,
+      "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5"
     },
     {
       "path": "deliverables/assets/generated/story-noon-ground/story-noon-ground-1600x1200.webp",
-      "bytes": 10106,
-      "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003"
+      "bytes": 11684,
+      "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62"
     },
     {
       "path": "deliverables/assets/generated/story-noon-sky/story-noon-sky-1600x1200.webp",
@@ -1247,118 +1407,163 @@
     },
     {
       "path": "deliverables/assets/generated/story-noon/story-noon-1600x1200.avif",
-      "bytes": 9506,
-      "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf"
+      "bytes": 9974,
+      "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465"
     },
     {
       "path": "deliverables/assets/generated/story-noon/story-noon-1600x1200.webp",
-      "bytes": 18426,
-      "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1"
+      "bytes": 19434,
+      "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943"
     },
     {
       "path": "deliverables/brand/applications/app-icon.svg",
-      "bytes": 875,
-      "sha256": "4372cda8380e5b97d03833b20bbbe6a96cc866ea4952e7ba6850145270218016"
+      "bytes": 562,
+      "sha256": "64412497fbe1d0552db6aef049f0332db8af7cd1ee2e73b40d49c3cd771853a2"
     },
     {
       "path": "deliverables/brand/applications/business-card-back.svg",
-      "bytes": 22268,
-      "sha256": "0b0601cba6c722540ac592d1643f39b92386fe6a8b9253297435a39294063a2f"
+      "bytes": 22174,
+      "sha256": "3311070cf51531b5f4261c981942bc20e28f57fde4855ce9aa25f8ed7ec92c15"
     },
     {
       "path": "deliverables/brand/applications/business-card-front.svg",
-      "bytes": 4330,
-      "sha256": "3f48d2e5c2f85fd6c9dbaa804db786c8750c848d7eae05a957e297105dca56be"
+      "bytes": 4209,
+      "sha256": "19d2af8930769e641b8d3f30fbea8cfdae41276bccf4c1796795ec4b039cf5e0"
+    },
+    {
+      "path": "deliverables/brand/applications/og-image-ar.svg",
+      "bytes": 19420,
+      "sha256": "b2a437cfa94806345eebc11bb51b634cb1400dfbe7038ffe49938e677464e347"
     },
     {
       "path": "deliverables/brand/applications/og-image.svg",
-      "bytes": 30258,
-      "sha256": "88bc798520c33fc98566c8140a533bbf66bf00e8a56658595f4ef05fa98b2126"
+      "bytes": 30147,
+      "sha256": "1fdd05e49d56bcf696062f822e047dec8a0c6764f59213788cbcf47addd8d00a"
     },
     {
       "path": "deliverables/brand/applications/pdf/business-card-back.pdf",
-      "bytes": 33151,
-      "sha256": "1b05cb953ac5b3f18e77ef9948a739d7d360923fee0a65b04128443c6b841def"
+      "bytes": 33296,
+      "sha256": "fd846d6340262bb8ea3bdb2e3a273eeaf0e2a178e7221217e5f80922cdbd6381"
     },
     {
       "path": "deliverables/brand/applications/pdf/business-card-front.pdf",
-      "bytes": 9473,
-      "sha256": "49b619c10abd607036442cf89d4a251665c01872d898e799d78ec0c5c538dbc8"
+      "bytes": 9321,
+      "sha256": "fd4e325a201c0192de32782ee65f02558c432c8e407d68d1c46a9ba291661d64"
     },
     {
       "path": "deliverables/brand/applications/png/app-icon.png",
-      "bytes": 18930,
-      "sha256": "1290c6641a8e9149ff4652a59dd0a1248f9661a2b21f48b22dee1845a6df4567"
+      "bytes": 16635,
+      "sha256": "279a32e63f518fb4abd080180c38534e947a1fb1fce7167ee6efc5f03b649ceb"
+    },
+    {
+      "path": "deliverables/brand/applications/png/og-image-ar.png",
+      "bytes": 628876,
+      "sha256": "f4a3632b73235e9bc623c7646046e01caefb8b08bc3d373981183ba123d5563f"
     },
     {
       "path": "deliverables/brand/applications/png/og-image.png",
-      "bytes": 652149,
-      "sha256": "71d4bd41c0865dd9b69427814f835202ada35c41a19fae6db9ebf701fdbc300c"
+      "bytes": 634647,
+      "sha256": "ac24d118bee1ec87ae0683f04e295dd18548a6c49db1e98ef08fec5213b6cd13"
     },
     {
       "path": "deliverables/brand/applications/png/presentation-title.png",
-      "bytes": 1135721,
-      "sha256": "ef988b467f5e22391d404b77148cc62874c331fd943401a843cb68860e4b3876"
+      "bytes": 1135859,
+      "sha256": "31bd624daa2fd2dbffde98ac06674349c49a6c45bd6320c616fa61226ea615c0"
+    },
+    {
+      "path": "deliverables/brand/applications/png/social-square-ar.png",
+      "bytes": 923407,
+      "sha256": "2b4b1bfd6773a1d6a3f9115b04c7ef86ee20f2d226d0cd84fa518c313617b7fd"
     },
     {
       "path": "deliverables/brand/applications/png/social-square.png",
-      "bytes": 863821,
-      "sha256": "0acf1f2dbb960f7407d9f460607cb69d116f24062be6a3d60a49dc87358f27db"
+      "bytes": 868089,
+      "sha256": "07eac9c08e22addb54f140572b630d1405b77d9e740caabb1f119533991818ba"
+    },
+    {
+      "path": "deliverables/brand/applications/png/story-ar.png",
+      "bytes": 1620943,
+      "sha256": "51cac7219bf14f1caaeb9fc532c600737d78f59933f794745e4de795d0b8ba3d"
     },
     {
       "path": "deliverables/brand/applications/png/story.png",
-      "bytes": 1570184,
-      "sha256": "555ddc323310f2f71737ce112cfd5bf1d8b0cf60752f5a0f7c1d1924395c3030"
+      "bytes": 1580144,
+      "sha256": "b206ba95049b83bb7b12ec539d56073ac32e4acc300a8b9538d53c16aa26d11f"
     },
     {
       "path": "deliverables/brand/applications/presentation-title.svg",
-      "bytes": 34823,
-      "sha256": "ead72ec245723b6997ad3fcf861925900514b7a9ddefb66c04e3d3823c1ec0c7"
+      "bytes": 27334,
+      "sha256": "98286b6bcd178a8950cfbf92fce7c1a3e3cbe874c991bf0d697fb9659eb6498a"
+    },
+    {
+      "path": "deliverables/brand/applications/social-square-ar.svg",
+      "bytes": 15136,
+      "sha256": "fd19b757f33f7b3250930cf556f2aeb94476871e5c3f1066dfc1c9860581fc9e"
     },
     {
       "path": "deliverables/brand/applications/social-square.svg",
-      "bytes": 30749,
-      "sha256": "6c48f24f76bedb402ef187ec22b3adb02f9659bb94af28006bc211af506b99b3"
+      "bytes": 20083,
+      "sha256": "90ebfc37e45f1c5c35cf7250974e24bb29ab4235c9899364f1b9fe528f19faf4"
+    },
+    {
+      "path": "deliverables/brand/applications/story-ar.svg",
+      "bytes": 16532,
+      "sha256": "222f32d680bf89d256e3a13da4c979c09be9a48733e70dffa67f382249e78cce"
     },
     {
       "path": "deliverables/brand/applications/story.svg",
-      "bytes": 30990,
-      "sha256": "6faef3964571835cf0f2cb473f2497e02d828ac7a850f0d5220ab4d7cd057b06"
+      "bytes": 20027,
+      "sha256": "cd46a47131392e59d22b25478b3ce8f78ab95569fe08070411b60db8433a4a63"
+    },
+    {
+      "path": "deliverables/brand/applications/webp/og-image-ar.webp",
+      "bytes": 20808,
+      "sha256": "fd8433549c30086885a05e10859aa356b6d9d8e602bc3d96fa1883b8b4f7459e"
     },
     {
       "path": "deliverables/brand/applications/webp/og-image.webp",
-      "bytes": 24392,
-      "sha256": "e17b1e349b2cc1bd9d4875712af1a3319f7c8b0623b7eb1f8af0a6b3f0f04c1f"
+      "bytes": 25174,
+      "sha256": "ab6e3fc01982510b755ac74d4b0e7ce4bddeea12c48afed1c57a8af8ca9a719b"
     },
     {
       "path": "deliverables/brand/applications/webp/presentation-title.webp",
-      "bytes": 39888,
-      "sha256": "c92a329742007f88bac0c9aba6a310fb167285f92e3f8f0dead0562f9b6bda34"
+      "bytes": 33204,
+      "sha256": "c06d58c2d08f3b3bfc48ca35a3de904a7fc46f07b99f535a2d1ac942aaf81f5e"
+    },
+    {
+      "path": "deliverables/brand/applications/webp/social-square-ar.webp",
+      "bytes": 22238,
+      "sha256": "6b111967d6dbedef70b6c949c4e46497a11b06821abf3a5e007287bc42579063"
     },
     {
       "path": "deliverables/brand/applications/webp/social-square.webp",
-      "bytes": 31048,
-      "sha256": "2f838c3d001d8f123172f10ec6c5b16c7147b07202bee8fbbc40b74253c77132"
+      "bytes": 24340,
+      "sha256": "87a3e8ed15ea83f300c38ac3d497fbc836d6473b4a2989299c3adcc697dbead9"
+    },
+    {
+      "path": "deliverables/brand/applications/webp/story-ar.webp",
+      "bytes": 28420,
+      "sha256": "f97eedc26b759af7b354a4836cdccc4635cad29ca94cd321b7a6e6f4d449227a"
     },
     {
       "path": "deliverables/brand/applications/webp/story.webp",
-      "bytes": 40382,
-      "sha256": "e83505a6bbef1747d46d8a6b823026dcdabe4bf4e3f7f450e5189ea91f2fc18d"
+      "bytes": 31488,
+      "sha256": "832147777e68d8787294da0b66629b95c350210a6846ea2f8c527c6ce1cf317f"
     },
     {
       "path": "deliverables/brand/brand-manifest.json",
-      "bytes": 17884,
-      "sha256": "06966c308f36092ba82af12f4bc515c2c46ec19ed0428f429224ec3f7d80263a"
+      "bytes": 20799,
+      "sha256": "976f969708766ef76bc4aba7c480ae7ec8d4a34d9c82ab7555612ffbe0f19e02"
     },
     {
       "path": "deliverables/brand/guidelines.html",
-      "bytes": 669924,
-      "sha256": "c2f93428749fbdd2431daf8b2d762a75fa3704929222ea5a98d7dae051ff67cb"
+      "bytes": 700370,
+      "sha256": "65b01b56e9503127303ce5e04ec12e25d6b2b7ee5ce056c68aba601ab0bc63a0"
     },
     {
       "path": "deliverables/brand/guidelines.pdf",
-      "bytes": 9282970,
-      "sha256": "1c2bdc0a3e98fb58a2304480b79abbb628a34e3ca701e013a35976e321a65d8c"
+      "bytes": 4866458,
+      "sha256": "c3af96a36394c7a93bcd1559c22cf9c166a2da7017cb1a118c6ab74c00987ff0"
     },
     {
       "path": "deliverables/brand/icons/alert.svg",
@@ -1443,7 +1648,7 @@
     {
       "path": "deliverables/brand/icons/icons.json",
       "bytes": 3314,
-      "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064"
+      "sha256": "9651751bcc14597df5c7b9b60ded19e8da0f1058b2e8803cebe2e84241e7919e"
     },
     {
       "path": "deliverables/brand/icons/leaf.svg",
@@ -1497,8 +1702,8 @@
     },
     {
       "path": "deliverables/brand/logo/concepts/day-arc.svg",
-      "bytes": 4181,
-      "sha256": "256e4ab4b172c722826eb8c65b3e7a0ff296e918b1763012b0ba111bb151a11c"
+      "bytes": 4093,
+      "sha256": "180d61e90dbe13eb76deabe6963a8758728c92a8dbef13258b839b812e0690c9"
     },
     {
       "path": "deliverables/brand/logo/concepts/h-field.svg",
@@ -1512,143 +1717,148 @@
     },
     {
       "path": "deliverables/brand/logo/favicon.svg",
-      "bytes": 695,
-      "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f"
+      "bytes": 596,
+      "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-horizontal-mono-ink.svg",
-      "bytes": 4170,
-      "sha256": "8fe9f2d039fd6a863f40220e043e5edb084cbe9483b64e2075e5dd67af19c490"
+      "bytes": 4083,
+      "sha256": "3734bc0bc5cf80d8afe6131d8a700eb8cee6a435559517a6c06acdd964fa628b"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-horizontal-mono-paper.svg",
-      "bytes": 4172,
-      "sha256": "9559596c0e4f93919926a25a65358b523099896becd3f91076677f944c48b29d"
+      "bytes": 4085,
+      "sha256": "2ab979750d1510580a5e38eed6e556fada64b398b292da0ca68c1a3292a2ae5a"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-horizontal-reversed.svg",
-      "bytes": 4171,
-      "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a"
+      "bytes": 4083,
+      "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-horizontal.svg",
-      "bytes": 4189,
-      "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792"
+      "bytes": 4101,
+      "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-stacked-mono-ink.svg",
-      "bytes": 4188,
-      "sha256": "260b3d4271e60e31d9bdc9670735b87678844f364f1ff96ed7ff84b13b1bbd21"
+      "bytes": 4095,
+      "sha256": "bd6c53dc9faf8a973fc97eaddf5bedf9b312b66cc679b8e6e7fa113d452e2ec1"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-stacked-mono-paper.svg",
-      "bytes": 4190,
-      "sha256": "41ad129b57b55f88256c94a5042ff929dd35a1cdb36fb7e9a4474a302256f135"
+      "bytes": 4097,
+      "sha256": "cec23194901a452c316fd14def2a0ddf9de7379494d88f59c4a11923b8abf77d"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-stacked-reversed.svg",
-      "bytes": 4190,
-      "sha256": "990b5de3e184906576e7ec209b66dd36b97d031702233a85a28c5470dd53a9f0"
+      "bytes": 4095,
+      "sha256": "b8fd38c9a163d11292aba5c609cd3890325b456312b6937381a939682ad3db8d"
     },
     {
       "path": "deliverables/brand/logo/haldora-lockup-stacked.svg",
-      "bytes": 4208,
-      "sha256": "6de7674e075852c112c89f6d8fae3facefe2088d8c290e9907a20b17b74ae44c"
+      "bytes": 4113,
+      "sha256": "b9ddd1c5b4d95a7f51c9b04eea67682362ef784bf189a6519f2bc09c77eb6297"
     },
     {
       "path": "deliverables/brand/logo/haldora-symbol-mono-ink.svg",
-      "bytes": 768,
-      "sha256": "368ea3934fb0885f9f2841046c9ec24d9c0080492a40aa33ed20d3fac548a7e3"
+      "bytes": 681,
+      "sha256": "902d9c934f41cca48afd0b2e3545267c342e542077f973d9caacd0a8409370df"
     },
     {
       "path": "deliverables/brand/logo/haldora-symbol-mono-paper.svg",
-      "bytes": 770,
-      "sha256": "2a7fd1def1253c82bc3d7dc663fe2e419620130bb896d861ef40e2bc5bcf6cef"
+      "bytes": 683,
+      "sha256": "1ff5278bf9b73372dcdfa82bb984c8c5e4b4c93e4dd4e13ab287d1d4658299b8"
     },
     {
       "path": "deliverables/brand/logo/haldora-symbol-reversed.svg",
-      "bytes": 796,
-      "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e"
+      "bytes": 708,
+      "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897"
     },
     {
       "path": "deliverables/brand/logo/haldora-symbol.svg",
-      "bytes": 787,
-      "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d"
+      "bytes": 699,
+      "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633"
     },
     {
       "path": "deliverables/brand/logo/haldora-wordmark-reversed.svg",
-      "bytes": 3615,
-      "sha256": "fa3639551842b1c1b96551e6f43478c4f64d023900c37e9c0e7f4a9822f55579"
+      "bytes": 3625,
+      "sha256": "37bd5271c007295ed6f593122bd3fa91dab341ec0e934959bb1d91adc7ede469"
     },
     {
       "path": "deliverables/brand/logo/haldora-wordmark.svg",
-      "bytes": 3606,
-      "sha256": "2d2347ec7b73af0e9cfaa5e4bc6e68e4fae3f637bb315547f348b01a815bb1d7"
+      "bytes": 3616,
+      "sha256": "3094d55eaee2e48f99ba976d194e896a25d3900a2f4b106327fa28c5f058ece2"
     },
     {
       "path": "deliverables/brand/logo/pdf/haldora-lockup-horizontal.pdf",
-      "bytes": 10397,
-      "sha256": "9af8eef1f8d3f955b2db3166d857016ae312b5b4c0712c7f77b5a28189d644ab"
+      "bytes": 10663,
+      "sha256": "56a69130bb36a5ddc9bdb9ca04ee625b7248bfdca1e776b35962305174d9b0b7"
     },
     {
       "path": "deliverables/brand/logo/png/apple-touch-icon-180.png",
-      "bytes": 3543,
-      "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1"
+      "bytes": 2455,
+      "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda"
     },
     {
       "path": "deliverables/brand/logo/png/favicon-32.png",
-      "bytes": 660,
-      "sha256": "eaeaf1cba004ffa501d824f695007134cfd911ce2b36a88a24d7c18986ec0249"
+      "bytes": 688,
+      "sha256": "cb1861282083a851fe8cd5e25e39f43e21e79af5ea04889fd397b499e69308f7"
     },
     {
       "path": "deliverables/brand/logo/png/lockup-horizontal-1200.png",
-      "bytes": 19151,
-      "sha256": "b12d5f3f9bb4ca99a5da8d992f21ab88ed80cac7b4a341d1d280017644d0fc2a"
+      "bytes": 19228,
+      "sha256": "7181d38b44f157a0f89f70299fcd9e28ed4da2bf053638b9dffc79d6fad3336a"
     },
     {
       "path": "deliverables/brand/logo/png/lockup-horizontal-reversed-1200.png",
-      "bytes": 19352,
-      "sha256": "112f5d96ed693e84b2f714d1bb87cea0d6f760306ad364b75595ccbf70af7047"
+      "bytes": 19310,
+      "sha256": "39bb1b114ea39bac4b56d628be39ab455a30991e9ab13ceea6cfa29e194f7f77"
     },
     {
       "path": "deliverables/brand/logo/png/symbol-192.png",
-      "bytes": 2211,
-      "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75"
+      "bytes": 2281,
+      "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c"
     },
     {
       "path": "deliverables/brand/logo/png/symbol-512.png",
-      "bytes": 6753,
-      "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561"
+      "bytes": 6808,
+      "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106"
+    },
+    {
+      "path": "deliverables/brand/logo/touch-icon.svg",
+      "bytes": 507,
+      "sha256": "0b2e3c4e0154645fce0e03c0acc5bc20285cd690b4b102f33fc41c7578a01f8b"
     },
     {
       "path": "deliverables/brand/logo/webp/lockup-horizontal-1200.webp",
-      "bytes": 10528,
-      "sha256": "de094133dfbe5175ad8b0db83a1899548d327614176278b5ec67de7a6e6f75fa"
+      "bytes": 10742,
+      "sha256": "918a33772f260c127bd9b1287e1ba148446662392189242f70bdfece28abc91b"
     },
     {
       "path": "deliverables/brand/logo/webp/lockup-horizontal-reversed-1200.webp",
-      "bytes": 11238,
-      "sha256": "7b25435c34717743fae1fa6a324f1c99b4dc6c293a7078309292890cc91ffa7f"
+      "bytes": 11538,
+      "sha256": "6b0409397ed5a2a3c75dc90fe5c7192e4ddd55b448eb524025ff996dcfaa23cd"
     },
     {
       "path": "deliverables/design-system/scene.json",
-      "bytes": 1653,
-      "sha256": "c1fb3fbbdb6b47df34f06f4e136f2b4b2a9e54cc7575675dc5eaefd7ac9f5607"
+      "bytes": 1654,
+      "sha256": "fee2702ddd3929a929dc6779f9fc8063f84e1ec9372999aea2cfb3dd3b0bc157"
     },
     {
       "path": "deliverables/design-system/theme.ts",
       "bytes": 3149,
-      "sha256": "a8ad6bb0c7529253c9e628a67a76b95cdcc9655ff675c288737d636e68d256c0"
+      "sha256": "f3ccbfa9e53b78e58159f036d718cbdff4741a4aa180b1ad01cb32c7ab66f70c"
     },
     {
       "path": "deliverables/design-system/tokens.css",
       "bytes": 5743,
-      "sha256": "d5380d006b168950f2c13902e98e14cd96fc42562bdff160f9d95653fb34562e"
+      "sha256": "ea006965946f14709fe99d73b1c58e4b4948cd204f511d90ffba9c935a6ca0bd"
     },
     {
       "path": "deliverables/design-system/tokens.json",
-      "bytes": 5021,
-      "sha256": "67e3a5cfe00e0221f7b0a7df6592d208555786e59160f6ecb99c9e4fcaeb584b"
+      "bytes": 5022,
+      "sha256": "bbe2445c2da945249bba1057c1a250a667e85608b68f155a2f93ec0ed16fc60d"
     },
     {
       "path": "deliverables/mobile/__tests__/components.test.tsx",
@@ -1678,7 +1888,7 @@
     {
       "path": "deliverables/mobile/app.json",
       "bytes": 853,
-      "sha256": "570836c4a9cd8ac7238366896777c8fb893cb5cbd994916b86067a36c72b0d42"
+      "sha256": "8e85b5638f0c7bdf2faf3ae323819f58c3e21af641c32fea83c5513a9f8d43fb"
     },
     {
       "path": "deliverables/mobile/app/_layout.tsx",
@@ -1692,8 +1902,8 @@
     },
     {
       "path": "deliverables/mobile/app/(tabs)/devices.tsx",
-      "bytes": 2333,
-      "sha256": "1a5100b756ab2a1b52c4a63e40563bf36f40b30725da37cb370ef735398cb0f9"
+      "bytes": 2677,
+      "sha256": "697fdc12d2e9fbc9012ba98b75944eb36eb7c16310d81c58646e7a8fb48e93ae"
     },
     {
       "path": "deliverables/mobile/app/(tabs)/index.tsx",
@@ -1707,33 +1917,33 @@
     },
     {
       "path": "deliverables/mobile/app/device/[id].tsx",
-      "bytes": 1896,
-      "sha256": "ed44caab8d442cad254e0a92e36d75bd398bdfcd2bea46862b474c970f5f0d0c"
+      "bytes": 2558,
+      "sha256": "b74f886c808dd2410e5861ee7b5018de8eec9487751a2a44f186ecd56d446915"
     },
     {
       "path": "deliverables/mobile/app/onboarding.tsx",
-      "bytes": 4520,
-      "sha256": "d6c0045376253a2201d856ccc53d98a9d571231d558d3e899b435b70ee128f9f"
+      "bytes": 4510,
+      "sha256": "a9cdac7b10bc9a26e7c73e57616e139e63d9afbd686ff6f0d5451ea6700ad1c5"
     },
     {
       "path": "deliverables/mobile/assets/favicon.png",
-      "bytes": 660,
-      "sha256": "eaeaf1cba004ffa501d824f695007134cfd911ce2b36a88a24d7c18986ec0249"
+      "bytes": 688,
+      "sha256": "cb1861282083a851fe8cd5e25e39f43e21e79af5ea04889fd397b499e69308f7"
     },
     {
       "path": "deliverables/mobile/assets/icon.png",
-      "bytes": 18930,
-      "sha256": "1290c6641a8e9149ff4652a59dd0a1248f9661a2b21f48b22dee1845a6df4567"
+      "bytes": 16635,
+      "sha256": "279a32e63f518fb4abd080180c38534e947a1fb1fce7167ee6efc5f03b649ceb"
     },
     {
-      "path": "deliverables/mobile/dist-native/_expo/static/js/android/entry-e463ce38cf7bc6a47cd2f7b24b97a1c6.hbc",
-      "bytes": 4026685,
-      "sha256": "20a3165db946656fafa19d1bb1f5c018a8a1643483a50093d3f6445f67696c5a"
+      "path": "deliverables/mobile/dist-native/_expo/static/js/android/entry-e560def7932236fee9cd37f4557618ce.hbc",
+      "bytes": 4029837,
+      "sha256": "24e9381c04710ba354a6b4bcd241ecb493044ca9108308138ce161c2465f4d72"
     },
     {
-      "path": "deliverables/mobile/dist-native/_expo/static/js/ios/entry-2d054fab7dec10e25a7eb853daff8cc0.hbc",
-      "bytes": 4036807,
-      "sha256": "30a405206e832d4d03e20a0a710cb443590beceac137c5f449f6c561af83e0d5"
+      "path": "deliverables/mobile/dist-native/_expo/static/js/ios/entry-31755b66d9f3d208c648b3c468d093a0.hbc",
+      "bytes": 4039950,
+      "sha256": "5676dbe324ca3811850339bb020faea5a95dde8644a36ddcc34bc09095ddeeb2"
     },
     {
       "path": "deliverables/mobile/dist-native/assets/017bc6ba3fc25503e5eb5e53826d48a8",
@@ -1933,7 +2143,7 @@
     {
       "path": "deliverables/mobile/dist-native/metadata.json",
       "bytes": 4085,
-      "sha256": "6067c858d135654c9ef7e67b5aa9332cd93a59bc3463df7ff1023142bdc12a5c"
+      "sha256": "9a3dbec4a4e2853dd6166976f4cd0f6436270e0a2707b105298bd929db93a8d4"
     },
     {
       "path": "deliverables/mobile/jest.setup.js",
@@ -1962,8 +2172,8 @@
     },
     {
       "path": "deliverables/mobile/src/components/ArcDial.tsx",
-      "bytes": 3517,
-      "sha256": "b76eea496a4325d1bcf27b314632584beb1035b5fb2333e9cf915863bd89b343"
+      "bytes": 4437,
+      "sha256": "4d1a95b7b24aa6ba383fbd73c109cb9700951083091421b17ad6035a610531ba"
     },
     {
       "path": "deliverables/mobile/src/components/ReserveSlider.tsx",
@@ -1972,33 +2182,33 @@
     },
     {
       "path": "deliverables/mobile/src/components/ui.tsx",
-      "bytes": 6700,
-      "sha256": "17b5b7b9a7f3b76a7c057f99161f42299802f8457f309c158b194ce0e8216174"
+      "bytes": 7406,
+      "sha256": "dbd56caffc590e2115c54e7c4875b527db9d497d3cba1afabe5b5318968af649"
     },
     {
       "path": "deliverables/mobile/src/dna/fonts.ts",
       "bytes": 1180,
-      "sha256": "8032fc396d63253300287028c685db043c06261313b58f340d211f7739c343bd"
+      "sha256": "db3a184b1f9b52d1c49da8d0ccfef49de4bec3a0337d5587ca7b48090f152a7b"
     },
     {
       "path": "deliverables/mobile/src/dna/icons.json",
       "bytes": 3314,
-      "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064"
+      "sha256": "9651751bcc14597df5c7b9b60ded19e8da0f1058b2e8803cebe2e84241e7919e"
     },
     {
       "path": "deliverables/mobile/src/dna/theme.ts",
       "bytes": 3149,
-      "sha256": "a8ad6bb0c7529253c9e628a67a76b95cdcc9655ff675c288737d636e68d256c0"
+      "sha256": "f3ccbfa9e53b78e58159f036d718cbdff4741a4aa180b1ad01cb32c7ab66f70c"
     },
     {
       "path": "deliverables/mobile/src/i18n.ts",
-      "bytes": 4547,
-      "sha256": "7f3ec6b8070a07bc37cba5699845e287a9e43d834974133a431c68fac10a6431"
+      "bytes": 5411,
+      "sha256": "48293688df77a8a934f27bc3fc0cb317bce1f9e29baf4defdc2d6ca4db5ffdf1"
     },
     {
       "path": "deliverables/mobile/src/logic.ts",
-      "bytes": 3618,
-      "sha256": "7fc6765a8bb14382543a1efe412a2a44fdcd58986b3c8688e6e4bd9bc3391ca9"
+      "bytes": 4001,
+      "sha256": "bbef0419d55efb11068d6e010f8547c1f52472d5598f01e71fd3c1eb0b565886"
     },
     {
       "path": "deliverables/mobile/src/store.ts",
@@ -2007,8 +2217,8 @@
     },
     {
       "path": "deliverables/mobile/src/theme.tsx",
-      "bytes": 942,
-      "sha256": "506cff23a78bea7ca85c8cb4a31799e2130f038386fbff2234b0fc8a594d3c92"
+      "bytes": 1240,
+      "sha256": "b30d6bad99dd8866242a5a257eddb6544aaf1cd1027f158eee47b016dafc0976"
     },
     {
       "path": "deliverables/mobile/tsconfig.json",
@@ -2041,14 +2251,14 @@
       "sha256": "d78e988f844f474ce9b1cc10c72501add6c5056763bfe83ff2a8e2fcb6708ad0"
     },
     {
-      "path": "deliverables/scene/dist/assets/index-CxYqKo8L.css",
-      "bytes": 9641,
-      "sha256": "0e62bbf99f2952861740270f35d56442ca21f51d7164196a347f940ff40c2e40"
+      "path": "deliverables/scene/dist/assets/index-C9GI06X_.css",
+      "bytes": 10075,
+      "sha256": "a07d24dca8e3206e0f4326c43e35680409ae7c3ad209f2c86eb156f698a6f3ec"
     },
     {
-      "path": "deliverables/scene/dist/assets/index-Mpmthc75.js",
-      "bytes": 8553,
-      "sha256": "013789c21a7d3a2dd5ba1274e1648804ae76698c75dab5e7c2886b342c78997c"
+      "path": "deliverables/scene/dist/assets/index-CXKdB7JS.js",
+      "bytes": 8554,
+      "sha256": "0f08237b9557668ef82746d4acc516487333a0b0d02d34331c4e88f8262a191f"
     },
     {
       "path": "deliverables/scene/dist/assets/instrument-sans-latin-400-normal-D1W7dsQl.woff",
@@ -2081,14 +2291,14 @@
       "sha256": "9b4ce1f2b26be7cb087fd87d6f99a202136292ec820af75bd38ab9e53895cf28"
     },
     {
-      "path": "deliverables/scene/dist/assets/scene-XkGCSQWt.js",
-      "bytes": 671546,
-      "sha256": "ae02eb860f3ab244a01ce3429108cd8204f7f2024696ddb059e360acf4188fd3"
+      "path": "deliverables/scene/dist/assets/scene-Dyw3z4Kf.js",
+      "bytes": 671772,
+      "sha256": "46af7c6bbfe2baf2caa27cb277ac951a0a1b2c80c558f215f221fbb1a2327053"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-chalk-dark.webp",
-      "bytes": 6990,
-      "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358"
+      "bytes": 9408,
+      "sha256": "824df376c885f5eb8ce5bdf608d7fdc92a1010447023b5f26096faa886d2aaa6"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-chalk.svg",
@@ -2097,13 +2307,13 @@
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-chalk.webp",
-      "bytes": 6298,
-      "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702"
+      "bytes": 8810,
+      "sha256": "b8c2323b711ae2d7c6a0db66781d006240b02fe24334dd8c05e9293c59f4ad44"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-dusk-dark.webp",
-      "bytes": 6422,
-      "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4"
+      "bytes": 7148,
+      "sha256": "441bbd6f0dff2495fd1bfd1c4419395e97acbc6baf201d2e98ab1b9bb12161bd"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-dusk.svg",
@@ -2112,13 +2322,13 @@
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-dusk.webp",
-      "bytes": 8308,
-      "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1"
+      "bytes": 9262,
+      "sha256": "6f6c7ce0ceb071b0cc9b0034c7138e0dfdfc21fa798f0b8ef19a36c61fe54561"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-ember-dark.webp",
-      "bytes": 7424,
-      "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2"
+      "bytes": 9196,
+      "sha256": "08a3285f34f14fb5ec2e5c08305dcfd8da71706bc9a1367296312473e1889e07"
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-ember.svg",
@@ -2127,23 +2337,23 @@
     },
     {
       "path": "deliverables/scene/dist/fallback/cell-ember.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/scene/dist/index.html",
       "bytes": 1545,
-      "sha256": "1cfa3fbeccef00d3ad3b95b6a5a9e7f021a84732430d3316dedb313b3ad7c034"
+      "sha256": "809856d0c1a85c9f9ae27487cd54146b3397d97270218f92d428d730d04d9b21"
     },
     {
       "path": "deliverables/scene/dist/models/cell.glb",
-      "bytes": 55224,
-      "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35"
+      "bytes": 69752,
+      "sha256": "5e378b77c1b7bbc2b7036764a9598f53bc16c47cf445904d9c1d62acfb7428cb"
     },
     {
       "path": "deliverables/scene/dist/models/cell.source.glb",
-      "bytes": 198088,
-      "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c"
+      "bytes": 251100,
+      "sha256": "2d573ada418a15e0816c39d3c65c4a72d6cac0ca5d27815fd0c7335bf877122f"
     },
     {
       "path": "deliverables/scene/index.html",
@@ -2152,8 +2362,8 @@
     },
     {
       "path": "deliverables/scene/model-report.json",
-      "bytes": 2343,
-      "sha256": "cf0d189d3d080c1751f212159fc75740b78471ff77a4d1756fad46d081bf687c"
+      "bytes": 2428,
+      "sha256": "a4c58ad5a7b37bcf5345a73a5c6c2734f5131bf39bea2ea5ccc8b0f6bd1f1190"
     },
     {
       "path": "deliverables/scene/package.json",
@@ -2167,8 +2377,8 @@
     },
     {
       "path": "deliverables/scene/public/fallback/cell-chalk-dark.webp",
-      "bytes": 6990,
-      "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358"
+      "bytes": 9408,
+      "sha256": "824df376c885f5eb8ce5bdf608d7fdc92a1010447023b5f26096faa886d2aaa6"
     },
     {
       "path": "deliverables/scene/public/fallback/cell-chalk.svg",
@@ -2177,13 +2387,13 @@
     },
     {
       "path": "deliverables/scene/public/fallback/cell-chalk.webp",
-      "bytes": 6298,
-      "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702"
+      "bytes": 8810,
+      "sha256": "b8c2323b711ae2d7c6a0db66781d006240b02fe24334dd8c05e9293c59f4ad44"
     },
     {
       "path": "deliverables/scene/public/fallback/cell-dusk-dark.webp",
-      "bytes": 6422,
-      "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4"
+      "bytes": 7148,
+      "sha256": "441bbd6f0dff2495fd1bfd1c4419395e97acbc6baf201d2e98ab1b9bb12161bd"
     },
     {
       "path": "deliverables/scene/public/fallback/cell-dusk.svg",
@@ -2192,13 +2402,13 @@
     },
     {
       "path": "deliverables/scene/public/fallback/cell-dusk.webp",
-      "bytes": 8308,
-      "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1"
+      "bytes": 9262,
+      "sha256": "6f6c7ce0ceb071b0cc9b0034c7138e0dfdfc21fa798f0b8ef19a36c61fe54561"
     },
     {
       "path": "deliverables/scene/public/fallback/cell-ember-dark.webp",
-      "bytes": 7424,
-      "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2"
+      "bytes": 9196,
+      "sha256": "08a3285f34f14fb5ec2e5c08305dcfd8da71706bc9a1367296312473e1889e07"
     },
     {
       "path": "deliverables/scene/public/fallback/cell-ember.svg",
@@ -2207,18 +2417,18 @@
     },
     {
       "path": "deliverables/scene/public/fallback/cell-ember.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/scene/public/models/cell.glb",
-      "bytes": 55224,
-      "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35"
+      "bytes": 69752,
+      "sha256": "5e378b77c1b7bbc2b7036764a9598f53bc16c47cf445904d9c1d62acfb7428cb"
     },
     {
       "path": "deliverables/scene/public/models/cell.source.glb",
-      "bytes": 198088,
-      "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c"
+      "bytes": 251100,
+      "sha256": "2d573ada418a15e0816c39d3c65c4a72d6cac0ca5d27815fd0c7335bf877122f"
     },
     {
       "path": "deliverables/scene/qa/budgets.json",
@@ -2237,13 +2447,13 @@
     },
     {
       "path": "deliverables/scene/src/dna/scene.json",
-      "bytes": 2579,
-      "sha256": "b0288cacc5e396032971220c36a0c6659d83f89dbee16261c2f2a6501eaa8eb3"
+      "bytes": 2580,
+      "sha256": "d0a7dc9e9e56d4e52410ab12d3ca00972082d871e12edc265e0f8bca7d373407"
     },
     {
       "path": "deliverables/scene/src/dna/tokens.css",
       "bytes": 5743,
-      "sha256": "d5380d006b168950f2c13902e98e14cd96fc42562bdff160f9d95653fb34562e"
+      "sha256": "ea006965946f14709fe99d73b1c58e4b4948cd204f511d90ffba9c935a6ca0bd"
     },
     {
       "path": "deliverables/scene/src/main.js",
@@ -2252,13 +2462,13 @@
     },
     {
       "path": "deliverables/scene/src/scene.js",
-      "bytes": 17759,
-      "sha256": "bf2dabd68085bc1e6fe57ba93c08dbdd75e782f9ed833139b5fecb60a4d306d8"
+      "bytes": 18338,
+      "sha256": "a11f72ddb7deada20e509bb9e375391f583cf17545b06757bea9c3ea5e8c28ff"
     },
     {
       "path": "deliverables/scene/src/styles.css",
-      "bytes": 4520,
-      "sha256": "dd2a5f2113e75ebd9dc9d8dbbd8d86c9067c5f5292407a7aeaed5e2693c5cfb3"
+      "bytes": 5223,
+      "sha256": "e611287a820acc5b9b2b8537efde63df8183f1a0b0cec3caa5672b676025ebf1"
     },
     {
       "path": "deliverables/scene/vite.config.js",
@@ -2277,13 +2487,13 @@
     },
     {
       "path": "deliverables/web/dist/ar/index.html",
-      "bytes": 22427,
-      "sha256": "a5d242f1f62161dd2e2f33c246d2ae8c6355deeb9c62ff093442463f8b86ee10"
+      "bytes": 22540,
+      "sha256": "6a82c17a22c45451e96c4f4a4144370337ed53002fa2eb20d977c0851ccbd267"
     },
     {
       "path": "deliverables/web/dist/assets/app-store-feature.png",
-      "bytes": 260411,
-      "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7"
+      "bytes": 260415,
+      "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9"
     },
     {
       "path": "deliverables/web/dist/assets/bloom-ground.webp",
@@ -2292,33 +2502,33 @@
     },
     {
       "path": "deliverables/web/dist/assets/campaign-square.png",
-      "bytes": 865444,
-      "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180"
+      "bytes": 870802,
+      "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45"
     },
     {
       "path": "deliverables/web/dist/assets/campaign-square.webp",
-      "bytes": 24752,
-      "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b"
+      "bytes": 25438,
+      "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8"
     },
     {
       "path": "deliverables/web/dist/assets/campaign-story.png",
-      "bytes": 1580999,
-      "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a"
+      "bytes": 1588980,
+      "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40"
     },
     {
       "path": "deliverables/web/dist/assets/campaign-story.webp",
-      "bytes": 29918,
-      "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951"
+      "bytes": 30430,
+      "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7"
     },
     {
       "path": "deliverables/web/dist/assets/campaign-wide.png",
-      "bytes": 442150,
-      "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31"
+      "bytes": 444944,
+      "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd"
     },
     {
       "path": "deliverables/web/dist/assets/campaign-wide.webp",
-      "bytes": 21766,
-      "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151"
+      "bytes": 22062,
+      "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb"
     },
     {
       "path": "deliverables/web/dist/assets/feature-contour.svg",
@@ -2331,6 +2541,26 @@
       "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17"
     },
     {
+      "path": "deliverables/web/dist/assets/feature-dawn.svg",
+      "bytes": 2829,
+      "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-dawn.webp",
+      "bytes": 15090,
+      "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-dusk.svg",
+      "bytes": 2832,
+      "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-dusk.webp",
+      "bytes": 14524,
+      "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443"
+    },
+    {
       "path": "deliverables/web/dist/assets/feature-instrument.svg",
       "bytes": 7759,
       "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da"
@@ -2339,6 +2569,26 @@
       "path": "deliverables/web/dist/assets/feature-instrument.webp",
       "bytes": 16048,
       "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-night.svg",
+      "bytes": 7793,
+      "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-night.webp",
+      "bytes": 10452,
+      "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-noon.svg",
+      "bytes": 2810,
+      "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1"
+    },
+    {
+      "path": "deliverables/web/dist/assets/feature-noon.webp",
+      "bytes": 13358,
+      "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798"
     },
     {
       "path": "deliverables/web/dist/assets/feature-strata.svg",
@@ -2377,43 +2627,43 @@
     },
     {
       "path": "deliverables/web/dist/assets/hero-arc.svg",
-      "bytes": 910,
-      "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae"
+      "bytes": 933,
+      "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab"
     },
     {
       "path": "deliverables/web/dist/assets/hero-arc.webp",
-      "bytes": 25210,
-      "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927"
+      "bytes": 28002,
+      "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9"
     },
     {
       "path": "deliverables/web/dist/assets/hero-far.webp",
-      "bytes": 12338,
-      "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75"
+      "bytes": 12720,
+      "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9"
     },
     {
       "path": "deliverables/web/dist/assets/hero-mid.webp",
-      "bytes": 12732,
-      "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d"
+      "bytes": 13394,
+      "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5"
     },
     {
       "path": "deliverables/web/dist/assets/hero-mobile.avif",
-      "bytes": 8148,
-      "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0"
+      "bytes": 8867,
+      "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8"
     },
     {
       "path": "deliverables/web/dist/assets/hero-mobile.webp",
-      "bytes": 15112,
-      "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb"
+      "bytes": 15884,
+      "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135"
     },
     {
       "path": "deliverables/web/dist/assets/hero-near.webp",
-      "bytes": 12350,
-      "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b"
+      "bytes": 12098,
+      "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-arc.webp",
-      "bytes": 17616,
-      "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c"
+      "bytes": 19508,
+      "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-far.webp",
@@ -2427,13 +2677,13 @@
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-mobile.avif",
-      "bytes": 6502,
-      "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26"
+      "bytes": 7350,
+      "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-mobile.webp",
-      "bytes": 12078,
-      "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9"
+      "bytes": 13194,
+      "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-near.webp",
@@ -2442,13 +2692,13 @@
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-sky.avif",
-      "bytes": 3100,
-      "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23"
+      "bytes": 2056,
+      "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-sky.webp",
-      "bytes": 11580,
-      "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4"
+      "bytes": 10594,
+      "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023"
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-sun.webp",
@@ -2457,8 +2707,8 @@
     },
     {
       "path": "deliverables/web/dist/assets/hero-night-track.webp",
-      "bytes": 13148,
-      "sha256": "506817964f885f7820965cbd7c5c33627ae3493749535faedb4a53e617e5c92f"
+      "bytes": 15112,
+      "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486"
     },
     {
       "path": "deliverables/web/dist/assets/hero-sky.avif",
@@ -2477,8 +2727,8 @@
     },
     {
       "path": "deliverables/web/dist/assets/hero-track.webp",
-      "bytes": 16900,
-      "sha256": "d6f8bdf0746449efc3bcd0f4bda18e0b921d7b999121998bb192743fd6f90a41"
+      "bytes": 19838,
+      "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06"
     },
     {
       "path": "deliverables/web/dist/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2",
@@ -2591,14 +2841,14 @@
       "sha256": "a270dd0bf13d91053b8999b7c120ffadb59680cfd63fe1a6b388a13bf2809fe1"
     },
     {
-      "path": "deliverables/web/dist/assets/main-BsxZWPlV.css",
-      "bytes": 25599,
-      "sha256": "aa6e269168798969cc7f793d092ea7f498bf0f2d29df345be7f1a072fbd69ad3"
+      "path": "deliverables/web/dist/assets/main-BaJm9N_s.js",
+      "bytes": 12659,
+      "sha256": "c172ec586c72baa938033fa41b8d2ead323e41166f62f884eaf0b9919638f612"
     },
     {
-      "path": "deliverables/web/dist/assets/main-BYSAmGWM.js",
-      "bytes": 12540,
-      "sha256": "e63eab6acc13d592262f41399c0aa7d29d59a8f4efded63f404bf00f645cd3e5"
+      "path": "deliverables/web/dist/assets/main-Tm3_VISB.css",
+      "bytes": 25619,
+      "sha256": "2114457bdb55703cb667ddba0ba55fcb1f6350c0b0f19f9cb516116f80427aa4"
     },
     {
       "path": "deliverables/web/dist/assets/model-cell.svg",
@@ -2607,8 +2857,8 @@
     },
     {
       "path": "deliverables/web/dist/assets/model-cell.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/web/dist/assets/pattern-arc.svg",
@@ -2637,13 +2887,13 @@
     },
     {
       "path": "deliverables/web/dist/assets/story-dawn.avif",
-      "bytes": 9743,
-      "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4"
+      "bytes": 10400,
+      "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803"
     },
     {
       "path": "deliverables/web/dist/assets/story-dawn.webp",
-      "bytes": 21356,
-      "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b"
+      "bytes": 22112,
+      "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519"
     },
     {
       "path": "deliverables/web/dist/assets/story-dusk-ground.webp",
@@ -2657,13 +2907,13 @@
     },
     {
       "path": "deliverables/web/dist/assets/story-dusk.avif",
-      "bytes": 9800,
-      "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227"
+      "bytes": 10397,
+      "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e"
     },
     {
       "path": "deliverables/web/dist/assets/story-dusk.webp",
-      "bytes": 21214,
-      "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3"
+      "bytes": 22188,
+      "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc"
     },
     {
       "path": "deliverables/web/dist/assets/story-night-ground.webp",
@@ -2677,18 +2927,18 @@
     },
     {
       "path": "deliverables/web/dist/assets/story-night.avif",
-      "bytes": 7191,
-      "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b"
+      "bytes": 7874,
+      "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184"
     },
     {
       "path": "deliverables/web/dist/assets/story-night.webp",
-      "bytes": 14100,
-      "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84"
+      "bytes": 15252,
+      "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5"
     },
     {
       "path": "deliverables/web/dist/assets/story-noon-ground.webp",
-      "bytes": 10106,
-      "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003"
+      "bytes": 11684,
+      "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62"
     },
     {
       "path": "deliverables/web/dist/assets/story-noon-sky.webp",
@@ -2697,58 +2947,58 @@
     },
     {
       "path": "deliverables/web/dist/assets/story-noon.avif",
-      "bytes": 9506,
-      "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf"
+      "bytes": 9974,
+      "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465"
     },
     {
       "path": "deliverables/web/dist/assets/story-noon.webp",
-      "bytes": 18426,
-      "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1"
+      "bytes": 19434,
+      "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943"
     },
     {
       "path": "deliverables/web/dist/brand/apple-touch-icon.png",
-      "bytes": 3543,
-      "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1"
+      "bytes": 2455,
+      "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda"
     },
     {
       "path": "deliverables/web/dist/brand/favicon.svg",
-      "bytes": 695,
-      "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f"
+      "bytes": 596,
+      "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544"
     },
     {
       "path": "deliverables/web/dist/brand/icon-192.png",
-      "bytes": 2211,
-      "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75"
+      "bytes": 2281,
+      "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c"
     },
     {
       "path": "deliverables/web/dist/brand/icon-512.png",
-      "bytes": 6753,
-      "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561"
+      "bytes": 6808,
+      "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106"
     },
     {
       "path": "deliverables/web/dist/brand/lockup-reversed.svg",
-      "bytes": 4171,
-      "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a"
+      "bytes": 4083,
+      "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699"
     },
     {
       "path": "deliverables/web/dist/brand/lockup.svg",
-      "bytes": 4189,
-      "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792"
+      "bytes": 4101,
+      "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0"
     },
     {
       "path": "deliverables/web/dist/brand/symbol-reversed.svg",
-      "bytes": 796,
-      "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e"
+      "bytes": 708,
+      "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897"
     },
     {
       "path": "deliverables/web/dist/brand/symbol.svg",
-      "bytes": 787,
-      "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d"
+      "bytes": 699,
+      "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633"
     },
     {
       "path": "deliverables/web/dist/index.html",
-      "bytes": 20387,
-      "sha256": "cea51b97b0c27e065b2d7b6e6f52434f7d67198bb24eedd7b8853dcb3c5b1dfb"
+      "bytes": 20497,
+      "sha256": "411fdc67784c359ffccaca22ad0118b6eb95ed29c799f9b2e440f9b6171a2c89"
     },
     {
       "path": "deliverables/web/dist/scene/assets/fraunces-latin-400-normal-6IfK1voy.woff2",
@@ -2776,9 +3026,34 @@
       "sha256": "fc170c6a47adb1d337bae15979dfba3bfa2003a15c45d17aa502da04d0478987"
     },
     {
+      "path": "deliverables/web/dist/scene/assets/index-BsXYb-kv.js",
+      "bytes": 8554,
+      "sha256": "8ac74651b26e0d0c4a2f4198b6030d172d0c7ec329cab3f138d59bf8f4175ddf"
+    },
+    {
+      "path": "deliverables/web/dist/scene/assets/index-C9GI06X_.css",
+      "bytes": 10075,
+      "sha256": "a07d24dca8e3206e0f4326c43e35680409ae7c3ad209f2c86eb156f698a6f3ec"
+    },
+    {
+      "path": "deliverables/web/dist/scene/assets/index-CDhmb20j.js",
+      "bytes": 8554,
+      "sha256": "0f08237b9557668ef82746d4acc516487333a0b0d02d34331c4e88f8262a191f"
+    },
+    {
+      "path": "deliverables/web/dist/scene/assets/index-CXKdB7JS.js",
+      "bytes": 8554,
+      "sha256": "0f08237b9557668ef82746d4acc516487333a0b0d02d34331c4e88f8262a191f"
+    },
+    {
       "path": "deliverables/web/dist/scene/assets/index-CxYqKo8L.css",
       "bytes": 9641,
       "sha256": "0e62bbf99f2952861740270f35d56442ca21f51d7164196a347f940ff40c2e40"
+    },
+    {
+      "path": "deliverables/web/dist/scene/assets/index-CY7dFGEU.css",
+      "bytes": 10026,
+      "sha256": "851877ff32d9be341629a52a680ad6ca13e77b0fbfacc44bfad4ce776dd6a24a"
     },
     {
       "path": "deliverables/web/dist/scene/assets/index-Mpmthc75.js",
@@ -2821,14 +3096,24 @@
       "sha256": "37231ec7913891ac847aa6305a6c899f27c0caea3ed1d9b66d551ddcb0318bf4"
     },
     {
+      "path": "deliverables/web/dist/scene/assets/scene-DnlNm_m_.js",
+      "bytes": 671746,
+      "sha256": "05540cb40a5294003001b5a8f8cd58bf16ba455fbe88b7ff88378a2b335f58d1"
+    },
+    {
+      "path": "deliverables/web/dist/scene/assets/scene-Dyw3z4Kf.js",
+      "bytes": 671772,
+      "sha256": "46af7c6bbfe2baf2caa27cb277ac951a0a1b2c80c558f215f221fbb1a2327053"
+    },
+    {
       "path": "deliverables/web/dist/scene/assets/scene-XkGCSQWt.js",
       "bytes": 671546,
       "sha256": "ae02eb860f3ab244a01ce3429108cd8204f7f2024696ddb059e360acf4188fd3"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-chalk-dark.webp",
-      "bytes": 6990,
-      "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358"
+      "bytes": 9408,
+      "sha256": "824df376c885f5eb8ce5bdf608d7fdc92a1010447023b5f26096faa886d2aaa6"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-chalk.svg",
@@ -2837,13 +3122,13 @@
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-chalk.webp",
-      "bytes": 6298,
-      "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702"
+      "bytes": 8810,
+      "sha256": "b8c2323b711ae2d7c6a0db66781d006240b02fe24334dd8c05e9293c59f4ad44"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-dusk-dark.webp",
-      "bytes": 6422,
-      "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4"
+      "bytes": 7148,
+      "sha256": "441bbd6f0dff2495fd1bfd1c4419395e97acbc6baf201d2e98ab1b9bb12161bd"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-dusk.svg",
@@ -2852,13 +3137,13 @@
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-dusk.webp",
-      "bytes": 8308,
-      "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1"
+      "bytes": 9262,
+      "sha256": "6f6c7ce0ceb071b0cc9b0034c7138e0dfdfc21fa798f0b8ef19a36c61fe54561"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-ember-dark.webp",
-      "bytes": 7424,
-      "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2"
+      "bytes": 9196,
+      "sha256": "08a3285f34f14fb5ec2e5c08305dcfd8da71706bc9a1367296312473e1889e07"
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-ember.svg",
@@ -2867,23 +3152,23 @@
     },
     {
       "path": "deliverables/web/dist/scene/fallback/cell-ember.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/web/dist/scene/index.html",
       "bytes": 1545,
-      "sha256": "1cfa3fbeccef00d3ad3b95b6a5a9e7f021a84732430d3316dedb313b3ad7c034"
+      "sha256": "809856d0c1a85c9f9ae27487cd54146b3397d97270218f92d428d730d04d9b21"
     },
     {
       "path": "deliverables/web/dist/scene/models/cell.glb",
-      "bytes": 55224,
-      "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35"
+      "bytes": 69752,
+      "sha256": "5e378b77c1b7bbc2b7036764a9598f53bc16c47cf445904d9c1d62acfb7428cb"
     },
     {
       "path": "deliverables/web/dist/scene/models/cell.source.glb",
-      "bytes": 198088,
-      "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c"
+      "bytes": 251100,
+      "sha256": "2d573ada418a15e0816c39d3c65c4a72d6cac0ca5d27815fd0c7335bf877122f"
     },
     {
       "path": "deliverables/web/index.html",
@@ -2902,8 +3187,8 @@
     },
     {
       "path": "deliverables/web/public/assets/app-store-feature.png",
-      "bytes": 260411,
-      "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7"
+      "bytes": 260415,
+      "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9"
     },
     {
       "path": "deliverables/web/public/assets/bloom-ground.webp",
@@ -2912,33 +3197,33 @@
     },
     {
       "path": "deliverables/web/public/assets/campaign-square.png",
-      "bytes": 865444,
-      "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180"
+      "bytes": 870802,
+      "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45"
     },
     {
       "path": "deliverables/web/public/assets/campaign-square.webp",
-      "bytes": 24752,
-      "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b"
+      "bytes": 25438,
+      "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8"
     },
     {
       "path": "deliverables/web/public/assets/campaign-story.png",
-      "bytes": 1580999,
-      "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a"
+      "bytes": 1588980,
+      "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40"
     },
     {
       "path": "deliverables/web/public/assets/campaign-story.webp",
-      "bytes": 29918,
-      "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951"
+      "bytes": 30430,
+      "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7"
     },
     {
       "path": "deliverables/web/public/assets/campaign-wide.png",
-      "bytes": 442150,
-      "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31"
+      "bytes": 444944,
+      "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd"
     },
     {
       "path": "deliverables/web/public/assets/campaign-wide.webp",
-      "bytes": 21766,
-      "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151"
+      "bytes": 22062,
+      "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb"
     },
     {
       "path": "deliverables/web/public/assets/feature-contour.svg",
@@ -2951,6 +3236,26 @@
       "sha256": "2fc5b4dbc515977db264e6cb2ca45f06c7170ab2708b5315273beef8ca6a1e17"
     },
     {
+      "path": "deliverables/web/public/assets/feature-dawn.svg",
+      "bytes": 2829,
+      "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-dawn.webp",
+      "bytes": 15090,
+      "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-dusk.svg",
+      "bytes": 2832,
+      "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-dusk.webp",
+      "bytes": 14524,
+      "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443"
+    },
+    {
       "path": "deliverables/web/public/assets/feature-instrument.svg",
       "bytes": 7759,
       "sha256": "8c0146e7c25c6ba5ed099656ec9d1792455f65a16ce5c6a26afb703336f5a4da"
@@ -2959,6 +3264,26 @@
       "path": "deliverables/web/public/assets/feature-instrument.webp",
       "bytes": 16048,
       "sha256": "ec31c1310cdcfcd64c1c38571ec952b9169caac959d33c4843189b0c6513672c"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-night.svg",
+      "bytes": 7793,
+      "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-night.webp",
+      "bytes": 10452,
+      "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-noon.svg",
+      "bytes": 2810,
+      "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1"
+    },
+    {
+      "path": "deliverables/web/public/assets/feature-noon.webp",
+      "bytes": 13358,
+      "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798"
     },
     {
       "path": "deliverables/web/public/assets/feature-strata.svg",
@@ -2972,43 +3297,43 @@
     },
     {
       "path": "deliverables/web/public/assets/hero-arc.svg",
-      "bytes": 910,
-      "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae"
+      "bytes": 933,
+      "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab"
     },
     {
       "path": "deliverables/web/public/assets/hero-arc.webp",
-      "bytes": 25210,
-      "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927"
+      "bytes": 28002,
+      "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9"
     },
     {
       "path": "deliverables/web/public/assets/hero-far.webp",
-      "bytes": 12338,
-      "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75"
+      "bytes": 12720,
+      "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9"
     },
     {
       "path": "deliverables/web/public/assets/hero-mid.webp",
-      "bytes": 12732,
-      "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d"
+      "bytes": 13394,
+      "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5"
     },
     {
       "path": "deliverables/web/public/assets/hero-mobile.avif",
-      "bytes": 8148,
-      "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0"
+      "bytes": 8867,
+      "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8"
     },
     {
       "path": "deliverables/web/public/assets/hero-mobile.webp",
-      "bytes": 15112,
-      "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb"
+      "bytes": 15884,
+      "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135"
     },
     {
       "path": "deliverables/web/public/assets/hero-near.webp",
-      "bytes": 12350,
-      "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b"
+      "bytes": 12098,
+      "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-arc.webp",
-      "bytes": 17616,
-      "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c"
+      "bytes": 19508,
+      "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-far.webp",
@@ -3022,13 +3347,13 @@
     },
     {
       "path": "deliverables/web/public/assets/hero-night-mobile.avif",
-      "bytes": 6502,
-      "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26"
+      "bytes": 7350,
+      "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-mobile.webp",
-      "bytes": 12078,
-      "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9"
+      "bytes": 13194,
+      "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-near.webp",
@@ -3037,13 +3362,13 @@
     },
     {
       "path": "deliverables/web/public/assets/hero-night-sky.avif",
-      "bytes": 3100,
-      "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23"
+      "bytes": 2056,
+      "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-sky.webp",
-      "bytes": 11580,
-      "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4"
+      "bytes": 10594,
+      "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023"
     },
     {
       "path": "deliverables/web/public/assets/hero-night-sun.webp",
@@ -3052,8 +3377,8 @@
     },
     {
       "path": "deliverables/web/public/assets/hero-night-track.webp",
-      "bytes": 13148,
-      "sha256": "506817964f885f7820965cbd7c5c33627ae3493749535faedb4a53e617e5c92f"
+      "bytes": 15112,
+      "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486"
     },
     {
       "path": "deliverables/web/public/assets/hero-sky.avif",
@@ -3072,8 +3397,8 @@
     },
     {
       "path": "deliverables/web/public/assets/hero-track.webp",
-      "bytes": 16900,
-      "sha256": "d6f8bdf0746449efc3bcd0f4bda18e0b921d7b999121998bb192743fd6f90a41"
+      "bytes": 19838,
+      "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06"
     },
     {
       "path": "deliverables/web/public/assets/model-cell.svg",
@@ -3082,8 +3407,8 @@
     },
     {
       "path": "deliverables/web/public/assets/model-cell.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/web/public/assets/pattern-arc.svg",
@@ -3107,13 +3432,13 @@
     },
     {
       "path": "deliverables/web/public/assets/story-dawn.avif",
-      "bytes": 9743,
-      "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4"
+      "bytes": 10400,
+      "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803"
     },
     {
       "path": "deliverables/web/public/assets/story-dawn.webp",
-      "bytes": 21356,
-      "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b"
+      "bytes": 22112,
+      "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519"
     },
     {
       "path": "deliverables/web/public/assets/story-dusk-ground.webp",
@@ -3127,13 +3452,13 @@
     },
     {
       "path": "deliverables/web/public/assets/story-dusk.avif",
-      "bytes": 9800,
-      "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227"
+      "bytes": 10397,
+      "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e"
     },
     {
       "path": "deliverables/web/public/assets/story-dusk.webp",
-      "bytes": 21214,
-      "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3"
+      "bytes": 22188,
+      "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc"
     },
     {
       "path": "deliverables/web/public/assets/story-night-ground.webp",
@@ -3147,18 +3472,18 @@
     },
     {
       "path": "deliverables/web/public/assets/story-night.avif",
-      "bytes": 7191,
-      "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b"
+      "bytes": 7874,
+      "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184"
     },
     {
       "path": "deliverables/web/public/assets/story-night.webp",
-      "bytes": 14100,
-      "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84"
+      "bytes": 15252,
+      "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5"
     },
     {
       "path": "deliverables/web/public/assets/story-noon-ground.webp",
-      "bytes": 10106,
-      "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003"
+      "bytes": 11684,
+      "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62"
     },
     {
       "path": "deliverables/web/public/assets/story-noon-sky.webp",
@@ -3167,53 +3492,53 @@
     },
     {
       "path": "deliverables/web/public/assets/story-noon.avif",
-      "bytes": 9506,
-      "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf"
+      "bytes": 9974,
+      "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465"
     },
     {
       "path": "deliverables/web/public/assets/story-noon.webp",
-      "bytes": 18426,
-      "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1"
+      "bytes": 19434,
+      "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943"
     },
     {
       "path": "deliverables/web/public/brand/apple-touch-icon.png",
-      "bytes": 3543,
-      "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1"
+      "bytes": 2455,
+      "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda"
     },
     {
       "path": "deliverables/web/public/brand/favicon.svg",
-      "bytes": 695,
-      "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f"
+      "bytes": 596,
+      "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544"
     },
     {
       "path": "deliverables/web/public/brand/icon-192.png",
-      "bytes": 2211,
-      "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75"
+      "bytes": 2281,
+      "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c"
     },
     {
       "path": "deliverables/web/public/brand/icon-512.png",
-      "bytes": 6753,
-      "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561"
+      "bytes": 6808,
+      "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106"
     },
     {
       "path": "deliverables/web/public/brand/lockup-reversed.svg",
-      "bytes": 4171,
-      "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a"
+      "bytes": 4083,
+      "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699"
     },
     {
       "path": "deliverables/web/public/brand/lockup.svg",
-      "bytes": 4189,
-      "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792"
+      "bytes": 4101,
+      "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0"
     },
     {
       "path": "deliverables/web/public/brand/symbol-reversed.svg",
-      "bytes": 796,
-      "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e"
+      "bytes": 708,
+      "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897"
     },
     {
       "path": "deliverables/web/public/brand/symbol.svg",
-      "bytes": 787,
-      "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d"
+      "bytes": 699,
+      "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633"
     },
     {
       "path": "deliverables/web/public/scene/assets/fraunces-latin-400-normal-6IfK1voy.woff2",
@@ -3241,9 +3566,34 @@
       "sha256": "fc170c6a47adb1d337bae15979dfba3bfa2003a15c45d17aa502da04d0478987"
     },
     {
+      "path": "deliverables/web/public/scene/assets/index-BsXYb-kv.js",
+      "bytes": 8554,
+      "sha256": "8ac74651b26e0d0c4a2f4198b6030d172d0c7ec329cab3f138d59bf8f4175ddf"
+    },
+    {
+      "path": "deliverables/web/public/scene/assets/index-C9GI06X_.css",
+      "bytes": 10075,
+      "sha256": "a07d24dca8e3206e0f4326c43e35680409ae7c3ad209f2c86eb156f698a6f3ec"
+    },
+    {
+      "path": "deliverables/web/public/scene/assets/index-CDhmb20j.js",
+      "bytes": 8554,
+      "sha256": "0f08237b9557668ef82746d4acc516487333a0b0d02d34331c4e88f8262a191f"
+    },
+    {
+      "path": "deliverables/web/public/scene/assets/index-CXKdB7JS.js",
+      "bytes": 8554,
+      "sha256": "0f08237b9557668ef82746d4acc516487333a0b0d02d34331c4e88f8262a191f"
+    },
+    {
       "path": "deliverables/web/public/scene/assets/index-CxYqKo8L.css",
       "bytes": 9641,
       "sha256": "0e62bbf99f2952861740270f35d56442ca21f51d7164196a347f940ff40c2e40"
+    },
+    {
+      "path": "deliverables/web/public/scene/assets/index-CY7dFGEU.css",
+      "bytes": 10026,
+      "sha256": "851877ff32d9be341629a52a680ad6ca13e77b0fbfacc44bfad4ce776dd6a24a"
     },
     {
       "path": "deliverables/web/public/scene/assets/index-Mpmthc75.js",
@@ -3286,14 +3636,24 @@
       "sha256": "37231ec7913891ac847aa6305a6c899f27c0caea3ed1d9b66d551ddcb0318bf4"
     },
     {
+      "path": "deliverables/web/public/scene/assets/scene-DnlNm_m_.js",
+      "bytes": 671746,
+      "sha256": "05540cb40a5294003001b5a8f8cd58bf16ba455fbe88b7ff88378a2b335f58d1"
+    },
+    {
+      "path": "deliverables/web/public/scene/assets/scene-Dyw3z4Kf.js",
+      "bytes": 671772,
+      "sha256": "46af7c6bbfe2baf2caa27cb277ac951a0a1b2c80c558f215f221fbb1a2327053"
+    },
+    {
       "path": "deliverables/web/public/scene/assets/scene-XkGCSQWt.js",
       "bytes": 671546,
       "sha256": "ae02eb860f3ab244a01ce3429108cd8204f7f2024696ddb059e360acf4188fd3"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-chalk-dark.webp",
-      "bytes": 6990,
-      "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358"
+      "bytes": 9408,
+      "sha256": "824df376c885f5eb8ce5bdf608d7fdc92a1010447023b5f26096faa886d2aaa6"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-chalk.svg",
@@ -3302,13 +3662,13 @@
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-chalk.webp",
-      "bytes": 6298,
-      "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702"
+      "bytes": 8810,
+      "sha256": "b8c2323b711ae2d7c6a0db66781d006240b02fe24334dd8c05e9293c59f4ad44"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-dusk-dark.webp",
-      "bytes": 6422,
-      "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4"
+      "bytes": 7148,
+      "sha256": "441bbd6f0dff2495fd1bfd1c4419395e97acbc6baf201d2e98ab1b9bb12161bd"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-dusk.svg",
@@ -3317,13 +3677,13 @@
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-dusk.webp",
-      "bytes": 8308,
-      "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1"
+      "bytes": 9262,
+      "sha256": "6f6c7ce0ceb071b0cc9b0034c7138e0dfdfc21fa798f0b8ef19a36c61fe54561"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-ember-dark.webp",
-      "bytes": 7424,
-      "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2"
+      "bytes": 9196,
+      "sha256": "08a3285f34f14fb5ec2e5c08305dcfd8da71706bc9a1367296312473e1889e07"
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-ember.svg",
@@ -3332,38 +3692,38 @@
     },
     {
       "path": "deliverables/web/public/scene/fallback/cell-ember.webp",
-      "bytes": 8344,
-      "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33"
+      "bytes": 10324,
+      "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a"
     },
     {
       "path": "deliverables/web/public/scene/index.html",
       "bytes": 1545,
-      "sha256": "1cfa3fbeccef00d3ad3b95b6a5a9e7f021a84732430d3316dedb313b3ad7c034"
+      "sha256": "809856d0c1a85c9f9ae27487cd54146b3397d97270218f92d428d730d04d9b21"
     },
     {
       "path": "deliverables/web/public/scene/models/cell.glb",
-      "bytes": 55224,
-      "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35"
+      "bytes": 69752,
+      "sha256": "5e378b77c1b7bbc2b7036764a9598f53bc16c47cf445904d9c1d62acfb7428cb"
     },
     {
       "path": "deliverables/web/public/scene/models/cell.source.glb",
-      "bytes": 198088,
-      "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c"
+      "bytes": 251100,
+      "sha256": "2d573ada418a15e0816c39d3c65c4a72d6cac0ca5d27815fd0c7335bf877122f"
     },
     {
       "path": "deliverables/web/qa/flows.mjs",
-      "bytes": 15372,
-      "sha256": "b52be6ffa529a43a0f1f344dfdc864060dae331267dd818844fa2ebfccde5889"
+      "bytes": 16883,
+      "sha256": "09f3112aaae797297b57e0627637aeeb76f64cb4d61748c499273508a31714d5"
     },
     {
       "path": "deliverables/web/src/content.json",
-      "bytes": 16283,
-      "sha256": "26c1a217ce4c78756ef259c9b25323220023ffd07908aa8157c5bea208450f1d"
+      "bytes": 16337,
+      "sha256": "7d2c24ca6998fa141933f360b481355e620002171d0d65ae63f5f9b757530799"
     },
     {
       "path": "deliverables/web/src/dna/dna.json",
-      "bytes": 2384,
-      "sha256": "2700f6918f4ecff15e4fb37987d18931ed703e0cf51fab85a72551effe38f895"
+      "bytes": 2385,
+      "sha256": "de6d6a83978824118ed2cab260b7fce7328bd06fefd7eaf99cb36caef94a1dfb"
     },
     {
       "path": "deliverables/web/src/dna/fonts.css",
@@ -3373,17 +3733,17 @@
     {
       "path": "deliverables/web/src/dna/icons.json",
       "bytes": 3314,
-      "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064"
+      "sha256": "9651751bcc14597df5c7b9b60ded19e8da0f1058b2e8803cebe2e84241e7919e"
     },
     {
       "path": "deliverables/web/src/dna/tokens.css",
       "bytes": 5743,
-      "sha256": "d5380d006b168950f2c13902e98e14cd96fc42562bdff160f9d95653fb34562e"
+      "sha256": "ea006965946f14709fe99d73b1c58e4b4948cd204f511d90ffba9c935a6ca0bd"
     },
     {
       "path": "deliverables/web/src/main.js",
-      "bytes": 17343,
-      "sha256": "0fbf412326a6c9742bc3c2f39261b25233b79618c31dd29509c77cdb73ea0156"
+      "bytes": 17630,
+      "sha256": "e17723da36e04fe9e16e6476a312a8c8901a8c8e96139c2ec8ab6a7ce8014dde"
     },
     {
       "path": "deliverables/web/src/render.js",
@@ -3392,8 +3752,8 @@
     },
     {
       "path": "deliverables/web/src/styles.css",
-      "bytes": 22525,
-      "sha256": "89ad4fc106257d140f25ac1792714fc8d5dae9817671ef7c5aa2abd33eb2879a"
+      "bytes": 22733,
+      "sha256": "5579d628fcf0296f2f74a35339a61989f833b24ce11074421735bc6f713b5a4c"
     },
     {
       "path": "deliverables/web/vite.config.js",
@@ -3403,22 +3763,22 @@
     {
       "path": "evidence/consistency.json",
       "bytes": 1171,
-      "sha256": "a449873cf97fa84854db2781539e4963808303d9d83ddbb46463b38412e4b283"
+      "sha256": "a2151710ea04457d81d5af090bec61ac2e4f1a655c6930e9e2f9748c276066e8"
     },
     {
       "path": "evidence/creative-review.json",
-      "bytes": 29941,
-      "sha256": "860ff828de48e13e927e5d2f689d9aa370f98152c5eaeebf68b0255702cb7b77"
+      "bytes": 34087,
+      "sha256": "e5dfb6bb40b80032daae51e85c8188d633d2b5faa08167b8e60d7e196f52cd27"
     },
     {
       "path": "evidence/defects.json",
       "bytes": 2932,
-      "sha256": "30c853d8a2df4c959a008f69928ad525934547e7758c843f13606b8bec8b58e0"
+      "sha256": "9dcc99f008304e603feb9ac6b195dc9c83c0fb59ebf55300a8ec387d4856948d"
     },
     {
       "path": "evidence/demo-run.json",
       "bytes": 5819,
-      "sha256": "1f7e46696656f95c56657c3123f8767341785af45fbd17d6ce40d5e54cba136f"
+      "sha256": "8e218817f23e69d77ea2b643e2a11e6ef1135709ec916d529e32acea410636fc"
     },
     {
       "path": "evidence/directions.html",
@@ -3428,47 +3788,47 @@
     {
       "path": "evidence/licences.md",
       "bytes": 3331,
-      "sha256": "826bd74ba931cc28c792e723a2aa0b3f38d641b2f6928e34449c9c8c8686f568"
+      "sha256": "ebbb3b7be18ce7d6619ef7a7adba1e5dcbffe39f5e41f09c7111dfb6926d2ca1"
     },
     {
       "path": "evidence/qa-summary.json",
-      "bytes": 147755,
-      "sha256": "9e10b5951f51b9f8d898d0fbd597461ebac8779b96f4e3d9978006bce2de04b0"
+      "bytes": 147599,
+      "sha256": "41699463940011a0ad87bae0fa3b692f4df6c2325d0844d4c88e75c89dbac1cb"
     },
     {
       "path": "evidence/qa-summary.md",
-      "bytes": 36544,
-      "sha256": "514e1e6a73bc9f3db4c46c5bf5c278e886bae7ad03b395a65aeaab27124b6d67"
+      "bytes": 36694,
+      "sha256": "fe3b508456487f9be0bd7c8c1505f8bfa5e1f9dd02e63cd5c45bc357e41808c1"
     },
     {
       "path": "evidence/sbom-app.cdx.json",
       "bytes": 3695,
-      "sha256": "7b6fef1d9520d12e0879ef8ef20104d800b338dbbf234067e965eac30e354ec9"
+      "sha256": "e56502d1eed0ff3c1d112ed7d40af76021dcb7c24db4274d2e3bbb3577c8e624"
     },
     {
       "path": "evidence/sbom-mobile.cdx.json",
       "bytes": 165195,
-      "sha256": "bf20ef42874f60e552ef6e83efa7d3148639b2ff3c915f023fd52a88e070ea8f"
+      "sha256": "bb0935c052f46bbaf888aa6027110238a5a85434f6457889aa4e3507bffb2f19"
     },
     {
       "path": "evidence/sbom-scene.cdx.json",
       "bytes": 1192,
-      "sha256": "68888a2623fa061ecdb39a3a69f5c49323c7984764527117966951b9c25e10a8"
+      "sha256": "59b65a08279172bc1ace384e7d88c64dce1383d2b823b1f28c63421342bc3d46"
     },
     {
       "path": "evidence/sbom-web.cdx.json",
       "bytes": 1873,
-      "sha256": "3b1e81544b777a6d29016a10bfd3f04bb8fc74511bf5c905cfb940738b0af133"
+      "sha256": "3aaa98ba9fb1cd059df1bc1002ab5505a36855147ac34e2da6ff7bb5840d1185"
     },
     {
       "path": "evidence/security.json",
       "bytes": 8158,
-      "sha256": "16f13551cfedba9b804a175ab440c68afdf8b3f3972743be013e472ef3e857b1"
+      "sha256": "ee530457890338c0a4f9e38ad0199c37a11ae8a3c5c03012b1aa6355ce2202df"
     },
     {
       "path": "project/asset-registry.json",
-      "bytes": 160960,
-      "sha256": "ced790aaee4cc797c2c97a2cc542c75e29c018cca0c86d157dc47fde9478385d"
+      "bytes": 191090,
+      "sha256": "c3d6dd267d46d77078ceba51fcc1a6a9f591a183a7c7b714b78efc87983162db"
     },
     {
       "path": "project/brief.json",
@@ -3481,14 +3841,19 @@
       "sha256": "8c514e35f396c88482542f23fb5fbef1101d00f6be7973f41d9ebd89135c349d"
     },
     {
+      "path": "project/dna-history/r001.json",
+      "bytes": 13477,
+      "sha256": "18d224e26d00794909a5b6e06b6e0ab1a4b0beef63875d112510c8716ad9cd53"
+    },
+    {
       "path": "project/event-ledger.jsonl",
-      "bytes": 92503,
-      "sha256": "a2406e19608a3852257f2d4c2fdb7d9b5454971a59d7b95d5dbc586ea1125991"
+      "bytes": 145030,
+      "sha256": "00f0260185132807cb6e917b1cdaaffd8a9112cc63d51ccd8dfc1ce5eea8345d"
     },
     {
       "path": "project/experience-dna.json",
-      "bytes": 13477,
-      "sha256": "18d224e26d00794909a5b6e06b6e0ab1a4b0beef63875d112510c8716ad9cd53"
+      "bytes": 13478,
+      "sha256": "8036b4b2a1da76b83dc7f35e1e1f837c78dcae23143e2269cf2b9cd158b9240e"
     },
     {
       "path": "project/motion-spec.json",
@@ -3498,7 +3863,7 @@
     {
       "path": "project/plan-and-approvals.json",
       "bytes": 11615,
-      "sha256": "22e8074650c0b48ada4fef27c0f493c3cd22cf2bea2bb9f2bdddbb4037508707"
+      "sha256": "31a178e6111e7b898afc8e9689bb6eafbd92806f482cd3d6b52d9a05a5e333fd"
     },
     {
       "path": "project/research.json",

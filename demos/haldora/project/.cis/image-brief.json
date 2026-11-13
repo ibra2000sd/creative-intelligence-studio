@@ -18,7 +18,8 @@
       "maxBytes": 220000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-arc",
@@ -37,7 +38,8 @@
       "maxBytes": 160000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-far",
@@ -55,7 +57,8 @@
       "maxBytes": 120000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-mid",
@@ -73,7 +76,8 @@
       "maxBytes": 120000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-near",
@@ -91,7 +95,8 @@
       "maxBytes": 120000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-mobile",
@@ -109,7 +114,8 @@
       "usedIn": [
         "web:hero",
         "mobile:onboarding"
-      ]
+      ],
+      "displayWidth": 390
     },
     {
       "id": "story-dawn",
@@ -126,7 +132,8 @@
       "maxBytes": 200000,
       "usedIn": [
         "web:story"
-      ]
+      ],
+      "displayWidth": 350
     },
     {
       "id": "story-noon",
@@ -143,7 +150,8 @@
       "maxBytes": 200000,
       "usedIn": [
         "web:story"
-      ]
+      ],
+      "displayWidth": 350
     },
     {
       "id": "story-dusk",
@@ -160,7 +168,8 @@
       "maxBytes": 200000,
       "usedIn": [
         "web:story"
-      ]
+      ],
+      "displayWidth": 350
     },
     {
       "id": "story-night",
@@ -177,7 +186,8 @@
       "maxBytes": 200000,
       "usedIn": [
         "web:story"
-      ]
+      ],
+      "displayWidth": 350
     },
     {
       "id": "hero-night-sky",
@@ -196,7 +206,16 @@
       "usedIn": [
         "web:hero"
       ],
-      "sunAt": 0.5
+      "sunAt": 0.5,
+      "displayWidth": 1440,
+      "clearZones": [
+        {
+          "x": 0,
+          "y": 0.12,
+          "w": 1,
+          "h": 0.6
+        }
+      ]
     },
     {
       "id": "hero-night-arc",
@@ -216,7 +235,8 @@
       ],
       "transparent": true,
       "sunAt": 0.5,
-      "sameAs": "hero-arc"
+      "sameAs": "hero-arc",
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-far",
@@ -235,7 +255,8 @@
         "web:hero"
       ],
       "transparent": true,
-      "sunAt": 0.5
+      "sunAt": 0.5,
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-mid",
@@ -254,7 +275,8 @@
         "web:hero"
       ],
       "transparent": true,
-      "sunAt": 0.5
+      "sunAt": 0.5,
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-near",
@@ -273,7 +295,8 @@
         "web:hero"
       ],
       "transparent": true,
-      "sunAt": 0.5
+      "sunAt": 0.5,
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-mobile",
@@ -291,7 +314,8 @@
       "usedIn": [
         "web:hero"
       ],
-      "sunAt": 0.5
+      "sunAt": 0.5,
+      "displayWidth": 390
     },
     {
       "id": "hero-track",
@@ -309,7 +333,8 @@
       "maxBytes": 120000,
       "usedIn": [
         "web:hero"
-      ]
+      ],
+      "displayWidth": 1440
     },
     {
       "id": "hero-sun",
@@ -328,7 +353,8 @@
       "usedIn": [
         "web:hero"
       ],
-      "sameAs": "hero-arc"
+      "sameAs": "hero-arc",
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-track",
@@ -348,7 +374,8 @@
         "web:hero"
       ],
       "sunAt": 0.5,
-      "sameAs": "hero-track"
+      "sameAs": "hero-track",
+      "displayWidth": 1440
     },
     {
       "id": "hero-night-sun",
@@ -368,7 +395,8 @@
         "web:hero"
       ],
       "sunAt": 0.5,
-      "sameAs": "hero-night-arc"
+      "sameAs": "hero-night-arc",
+      "displayWidth": 1440
     },
     {
       "id": "story-dawn-sky",
@@ -529,26 +557,11 @@
       ]
     },
     {
-      "id": "feature-contour",
-      "purpose": "Feature illustration: the home's energy map",
-      "recipe": "contour-map",
-      "seed": 4,
-      "width": 1200,
-      "height": 900,
-      "formats": [
-        "webp",
-        "svg"
-      ],
-      "maxBytes": 260000,
-      "usedIn": [
-        "web:features"
-      ]
-    },
-    {
-      "id": "feature-strata",
-      "purpose": "Feature illustration: stored energy",
-      "recipe": "strata-bands",
-      "seed": 9,
+      "id": "feature-noon",
+      "purpose": "Feature illustration: the household day, as the Cell learns it",
+      "recipe": "horizon-field",
+      "variant": "noon",
+      "seed": "features",
       "width": 1200,
       "height": 900,
       "formats": [
@@ -556,6 +569,61 @@
         "svg"
       ],
       "maxBytes": 200000,
+      "displayWidth": 300,
+      "usedIn": [
+        "web:features"
+      ]
+    },
+    {
+      "id": "feature-night",
+      "purpose": "Feature illustration: the reserve held for the night",
+      "recipe": "horizon-field",
+      "variant": "night",
+      "seed": "features",
+      "width": 1200,
+      "height": 900,
+      "formats": [
+        "webp",
+        "svg"
+      ],
+      "maxBytes": 200000,
+      "displayWidth": 300,
+      "usedIn": [
+        "web:features"
+      ]
+    },
+    {
+      "id": "feature-dawn",
+      "purpose": "Feature illustration: the day drawn from sunrise",
+      "recipe": "horizon-field",
+      "variant": "dawn",
+      "seed": "features",
+      "width": 1200,
+      "height": 900,
+      "formats": [
+        "webp",
+        "svg"
+      ],
+      "maxBytes": 200000,
+      "displayWidth": 300,
+      "usedIn": [
+        "web:features"
+      ]
+    },
+    {
+      "id": "feature-dusk",
+      "purpose": "Feature illustration: the evening, run on stored power",
+      "recipe": "horizon-field",
+      "variant": "dusk",
+      "seed": "features",
+      "width": 1200,
+      "height": 900,
+      "formats": [
+        "webp",
+        "svg"
+      ],
+      "maxBytes": 200000,
+      "displayWidth": 300,
       "usedIn": [
         "web:features"
       ]
@@ -573,7 +641,6 @@
       ],
       "maxBytes": 200000,
       "usedIn": [
-        "web:features",
         "app:empty-state"
       ]
     },
@@ -598,7 +665,8 @@
       },
       "usedIn": [
         "social"
-      ]
+      ],
+      "displayWidth": 390
     },
     {
       "id": "campaign-story",
@@ -621,7 +689,8 @@
       },
       "usedIn": [
         "social"
-      ]
+      ],
+      "displayWidth": 390
     },
     {
       "id": "campaign-wide",
@@ -645,7 +714,8 @@
       "usedIn": [
         "social",
         "web:og"
-      ]
+      ],
+      "displayWidth": 600
     },
     {
       "id": "app-store-feature",

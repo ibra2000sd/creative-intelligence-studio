@@ -84,6 +84,10 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
   const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 1.65), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, toneMapped: false }));
   shadow.position.set(0.05, -0.05, WALL_Z + 0.002);
   world.add(shadow);
+  // A tight, darker shadow where the unit meets the wall: it sits on the wall, it does not float.
+  const contact = new THREE.Mesh(new THREE.PlaneGeometry(0.74, 1.12), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, toneMapped: false, opacity: 0.55 }));
+  contact.position.set(0.012, -0.02, WALL_Z + 0.003);
+  world.add(contact);
 
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
@@ -222,6 +226,8 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
     const p = (hours - 6) / 16; // 06:00 -> 0, 22:00 -> 1
     const angle = Math.PI * (1 - p);
     parts.Sun.position.set(ax + Math.cos(angle) * cfg.model.anchors.arcRadius, ay + Math.sin(angle) * cfg.model.anchors.arcRadius, az);
+    // The brand's rule: no sun above the horizon after sunset.
+    parts.Sun.visible = hours >= 6 && hours <= 20;
     const noon = Math.sin(Math.PI * Math.min(1, Math.max(0, p))); // 0 at the ends, 1 at midday
     // Evening falls quickly: a slow blend from a pale wall to a dark one lingers on grey.
     const late = Math.min(1, Math.max(0, (hours - 18) / 2.25));
@@ -240,6 +246,8 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
     const darkWall = 0.2126 * bg.r + 0.7152 * bg.g + 0.0722 * bg.b < 0.18;
     shadow.material.color.set(darkWall ? cfg.semantic.dark.surfaceRaised : '#000000');
     shadow.material.opacity = darkWall ? 0.55 : 0.2;
+    contact.material.color.set('#000000');
+    contact.material.opacity = darkWall ? 0.5 : 0.42;
     arcMat.emissiveIntensity = 1 + d * 0.5;
     parts.Sun.material.emissiveIntensity = 1.1 + d * 0.7;
     // Text laid over the canvas must take its colour from the wall behind it, not from the page scheme.

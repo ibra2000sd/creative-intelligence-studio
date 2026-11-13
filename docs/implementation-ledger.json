@@ -366,12 +366,15 @@
         "demos/haldora/project/.cis/reports/demo-run.json",
         "docs/release-report.md",
         "demos/haldora/final-qa.log",
-        "demos/haldora/project/.cis/reports/qa-summary.json (278 pass, 0 fail, 16 warn, 2 blocked; verdict incomplete)",
+        "demos/haldora/project/.cis/reports/qa-summary.json (279 pass, 0 fail, 16 warn, 2 blocked; verdict incomplete)",
         "demos/haldora/project/.cis/reports/security.json (16 pass, 0 fail, 2 warn; verdict pass)",
         "demos/haldora/reviews/review-1-revise.json",
         "demos/haldora/reviews/review-2-revise.json",
         "demos/haldora/reviews/review-3-revise.json",
-        "demos/haldora/project/.cis/reports/creative-review.json"
+        "demos/haldora/project/.cis/reports/creative-review.json",
+        "demos/haldora/reviews/review-4-revise.json",
+        "demos/haldora/reviews/review-5-revise.json",
+        "demos/haldora/reviews/review-6-revise.json"
       ],
       "defectsDiscovered": [
         "First clean reproduction stopped at the consistency check",
@@ -380,13 +383,14 @@
         "Review 2: arc through the hero headline; moon over the Arabic headline; full-disc moons against the rules; clipped app tab labels; untranslated app content; guideline previews sharing SVG ids (all fixed)",
         "Review 3: tablet hero cropped the sun; arc cut-out clipped the sun halo at 1024 px (both fixed); a capture added for it found a 67 px overflow at 1024 px (fixed)",
         "Image cache ignored the recipe code, so drawing changes never reached existing images (fixed)",
-        "QA harness: intermittent missing text in full-page captures; contrast measured mid colour transition (both fixed, with tests)"
+        "QA harness: intermittent missing text in full-page captures; contrast measured mid colour transition (both fixed, with tests)",
+        "Reviews 4 to 6: configurator cut off in its frame, then squeezed on phones; History two weeks behind the page; a story sun contradicting its headline; hero arc fragments; logo arc caps above the horizon (fixed); Android adaptive icon crop and dial label collision (open)"
       ],
       "defectsFixed": [
         "Yes"
       ],
       "blockers": [
-        "Independent creative review performed three times by the reviewer agent on 2026-11-13, with fixes between rounds: round 1 revise (1 blocker, 13 major), round 2 revise (0 blocker, 9 major; 12 of 14 earlier fixed, 2 partly), round 3 revise (0 blocker, 7 major; 6 of 9 earlier fixed, 3 deliberately left). Open design work is listed in docs/limitations.md. Gates G6 and G7 need people.",
+        "Independent creative review performed six times by the reviewer agent on 2026-11-13, with fixes between rounds: round 1 revise (1 blocker, 13 major); rounds 3 to 6 revise with 7 or 8 major each, most of each previous list fixed. The loop was stopped after round 6. Open design work is listed in docs/limitations.md. Gates G6 and G7 need people.",
         "Skill invocation is verified for one skill only (intake-discovery, loaded through the Skill tool in a desktop session on 2026-11-13); automatic triggering from plain requests is not measured and the headless `claude -p` check still fails on an expired OAuth session.",
         "Lab performance numbers were taken on a loaded desktop (load average near 20) and should be regenerated on an idle machine."
       ],

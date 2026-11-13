@@ -7,9 +7,10 @@ import { assertValid } from '../lib/schema.mjs';
 import { requireProject, paths, appendEvent, loadBrief } from '../lib/project.mjs';
 import { loadDna } from '../lib/dna.mjs';
 import { loadFont, textToPath, fontFaceCss } from '../lib/fonts.mjs';
-import { buildSymbol, symbolMarkup, lockup, svgDoc, inspectSvg, escapeXml } from '../lib/logo.mjs';
+import { buildSymbol, symbolMarkup, lockup, svgDoc, inspectSvg, escapeXml, iconMarkup } from '../lib/logo.mjs';
 import { iconNames, iconSvg, iconSet } from '../lib/icons.mjs';
 import { renderSvg, horizonSun } from '../lib/imagegen.mjs';
+import { shapedText } from '../lib/shape.mjs';
 import { hasCapability, need } from '../lib/deps.mjs';
 import { registerAsset, fileEntry } from '../lib/assets.mjs';
 
@@ -70,7 +71,7 @@ function schemes(dna) {
   };
 }
 
-function applications(dna, spec, marks, slug, T) {
+async function applications(dna, spec, marks, slug, T) {
   const sym = marks.symbols[spec.selected];
   const l = dna.color.semantic.light;
   const d = dna.color.semantic.dark;
@@ -78,8 +79,8 @@ function applications(dna, spec, marks, slug, T) {
   const out = {};
   const headline = spec.headline || dna.identity.tagline || name;
   const lock = (colors, size, mono = false) => lockup(sym, marks.word, { layout: 'horizontal', symbolSize: size, colors, mono, clear: 0 });
-  const bgArt = (recipe, w, h, variant, seed, clear, sunAt) => {
-    const r = renderSvg({ id: `app-${seed}`, recipe, width: w, height: h, variant, seed, clear, sunAt }, dna);
+  const bgArt = (recipe, w, h, variant, seed, clear, sunAt, displayWidth) => {
+    const r = renderSvg({ id: `app-${seed}`, recipe, width: w, height: h, variant, seed, clear, sunAt, displayWidth }, dna);
     return r.svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
   };
   const wrapHeadline = (text, maxChars) => {
@@ -146,38 +147,66 @@ function applications(dna, spec, marks, slug, T) {
     out['business-card-front'] = { svg: svgDoc({ w: W, h: H, title: `${name} business card, front`, body: front + marksSvg }), mm: [91, 61], note: '85 x 55 mm trim, 3 mm bleed, crop marks' };
     out['business-card-back'] = { svg: svgDoc({ w: W, h: H, title: `${name} business card, back`, body: back + marksSvg }), mm: [91, 61], note: '85 x 55 mm trim, 3 mm bleed, crop marks' };
   }
-  const poster = (key, w, h, variant, recipe, opts = {}) => {
+  /**
+   * A composed application: artwork, lockup and headline. `text` is the headline (by default the
+   * application's own entry in `headlines`, then the brand headline). With `arabic` the headline is
+   * set right to left in the Arabic face, shaped by HarfBuzz, and the block sits at the right edge;
+   * the artwork never mirrors.
+   */
+  const poster = async (key, w, h, variant, recipe, opts = {}) => {
+    const rtl = Boolean(opts.arabic);
+    const text = opts.text || spec.headlines?.[key] || headline;
     const dark = ['dusk', 'night', 'dawn'].includes(variant);
     const ink = dark ? d.text : l.text;
     const lk = lock(dark ? { primary: d.primary, accent: d.text, text: d.text } : { primary: l.primary, accent: l.accent, text: l.text }, Math.round(w * 0.06));
-    const size = Math.round(w * (opts.type || 0.078));
+    const size = Math.round(w * (opts.type || 0.078) * (rtl ? 0.92 : 1));
     const m = Math.round(w * 0.075);
-    const lines = balance(headline, opts.wrap || 16);
-    const lh = size * 1.06;
-    const set = (line, y) => T('display', line, { size, weight: spec.wordmark.weight, x: m, y, fill: ink, tracking: dna.typography.scale.displayTracking ?? 0 });
-    const widest = Math.max(...lines.map((line) => set(line, 0).width));
+    const lines = balance(text, opts.wrap || 16);
+    const lh = size * (rtl ? 1.32 : 1.06);
+    const arabicSpec = dna.typography.arabic;
+    const measure = async (line) => (rtl ? (await shapedText(arabicSpec, line, { weight: 700, size })).width : T('display', line, { size, weight: spec.wordmark.weight, tracking: dna.typography.scale.displayTracking ?? 0 }).width);
+    const widths = [];
+    for (const line of lines) widths.push(await measure(line));
+    const widest = Math.max(...widths);
+    const x0 = rtl ? w - m - widest : m;
     let top = opts.top ?? h * 0.34;
     if (recipe === 'horizon-field') {
-      // Text has right of way: if the sun would sit under the headline, the block moves up clear of its halo.
+      // Text has right of way. If the headline block would cover the sun or its halo, it moves below
+      // the sun when there is sky for it there, otherwise above it.
       const sun = horizonSun(w, h, variant, opts.sunAt);
-      const overlapsX = sun.x - sun.halo < m + widest + size * 0.3;
-      const lowest = sun.y - sun.halo - size * 0.55;
-      if (overlapsX && top + (lines.length - 1) * lh > lowest) top = Math.max(m + lk.h + size * 1.25, lowest - (lines.length - 1) * lh);
+      const pad = size * 0.35;
+      const block = (t) => ({ top: t - size * 0.95, bottom: t + (lines.length - 1) * lh + size * 0.3 });
+      const hits = (t) => sun.x + sun.halo > x0 - pad && sun.x - sun.halo < x0 + widest + pad && block(t).bottom > sun.y - sun.halo - pad && block(t).top < sun.y + sun.halo + pad;
+      if (hits(top)) {
+        const below = sun.y + sun.halo + pad + size * 0.95;
+        const above = sun.y - sun.halo - pad - size * 0.3 - (lines.length - 1) * lh;
+        const skyFloor = h * 0.66 - size * 0.4; // the horizon: the block must end above it
+        if (block(below).bottom <= skyFloor) top = below;
+        else top = Math.max(m + lk.h + size * 1.25, above);
+      }
     }
     // The artwork keeps its arc and stars out of the rectangle the headline occupies.
-    const clear = { x: m - size * 0.35, y: top - size * 1.0, w: widest + size * 0.7, h: (lines.length - 1) * lh + size * 1.4 };
-    let body = bgArt(recipe, w, h, variant, key, clear, opts.sunAt) + `<g transform="translate(${m} ${m})">${lk.body}</g>`;
-    lines.forEach((line, i) => {
-      body += set(line, top + i * lh).markup;
-    });
-    out[key] = { svg: svgDoc({ w, h, title: `${name}: ${headline}`, body }), px: [w, h] };
+    const clear = { x: x0 - size * 0.35, y: top - size * 1.0, w: widest + size * 0.7, h: (lines.length - 1) * lh + size * 1.4 };
+    let body = bgArt(recipe, w, h, variant, key, clear, opts.sunAt, opts.displayWidth) + `<g transform="translate(${rtl ? w - m - lk.w : m} ${m})">${lk.body}</g>`;
+    for (const [i, line] of lines.entries()) {
+      const y = top + i * lh;
+      body += rtl ? (await shapedText(arabicSpec, line, { weight: 700, size, x: w - m, y, anchor: 'end', fill: ink })).markup : T('display', line, { size, weight: spec.wordmark.weight, x: m, y, fill: ink, tracking: dna.typography.scale.displayTracking ?? 0 }).markup;
+    }
+    out[key] = { svg: svgDoc({ w, h, title: `${name}: ${text}`, body, lang: rtl ? 'ar' : undefined }), px: [w, h] };
   };
-  if (want('social-square')) poster('social-square', 1080, 1080, 'dusk', 'horizon-field', { top: 380 });
-  if (want('og-image')) poster('og-image', 1200, 630, 'noon', 'horizon-field', { type: 0.062, wrap: 22, top: 250 });
-  if (want('story')) poster('story', 1080, 1920, 'dawn', 'horizon-field', { type: 0.1, wrap: 12, top: 560 });
-  if (want('presentation-title')) poster('presentation-title', 1920, 1080, 'night', 'horizon-field', { type: 0.06, wrap: 20, top: 420 });
+  // displayWidth: the size each format is mostly seen at, so the arc's dashes read at that size.
+  if (want('social-square')) await poster('social-square', 1080, 1080, 'dusk', 'horizon-field', { top: 380, displayWidth: 390 });
+  if (want('og-image')) await poster('og-image', 1200, 630, 'noon', 'horizon-field', { type: 0.062, wrap: 22, top: 250, displayWidth: 600 });
+  if (want('story')) await poster('story', 1080, 1920, 'dawn', 'horizon-field', { type: 0.1, wrap: 12, top: 560, displayWidth: 390 });
+  if (want('presentation-title')) await poster('presentation-title', 1920, 1080, 'night', 'horizon-field', { type: 0.06, wrap: 20, top: 420, displayWidth: 1280 });
+  // Arabic versions: skies whose sun sits left of or above the right-aligned text (morning, midday).
+  const ar = spec.arabic?.applications || {};
+  if (ar['social-square']) await poster('social-square-ar', 1080, 1080, 'dawn', 'horizon-field', { top: 380, arabic: true, text: ar['social-square'], wrap: 14, displayWidth: 390 });
+  if (ar['og-image']) await poster('og-image-ar', 1200, 630, 'noon', 'horizon-field', { type: 0.062, wrap: 20, top: 250, arabic: true, text: ar['og-image'], displayWidth: 600 });
+  if (ar.story) await poster('story-ar', 1080, 1920, 'noon', 'horizon-field', { type: 0.1, wrap: 10, top: 560, arabic: true, text: ar.story, displayWidth: 390 });
   if (want('app-icon')) {
-    const body = `<path fill="${d.bg}" d="M0 0H1024V1024H0Z"/>` + symbolMarkup(sym, { x: 172, y: 172, size: 680, primary: d.primary, accent: d.text });
+    // Full bleed: the store and the home screen apply their own mask, so the icon must not carry a tile of its own.
+    const body = iconMarkup(sym, { size: 1024, field: d.primary, knockout: d.bg, accent: d.text });
     out['app-icon'] = { svg: svgDoc({ w: 1024, h: 1024, title: `${name} app icon`, body }), px: [1024, 1024], note: 'Full-bleed square; platforms apply their own mask' };
   }
   return out;
@@ -269,9 +298,11 @@ ${sun(0.1, 'dawn', 9, l.accent)}${sun(0.5, 'noon', 9, l.accent)}${sun(0.9, 'dusk
     ? `<section><h2>${e(sig.name)}</h2><p class="lede">${e(dna.direction.signature)}</p>${sig.diagram === 'day-arc' ? arcDrawing() : ''}
 <div class="two"><div><h3>Rules</h3><ul>${sig.rules.map((r) => `<li>${e(r)}</li>`).join('')}</ul></div>${sig.dont?.length ? `<div><h3>Do not</h3><ul>${sig.dont.map((r) => `<li>${e(r)}</li>`).join('')}</ul></div>` : ''}</div></section>`
     : '';
+  // The cover is a night-blue ground, so by the brand's own rule its marker is the crescent.
   const coverArc = sig?.diagram === 'day-arc' ? (() => {
-    const [x, y] = arcAt(900, 520, 0.68);
-    return `<svg class="cover-arc" viewBox="0 0 900 380" aria-hidden="true"><path d="M90 343A360 260 0 0 1 810 343" fill="none" stroke="${d.text}" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round" opacity=".6"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="44" fill="${d.primary}" opacity=".2"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="20" fill="${d.primary}"/><path d="M0 343H900" stroke="${d.text}" stroke-width="1.5" opacity=".5"/></svg>`;
+    const k = 30;
+    const [x, y] = [450, 343 - 260];
+    return `<svg class="cover-arc" viewBox="0 0 900 380" aria-hidden="true"><path d="M90 343A360 260 0 0 1 810 343" fill="none" stroke="${d.text}" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round" opacity=".6"/><circle cx="${x}" cy="${y}" r="${k * 2}" fill="${d.text}" opacity=".07"/><path fill="${d.text}" d="M${x + 0.36 * k} ${y - 0.93 * k}A${k} ${k} 0 1 0 ${x + 0.93 * k} ${y + 0.36 * k}A${0.77 * k} ${0.77 * k} 0 0 1 ${x + 0.36 * k} ${y - 0.93 * k}Z"/><path d="M0 343H900" stroke="${d.text}" stroke-width="1.5" opacity=".5"/></svg>`;
   })() : '';
 
   // ---- type scale in use, and the Arabic hierarchy ------------------------------------------
@@ -326,7 +357,7 @@ h1{font-size:84px}h2{font-size:44px;margin-bottom:26px}h3{font-size:15px;letter-
 p{max-width:68ch}.lede{font-size:21px;max-width:56ch}.meta{font:12px/1.4 ui-monospace,monospace;color:${l.textMuted};margin:0 0 8px}
 .cover{background:${d.bg};color:${d.text};display:flex;flex-direction:column;justify-content:space-between}.cover .lock svg{height:96px;width:auto}.cover-arc{width:100%;height:auto;margin:24px 0}
 .construct{width:100%;max-width:640px;height:auto;display:block;margin:18px 0}.construct text{font:12px/1 ui-monospace,monospace;fill:${l.textMuted}}
-.two{display:grid;gap:28px;grid-template-columns:1.5fr 1fr}.step{border-top:1px solid ${l.border};padding:12px 0}.arabic .meta{text-align:right}.apps-wide{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);margin-bottom:18px}.apps-rest{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);align-items:start;max-width:780px}.apps-rest .tall{grid-row:span 2}.apps-wide svg,.apps-rest svg{width:100%;height:auto;border-radius:6px;border:1px solid ${l.border};display:block}.arabic{border:1px solid ${l.border};border-radius:${dna.layout.radius.md}px;padding:28px;background:${l.surfaceRaised};margin:18px 0}.arabic p{max-width:none}
+.two{display:grid;gap:28px;grid-template-columns:1.5fr 1fr}.step{border-top:1px solid ${l.border};padding:12px 0}.arabic .meta{text-align:right}.apps-wide{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);margin-bottom:18px}.apps-wide.three{grid-template-columns:repeat(3,1fr)}.apps-rest{display:grid;gap:18px;grid-template-columns:repeat(4,1fr);align-items:start;grid-auto-flow:dense}.apps-rest .tall{grid-row:span 2}.apps-wide svg,.apps-rest svg{width:100%;height:auto;border-radius:6px;border:1px solid ${l.border};display:block}.arabic{border:1px solid ${l.border};border-radius:${dna.layout.radius.md}px;padding:28px;background:${l.surfaceRaised};margin:18px 0}.arabic p{max-width:none}
 .scale{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.plate{border:1px solid ${l.border};border-radius:${dna.layout.radius.md}px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:150px;background:${l.surfaceRaised}}
 .plate.dark{background:${d.bg};border-color:${d.border}}.plate svg{max-width:100%;height:auto;max-height:110px}
@@ -365,7 +396,7 @@ ${layoutSection}
 <section><h2>Imagery and motion</h2><p><b>Style:</b> ${e(dna.imagery.style)}</p><p><b>Composition:</b> ${e(dna.imagery.composition)}</p>${dna.imagery.photography ? `<p><b>Photography:</b> ${e(dna.imagery.photography)}</p>` : ''}
 <div class="apps-rest" style="margin-top:18px">${appKeys.filter((k) => !k.startsWith('business') && aspect(k) <= 1.2 && k !== 'app-icon').map((k) => read(`applications/${k}.svg`)).join('')}</div>
 <h3>Motion: ${e(dna.motion.personality)}</h3><p>Intensity: ${dna.motion.intensity}. Durations (ms): ${Object.entries(dna.motion.durations).map(([k, v]) => `${k} ${v}`).join(' · ')}. Spring: stiffness ${dna.motion.spring.stiffness}, damping ${dna.motion.spring.damping}. With reduced motion: ${dna.motion.reducedMotion}.</p><div class="row">${ease}</div></section>
-<section><h2>Applications</h2><div class="apps-wide">${appKeys.filter((k) => aspect(k) > 1.2).map(appFigure).join('')}</div><div class="apps-rest">${appKeys.filter((k) => aspect(k) <= 1.2).sort((a, b) => aspect(a) - aspect(b)).map(appFigure).join('')}</div>
+<section><h2>Applications</h2><h3>Print</h3><div class="apps-wide">${appKeys.filter((k) => aspect(k) > 1.2 && k.startsWith('business')).map(appFigure).join('')}</div><h3>Screens</h3><div class="apps-wide three">${appKeys.filter((k) => aspect(k) > 1.2 && !k.startsWith('business')).map(appFigure).join('')}</div><div class="apps-rest">${appKeys.filter((k) => aspect(k) <= 1.2).sort((a, b) => aspect(a) - aspect(b)).map(appFigure).join('')}</div>
 <h3>Accessibility</h3><p>Target: ${dna.accessibility.target}. Minimum interactive target ${dna.accessibility.minTargetPx}px on the web, 44pt/48dp in native apps.</p>
 <h3>Files and integrity</h3><p>${checks.total} files delivered; ${checks.vectorPass}/${checks.vectorTotal} vector masters pass integrity checks (fills only, no live text, no raster, palette colours only).</p>
 <h3>Legal notice</h3><p class="note">This identity was generated from design parameters. No trademark search or clearance has been performed, and nothing here asserts that the name or mark is available for registration or free of conflict. Clearance by qualified counsel is required before use in commerce.</p></section>
@@ -414,6 +445,8 @@ async function brandBuild({ flags }) {
     }
   }
   write('logo/favicon.svg', svgDoc({ w: 64, h: 64, title: `${spec.wordmark.text} favicon`, body: symbolMarkup(sym, { primary: l.primary, accent: l.accent }) }));
+  // Home-screen icon master: full bleed, because the platform rounds the corners itself.
+  write('logo/touch-icon.svg', svgDoc({ w: 180, h: 180, title: `${spec.wordmark.text} home-screen icon`, body: iconMarkup(sym, { size: 180, field: l.primary, knockout: l.bg, accent: l.accent }) }));
 
   // 3. Icons.
   const names = iconNames();
@@ -426,7 +459,7 @@ async function brandBuild({ flags }) {
   files['icons/icons.json'] = path.join(out, 'icons', 'icons.json');
 
   // 4. Applications.
-  const apps = applications(dna, spec, marks, slug, T);
+  const apps = await applications(dna, spec, marks, slug, T);
   for (const [key, app] of Object.entries(apps)) write(`applications/${key}.svg`, app.svg, { allowStroke: true, allowBlends: true });
 
   // 5. Raster and PDF exports.
@@ -438,7 +471,7 @@ async function brandBuild({ flags }) {
       [`logo/${slug}-symbol.svg`, 'logo/png/symbol-512.png', 512, 512, true],
       [`logo/${slug}-symbol.svg`, 'logo/png/symbol-192.png', 192, 192, true],
       ['logo/favicon.svg', 'logo/png/favicon-32.png', 32, 32, true],
-      ['logo/favicon.svg', 'logo/png/apple-touch-icon-180.png', 180, 180, false, l.bg],
+      ['logo/touch-icon.svg', 'logo/png/apple-touch-icon-180.png', 180, 180, false, l.bg],
     ];
     for (const variant of ['', '-reversed']) {
       const src = `logo/${slug}-lockup-horizontal${variant}.svg`;

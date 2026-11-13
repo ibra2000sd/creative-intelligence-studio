@@ -95,26 +95,27 @@
         "items": [
           {
             "icon": "home",
-            "image": "feature-contour",
+            "image": "feature-noon",
             "title": "It learns the shape of your day",
             "body": "After a week the Cell knows when your home is busy and plans the battery around it."
           },
           {
             "icon": "battery",
-            "image": "feature-strata",
+            "image": "feature-night",
             "title": "A reserve you set once",
             "body": "Choose how much to hold back for an outage. Change it from the app whenever you like."
           },
           {
             "icon": "chart",
-            "image": "feature-instrument",
+            "image": "feature-dawn",
             "title": "The day, drawn as a curve",
             "body": "One chart shows what the roof made, what the house used and what the Cell kept."
           },
           {
             "icon": "leaf",
             "title": "Less from the grid",
-            "body": "Every stored hour is an hour you did not buy at the evening price."
+            "body": "Every stored hour is an hour you did not buy at the evening price.",
+            "image": "feature-dusk"
           }
         ]
       },
@@ -291,26 +292,27 @@
         "items": [
           {
             "icon": "home",
-            "image": "feature-contour",
+            "image": "feature-noon",
             "title": "تتعلّم إيقاع يومك",
             "body": "بعد أسبوع تعرف البطارية متى ينشغل بيتك، وتنظّم شحنها على هذا الأساس."
           },
           {
             "icon": "battery",
-            "image": "feature-strata",
+            "image": "feature-night",
             "title": "احتياطي تحدده مرة واحدة",
             "body": "اختر النسبة التي تريد حفظها لحالات الانقطاع، وغيّرها من التطبيق متى شئت."
           },
           {
             "icon": "chart",
-            "image": "feature-instrument",
+            "image": "feature-dawn",
             "title": "يومك مرسوماً في منحنى",
             "body": "مخطط واحد يبيّن ما أنتجه السطح وما استهلكه البيت وما احتفظت به البطارية."
           },
           {
             "icon": "leaf",
             "title": "اعتماد أقل على الشبكة",
-            "body": "كل ساعة مخزّنة هي ساعة لم تشترها بسعر المساء."
+            "body": "كل ساعة مخزّنة هي ساعة لم تشترها بسعر المساء.",
+            "image": "feature-dusk"
           }
         ]
       },

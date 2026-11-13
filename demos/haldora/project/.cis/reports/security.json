@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13T12:53:30.726Z",
+  "generatedAt": "2026-11-13T17:41:19.070Z",
   "checks": [
     {
       "id": "secrets",
       "category": "security",
       "status": "pass",
-      "summary": "No secrets found in 201 text files",
+      "summary": "No secrets found in 225 text files",
       "severity": "critical",
       "measurement": "static",
       "data": {
@@ -276,7 +276,7 @@
       "id": "ledger-integrity",
       "category": "security",
       "status": "pass",
-      "summary": "Audit trail intact: 232 hash-chained events",
+      "summary": "Audit trail intact: 427 hash-chained events",
       "severity": "critical",
       "measurement": "static"
     },
@@ -284,7 +284,7 @@
       "id": "asset-rights",
       "category": "delivery",
       "status": "pass",
-      "summary": "All 42 registered assets have recorded origin and rights",
+      "summary": "All 46 registered assets have recorded origin and rights",
       "severity": "critical",
       "measurement": "static"
     },

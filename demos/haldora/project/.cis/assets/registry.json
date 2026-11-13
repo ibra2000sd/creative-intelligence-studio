@@ -6,12 +6,12 @@
       "id": "app-store-feature",
       "kind": "raster",
       "purpose": "App store feature graphic",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/app-store-feature/app-store-feature-1024x500.png",
-          "sha256": "2fa3aeb7ab1dc49527c3062d283d81e6a11df01386f5ecb74fe8c69281098fc7",
-          "bytes": 260411,
+          "sha256": "9940dc14125a34a31d779351d36d20e93647a421e188ce47d990580d7ae2ecb9",
+          "bytes": 260415,
           "format": "png",
           "width": 1024,
           "height": 500,
@@ -29,7 +29,7 @@
           "scheme": "dark",
           "width": 1024,
           "height": 500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "2",
         "costUsd": 0,
@@ -55,6 +55,16 @@
           "at": "2026-11-13T13:00:34.731Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:37.166Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:16:04.157Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -72,7 +82,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 18.0"
+            "detail": "channel spread 17.9"
           },
           {
             "id": "palette-adherence",
@@ -92,12 +102,12 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "15152aff15152aff16162aff15152aff14142aff15152aff15162aff14152aff15152aff15152aff19182aff15162aff15162aff15152aff14142aff13142aff13142aff14152aff14142aff15152aff14152aff15152aff13142aff13142aff13142aff13142aff13142aff15152aff18172bff13142aff13142aff13142aff13142aff13142aff13142aff13142aff14152aff13142aff13142aff13142aff111329ff121329ff13142aff13142aff13142aff13142aff13142aff13142aff272330ff1f1f34ff13142aff13142aff13142aff13142aff13142aff13142aff302b34ff2d2d3fff14152bff13142aff13142aff13142aff13142aff13142aff"
+            "detail": "15152aff15152aff16162aff15152aff14142aff15152aff15162aff14152aff15152aff15152aff19182aff15162aff15162aff15152aff14142aff13142aff13142aff14152aff14142aff15152aff14152aff15152aff13142aff13142aff13142aff13142aff13142aff15152aff18172bff13142aff13142aff13142aff13142aff13142aff13142aff13142aff14152aff13142aff13142aff13142aff111329ff121329ff13142aff13142aff13142aff13142aff13142aff13142aff272330ff1f1f34ff13142aff13142aff13142aff13142aff13142aff13142aff302a34ff2d2d3fff14152bff13142aff13142aff13142aff13142aff13142aff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "260411 bytes, budget 500000"
+            "detail": "260415 bytes, budget 500000"
           },
           {
             "id": "text-is-vector",
@@ -110,14 +120,14 @@
       "usedIn": [
         "mobile:store"
       ],
-      "createdAt": "2026-11-13T13:00:34.731Z"
+      "createdAt": "2026-11-13T17:16:04.157Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "bloom-ground",
       "kind": "raster",
       "purpose": "Soft background for portal sign-in and empty states",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/bloom-ground/bloom-ground-1600x1000.webp",
@@ -140,7 +150,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1000,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "6",
         "costUsd": 0,
@@ -164,6 +174,16 @@
         },
         {
           "at": "2026-11-13T13:00:36.098Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:38.631Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:16:05.569Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -216,138 +236,201 @@
       "usedIn": [
         "app:signin"
       ],
-      "createdAt": "2026-11-13T13:00:36.098Z"
+      "createdAt": "2026-11-13T17:16:05.569Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "brand-applications",
       "kind": "vector",
       "purpose": "Brand applications: stationery and social templates",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "brand/applications/business-card-front.svg",
-          "sha256": "3f48d2e5c2f85fd6c9dbaa804db786c8750c848d7eae05a957e297105dca56be",
-          "bytes": 4330,
+          "sha256": "19d2af8930769e641b8d3f30fbea8cfdae41276bccf4c1796795ec4b039cf5e0",
+          "bytes": 4209,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/business-card-back.svg",
-          "sha256": "0b0601cba6c722540ac592d1643f39b92386fe6a8b9253297435a39294063a2f",
-          "bytes": 22268,
+          "sha256": "3311070cf51531b5f4261c981942bc20e28f57fde4855ce9aa25f8ed7ec92c15",
+          "bytes": 22174,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/social-square.svg",
-          "sha256": "6c48f24f76bedb402ef187ec22b3adb02f9659bb94af28006bc211af506b99b3",
-          "bytes": 30749,
+          "sha256": "90ebfc37e45f1c5c35cf7250974e24bb29ab4235c9899364f1b9fe528f19faf4",
+          "bytes": 20083,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/og-image.svg",
-          "sha256": "88bc798520c33fc98566c8140a533bbf66bf00e8a56658595f4ef05fa98b2126",
-          "bytes": 30258,
+          "sha256": "1fdd05e49d56bcf696062f822e047dec8a0c6764f59213788cbcf47addd8d00a",
+          "bytes": 30147,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/story.svg",
-          "sha256": "6faef3964571835cf0f2cb473f2497e02d828ac7a850f0d5220ab4d7cd057b06",
-          "bytes": 30990,
+          "sha256": "cd46a47131392e59d22b25478b3ce8f78ab95569fe08070411b60db8433a4a63",
+          "bytes": 20027,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/presentation-title.svg",
-          "sha256": "ead72ec245723b6997ad3fcf861925900514b7a9ddefb66c04e3d3823c1ec0c7",
-          "bytes": 34823,
+          "sha256": "98286b6bcd178a8950cfbf92fce7c1a3e3cbe874c991bf0d697fb9659eb6498a",
+          "bytes": 27334,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/social-square-ar.svg",
+          "sha256": "fd19b757f33f7b3250930cf556f2aeb94476871e5c3f1066dfc1c9860581fc9e",
+          "bytes": 15136,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/og-image-ar.svg",
+          "sha256": "b2a437cfa94806345eebc11bb51b634cb1400dfbe7038ffe49938e677464e347",
+          "bytes": 19420,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/applications/story-ar.svg",
+          "sha256": "222f32d680bf89d256e3a13da4c979c09be9a48733e70dffa67f382249e78cce",
+          "bytes": 16532,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/app-icon.svg",
-          "sha256": "4372cda8380e5b97d03833b20bbbe6a96cc866ea4952e7ba6850145270218016",
-          "bytes": 875,
+          "sha256": "64412497fbe1d0552db6aef049f0332db8af7cd1ee2e73b40d49c3cd771853a2",
+          "bytes": 562,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/png/social-square.png",
-          "sha256": "0acf1f2dbb960f7407d9f460607cb69d116f24062be6a3d60a49dc87358f27db",
-          "bytes": 863821,
+          "sha256": "07eac9c08e22addb54f140572b630d1405b77d9e740caabb1f119533991818ba",
+          "bytes": 868089,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/social-square.webp",
-          "sha256": "2f838c3d001d8f123172f10ec6c5b16c7147b07202bee8fbbc40b74253c77132",
-          "bytes": 31048,
+          "sha256": "87a3e8ed15ea83f300c38ac3d497fbc836d6473b4a2989299c3adcc697dbead9",
+          "bytes": 24340,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/og-image.png",
-          "sha256": "71d4bd41c0865dd9b69427814f835202ada35c41a19fae6db9ebf701fdbc300c",
-          "bytes": 652149,
+          "sha256": "ac24d118bee1ec87ae0683f04e295dd18548a6c49db1e98ef08fec5213b6cd13",
+          "bytes": 634647,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/og-image.webp",
-          "sha256": "e17b1e349b2cc1bd9d4875712af1a3319f7c8b0623b7eb1f8af0a6b3f0f04c1f",
-          "bytes": 24392,
+          "sha256": "ab6e3fc01982510b755ac74d4b0e7ce4bddeea12c48afed1c57a8af8ca9a719b",
+          "bytes": 25174,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/story.png",
-          "sha256": "555ddc323310f2f71737ce112cfd5bf1d8b0cf60752f5a0f7c1d1924395c3030",
-          "bytes": 1570184,
+          "sha256": "b206ba95049b83bb7b12ec539d56073ac32e4acc300a8b9538d53c16aa26d11f",
+          "bytes": 1580144,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/story.webp",
-          "sha256": "e83505a6bbef1747d46d8a6b823026dcdabe4bf4e3f7f450e5189ea91f2fc18d",
-          "bytes": 40382,
+          "sha256": "832147777e68d8787294da0b66629b95c350210a6846ea2f8c527c6ce1cf317f",
+          "bytes": 31488,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/presentation-title.png",
-          "sha256": "ef988b467f5e22391d404b77148cc62874c331fd943401a843cb68860e4b3876",
-          "bytes": 1135721,
+          "sha256": "31bd624daa2fd2dbffde98ac06674349c49a6c45bd6320c616fa61226ea615c0",
+          "bytes": 1135859,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/presentation-title.webp",
-          "sha256": "c92a329742007f88bac0c9aba6a310fb167285f92e3f8f0dead0562f9b6bda34",
-          "bytes": 39888,
+          "sha256": "c06d58c2d08f3b3bfc48ca35a3de904a7fc46f07b99f535a2d1ac942aaf81f5e",
+          "bytes": 33204,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/social-square-ar.png",
+          "sha256": "2b4b1bfd6773a1d6a3f9115b04c7ef86ee20f2d226d0cd84fa518c313617b7fd",
+          "bytes": 923407,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/social-square-ar.webp",
+          "sha256": "6b111967d6dbedef70b6c949c4e46497a11b06821abf3a5e007287bc42579063",
+          "bytes": 22238,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/og-image-ar.png",
+          "sha256": "f4a3632b73235e9bc623c7646046e01caefb8b08bc3d373981183ba123d5563f",
+          "bytes": 628876,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/og-image-ar.webp",
+          "sha256": "fd8433549c30086885a05e10859aa356b6d9d8e602bc3d96fa1883b8b4f7459e",
+          "bytes": 20808,
+          "format": "webp",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/png/story-ar.png",
+          "sha256": "51cac7219bf14f1caaeb9fc532c600737d78f59933f794745e4de795d0b8ba3d",
+          "bytes": 1620943,
+          "format": "png",
+          "role": "export"
+        },
+        {
+          "path": "brand/applications/webp/story-ar.webp",
+          "sha256": "f97eedc26b759af7b354a4836cdccc4635cad29ca94cd321b7a6e6f4d449227a",
+          "bytes": 28420,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/app-icon.png",
-          "sha256": "1290c6641a8e9149ff4652a59dd0a1248f9661a2b21f48b22dee1845a6df4567",
-          "bytes": 18930,
+          "sha256": "279a32e63f518fb4abd080180c38534e947a1fb1fce7167ee6efc5f03b649ceb",
+          "bytes": 16635,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/pdf/business-card-front.pdf",
-          "sha256": "49b619c10abd607036442cf89d4a251665c01872d898e799d78ec0c5c538dbc8",
-          "bytes": 9473,
+          "sha256": "fd4e325a201c0192de32782ee65f02558c432c8e407d68d1c46a9ba291661d64",
+          "bytes": 9321,
           "format": "pdf",
           "role": "export"
         },
         {
           "path": "brand/applications/pdf/business-card-back.pdf",
-          "sha256": "1b05cb953ac5b3f18e77ef9948a739d7d360923fee0a65b04128443c6b841def",
-          "bytes": 33151,
+          "sha256": "fd846d6340262bb8ea3bdb2e3a273eeaf0e2a178e7221217e5f80922cdbd6381",
+          "bytes": 33296,
           "format": "pdf",
           "role": "export"
         }
@@ -389,6 +472,41 @@
           "at": "2026-11-13T11:54:25.385Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T13:14:35.728Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:23:30.113Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:43:01.805Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:44:35.565Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:33:25.910Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:34:33.557Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T17:15:13.225Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -412,26 +530,26 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-13T11:54:25.385Z"
+      "createdAt": "2026-11-13T17:15:13.225Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "brand-guidelines",
       "kind": "document",
       "purpose": "Brand guidelines document",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "brand/guidelines.html",
-          "sha256": "c2f93428749fbdd2431daf8b2d762a75fa3704929222ea5a98d7dae051ff67cb",
-          "bytes": 669924,
+          "sha256": "65b01b56e9503127303ce5e04ec12e25d6b2b7ee5ce056c68aba601ab0bc63a0",
+          "bytes": 700370,
           "format": "html",
           "role": "export"
         },
         {
           "path": "brand/guidelines.pdf",
-          "sha256": "1c2bdc0a3e98fb58a2304480b79abbb628a34e3ca701e013a35976e321a65d8c",
-          "bytes": 9282970,
+          "sha256": "c3af96a36394c7a93bcd1559c22cf9c166a2da7017cb1a118c6ab74c00987ff0",
+          "bytes": 4866458,
           "format": "pdf",
           "role": "export"
         }
@@ -473,6 +591,41 @@
           "at": "2026-11-13T11:54:25.428Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T13:14:35.803Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:23:30.183Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:43:01.845Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:44:35.591Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:33:25.941Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:34:33.580Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T17:15:13.251Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -496,14 +649,14 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-13T11:54:25.428Z"
+      "createdAt": "2026-11-13T17:15:13.251Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "brand-icons",
       "kind": "vector",
       "purpose": "Icon family",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "brand/icons/sun.svg",
@@ -689,7 +842,7 @@
         },
         {
           "path": "brand/icons/icons.json",
-          "sha256": "54fab33bdf32fb5cd6aea5919efe50eb120ec2211e607a50501f10b3a3863064",
+          "sha256": "9651751bcc14597df5c7b9b60ded19e8da0f1058b2e8803cebe2e84241e7919e",
           "bytes": 3314,
           "format": "json",
           "role": "export"
@@ -732,6 +885,41 @@
           "at": "2026-11-13T11:54:25.361Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T13:14:35.685Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:23:30.082Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:43:01.755Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:44:35.518Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:33:25.875Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:34:33.524Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T17:15:13.174Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -755,180 +943,187 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-13T11:54:25.362Z"
+      "createdAt": "2026-11-13T17:15:13.174Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "brand-logo-system",
       "kind": "vector",
       "purpose": "Logo system: symbol, wordmark and lockups in colour, reversed and one-colour",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "brand/logo/haldora-symbol.svg",
-          "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d",
-          "bytes": 787,
+          "sha256": "d876a0837c92e79279f3acf282d5d6c873b2f9e1366b369b39f3334b20e34633",
+          "bytes": 699,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-wordmark.svg",
-          "sha256": "2d2347ec7b73af0e9cfaa5e4bc6e68e4fae3f637bb315547f348b01a815bb1d7",
-          "bytes": 3606,
+          "sha256": "3094d55eaee2e48f99ba976d194e896a25d3900a2f4b106327fa28c5f058ece2",
+          "bytes": 3616,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal.svg",
-          "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792",
-          "bytes": 4189,
+          "sha256": "5780a5f884c3c4cf05e12d1dca8183adc3f1332835c2226d9c7b1b1b50ef15d0",
+          "bytes": 4101,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked.svg",
-          "sha256": "6de7674e075852c112c89f6d8fae3facefe2088d8c290e9907a20b17b74ae44c",
-          "bytes": 4208,
+          "sha256": "b9ddd1c5b4d95a7f51c9b04eea67682362ef784bf189a6519f2bc09c77eb6297",
+          "bytes": 4113,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-reversed.svg",
-          "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e",
-          "bytes": 796,
+          "sha256": "bbad6b07c147e3d79924a63d689946d00a319f3141c53cf548652fa76f2f2897",
+          "bytes": 708,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-wordmark-reversed.svg",
-          "sha256": "fa3639551842b1c1b96551e6f43478c4f64d023900c37e9c0e7f4a9822f55579",
-          "bytes": 3615,
+          "sha256": "37bd5271c007295ed6f593122bd3fa91dab341ec0e934959bb1d91adc7ede469",
+          "bytes": 3625,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-reversed.svg",
-          "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a",
-          "bytes": 4171,
+          "sha256": "2a665b2159edb4bc7452e58f447a3b66b66d8b20e1d4c4941f8713e6d2fbc699",
+          "bytes": 4083,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-reversed.svg",
-          "sha256": "990b5de3e184906576e7ec209b66dd36b97d031702233a85a28c5470dd53a9f0",
-          "bytes": 4190,
+          "sha256": "b8fd38c9a163d11292aba5c609cd3890325b456312b6937381a939682ad3db8d",
+          "bytes": 4095,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-mono-ink.svg",
-          "sha256": "368ea3934fb0885f9f2841046c9ec24d9c0080492a40aa33ed20d3fac548a7e3",
-          "bytes": 768,
+          "sha256": "902d9c934f41cca48afd0b2e3545267c342e542077f973d9caacd0a8409370df",
+          "bytes": 681,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-mono-ink.svg",
-          "sha256": "8fe9f2d039fd6a863f40220e043e5edb084cbe9483b64e2075e5dd67af19c490",
-          "bytes": 4170,
+          "sha256": "3734bc0bc5cf80d8afe6131d8a700eb8cee6a435559517a6c06acdd964fa628b",
+          "bytes": 4083,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-mono-ink.svg",
-          "sha256": "260b3d4271e60e31d9bdc9670735b87678844f364f1ff96ed7ff84b13b1bbd21",
-          "bytes": 4188,
+          "sha256": "bd6c53dc9faf8a973fc97eaddf5bedf9b312b66cc679b8e6e7fa113d452e2ec1",
+          "bytes": 4095,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-mono-paper.svg",
-          "sha256": "2a7fd1def1253c82bc3d7dc663fe2e419620130bb896d861ef40e2bc5bcf6cef",
-          "bytes": 770,
+          "sha256": "1ff5278bf9b73372dcdfa82bb984c8c5e4b4c93e4dd4e13ab287d1d4658299b8",
+          "bytes": 683,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-mono-paper.svg",
-          "sha256": "9559596c0e4f93919926a25a65358b523099896becd3f91076677f944c48b29d",
-          "bytes": 4172,
+          "sha256": "2ab979750d1510580a5e38eed6e556fada64b398b292da0ca68c1a3292a2ae5a",
+          "bytes": 4085,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-mono-paper.svg",
-          "sha256": "41ad129b57b55f88256c94a5042ff929dd35a1cdb36fb7e9a4474a302256f135",
-          "bytes": 4190,
+          "sha256": "cec23194901a452c316fd14def2a0ddf9de7379494d88f59c4a11923b8abf77d",
+          "bytes": 4097,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/favicon.svg",
-          "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f",
-          "bytes": 695,
+          "sha256": "4c8bb9bb3a515c82019582d275afe30d0713f3ab469e223d7719783292ab5544",
+          "bytes": 596,
+          "format": "svg",
+          "role": "source"
+        },
+        {
+          "path": "brand/logo/touch-icon.svg",
+          "sha256": "0b2e3c4e0154645fce0e03c0acc5bc20285cd690b4b102f33fc41c7578a01f8b",
+          "bytes": 507,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/png/symbol-512.png",
-          "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561",
-          "bytes": 6753,
+          "sha256": "8c6df2f13b08a00def4468dadf113cb37c53594307faacaa98d856dbfd2f2106",
+          "bytes": 6808,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/symbol-192.png",
-          "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75",
-          "bytes": 2211,
+          "sha256": "f568bdf2ad7c36950b81a8269d281a31a0bcd9a371c03bc81330b8312e35247c",
+          "bytes": 2281,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/favicon-32.png",
-          "sha256": "eaeaf1cba004ffa501d824f695007134cfd911ce2b36a88a24d7c18986ec0249",
-          "bytes": 660,
+          "sha256": "cb1861282083a851fe8cd5e25e39f43e21e79af5ea04889fd397b499e69308f7",
+          "bytes": 688,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/apple-touch-icon-180.png",
-          "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1",
-          "bytes": 3543,
+          "sha256": "3edba627c94cc134fdfcd7a1bacdca09ef7526f8e1028c10c19362764fd9feda",
+          "bytes": 2455,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/lockup-horizontal-1200.png",
-          "sha256": "b12d5f3f9bb4ca99a5da8d992f21ab88ed80cac7b4a341d1d280017644d0fc2a",
-          "bytes": 19151,
+          "sha256": "7181d38b44f157a0f89f70299fcd9e28ed4da2bf053638b9dffc79d6fad3336a",
+          "bytes": 19228,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/webp/lockup-horizontal-1200.webp",
-          "sha256": "de094133dfbe5175ad8b0db83a1899548d327614176278b5ec67de7a6e6f75fa",
-          "bytes": 10528,
+          "sha256": "918a33772f260c127bd9b1287e1ba148446662392189242f70bdfece28abc91b",
+          "bytes": 10742,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/logo/png/lockup-horizontal-reversed-1200.png",
-          "sha256": "112f5d96ed693e84b2f714d1bb87cea0d6f760306ad364b75595ccbf70af7047",
-          "bytes": 19352,
+          "sha256": "39bb1b114ea39bac4b56d628be39ab455a30991e9ab13ceea6cfa29e194f7f77",
+          "bytes": 19310,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/webp/lockup-horizontal-reversed-1200.webp",
-          "sha256": "7b25435c34717743fae1fa6a324f1c99b4dc6c293a7078309292890cc91ffa7f",
-          "bytes": 11238,
+          "sha256": "6b0409397ed5a2a3c75dc90fe5c7192e4ddd55b448eb524025ff996dcfaa23cd",
+          "bytes": 11538,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/logo/pdf/haldora-lockup-horizontal.pdf",
-          "sha256": "9af8eef1f8d3f955b2db3166d857016ae312b5b4c0712c7f77b5a28189d644ab",
-          "bytes": 10397,
+          "sha256": "56a69130bb36a5ddc9bdb9ca04ee625b7248bfdca1e776b35962305174d9b0b7",
+          "bytes": 10663,
           "format": "pdf",
           "role": "export"
         }
@@ -970,6 +1165,41 @@
           "at": "2026-11-13T11:54:25.331Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T13:14:35.645Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:23:30.052Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:43:01.694Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T15:44:35.478Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:33:25.839Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T16:34:33.496Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T17:15:13.145Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -993,19 +1223,19 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-13T11:54:25.331Z"
+      "createdAt": "2026-11-13T17:15:13.145Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "campaign-square",
       "kind": "raster",
       "purpose": "Launch campaign, social square",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/campaign-square/campaign-square-1080x1080.png",
-          "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180",
-          "bytes": 865444,
+          "sha256": "b40afe7b227632e29857a390acbead2070d14e0e3a1cdea21cb146099318cf45",
+          "bytes": 870802,
           "format": "png",
           "width": 1080,
           "height": 1080,
@@ -1013,8 +1243,8 @@
         },
         {
           "path": "assets/generated/campaign-square/campaign-square-1080x1080.webp",
-          "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b",
-          "bytes": 24752,
+          "sha256": "703845883694af1a8324d7a7c6e5d294ddff1b10392ba63a75acf878de6b7de8",
+          "bytes": 25438,
           "format": "webp",
           "width": 1080,
           "height": 1080,
@@ -1032,7 +1262,7 @@
           "scheme": "light",
           "width": 1080,
           "height": 1080,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "campaign",
         "costUsd": 0,
@@ -1058,6 +1288,16 @@
           "at": "2026-11-13T13:00:27.356Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:27.307Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:56.318Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -1075,7 +1315,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 78.7"
+            "detail": "channel spread 78.8"
           },
           {
             "id": "palette-adherence",
@@ -1090,22 +1330,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "7074623d65635931"
+            "detail": "7064731d65635931"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "493940ff493b46ff3b3247ff352b41ff352b41ff352b41ff352b41ff352b41ff744f4bff724e4dff68494eff67464cff67464cff67464cff67464cff67474cff9c655cff9d6960ff9c665dff9c665cff9c655cff9c665dff9b6258ff9a6056ffd0836bffd48d75ffd58d74ffd68c72ffd38870ffd28970ffd79f8effd8a18effe69158ffe28f57ffcd8157ffbf7a56ffda8a57ffe69055ffe8af84ffd3a68aff865e46ff7a5644ff403242ff3d3042ff594242ff7f5a45ff765244ff413241ff1d1d38ff1d1e3bff1a1c3aff1a1c39ff121631ff151732ff1f1f3cff1b1d3aff12132aff13152cff14152cff13142bff131429ff121329ff14152dff14162dff"
+            "detail": "493941ff493b46ff3b3247ff352b41ff352b41ff352b41ff352b41ff352b41ff744f4bff724e4dff694950ff68484dff68484dff67474dff67464cff67474cff9c655cff9d6a61ff9d675eff9c665cff9c655cff9d675eff9c6359ff9a6056ffd0846bffd48e75ffd58d74ffd68c72ffd38870ffd28970ffd7a08effd9a18effe69259ffe28f57ffcd8156ffbf7a56ffda8a57ffe69055ffe8af85ffd3a68aff865e46ff7a5645ff403242ff3d3042ff594242ff7f5a45ff765244ff413241ff1d1c37ff1d1e3bff1a1c3aff1a1c39ff121631ff151732ff1f1f3cff1b1d3aff12132aff13152cff14152cff13142bff131429ff121329ff14152dff14162dff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "865444 bytes, budget 900000"
+            "detail": "870802 bytes, budget 900000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "24752 bytes, budget 900000"
+            "detail": "25438 bytes, budget 900000"
           },
           {
             "id": "text-is-vector",
@@ -1118,19 +1358,19 @@
       "usedIn": [
         "social"
       ],
-      "createdAt": "2026-11-13T13:00:27.356Z"
+      "createdAt": "2026-11-13T17:15:56.318Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "campaign-story",
       "kind": "raster",
       "purpose": "Launch campaign, vertical story",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/campaign-story/campaign-story-1080x1920.png",
-          "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a",
-          "bytes": 1580999,
+          "sha256": "b85e296ef4321de5cdbc66ab645514d5790fb03c897ec10fe84861b011f29f40",
+          "bytes": 1588980,
           "format": "png",
           "width": 1080,
           "height": 1920,
@@ -1138,8 +1378,8 @@
         },
         {
           "path": "assets/generated/campaign-story/campaign-story-1080x1920.webp",
-          "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951",
-          "bytes": 29918,
+          "sha256": "5be9a9064d8265ba30f265a9315c79422012b723b4357d152de4c4704d5e5ed7",
+          "bytes": 30430,
           "format": "webp",
           "width": 1080,
           "height": 1920,
@@ -1157,7 +1397,7 @@
           "scheme": "light",
           "width": 1080,
           "height": 1920,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "campaign",
         "costUsd": 0,
@@ -1181,6 +1421,16 @@
         },
         {
           "at": "2026-11-13T13:00:31.517Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:33.613Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:16:00.822Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1215,22 +1465,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "6010275e63635911"
+            "detail": "6820235e63635911"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "8c5c51ff8c5e55ff855857ff825453ff825453ff825453ff825453ff825453ffc47761ffc47861ffc47862ffc37761ffc37761ffc37762ffc37762ffc37762ffe08d5affe18e5cffe18f5dffe18f5dffe18f5dffe18e5cffe18d5affe18d5affe6ab67ffe7ad68ffe5a04bffe7a34fffe4a04dffe39e4affe29a43ffe49b43ffedc280ffebbd7affd39b53ffc69251ffe0a758ffeab15dffe5ad5bffd09a55ff91715dff856759ff4b3948ff493747ff614e50ff8a6d5dff83655aff4c3b48ff211d37ff1f1d3bff1a1c3aff1b1c39ff121530ff171731ff221f3bff1b1d3aff12132aff13142bff14152bff13142bff131429ff121329ff14152dff14162dff"
+            "detail": "8c5c51ff8c5d55ff855857ff825453ff825453ff825453ff825453ff825453ffc47761ffc47862ffc47863ffc37862ffc37862ffc37862ffc37762ffc37762ffe08d5affe18f5dffe18f5dffe18f5dffe18f5dffe18f5dffe18e5bffe18d5affe6ac67ffe7ae69ffe5a04bffe7a34fffe4a04dffe39e4affe39b44ffe49c44ffedc281ffebbd7bffd39b53ffc69251ffe0a758ffeab15cffe5ad5cffd09b55ff92725dff856759ff4b3948ff493747ff614e50ff8a6d5dff83655aff4c3b48ff211d37ff1f1d3bff1a1c3aff1b1c39ff121530ff171731ff221f3bff1b1d3aff12132aff13142bff14152bff13142bff131429ff121329ff14152dff14162dff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "1580999 bytes, budget 2200000"
+            "detail": "1588980 bytes, budget 2200000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "29918 bytes, budget 2200000"
+            "detail": "30430 bytes, budget 2200000"
           },
           {
             "id": "text-is-vector",
@@ -1243,19 +1493,19 @@
       "usedIn": [
         "social"
       ],
-      "createdAt": "2026-11-13T13:00:31.517Z"
+      "createdAt": "2026-11-13T17:16:00.822Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "campaign-wide",
       "kind": "raster",
       "purpose": "Launch campaign, link preview and banner",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/campaign-wide/campaign-wide-1200x630.png",
-          "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31",
-          "bytes": 442150,
+          "sha256": "3aa0909e29cdae2160df8f3bbcad51f33d4499e49d685d35cb22e107a912b6dd",
+          "bytes": 444944,
           "format": "png",
           "width": 1200,
           "height": 630,
@@ -1263,8 +1513,8 @@
         },
         {
           "path": "assets/generated/campaign-wide/campaign-wide-1200x630.webp",
-          "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151",
-          "bytes": 21766,
+          "sha256": "9cffaa0449177cb7d007f3e59d123e36101b0ff89385b4a7d3f7f8096a16dafb",
+          "bytes": 22062,
           "format": "webp",
           "width": 1200,
           "height": 630,
@@ -1282,7 +1532,7 @@
           "scheme": "light",
           "width": 1200,
           "height": 630,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "campaign",
         "costUsd": 0,
@@ -1308,6 +1558,16 @@
           "at": "2026-11-13T13:00:33.472Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:35.745Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:16:02.833Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -1325,7 +1585,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 41.0"
+            "detail": "channel spread 41.3"
           },
           {
             "id": "palette-adherence",
@@ -1345,17 +1605,17 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "2f2932ff222336ff13142aff13142aff13142aff121329ff121329ff13142aff292632ff1f2034ff121329ff121329ff101228ff1d1d31ff1e1f33ff121329ff27283eff313245ff2e2e42ff2e2e42ff2f2f42ff464656ff2f3043ff14152dff3d3d53ff535364ff3d3d54ff3d3d53ff3b3b52ff3b3c51ff1e1f3bff1b1c38ff46475fff43445cff1c1f3fff1d2040ff1e2041ff1d2040ff202242ff202243ff212345ff222547ff24274aff26294dff25294cff232647ff1f2241ff202242ff1a1c38ff1b1d39ff1d1f3cff1d1f3cff181a33ff1b1d38ff1c1d3aff1a1b36ff13142aff14152bff14152cff131429ff131329ff14152bff15162dff14152bff"
+            "detail": "2e2831ff222336ff13142aff14152aff14152aff121429ff121329ff13142aff2a2632ff202034ff13142aff13142aff121329ff1e1f32ff1e1f33ff121329ff27283eff323246ff2f2f43ff2e2e42ff2f2f42ff474756ff303044ff14152dff3d3d53ff535364ff3d3d53ff3d3d53ff3b3b52ff3b3c51ff1f203bff1b1c38ff474760ff43445cff1c1f3fff1d2040ff1e2041ff1d2040ff202242ff212343ff212345ff232547ff24274aff26294dff25294cff232647ff1f2241ff202242ff1a1c38ff1b1d39ff1d1f3cff1d1f3cff181a33ff1b1d38ff1c1d3aff1a1b36ff13142aff14152bff14152cff131429ff131329ff14152bff15162dff14152bff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "442150 bytes, budget 600000"
+            "detail": "444944 bytes, budget 600000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21766 bytes, budget 600000"
+            "detail": "22062 bytes, budget 600000"
           },
           {
             "id": "text-is-vector",
@@ -1369,14 +1629,14 @@
         "social",
         "web:og"
       ],
-      "createdAt": "2026-11-13T13:00:33.472Z"
+      "createdAt": "2026-11-13T17:16:02.833Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "feature-contour",
       "kind": "vector",
       "purpose": "Feature illustration: the home's energy map",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/feature-contour/feature-contour-1200x900.svg",
@@ -1408,7 +1668,7 @@
           "scheme": "light",
           "width": 1200,
           "height": 900,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "4",
         "costUsd": 0,
@@ -1432,6 +1692,11 @@
         },
         {
           "at": "2026-11-13T13:00:23.522Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:21.062Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1484,14 +1749,214 @@
       "usedIn": [
         "web:features"
       ],
-      "createdAt": "2026-11-13T13:00:23.522Z"
+      "createdAt": "2026-11-13T15:24:21.062Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-dawn",
+      "kind": "vector",
+      "purpose": "Feature illustration: the day drawn from sunrise",
+      "dnaRevision": 2,
+      "files": [
+        {
+          "path": "assets/generated/feature-dawn/feature-dawn-1200x900.svg",
+          "sha256": "562dda352cbf09480d24ed0f45c9af0196e95af368da43296eaef8de2aae6dd5",
+          "bytes": 2829,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-dawn/feature-dawn-1200x900.webp",
+          "sha256": "fcc8542dcd26d8cda95e2e939c19106205ac81512ba29a673461ed3bb4ce549a",
+          "bytes": 15090,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dawn",
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 2
+        },
+        "seed": "features",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T17:15:52.341Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 85.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0086615146ce8701"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "815353ff815353ff815353ff815353ff815353ff815353ff815353ff815353ffc17760ffc27760ffc27964ffc27863ffc37965ffc37964ffc17760ffc27660ffe08d59ffe18f5cffdf8d5affdf8d59ffdf8d59ffdf8d5affe18f5cffe08d59ffe6af6effe7af6dffe29840ffe29a43ffe29a43ffe29a43ffe29b45ffe29a44ffebc488ffe0ba84ffdaa456ffe4ad5cffe4ad5cffe3ac5cffd6a158ffdea75aff523f49ff3c3142ff392e42ff705853ff846559ff6c5251ff543c48ff523e48ff191c36ff171931ff181a34ff1d1e3bff2a263dff29263eff1e1f3aff181b33ff141529ff141529ff141529ff14152aff14152bff14152cff15162dff141529ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "15090 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-13T17:15:52.341Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-dusk",
+      "kind": "vector",
+      "purpose": "Feature illustration: the evening, run on stored power",
+      "dnaRevision": 2,
+      "files": [
+        {
+          "path": "assets/generated/feature-dusk/feature-dusk-1200x900.svg",
+          "sha256": "6157223b9bac376572c92d9609776f6eb7b5da2714eeddd99498a824368150f0",
+          "bytes": 2832,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-dusk/feature-dusk-1200x900.webp",
+          "sha256": "db1726cbe3b03052f875195bbc96223204fc0cb34eb5842b16db1ba667c56443",
+          "bytes": 14524,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dusk",
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 2
+        },
+        "seed": "features",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T17:15:53.100Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 76.9"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000e6345c4ce8701"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "362b41ff362b41ff362b41ff362b41ff362b41ff362b41ff362b41ff362b41ff68474dff68474dff69484fff6a4950ff6b4a51ff6a494fff68474dff68474dff9a6358ff9c655bff9a6359ff9a6358ff9a6358ff9b6459ff9c655aff9a6358ffcd7d64ffcd7e64ffcd7c63ffcd7c63ffcd7c63ffcc7a61ffd59985ffd49985ffe28f59ffd68958ffd68857ffe18e58ffe18e58ffdf8b55ffd5a07effdea781ff483842ff342b41ff312a40ff674a43ff775446ff5f4545ff463546ff483644ff191c36ff171931ff181a34ff1c1e3aff27243dff26243eff1e1f3aff181b33ff141529ff141529ff141529ff141529ff14152aff14152cff15162dff141529ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "14524 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-13T17:15:53.100Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "feature-instrument",
       "kind": "vector",
       "purpose": "Feature illustration: the day curve",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/feature-instrument/feature-instrument-1200x900.svg",
@@ -1523,7 +1988,7 @@
           "scheme": "light",
           "width": 1200,
           "height": 900,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "3",
         "costUsd": 0,
@@ -1547,6 +2012,16 @@
         },
         {
           "at": "2026-11-13T13:00:25.022Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:24.074Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:53.887Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1597,17 +2072,216 @@
       },
       "clientApproval": "pending",
       "usedIn": [
-        "web:features",
         "app:empty-state"
       ],
-      "createdAt": "2026-11-13T13:00:25.022Z"
+      "createdAt": "2026-11-13T17:15:53.887Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-night",
+      "kind": "vector",
+      "purpose": "Feature illustration: the reserve held for the night",
+      "dnaRevision": 2,
+      "files": [
+        {
+          "path": "assets/generated/feature-night/feature-night-1200x900.svg",
+          "sha256": "f34c1b2102c24a898fbaa933738c72c3bee482c2391c70cbb88f4d3f54859e81",
+          "bytes": 7793,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-night/feature-night-1200x900.webp",
+          "sha256": "96985f82bd4ce398508fd3dd4a3190af5624b00fece91af939bfd9172ab5ba59",
+          "bytes": 10452,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 2
+        },
+        "seed": "features",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T17:15:51.565Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 17.5"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000b6b4141240c08"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff18192dff17192dff18192dff1f2033ff222437ff131428ff17182eff1a1b31ff17182fff16172eff14152dff323345ff424352ff13142cff1c1e3aff1d1f3bff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1d1f3aff1c1e39ff212342ff222443ff202241ff202241ff202241ff202241ff222443ff212342ff202445ff212546ff202445ff202445ff232649ff25284cff25284bff26294cff181b35ff1a1d37ff1b1d3aff1c1e3bff1b1d3aff181b35ff181b33ff1d1f3bff141529ff141529ff141529ff14152cff14152bff141529ff14152aff14152aff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "10452 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-13T17:15:51.565Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "feature-noon",
+      "kind": "vector",
+      "purpose": "Feature illustration: the household day, as the Cell learns it",
+      "dnaRevision": 2,
+      "files": [
+        {
+          "path": "assets/generated/feature-noon/feature-noon-1200x900.svg",
+          "sha256": "a3bc828a27fc2896578f8d81d1b496ae160e75a326ba3eab919208dc61f399f1",
+          "bytes": 2810,
+          "format": "svg",
+          "width": 1200,
+          "height": 900,
+          "role": "source"
+        },
+        {
+          "path": "assets/generated/feature-noon/feature-noon-1200x900.webp",
+          "sha256": "ec0734e72453c62a47c77046be0e81bff30939082c62c3826806e52f0a014798",
+          "bytes": 13358,
+          "format": "webp",
+          "width": 1200,
+          "height": 900,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": null,
+          "scheme": "light",
+          "width": 1200,
+          "height": 900,
+          "dnaRevision": 2
+        },
+        "seed": "features",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T17:15:50.729Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1200x900, required 1200x900"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 58.9"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "3030b20282c7c703"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "ede1caffede1caffede1caffebd6b2ffebd6b2ffede1caffede1caffede1caffeee7daffeee7dbffefe7d9ffeacb9bffeacb9bffede7d9ffeee7dbffeee7dafff1ede5fff1ede3fff1ede4fff1eadefff1eadefff1ede4fff1ede3fff1ede5fff5f3ecfff5f3ecfff5f4edfff5f4edfff5f4edfff5f4edfff5f3ecfff5f3ecfff6efe3fff4ede1fff5eee3fff6efe4fff6efe4fff6efe4fff4ede0fff5eee2ffcfc7b5ffc5bdabffc1b8a7ffd8cfbcffe3dac8ffdfd6c5ffdad1c0ffd4cbb9ff908a80ff74706fff827e78ffa69f91ffb4ae9dffb7b1a0ffa8a293ff837e79ff4d4b55ff4d4b55ff4d4b55ff4d4b55ff4d4b55ff56545bff5c5a60ff4d4b55ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "13358 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:features"
+      ],
+      "createdAt": "2026-11-13T17:15:50.729Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "feature-strata",
       "kind": "vector",
       "purpose": "Feature illustration: stored energy",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/feature-strata/feature-strata-1200x900.svg",
@@ -1639,7 +2313,7 @@
           "scheme": "light",
           "width": 1200,
           "height": 900,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "9",
         "costUsd": 0,
@@ -1663,6 +2337,11 @@
         },
         {
           "at": "2026-11-13T13:00:24.262Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:22.665Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1715,19 +2394,19 @@
       "usedIn": [
         "web:features"
       ],
-      "createdAt": "2026-11-13T13:00:24.262Z"
+      "createdAt": "2026-11-13T15:24:22.665Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-arc",
       "kind": "vector",
       "purpose": "Website hero, arc and sun plane on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-arc/hero-arc-2400x1500.svg",
-          "sha256": "5cccf073af8678038e11229e7b55a6373390cbc40f5d4ef5db519b0103fe2bae",
-          "bytes": 910,
+          "sha256": "2bd50094129ea202287c70f458b15bcc3a05de078ee90efd321d52b8b7e60fab",
+          "bytes": 933,
           "format": "svg",
           "width": 2400,
           "height": 1500,
@@ -1735,8 +2414,8 @@
         },
         {
           "path": "assets/generated/hero-arc/hero-arc-2400x1500.webp",
-          "sha256": "a27900fcf3067029b3f3dfd5d74ad7602180128c9257312f10afa381fe6a0927",
-          "bytes": 25210,
+          "sha256": "e17222015628b42829cd59521f5782acdb36a794c6d38a6449cebd354ec439d9",
+          "bytes": 28002,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -1754,7 +2433,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -1780,6 +2459,16 @@
           "at": "2026-11-13T12:59:51.662Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:33.550Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:16.674Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -1802,7 +2491,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 51.5"
+            "detail": "channel spread 52.0"
           },
           {
             "id": "not-duplicate",
@@ -1817,12 +2506,12 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "000000000000000000000000bb872d22bb872d22000000000000000000000000000000000000000000000000d7973654d797365400000000000000000000000000000000000000010000000055381c0955381c0900000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            "detail": "000000000000000000000000bb872d22bb872d22000000000000000000000000000000000000000000000000da973654da97365400000000000000000000000000000000000000010000000055381c0955381c0900000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "25210 bytes, budget 160000"
+            "detail": "28002 bytes, budget 160000"
           }
         ]
       },
@@ -1830,19 +2519,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T12:59:51.662Z"
+      "createdAt": "2026-11-13T17:15:16.674Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-far",
       "kind": "raster",
       "purpose": "Website hero, far hills on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-far/hero-far-2400x1500.webp",
-          "sha256": "4ed0e3b6d9e3824dd2e4d68a23139a15f3092a7a9d54045fc2428b967dad6a75",
-          "bytes": 12338,
+          "sha256": "26623eca422103a2f6077b32c4776451811a97159432f59098e0727a422bbdc9",
+          "bytes": 12720,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -1860,7 +2549,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -1886,6 +2575,16 @@
           "at": "2026-11-13T12:59:52.455Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:34.442Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:17.571Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -1908,7 +2607,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 100.8"
+            "detail": "channel spread 108.0"
           },
           {
             "id": "not-duplicate",
@@ -1923,12 +2622,12 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d2d241c2d2d272d000000000000000000000000000000000000000000000000d2ccc7ffcfc8c3fac3bebae9cbc5c1f4b2ada9d1827e7b99a5a09cc285807d9bd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ff"
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d2d2d1c2d2d2d2d000000000000000000000000000000000000000000000000e1d8c4ffddd5c0fad2cbb8e9d9d1bef4beb8a7d18c877999b1ac9cc28b887b9be1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ffe1d8c4ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "12338 bytes, budget 120000"
+            "detail": "12720 bytes, budget 120000"
           }
         ]
       },
@@ -1936,19 +2635,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T12:59:52.455Z"
+      "createdAt": "2026-11-13T17:15:17.571Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-mid",
       "kind": "raster",
       "purpose": "Website hero, middle hills on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-mid/hero-mid-2400x1500.webp",
-          "sha256": "99e37bab5b7acfadfc9f5dc8c634c98963bc84867921f073bbeabc8a2990bf9d",
-          "bytes": 12732,
+          "sha256": "440ae5f694e22872d475866fe2f51cd637fc8fac2cfa82ff3ed261b9cede04b5",
+          "bytes": 13394,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -1966,7 +2665,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -1992,6 +2691,16 @@
           "at": "2026-11-13T12:59:53.233Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:35.366Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:18.452Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -2014,7 +2723,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 80.2"
+            "detail": "channel spread 78.9"
           },
           {
             "id": "not-duplicate",
@@ -2029,12 +2738,12 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012929293139393c505f5d6183555555390000000f2a2a2a060f0f0f10a19da3e0b4b1b7ffb3afb5ffb4b0b6ffaeaab0f8afabb1f899969bd5a6a1a8e6b3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ff"
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012929243139362f505d5b4f83555047390000000f2a2a2a060f0f0f10a09989e0b4ab99ffb2a998ffb3a998ffada594f8aea595f8989082d5a59d8de6b2a998ffb2a998ffb2a998ffb2a998ffb2a998ffb2a998ffb2a998ffb2a998ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "12732 bytes, budget 120000"
+            "detail": "13394 bytes, budget 120000"
           }
         ]
       },
@@ -2042,19 +2751,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T12:59:53.233Z"
+      "createdAt": "2026-11-13T17:15:18.452Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-mobile",
       "kind": "raster",
       "purpose": "Website hero, single composed image for small screens and reduced motion",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-mobile/hero-mobile-1080x1440.webp",
-          "sha256": "deb62d82fccc9b1855d3fa305152616cbb2577940a63927373935d2dfa647deb",
-          "bytes": 15112,
+          "sha256": "9e5cf9c51b1723155736c202b5944907fa49d34beebaa1cfa1778189c9a56135",
+          "bytes": 15884,
           "format": "webp",
           "width": 1080,
           "height": 1440,
@@ -2062,8 +2771,8 @@
         },
         {
           "path": "assets/generated/hero-mobile/hero-mobile-1080x1440.avif",
-          "sha256": "d3b80803199440137d4873e42a28c1611e17225ce837cb46db7c08db96e6c3b0",
-          "bytes": 8148,
+          "sha256": "4a371cae913cd766c8c4f7ce685094c63264412971e70b4e8821755daa8d65a8",
+          "bytes": 8867,
           "format": "avif",
           "width": 1080,
           "height": 1440,
@@ -2081,7 +2790,7 @@
           "scheme": "light",
           "width": 1080,
           "height": 1440,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2107,6 +2816,16 @@
           "at": "2026-11-13T12:59:56.299Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:38.631Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:22.034Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -2124,7 +2843,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 39.6"
+            "detail": "channel spread 58.0"
           },
           {
             "id": "palette-adherence",
@@ -2139,22 +2858,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "30301448a2b23736"
+            "detail": "3071328282f13736"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "ede0c9ffede0cbffeddfc8ffebd5afffebd5afffeddfc8ffede0c9ffede0c9ffeee8d9ffeee8d9ffeee5d7ffeacda2ffeacda2ffeee5d7ffeee8d9ffeee8d9fff2efe6fff2efe6fff2eee6fff1ece2fff1ece2fff2eee6fff2efe6fff2efe6fff7f4edfff7f4eefff6f3edfff7f4eefff6f4eefff6f3edfff6f3edfff6f3edfff1eae0ffede7dcfff8f0e4fff6eee3fff8f0e3fff8f1e3fff8f0e3fff8f1e3ffcdc7c0ffc8c2beffc8c2beffc1bcbaffcdc7bfffdad2c6ffd4cdc4ffdad2c6ffa8a5abffa9a6adffaca9adffa5a2a9ffa9a7acffa9a7acffa39ea9ff9b99a4ff89889aff8f8c9eff918f9fff8c8a9cff8d8c9dff8d8c9dff868599ff868599ff"
+            "detail": "ede0c9ffede0cbffede0c8ffebd5afffebd5afffede0c8ffede0c9ffede0c9ffeee8d9ffeee8d9ffeee5d5ffeacda2ffeacda2ffeee5d5ffeee8d9ffeee8d9fff2efe7fff1eee3fff2eee6fff1ece2fff1ece2fff2eee6fff1eee3fff2efe7fff6f3edfff6f3ecfff6f3edfff6f4eefff6f4eefff6f3edfff6f3ecfff6f3edfff3ece0fff1eaddfff8f1e4fff6efe3fff8f1e3fff8f1e4fff8f1e3fff8f1e3ffdcd3c1ffd3cbb9ffd1c8b7ffc8bfaeffd5cdbbffe2d7c4ffdfd7c4ffe1d7c4ff98948affa09a8effaba494ff969086ff9f998dffa09a8eff898580ff7c7876ff504e57ff5c595fff646164ff56545bff59575dff5a575eff484752ff484652ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "15112 bytes, budget 200000"
+            "detail": "15884 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "8148 bytes, budget 200000"
+            "detail": "8867 bytes, budget 200000"
           }
         ]
       },
@@ -2163,19 +2882,19 @@
         "web:hero",
         "mobile:onboarding"
       ],
-      "createdAt": "2026-11-13T12:59:56.299Z"
+      "createdAt": "2026-11-13T17:15:22.034Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-near",
       "kind": "raster",
       "purpose": "Website hero, near hills on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-near/hero-near-2400x1500.webp",
-          "sha256": "11065090891e421fecbbc79e9299900e103c665589a1fc621212c6ced349618b",
-          "bytes": 12350,
+          "sha256": "852805d4e1860aa91cab05a79d6691ac9c045da894ec57cc4f24ff0abde467ce",
+          "bytes": 12098,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -2193,7 +2912,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2219,6 +2938,16 @@
           "at": "2026-11-13T12:59:54.018Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:36.200Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:19.289Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -2241,7 +2970,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 55.5"
+            "detail": "channel spread 30.4"
           },
           {
             "id": "not-duplicate",
@@ -2256,12 +2985,12 @@
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002323233900000007000000001111111d1111110f0f0f0f1146464f775454609a8c8c9fff838293ee717180cd89899bfb878799f6868697f38c8c9eff8b8b9dff"
+            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111113900000007000000000808081d1111110f00000f1128262d772e2e319a4f4d57ff494752ee3f3e45cd4c4a54fb4c4a53f64a4952f34f4d57ff4e4c56ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "12350 bytes, budget 120000"
+            "detail": "12098 bytes, budget 120000"
           }
         ]
       },
@@ -2269,19 +2998,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T12:59:54.018Z"
+      "createdAt": "2026-11-13T17:15:19.289Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-arc",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, arc plane at night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-arc/hero-night-arc-2400x1500.webp",
-          "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c",
-          "bytes": 17616,
+          "sha256": "7c1bd6405c8d9cdfa4732b5ea768ca1d739f243eba1551ea68166469697bbd87",
+          "bytes": 19508,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -2300,7 +3029,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2336,6 +3065,16 @@
           "at": "2026-11-13T13:00:10.791Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:57.274Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:37.017Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -2358,7 +3097,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 40.9"
+            "detail": "channel spread 41.8"
           },
           {
             "id": "not-duplicate",
@@ -2378,7 +3117,7 @@
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "17616 bytes, budget 160000"
+            "detail": "19508 bytes, budget 160000"
           }
         ]
       },
@@ -2386,14 +3125,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:10.791Z"
+      "createdAt": "2026-11-13T17:15:37.017Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-far",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, far plane at night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-far/hero-night-far-2400x1500.webp",
@@ -2417,7 +3156,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2441,6 +3180,16 @@
         },
         {
           "at": "2026-11-13T13:00:11.610Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:58.605Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:37.849Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2493,14 +3242,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:11.610Z"
+      "createdAt": "2026-11-13T17:15:37.849Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-mid",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, mid plane at night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-mid/hero-night-mid-2400x1500.webp",
@@ -2524,7 +3273,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2548,6 +3297,16 @@
         },
         {
           "at": "2026-11-13T13:00:12.393Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:00.074Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:38.670Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2600,19 +3359,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:12.393Z"
+      "createdAt": "2026-11-13T17:15:38.670Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-mobile",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, single composed image for small screens",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.webp",
-          "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9",
-          "bytes": 12078,
+          "sha256": "a41b21cd7516c762bec97c9362d49350136742233fda92cbfe28e615a09672a7",
+          "bytes": 13194,
           "format": "webp",
           "width": 1080,
           "height": 1440,
@@ -2620,8 +3379,8 @@
         },
         {
           "path": "assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.avif",
-          "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26",
-          "bytes": 6502,
+          "sha256": "555dcdbf5ff617c87103d4e81150a835104b0120aec371ff77fe98bc70b6cd7c",
+          "bytes": 7350,
           "format": "avif",
           "width": 1080,
           "height": 1440,
@@ -2640,7 +3399,7 @@
           "scheme": "light",
           "width": 1080,
           "height": 1440,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2666,6 +3425,16 @@
           "at": "2026-11-13T13:00:15.717Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:05.455Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:42.291Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -2683,7 +3452,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 16.6"
+            "detail": "channel spread 17.3"
           },
           {
             "id": "palette-adherence",
@@ -2698,22 +3467,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "0c0c09514082ca80"
+            "detail": "0c0e21516082ca80"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "141529ff14152aff141529ff262839ff1e2032ff141529ff141529ff141529ff14152aff14152aff14152aff393a47ff2b2d3dff141529ff14152aff14152aff16172fff171830ff16172fff16172fff171930ff16172fff171830ff16172fff1a1d39ff1a1d39ff1a1d39ff1a1d38ff1a1d38ff1a1d39ff1a1d39ff1a1d39ff212243ff212243ff1f2343ff1f2343ff212243ff202243ff212243ff212243ff232648ff212445ff232749ff25284bff24274aff26284cff24274aff25284bff1b1d39ff191a35ff181a32ff1b1c38ff1a1c37ff1c1d39ff191b35ff1c1f3cff15172cff141529ff141528ff141529ff141529ff141529ff131428ff15162cff"
+            "detail": "141529ff14152aff141529ff272839ff1e2033ff141529ff141529ff141529ff14152aff14152aff16172bff393a48ff2c2d3dff16172bff14152aff14152aff161730ff181930ff181931ff171830ff191931ff171830ff181930ff161730ff1b1d38ff1c1e3aff1a1d39ff1a1d38ff1a1d38ff1a1d39ff1c1e3aff1b1d38ff222443ff212243ff1f2343ff1f2343ff212243ff202243ff212243ff222443ff242648ff212445ff232749ff25284bff24274aff26284cff24274aff25284bff1b1d39ff191a35ff181a32ff1b1c38ff1a1c37ff1c1d39ff191b35ff1c1f3cff15172cff141529ff141528ff141529ff141529ff141529ff131428ff15162cff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "12078 bytes, budget 200000"
+            "detail": "13194 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "6502 bytes, budget 200000"
+            "detail": "7350 bytes, budget 200000"
           }
         ]
       },
@@ -2721,14 +3490,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:15.717Z"
+      "createdAt": "2026-11-13T17:15:42.291Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-near",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, near plane at night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-near/hero-night-near-2400x1500.webp",
@@ -2752,7 +3521,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2776,6 +3545,16 @@
         },
         {
           "at": "2026-11-13T13:00:13.202Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:01.351Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:39.516Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2828,19 +3607,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:13.202Z"
+      "createdAt": "2026-11-13T17:15:39.516Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-sky",
       "kind": "raster",
       "purpose": "Website hero in the dark scheme, sky plane at night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-sky/hero-night-sky-2400x1500.webp",
-          "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4",
-          "bytes": 11580,
+          "sha256": "013ae3860836968f3ce4427699e5ab9e3ad3a0ddc43416131b27949cb6925023",
+          "bytes": 10594,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -2848,8 +3627,8 @@
         },
         {
           "path": "assets/generated/hero-night-sky/hero-night-sky-2400x1500.avif",
-          "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23",
-          "bytes": 3100,
+          "sha256": "0e86ead6de2feef17c1428a21950dabe7ad654fadaddc65b39e064e22d0eadfb",
+          "bytes": 2056,
           "format": "avif",
           "width": 2400,
           "height": 1500,
@@ -2868,7 +3647,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2892,6 +3671,16 @@
         },
         {
           "at": "2026-11-13T13:00:09.947Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:55.384Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:36.136Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2926,22 +3715,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "000000004a000000"
+            "detail": "0000000000000000"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff181831ff181831ff181831ff181831ff181831ff181831ff181831ff181831ff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff212244ff222345ff202244ff212244ff212244ff222345ff202244ff202244ff25284bff25284bff25284bff25284bff25284bff25284bff25284bff25284bff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff"
+            "detail": "14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff181831ff181831ff181831ff181831ff181831ff181831ff181831ff181831ff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff202244ff202244ff202244ff202244ff202244ff202244ff202244ff202244ff25284bff25284bff25284bff25284bff25284bff25284bff25284bff25284bff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "11580 bytes, budget 220000"
+            "detail": "10594 bytes, budget 220000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "3100 bytes, budget 220000"
+            "detail": "2056 bytes, budget 220000"
           }
         ]
       },
@@ -2949,14 +3738,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:09.947Z"
+      "createdAt": "2026-11-13T17:15:36.136Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-sun",
       "kind": "raster",
       "purpose": "Website hero, night sun or moon alone, on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-sun/hero-night-sun-2400x1500.webp",
@@ -2980,7 +3769,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -2999,6 +3788,16 @@
         },
         {
           "at": "2026-11-13T13:00:18.909Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:11.427Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:45.858Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3051,19 +3850,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:18.909Z"
+      "createdAt": "2026-11-13T17:15:45.858Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-night-track",
       "kind": "raster",
       "purpose": "Website hero, night arc without its sun, on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-night-track/hero-night-track-2400x1500.webp",
-          "sha256": "506817964f885f7820965cbd7c5c33627ae3493749535faedb4a53e617e5c92f",
-          "bytes": 13148,
+          "sha256": "2bffede65728de935674f015f709b36ea71d67fe8f0eb151dd89ebf743d07486",
+          "bytes": 15112,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -3082,7 +3881,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -3101,6 +3900,16 @@
         },
         {
           "at": "2026-11-13T13:00:18.122Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:09.911Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:44.949Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3125,7 +3934,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 16.4"
+            "detail": "channel spread 18.9"
           },
           {
             "id": "not-duplicate",
@@ -3145,7 +3954,7 @@
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "13148 bytes, budget 120000"
+            "detail": "15112 bytes, budget 120000"
           }
         ]
       },
@@ -3153,14 +3962,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:18.122Z"
+      "createdAt": "2026-11-13T17:15:44.949Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-sky",
       "kind": "raster",
       "purpose": "Website hero, back plane: sky gradient",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-sky/hero-sky-2400x1500.webp",
@@ -3192,7 +4001,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -3216,6 +4025,16 @@
         },
         {
           "at": "2026-11-13T12:59:50.799Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:32.594Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:15.703Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3273,14 +4092,14 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T12:59:50.800Z"
+      "createdAt": "2026-11-13T17:15:15.705Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-sun",
       "kind": "raster",
       "purpose": "Website hero, sun or moon alone, on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-sun/hero-sun-2400x1500.webp",
@@ -3303,7 +4122,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -3322,6 +4141,16 @@
         },
         {
           "at": "2026-11-13T13:00:17.335Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:08.686Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:44.040Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3374,19 +4203,19 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:17.335Z"
+      "createdAt": "2026-11-13T17:15:44.040Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "hero-track",
       "kind": "raster",
       "purpose": "Website hero, arc without its sun, on transparency",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/hero-track/hero-track-2400x1500.webp",
-          "sha256": "d6f8bdf0746449efc3bcd0f4bda18e0b921d7b999121998bb192743fd6f90a41",
-          "bytes": 16900,
+          "sha256": "0252449141cf4a148745cebd6465edf6c59715076e98b690eb463abb99453f06",
+          "bytes": 19838,
           "format": "webp",
           "width": 2400,
           "height": 1500,
@@ -3404,7 +4233,7 @@
           "scheme": "light",
           "width": 2400,
           "height": 1500,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "hero",
         "costUsd": 0,
@@ -3423,6 +4252,16 @@
         },
         {
           "at": "2026-11-13T13:00:16.534Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:06.829Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:43.178Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3447,7 +4286,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 13.0"
+            "detail": "channel spread 15.2"
           },
           {
             "id": "not-duplicate",
@@ -3467,7 +4306,7 @@
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "16900 bytes, budget 120000"
+            "detail": "19838 bytes, budget 120000"
           }
         ]
       },
@@ -3475,33 +4314,33 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-13T13:00:16.534Z"
+      "createdAt": "2026-11-13T17:15:43.178Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "model-cell",
       "kind": "model-3d",
       "purpose": "Product model for the interactive 3D experience",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "scene/public/models/cell.glb",
-          "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35",
-          "bytes": 55224,
+          "sha256": "5e378b77c1b7bbc2b7036764a9598f53bc16c47cf445904d9c1d62acfb7428cb",
+          "bytes": 69752,
           "format": "glb",
           "role": "export"
         },
         {
           "path": "scene/public/models/cell.source.glb",
-          "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c",
-          "bytes": 198088,
+          "sha256": "2d573ada418a15e0816c39d3c65c4a72d6cac0ca5d27815fd0c7335bf877122f",
+          "bytes": 251100,
           "format": "glb",
           "role": "source"
         },
         {
           "path": "scene/public/fallback/cell-chalk-dark.webp",
-          "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358",
-          "bytes": 6990,
+          "sha256": "824df376c885f5eb8ce5bdf608d7fdc92a1010447023b5f26096faa886d2aaa6",
+          "bytes": 9408,
           "format": "webp",
           "role": "fallback"
         },
@@ -3514,15 +4353,15 @@
         },
         {
           "path": "scene/public/fallback/cell-chalk.webp",
-          "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702",
-          "bytes": 6298,
+          "sha256": "b8c2323b711ae2d7c6a0db66781d006240b02fe24334dd8c05e9293c59f4ad44",
+          "bytes": 8810,
           "format": "webp",
           "role": "fallback"
         },
         {
           "path": "scene/public/fallback/cell-dusk-dark.webp",
-          "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4",
-          "bytes": 6422,
+          "sha256": "441bbd6f0dff2495fd1bfd1c4419395e97acbc6baf201d2e98ab1b9bb12161bd",
+          "bytes": 7148,
           "format": "webp",
           "role": "fallback"
         },
@@ -3535,15 +4374,15 @@
         },
         {
           "path": "scene/public/fallback/cell-dusk.webp",
-          "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1",
-          "bytes": 8308,
+          "sha256": "6f6c7ce0ceb071b0cc9b0034c7138e0dfdfc21fa798f0b8ef19a36c61fe54561",
+          "bytes": 9262,
           "format": "webp",
           "role": "fallback"
         },
         {
           "path": "scene/public/fallback/cell-ember-dark.webp",
-          "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2",
-          "bytes": 7424,
+          "sha256": "08a3285f34f14fb5ec2e5c08305dcfd8da71706bc9a1367296312473e1889e07",
+          "bytes": 9196,
           "format": "webp",
           "role": "fallback"
         },
@@ -3556,8 +4395,8 @@
         },
         {
           "path": "scene/public/fallback/cell-ember.webp",
-          "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33",
-          "bytes": 8344,
+          "sha256": "b15b2681fe104490a678b359aaf3f8abfdba423eb2a1e934f46e40f7be28c33a",
+          "bytes": 10324,
           "format": "webp",
           "role": "fallback"
         }
@@ -3607,6 +4446,36 @@
           "at": "2026-11-13T11:00:23.432Z",
           "action": "edited",
           "by": "creative-studio 3d stills"
+        },
+        {
+          "at": "2026-11-13T15:24:40.523Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-13T15:24:53.162Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
+        },
+        {
+          "at": "2026-11-13T16:34:36.266Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-13T16:34:47.687Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
+        },
+        {
+          "at": "2026-11-13T17:16:07.471Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-13T17:16:18.663Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
         }
       ],
       "rights": {
@@ -3633,14 +4502,14 @@
         "scene",
         "web:product"
       ],
-      "createdAt": "2026-11-13T11:00:10.090Z"
+      "createdAt": "2026-11-13T17:16:07.471Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "pattern-arc",
       "kind": "vector",
       "purpose": "Brand pattern for section grounds and packaging",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/pattern-arc/pattern-arc-1200x1200.svg",
@@ -3672,7 +4541,7 @@
           "scheme": "light",
           "width": 1200,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "11",
         "costUsd": 0,
@@ -3696,6 +4565,16 @@
         },
         {
           "at": "2026-11-13T13:00:22.707Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:19.604Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:49.939Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -3749,19 +4628,19 @@
         "web:contact",
         "brand"
       ],
-      "createdAt": "2026-11-13T13:00:22.707Z"
+      "createdAt": "2026-11-13T17:15:49.939Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dawn",
       "kind": "raster",
       "purpose": "Scroll story chapter: sunrise",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dawn/story-dawn-1600x1200.webp",
-          "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b",
-          "bytes": 21356,
+          "sha256": "11ce06b19cf0a9dac4d8b8ce5a55687fa03ec1c2d8fb5c8650886e7cce4f2519",
+          "bytes": 22112,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -3769,8 +4648,8 @@
         },
         {
           "path": "assets/generated/story-dawn/story-dawn-1600x1200.avif",
-          "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4",
-          "bytes": 9743,
+          "sha256": "6742b5d76ff30c0f0c98f2e76dc7c607d6a68d7ccee9875f6acbf7c2f7f5b803",
+          "bytes": 10400,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -3788,7 +4667,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -3814,6 +4693,16 @@
           "at": "2026-11-13T12:59:59.276Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:41.880Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:25.180Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -3831,7 +4720,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 85.6"
+            "detail": "channel spread 85.7"
           },
           {
             "id": "palette-adherence",
@@ -3846,22 +4735,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "0000015065e34104"
+            "detail": "0002615165e34104"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffe08e5affdf8d59ffe8b06effe7ae6dffe29840ffe29a43ffe29a43ffe29a43ffe29a43ffe29a43ffeac388ffeac287ffdfa657ffca9853ffdda759ffe5ae5cffe5ae5cffd6a158ff8a6f5eff7c5f58ff533b47ff423342ff604a4dff886b5dff85695bff56424bff191933ff1a1c37ff181b35ff1a1d38ff1c1e3bff1d1e3bff1e1f3bff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
+            "detail": "7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ffc17760ffc17760ffc27862ffc27863ffc27863ffc27862ffc17760ffc17760ffe08d59ffe18f5cffdf8d5affdf8d59ffdf8d59ffdf8d5affe18e5dffe08d5affe8b06fffe7af6dffe29840ffe29a43ffe29a43ffe29a43ffe29b45ffe29a44ffeac388ffebc388ffdfa757ffca9853ffdda759ffe5ae5cffe6ae5effd7a259ff8a6f5eff7c5f58ff533b47ff423343ff604a4dff886b5dff85695bff56424bff191933ff1a1c37ff181b35ff1a1d38ff1c1e3bff1d1e3bff1e1f3bff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21356 bytes, budget 200000"
+            "detail": "22112 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "9743 bytes, budget 200000"
+            "detail": "10400 bytes, budget 200000"
           }
         ]
       },
@@ -3869,14 +4758,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T12:59:59.276Z"
+      "createdAt": "2026-11-13T17:15:25.180Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dawn-ground",
       "kind": "raster",
       "purpose": "Scroll story, dawn: hills on transparency, in front of the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dawn-ground/story-dawn-ground-1600x1200.webp",
@@ -3899,7 +4788,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -3935,6 +4824,16 @@
           "at": "2026-11-13T13:00:19.721Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:12.995Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:46.747Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -3962,7 +4861,7 @@
           {
             "id": "not-duplicate",
             "pass": true,
-            "detail": "no near-identical asset registered"
+            "detail": "intentionally the same picture as \"story-dusk-ground\" (declared in the brief)"
           },
           {
             "id": "dhash",
@@ -3985,14 +4884,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:19.721Z"
+      "createdAt": "2026-11-13T17:15:46.747Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dawn-sky",
       "kind": "raster",
       "purpose": "Scroll story, dawn: sky only, behind the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dawn-sky/story-dawn-sky-1600x1200.webp",
@@ -4015,7 +4914,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4039,6 +4938,16 @@
         },
         {
           "at": "2026-11-13T13:00:19.214Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:11.983Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:46.210Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -4091,19 +5000,19 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:19.214Z"
+      "createdAt": "2026-11-13T17:15:46.210Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dusk",
       "kind": "raster",
       "purpose": "Scroll story chapter: dusk",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dusk/story-dusk-1600x1200.webp",
-          "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3",
-          "bytes": 21214,
+          "sha256": "fd84cb8f292e1abe5accad65a3a0cb0501442b857542ae0ae5c99c20e60ad7dc",
+          "bytes": 22188,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -4111,8 +5020,8 @@
         },
         {
           "path": "assets/generated/story-dusk/story-dusk-1600x1200.avif",
-          "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227",
-          "bytes": 9800,
+          "sha256": "b7a09076d1d8b50900ed10c6250afbc8009bbade0aed0f8b15a9329422851d4e",
+          "bytes": 10397,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -4130,7 +5039,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4156,6 +5065,16 @@
           "at": "2026-11-13T13:00:04.920Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:48.058Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:31.533Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -4173,7 +5092,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 77.4"
+            "detail": "channel spread 77.5"
           },
           {
             "id": "palette-adherence",
@@ -4188,22 +5107,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "0000420565e34204"
+            "detail": "0006234565e34204"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff68474dff68474dff68474dff68474dff68474dff68474dff68474dff68474dff996257ff9a6358ff996257ff996257ff996257ff996257ff9a6358ff996257ffcd7c63ffcd7c63ffcd7c63ffcd7c63ffcd7c63ffcc7a61ffd49884ffd49984ffe18e58ffe28e58ffd98a57ffc47d55ffd98958ffe18d55ffe8ac81ffd8a380ff835b44ff714f45ff443443ff382d42ff563f41ff7e5843ff7b5745ff4a3944ff191933ff191c37ff181b35ff1a1d38ff1c1e3bff1c1e3bff1d1f3cff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
+            "detail": "342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff68474dff68474dff6a494fff6a4950ff6a4950ff6a494fff68474dff68474dff996257ff9b645aff9a6359ff9a6358ff9a6358ff9a6359ff9b645aff996257ffcd7d63ffcd7d64ffcd7c63ffcd7c63ffcd7c63ffcc7a61ffd59985ffd49985ffe18f58ffe18f59ffd98a58ffc47d56ffd98958ffe28d55ffe7ac81ffd7a382ff815b43ff714f46ff443443ff382d42ff563f41ff7e5843ff7b5745ff4a3944ff191933ff1a1c37ff181b35ff1a1d38ff1c1e3bff1c1e3bff1d1f3cff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21214 bytes, budget 200000"
+            "detail": "22188 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "9800 bytes, budget 200000"
+            "detail": "10397 bytes, budget 200000"
           }
         ]
       },
@@ -4211,14 +5130,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:04.920Z"
+      "createdAt": "2026-11-13T17:15:31.533Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dusk-ground",
       "kind": "raster",
       "purpose": "Scroll story, dusk: hills on transparency, in front of the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dusk-ground/story-dusk-ground-1600x1200.webp",
@@ -4241,7 +5160,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4265,6 +5184,16 @@
         },
         {
           "at": "2026-11-13T13:00:21.412Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:16.241Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:48.565Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -4317,14 +5246,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:21.412Z"
+      "createdAt": "2026-11-13T17:15:48.565Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-dusk-sky",
       "kind": "raster",
       "purpose": "Scroll story, dusk: sky only, behind the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-dusk-sky/story-dusk-sky-1600x1200.webp",
@@ -4347,7 +5276,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4371,6 +5300,16 @@
         },
         {
           "at": "2026-11-13T13:00:20.905Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:15.126Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:48.028Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -4423,19 +5362,19 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:20.905Z"
+      "createdAt": "2026-11-13T17:15:48.028Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-night",
       "kind": "raster",
       "purpose": "Scroll story chapter: night",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-night/story-night-1600x1200.webp",
-          "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84",
-          "bytes": 14100,
+          "sha256": "f08e9702454ace02c1fc3f5f7704e3a5cb4ac54c08a9349aceb94e958b8abaa5",
+          "bytes": 15252,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -4443,8 +5382,8 @@
         },
         {
           "path": "assets/generated/story-night/story-night-1600x1200.avif",
-          "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b",
-          "bytes": 7191,
+          "sha256": "5503138ee3fb221dfb1314661b9f46b6f93f9fa4908b8a242ac0a6bf7a109184",
+          "bytes": 7874,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -4462,7 +5401,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4488,6 +5427,16 @@
           "at": "2026-11-13T13:00:07.905Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:52.482Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:34.662Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -4505,7 +5454,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 16.5"
+            "detail": "channel spread 17.4"
           },
           {
             "id": "palette-adherence",
@@ -4520,22 +5469,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "000b2b00002dc540"
+            "detail": "000b2b41412dc540"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff1d1e31ff212336ff131429ff16172eff17182fff16172eff16172eff15162dff323345ff414151ff13142bff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff202241ff202241ff202241ff202241ff202241ff202241ff202241ff202241ff212546ff232648ff26294dff25284bff25284bff222647ff222647ff222647ff1c1e3bff1a1c37ff1a1c36ff1a1d38ff1c1e3bff1c1e3bff1b1d3aff181b34ff15162dff14152bff141529ff141529ff141529ff14152aff141529ff141529ff"
+            "detail": "141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff17182cff18192dff18192dff1e2033ff212336ff131429ff16172eff1a1a31ff17182fff16172eff14152dff323345ff424352ff13142cff1c1e39ff1c1f39ff1b1d39ff1b1d38ff1b1d38ff1b1d38ff1c1f39ff1c1e39ff212342ff222443ff202241ff202241ff202241ff202241ff222443ff212342ff212546ff232648ff26294dff25284bff25284bff222647ff222647ff222647ff1c1e3bff1a1c38ff1a1c37ff1a1d38ff1c1e3bff1c1e3bff1b1d3aff181b34ff15162dff14152bff141529ff141529ff141529ff14152aff141529ff141529ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "14100 bytes, budget 200000"
+            "detail": "15252 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "7191 bytes, budget 200000"
+            "detail": "7874 bytes, budget 200000"
           }
         ]
       },
@@ -4543,14 +5492,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:07.905Z"
+      "createdAt": "2026-11-13T17:15:34.662Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-night-ground",
       "kind": "raster",
       "purpose": "Scroll story, night: hills on transparency, in front of the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-night-ground/story-night-ground-1600x1200.webp",
@@ -4573,7 +5522,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4597,6 +5546,16 @@
         },
         {
           "at": "2026-11-13T13:00:22.362Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:18.739Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:49.564Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -4649,14 +5608,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:22.362Z"
+      "createdAt": "2026-11-13T17:15:49.564Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-night-sky",
       "kind": "raster",
       "purpose": "Scroll story, night: sky only, behind the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-night-sky/story-night-sky-1600x1200.webp",
@@ -4679,7 +5638,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4703,6 +5662,16 @@
         },
         {
           "at": "2026-11-13T13:00:21.842Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:17.882Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:49.023Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -4755,19 +5724,19 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:21.842Z"
+      "createdAt": "2026-11-13T17:15:49.023Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-noon",
       "kind": "raster",
       "purpose": "Scroll story chapter: noon",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-noon/story-noon-1600x1200.webp",
-          "sha256": "6d15be1e7045cc48af458070c23f917be9a9c589018bd06a5a85b026ecfbffe1",
-          "bytes": 18426,
+          "sha256": "e94e0dcf3cca5f0e73474b2f35c89322b53b58833c828fbfbbcbaff28fda7943",
+          "bytes": 19434,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -4775,8 +5744,8 @@
         },
         {
           "path": "assets/generated/story-noon/story-noon-1600x1200.avif",
-          "sha256": "c026976785e6be921420d3e107b1d91305ddb0d0132dbaf8a2e0b1c9fdc1fddf",
-          "bytes": 9506,
+          "sha256": "683b4282d56f64a1c6fb5c1f4a8f049ca0829b7c549f8f94424a8ae88402a465",
+          "bytes": 9974,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -4794,7 +5763,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4820,6 +5789,16 @@
           "at": "2026-11-13T13:00:02.018Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:23:44.897Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:28.396Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -4837,7 +5816,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 39.4"
+            "detail": "channel spread 57.5"
           },
           {
             "id": "palette-adherence",
@@ -4852,22 +5831,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "3032308221634104"
+            "detail": "3030b20223734124"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "ede1caffede1caffede1caffebd6b2ffebd6b2ffede1caffede1caffede1caffeee7daffeee7daffeee8dcffeaca9cffeaca9cffeee8dcffeee7daffeee7dafff1ede5fff1ede5fff1ede5fff1eadefff1eadefff1ede5fff1ede5fff1ede5fff6f4edfff6f4edfff5f4edfff5f4edfff5f4edfff5f4edfff6f4edfff6f4edfff6efe4fff6efe4fff4ede3ffeee9dffff4eee2fff6efe4fff6efe4fff2ece0ffd8d0c5ffd6cfc5ffcac4bfffc2bebbffcbc6c0ffd8d1c5ffd8d0c6ffcac4bfff9b98a4ffa2a0a8ff9f9da7ffa7a4abffaeabafffaeabaeffafacafffaeabaeff88879aff89879aff88879aff8a889aff908d9eff8a889bff8b889bff918e9eff"
+            "detail": "ede1caffede1caffede1caffebd6b2ffebd6b2ffede1caffede1caffede1caffeee7daffeee7dbffede7d9ffeacb9bffeacb9bffefe7d9ffeee7dbffeee7dafff1ede5fff1ede3fff1ede4fff1eadefff1eadefff1ede4fff1ede3fff1ede5fff5f3ecfff5f3ecfff5f4edfff5f4edfff5f4edfff5f4edfff5f3ecfff5f3ecfff6efe3fff6efe3fff5eee3fff2eadffff5eee3fff6efe4fff6efe3fff3ece0ffdcd3c0ffe0d6c4ffd8cfbdffcdc4b3ffd4cbbaffe0d6c3ffe1d7c4ffd6cdbcff797674ff908b82ff89837dff999388ffaca595ffaca595ffada696ffaca595ff4d4b55ff4d4b55ff4d4b55ff504f58ff5f5c61ff514f58ff514f57ff615f63ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "18426 bytes, budget 200000"
+            "detail": "19434 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "9506 bytes, budget 200000"
+            "detail": "9974 bytes, budget 200000"
           }
         ]
       },
@@ -4875,19 +5854,19 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:02.018Z"
+      "createdAt": "2026-11-13T17:15:28.396Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-noon-ground",
       "kind": "raster",
       "purpose": "Scroll story, noon: hills on transparency, in front of the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-noon-ground/story-noon-ground-1600x1200.webp",
-          "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003",
-          "bytes": 10106,
+          "sha256": "1b7699446953e1245b2345a76b059a71f9b56c370d3da71b48411bca98f43d62",
+          "bytes": 11684,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -4905,7 +5884,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -4931,6 +5910,16 @@
           "at": "2026-11-13T13:00:20.549Z",
           "action": "generated",
           "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:14.642Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:47.644Z",
+          "action": "generated",
+          "by": "local-procedural"
         }
       ],
       "rights": {
@@ -4953,7 +5942,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 85.2"
+            "detail": "channel spread 81.1"
           },
           {
             "id": "not-duplicate",
@@ -4963,17 +5952,17 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "00000000181c4104"
+            "detail": "00000000181c4124"
           },
           {
             "id": "colour-signature",
             "pass": true,
-            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001515150c2626262e2727270d00000000000000001d1d1d1a75727291a29e9db9cdc7c3fecdc9c6ffafaba9d6837e7e9d8b8686a5c4bdbbee9f9ca9ffa7a4adffa3a2acffaba8b1ffb3afb5ffb2afb5ffb4b0b6ffb3afb5ff8b8b9dff8b8b9dff8b8b9dff8d8d9eff9292a2ff8c8c9eff8e8d9fff9492a1ff"
+            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001515150c2c26262e2727130d000000000000000027271d1a7c776d91ada997b9dbd3bffed9d0bbffb9b1a2d68a85799d948e81a5cec6b4ee7e7875ff948e85ff8d8780ff9f978bffb2a998ffb2a998ffb3aa99ffb2a998ff4e4c56ff4e4c56ff4d4c56ff524f59ff625e63ff525159ff525058ff636164ff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "10106 bytes, budget 160000"
+            "detail": "11684 bytes, budget 160000"
           }
         ]
       },
@@ -4981,14 +5970,14 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:20.549Z"
+      "createdAt": "2026-11-13T17:15:47.644Z"
     },
     {
       "schemaVersion": "1.0.0",
       "id": "story-noon-sky",
       "kind": "raster",
       "purpose": "Scroll story, noon: sky only, behind the scroll-driven sun",
-      "dnaRevision": 1,
+      "dnaRevision": 2,
       "files": [
         {
           "path": "assets/generated/story-noon-sky/story-noon-sky-1600x1200.webp",
@@ -5011,7 +6000,7 @@
           "scheme": "light",
           "width": 1600,
           "height": 1200,
-          "dnaRevision": 1
+          "dnaRevision": 2
         },
         "seed": "story",
         "costUsd": 0,
@@ -5035,6 +6024,16 @@
         },
         {
           "at": "2026-11-13T13:00:20.053Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T15:24:13.673Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T17:15:47.117Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -5087,7 +6086,7 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-13T13:00:20.053Z"
+      "createdAt": "2026-11-13T17:15:47.117Z"
     }
   ]
 }

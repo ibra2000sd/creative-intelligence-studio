@@ -1,6 +1,6 @@
 # Third-party software
 
-Generated 2026-11-13T12:53:30.726Z. Direct production dependencies and every package that is not under a permissive licence. Full trees are in the CycloneDX files beside this report.
+Generated 2026-11-13T17:41:19.070Z. Direct production dependencies and every package that is not under a permissive licence. Full trees are in the CycloneDX files beside this report.
 
 | Deliverable | Package | Version | Licence | Class | Relation |
 |---|---|---|---|---|---|

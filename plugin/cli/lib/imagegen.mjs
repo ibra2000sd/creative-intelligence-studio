@@ -36,7 +36,8 @@ function ridge(rand, w, h, baseY, amp, steps = 48) {
 
 const TIMES = {
   dawn: { t: 0.1, sky: (c) => [mix(c.dark.surface, c.dark.accent, 0.35), c.dark.accent, c.light.accent, mix(c.light.accent, c.light.bg, 0.6)], ground: (c) => [mix(c.dark.surface, c.dark.accent, 0.3), c.dark.surface, c.dark.bg], body: (c) => c.light.surfaceRaised },
-  noon: { t: 0.5, sky: (c) => [mix(c.light.bg, c.light.accent, 0.18), c.light.bg, c.light.surfaceRaised, mix(c.light.surfaceRaised, c.light.accent, 0.22)], ground: (c) => [mix(c.light.surface, c.light.primary, 0.14), mix(c.light.surface, c.light.primary, 0.3), mix(c.light.surface, c.light.primary, 0.5)], body: (c) => c.light.accent },
+  // Daylight hills are the warm grounds (linen, sand, stone), with indigo only as a dusting in the nearest ridge.
+  noon: { t: 0.5, sky: (c) => [mix(c.light.bg, c.light.accent, 0.18), c.light.bg, c.light.surfaceRaised, mix(c.light.surfaceRaised, c.light.accent, 0.22)], ground: (c) => [mix(c.light.border, c.light.surface, 0.35), mix(c.light.border, c.light.textMuted, 0.32), mix(c.light.textMuted, c.light.primary, 0.3)], body: (c) => c.light.accent },
   dusk: { t: 0.9, sky: (c) => [c.dark.surface, mix(c.dark.surface, c.dark.accent, 0.5), c.dark.accent, c.light.accent], ground: (c) => [mix(c.dark.surface, c.dark.accent, 0.22), c.dark.surface, c.dark.bg], body: (c) => c.light.surfaceRaised },
   night: { t: 0.72, sky: (c) => [c.dark.bg, c.dark.bg, c.dark.surface, c.dark.surfaceRaised], ground: (c) => [c.dark.surfaceRaised, c.dark.surface, c.dark.bg], body: (c) => c.dark.text },
 };
@@ -61,7 +62,7 @@ const RECIPES = {
    * and `sun` split the arc layer into the dashed arc alone and the sun or
    * moon alone, so a page can hide the arc behind its copy without touching the sun.
    */
-  'horizon-field'({ w, h, rand, dna, variant, layer, clear, sunAt }) {
+  'horizon-field'({ w, h, rand, dna, variant, layer, clear, sunAt, displayWidth }) {
     const c = colors(dna, 'light');
     const time = TIMES[variant] || TIMES.noon;
     const sky = time.sky(c);
@@ -76,7 +77,8 @@ const RECIPES = {
     const sy = horizon - ry * Math.sin(ang);
     const { r, halo } = horizonSun(w, h, variant, sunAt);
     // `clear` is a rectangle reserved for typography: stars are left out of it and the arc stops at its edges.
-    const inClear = (x, y) => clear && x > clear.x && x < clear.x + clear.w && y > clear.y && y < clear.y + clear.h;
+    const zones = [].concat(clear || []);
+    const inClear = (x, y) => zones.some((z) => x > z.x && x < z.x + z.w && y > z.y && y < z.y + z.h);
     const g = grain(dna);
     const want = (name) => !layer || layer === 'all' || layer === name || (layer === 'ground' && ['far', 'mid', 'near'].includes(name));
     let body = '';
@@ -95,7 +97,7 @@ const RECIPES = {
     if (want('arc') || layer === 'track' || layer === 'sun') {
       // The day arc with hour ticks: the brand's signature device.
       let arc = `M${f(cx - rx)} ${f(horizon)}A${f(rx)} ${f(ry)} 0 0 1 ${f(cx + rx)} ${f(horizon)}`;
-      if (clear) {
+      if (zones.length) {
         // Trace the arc as short segments and lift the pen while it is inside the reserved rectangle.
         arc = '';
         let pen = false;
@@ -109,7 +111,11 @@ const RECIPES = {
           }
         }
       }
-      if (layer !== 'sun') body += `<path d="${arc}" fill="none" stroke="${time.body(c)}" stroke-width="${f(Math.max(1.2, w / 900))}" stroke-dasharray="${f(w / 300)} ${f(w / 110)}" opacity="0.55"/>`;
+      // The dashes are drawn to read at the size the picture is shown: about 2 px wide, 5 px long and
+      // 12 px apart on screen. `displayWidth` is that width in CSS pixels (a phone hero shown 390 px
+      // wide from 1080 needs dashes almost three times thicker in the file than a desktop plane).
+      const k = w / (displayWidth || w * 0.6);
+      if (layer !== 'sun') body += `<path d="${arc}" fill="none" stroke="${time.body(c)}" stroke-width="${f(Math.max(1.2, 2 * k))}" stroke-dasharray="${f(5 * k)} ${f(12 * k)}" stroke-linecap="round" opacity="0.62"/>`;
       if (layer === 'track') {
         // the track alone: no marker
       } else if (variant === 'night') {
@@ -259,7 +265,7 @@ export function renderSvg(job, dna, { overlayMarkup = '' } = {}) {
   const w = job.width;
   const h = job.height;
   const seed = job.seed ?? `${dna.project.id}:${job.id}`;
-  const out = recipe({ w, h, rand: rng(`${seed}:${job.recipe}`), dna, variant: job.variant, layer: job.layer, clear: job.clear, sunAt: job.sunAt, scheme: job.scheme || dna.color.defaultScheme || 'light', motifs });
+  const out = recipe({ w, h, rand: rng(`${seed}:${job.recipe}`), dna, variant: job.variant, layer: job.layer, clear: job.clear || (job.clearZones || []).map((z) => ({ x: z.x * w, y: z.y * h, w: z.w * w, h: z.h * h })), sunAt: job.sunAt, displayWidth: job.displayWidth, scheme: job.scheme || dna.color.defaultScheme || 'light', motifs });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><defs>${out.defs}</defs>${out.body}${overlayMarkup}</svg>\n`;
   return { svg, describe: out.describe, seed: String(seed), parameters: { recipe: job.recipe, variant: job.variant || null, layer: job.layer || null, ...(job.sunAt !== undefined ? { sunAt: job.sunAt } : {}), scheme: job.scheme || dna.color.defaultScheme || 'light', width: w, height: h, dnaRevision: dna.revision } };
 }

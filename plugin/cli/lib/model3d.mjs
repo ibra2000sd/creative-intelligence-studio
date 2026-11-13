@@ -114,6 +114,11 @@ export function mergeGeometry(parts) {
  * The day arc as a dashed light: rounded dashes along a half circle. Dashes are a quarter longer
  * than the gaps, and the first and last dashes start exactly at the horizon.
  */
+/** A copy of a geometry moved by (x, y, z), for assembling a part from repeated pieces. */
+export function translateGeometry(g, [x, y, z]) {
+  return { ...g, positions: g.positions.map((v, i) => v + [x, y, z][i % 3]) };
+}
+
 export function dashedArc(radius, tube, { dashes = 11, sides = 10 } = {}) {
   const unit = 180 / (dashes + (dashes - 1) * 0.8);
   return mergeGeometry(Array.from({ length: dashes }, (_, i) => arcTube(radius, tube, i * unit * 1.8, i * unit * 1.8 + unit, { segments: 8, sides })));
@@ -200,6 +205,8 @@ export function batteryParts(spec = {}) {
       { name: 'ArcLight', material: 'arc', geometry: dashedArc(arcR, 0.008), translation: [0, arcY, front + 0.012] },
       { name: 'Horizon', material: 'arc', geometry: roundedBox(arcR * 2 + 0.05, 0.012, 0.01, 0.005, 3), translation: [0, arcY - 0.006, front + 0.012] },
       { name: 'Sun', material: 'sun', geometry: sphere(0.026), translation: [Math.cos((116 * Math.PI) / 180) * arcR, arcY + Math.sin((116 * Math.PI) / 180) * arcR, front + 0.016] },
+      // Ventilation slots low on the fascia: the detail that makes the slab read as an appliance.
+      { name: 'Grille', material: 'metal', geometry: mergeGeometry(Array.from({ length: 6 }, (_, i) => translateGeometry(roundedBox(W * 0.42, 0.007, 0.006, 0.0034, 2), [0, i * 0.017, 0]))), translation: [0, -H * 0.33, front + 0.009] },
       { name: 'Bracket', material: 'metal', geometry: roundedBox(W * 0.7, H * 0.5, 0.03, 0.01, 3), translation: [0, 0.05, -front - 0.012] },
     ],
   };
