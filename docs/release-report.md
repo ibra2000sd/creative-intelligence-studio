@@ -25,6 +25,7 @@ The plugin is built, validated, installed and exercised end to end on a fictiona
 | Ledger | `creative-studio ledger verify` | 127 events, chain intact |
 | Draft package | `creative-studio export --draft` | 593 files, 39.2 MB, read back and verified; 21 open issues listed inside |
 | Release archive | `node scripts/package-release.mjs` | `release/creative-intelligence-studio-0.1.0.zip`, 136 files, 307 KB, SHA-256 in `release/*.sha256` |
+| Live image provider | `creative-studio images generate --provider openai --consent` (one job, low quality) | generated on the first request in 14 s; 5 of 5 inspection checks pass; estimate $0.006; key absent from registry, ledger and cost records |
 
 ## Demonstration results by target
 
@@ -58,7 +59,7 @@ Third-party requests in built pages: none.
 | Experience DNA persistence | met | revisions archived; propagation test |
 | Functional brand workflow | met | brand manifest; end-to-end test |
 | Functional web workflow | met | 9 and 12 flows |
-| Asset pipeline with a real or local engine | met with the local engine | registry; asset tests. Paid provider: stand-in only |
+| Asset pipeline with a real or local engine | met | registry; asset tests; one live paid generation through the OpenAI adapter (`demos/live-provider-check/`) |
 | Verified animated website | met | story-scroll flow; scroll-motion check |
 | Verified interactive 3D experience | met | 10 scene flows including pixel read-back |
 | Genuinely implemented mobile workflow | partly met | real Expo project, tests, platform bundles, browser flows. **Native builds blocked** |
@@ -104,4 +105,4 @@ Thirty-six are recorded by phase in `docs/implementation-ledger.json`. The ones 
 
 ## What is not working or not done
 
-See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; a live paid image provider; model-driven skill invocation (unverified); the independent creative review and final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.
+See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; live coverage of the paid image provider beyond one generation; model-driven skill invocation (unverified); the independent creative review and final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.

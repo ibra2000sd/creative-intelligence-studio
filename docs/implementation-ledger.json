@@ -123,11 +123,13 @@
       "testsExecuted": [
         "tests/unit/engines.test.mjs",
         "tests/integration/assets.test.mjs",
-        "tests/e2e/demo-pipeline.test.mjs"
+        "tests/e2e/demo-pipeline.test.mjs",
+        "creative-studio images generate --provider openai --consent (live, one job)"
       ],
       "evidence": [
         "demos/haldora/project/brand/brand-manifest.json",
-        "demos/haldora/project/.cis/assets/registry.json"
+        "demos/haldora/project/.cis/assets/registry.json",
+        "demos/live-provider-check/ (one live gpt-image-2 generation, 5 of 5 inspection checks, estimated $0.006)"
       ],
       "defectsDiscovered": [
         "SVGO 4 changed its preset options",
@@ -140,7 +142,7 @@
         "All five"
       ],
       "blockers": [
-        "Live OpenAI generation not authorised: adapter verified against a local stand-in only"
+        "Live OpenAI coverage is one generation only (authorised and run on 2026-11-13); editing, transparency, other sizes and qualities remain verified against the local stand-in"
       ],
       "next": [
         "Authorise a small budget and run one live generation",

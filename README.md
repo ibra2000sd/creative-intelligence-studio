@@ -24,7 +24,7 @@ This repository contains the plugin, its tests, a complete demonstration for a f
 | Experience DNA, tokens, consistency | implemented and tested |
 | Brand identity (editable vector, exports, guidelines) | implemented and tested |
 | Image production (local engine, inspection, provenance) | implemented and tested |
-| Image production through a paid provider | implemented; tested against a local stand-in only |
+| Image production through a paid provider | implemented; verified with one live OpenAI generation (low quality, 1024 by 1024) on top of the stand-in tests. Edits, transparency and higher qualities are not exercised live |
 | Marketing website with scroll-driven story | implemented and tested in a browser |
 | Web application | implemented and tested in a browser |
 | Mobile application | implemented; type check, unit tests, iOS and Android bundles and browser flows pass; **native builds blocked on this machine** |
