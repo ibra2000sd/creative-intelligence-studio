@@ -36,8 +36,13 @@ a { color: inherit; }
 
 /* ---------------------------------------------------------------- header */
 .scroll-sentinel { position: absolute; inset-block-start: 0; height: 24px; width: 1px; pointer-events: none; }
-.site-header { position: sticky; inset-block-start: 0; z-index: 50; transition: background-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard); }
-.site-header.is-stuck { background: color-mix(in oklab, var(--color-bg) 90%, transparent); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--color-border); }
+/* The header is solid by default, so it is readable without JavaScript. Once the script has
+   confirmed the page is at the top, it turns transparent over the hero artwork and takes the
+   artwork's fixed daylight colours, whatever the colour scheme. */
+.site-header { position: sticky; inset-block-start: 0; z-index: 50; background: color-mix(in oklab, var(--color-bg) 92%, transparent); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--color-border); transition: background-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), color var(--dur-base) var(--ease-standard); }
+.header-ready .site-header:not(.is-stuck) { background: transparent; backdrop-filter: none; box-shadow: none; color: var(--light-text); }
+.header-ready .site-header:not(.is-stuck) .brand .on-light { display: block; }
+.header-ready .site-header:not(.is-stuck) .brand .on-dark { display: none; }
 .bar { display: flex; align-items: center; gap: var(--space-6); min-height: 4.5rem; }
 .brand { display: block; flex: none; }
 .brand img { height: 3.75rem; width: auto; margin-inline-start: -1.1rem; }
@@ -53,7 +58,7 @@ a { color: inherit; }
 .menu-button { display: none; margin-inline-start: auto; }
 @media (max-width: 859px) {
   .menu-button { display: inline-grid; }
-  .nav { position: absolute; inset-inline: 0; inset-block-start: 100%; margin: 0; background: var(--color-surface-raised); border-block-end: 1px solid var(--color-border); box-shadow: var(--shadow-2); display: none; }
+  .nav { position: absolute; inset-inline: 0; inset-block-start: 100%; margin: 0; color: var(--color-text); background: var(--color-surface-raised); border-block-end: 1px solid var(--color-border); box-shadow: var(--shadow-2); display: none; }
   .nav.is-open { display: block; }
   .nav ul { flex-direction: column; padding: var(--space-3) var(--grid-margin) var(--space-5); gap: 0; }
   .nav a { width: 100%; min-height: 48px; font-size: var(--text-md); }

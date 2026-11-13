@@ -1,0 +1,9 @@
+{
+  "id": "daylight-ledger",
+  "reason": "Only this direction explains the product through the household day and differs from both category conventions.",
+  "selectedAt": "2026-11-12T23:34:05.738Z",
+  "rejected": [
+    "grid-instrument",
+    "quiet-current"
+  ]
+}

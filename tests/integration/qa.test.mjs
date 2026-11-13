@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { tmpDir } from '../helpers.mjs';
 import { serve } from '../../plugin/cli/commands/build.mjs';
-import { runBrowserSuite, checkBundle, totals } from '../../plugin/cli/lib/qa.mjs';
+import { runBrowserSuite, checkBundle, totals, measurementIsNoisy } from '../../plugin/cli/lib/qa.mjs';
 import { findChrome, hasCapability } from '../../plugin/cli/lib/deps.mjs';
 
 const canRun = hasCapability('browser') && Boolean(findChrome());
@@ -137,4 +137,12 @@ test('bundle budgets and totals', () => {
   fs.writeFileSync(path.join(dir, 'big.js'), big);
   assert.equal(checkBundle(dir, 'x').status, 'warn');
   assert.deepEqual(totals([{ checks: [{ status: 'pass' }, { status: 'fail' }, { status: 'blocked' }] }]), { pass: 1, fail: 1, warn: 0, skipped: 0, blocked: 1 });
+});
+
+test('timing from a busy host or from runs that disagree is classed as unreliable', () => {
+  assert.equal(measurementIsNoisy([90, 72, 125, 110, 95], 95, 0.4), false, 'quiet host, tight runs');
+  assert.equal(measurementIsNoisy([90, 72, 125, 110, 95], 95, 2.5), true, 'more runnable work than cores');
+  assert.equal(measurementIsNoisy([374, 19, 38, 140, 105], 105, 0.4), true, 'identical loads from 19 to 374 ms');
+  assert.equal(measurementIsNoisy([1400, 1480, 1441, 1390, 1500], 1441, 0.4), false, 'slow but consistent is a real result');
+  assert.equal(measurementIsNoisy([0, 0, 0, 0, 0], 0, 0), false, 'Windows reports no load average');
 });

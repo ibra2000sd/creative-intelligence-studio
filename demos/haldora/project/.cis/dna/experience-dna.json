@@ -1,18 +1,43 @@
 {
   "schemaVersion": "1.0.0",
   "revision": 1,
-  "status": "proposed",
-  "project": { "id": "haldora-launch", "name": "Haldora launch", "client": "Haldora" },
+  "status": "approved",
+  "project": {
+    "id": "haldora-launch",
+    "name": "Haldora launch",
+    "client": "Haldora"
+  },
   "identity": {
     "name": "Haldora",
     "tagline": "Your home's energy, from sunrise to night",
     "positioning": "Haldora is the home battery that explains itself: it shows a household where its energy goes across the day and quietly makes the better choice.",
-    "personality": ["calm", "warm", "plain-spoken", "quietly clever"],
-    "audience": ["Homeowners with rooftop solar", "Existing Haldora customers", "Arabic-speaking households in the Gulf"],
+    "personality": [
+      "calm",
+      "warm",
+      "plain-spoken",
+      "quietly clever"
+    ],
+    "audience": [
+      "Homeowners with rooftop solar",
+      "Existing Haldora customers",
+      "Arabic-speaking households in the Gulf"
+    ],
     "voice": {
-      "tone": ["plain", "warm", "specific"],
-      "rules": ["Say what happens in the home, then the number.", "Use times of day before technical terms.", "One idea per sentence."],
-      "prohibited": ["Fear of outages as a selling point", "Jargon without a plain explanation", "Superlatives that cannot be shown"]
+      "tone": [
+        "plain",
+        "warm",
+        "specific"
+      ],
+      "rules": [
+        "Say what happens in the home, then the number.",
+        "Use times of day before technical terms.",
+        "One idea per sentence."
+      ],
+      "prohibited": [
+        "Fear of outages as a selling point",
+        "Jargon without a plain explanation",
+        "Superlatives that cannot be shown"
+      ]
     }
   },
   "direction": {
@@ -20,125 +45,469 @@
     "title": "Daylight Ledger",
     "rationale": "Homeowners think about energy in terms of their day, not in kilowatts. A warm editorial language separates Haldora from both the industrial and the gadget ends of its category, and the day arc gives every deliverable one shared idea.",
     "emotionalIntent": "Calm confidence: the feeling of a house that is taken care of.",
-    "principles": ["Tell it as a day.", "Warm grounds, one deep colour, one bright one.", "Numbers are set in mono and always have a plain-language label.", "Motion moves like light, never like machinery."],
-    "approvedPatterns": ["The day arc with the sun positioned by time", "Layered horizon landscapes", "Large serif statements with generous margins"],
-    "prohibitedPatterns": ["Green-on-black dashboards", "Glossy gadget renders on white", "Neon glows and lens flares", "Stock photography of smiling families"],
+    "principles": [
+      "Tell it as a day.",
+      "Warm grounds, one deep colour, one bright one.",
+      "Numbers are set in mono and always have a plain-language label.",
+      "Motion moves like light, never like machinery."
+    ],
+    "approvedPatterns": [
+      "The day arc with the sun positioned by time",
+      "Layered horizon landscapes",
+      "Large serif statements with generous margins"
+    ],
+    "prohibitedPatterns": [
+      "Green-on-black dashboards",
+      "Glossy gadget renders on white",
+      "Neon glows and lens flares",
+      "Stock photography of smiling families"
+    ],
     "signature": "The day arc: a sun on a dashed arc above a horizon, positioned by the time of day. It is the logo, the scroll story, the chart, the app dial and the light on the product.",
-    "usabilityImplications": ["Time-of-day colour never carries meaning alone; every state has a label.", "Amber is a fill and mark colour, never text on paper."],
-    "technicalRequirements": ["Scroll-linked timeline on the marketing page", "Light and dark schemes mapped to day and night", "Arabic typeface with a matching weight range"]
+    "usabilityImplications": [
+      "Time-of-day colour never carries meaning alone; every state has a label.",
+      "Amber is a fill and mark colour, never text on paper."
+    ],
+    "technicalRequirements": [
+      "Scroll-linked timeline on the marketing page",
+      "Light and dark schemes mapped to day and night",
+      "Arabic typeface with a matching weight range"
+    ]
   },
   "color": {
     "palette": {
-      "paper": { "hex": "#F6F1E7", "role": "Light ground", "name": "Paper" },
-      "linen": { "hex": "#EDE6D6", "role": "Light surface", "name": "Linen" },
-      "chalk": { "hex": "#FFFDF8", "role": "Raised surface, text on dark fills", "name": "Chalk" },
-      "ink": { "hex": "#1C1B18", "role": "Text", "name": "Ink" },
-      "stone": { "hex": "#5E5A50", "role": "Secondary text", "name": "Stone" },
-      "sand": { "hex": "#D9D0BC", "role": "Borders on light", "name": "Sand" },
-      "indigo": { "hex": "#2A2D66", "role": "Primary: dusk", "name": "Indigo" },
-      "amber": { "hex": "#E9A23B", "role": "Accent: the sun", "name": "Amber" },
-      "rose": { "hex": "#E58A6B", "role": "Accent on dark: last light", "name": "Rose" },
-      "ember": { "hex": "#B5381F", "role": "Danger on light, home consumption", "name": "Ember" },
-      "ochre": { "hex": "#8A5800", "role": "Warning on light", "name": "Ochre" },
-      "moss": { "hex": "#2F6B4F", "role": "Success on light", "name": "Moss" },
-      "night": { "hex": "#14152B", "role": "Dark ground", "name": "Night" },
-      "dusk": { "hex": "#1D1F3D", "role": "Dark surface", "name": "Dusk" },
-      "twilight": { "hex": "#272A4F", "role": "Dark raised surface", "name": "Twilight" },
-      "slate": { "hex": "#3A3D66", "role": "Borders on dark", "name": "Slate" },
-      "parchment": { "hex": "#F3EEE2", "role": "Text on dark", "name": "Parchment" },
-      "haze": { "hex": "#B4AFC4", "role": "Secondary text on dark", "name": "Haze" },
-      "mint": { "hex": "#6FBF95", "role": "Success on dark", "name": "Mint" },
-      "coral": { "hex": "#F0876A", "role": "Danger on dark", "name": "Coral" },
-      "iris": { "hex": "#5A61C9", "role": "Data: battery", "name": "Iris" },
-      "fern": { "hex": "#3E9B76", "role": "Data: grid", "name": "Fern" }
+      "paper": {
+        "hex": "#F6F1E7",
+        "role": "Light ground",
+        "name": "Paper"
+      },
+      "linen": {
+        "hex": "#EDE6D6",
+        "role": "Light surface",
+        "name": "Linen"
+      },
+      "chalk": {
+        "hex": "#FFFDF8",
+        "role": "Raised surface, text on dark fills",
+        "name": "Chalk"
+      },
+      "ink": {
+        "hex": "#1C1B18",
+        "role": "Text",
+        "name": "Ink"
+      },
+      "stone": {
+        "hex": "#5E5A50",
+        "role": "Secondary text",
+        "name": "Stone"
+      },
+      "sand": {
+        "hex": "#D9D0BC",
+        "role": "Borders on light",
+        "name": "Sand"
+      },
+      "indigo": {
+        "hex": "#2A2D66",
+        "role": "Primary: dusk",
+        "name": "Indigo"
+      },
+      "amber": {
+        "hex": "#E9A23B",
+        "role": "Accent: the sun",
+        "name": "Amber"
+      },
+      "rose": {
+        "hex": "#E58A6B",
+        "role": "Accent on dark: last light",
+        "name": "Rose"
+      },
+      "ember": {
+        "hex": "#B5381F",
+        "role": "Danger on light, home consumption",
+        "name": "Ember"
+      },
+      "ochre": {
+        "hex": "#8A5800",
+        "role": "Warning on light",
+        "name": "Ochre"
+      },
+      "moss": {
+        "hex": "#2F6B4F",
+        "role": "Success on light",
+        "name": "Moss"
+      },
+      "night": {
+        "hex": "#14152B",
+        "role": "Dark ground",
+        "name": "Night"
+      },
+      "dusk": {
+        "hex": "#1D1F3D",
+        "role": "Dark surface",
+        "name": "Dusk"
+      },
+      "twilight": {
+        "hex": "#272A4F",
+        "role": "Dark raised surface",
+        "name": "Twilight"
+      },
+      "slate": {
+        "hex": "#3A3D66",
+        "role": "Borders on dark",
+        "name": "Slate"
+      },
+      "parchment": {
+        "hex": "#F3EEE2",
+        "role": "Text on dark",
+        "name": "Parchment"
+      },
+      "haze": {
+        "hex": "#B4AFC4",
+        "role": "Secondary text on dark",
+        "name": "Haze"
+      },
+      "mint": {
+        "hex": "#6FBF95",
+        "role": "Success on dark",
+        "name": "Mint"
+      },
+      "coral": {
+        "hex": "#F0876A",
+        "role": "Danger on dark",
+        "name": "Coral"
+      },
+      "iris": {
+        "hex": "#5A61C9",
+        "role": "Data: battery",
+        "name": "Iris"
+      },
+      "fern": {
+        "hex": "#3E9B76",
+        "role": "Data: grid",
+        "name": "Fern"
+      }
     },
     "semantic": {
-      "light": { "bg": "#F6F1E7", "surface": "#EDE6D6", "surfaceRaised": "#FFFDF8", "text": "#1C1B18", "textMuted": "#5E5A50", "primary": "#2A2D66", "onPrimary": "#FFFDF8", "accent": "#E9A23B", "onAccent": "#1C1B18", "border": "#D9D0BC", "focus": "#2A2D66", "success": "#2F6B4F", "warning": "#8A5800", "danger": "#B5381F" },
-      "dark": { "bg": "#14152B", "surface": "#1D1F3D", "surfaceRaised": "#272A4F", "text": "#F3EEE2", "textMuted": "#B4AFC4", "primary": "#E9A23B", "onPrimary": "#1C1B18", "accent": "#E58A6B", "onAccent": "#1C1B18", "border": "#3A3D66", "focus": "#E9A23B", "success": "#6FBF95", "warning": "#E9A23B", "danger": "#F0876A" }
+      "light": {
+        "bg": "#F6F1E7",
+        "surface": "#EDE6D6",
+        "surfaceRaised": "#FFFDF8",
+        "text": "#1C1B18",
+        "textMuted": "#5E5A50",
+        "primary": "#2A2D66",
+        "onPrimary": "#FFFDF8",
+        "accent": "#E9A23B",
+        "onAccent": "#1C1B18",
+        "border": "#D9D0BC",
+        "focus": "#2A2D66",
+        "success": "#2F6B4F",
+        "warning": "#8A5800",
+        "danger": "#B5381F"
+      },
+      "dark": {
+        "bg": "#14152B",
+        "surface": "#1D1F3D",
+        "surfaceRaised": "#272A4F",
+        "text": "#F3EEE2",
+        "textMuted": "#B4AFC4",
+        "primary": "#E9A23B",
+        "onPrimary": "#1C1B18",
+        "accent": "#E58A6B",
+        "onAccent": "#1C1B18",
+        "border": "#3A3D66",
+        "focus": "#E9A23B",
+        "success": "#6FBF95",
+        "warning": "#E9A23B",
+        "danger": "#F0876A"
+      }
     },
     "defaultScheme": "light",
-    "dataViz": ["#E9A23B", "#5A61C9", "#B5381F", "#3E9B76"]
+    "dataViz": [
+      "#E9A23B",
+      "#5A61C9",
+      "#B5381F",
+      "#3E9B76"
+    ]
   },
   "typography": {
-    "display": { "family": "Fraunces", "fallback": "Georgia, 'Times New Roman', serif", "source": "npm:@fontsource/fraunces", "license": "OFL-1.1", "weights": [400, 600] },
-    "text": { "family": "Instrument Sans", "fallback": "system-ui, 'Helvetica Neue', Arial, sans-serif", "source": "npm:@fontsource/instrument-sans", "license": "OFL-1.1", "weights": [400, 500, 600] },
-    "mono": { "family": "JetBrains Mono", "fallback": "ui-monospace, Menlo, Consolas, monospace", "source": "npm:@fontsource/jetbrains-mono", "license": "OFL-1.1", "weights": [400, 500] },
-    "arabic": { "family": "IBM Plex Sans Arabic", "fallback": "'Geeza Pro', Tahoma, sans-serif", "source": "npm:@fontsource/ibm-plex-sans-arabic", "license": "OFL-1.1", "weights": [400, 600] },
-    "scale": { "basePx": 17, "ratio": 1.28, "displayTracking": -0.022, "textLineHeight": 1.58, "displayLineHeight": 1.04 }
+    "display": {
+      "family": "Fraunces",
+      "fallback": "Georgia, 'Times New Roman', serif",
+      "source": "npm:@fontsource/fraunces",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ]
+    },
+    "text": {
+      "family": "Instrument Sans",
+      "fallback": "system-ui, 'Helvetica Neue', Arial, sans-serif",
+      "source": "npm:@fontsource/instrument-sans",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        500,
+        600
+      ]
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "fallback": "ui-monospace, Menlo, Consolas, monospace",
+      "source": "npm:@fontsource/jetbrains-mono",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "arabic": {
+      "family": "IBM Plex Sans Arabic",
+      "fallback": "'Geeza Pro', Tahoma, sans-serif",
+      "source": "npm:@fontsource/ibm-plex-sans-arabic",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ]
+    },
+    "scale": {
+      "basePx": 17,
+      "ratio": 1.28,
+      "displayTracking": -0.022,
+      "textLineHeight": 1.58,
+      "displayLineHeight": 1.04
+    }
   },
   "layout": {
     "grammar": "editorial",
-    "grid": { "columns": 12, "gutterPx": 24, "maxWidthPx": 1320, "marginPx": 96 },
+    "grid": {
+      "columns": 12,
+      "gutterPx": 24,
+      "maxWidthPx": 1320,
+      "marginPx": 96
+    },
     "spacingUnitPx": 4,
-    "radius": { "sm": 6, "md": 14, "lg": 28 },
+    "radius": {
+      "sm": 6,
+      "md": 14,
+      "lg": 28
+    },
     "density": "airy"
   },
-  "iconography": { "style": "outline", "strokeWidth": 1.75, "gridPx": 24, "terminals": "round" },
+  "iconography": {
+    "style": "outline",
+    "strokeWidth": 1.75,
+    "gridPx": 24,
+    "terminals": "round"
+  },
   "imagery": {
     "style": "Flat layered landscape horizons in brand colour with fine paper grain; the sun sits on a dashed arc",
     "photography": "None at launch. If added later: daylight interiors, no people posed for the camera",
     "composition": "Low horizon in the lower third, large calm sky, subject placed on the arc",
-    "motifs": ["arc", "horizon", "grain"],
+    "motifs": [
+      "arc",
+      "horizon",
+      "grain"
+    ],
     "texture": "paper-grain",
-    "prohibited": ["Neon glow", "Lens flare", "Photorealistic people", "Circuit-board or lightning-bolt cliches"]
+    "prohibited": [
+      "Neon glow",
+      "Lens flare",
+      "Photorealistic people",
+      "Circuit-board or lightning-bolt cliches"
+    ]
   },
   "materials": {
     "surface": "Matte paper and powder-coated metal; nothing glossy",
     "lighting": "Soft directional daylight from the upper left, warm fill",
     "elevation": [
-      { "level": 0, "shadow": "none" },
-      { "level": 1, "shadow": "0 1px 2px rgba(28, 27, 24, 0.06), 0 2px 8px rgba(28, 27, 24, 0.05)" },
-      { "level": 2, "shadow": "0 2px 4px rgba(28, 27, 24, 0.06), 0 12px 28px rgba(28, 27, 24, 0.1)" },
-      { "level": 3, "shadow": "0 6px 12px rgba(28, 27, 24, 0.08), 0 28px 60px rgba(28, 27, 24, 0.16)" }
+      {
+        "level": 0,
+        "shadow": "none"
+      },
+      {
+        "level": 1,
+        "shadow": "0 1px 2px rgba(28, 27, 24, 0.06), 0 2px 8px rgba(28, 27, 24, 0.05)"
+      },
+      {
+        "level": 2,
+        "shadow": "0 2px 4px rgba(28, 27, 24, 0.06), 0 12px 28px rgba(28, 27, 24, 0.1)"
+      },
+      {
+        "level": 3,
+        "shadow": "0 6px 12px rgba(28, 27, 24, 0.08), 0 28px 60px rgba(28, 27, 24, 0.16)"
+      }
     ]
   },
   "motion": {
     "personality": "Unhurried, like light moving across a room",
     "intensity": "balanced",
-    "durations": { "instant": 80, "fast": 160, "base": 280, "slow": 520, "cinematic": 1100 },
-    "easings": { "standard": [0.3, 0, 0.2, 1], "enter": [0.16, 1, 0.3, 1], "exit": [0.5, 0, 0.8, 0.2], "emphasized": [0.2, 0.8, 0.2, 1] },
-    "spring": { "stiffness": 170, "damping": 22, "mass": 1 },
+    "durations": {
+      "instant": 80,
+      "fast": 160,
+      "base": 280,
+      "slow": 520,
+      "cinematic": 1100
+    },
+    "easings": {
+      "standard": [
+        0.3,
+        0,
+        0.2,
+        1
+      ],
+      "enter": [
+        0.16,
+        1,
+        0.3,
+        1
+      ],
+      "exit": [
+        0.5,
+        0,
+        0.8,
+        0.2
+      ],
+      "emphasized": [
+        0.2,
+        0.8,
+        0.2,
+        1
+      ]
+    },
+    "spring": {
+      "stiffness": 170,
+      "damping": 22,
+      "mass": 1
+    },
     "stagger": 60,
     "reducedMotion": "crossfade",
-    "prohibited": ["Bounce on data", "Parallax on body text", "Looping decoration in the portal", "Scroll hijacking"]
+    "prohibited": [
+      "Bounce on data",
+      "Parallax on body text",
+      "Looping decoration in the portal",
+      "Scroll hijacking"
+    ]
   },
   "materials3d": {
     "finishes": [
-      { "id": "chalk", "name": "Chalk", "baseColor": "#F6F1E7", "metalness": 0.05, "roughness": 0.62, "accent": "#E9A23B" },
-      { "id": "dusk", "name": "Dusk", "baseColor": "#2A2D66", "metalness": 0.2, "roughness": 0.48, "accent": "#E9A23B" },
-      { "id": "ember", "name": "Ember", "baseColor": "#B5381F", "metalness": 0.1, "roughness": 0.55, "accent": "#FFFDF8" }
+      {
+        "id": "chalk",
+        "name": "Chalk",
+        "baseColor": "#F6F1E7",
+        "metalness": 0.05,
+        "roughness": 0.62,
+        "accent": "#E9A23B"
+      },
+      {
+        "id": "dusk",
+        "name": "Dusk",
+        "baseColor": "#2A2D66",
+        "metalness": 0.2,
+        "roughness": 0.48,
+        "accent": "#E9A23B"
+      },
+      {
+        "id": "ember",
+        "name": "Ember",
+        "baseColor": "#B5381F",
+        "metalness": 0.1,
+        "roughness": 0.55,
+        "accent": "#FFFDF8"
+      }
     ],
-    "environment": { "keyLight": "#FFFDF8", "fillLight": "#E9A23B", "background": "#F6F1E7", "exposure": 1.05 }
+    "environment": {
+      "keyLight": "#FFFDF8",
+      "fillLight": "#E9A23B",
+      "background": "#F6F1E7",
+      "exposure": 1.05
+    }
   },
   "accessibility": {
     "target": "WCAG 2.2 AA",
     "minTextContrast": 4.5,
     "minTargetPx": 24,
-    "notes": ["Amber never carries text on light grounds.", "Every chart series has a text label and a distinct dash or shape, not colour alone."]
+    "notes": [
+      "Amber never carries text on light grounds.",
+      "Every chart series has a text label and a distinct dash or shape, not colour alone."
+    ]
   },
   "responsive": {
-    "breakpointsPx": { "sm": 480, "md": 768, "lg": 1024, "xl": 1320 },
+    "breakpointsPx": {
+      "sm": 480,
+      "md": 768,
+      "lg": 1024,
+      "xl": 1320
+    },
     "strategy": "Mobile compositions are designed separately, not scaled down: the arc becomes a full-width band and columns become a single measure."
   },
   "localization": {
     "defaultLocale": "en",
-    "locales": ["en", "ar"],
+    "locales": [
+      "en",
+      "ar"
+    ],
     "rtl": true,
     "numerals": "latin",
-    "notes": ["Layouts use logical properties only.", "The day arc keeps its left-to-right sunrise-to-sunset direction in Arabic: it depicts the sky, not reading order.", "Arabic headings use the Arabic face with tracking reset to zero."]
+    "notes": [
+      "Layouts use logical properties only.",
+      "The day arc keeps its left-to-right sunrise-to-sunset direction in Arabic: it depicts the sky, not reading order.",
+      "Arabic headings use the Arabic face with tracking reset to zero."
+    ]
   },
   "platformExceptions": [
-    { "platform": "ios", "rule": "Use the system navigation bar and tab bar behaviours; brand colour applies to tint and content only.", "reason": "Platform conventions win over brand chrome in native navigation." },
-    { "platform": "android", "rule": "System back always works; no custom back affordances.", "reason": "Platform convention." },
-    { "platform": "3d", "rule": "The product finish colours are material base colours and may read lighter or darker under scene lighting.", "reason": "Physically based shading." },
-    { "platform": "print", "rule": "CMYK and spot values are not defined by this document.", "reason": "They depend on the press and stock and must be proofed." }
+    {
+      "platform": "ios",
+      "rule": "Use the system navigation bar and tab bar behaviours; brand colour applies to tint and content only.",
+      "reason": "Platform conventions win over brand chrome in native navigation."
+    },
+    {
+      "platform": "android",
+      "rule": "System back always works; no custom back affordances.",
+      "reason": "Platform convention."
+    },
+    {
+      "platform": "3d",
+      "rule": "The product finish colours are material base colours and may read lighter or darker under scene lighting.",
+      "reason": "Physically based shading."
+    },
+    {
+      "platform": "print",
+      "rule": "CMYK and spot values are not defined by this document.",
+      "reason": "They depend on the press and stock and must be proofed."
+    }
   ],
   "evidence": [
-    { "field": "identity", "source": "client", "note": "Positioning and audiences come from the brief." },
-    { "field": "direction", "source": "creative-proposal", "note": "Daylight Ledger was chosen over Grid Instrument and Quiet Current at gate G1." },
-    { "field": "color", "source": "creative-proposal", "note": "Contrast ratios verified by `creative-studio dna check`." },
-    { "field": "typography", "source": "research", "note": "All four families are OFL-1.1, verified from their npm package metadata." },
-    { "field": "motion", "source": "client", "note": "The brief sets the motion level to balanced." },
-    { "field": "localization", "source": "client", "note": "Launch markets are the UK and the UAE." }
-  ]
+    {
+      "field": "identity",
+      "source": "client",
+      "note": "Positioning and audiences come from the brief."
+    },
+    {
+      "field": "direction",
+      "source": "creative-proposal",
+      "note": "Daylight Ledger was chosen over Grid Instrument and Quiet Current at gate G1."
+    },
+    {
+      "field": "color",
+      "source": "creative-proposal",
+      "note": "Contrast ratios verified by `creative-studio dna check`."
+    },
+    {
+      "field": "typography",
+      "source": "research",
+      "note": "All four families are OFL-1.1, verified from their npm package metadata."
+    },
+    {
+      "field": "motion",
+      "source": "client",
+      "note": "The brief sets the motion level to balanced."
+    },
+    {
+      "field": "localization",
+      "source": "client",
+      "note": "Launch markets are the UK and the UAE."
+    }
+  ],
+  "updatedAt": "2026-11-12T23:34:08.622Z"
 }

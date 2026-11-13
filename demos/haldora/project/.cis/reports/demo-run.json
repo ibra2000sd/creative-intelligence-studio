@@ -1,0 +1,254 @@
+{
+  "ranAt": "2026-11-12T23:45:39.113Z",
+  "mode": "full",
+  "commands": [
+    {
+      "command": "creative-studio plan",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task recover",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start intake",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio brief check",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done intake",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio approve G0-brief --actor Mira Solberg (fictional client) --role client --simulated --note Demonstration: brief confirmed.",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start research",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done research",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start directions",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio directions check",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio directions board",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio directions select daylight-ledger --reason Only this direction explains the product through the household day and differs from both category conventions. --actor Mira Solberg (fictional client)",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done directions",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio approve G1-direction --actor Mira Solberg (fictional client) --role client --simulated --note Demonstration: Daylight Ledger chosen over Grid Instrument and Quiet Current.",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start dna",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio dna check",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio dna tokens",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done dna",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio approve G2-system --actor Mira Solberg (fictional client) --role client --simulated --note Demonstration: Experience DNA accepted.",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio dna approve",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio dna tokens",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start motion-spec",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio motion check",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done motion-spec",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start brand",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio brand build",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio brand check",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done brand",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start images",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio images generate",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio images verify",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done images",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start scene-3d",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio 3d build --force",
+      "exit": 0
+    },
+    {
+      "command": "pnpm install --ignore-workspace --reporter=silent [scene]",
+      "exit": 0
+    },
+    {
+      "command": "npm run build [scene]",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done scene-3d",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start website",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio website scaffold --force",
+      "exit": 0
+    },
+    {
+      "command": "pnpm install --ignore-workspace --reporter=silent [web]",
+      "exit": 0
+    },
+    {
+      "command": "npm run build [web]",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done website",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start web-app",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio website scaffold --kind app --force",
+      "exit": 0
+    },
+    {
+      "command": "pnpm install --ignore-workspace --reporter=silent [app]",
+      "exit": 0
+    },
+    {
+      "command": "npm test [app]",
+      "exit": 0
+    },
+    {
+      "command": "npm run build [app]",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done web-app",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start mobile",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio mobile scaffold --force",
+      "exit": 0
+    },
+    {
+      "command": "pnpm install --ignore-workspace --reporter=silent [mobile]",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done mobile",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio dna consistency",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio test --update-baselines",
+      "exit": 1
+    },
+    {
+      "command": "creative-studio audit",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start qa",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done qa",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task start consistency",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio task done consistency",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio export --draft",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio ledger verify",
+      "exit": 0
+    },
+    {
+      "command": "creative-studio status",
+      "exit": 0
+    }
+  ]
+}

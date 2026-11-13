@@ -6,6 +6,7 @@
 //   node scripts/run-demo.mjs                 light run: everything that needs no npm install
 //   node scripts/run-demo.mjs --full          also install, build, test and audit each deliverable
 //   node scripts/run-demo.mjs --dir <path>    target directory (default demos/haldora/project)
+//   node scripts/run-demo.mjs --refresh       overwrite template files in an existing run with the current templates
 //
 // Client decisions in this script are SIMULATED and recorded as such. The
 // independent creative review and the final quality and acceptance gates are
@@ -23,6 +24,7 @@ const flag = (n) => argv.includes(`--${n}`);
 const opt = (n, d) => (argv.includes(`--${n}`) ? argv[argv.indexOf(`--${n}`) + 1] : d);
 const DIR = path.resolve(opt('dir', path.join(REPO, 'demos', 'haldora', 'project')));
 const FULL = flag('full');
+const FORCE = flag('refresh') ? ['--force'] : [];
 const CLIENT = 'Mira Solberg (fictional client)';
 const log = [];
 
@@ -118,7 +120,7 @@ task('images', () => {
 });
 
 task('scene-3d', () => {
-  cs(['3d', 'build']);
+  cs(['3d', 'build', ...FORCE]);
   if (FULL) {
     install(path.join(DIR, 'scene'));
     sh('npm', ['run', 'build'], path.join(DIR, 'scene'));
@@ -127,7 +129,7 @@ task('scene-3d', () => {
 
 task('website', () => {
   copy('content-web.json', '.cis/content-web.json');
-  cs(['website', 'scaffold']);
+  cs(['website', 'scaffold', ...FORCE]);
   if (FULL) {
     install(path.join(DIR, 'web'));
     sh('npm', ['run', 'build'], path.join(DIR, 'web'));
@@ -135,7 +137,7 @@ task('website', () => {
 });
 
 task('web-app', () => {
-  cs(['website', 'scaffold', '--kind', 'app']);
+  cs(['website', 'scaffold', '--kind', 'app', ...FORCE]);
   if (FULL) {
     install(path.join(DIR, 'app'));
     sh('npm', ['test'], path.join(DIR, 'app'));
@@ -144,7 +146,7 @@ task('web-app', () => {
 });
 
 task('mobile', () => {
-  cs(['mobile', 'scaffold']);
+  cs(['mobile', 'scaffold', ...FORCE]);
   if (FULL) install(path.join(DIR, 'mobile'));
 });
 

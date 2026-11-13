@@ -1,6 +1,6 @@
-import { serve } from '../plugin/cli/commands/build.mjs';
-import { launch } from '../plugin/cli/lib/browser.mjs';
-import { gpuArgs } from '../plugin/cli/lib/qa.mjs';
+import { serve } from '../../plugin/cli/commands/build.mjs';
+import { launch } from '../../plugin/cli/lib/browser.mjs';
+import { gpuArgs } from '../../plugin/cli/lib/qa.mjs';
 const s = await serve(process.argv[2]);
 const browser = await launch({ args: gpuArgs() });
 const variants = { baseline: '', noSmooth: 'html{scroll-behavior:auto!important}', noSticky: '.site-header{position:relative!important}', noScrollPad: 'html{scroll-padding-top:0!important}', noOverflowClip: 'body{overflow-x:visible!important}.hero{overflow:visible!important}' };

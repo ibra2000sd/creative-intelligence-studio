@@ -1,0 +1,339 @@
+{
+ "python": {
+  "total": 184,
+  "ok": 180,
+  "fail": [
+   {
+    "file": "claudeskills-main/claudeskills-main/plugins/bundles/core-3d-animation/skills/react-three-fiber/scripts/component_generator.py",
+    "line": 149,
+    "msg": "f-string: expecting '!', or ':', or '}'"
+   },
+   {
+    "file": "claudeskills-main/claudeskills-main/plugins/individual/react-three-fiber/skills/react-three-fiber/scripts/component_generator.py",
+    "line": 149,
+    "msg": "f-string: expecting '!', or ':', or '}'"
+   },
+   {
+    "file": "claudeskills-main/claudeskills-main/.claude/skills/react-three-fiber/scripts/component_generator.py",
+    "line": 149,
+    "msg": "f-string: expecting '!', or ':', or '}'"
+   },
+   {
+    "file": "claudeskills-main/claudeskills-main/.factory/skills/react-three-fiber/scripts/component_generator.py",
+    "line": 149,
+    "msg": "f-string: expecting '!', or ':', or '}'"
+   }
+  ]
+ },
+ "node": {
+  "total": 31,
+  "ok": 31,
+  "fail": []
+ },
+ "risk": {
+  "process_exec": [
+   {
+    "file": "claudeskills-main/claudeskills-main/plugins/bundles/extended-3d-scroll/skills/barba-js/scripts/project_setup.py",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/tests/kit-clean.mjs",
+    "hits": 7
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/icons.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/consistency.mjs",
+    "hits": 225
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/effects.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/shoot.mjs",
+    "hits": 17
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/perf.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/photos.mjs",
+    "hits": 5
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/gate.mjs",
+    "hits": 8
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/moments.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/scenes/_demo/shoot.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/layout/check.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/product-render/make-posters.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/backgrounds/check.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/effects/grid-pulse/effect.js",
+    "hits": 3
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/shoot.mjs",
+    "hits": 3
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/doctor.mjs",
+    "hits": 2
+   }
+  ],
+  "fs_delete": [
+   {
+    "file": "claudeskills-main/claudeskills-main/scripts/marketplace/generate_bundle.py",
+    "hits": 1
+   },
+   {
+    "file": "claudeskills-main/claudeskills-main/scripts/marketplace/generate_plugin.py",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/install.sh",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/tests/kit-clean.mjs",
+    "hits": 5
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/icons.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/consistency.mjs",
+    "hits": 5
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/effects.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/shoot.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/perf.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/photos.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/gate.mjs",
+    "hits": 6
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/moments.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/scenes/_demo/shoot.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/layout/check.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/product-render/make-posters.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/backgrounds/check.mjs",
+    "hits": 1
+   }
+  ],
+  "network_call": [
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/icons.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/consistency.mjs",
+    "hits": 3
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/effects.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/shoot.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/perf.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/photos.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/moments.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/system.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/ui/ui.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/scenes/_demo/shoot.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/layout/check.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/diagrams/diagram.js",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/_print-core/demo.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/photo-kit/demo.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/product-render/build.js",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/product-render/make-posters.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/backgrounds/check.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/components/fx-map/bake.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/components/fx-map/component.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/effects/pick.js",
+    "hits": 1
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/kie.mjs",
+    "hits": 5
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/engine/scrollcraft.js",
+    "hits": 1
+   },
+   {
+    "file": "apple-design-skill-main__1_/apple-design-skill-main/scripts/pull-hig.mjs",
+    "hits": 1
+   }
+  ],
+  "file_upload": [
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/consistency.mjs",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/scripts/photos.mjs",
+    "hits": 2
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/system.js",
+    "hits": 1
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/dot-object/object.js",
+    "hits": 3
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/objects/_scenes/kit.js",
+    "hits": 3
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/components/fx-progress/component.js",
+    "hits": 4
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/effects/duotone-grade/effect.js",
+    "hits": 5
+   },
+   {
+    "file": "taste-skill-main/taste-skill-main/skills/taste-skill/assets/effects/dotted-globe/effect.js",
+    "hits": 4
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/kie.mjs",
+    "hits": 5
+   }
+  ],
+  "secret_env": [
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/kie.mjs",
+    "hits": 2
+   },
+   {
+    "file": "scroll-craft-main/scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/scripts/doctor.mjs",
+    "hits": 1
+   }
+  ],
+  "injection_phrase": [
+   {
+    "file": "skills-main/skills-main/skills/remove-animations/SKILL.md",
+    "hits": 1
+   },
+   {
+    "file": "skills-main/skills-main/skills/find-animation-opportunities/SKILL.md",
+    "hits": 1
+   },
+   {
+    "file": "skills-main/skills-main/skills/improve-animations/SKILL.md",
+    "hits": 1
+   },
+   {
+    "file": "skills-main/skills-main/skills/break-ui/SKILL.md",
+    "hits": 1
+   },
+   {
+    "file": "skills-main/skills-main/skills/choreograph/SKILL.md",
+    "hits": 1
+   }
+  ]
+ },
+ "hooks": [
+  "taste-skill-main/taste-skill-main/skills/taste-skill/SKILL.md"
+ ],
+ "dupe_py": 0
+}

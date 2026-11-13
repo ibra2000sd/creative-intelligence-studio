@@ -35,6 +35,27 @@ export const flows = [
     },
   },
   {
+    id: 'header-over-artwork',
+    category: 'accessibility',
+    title: 'Dark scheme: the header stays legible over the daylight hero and after scrolling',
+    async run({ page, baseUrl, expect }) {
+      await page.goto(baseUrl + '/', { waitUntil: 'networkidle' });
+      await page.evaluate(() => (document.documentElement.dataset.scheme = 'dark'));
+      await page.waitForTimeout(600);
+      const lum = (rgb) => { const [r, g, b] = rgb.match(/[\d.]+/g).slice(0, 3).map((v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const navColor = () => page.locator('#primary-nav a').first().evaluate((el) => getComputedStyle(el).color);
+      const atTop = lum(await navColor());
+      expect.ok(atTop < 0.1, `navigation text is dark over the pale artwork (luminance ${atTop.toFixed(3)})`);
+      expect.ok(await page.locator('.brand .on-light').isVisible(), 'the logo for light grounds is shown over the artwork');
+      await page.evaluate(() => window.scrollTo(0, innerHeight * 1.5));
+      await page.waitForFunction(() => document.querySelector('[data-header]').classList.contains('is-stuck'));
+      await page.waitForTimeout(500);
+      const scrolled = lum(await navColor());
+      expect.ok(scrolled > 0.6, `navigation text is light on the dark page once scrolled (luminance ${scrolled.toFixed(3)})`);
+      expect.ok(await page.locator('.brand .on-dark').isVisible(), 'the reversed logo is shown on the dark ground');
+    },
+  },
+  {
     id: 'language-switch',
     title: 'Language link opens the right-to-left Arabic page and returns',
     async run({ page, baseUrl, expect }) {

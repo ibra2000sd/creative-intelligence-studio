@@ -187,127 +187,127 @@
       "files": [
         {
           "path": "brand/applications/business-card-front.svg",
-          "sha256": "3a0cf0b91373155bbef50cb181418db2b88a605bc6766b64a788255436c25c16",
+          "sha256": "3f48d2e5c2f85fd6c9dbaa804db786c8750c848d7eae05a957e297105dca56be",
           "bytes": 4330,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/business-card-back.svg",
-          "sha256": "0c3ed5662a417d6c677429421fb61bda53c86a932b17b583915b7f57f53fbb98",
-          "bytes": 22263,
+          "sha256": "0b0601cba6c722540ac592d1643f39b92386fe6a8b9253297435a39294063a2f",
+          "bytes": 22268,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/social-square.svg",
-          "sha256": "0bd45320a4649b3742fa933eb2e37aefbbaa49e02b44e7ce815a8859dcce5d96",
-          "bytes": 28172,
+          "sha256": "4d224686ec19fab57bfbe5ed9699882f1dcb0cda4d4534f670703568627d5691",
+          "bytes": 28175,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/og-image.svg",
-          "sha256": "55e764bdf76cf5e6618b06bfb0e95ccfdfba740cb5345c0d67b9e730b1b57827",
-          "bytes": 27724,
+          "sha256": "7542f346b514522c07b541856c9b33ee8c90ff1a411e1829b51a52256fc05d20",
+          "bytes": 27730,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/story.svg",
-          "sha256": "062e15bae194a9cc1d638312ee0a6675b96418a85f1cda5fad908dedd0a4f382",
-          "bytes": 28790,
+          "sha256": "04f249c2a8ceda35d74e2e963aa1ca984d92cfcd6919a93c5ed0ed524d5bbe2a",
+          "bytes": 28793,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/presentation-title.svg",
-          "sha256": "e7e68fcd570692673b34d5eeb35704a02e95dda0d68802ad768ee8f5953a1dd7",
-          "bytes": 33636,
+          "sha256": "c95178e39ee9b1b19ca83abc5fa0959b9a790a2eab2894de8fbc9e8ca28a6f3f",
+          "bytes": 33638,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/app-icon.svg",
-          "sha256": "29f1563836b42ba9033ee58f44db749131b2bc83beee421acb018da4e7220312",
-          "bytes": 868,
+          "sha256": "4372cda8380e5b97d03833b20bbbe6a96cc866ea4952e7ba6850145270218016",
+          "bytes": 875,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/png/social-square.png",
-          "sha256": "f27faf7cf01ee90a18136b5e8bba9d9ace50c551b04a7675ed56419d269b6512",
-          "bytes": 877891,
+          "sha256": "1399cbc968a1a2def3b06b65ff264f115d7162b5a8f8b529789d939da7fdd8b6",
+          "bytes": 877883,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/social-square.webp",
-          "sha256": "5f52ba4fa29e39b699b773779a9cfba02d88d3650498d989986389cf96dc66cc",
-          "bytes": 31410,
+          "sha256": "deea2d3f52dcb29f6aa1eaf7404f02d2d24ee587ec568b93e42f4b63ac6315ed",
+          "bytes": 31408,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/og-image.png",
-          "sha256": "fe6e1049d14c4783acee0275f4f47ae56a613c66a3fe071a703698e40f4bf734",
-          "bytes": 652480,
+          "sha256": "a6b7048e48c7fe4402cf86a5442b8f962547a63540abff1a124c95be036afdcd",
+          "bytes": 652491,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/og-image.webp",
-          "sha256": "7089b87692830c24c3a739b720720ca8af626cedf1b70959ee4970b51d574eef",
-          "bytes": 24814,
+          "sha256": "f890fe233add8959be5517d84211fb591ca5ab6946064d7106511368c0a5e041",
+          "bytes": 24822,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/story.png",
-          "sha256": "e97716fe45c9bc8379f8c9c14a4c55d5e6a489208610be528370aae311435334",
-          "bytes": 1584583,
+          "sha256": "775e572e284d3dab052fc55f10f0ab8ba334d9be428a91a86bb8490b0cdb464c",
+          "bytes": 1584557,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/story.webp",
-          "sha256": "f88f0d35721deba37a4672187f13aaaa3ab3273ddd2b4a0beef03d9fca56532b",
-          "bytes": 40608,
+          "sha256": "a6f10de581dad6089df5cd327926ca3a72f7b62f34a7e9abfdd081dea28fd2de",
+          "bytes": 40636,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/presentation-title.png",
-          "sha256": "1899939039e56b02283ff65a5a6d7549c555d347730eaff7f381934671931396",
-          "bytes": 1140105,
+          "sha256": "3d349ac66ceda675d87325e494226e27dd5592a66f507dee44ae7256401a1702",
+          "bytes": 1140106,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/presentation-title.webp",
-          "sha256": "89fb966292a3c7bfe61a5b6a629546f3c8fc18096d00da34b50f64dc196df244",
-          "bytes": 40292,
+          "sha256": "5ab8226e8adcf912b7cf7b4694e3fe1e9e1983e83183004b707827d79fa95be2",
+          "bytes": 40260,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/app-icon.png",
-          "sha256": "f035bb747574d767902786077d1becdba9ad1d3583188462cfb70fb9df659d9d",
-          "bytes": 18918,
+          "sha256": "1290c6641a8e9149ff4652a59dd0a1248f9661a2b21f48b22dee1845a6df4567",
+          "bytes": 18930,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/pdf/business-card-front.pdf",
-          "sha256": "7d2a099d3da34e1520d1996861ac2a82244e4a71544d3d1d4422c812c23389a7",
-          "bytes": 9476,
+          "sha256": "2ed152c5787bbc2deaaa46fe5311b34a579f9cf49625dfe9b8e2776ceb5c1c92",
+          "bytes": 9473,
           "format": "pdf",
           "role": "export"
         },
         {
           "path": "brand/applications/pdf/business-card-back.pdf",
-          "sha256": "0eb7bfd2944d527eddcb61675d24b42106c26e016b68ea1792e62a601a56c71c",
-          "bytes": 33281,
+          "sha256": "65c562d7d97dcc76fede1274307375957e67532421727ebfa42ba91c9b98ce89",
+          "bytes": 33151,
           "format": "pdf",
           "role": "export"
         }
@@ -334,6 +334,16 @@
           "at": "2026-11-11T22:20:09.601Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:31:27.341Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:35:40.177Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -357,7 +367,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-11T22:20:09.601Z"
+      "createdAt": "2026-11-12T23:35:40.177Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -368,15 +378,15 @@
       "files": [
         {
           "path": "brand/guidelines.html",
-          "sha256": "021e47bf11225c04c8b34ab07ba47648d319b415b7aef9ba8b328b235b18caa7",
-          "bytes": 581906,
+          "sha256": "eab97c65e8b5084fd7711182c51594e40773cabe237a0a1042151c70706de99f",
+          "bytes": 581916,
           "format": "html",
           "role": "export"
         },
         {
           "path": "brand/guidelines.pdf",
-          "sha256": "097f9eea1ac9f863306407e5b63c5f6ab97621bf48e24162e1cf2bc2a44c8eef",
-          "bytes": 4402719,
+          "sha256": "2c6ad174bd47add74b19f3617546cc088a5c414d44f4caa52fc39c544c452225",
+          "bytes": 4402010,
           "format": "pdf",
           "role": "export"
         }
@@ -403,6 +413,16 @@
           "at": "2026-11-11T22:20:09.631Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:31:27.375Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:35:40.198Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -426,7 +446,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-11T22:20:09.631Z"
+      "createdAt": "2026-11-12T23:35:40.199Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -647,6 +667,16 @@
           "at": "2026-11-11T22:20:09.581Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:31:27.299Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:35:40.142Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -670,7 +700,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-11T22:20:09.581Z"
+      "createdAt": "2026-11-12T23:35:40.142Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -681,8 +711,8 @@
       "files": [
         {
           "path": "brand/logo/haldora-symbol.svg",
-          "sha256": "655af8e2f7cde25d2d6aaf98d2d08f67641d0020ef8ac2941bb76d631dc998d1",
-          "bytes": 791,
+          "sha256": "f7aa6fcee87d6c5089fe4dbe16e6bc19db02cad568e7996474ace8602f4d158d",
+          "bytes": 787,
           "format": "svg",
           "role": "source"
         },
@@ -695,22 +725,22 @@
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal.svg",
-          "sha256": "25be90c1276570991d144a049637f177652230ad61244bc49966e6a1431a513c",
-          "bytes": 4193,
+          "sha256": "411571e9939f77918fba9a980dfeb55a2d8ccd658974446e1cd447544f159792",
+          "bytes": 4189,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked.svg",
-          "sha256": "dc802447b71695f48808b4f85ef5eb6d76b23d45901d86eee98183f10f4aad3c",
+          "sha256": "6de7674e075852c112c89f6d8fae3facefe2088d8c290e9907a20b17b74ae44c",
           "bytes": 4208,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-reversed.svg",
-          "sha256": "b2e78398a787d168d646b1368f4fdc8aac76a9add6ed851a4b524bda19c5a746",
-          "bytes": 800,
+          "sha256": "37ad68d7d237cb690b7906f90f24c223492368232ec1e4344797d459001b640e",
+          "bytes": 796,
           "format": "svg",
           "role": "source"
         },
@@ -723,127 +753,127 @@
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-reversed.svg",
-          "sha256": "0586dfd090420a9c9279ec336fffb35bb766b04af75ae5652f8bca852cc11ac8",
-          "bytes": 4175,
+          "sha256": "f93004e30d2703eb39b8a0440c6dc8c8a55ddfe30b6936f5245c1ce319ce617a",
+          "bytes": 4171,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-reversed.svg",
-          "sha256": "769f23f8fbac37be42171e475efe2bf015090b0a6dbb6e2a8c31a434fb5e7bc9",
+          "sha256": "990b5de3e184906576e7ec209b66dd36b97d031702233a85a28c5470dd53a9f0",
           "bytes": 4190,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-mono-ink.svg",
-          "sha256": "c8ff1f381305f5cc72c1ab51d562028115d61b5e092a7cb481c7a3ee237ef6b6",
-          "bytes": 772,
+          "sha256": "368ea3934fb0885f9f2841046c9ec24d9c0080492a40aa33ed20d3fac548a7e3",
+          "bytes": 768,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-mono-ink.svg",
-          "sha256": "84261665a1861ecfc212eb59ffbd9dbd88748b35a5cddb0a6d3bbce62c41bdd7",
-          "bytes": 4174,
+          "sha256": "8fe9f2d039fd6a863f40220e043e5edb084cbe9483b64e2075e5dd67af19c490",
+          "bytes": 4170,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-mono-ink.svg",
-          "sha256": "f9a1cad78d8f1f2be9397e1f1f56f294da41899a78e4d767df019ddba61fcdec",
-          "bytes": 4190,
+          "sha256": "260b3d4271e60e31d9bdc9670735b87678844f364f1ff96ed7ff84b13b1bbd21",
+          "bytes": 4188,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-symbol-mono-paper.svg",
-          "sha256": "20754656ba7c1c4cd7b30913a0ed25db04381248b182caff27d8ac3ac1762b5d",
-          "bytes": 774,
+          "sha256": "2a7fd1def1253c82bc3d7dc663fe2e419620130bb896d861ef40e2bc5bcf6cef",
+          "bytes": 770,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-horizontal-mono-paper.svg",
-          "sha256": "4059ee5125fbe90f79a721f3e58abbf5d4b626ba8b82b943ec465b6a3976517a",
-          "bytes": 4176,
+          "sha256": "9559596c0e4f93919926a25a65358b523099896becd3f91076677f944c48b29d",
+          "bytes": 4172,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/haldora-lockup-stacked-mono-paper.svg",
-          "sha256": "979576d80fae17013f251be238ca0a087acb96ea7e68a6d999b76aaffc638cce",
-          "bytes": 4192,
+          "sha256": "41ad129b57b55f88256c94a5042ff929dd35a1cdb36fb7e9a4474a302256f135",
+          "bytes": 4190,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/favicon.svg",
-          "sha256": "6e28a85bd31aff7eeb186b205a597d062396ae91ebb0eff6d4b5e31f4e2d498f",
-          "bytes": 699,
+          "sha256": "8e146ea7a6d1418eb1f14e813956b8f48f7472738004200f1d51daaf0daf708f",
+          "bytes": 695,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/logo/png/symbol-512.png",
-          "sha256": "98a42163ac4c10139a75d0407e952363cc75743b874ba3ea65a1a2c17a7beb9b",
-          "bytes": 6692,
+          "sha256": "daa83dc49cd661ca83e89354539e1ec884bddceb878e4f6b58e794e11c5e1561",
+          "bytes": 6753,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/symbol-192.png",
-          "sha256": "8fa3c6d183bfbdc2f571f9e99d3f89dd7b9a4ca74ce9a3b19ca17df7bbfcf6ff",
-          "bytes": 2193,
+          "sha256": "8f5365eda088185fa2fecc36c0942eac3a09f494fdbafe8d81261aa6a95abf75",
+          "bytes": 2211,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/favicon-32.png",
-          "sha256": "9bef8f52db69b0a2e99378204f8c4d7e9b8d7d69b73ec0f678e2036046c4d67a",
-          "bytes": 652,
+          "sha256": "eaeaf1cba004ffa501d824f695007134cfd911ce2b36a88a24d7c18986ec0249",
+          "bytes": 660,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/apple-touch-icon-180.png",
-          "sha256": "ea9282391fec39789e0171b9875e86c91b17bae3fe502923b013e0f9665fb261",
-          "bytes": 3595,
+          "sha256": "1038fab47adb0f891372ddc6d54493608016d74445518b5f3868a87c9c5353d1",
+          "bytes": 3543,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/png/lockup-horizontal-1200.png",
-          "sha256": "dcaa1b4cadc70fc0dc7e9f67b29b05a2e0d34a80ae524c1f42d9043e5bcb29c1",
-          "bytes": 19168,
+          "sha256": "b12d5f3f9bb4ca99a5da8d992f21ab88ed80cac7b4a341d1d280017644d0fc2a",
+          "bytes": 19151,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/webp/lockup-horizontal-1200.webp",
-          "sha256": "92491aaa513183f56295499f7c6cef1bad2c57133c4c69a8a3f1ac6ecea0bcf6",
-          "bytes": 10500,
+          "sha256": "de094133dfbe5175ad8b0db83a1899548d327614176278b5ec67de7a6e6f75fa",
+          "bytes": 10528,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/logo/png/lockup-horizontal-reversed-1200.png",
-          "sha256": "cc9fccc2f6882fa3bffb6819bdd47ec8638b514c86fee17159c5c8db8e563bfd",
-          "bytes": 19347,
+          "sha256": "112f5d96ed693e84b2f714d1bb87cea0d6f760306ad364b75595ccbf70af7047",
+          "bytes": 19352,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/logo/webp/lockup-horizontal-reversed-1200.webp",
-          "sha256": "1d2d7da98f324759fb3ebd96eee26460667c6fdfc7d525d11f457c5aec892202",
-          "bytes": 11330,
+          "sha256": "7b25435c34717743fae1fa6a324f1c99b4dc6c293a7078309292890cc91ffa7f",
+          "bytes": 11238,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/logo/pdf/haldora-lockup-horizontal.pdf",
-          "sha256": "028ec78f846ad51d58cc820a43fb26a29e1adf860c1c19af6c0a6b2e43850be9",
-          "bytes": 10620,
+          "sha256": "f231f889de09c0bae54e79388a412598ac951f1578fa65c4dc7dc17d45138b45",
+          "bytes": 10397,
           "format": "pdf",
           "role": "export"
         }
@@ -870,6 +900,16 @@
           "at": "2026-11-11T22:20:09.549Z",
           "action": "generated",
           "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:31:27.255Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-12T23:35:40.045Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
         }
       ],
       "rights": {
@@ -893,7 +933,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-11T22:20:09.549Z"
+      "createdAt": "2026-11-12T23:35:40.045Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2165,6 +2205,16 @@
           "at": "2026-11-11T22:47:39.778Z",
           "action": "generated",
           "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-12T23:31:31.309Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
+        },
+        {
+          "at": "2026-11-12T23:35:44.521Z",
+          "action": "generated",
+          "by": "creative-studio 3d build"
         }
       ],
       "rights": {
@@ -2191,7 +2241,7 @@
         "scene",
         "web:product"
       ],
-      "createdAt": "2026-11-11T22:47:39.778Z"
+      "createdAt": "2026-11-12T23:35:44.521Z"
     },
     {
       "schemaVersion": "1.0.0",

@@ -1,0 +1,591 @@
+{
+ "archives": {
+  "Creative_Studio_Claude_Plugin_Starter": {
+   "files": 28,
+   "bytes": 27147,
+   "ext": {
+    ".md": 21,
+    ".json": 5,
+    "(none)": 1,
+    ".py": 1
+   },
+   "unique_skill_defs": 18,
+   "skill_md_occurrences": 18,
+   "skills": [
+    {
+     "name": "accessibility-localization",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/accessibility-localization/SKILL.md"
+    },
+    {
+     "name": "app-experience",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/app-experience/SKILL.md"
+    },
+    {
+     "name": "art-direction",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/art-direction/SKILL.md"
+    },
+    {
+     "name": "asset-factory",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/asset-factory/SKILL.md"
+    },
+    {
+     "name": "brand-packaging",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/brand-packaging/SKILL.md"
+    },
+    {
+     "name": "brand-strategy",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/brand-strategy/SKILL.md"
+    },
+    {
+     "name": "content-copy",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/content-copy/SKILL.md"
+    },
+    {
+     "name": "creative-review",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/creative-review/SKILL.md"
+    },
+    {
+     "name": "creative-studio",
+     "lines": 38,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/creative-studio/SKILL.md"
+    },
+    {
+     "name": "delivery-governance",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/delivery-governance/SKILL.md"
+    },
+    {
+     "name": "design-system",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/design-system/SKILL.md"
+    },
+    {
+     "name": "engineering-integrations",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/engineering-integrations/SKILL.md"
+    },
+    {
+     "name": "immersive-3d",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/immersive-3d/SKILL.md"
+    },
+    {
+     "name": "intake-discovery",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/intake-discovery/SKILL.md"
+    },
+    {
+     "name": "motion-language",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/motion-language/SKILL.md"
+    },
+    {
+     "name": "qa-performance",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/qa-performance/SKILL.md"
+    },
+    {
+     "name": "research-evidence",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/research-evidence/SKILL.md"
+    },
+    {
+     "name": "web-experience",
+     "lines": 25,
+     "copies": 1,
+     "first": "creative_studio_plugin_starter/skills/web-experience/SKILL.md"
+    }
+   ],
+   "licenses": []
+  },
+  "Creative_Studio_Engineering_Handoff": {
+   "files": 6,
+   "bytes": 227739,
+   "ext": {
+    ".md": 3,
+    ".docx": 1,
+    ".zip": 1,
+    ".txt": 1
+   },
+   "unique_skill_defs": 0,
+   "skill_md_occurrences": 0,
+   "skills": [],
+   "licenses": []
+  },
+  "apple-design-skill-main": {
+   "files": 10,
+   "bytes": 70353,
+   "ext": {
+    ".md": 8,
+    "(none)": 1,
+    ".skill": 1
+   },
+   "unique_skill_defs": 1,
+   "skill_md_occurrences": 1,
+   "skills": [
+    {
+     "name": "apple-design",
+     "lines": 64,
+     "copies": 1,
+     "first": "apple-design-skill-main/apple-design/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "apple-design-skill-main/LICENSE",
+     "MIT License"
+    ]
+   ]
+  },
+  "apple-design-skill-main__1_": {
+   "files": 135,
+   "bytes": 1266724,
+   "ext": {
+    ".md": 131,
+    "(none)": 2,
+    ".mjs": 1,
+    ".yml": 1
+   },
+   "unique_skill_defs": 1,
+   "skill_md_occurrences": 1,
+   "skills": [
+    {
+     "name": "apple-design",
+     "lines": 423,
+     "copies": 1,
+     "first": "apple-design-skill-main/SKILL.md"
+    }
+   ],
+   "licenses": []
+  },
+  "claudeskills-main": {
+   "files": 1027,
+   "bytes": 11230456,
+   "ext": {
+    ".md": 584,
+    ".py": 184,
+    ".json": 64,
+    ".js": 52,
+    ".html": 44,
+    ".jsx": 40,
+    ".css": 32,
+    ".zip": 22,
+    "(none)": 2,
+    ".txt": 2,
+    ".pyc": 1
+   },
+   "unique_skill_defs": 23,
+   "skill_md_occurrences": 90,
+   "skills": [
+    {
+     "name": "aframe-webxr",
+     "lines": 1077,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/aframe-webxr/SKILL.md"
+    },
+    {
+     "name": "animated-component-libraries",
+     "lines": 825,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/animation-components/skills/animated-component-libraries/SKILL.md"
+    },
+    {
+     "name": "animejs",
+     "lines": 526,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/animation-components/skills/animejs/SKILL.md"
+    },
+    {
+     "name": "babylonjs-engine",
+     "lines": 1234,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/core-3d-animation/skills/babylonjs-engine/SKILL.md"
+    },
+    {
+     "name": "barba-js",
+     "lines": 872,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/barba-js/SKILL.md"
+    },
+    {
+     "name": "blender-web-pipeline",
+     "lines": 614,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/authoring-motion/skills/blender-web-pipeline/SKILL.md"
+    },
+    {
+     "name": "gsap-scrolltrigger",
+     "lines": 766,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/core-3d-animation/skills/gsap-scrolltrigger/SKILL.md"
+    },
+    {
+     "name": "lightweight-3d-effects",
+     "lines": 1092,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/lightweight-3d-effects/SKILL.md"
+    },
+    {
+     "name": "locomotive-scroll",
+     "lines": 481,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/locomotive-scroll/SKILL.md"
+    },
+    {
+     "name": "lottie-animations",
+     "lines": 693,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/animation-components/skills/lottie-animations/SKILL.md"
+    },
+    {
+     "name": "modern-web-design",
+     "lines": 991,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/meta-skills/skills/modern-web-design/SKILL.md"
+    },
+    {
+     "name": "motion-framer",
+     "lines": 933,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/core-3d-animation/skills/motion-framer/SKILL.md"
+    },
+    {
+     "name": "pixijs-2d",
+     "lines": 936,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/pixijs-2d/SKILL.md"
+    },
+    {
+     "name": "playcanvas-engine",
+     "lines": 1063,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/extended-3d-scroll/skills/playcanvas-engine/SKILL.md"
+    },
+    {
+     "name": "react-spring-physics",
+     "lines": 465,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/animation-components/skills/react-spring-physics/SKILL.md"
+    },
+    {
+     "name": "react-three-fiber",
+     "lines": 1080,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/core-3d-animation/skills/react-three-fiber/SKILL.md"
+    },
+    {
+     "name": "rive-interactive",
+     "lines": 587,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/authoring-motion/skills/rive-interactive/SKILL.md"
+    },
+    {
+     "name": "scroll-reveal-libraries",
+     "lines": 821,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/animation-components/skills/scroll-reveal-libraries/SKILL.md"
+    },
+    {
+     "name": "skill-creator",
+     "lines": 210,
+     "copies": 2,
+     "first": "claudeskills-main/.claude/skills/skill-creator/SKILL.md"
+    },
+    {
+     "name": "spline-interactive",
+     "lines": 757,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/authoring-motion/skills/spline-interactive/SKILL.md"
+    },
+    {
+     "name": "substance-3d-texturing",
+     "lines": 507,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/authoring-motion/skills/substance-3d-texturing/SKILL.md"
+    },
+    {
+     "name": "threejs-webgl",
+     "lines": 582,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/core-3d-animation/skills/threejs-webgl/SKILL.md"
+    },
+    {
+     "name": "web3d-integration-patterns",
+     "lines": 853,
+     "copies": 4,
+     "first": "claudeskills-main/plugins/bundles/meta-skills/skills/web3d-integration-patterns/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "claudeskills-main/LICENSE",
+     "MIT License"
+    ],
+    [
+     "claudeskills-main/.claude/skills/skill-creator/LICENSE.txt",
+     "Apache License"
+    ],
+    [
+     "claudeskills-main/.factory/skills/skill-creator/LICENSE.txt",
+     "Apache License"
+    ]
+   ]
+  },
+  "imagegen-skills-main": {
+   "files": 13,
+   "bytes": 143008,
+   "ext": {
+    ".md": 5,
+    "(none)": 3,
+    ".json": 3,
+    ".mjs": 1,
+    ".yml": 1
+   },
+   "unique_skill_defs": 4,
+   "skill_md_occurrences": 4,
+   "skills": [
+    {
+     "name": "brandkit",
+     "lines": 844,
+     "copies": 1,
+     "first": "imagegen-skills-main/skills/brandkit/SKILL.md"
+    },
+    {
+     "name": "image-to-code",
+     "lines": 1229,
+     "copies": 1,
+     "first": "imagegen-skills-main/skills/image-to-code/SKILL.md"
+    },
+    {
+     "name": "imagegen-frontend-mobile",
+     "lines": 1466,
+     "copies": 1,
+     "first": "imagegen-skills-main/skills/imagegen-frontend-mobile/SKILL.md"
+    },
+    {
+     "name": "imagegen-frontend-web",
+     "lines": 988,
+     "copies": 1,
+     "first": "imagegen-skills-main/skills/imagegen-frontend-web/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "imagegen-skills-main/LICENSE",
+     "MIT License"
+    ]
+   ]
+  },
+  "scroll-craft-main": {
+   "files": 34,
+   "bytes": 7034545,
+   "ext": {
+    ".md": 15,
+    ".mjs": 6,
+    ".webp": 3,
+    "(none)": 2,
+    ".json": 2,
+    ".html": 2,
+    ".example": 1,
+    ".sh": 1,
+    ".css": 1,
+    ".js": 1
+   },
+   "unique_skill_defs": 1,
+   "skill_md_occurrences": 1,
+   "skills": [
+    {
+     "name": "scroll-craft",
+     "lines": 461,
+     "copies": 1,
+     "first": "scroll-craft-main/plugins/nateherk-design/skills/scroll-craft/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "scroll-craft-main/LICENSE",
+     "MIT License"
+    ]
+   ]
+  },
+  "skills-main": {
+   "files": 33,
+   "bytes": 339791,
+   "ext": {
+    ".md": 29,
+    "(none)": 4
+   },
+   "unique_skill_defs": 17,
+   "skill_md_occurrences": 17,
+   "skills": [
+    {
+     "name": "animate",
+     "lines": 208,
+     "copies": 1,
+     "first": "skills-main/skills/animate/SKILL.md"
+    },
+    {
+     "name": "animate-expo",
+     "lines": 264,
+     "copies": 1,
+     "first": "skills-main/skills/animate-expo/SKILL.md"
+    },
+    {
+     "name": "animation-performance",
+     "lines": 223,
+     "copies": 1,
+     "first": "skills-main/skills/animation-performance/SKILL.md"
+    },
+    {
+     "name": "animation-vocabulary",
+     "lines": 182,
+     "copies": 1,
+     "first": "skills-main/skills/animation-vocabulary/SKILL.md"
+    },
+    {
+     "name": "apple-design",
+     "lines": 291,
+     "copies": 1,
+     "first": "skills-main/skills/apple-design/SKILL.md"
+    },
+    {
+     "name": "ask-sonner",
+     "lines": 89,
+     "copies": 1,
+     "first": "skills-main/skills/ask-sonner/SKILL.md"
+    },
+    {
+     "name": "break-ui",
+     "lines": 176,
+     "copies": 1,
+     "first": "skills-main/skills/break-ui/SKILL.md"
+    },
+    {
+     "name": "choreograph",
+     "lines": 172,
+     "copies": 1,
+     "first": "skills-main/skills/choreograph/SKILL.md"
+    },
+    {
+     "name": "emil-design-eng",
+     "lines": 677,
+     "copies": 1,
+     "first": "skills-main/skills/emil-design-eng/SKILL.md"
+    },
+    {
+     "name": "find-animation-opportunities",
+     "lines": 141,
+     "copies": 1,
+     "first": "skills-main/skills/find-animation-opportunities/SKILL.md"
+    },
+    {
+     "name": "improve-animations",
+     "lines": 110,
+     "copies": 1,
+     "first": "skills-main/skills/improve-animations/SKILL.md"
+    },
+    {
+     "name": "mobile-native",
+     "lines": 312,
+     "copies": 1,
+     "first": "skills-main/skills/mobile-native/SKILL.md"
+    },
+    {
+     "name": "pick-ui-library",
+     "lines": 86,
+     "copies": 1,
+     "first": "skills-main/skills/pick-ui-library/SKILL.md"
+    },
+    {
+     "name": "prototype",
+     "lines": 99,
+     "copies": 1,
+     "first": "skills-main/skills/prototype/SKILL.md"
+    },
+    {
+     "name": "remove-animations",
+     "lines": 167,
+     "copies": 1,
+     "first": "skills-main/skills/remove-animations/SKILL.md"
+    },
+    {
+     "name": "review-animations",
+     "lines": 121,
+     "copies": 1,
+     "first": "skills-main/skills/review-animations/SKILL.md"
+    },
+    {
+     "name": "write-swift",
+     "lines": 397,
+     "copies": 1,
+     "first": "skills-main/skills/write-swift/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "skills-main/LICENSE",
+     "MIT License"
+    ]
+   ]
+  },
+  "taste-skill-main": {
+   "files": 1663,
+   "bytes": 37303881,
+   "ext": {
+    ".svg": 963,
+    ".json": 133,
+    ".js": 133,
+    ".html": 127,
+    ".css": 84,
+    ".webp": 73,
+    ".png": 51,
+    ".jpg": 39,
+    ".md": 31,
+    ".mjs": 23,
+    "(none)": 3,
+    ".yml": 2
+   },
+   "unique_skill_defs": 1,
+   "skill_md_occurrences": 1,
+   "skills": [
+    {
+     "name": "design-taste-frontend",
+     "lines": 382,
+     "copies": 1,
+     "first": "taste-skill-main/skills/taste-skill/SKILL.md"
+    }
+   ],
+   "licenses": [
+    [
+     "taste-skill-main/LICENSE",
+     "MIT License"
+    ]
+   ]
+  }
+ }
+}

@@ -9,3 +9,10 @@ dist/
 coverage/
 __pycache__/
 .pytest_cache/
+dist-web/
+dist-native/
+demos/**/export/*.zip
+demos/**/.cis/checkpoints/
+demos/**/.cis/cache/
+demos/**/.cis/revisions/*.snapshot.json
+demos/**/public/scene/

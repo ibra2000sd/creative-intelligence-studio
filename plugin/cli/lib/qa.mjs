@@ -3,6 +3,7 @@
 // Every result is a {id, category, status, summary, measurement, data, evidence}
 // record; lab measurements are labelled as lab.
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { pathToFileURL } from 'node:url';
@@ -224,16 +225,28 @@ async function measureOnce(browser, url) {
   }
 }
 
-/** Lab web vitals: the median of three cold loads, because single runs on a busy machine are noisy. */
+/**
+ * True when timing data should not be trusted: the host had more runnable work than cores,
+ * or identical loads disagreed by more than 150 ms and more than 1.5 times their median.
+ */
+export function measurementIsNoisy(blockingTimes, median, loadPerCore) {
+  const spread = Math.max(...blockingTimes) - Math.min(...blockingTimes);
+  return loadPerCore > 1 || spread > Math.max(150, 1.5 * median);
+}
+
+/** Lab web vitals: the median of five spaced cold loads, because single runs are noisy. */
 async function checkPerformance(browser, url, label, overrides = null) {
   const budget = { ...BUDGETS, ...(overrides || {}) };
   const runs = [];
-  for (let i = 0; i < 3; i++) runs.push(await measureOnce(browser, url));
+  for (let i = 0; i < 5; i++) {
+    await new Promise((r) => setTimeout(r, 800)); // let the previous page finish tearing down
+    runs.push(await measureOnce(browser, url));
+  }
   const median = (k) => {
     const v = runs.map((r) => r[k]).filter((x) => x !== null).sort((a, b) => a - b);
     return v.length ? v[Math.floor(v.length / 2)] : null;
   };
-  const data = { lcpMs: median('lcpMs'), cls: median('cls'), tbtMs: median('tbtMs'), interactionMs: median('interactionMs'), domNodes: runs[0].domNodes, requests: runs[0].requests, runs: runs.map((r) => ({ lcpMs: r.lcpMs, cls: r.cls, tbtMs: r.tbtMs, interactionMs: r.interactionMs })), conditions: 'Median of 3 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.' };
+  const data = { lcpMs: median('lcpMs'), cls: median('cls'), tbtMs: median('tbtMs'), interactionMs: median('interactionMs'), domNodes: runs[0].domNodes, requests: runs[0].requests, runs: runs.map((r) => ({ lcpMs: r.lcpMs, cls: r.cls, tbtMs: r.tbtMs, interactionMs: r.interactionMs })), conditions: 'Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.' };
   const measure = (b) => {
     const over = [];
     if (data.lcpMs > b.lcpMs) over.push(`LCP ${data.lcpMs}ms > ${b.lcpMs}ms`);
@@ -243,9 +256,18 @@ async function checkPerformance(browser, url, label, overrides = null) {
   };
   const overDefault = measure(BUDGETS);
   const over = measure(budget);
+  // Timing is only meaningful on a quiet host. A busy machine or a wide spread between identical
+  // loads means an over-budget median is not evidence of a slow page, and is reported as such.
+  const tbts = runs.map((r) => r.tbtMs);
+  const loadPerCore = Number((os.loadavg()[0] / os.cpus().length).toFixed(2)); // 0 on Windows
+  const noisy = measurementIsNoisy(tbts, data.tbtMs, loadPerCore);
+  Object.assign(data, { hostLoadPerCore: loadPerCore, blockingTimeRangeMs: [Math.min(...tbts), Math.max(...tbts)], reliable: !noisy });
   // INP is a field metric. One scripted tap in the lab is only a hint, so it can warn but not fail.
   const slowTap = data.interactionMs !== null && data.interactionMs > budget.inpMs ? `first scripted tap took ${data.interactionMs}ms to paint under 4x throttling (the ${budget.inpMs}ms INP threshold applies to field data; investigate on a real device)` : '';
-  const figures = `LCP ${data.lcpMs}ms, CLS ${data.cls}, TBT ${data.tbtMs}ms${data.interactionMs !== null ? `, first tap ${data.interactionMs}ms` : ''} (median of 3)`;
+  const figures = `LCP ${data.lcpMs}ms, CLS ${data.cls}, TBT ${data.tbtMs}ms${data.interactionMs !== null ? `, first tap ${data.interactionMs}ms` : ''} (median of 5)`;
+  if (over.length && noisy) {
+    return check(`web-vitals-lab:${label}`, 'performance', 'warn', `Lab figures unreliable: host load was ${loadPerCore} per core and blocking time ranged ${Math.min(...tbts)} to ${Math.max(...tbts)}ms across five identical loads. Median ${figures} would be over budget (${over.join('; ')}). Re-run on an idle machine before drawing a conclusion.`, { severity: 'minor', measurement: 'lab', data });
+  }
   if (over.length) return check(`web-vitals-lab:${label}`, 'performance', 'fail', `Over budget in the lab: ${over.join('; ')}`, { severity: 'major', measurement: 'lab', data });
   // Over the default budget but inside a documented exception: surfaced as a warning, never as a clean pass.
   if (overDefault.length) return check(`web-vitals-lab:${label}`, 'performance', 'warn', `Lab: ${figures}. Over the default budget (${overDefault.join('; ')}) but within this deliverable's documented exception: ${overrides.rationale}`, { severity: 'minor', measurement: 'lab', data: { ...data, exception: overrides } });

@@ -129,7 +129,8 @@ export function cycloneDx(sbom, projectName) {
 
 /** Known-vulnerability audit through the package manager. Needs a lockfile and registry access. */
 export function auditDependencies(dir) {
-  const run = (cmd, args) => spawnSync(cmd, args, { cwd: dir, encoding: 'utf8', timeout: 90000 });
+  // Audit reports for large trees (a React Native app) run to several megabytes.
+  const run = (cmd, args) => spawnSync(cmd, args, { cwd: dir, encoding: 'utf8', timeout: 180000, maxBuffer: 128 * 1024 * 1024 });
   let r;
   let tool;
   if (exists(path.join(dir, 'pnpm-lock.yaml'))) {

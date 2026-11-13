@@ -1,0 +1,187 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-13T00:11:40.323Z",
+    "component": {
+      "type": "application",
+      "name": "haldora-launch/app"
+    },
+    "tools": [
+      {
+        "name": "creative-studio audit"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "@fontsource/fraunces",
+      "version": "5.3.0",
+      "purl": "pkg:npm/%40fontsource/fraunces@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "@fontsource/ibm-plex-sans-arabic",
+      "version": "5.3.0",
+      "purl": "pkg:npm/%40fontsource/ibm-plex-sans-arabic@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "@fontsource/instrument-sans",
+      "version": "5.3.0",
+      "purl": "pkg:npm/%40fontsource/instrument-sans@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "@fontsource/jetbrains-mono",
+      "version": "5.3.0",
+      "purl": "pkg:npm/%40fontsource/jetbrains-mono@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "framer-motion",
+      "version": "14.12.0",
+      "purl": "pkg:npm/framer-motion@14.12.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "name": "motion",
+      "version": "14.12.0",
+      "purl": "pkg:npm/motion@14.12.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "motion-dom",
+      "version": "14.12.0",
+      "purl": "pkg:npm/motion-dom@14.12.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "name": "motion-utils",
+      "version": "14.7.0",
+      "purl": "pkg:npm/motion-utils@14.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "purl": "pkg:npm/react@19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.9.1",
+      "purl": "pkg:npm/tslib@2.9.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "0BSD"
+          }
+        }
+      ],
+      "scope": "optional"
+    }
+  ]
+}

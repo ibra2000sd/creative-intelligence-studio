@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13T00:11:48.735Z",
+  "checks": [
+    {
+      "id": "secrets",
+      "category": "security",
+      "status": "pass",
+      "summary": "No secrets found in 202 text files",
+      "severity": "critical",
+      "measurement": "static",
+      "data": {
+        "findings": []
+      }
+    },
+    {
+      "id": "env-files",
+      "category": "security",
+      "status": "pass",
+      "summary": "No .env files in the project tree",
+      "severity": "major",
+      "measurement": "static"
+    },
+    {
+      "id": "unsafe-patterns",
+      "category": "security",
+      "status": "pass",
+      "summary": "No string-built markup, dynamic code, unsafe link targets or plain-http URLs in web, app, scene, mobile source",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "findings": []
+      }
+    },
+    {
+      "id": "third-party-requests:web",
+      "category": "security",
+      "status": "pass",
+      "summary": "Built pages reference no third-party hosts (fonts and scripts are self-hosted)",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "origins": []
+      }
+    },
+    {
+      "id": "third-party-requests:app",
+      "category": "security",
+      "status": "pass",
+      "summary": "Built pages reference no third-party hosts (fonts and scripts are self-hosted)",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "origins": []
+      }
+    },
+    {
+      "id": "third-party-requests:scene",
+      "category": "security",
+      "status": "pass",
+      "summary": "Built pages reference no third-party hosts (fonts and scripts are self-hosted)",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "origins": []
+      }
+    },
+    {
+      "id": "third-party-requests:mobile",
+      "category": "security",
+      "status": "pass",
+      "summary": "Built pages reference no third-party hosts (fonts and scripts are self-hosted)",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "origins": []
+      }
+    },
+    {
+      "id": "licences:web",
+      "category": "security",
+      "status": "warn",
+      "summary": "5 packages; needs a human licence decision: gsap (Standard 'no charge' license: https://gsap.com/standard-license.)",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "total": 5,
+        "byClass": {
+          "permissive": 4,
+          "weak-copyleft": 0,
+          "custom": 1,
+          "copyleft": 0,
+          "unknown": 0
+        },
+        "flagged": [
+          {
+            "name": "gsap",
+            "version": "3.15.1",
+            "license": "Standard 'no charge' license: https://gsap.com/standard-license.",
+            "class": "custom",
+            "direct": true,
+            "homepage": "https://gsap.com"
+          }
+        ]
+      },
+      "evidence": [
+        ".cis/reports/sbom-web.cdx.json"
+      ]
+    },
+    {
+      "id": "vulnerabilities:web",
+      "category": "security",
+      "status": "pass",
+      "summary": "pnpm audit: 0 critical, 0 high, 0 moderate, 0 low (production dependencies)",
+      "severity": "critical",
+      "measurement": "static",
+      "data": {
+        "status": "ok",
+        "tool": "pnpm audit",
+        "counts": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0
+        },
+        "advisories": []
+      }
+    },
+    {
+      "id": "licences:app",
+      "category": "security",
+      "status": "pass",
+      "summary": "12 packages in the production tree, all under permissive licences",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "total": 12,
+        "byClass": {
+          "permissive": 12,
+          "weak-copyleft": 0,
+          "custom": 0,
+          "copyleft": 0,
+          "unknown": 0
+        },
+        "flagged": []
+      },
+      "evidence": [
+        ".cis/reports/sbom-app.cdx.json"
+      ]
+    },
+    {
+      "id": "vulnerabilities:app",
+      "category": "security",
+      "status": "pass",
+      "summary": "pnpm audit: 0 critical, 0 high, 0 moderate, 0 low (production dependencies)",
+      "severity": "critical",
+      "measurement": "static",
+      "data": {
+        "status": "ok",
+        "tool": "pnpm audit",
+        "counts": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0
+        },
+        "advisories": []
+      }
+    },
+    {
+      "id": "licences:scene",
+      "category": "security",
+      "status": "pass",
+      "summary": "3 packages in the production tree, all under permissive licences",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "total": 3,
+        "byClass": {
+          "permissive": 3,
+          "weak-copyleft": 0,
+          "custom": 0,
+          "copyleft": 0,
+          "unknown": 0
+        },
+        "flagged": []
+      },
+      "evidence": [
+        ".cis/reports/sbom-scene.cdx.json"
+      ]
+    },
+    {
+      "id": "vulnerabilities:scene",
+      "category": "security",
+      "status": "pass",
+      "summary": "pnpm audit: 0 critical, 0 high, 0 moderate, 0 low (production dependencies)",
+      "severity": "critical",
+      "measurement": "static",
+      "data": {
+        "status": "ok",
+        "tool": "pnpm audit",
+        "counts": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0
+        },
+        "advisories": []
+      }
+    },
+    {
+      "id": "licences:mobile",
+      "category": "security",
+      "status": "pass",
+      "summary": "584 packages in the production tree, all under permissive licences",
+      "severity": "major",
+      "measurement": "static",
+      "data": {
+        "total": 584,
+        "byClass": {
+          "permissive": 582,
+          "weak-copyleft": 2,
+          "custom": 0,
+          "copyleft": 0,
+          "unknown": 0
+        },
+        "flagged": []
+      },
+      "evidence": [
+        ".cis/reports/sbom-mobile.cdx.json"
+      ]
+    },
+    {
+      "id": "vulnerabilities:mobile",
+      "category": "security",
+      "status": "warn",
+      "summary": "pnpm audit: 0 critical, 0 high, 4 moderate, 1 low (production dependencies)",
+      "severity": "critical",
+      "measurement": "static",
+      "data": {
+        "status": "ok",
+        "tool": "pnpm audit",
+        "counts": {
+          "info": 0,
+          "low": 1,
+          "moderate": 4,
+          "high": 0,
+          "critical": 0
+        },
+        "advisories": [
+          {
+            "name": "deepmerge",
+            "severity": "low",
+            "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+            "range": ">=4.2.0 <=4.3.1"
+          },
+          {
+            "name": "glob",
+            "severity": "moderate",
+            "title": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal",
+            "range": ">=9.0.0 <=14.0.1"
+          },
+          {
+            "name": "minimatch",
+            "severity": "moderate",
+            "title": "minimatch has potential denial of service via globparts amplification",
+            "range": ">=7.0.0 <11.0.1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ledger-integrity",
+      "category": "security",
+      "status": "pass",
+      "summary": "Audit trail intact: 125 hash-chained events",
+      "severity": "critical",
+      "measurement": "static"
+    },
+    {
+      "id": "asset-rights",
+      "category": "delivery",
+      "status": "pass",
+      "summary": "All 24 registered assets have recorded origin and rights",
+      "severity": "critical",
+      "measurement": "static"
+    },
+    {
+      "id": "upload-policy",
+      "category": "security",
+      "status": "pass",
+      "summary": "External uploads policy: \"ask\"; budget $5. Remote providers are refused or need consent accordingly.",
+      "measurement": "static"
+    }
+  ],
+  "totals": {
+    "pass": 16,
+    "fail": 0,
+    "warn": 2,
+    "skipped": 0,
+    "blocked": 0
+  },
+  "verdict": "pass"
+}

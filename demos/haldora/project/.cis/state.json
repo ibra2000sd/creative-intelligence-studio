@@ -34,10 +34,13 @@
           "schema": "brief"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
-      "command": "creative-studio brief check"
+      "command": "creative-studio brief check",
+      "startedAt": "2026-11-12T23:30:23.864Z",
+      "finishedAt": "2026-11-12T23:30:24.358Z",
+      "evidence": []
     },
     {
       "id": "research",
@@ -53,10 +56,13 @@
           "schema": "research-log"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
-      "command": "creative-studio research add"
+      "command": "creative-studio research add",
+      "startedAt": "2026-11-12T23:30:24.839Z",
+      "finishedAt": "2026-11-12T23:30:26.692Z",
+      "evidence": []
     },
     {
       "id": "directions",
@@ -75,11 +81,14 @@
           "path": ".cis/reports/directions.html"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G0-brief",
-      "command": "creative-studio directions check && creative-studio directions board"
+      "command": "creative-studio directions check && creative-studio directions board",
+      "startedAt": "2026-11-12T23:30:26.955Z",
+      "finishedAt": "2026-11-12T23:30:27.874Z",
+      "evidence": []
     },
     {
       "id": "dna",
@@ -98,11 +107,14 @@
           "path": "design-system/tokens.css"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G1-direction",
-      "command": "creative-studio dna check && creative-studio dna tokens"
+      "command": "creative-studio dna check && creative-studio dna tokens",
+      "startedAt": "2026-11-12T23:30:28.312Z",
+      "finishedAt": "2026-11-12T23:30:29.268Z",
+      "evidence": []
     },
     {
       "id": "motion-spec",
@@ -118,11 +130,14 @@
           "schema": "motion-spec"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio motion check"
+      "command": "creative-studio motion check",
+      "startedAt": "2026-11-12T23:30:30.245Z",
+      "finishedAt": "2026-11-12T23:30:30.694Z",
+      "evidence": []
     },
     {
       "id": "brand",
@@ -144,11 +159,14 @@
           "path": "brand/brand-manifest.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio brand build"
+      "command": "creative-studio brand build",
+      "startedAt": "2026-11-12T23:30:30.956Z",
+      "finishedAt": "2026-11-12T23:31:27.957Z",
+      "evidence": []
     },
     {
       "id": "images",
@@ -168,11 +186,14 @@
           "path": ".cis/assets/registry.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio images generate"
+      "command": "creative-studio images generate",
+      "startedAt": "2026-11-12T23:31:28.173Z",
+      "finishedAt": "2026-11-12T23:31:29.530Z",
+      "evidence": []
     },
     {
       "id": "scene-3d",
@@ -192,11 +213,14 @@
           "path": "scene/package.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio 3d build"
+      "command": "creative-studio 3d build",
+      "startedAt": "2026-11-12T23:31:29.781Z",
+      "finishedAt": "2026-11-12T23:31:37.308Z",
+      "evidence": []
     },
     {
       "id": "website",
@@ -219,11 +243,14 @@
           "schema": "content-web"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio website scaffold"
+      "command": "creative-studio website scaffold",
+      "startedAt": "2026-11-12T23:31:37.589Z",
+      "finishedAt": "2026-11-12T23:31:42.648Z",
+      "evidence": []
     },
     {
       "id": "web-app",
@@ -240,11 +267,14 @@
           "path": "app/package.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio website scaffold --kind app"
+      "command": "creative-studio website scaffold --kind app",
+      "startedAt": "2026-11-12T23:31:43.013Z",
+      "finishedAt": "2026-11-12T23:31:49.940Z",
+      "evidence": []
     },
     {
       "id": "mobile",
@@ -264,11 +294,14 @@
           "path": "mobile/app.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
       "gate": "G2-system",
-      "command": "creative-studio mobile scaffold"
+      "command": "creative-studio mobile scaffold",
+      "startedAt": "2026-11-12T23:31:50.217Z",
+      "finishedAt": "2026-11-12T23:31:57.822Z",
+      "evidence": []
     },
     {
       "id": "qa",
@@ -289,10 +322,13 @@
           "schema": "qa-summary"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
-      "command": "creative-studio test && creative-studio audit"
+      "command": "creative-studio test && creative-studio audit",
+      "startedAt": "2026-11-12T23:45:35.691Z",
+      "finishedAt": "2026-11-12T23:45:35.923Z",
+      "evidence": []
     },
     {
       "id": "consistency",
@@ -312,10 +348,13 @@
           "path": ".cis/reports/consistency.json"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
-      "command": "creative-studio dna consistency"
+      "command": "creative-studio dna consistency",
+      "startedAt": "2026-11-12T23:45:36.110Z",
+      "finishedAt": "2026-11-12T23:45:36.305Z",
+      "evidence": []
     },
     {
       "id": "creative-review",
@@ -364,7 +403,15 @@
       "requires": [
         "intake"
       ],
-      "status": "pending"
+      "status": "approved",
+      "decision": {
+        "actor": "Mira Solberg (fictional client)",
+        "role": "client",
+        "at": "2026-11-12T23:34:02.304Z",
+        "note": "Demonstration: brief confirmed.",
+        "evidence": [],
+        "simulated": true
+      }
     },
     {
       "id": "G1-direction",
@@ -372,7 +419,15 @@
       "requires": [
         "directions"
       ],
-      "status": "pending"
+      "status": "approved",
+      "decision": {
+        "actor": "Mira Solberg (fictional client)",
+        "role": "client",
+        "at": "2026-11-12T23:34:06.642Z",
+        "note": "Demonstration: Daylight Ledger chosen over Grid Instrument and Quiet Current.",
+        "evidence": [],
+        "simulated": true
+      }
     },
     {
       "id": "G2-system",
@@ -380,7 +435,15 @@
       "requires": [
         "dna"
       ],
-      "status": "pending"
+      "status": "approved",
+      "decision": {
+        "actor": "Mira Solberg (fictional client)",
+        "role": "client",
+        "at": "2026-11-12T23:34:08.230Z",
+        "note": "Demonstration: Experience DNA accepted.",
+        "evidence": [],
+        "simulated": true
+      }
     },
     {
       "id": "G6-quality",
@@ -400,5 +463,5 @@
       "status": "pending"
     }
   ],
-  "updatedAt": "2026-11-11T22:17:00.465Z"
+  "updatedAt": "2026-11-12T23:45:36.307Z"
 }

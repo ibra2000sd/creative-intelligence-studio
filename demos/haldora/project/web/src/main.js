@@ -54,6 +54,7 @@ const sentinel = document.createElement('div');
 sentinel.className = 'scroll-sentinel';
 document.body.prepend(sentinel);
 new IntersectionObserver(([e]) => header.classList.toggle('is-stuck', !e.isIntersecting)).observe(sentinel);
+root.classList.add('header-ready');
 
 // --------------------------------------------------------------- reveals ----
 // CSS runtime: an observer flips a class, a transition does the rest.
@@ -139,6 +140,8 @@ if (sceneFrame?.dataset.scene) {
       if (e.source !== iframe.contentWindow || e.data?.type !== 'cis-scene-ready') return;
       sceneWindow = iframe.contentWindow;
       sceneFrame.classList.add('is-live');
+      // Remove the loading hint for everyone, not just visually.
+      sceneFrame.querySelector('.scene-hint')?.setAttribute('hidden', '');
     });
   };
   // The engine is only fetched when the section is near the viewport.

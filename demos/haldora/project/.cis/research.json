@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "entries": [
+    {
+      "id": "r-001",
+      "topic": "accessibility",
+      "kind": "fact",
+      "finding": "WCAG 2.2 is a W3C Recommendation; SC 2.5.8 sets a minimum pointer target of 24 by 24 CSS pixels and SC 2.5.7 requires an alternative to dragging.",
+      "source": "https://www.w3.org/TR/WCAG22/",
+      "implication": "Token target-min is 24px on the web and 44pt in the app; every drag has a tap alternative.",
+      "recordedOn": "2026-11-12"
+    },
+    {
+      "id": "r-002",
+      "topic": "technology",
+      "kind": "fact",
+      "finding": "Core Web Vitals good thresholds are LCP 2.5 s, INP 200 ms and CLS 0.1, assessed at the 75th percentile of field visits.",
+      "source": "https://web.dev/articles/vitals",
+      "implication": "Lab runs use these as budgets and are never reported as field data.",
+      "recordedOn": "2026-11-12"
+    },
+    {
+      "id": "r-003",
+      "topic": "technology",
+      "kind": "fact",
+      "finding": "GSAP including ScrollTrigger is free for commercial use under a no-charge licence that is not open source and prohibits use in tools competing with Webflow visual animation building.",
+      "source": "https://gsap.com/community/standard-license/",
+      "implication": "Installed from npm by the site, flagged by the audit for a human licence decision.",
+      "recordedOn": "2026-11-12"
+    },
+    {
+      "id": "r-004",
+      "topic": "technology",
+      "kind": "fact",
+      "finding": "Expo SDK 58 uses React Native 0.88 and React 19.3 and runs only on the New Architecture.",
+      "source": "https://docs.expo.dev/versions/latest/",
+      "implication": "Mobile template targets SDK 58 with Reanimated 4 and Gesture Handler 3.",
+      "recordedOn": "2026-11-12"
+    },
+    {
+      "id": "r-005",
+      "topic": "audience",
+      "kind": "client-statement",
+      "finding": "Buyers are homeowners, not engineers; launch markets are the UK and the UAE.",
+      "recordedOn": "2026-11-12"
+    },
+    {
+      "id": "r-006",
+      "topic": "competitor",
+      "kind": "inference",
+      "finding": "The category presents itself either as industrial equipment (dark dashboards) or as a gadget (white gloss).",
+      "basis": "Stated in the client brief as category conventions; no competitor audit was performed.",
+      "recordedOn": "2026-11-12"
+    }
+  ]
+}

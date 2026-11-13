@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13T00:02:32.519Z",
+  "dnaRevision": 1,
+  "ok": true,
+  "deliverables": [
+    {
+      "id": "brand",
+      "dir": "brand",
+      "present": true,
+      "tokens": "not-applicable",
+      "dnaRevision": null,
+      "offPalette": [],
+      "foreignFonts": [],
+      "filesScanned": 54
+    },
+    {
+      "id": "website",
+      "dir": "web",
+      "present": true,
+      "tokens": "current",
+      "dnaRevision": 1,
+      "offPalette": [],
+      "foreignFonts": [],
+      "filesScanned": 5
+    },
+    {
+      "id": "web-app",
+      "dir": "app",
+      "present": true,
+      "tokens": "current",
+      "dnaRevision": 1,
+      "offPalette": [],
+      "foreignFonts": [],
+      "filesScanned": 9
+    },
+    {
+      "id": "mobile",
+      "dir": "mobile",
+      "present": true,
+      "tokens": "current",
+      "dnaRevision": 1,
+      "offPalette": [],
+      "foreignFonts": [],
+      "filesScanned": 15
+    },
+    {
+      "id": "scene-3d",
+      "dir": "scene",
+      "present": true,
+      "tokens": "current",
+      "dnaRevision": 1,
+      "offPalette": [],
+      "foreignFonts": [],
+      "filesScanned": 5
+    }
+  ]
+}

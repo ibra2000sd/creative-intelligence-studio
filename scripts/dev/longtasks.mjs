@@ -1,7 +1,7 @@
 // node tests/longtasks.mjs <dist> [path] [throttle]
-import { serve } from '../plugin/cli/commands/build.mjs';
-import { launch } from '../plugin/cli/lib/browser.mjs';
-import { gpuArgs } from '../plugin/cli/lib/qa.mjs';
+import { serve } from '../../plugin/cli/commands/build.mjs';
+import { launch } from '../../plugin/cli/lib/browser.mjs';
+import { gpuArgs } from '../../plugin/cli/lib/qa.mjs';
 const [dir, p = '/', rate = '4'] = process.argv.slice(2);
 const s = await serve(dir);
 const browser = await launch({ args: gpuArgs() });

@@ -1,6 +1,6 @@
 // Ad-hoc screenshot helper: node tests/shot.mjs <dist-dir> <out.png> [path] [width] [height] [waitMs]
-import { serve } from '../plugin/cli/commands/build.mjs';
-import { launch } from '../plugin/cli/lib/browser.mjs';
+import { serve } from '../../plugin/cli/commands/build.mjs';
+import { launch } from '../../plugin/cli/lib/browser.mjs';
 const [dir, out, p = '/', w = '1280', h = '800', wait = '1500'] = process.argv.slice(2);
 const s = await serve(dir);
 const browser = await launch({ args: (process.env.SHOT_ARGS || '').split(' ').filter(Boolean) });
