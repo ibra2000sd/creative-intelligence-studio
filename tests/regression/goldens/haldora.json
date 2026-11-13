@@ -11,7 +11,7 @@
     "G7-acceptance"
   ],
   "recipes": {
-    "horizon-field": "1a6bb85daf8a31aa",
+    "horizon-field": "9cb34dd48ca7da53",
     "contour-map": "68a4e911e9c5e241",
     "pattern-tile": "14bd0450fe18eb8e"
   },
@@ -19,10 +19,9 @@
   "modelTriangles": {
     "Body": 2700,
     "Fascia": 1364,
-    "ArcLight": 1120,
+    "ArcLight": 1760,
     "Horizon": 532,
     "Sun": 520,
-    "Bracket": 588,
-    "Conduit": 972
+    "Bracket": 588
   }
 }

@@ -31,6 +31,7 @@ const copy = (rel, name) => (has(rel) ? (fs.copyFileSync(path.join(P, rel), path
 
 const dna = read('.cis/dna/experience-dna.json');
 const qa = has('.cis/reports/qa-summary.json') ? read('.cis/reports/qa-summary.json') : null;
+const review = has('.cis/reports/creative-review.json') ? read('.cis/reports/creative-review.json') : null;
 const cons = has('.cis/reports/consistency.json') ? read('.cis/reports/consistency.json') : null;
 const brand = has('brand/brand-manifest.json') ? read('brand/brand-manifest.json') : null;
 const model = has('scene/model-report.json') ? read('scene/model-report.json') : null;
@@ -48,8 +49,11 @@ const S = {
   appMobile: await shot('.cis/reports/qa/app/portal-mobile.png', 'app-mobile', { width: 390 }),
   scene: await shot('.cis/reports/qa/scene/scene-desktop.png', 'scene-desktop', { width: 1280 }),
   sceneStill: await shot('.cis/reports/qa/scene/scene-still-mobile.png', 'scene-still', { width: 390 }),
-  mobile: await shot('.cis/reports/qa/mobile/app-web-mobile.png', 'mobile-onboarding', { width: 390 }),
-  mobileDark: await shot('.cis/reports/qa/mobile/app-web-desktop-dark.png', 'mobile-dark', { width: 900 }),
+  mobile: await shot('.cis/reports/qa/mobile/app-today.png', 'mobile-today', { width: 390 }),
+  mobileDark: await shot('.cis/reports/qa/mobile/app-today-dark.png', 'mobile-today-dark', { width: 390 }),
+  mobileAr: await shot('.cis/reports/qa/mobile/app-settings-ar.png', 'mobile-settings-ar', { width: 390 }),
+  storyChapter: await shot('.cis/reports/qa/web/story-chapter-1.png', 'story-chapter', { width: 1280 }),
+  storyNight: await shot('.cis/reports/qa/web/story-chapter-4-dark.png', 'story-night', { width: 1280 }),
   lockup: await shot('brand/logo/png/lockup-horizontal-1200.png', 'lockup', { width: 900 }),
   lockupRev: await shot('brand/logo/png/lockup-horizontal-reversed-1200.png', 'lockup-reversed', { width: 900 }),
   social: await shot('brand/applications/png/social-square.png', 'social-square', { width: 720 }),
@@ -158,9 +162,10 @@ footer{padding:3rem 0;color:var(--muted);font-size:.9rem}
 
 <section id="web"><div class="wrap">
 <h2>Marketing website</h2>
-<p>Pre-rendered in English and Arabic. On wide screens scrolling moves the sun along the day arc and cross-fades the scene per chapter; on phones, with reduced motion, or without JavaScript it is a plain illustrated story.</p>
+<p>Pre-rendered in English and Arabic. On wide screens scrolling moves one sun along the day arc, between the sky and the hills, and cross-fades the scene per chapter; on phones, with reduced motion, or without JavaScript it is a plain illustrated story.</p>
 <div class="two">${frame(S.webDesktop, 'Full marketing page, desktop, light scheme', 'haldora.example · light')}${phone(S.webMobile, 'Marketing page on a phone')}</div>
 <div class="grid">${frame(S.webDark, 'Marketing page, dark scheme', 'dark scheme')}${frame(S.webAr, 'Marketing page in Arabic, right to left', '/ar/ · right to left')}</div>
+<div class="grid">${frame(S.storyChapter, 'Scroll story, first chapter: the sun at 06:10', 'scroll story · 06:10')}${frame(S.storyNight, 'Scroll story, night chapter in the dark scheme: a crescent instead of a sun', 'scroll story · 02:00 · dark')}</div>
 </div></section>
 
 <section id="app"><div class="wrap">
@@ -173,7 +178,7 @@ footer{padding:3rem 0;color:var(--muted);font-size:.9rem}
 <section id="mobile"><div class="wrap">
 <h2>Mobile application</h2>
 <p>An Expo and React Native project. These captures are from the web export of the same code, which is how gestures and navigation were exercised automatically.</p>
-<div class="two"><div><p class="note">Verified here: TypeScript, Jest, production Hermes bundles for iOS and Android, and browser flows for swipe, tabs, detail, slider drag, offline and Arabic. <b>Not verified here:</b> native builds, device gestures, VoiceOver and TalkBack. This machine has neither Xcode nor the Android SDK, and those checks are reported as blocked.</p>${frame(S.mobileDark, 'Mobile app web export in the dark scheme at desktop width', 'web export · dark')}</div>${phone(S.mobile, 'Mobile onboarding screen')}</div>
+<div class="two"><div><p class="note">Verified here: TypeScript, Jest, production Hermes bundles for iOS and Android, and browser flows for swipe, tabs, detail, slider drag, offline and Arabic. <b>Not verified here:</b> native builds, device gestures, VoiceOver and TalkBack. This machine has neither Xcode nor the Android SDK, and those checks are reported as blocked.</p></div><div class="grid">${phone(S.mobile, 'Today screen with the day dial')}${phone(S.mobileDark, 'Today screen in the dark scheme')}${phone(S.mobileAr, 'Settings in Arabic')}</div></div>
 </div></section>
 
 <section id="scene"><div class="wrap">
@@ -194,7 +199,8 @@ ${qa ? `<p>Automated verdict: <b>${esc(qa.verdict)}</b>. Generated ${esc(qa.gene
 <div class="tablewrap"><table><thead><tr><th>Target</th><th>Pass</th><th>Fail</th><th>Warn</th><th>Blocked</th><th>Scripted flows</th></tr></thead><tbody>${qa.targets.map(targetRow).join('')}</tbody></table></div>
 <h3>Every failure, warning and blocked check</h3><ul class="issues">${notable.join('') || '<li>None.</li>'}</ul>
 <h3>Not covered by automation</h3><ul class="issues">${qa.manualAuditsOutstanding.map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` : '<p class="missing">No QA summary: run the full demo.</p>'}
-<p class="note">Approval gates ${sim.join(', ') || '(none)'} were recorded by the demonstration script and are marked simulated. The independent creative review and gates G6 (quality) and G7 (acceptance) are open, so the demo ends with a draft package, not a final one. Automated checks are evidence; they are not client approval.</p>
+${review ? `<h3>Independent creative review</h3><p>By ${esc(review.reviewer)}, ${esc(String(review.reviewedAt).slice(0, 10))}: recommendation <b>${esc(review.recommendation)}</b>, with ${['blocker', 'major', 'minor'].map((k) => `${review.findings.filter((f) => f.severity === k).length} ${k}`).join(', ')} finding(s). The full review, with its reasons, is in <code>.cis/reports/creative-review.json</code>. A model's review is not a person's, and it is not approval.</p>` : '<p class="missing">No creative review has been recorded.</p>'}
+<p class="note">Approval gates ${sim.join(', ') || '(none)'} were recorded by the demonstration script and are marked simulated. Gates G6 (quality) and G7 (acceptance) need people, so the demo ends with a draft package, not a final one. Automated checks are evidence; they are not client approval.</p>
 </div></section>
 
 <section id="reproduce"><div class="wrap">

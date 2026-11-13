@@ -9,7 +9,7 @@ import { loadDna } from '../lib/dna.mjs';
 import { loadFont, textToPath, fontFaceCss } from '../lib/fonts.mjs';
 import { buildSymbol, symbolMarkup, lockup, svgDoc, inspectSvg, escapeXml } from '../lib/logo.mjs';
 import { iconNames, iconSvg, iconSet } from '../lib/icons.mjs';
-import { renderSvg } from '../lib/imagegen.mjs';
+import { renderSvg, horizonSun } from '../lib/imagegen.mjs';
 import { hasCapability, need } from '../lib/deps.mjs';
 import { registerAsset, fileEntry } from '../lib/assets.mjs';
 
@@ -78,8 +78,8 @@ function applications(dna, spec, marks, slug, T) {
   const out = {};
   const headline = spec.headline || dna.identity.tagline || name;
   const lock = (colors, size, mono = false) => lockup(sym, marks.word, { layout: 'horizontal', symbolSize: size, colors, mono, clear: 0 });
-  const bgArt = (recipe, w, h, variant, seed) => {
-    const r = renderSvg({ id: `app-${seed}`, recipe, width: w, height: h, variant, seed }, dna);
+  const bgArt = (recipe, w, h, variant, seed, clear, sunAt) => {
+    const r = renderSvg({ id: `app-${seed}`, recipe, width: w, height: h, variant, seed, clear, sunAt }, dna);
     return r.svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
   };
   const wrapHeadline = (text, maxChars) => {
@@ -89,6 +89,37 @@ function applications(dna, spec, marks, slug, T) {
       else lines[lines.length - 1] = (lines.at(-1) + ' ' + w).trim();
     }
     return lines;
+  };
+  /**
+   * Break a headline so no line is left with a single stray word: use one line fewer when the
+   * text fits, then choose the breaks whose longest and shortest lines differ least.
+   */
+  const balance = (text, maxChars) => {
+    const words = text.split(' ');
+    const greedy = wrapHeadline(text, maxChars);
+    const limit = maxChars + 3;
+    const best = (count) => {
+      let found = null;
+      let score = Infinity;
+      const walk = (start, left, acc) => {
+        if (left === 1) {
+          const line = words.slice(start).join(' ');
+          if (!line || line.length > limit) return;
+          const lens = [...acc, line].map((x) => x.length);
+          const sc = Math.max(...lens) - Math.min(...lens);
+          if (sc < score) [score, found] = [sc, [...acc, line]];
+          return;
+        }
+        for (let end = start + 1; end <= words.length - (left - 1); end++) {
+          const line = words.slice(start, end).join(' ');
+          if (line.length > limit) break;
+          walk(end, left - 1, [...acc, line]);
+        }
+      };
+      walk(0, count, []);
+      return found;
+    };
+    return (greedy.length > 1 && best(greedy.length - 1)) || best(greedy.length) || greedy;
   };
   const want = (k) => spec.applications.includes(k);
 
@@ -121,11 +152,23 @@ function applications(dna, spec, marks, slug, T) {
     const lk = lock(dark ? { primary: d.primary, accent: d.text, text: d.text } : { primary: l.primary, accent: l.accent, text: l.text }, Math.round(w * 0.06));
     const size = Math.round(w * (opts.type || 0.078));
     const m = Math.round(w * 0.075);
-    const lines = wrapHeadline(headline, opts.wrap || 16);
-    let body = bgArt(recipe, w, h, variant, key) + `<g transform="translate(${m} ${m})">${lk.body}</g>`;
-    const top = opts.top ?? h * 0.34;
+    const lines = balance(headline, opts.wrap || 16);
+    const lh = size * 1.06;
+    const set = (line, y) => T('display', line, { size, weight: spec.wordmark.weight, x: m, y, fill: ink, tracking: dna.typography.scale.displayTracking ?? 0 });
+    const widest = Math.max(...lines.map((line) => set(line, 0).width));
+    let top = opts.top ?? h * 0.34;
+    if (recipe === 'horizon-field') {
+      // Text has right of way: if the sun would sit under the headline, the block moves up clear of its halo.
+      const sun = horizonSun(w, h, variant, opts.sunAt);
+      const overlapsX = sun.x - sun.halo < m + widest + size * 0.3;
+      const lowest = sun.y - sun.halo - size * 0.55;
+      if (overlapsX && top + (lines.length - 1) * lh > lowest) top = Math.max(m + lk.h + size * 1.25, lowest - (lines.length - 1) * lh);
+    }
+    // The artwork keeps its arc and stars out of the rectangle the headline occupies.
+    const clear = { x: m - size * 0.35, y: top - size * 1.0, w: widest + size * 0.7, h: (lines.length - 1) * lh + size * 1.4 };
+    let body = bgArt(recipe, w, h, variant, key, clear, opts.sunAt) + `<g transform="translate(${m} ${m})">${lk.body}</g>`;
     lines.forEach((line, i) => {
-      body += T('display', line, { size, weight: spec.wordmark.weight, x: m, y: top + i * size * 1.06, fill: ink, tracking: dna.typography.scale.displayTracking ?? 0 }).markup;
+      body += set(line, top + i * lh).markup;
     });
     out[key] = { svg: svgDoc({ w, h, title: `${name}: ${headline}`, body }), px: [w, h] };
   };
@@ -144,7 +187,24 @@ function guidelinesHtml({ dna, spec, brief, marks, slug, files, appKeys, iconNam
   const l = dna.color.semantic.light;
   const d = dna.color.semantic.dark;
   const e = escapeXml;
-  const read = (rel) => fs.readFileSync(files[rel], 'utf8').replace(/<\?xml[^>]*>/, '');
+  // Every inlined SVG gets its own id namespace. Optimised files reuse short ids ("a", "b"), and in one
+  // HTML document every url(#a) would otherwise resolve to the first file's gradient.
+  let inlined = 0;
+  const read = (rel) => {
+    const ns = `s${++inlined}-`;
+    return fs
+      .readFileSync(files[rel], 'utf8')
+      .replace(/<\?xml[^>]*>/, '')
+      .replace(/\bid="([^"]+)"/g, (_, id) => `id="${ns}${id}"`)
+      .replace(/url\(#([^)]+)\)/g, (_, id) => `url(#${ns}${id})`)
+      .replace(/(xlink:href|href)="#([^"]+)"/g, (_, attr, id) => `${attr}="#${ns}${id}"`);
+  };
+  // Applications laid out by shape, so a tall story never leaves a hole beside it.
+  const aspect = (k) => {
+    const m = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(fs.readFileSync(files[`applications/${k}.svg`], 'utf8'));
+    return m ? Number(m[1]) / Number(m[2]) : 1;
+  };
+  const appFigure = (k) => `<figure${aspect(k) < 0.8 ? ' class="tall"' : ''}>${read(`applications/${k}.svg`)}<figcaption>${k}</figcaption></figure>`;
   const pal = Object.entries(dna.color.palette);
   const sw = pal
     .map(([k, c]) => {
@@ -182,17 +242,92 @@ function guidelinesHtml({ dna, spec, brief, marks, slug, files, appKeys, iconNam
       return `<div class="type"><p class="meta">${r} · ${e(t.family)} · ${e(t.license)} · ${e(t.source)}</p><p ${r === 'arabic' ? 'dir="rtl" lang="ar"' : ''} style="font-family:'${e(t.family)}',${t.fallback};font-size:${r === 'display' ? 54 : r === 'arabic' ? 34 : 26}px;line-height:1.15;margin:0">${e(sample)}</p></div>`;
     })
     .join('');
+  // ---- signature device: a construction drawing and its rules -----------------------------
+  const sig = spec.signature;
+  const arcAt = (W, H, t) => [W / 2 + W * 0.4 * Math.cos(Math.PI * (1 - t)), H * 0.66 - H * 0.5 * Math.sin(Math.PI * (1 - t))];
+  const arcDrawing = () => {
+    const W = 640;
+    const H = 380;
+    const hz = H * 0.66;
+    const sun = (t, label, r, fill, moon = false) => {
+      const [x, y] = arcAt(W, H, t);
+      const disc = moon ? `<path transform="translate(${x.toFixed(1)} ${y.toFixed(1)})" fill="${fill}" d="M3 -8A8.6 8.6 0 1 0 8 3A6.6 6.6 0 0 1 3 -8Z"/>` : `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r * 2.2}" fill="${fill}" opacity=".18"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${fill}"/>`;
+      return `${disc}<text x="${x.toFixed(1)}" y="${(y - r * 2.2 - 8).toFixed(1)}" text-anchor="middle">${label}</text>`;
+    };
+    return `<svg class="construct" viewBox="0 0 ${W} ${H}" role="img" aria-label="Construction of ${e(sig.name)}">
+<rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" fill="${l.surfaceRaised}" stroke="${l.border}"/>
+<path d="M0 ${hz}H${W}" stroke="${l.text}" stroke-width="1.2"/>
+<path d="M${W * 0.1} ${hz}A${W * 0.4} ${H * 0.5} 0 0 1 ${W * 0.9} ${hz}" fill="none" stroke="${l.primary}" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+<path d="M${W / 2} ${hz}V${hz - H * 0.5}M${W / 2} ${hz + 26}H${W * 0.9}" stroke="${l.textMuted}" stroke-width="1" stroke-dasharray="2 3" fill="none"/>
+<text x="${W / 2 + 8}" y="${hz - H * 0.25}">height 0.50 H</text><text x="${W * 0.7}" y="${hz + 42}" text-anchor="middle">radius 0.40 W</text><text x="10" y="${hz - 8}">horizon at 0.66 H</text>
+<text x="${W * 0.1}" y="${hz + 20}" text-anchor="middle">sunrise</text><text x="${W * 0.9}" y="${hz + 20}" text-anchor="middle">sunset</text>
+${sun(0.1, 'dawn', 9, l.accent)}${sun(0.5, 'noon', 9, l.accent)}${sun(0.9, 'dusk', 9, l.accent)}
+<g transform="translate(${W - 196} ${H - 62})"><rect width="180" height="48" rx="8" fill="${d.bg}"/><path transform="translate(26 24)" fill="${d.text}" d="M3 -8A8.6 8.6 0 1 0 8 3A6.6 6.6 0 0 1 3 -8Z"/><text x="46" y="28" style="fill:${d.text}">night: a crescent</text></g>
+</svg>`;
+  };
+  const signatureSection = sig
+    ? `<section><h2>${e(sig.name)}</h2><p class="lede">${e(dna.direction.signature)}</p>${sig.diagram === 'day-arc' ? arcDrawing() : ''}
+<div class="two"><div><h3>Rules</h3><ul>${sig.rules.map((r) => `<li>${e(r)}</li>`).join('')}</ul></div>${sig.dont?.length ? `<div><h3>Do not</h3><ul>${sig.dont.map((r) => `<li>${e(r)}</li>`).join('')}</ul></div>` : ''}</div></section>`
+    : '';
+  const coverArc = sig?.diagram === 'day-arc' ? (() => {
+    const [x, y] = arcAt(900, 520, 0.68);
+    return `<svg class="cover-arc" viewBox="0 0 900 380" aria-hidden="true"><path d="M90 343A360 260 0 0 1 810 343" fill="none" stroke="${d.text}" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round" opacity=".6"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="44" fill="${d.primary}" opacity=".2"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="20" fill="${d.primary}"/><path d="M0 343H900" stroke="${d.text}" stroke-width="1.5" opacity=".5"/></svg>`;
+  })() : '';
+
+  // ---- type scale in use, and the Arabic hierarchy ------------------------------------------
+  const sc = dna.typography.scale;
+  const px = (n) => Math.round(sc.basePx * sc.ratio ** n);
+  const display = `'${e(dna.typography.display.family)}',${dna.typography.display.fallback}`;
+  const text = `'${e(dna.typography.text.family)}',${dna.typography.text.fallback}`;
+  const mono = dna.typography.mono ? `'${e(dna.typography.mono.family)}',${dna.typography.mono.fallback}` : 'ui-monospace,monospace';
+  const sampleLine = dna.identity.tagline || spec.headline || spec.wordmark.text;
+  const steps = [['Display', 4, display, spec.wordmark.weight, sc.displayLineHeight ?? 1.05, sampleLine], ['Heading', 3, display, spec.wordmark.weight, 1.1, sampleLine], ['Subheading', 1, display, spec.wordmark.weight, 1.2, sampleLine], ['Lead', 1, text, 400, 1.45, dna.identity.positioning], ['Body', 0, text, 400, sc.textLineHeight ?? 1.55, dna.identity.positioning], ['Small and labels', -1, text, 600, 1.4, 'Usable capacity · Continuous power'], ['Figures', 1, mono, 500, 1.2, '06:10   12.4 kWh   98%']];
+  const hierarchy = steps.map(([name, n, fam, weight, lhh, sample]) => `<div class="step"><p class="meta">${name} · ${px(n)}px · weight ${weight} · line height ${lhh}</p><p style="font-family:${fam};font-size:${Math.min(px(n), 56)}px;font-weight:${weight};line-height:${lhh};margin:0;max-width:none">${e(sample)}</p></div>`).join('');
+  const ar = spec.arabic;
+  const arFam = dna.typography.arabic ? `'${e(dna.typography.arabic.family)}',${dna.typography.arabic.fallback}` : text;
+  const arabicSection = ar && dna.typography.arabic
+    ? `<section><h2>Arabic typography</h2><p class="lede">Arabic has its own hierarchy. It is not the Latin page mirrored.</p>
+<div class="arabic" dir="rtl" lang="ar" style="font-family:${arFam}">
+<p class="meta" dir="ltr">Headline · ${px(3)}px · weight 700 · line height 1.25</p><p style="font-size:${Math.min(px(3), 50)}px;font-weight:700;line-height:1.25;margin:0 0 22px">${e(ar.headline)}</p>
+${ar.statement ? `<p class="meta" dir="ltr">Statement · ${px(2)}px · weight 600 · line height 1.7</p><p style="font-size:${px(2)}px;font-weight:600;line-height:1.7;margin:0 0 22px;border-inline-start:3px solid ${l.accent};padding-inline-start:16px">${e(ar.statement)}</p>` : ''}
+<p class="meta" dir="ltr">Body · ${px(0)}px · weight 400 · line height 1.75</p><p style="font-size:${px(0)}px;font-weight:400;line-height:1.75;margin:0 0 22px;max-width:52ch">${e(ar.body)}</p>
+${ar.label ? `<p class="meta" dir="ltr">Label with a figure · ${px(-1)}px · weight 600; the figure stays in the mono face, left to right</p><p style="font-size:${px(-1)}px;font-weight:600;margin:0">${e(ar.label)} <span dir="ltr" style="font-family:${mono};font-weight:500;font-size:${px(1)}px;margin-inline-start:10px">57%</span></p>` : ''}
+</div>
+<h3>Rules</h3><ul>${ar.rules.map((r) => `<li>${e(r)}</li>`).join('')}</ul>
+${ar.lockupRule ? `<h3>The logo in Arabic contexts</h3><div class="plate" dir="rtl" style="justify-content:flex-start;max-width:420px">${read(`logo/${slug}-lockup-horizontal.svg`)}</div><p>${e(ar.lockupRule)}</p>` : ''}</section>`
+    : '';
+
+  // ---- layout: grid, spacing and corners ------------------------------------------------------
+  const grid = dna.layout.grid;
+  const cols = grid.columns;
+  const GW = 640;
+  const gm = (grid.marginPx / grid.maxWidthPx) * GW * 0.6;
+  const gg = (grid.gutterPx / grid.maxWidthPx) * GW;
+  const cw = (GW - gm * 2 - gg * (cols - 1)) / cols;
+  const gridDrawing = `<svg class="construct" viewBox="0 0 ${GW} 150" role="img" aria-label="${cols}-column grid"><rect x=".5" y=".5" width="${GW - 1}" height="149" fill="${l.surfaceRaised}" stroke="${l.border}"/>${Array.from({ length: cols }, (_, i) => `<rect x="${(gm + i * (cw + gg)).toFixed(1)}" y="12" width="${cw.toFixed(1)}" height="126" fill="${l.primary}" opacity=".14"/>`).join('')}<rect x="${gm.toFixed(1)}" y="30" width="${(cw * 7 + gg * 6).toFixed(1)}" height="34" fill="${l.primary}" opacity=".55"/><rect x="${gm.toFixed(1)}" y="74" width="${(cw * 5 + gg * 4).toFixed(1)}" height="14" fill="${l.text}" opacity=".5"/><rect x="${(gm + (cw + gg) * 7).toFixed(1)}" y="30" width="${(cw * 5 + gg * 4).toFixed(1)}" height="90" rx="6" fill="${l.accent}" opacity=".75"/></svg>`;
+  const unit = dna.layout.spacingUnitPx;
+  const spaces = [1, 2, 3, 4, 6, 8, 12, 16].map((n) => `<figure><div style="width:${n * unit}px;height:${n * unit}px;background:${l.primary};border-radius:2px"></div><figcaption>${n * unit}px</figcaption></figure>`).join('');
+  const radii = Object.entries(dna.layout.radius).map(([k, v]) => `<figure><div style="width:86px;height:58px;border:2px solid ${l.primary};border-radius:${v}px;background:${l.surfaceRaised}"></div><figcaption>${k} · ${v}px</figcaption></figure>`).join('');
+  const layoutSection = `<section><h2>Layout</h2><p class="lede">${e(dna.layout.grammar)} grammar, ${e(dna.layout.density)} density.</p>
+<h3>Grid</h3>${gridDrawing}<p>${cols} columns, ${grid.gutterPx}px gutters, ${grid.marginPx}px side margins at full width, content never wider than ${grid.maxWidthPx}px. Text blocks span 5 to 7 columns; pictures and data take the rest. On a phone the grid collapses to one column with the margin reduced, and nothing scrolls sideways.</p>
+<h3>Spacing</h3><p>Every distance is a multiple of ${unit}px.</p><div class="scale">${spaces}</div>
+<h3>Corners</h3><div class="scale">${radii}</div>
+<h3>Writing direction</h3><p>Layouts use start and end, never left and right, so they mirror for Arabic without overrides. Three things do not mirror: ${sig ? `${e(sig.name.toLowerCase())}, ` : ''}charts and time controls (time runs left to right), and figures with their units.</p></section>`;
+
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${e(spec.wordmark.text)} brand guidelines</title>
 <style>
 ${fontCss}
 @page{size:A4;margin:0}*{box-sizing:border-box}
 body{margin:0;background:${l.bg};color:${l.text};font:16px/1.55 "${dna.typography.text.family}",${dna.typography.text.fallback}}
-section{padding:56px 64px;min-height:296mm;page-break-after:always;border-bottom:1px solid ${l.border}}
+section{padding:56px 64px;page-break-after:always;border-bottom:1px solid ${l.border}}.cover{min-height:296mm}@media print{section{min-height:296mm}}
 h1,h2{font-family:"${dna.typography.display.family}",${dna.typography.display.fallback};font-weight:${spec.wordmark.weight};letter-spacing:${dna.typography.scale.displayTracking ?? 0}em;line-height:1.05;margin:0}
 h1{font-size:84px}h2{font-size:44px;margin-bottom:26px}h3{font-size:15px;letter-spacing:.09em;text-transform:uppercase;margin:34px 0 12px;color:${l.textMuted}}
 p{max-width:68ch}.lede{font-size:21px;max-width:56ch}.meta{font:12px/1.4 ui-monospace,monospace;color:${l.textMuted};margin:0 0 8px}
-.cover{background:${d.bg};color:${d.text};display:flex;flex-direction:column;justify-content:space-between}.cover .lock svg{height:96px;width:auto}
+.cover{background:${d.bg};color:${d.text};display:flex;flex-direction:column;justify-content:space-between}.cover .lock svg{height:96px;width:auto}.cover-arc{width:100%;height:auto;margin:24px 0}
+.construct{width:100%;max-width:640px;height:auto;display:block;margin:18px 0}.construct text{font:12px/1 ui-monospace,monospace;fill:${l.textMuted}}
+.two{display:grid;gap:28px;grid-template-columns:1.5fr 1fr}.step{border-top:1px solid ${l.border};padding:12px 0}.arabic .meta{text-align:right}.apps-wide{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);margin-bottom:18px}.apps-rest{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);align-items:start;max-width:780px}.apps-rest .tall{grid-row:span 2}.apps-wide svg,.apps-rest svg{width:100%;height:auto;border-radius:6px;border:1px solid ${l.border};display:block}.arabic{border:1px solid ${l.border};border-radius:${dna.layout.radius.md}px;padding:28px;background:${l.surfaceRaised};margin:18px 0}.arabic p{max-width:none}
+.scale{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.plate{border:1px solid ${l.border};border-radius:${dna.layout.radius.md}px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:150px;background:${l.surfaceRaised}}
 .plate.dark{background:${d.bg};border-color:${d.border}}.plate svg{max-width:100%;height:auto;max-height:110px}
 figure{margin:0}figcaption{font-size:13px;color:${l.textMuted};margin-top:8px}.row{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}.row3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
@@ -200,11 +335,11 @@ figure{margin:0}figcaption{font-size:13px;color:${l.textMuted};margin-top:8px}.r
 ul.sw{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}ul.sw li{border-radius:${dna.layout.radius.sm}px;padding:12px;min-height:118px;display:flex;flex-direction:column;gap:2px;font-size:12px;border:1px solid ${l.border}}ul.sw b{font-size:14px}ul.sw code{font-size:10.5px}
 table{border-collapse:collapse;font-size:14px}td,th{padding:6px 14px 6px 0;text-align:start}.chip{padding:5px 10px;border-radius:99px;font-size:13px;display:inline-block}
 .icons{display:grid;grid-template-columns:repeat(9,1fr);gap:14px}.icons figure{text-align:center}.icons svg{width:30px;height:30px;color:${l.text}}
-.type{border-top:1px solid ${l.border};padding:16px 0}.apps{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}.apps img,.apps svg{width:100%;height:auto;border-radius:6px;border:1px solid ${l.border}}
+.type{border-top:1px solid ${l.border};padding:16px 0}.apps{columns:3;column-gap:18px}.apps>*{break-inside:avoid;margin:0 0 18px;display:block}.apps img,.apps svg{width:100%;height:auto;border-radius:6px;border:1px solid ${l.border};display:block}
 .clear{position:relative;display:inline-block;background:${l.surfaceRaised};border:1px dashed ${l.primary}}.clear svg{display:block;height:150px;width:auto}
 .note{border-inline-start:4px solid ${l.accent};padding:10px 16px;background:${l.surface};font-size:14px;max-width:72ch}
 </style></head><body>
-<section class="cover"><div class="lock">${read(`logo/${slug}-lockup-horizontal-reversed.svg`)}</div><div><h1>Brand<br>guidelines</h1><p class="lede">${e(dna.identity.positioning)}</p><p class="meta" style="color:${d.textMuted}">Experience DNA revision ${dna.revision} · generated ${nowIso().slice(0, 10)} · ${e(brief.client.name)}${brief.client.fictional ? ' (fictional client, demonstration project)' : ''}</p></div></section>
+<section class="cover"><div class="lock">${read(`logo/${slug}-lockup-horizontal-reversed.svg`)}</div>${coverArc}<div><h1>Brand<br>guidelines</h1><p class="lede">${e(dna.identity.positioning)}</p><p class="meta" style="color:${d.textMuted}">Experience DNA revision ${dna.revision} · generated ${nowIso().slice(0, 10)} · ${e(brief.client.name)}${brief.client.fictional ? ' (fictional client, demonstration project)' : ''}</p></div></section>
 <section><h2>Strategy</h2><p class="lede">${e(dna.identity.positioning)}</p>
 <div class="row3"><div><h3>Personality</h3><p>${dna.identity.personality.map(e).join(' · ')}</p></div><div><h3>Audience</h3><p>${dna.identity.audience.map(e).join('; ')}</p></div><div><h3>Voice</h3><p>${dna.identity.voice.tone.map(e).join(' · ')}</p></div></div>
 <h3>What sets it apart</h3><p>${e(spec.strategy.differentiation)}</p>
@@ -220,14 +355,17 @@ ${spec.selectionReason ? `<p style="margin-top:22px"><b>Why this one:</b> ${e(sp
 <h3>Clear space and minimum size</h3><div class="clear" style="padding:0">${read(`logo/${slug}-lockup-horizontal.svg`)}</div>
 <p>Every logo file carries its clear space as built-in padding: ${clear} of the symbol height on all sides (the dashed box above is the file boundary). Minimum size on screen: symbol ${spec.minSizePx?.symbol ?? 16}px, horizontal lockup ${spec.minSizePx?.lockup ?? 96}px wide.</p>
 <h3>Misuse</h3><div class="row">${misuse}</div></section>
+${signatureSection}
 <section><h2>Colour</h2><ul class="sw">${sw}</ul><h3>Measured contrast (WCAG 2.x ratio)</h3><table><tr><th>Scheme</th><th>Pair</th><th>Ratio</th></tr>${ctable}</table>
 <p class="note">Ratios are computed from the hex values above. Text pairs meet ${dna.accessibility.minTextContrast}:1 or better; non-text pairs meet 3:1. Print colours are not specified here: CMYK or spot values must be proofed against the chosen press and stock.</p></section>
-<section><h2>Typography</h2>${type}<h3>Scale</h3><p>Base ${dna.typography.scale.basePx}px, ratio ${dna.typography.scale.ratio}. Display tracking ${dna.typography.scale.displayTracking ?? 0}em.</p>
-<h2 style="margin-top:44px">Iconography</h2><p>${iconNamesList.length} icons on a 24px grid, ${dna.iconography.strokeWidth}px ${dna.iconography.terminals || 'round'} strokes.</p><div class="icons">${iconNamesList.map((n) => `<figure>${iconSvg(n, { strokeWidth: dna.iconography.strokeWidth, terminals: dna.iconography.terminals || 'round' })}<figcaption>${n}</figcaption></figure>`).join('')}</div></section>
+<section><h2>Typography</h2>${type}<h3>Hierarchy</h3><p>Base ${dna.typography.scale.basePx}px, each step ${dna.typography.scale.ratio} times the one below. Display tracking ${dna.typography.scale.displayTracking ?? 0}em. Statements are set in the display face, explanation in the text face, and every figure in the mono face.</p>${hierarchy}</section>
+${arabicSection}
+${layoutSection}
+<section><h2>Iconography</h2><p>${iconNamesList.length} icons on a 24px grid, ${dna.iconography.strokeWidth}px ${dna.iconography.terminals || 'round'} strokes.</p><div class="icons">${iconNamesList.map((n) => `<figure>${iconSvg(n, { strokeWidth: dna.iconography.strokeWidth, terminals: dna.iconography.terminals || 'round' })}<figcaption>${n}</figcaption></figure>`).join('')}</div></section>
 <section><h2>Imagery and motion</h2><p><b>Style:</b> ${e(dna.imagery.style)}</p><p><b>Composition:</b> ${e(dna.imagery.composition)}</p>${dna.imagery.photography ? `<p><b>Photography:</b> ${e(dna.imagery.photography)}</p>` : ''}
-<div class="apps" style="margin-top:18px">${appKeys.filter((k) => !k.startsWith('business')).slice(0, 3).map((k) => read(`applications/${k}.svg`)).join('')}</div>
+<div class="apps-rest" style="margin-top:18px">${appKeys.filter((k) => !k.startsWith('business') && aspect(k) <= 1.2 && k !== 'app-icon').map((k) => read(`applications/${k}.svg`)).join('')}</div>
 <h3>Motion: ${e(dna.motion.personality)}</h3><p>Intensity: ${dna.motion.intensity}. Durations (ms): ${Object.entries(dna.motion.durations).map(([k, v]) => `${k} ${v}`).join(' · ')}. Spring: stiffness ${dna.motion.spring.stiffness}, damping ${dna.motion.spring.damping}. With reduced motion: ${dna.motion.reducedMotion}.</p><div class="row">${ease}</div></section>
-<section><h2>Applications</h2><div class="apps">${appKeys.map((k) => `<figure>${read(`applications/${k}.svg`)}<figcaption>${k}</figcaption></figure>`).join('')}</div>
+<section><h2>Applications</h2><div class="apps-wide">${appKeys.filter((k) => aspect(k) > 1.2).map(appFigure).join('')}</div><div class="apps-rest">${appKeys.filter((k) => aspect(k) <= 1.2).sort((a, b) => aspect(a) - aspect(b)).map(appFigure).join('')}</div>
 <h3>Accessibility</h3><p>Target: ${dna.accessibility.target}. Minimum interactive target ${dna.accessibility.minTargetPx}px on the web, 44pt/48dp in native apps.</p>
 <h3>Files and integrity</h3><p>${checks.total} files delivered; ${checks.vectorPass}/${checks.vectorTotal} vector masters pass integrity checks (fills only, no live text, no raster, palette colours only).</p>
 <h3>Legal notice</h3><p class="note">This identity was generated from design parameters. No trademark search or clearance has been performed, and nothing here asserts that the name or mark is available for registration or free of conflict. Clearance by qualified counsel is required before use in commerce.</p></section>

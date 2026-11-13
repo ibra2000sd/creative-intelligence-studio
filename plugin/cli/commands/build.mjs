@@ -268,7 +268,8 @@ async function mobile({ _, flags }) {
 async function scene({ _, flags }) {
   const root = requireProject(flags.project);
   const sub = _[0] || 'build';
-  if (!['build', 'sync'].includes(sub)) throw new CisError('E_USAGE', `Unknown 3d subcommand "${sub}".`, { exit: EXIT.USAGE });
+  if (!['build', 'sync', 'stills'].includes(sub)) throw new CisError('E_USAGE', `Unknown 3d subcommand "${sub}".`, { exit: EXIT.USAGE });
+  if (sub === 'stills') return sceneStills(root, flags);
   const dna = loadDna(root);
   const dest = path.join(root, 'scene');
   let copy = { written: [], kept: [] };
@@ -315,6 +316,63 @@ async function scene({ _, flags }) {
   for (const m of [...s.validation.messages, ...o.validation.messages]) print(`  validator: ${m}`);
   print(`Fallback stills: ${fallbacks.length} file(s). Next: cd scene && npm install && npm run build`);
   return report.valid ? EXIT.OK : EXIT.FAIL;
+}
+
+/**
+ * Render the still fallbacks from the built scene itself, one per finish and colour scheme, so a
+ * device that cannot run the 3D view is shown the same object as one that can. Replaces the
+ * drawn front elevations written by `3d build` and re-registers the files with their new hashes.
+ */
+async function sceneStills(root, flags) {
+  const dest = path.join(root, 'scene');
+  const dist = path.join(dest, 'dist');
+  if (!exists(path.join(dist, 'index.html'))) throw new CisError('E_NOT_BUILT', 'The scene has not been built. Run: cd scene && npm install && npm run build', { exit: EXIT.BLOCKED });
+  if (!hasCapability('browser') || !hasCapability('raster')) throw new CisError('E_MISSING_ENGINE', 'Rendering stills needs the browser and raster engines (creative-studio setup). The drawn fallbacks from `3d build` remain in place.', { exit: EXIT.MISSING_DEP });
+  const dna = loadDna(root);
+  const { launch } = await import('../lib/browser.mjs');
+  const { gpuArgs } = await import('../lib/qa.mjs');
+  const { convert } = await import('../lib/raster.mjs');
+  const server = await serve(dist);
+  const browser = await launch({ args: gpuArgs() });
+  const written = [];
+  try {
+    for (const scheme of ['light', 'dark']) {
+      const ctx = await browser.newContext({ viewport: { width: 900, height: 900 }, deviceScaleFactor: 1, colorScheme: scheme, reducedMotion: 'reduce' });
+      try {
+        const page = await ctx.newPage();
+        await page.goto(`${server.url}/?shot=1&scheme=${scheme}`, { waitUntil: 'load' });
+        await page.waitForFunction(() => window.__scene?.mode, null, { timeout: 30000 });
+        if ((await page.evaluate(() => window.__scene.mode)) !== 'webgl') throw new CisError('E_NO_WEBGL', 'This machine could not start WebGL in headless Chrome, so stills cannot be rendered from the model. The drawn fallbacks remain in place.', { exit: EXIT.MISSING_DEP });
+        for (const finish of dna.materials3d.finishes) {
+          await page.evaluate((id) => window.__scene.api.setFinish(id), finish.id);
+          await page.waitForFunction(() => window.__scene.settled(), null, { timeout: 10000 });
+          await page.waitForTimeout(200);
+          const webp = await convert(await page.locator('#scene').screenshot(), { width: 900, height: 900, format: 'webp', quality: 88 });
+          const name = `cell-${finish.id}${scheme === 'dark' ? '-dark' : ''}.webp`;
+          writeFileAtomic(path.join(dest, 'public', 'fallback', name), webp);
+          writeFileAtomic(path.join(dist, 'fallback', name), webp);
+          written.push(path.join(dest, 'public', 'fallback', name));
+        }
+      } finally {
+        await ctx.close();
+      }
+    }
+  } finally {
+    await browser.close();
+    await server.close();
+  }
+  const prev = loadRegistry(root).assets.find((a) => a.id === 'model-cell');
+  if (prev) {
+    const fallbackDir = path.join(dest, 'public', 'fallback');
+    const stills = walk(fallbackDir).sort();
+    registerAsset(root, { ...prev, history: [{ at: nowIso(), action: 'edited', by: 'creative-studio 3d stills'}], files: [...prev.files.filter((f) => f.role !== 'fallback'), ...stills.map((f) => fileEntry(root, f, { format: path.extname(f).slice(1), role: 'fallback' }))] });
+  }
+  appendEvent(root, { type: 'scene.stills', data: { files: written.length } });
+  const rel = written.map((f) => path.relative(root, f).split(path.sep).join('/'));
+  if (json(flags, { ok: true, stills: rel })) return EXIT.OK;
+  print(`Rendered ${written.length} still(s) from the model: ${dna.materials3d.finishes.length} finish(es) in light and dark.`);
+  print('Next: creative-studio website sync   (copies the scene, with its stills, into the website)');
+  return EXIT.OK;
 }
 
 // --------------------------------------------------------------- preview -----
@@ -380,10 +438,14 @@ and app.json identity from the Experience DNA.` },
   { name: '3d', group: 'Production', summary: 'Build the 3D model, fallbacks and interactive scene', run: scene, usage: `
 creative-studio 3d build [--force] [--json]
 creative-studio 3d sync
+creative-studio 3d stills [--json]
 
 Generates the product GLB from procedural geometry with DNA materials,
 optimises it (meshopt), validates source and optimised files with the Khronos
-glTF validator, writes still fallbacks per finish and scaffolds scene/.` },
+glTF validator, writes drawn still fallbacks per finish and scaffolds scene/.
+After the scene is built (npm run build), "stills" replaces the drawn
+fallbacks with images rendered from the real model, in light and dark, so the
+still and the live view show the same object. Run it again after a DNA change.` },
   { name: 'preview', group: 'Production', summary: 'Serve a built directory on loopback', run: preview, usage: `
 creative-studio preview <dist-dir> [--port 4173] [--spa]` },
 ];

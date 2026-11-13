@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
-import { Pressable, ScrollView, Switch, View } from 'react-native';
+import { Pressable, ScrollView, View } from 'react-native';
 import { ReserveSlider } from '@/components/ReserveSlider';
-import { Button, Card, Screen, T } from '@/components/ui';
+import { Button, Card, Screen, T, Toggle } from '@/components/ui';
 import { useStrings } from '@/i18n';
 import { store, useStore, type Locale } from '@/store';
 import { useTheme } from '@/theme';
@@ -26,11 +26,11 @@ export default function Settings() {
         <Card>
           <View style={row}>
             <T kind="body" nativeID="alerts-label" style={{ flex: 1 }}>{t.settings.alerts}</T>
-            <Switch testID="alerts" accessibilityLabel={t.settings.alerts} value={alerts} onValueChange={(v) => store.set({ alerts: v })} trackColor={{ true: th.c.primary, false: th.c.border }} />
+            <Toggle testID="alerts" accessibilityLabel={t.settings.alerts} value={alerts} onValueChange={(v) => store.set({ alerts: v })} />
           </View>
           <View style={row}>
             <T kind="body" style={{ flex: 1 }}>{t.settings.simulate}</T>
-            <Switch testID="simulate-offline" accessibilityLabel={t.settings.simulate} value={!online} onValueChange={(v) => store.set({ online: !v })} trackColor={{ true: th.c.primary, false: th.c.border }} />
+            <Toggle testID="simulate-offline" accessibilityLabel={t.settings.simulate} value={!online} onValueChange={(v) => store.set({ online: !v })} />
           </View>
         </Card>
         <Card>

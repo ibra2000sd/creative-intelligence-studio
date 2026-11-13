@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Platform, Pressable, StyleSheet, Switch, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import Animated, { FadeInDown, FadeOutUp, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
@@ -25,7 +25,10 @@ export function Icon({ name, size = 24, color }: { name: string; size?: number; 
 export function T({ kind = 'body', style, children, ...rest }: { kind?: 'display' | 'title' | 'body' | 'muted' | 'mono' | 'label'; style?: StyleProp<TextStyle>; children: ReactNode } & React.ComponentProps<typeof Text>) {
   const th = useTheme();
   const { rtl } = useStrings();
-  const base: TextStyle = { color: th.c.text, fontFamily: th.font.text, fontSize: th.size.md, lineHeight: th.size.md * 1.5, textAlign: 'left', writingDirection: rtl ? 'rtl' : 'ltr' };
+  // Text starts at the reading edge. Native text treats 'left' as the start of a right-to-left
+  // layout; on the web 'left' is physical, so Arabic needs 'right' there.
+  const start = Platform.OS === 'web' && rtl ? 'right' : 'left';
+  const base: TextStyle = { color: th.c.text, fontFamily: th.font.text, fontSize: th.size.md, lineHeight: th.size.md * 1.5, textAlign: start, writingDirection: rtl ? 'rtl' : 'ltr' };
   const kinds: Record<string, TextStyle> = {
     display: { fontFamily: th.font.display, fontSize: th.size['3xl'], lineHeight: th.size['3xl'] * (rtl ? 1.4 : 1.1) },
     title: { fontFamily: th.font.display, fontSize: th.size.xl, lineHeight: th.size.xl * (rtl ? 1.45 : 1.2) },
@@ -84,6 +87,21 @@ export function Button({ label, onPress, variant = 'primary', icon, compact = fa
         {label ? <Text style={{ color: fg, fontFamily: th.font.medium, fontSize: th.size.sm }}>{label}</Text> : null}
       </Pressable>
     </Animated.View>
+  );
+}
+
+/**
+ * On/off switch in the brand's colours. The control is drawn left to right in every language
+ * (only its place in the row mirrors), which also keeps its thumb inside its track on the web.
+ */
+export function Toggle({ value, onValueChange, testID, accessibilityLabel }: { value: boolean; onValueChange: (v: boolean) => void; testID?: string; accessibilityLabel: string }) {
+  const th = useTheme();
+  // react-native-web names the "on" colours separately; without them it falls back to its own teal.
+  const web = Platform.OS === 'web' ? ({ activeThumbColor: th.c.onPrimary, activeTrackColor: th.c.primary } as object) : null;
+  return (
+    <View style={{ direction: 'ltr' }}>
+      <Switch testID={testID} accessibilityLabel={accessibilityLabel} value={value} onValueChange={onValueChange} trackColor={{ true: th.c.primary, false: th.c.border }} thumbColor={value ? th.c.onPrimary : th.c.surfaceRaised} ios_backgroundColor={th.c.border} {...web} />
+    </View>
   );
 }
 

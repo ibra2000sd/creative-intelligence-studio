@@ -136,3 +136,38 @@ export const flows = [
     },
   },
 ];
+
+// Every main screen at phone size, in light, dark and Arabic. A page-level screenshot only ever
+// shows the first onboarding page, so these are what lets somebody look at the app itself.
+const screen = (tab, { arabic = false, then = async () => {} } = {}) => async ({ page, baseUrl }) => {
+  await enter(page, baseUrl);
+  if (arabic) {
+    await id(page, 'tab-settings').click();
+    await id(page, 'lang-ar').click();
+    await page.waitForFunction(() => document.querySelector('[data-testid="lang-ar"]').getAttribute('aria-checked') === 'true');
+  }
+  await id(page, `tab-${tab}`).click();
+  await then(page);
+  await page.waitForTimeout(900);
+};
+const later = (taps) => async (page) => {
+  for (let i = 0; i < taps; i++) await id(page, 'later').click();
+};
+const detail = async (page) => {
+  await page.locator('[data-testid^="device-"]').first().click();
+  await id(page, 'device-title').waitFor();
+};
+const variants = (name, tab, opts = {}) => [
+  { id: `app-${name}`, title: `${name}`, viewport: 'mobile', run: screen(tab, opts) },
+  { id: `app-${name}-dark`, title: `${name}, dark scheme`, viewport: 'mobile', scheme: 'dark', run: screen(tab, opts) },
+  { id: `app-${name}-ar`, title: `${name}, Arabic`, viewport: 'mobile', run: screen(tab, { ...opts, arabic: true }) },
+];
+
+export const captures = [
+  ...variants('today', 'today'),
+  { id: 'app-today-evening', title: 'today, eight hours later', viewport: 'mobile', run: screen('today', { then: later(16) }) },
+  ...variants('devices', 'devices'),
+  ...variants('device-detail', 'devices', { then: detail }),
+  ...variants('settings', 'settings'),
+  { id: 'app-settings-ar-dark', title: 'settings, Arabic, dark scheme', viewport: 'mobile', scheme: 'dark', run: screen('settings', { arabic: true }) },
+];

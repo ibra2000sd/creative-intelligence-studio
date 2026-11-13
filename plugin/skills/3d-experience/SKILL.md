@@ -20,16 +20,17 @@ See the description above for triggers. Skip this skill when the request is outs
 
 ## Workflow
 
-1. Run `creative-studio 3d build`. It generates the model, optimises it with meshopt, validates the source and optimised files with the Khronos validator, writes a still fallback per finish and scaffolds `scene/`.
-2. Read the report: triangle count, draw calls, bytes before and after, validator errors. Zero validator errors is the bar.
-3. In `scene/`: install and build. Adapt `src/scene.js` (camera shots, lighting, behaviours) to the product.
-4. To model a different product, change `batteryParts` in the plugin's `cli/lib/model3d.mjs` or load a model you have rights to; record its origin and licence in the asset registry.
-5. The marketing site embeds the built scene lazily and drives the camera from scroll; rebuild the scene before `creative-studio website sync`.
-6. Run `creative-studio test scene`.
+1. Run `creative-studio 3d build`. It generates the model, optimises it with meshopt, validates the source and optimised files with the Khronos validator, writes a drawn still fallback per finish and scaffolds `scene/`.
+2. After `npm run build`, run `creative-studio 3d stills`. It renders the fallback stills from the built scene itself, in the light and the dark scheme, so a device that cannot run WebGL is shown the same object as one that can. Run it again after any DNA change, then `creative-studio website sync`.
+3. Read the report: triangle count, draw calls, bytes before and after, validator errors. Zero validator errors is the bar.
+4. In `scene/`: install and build. Adapt `src/scene.js` (camera shots, lighting, behaviours) to the product.
+5. To model a different product, change `batteryParts` in the plugin's `cli/lib/model3d.mjs` or load a model you have rights to; record its origin and licence in the asset registry.
+6. The marketing site embeds the built scene lazily and drives the camera from scroll; rebuild the scene before `creative-studio website sync`.
+7. Run `creative-studio test scene`.
 
 ## Tools and dependencies
 
-- `creative-studio 3d build | sync`, `creative-studio test scene`
+- `creative-studio 3d build | sync | stills`, `creative-studio test scene`
 - model3d engine (glTF Transform, meshoptimizer, glTF Validator), Three.js, Vite.
 
 The `creative-studio` command is on the PATH while this plugin is enabled. If it is not found, run `node "${CLAUDE_PLUGIN_ROOT}/bin/creative-studio"` instead. `creative-studio doctor` lists what this machine can and cannot do.
@@ -50,7 +51,7 @@ WebGL start-up blocks the main thread while shaders compile; the scene ships a d
 
 ## Example
 
-`creative-studio 3d build` -> source 200.4 KB, optimised 55.8 KB (72% smaller), 7,980 triangles, 7 draw calls, 0 validator errors for both.
+`creative-studio 3d build` -> source 198.1 KB, optimised 55.2 KB (72% smaller), 7,648 triangles, 6 draw calls, 0 validator errors for both. `creative-studio 3d stills` -> 6 stills (3 finishes, light and dark) rendered from the model.
 
 ## Tests
 

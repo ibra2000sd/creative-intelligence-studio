@@ -22,7 +22,7 @@ See the description above for triggers. Skip this skill when the request is outs
 
 1. If you are changing an existing site, read its framework, conventions and tests first and work inside them. Do not rewrite its architecture to fit this template.
 2. Write the copy for every locale in `.cis/content-web.json`. Follow the DNA's voice rules. Testimonials for a fictional or unreleased product must be labelled illustrative in `proof.disclaimer`.
-3. Name the hero assets `hero-sky`, `hero-arc`, `hero-far`, `hero-mid`, `hero-near` and `hero-mobile`; story images default to `story-<chapter id>`.
+3. Name the hero assets `hero-sky`, `hero-arc`, `hero-far`, `hero-mid`, `hero-near` and `hero-mobile`; story images default to `story-<chapter id>`. Give the dark scheme its own hero with the same names under `hero-night-`: without them the hero stays a daylight scene in both schemes. For the scroll story also generate `story-<chapter id>-sky` and `story-<chapter id>-ground`: the page then draws one sun between sky and land. When copy sits over a picture, place its sun or moon clear of the text with `sunAt` (0 at sunrise, 1 at sunset) on the image job; at night the marker is always a crescent. Never let a picture that contains a painted sun sit under a second, animated one.
 4. Run `creative-studio website scaffold`, then in `web/`: install and build.
 5. Treat the template as a floor. Change the section composition, the story device and the styles to suit the direction's layout grammar; two clients should not receive the same page.
 6. Check the motion spec before adding any animation (`motion-intelligence`).

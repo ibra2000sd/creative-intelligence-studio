@@ -25,7 +25,7 @@ See the description above for triggers. Skip this skill when the request is outs
 3. For a remote provider run `creative-studio images estimate --provider <id>` first and tell the user the estimate. Remote providers are refused when the brief says `deny`, need `--consent` when it says `ask`, and stop at the project budget.
 4. Never ask an image model to render the brand name, a logo or interface text. Put them in `overlay`: they are composited as outlined vector paths from the brand spec.
 5. Run `creative-studio images generate`. Unchanged jobs are reused; only new or edited jobs are produced.
-6. Read every rejection. Each output is checked for exact dimensions, blank renders, palette adherence, byte budget and near-duplicates. Fix the job and regenerate; do not loosen a check to make it pass.
+6. Read every rejection. Each output is checked for exact dimensions, blank renders, palette adherence, byte budget and near-duplicates (the same shapes in the same colours at the same proportions). Fix the job and regenerate; do not loosen a check to make it pass. When two jobs are meant to be the same picture, for example the same land under two skies, declare it on the job with `sameAs` instead.
 7. Look at the results. Automated checks do not judge composition.
 8. Run `creative-studio images verify` before delivery.
 
@@ -54,7 +54,7 @@ Budget stop and consent refusal are decisions for the client, not obstacles: rep
 
 ## Example
 
-A hero built for parallax: five jobs with the same seed and `layer` set to sky, arc, far, mid and near (the last four transparent), plus one composed `hero-mobile` for small screens and reduced motion.
+A hero built for parallax: five jobs with the same seed and `layer` set to sky, arc, far, mid and near (the last four transparent), plus one composed `hero-mobile` for small screens and reduced motion. A scene that something passes through (a scroll-driven sun) is two jobs: `layer` sky, and `layer` ground for the land on transparency in front of it.
 
 ## Tests
 

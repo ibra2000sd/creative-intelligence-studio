@@ -7,7 +7,7 @@ import dna from './dna/dna.json';
 import icons from './dna/icons.json';
 import { STRINGS, localeFromUrl } from './i18n.js';
 import { fetchDay, fetchDevices, fetchHistory, saveSettings } from './api.js';
-import { arcPoint, areaPath, clock, filterRows, formatNumber, linePath, paginate, scalePoints, sortRows, totals, validateSettings } from './logic.js';
+import { areaPath, batteryState, clock, filterRows, formatNumber, linePath, paginate, scalePoints, sortRows, sunOnAxis, totals, validateSettings } from './logic.js';
 
 const ROUTES = ['overview', 'devices', 'history', 'settings'];
 const ROUTE_ICON = { overview: 'arc', devices: 'device', history: 'history', settings: 'sliders' };
@@ -62,23 +62,32 @@ function Stat({ icon, label, value, unit, digits, tone, locale }) {
   );
 }
 
-function DayChart({ points, hour, onHour, t, locale }) {
+function DayChart({ points, hour, now, onHour, t, locale }) {
   const [shown, setShown] = useState({ solar: true, home: true, battery: true });
   const [table, setTable] = useState(false);
   const descId = useId();
   const W = 720;
-  const H = 300;
+  const H = 320;
   const PAD = 28;
+  const TOP = 78; // the series stop here; the band above belongs to the sun
   const max = Math.max(...points.map((p) => Math.max(p.solar, p.home)), 1) * 1.08;
-  const xy = (key, m) => scalePoints(points, key, { width: W, height: H, pad: PAD, max: m });
+  const xy = (key, m) => scalePoints(points, key, { width: W, height: H, pad: PAD, padTop: TOP, max: m });
   const solar = xy('solar', max);
   const home = xy('home', max);
   const battery = xy('battery', 1);
   const i = Math.round(hour * 2);
   const p = points[i] || points[0];
-  const cursorX = PAD + (hour / 23.5) * (W - PAD * 2);
-  const sun = arcPoint(hour, { cx: W / 2, cy: H - PAD, rx: W / 2 - PAD, ry: H - PAD * 2 });
+  const xAt = (h) => PAD + (h / 23.5) * (W - PAD * 2);
+  const cursorX = xAt(hour);
+  // The arc stands on sunrise and sunset on the same time axis as the data, so the sun is always above the cursor.
+  const sun = sunOnAxis(hour, { x0: PAD, x1: W - PAD, cy: H - PAD, ry: H - PAD - 20 });
   const series = [['solar', 1], ['home', 3], ['battery', 2]];
+  // Measured up to now; the rest of the day is a forecast and is drawn fainter.
+  const n = Math.round(now * 2);
+  const past = (pts) => pts.slice(0, n + 1);
+  const ahead = (pts) => pts.slice(n);
+  const fade = { duration: sec('slow'), ease: EASE };
+  const FORECAST = 0.34;
   return (
     <section className="panel chart" aria-labelledby="chart-title">
       <header className="panel-head">
@@ -94,18 +103,23 @@ function DayChart({ points, hour, onHour, t, locale }) {
       <p id={descId} className="sr-only">{t.chartDesc}</p>
       {/* Time runs left to right in every locale: the chart depicts the sky, not reading order. */}
       <svg className="plot" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="chart-title" aria-describedby={descId} dir="ltr">
-        <path className="day-arc" d={`M${PAD} ${H - PAD}A${W / 2 - PAD} ${H - PAD * 2} 0 0 1 ${W - PAD} ${H - PAD}`} />
+        <path className="day-arc" d={`M${sun.left.toFixed(1)} ${H - PAD}A${sun.rx.toFixed(1)} ${H - PAD - 20} 0 0 1 ${sun.right.toFixed(1)} ${H - PAD}`} />
         {[0, 6, 12, 18].map((h) => <text key={h} className="tick" x={PAD + (h / 23.5) * (W - PAD * 2)} y={H - 6}>{clock(h)}</text>)}
         <line className="axis" x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} />
         {/* Series fade in and out with opacity only: it is composited, so the entrance costs no layout or paint. */}
         <AnimatePresence>
-          {shown.solar && <motion.path key="solar-a" className="area viz-1" d={areaPath(solar, H - PAD)} initial={{ opacity: 0 }} animate={{ opacity: 0.28 }} exit={{ opacity: 0, transition: FAST }} transition={{ duration: sec('slow'), ease: EASE }} />}
-          {shown.solar && <motion.path key="solar-l" className="line viz-1" d={linePath(solar)} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={{ duration: sec('slow'), ease: EASE }} />}
-          {shown.home && <motion.path key="home-l" className="line viz-3" d={linePath(home)} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={{ duration: sec('slow'), ease: EASE, delay: dna.motion.staggerMs / 1000 }} />}
-          {shown.battery && <motion.path key="bat-l" className="line viz-2 dashed" d={linePath(battery)} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={{ duration: sec('slow'), ease: EASE, delay: (dna.motion.staggerMs * 2) / 1000 }} />}
+          {shown.solar && <motion.path key="solar-a" className="area viz-1" d={areaPath(past(solar), H - PAD)} initial={{ opacity: 0 }} animate={{ opacity: 0.28 }} exit={{ opacity: 0, transition: FAST }} transition={fade} />}
+          {shown.solar && <motion.path key="solar-l" className="line viz-1" d={linePath(past(solar))} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={fade} />}
+          {shown.solar && <motion.path key="solar-f" className="line viz-1 forecast" d={linePath(ahead(solar))} initial={{ opacity: 0 }} animate={{ opacity: FORECAST }} exit={{ opacity: 0, transition: FAST }} transition={fade} />}
+          {shown.home && <motion.path key="home-l" className="line viz-3" d={linePath(past(home))} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={{ ...fade, delay: dna.motion.staggerMs / 1000 }} />}
+          {shown.home && <motion.path key="home-f" className="line viz-3 forecast" d={linePath(ahead(home))} initial={{ opacity: 0 }} animate={{ opacity: FORECAST }} exit={{ opacity: 0, transition: FAST }} transition={{ ...fade, delay: dna.motion.staggerMs / 1000 }} />}
+          {shown.battery && <motion.path key="bat-l" className="line viz-2 dashed" d={linePath(past(battery))} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: FAST }} transition={{ ...fade, delay: (dna.motion.staggerMs * 2) / 1000 }} />}
+          {shown.battery && <motion.path key="bat-f" className="line viz-2 dashed forecast" d={linePath(ahead(battery))} initial={{ opacity: 0 }} animate={{ opacity: FORECAST }} exit={{ opacity: 0, transition: FAST }} transition={{ ...fade, delay: (dna.motion.staggerMs * 2) / 1000 }} />}
         </AnimatePresence>
+        <line className="now-line" x1={xAt(now)} x2={xAt(now)} y1={TOP - 14} y2={H - PAD} />
+        <text className="now-label" x={xAt(now) + 6} y={TOP - 4}>{t.now}</text>
         <motion.line className="cursor" y1={PAD / 2} y2={H - PAD} initial={false} animate={{ x1: cursorX, x2: cursorX }} transition={SPRING} />
-        <motion.g initial={false} animate={{ x: sun.x, y: sun.y, opacity: sun.daylight ? 1 : 0.35 }} transition={SPRING}>
+        <motion.g initial={false} animate={{ x: sun.x, y: sun.y, opacity: sun.daylight ? 1 : 0 }} transition={SPRING}>
           <circle className="sun-halo" r="15" />
           <circle className="sun-core" r="7.5" />
         </motion.g>
@@ -120,6 +134,7 @@ function DayChart({ points, hour, onHour, t, locale }) {
           <span><i className="swatch viz-2 dashed" />{Math.round(p.battery * 100)}%</span>
         </output>
       </div>
+      <p className="muted chart-note">{t.forecastNote}</p>
       <button type="button" className="link-button" aria-expanded={table} aria-controls="chart-table" onClick={() => setTable((v) => !v)}>{table ? t.hideTable : t.showTable}</button>
       {table && (
         <div id="chart-table" className="table-wrap" tabIndex={0} role="region" aria-labelledby="chart-title">
@@ -133,19 +148,19 @@ function DayChart({ points, hour, onHour, t, locale }) {
   );
 }
 
-function Flow({ p, t, locale }) {
-  const net = p.solar - p.home;
-  const state = net > 0.15 ? 'charging' : net < -0.15 && p.battery > 0.31 ? 'discharging' : 'idle';
-  const nodes = [['sun', t.flowSolar, `${formatNumber(p.solar, locale)} kW`, p.solar > 0.05], ['battery', t.flowBattery, `${Math.round(p.battery * 100)}% · ${t[state]}`, state !== 'idle'], ['home', t.flowHome, `${formatNumber(p.home, locale)} kW`, true], ['grid', t.flowGrid, `${formatNumber(p.grid, locale)} kW`, p.grid > 0.05]];
+function Flow({ p, t, locale, title }) {
+  const state = batteryState(p);
+  const nodes = [['sun', t.flowSolar, `${formatNumber(p.solar, locale)} kW`, null, p.solar > 0.05], ['battery', t.flowBattery, `${Math.round(p.battery * 100)}%`, t[state], state !== 'idle'], ['home', t.flowHome, `${formatNumber(p.home, locale)} kW`, null, true], ['grid', t.flowGrid, `${formatNumber(p.grid, locale)} kW`, null, p.grid > 0.05]];
   return (
     <section className="panel flow" aria-labelledby="flow-title">
-      <h2 id="flow-title">{t.flowTitle}</h2>
+      <h2 id="flow-title">{title}</h2>
       <ol className="flow-list">
-        {nodes.map(([icon, label, value, active]) => (
+        {nodes.map(([icon, label, value, word, active]) => (
           <li key={icon} className={active ? 'is-active' : ''}>
             <span className="flow-icon"><Icon name={icon} /></span>
             <span className="flow-label">{label}</span>
-            <span className="flow-value" dir="ltr">{value}</span>
+            {/* Figures are set in the mono face; words never are, so Arabic keeps its own typeface. */}
+            <span className="flow-value"><span className="num" dir="ltr">{value}</span>{word && <span className="flow-state">{word}</span>}</span>
             <span className="flow-line" aria-hidden="true" />
           </li>
         ))}
@@ -154,11 +169,15 @@ function Flow({ p, t, locale }) {
   );
 }
 
+// The demonstration's present moment. Everything on the Today page is true of this time unless
+// the person moves the time slider, and then the page says which moment it is showing.
+const NOW = 13;
+
 function Overview({ t, locale, reserve }) {
   const [points, setPoints] = useState(null);
-  const [hour, setHour] = useState(13);
+  const [hour, setHour] = useState(NOW);
   const [seed, setSeed] = useState(1);
-  const [stamp, setStamp] = useState('08:02');
+  const stamp = `${clock(NOW).slice(0, 2)}:${String(2 + (((seed - 1) * 7) % 26)).padStart(2, '0')}`;
   useEffect(() => {
     let alive = true;
     fetchDay(seed, reserve).then((d) => alive && setPoints(d));
@@ -167,14 +186,22 @@ function Overview({ t, locale, reserve }) {
   if (!points) return <Skeleton label={t.overview.chartTitle} rows={4} />;
   const p = points[Math.round(hour * 2)];
   const sum = totals(points.slice(0, Math.round(hour * 2) + 1));
+  const soFar = totals(points.slice(0, NOW * 2 + 1));
   const o = t.overview;
+  const away = hour !== NOW;
   return (
     <>
       <div className="page-head">
         <h1 tabIndex={-1}>{o.title}</h1>
-        <p className="muted">{o.updated} <span dir="ltr">{stamp}</span> · <b>{sum.selfPowered}%</b> {o.selfPowered}</p>
-        <button type="button" className="button ghost" onClick={() => { setSeed((s) => s + 1); setStamp(clock((seed * 1.5 + 8) % 24)); }}><Icon name="refresh" size={20} />{o.refresh}</button>
+        <p className="muted">{o.updated} <span dir="ltr">{stamp}</span> · <b dir="ltr">{soFar.selfPowered}%</b> {o.selfPowered}</p>
+        <button type="button" className="button ghost" onClick={() => { setSeed((s) => s + 1); setHour(NOW); }}><Icon name="refresh" size={20} />{o.refresh}</button>
       </div>
+      {away && (
+        <p className="inspect" role="status">
+          <span>{o.showing} <b dir="ltr">{clock(hour)}</b> · {hour > NOW ? o.forecast : o.earlier}</span>
+          <button type="button" className="link-button" onClick={() => setHour(NOW)}>{o.backToNow}</button>
+        </p>
+      )}
       <div className="stats">
         <Stat icon="battery" label={o.battery} value={p.battery * 100} digits={0} unit="%" tone="2" locale={locale} />
         <Stat icon="sun" label={o.solar} value={p.solar} unit="kW" tone="1" locale={locale} />
@@ -182,8 +209,8 @@ function Overview({ t, locale, reserve }) {
         <Stat icon="grid" label={o.grid} value={sum.grid} unit="kWh" tone="4" locale={locale} />
       </div>
       <div className="split">
-        <DayChart points={points} hour={hour} onHour={setHour} t={o} locale={locale} />
-        <Flow p={p} t={o} locale={locale} />
+        <DayChart points={points} hour={hour} now={NOW} onHour={setHour} t={o} locale={locale} />
+        <Flow p={p} t={o} locale={locale} title={away ? `${o.at} ${clock(hour)}` : o.flowTitle} />
       </div>
     </>
   );
@@ -262,7 +289,8 @@ function History({ t, locale }) {
   useEffect(() => { fetchHistory().then(setRows); }, []);
   const view = useMemo(() => (rows ? paginate(sortRows(filterRows(rows, query), sort.key, sort.dir), page, 8) : null), [rows, sort, query, page]);
   if (!view) return <Skeleton label={h.title} rows={6} />;
-  const cols = [['date', h.date], ['solar', h.solar], ['used', h.used], ['grid', h.grid], ['selfPowered', h.self]];
+  // On a phone the table keeps date, use and self-powered; the two supporting columns are dropped, not scrolled off-screen.
+  const cols = [['date', h.date], ['solar', h.solar, 'optional'], ['used', h.used], ['grid', h.grid, 'optional'], ['selfPowered', h.self]];
   const toggle = (key) => { setSort((s) => ({ key, dir: s.key === key && s.dir === 'ascending' ? 'descending' : 'ascending' })); setPage(1); };
   return (
     <>
@@ -276,13 +304,13 @@ function History({ t, locale }) {
       ) : (
         <div className="table-wrap" tabIndex={0} role="region" aria-label={h.title}>
           <table className="data">
-            <thead><tr>{cols.map(([k, label]) => (
-              <th key={k} scope="col" aria-sort={sort.key === k ? sort.dir : 'none'}>
+            <thead><tr>{cols.map(([k, label, cls]) => (
+              <th key={k} scope="col" className={cls} aria-sort={sort.key === k ? sort.dir : 'none'}>
                 <button type="button" className="sort" onClick={() => toggle(k)}><span className="sr-only">{h.sortBy} </span>{label}<Icon name="chevron-down" size={16} /></button>
               </th>
             ))}</tr></thead>
             <tbody>{view.rows.map((r) => (
-              <tr key={r.id}><th scope="row" dir="ltr">{r.date}</th><td>{formatNumber(r.solar, locale)}</td><td>{formatNumber(r.used, locale)}</td><td>{formatNumber(r.grid, locale)}</td>
+              <tr key={r.id}><th scope="row" dir="ltr">{r.date}</th><td className="optional">{formatNumber(r.solar, locale)}</td><td>{formatNumber(r.used, locale)}</td><td className="optional">{formatNumber(r.grid, locale)}</td>
                 <td><span className="meter" style={{ '--v': `${r.selfPowered}%` }}><span>{r.selfPowered}%</span></span></td></tr>
             ))}</tbody>
           </table>
@@ -299,7 +327,7 @@ function History({ t, locale }) {
   );
 }
 
-function Settings({ t, settings, onSaved, notify }) {
+function Settings({ t, settings, onSaved, notify, scheme, onScheme, langHref }) {
   const s = t.settings;
   const [draft, setDraft] = useState(settings);
   const [errors, setErrors] = useState({});
@@ -351,6 +379,18 @@ function Settings({ t, settings, onSaved, notify }) {
         </AnimatePresence>
         <div className="form-foot"><button type="submit" className="button primary" disabled={busy}>{busy ? s.saving : s.save}</button><p className="muted">{s.demo}</p></div>
       </form>
+      {/* Language and appearance live here on every screen size; on a phone this is the only place for them. */}
+      <section className="panel form display" aria-labelledby="display-title">
+        <h2 id="display-title">{s.display}</h2>
+        <div className="field switch-row">
+          <label htmlFor="dark-mode">{s.dark}</label>
+          <input id="dark-mode" type="checkbox" role="switch" checked={scheme === 'dark'} onChange={onScheme} />
+        </div>
+        <div className="field switch-row">
+          <span className="label">{s.language}</span>
+          <a className="button ghost" data-lang-link href={langHref} hrefLang={t.otherLang} lang={t.otherLang}>{t.language}</a>
+        </div>
+      </section>
     </>
   );
 }
@@ -441,7 +481,7 @@ export default function App() {
               {route === 'overview' && <Overview t={t} locale={locale} reserve={settings.reserve} />}
               {route === 'devices' && <Devices t={t} />}
               {route === 'history' && <History t={t} locale={locale} />}
-              {route === 'settings' && <Settings t={t} settings={settings} onSaved={setSettings} notify={setToast} />}
+              {route === 'settings' && <Settings t={t} settings={settings} onSaved={setSettings} notify={setToast} scheme={scheme} onScheme={toggleScheme} langHref={langHref} />}
             </PageFrame>
           </AnimatePresence>
         </main>

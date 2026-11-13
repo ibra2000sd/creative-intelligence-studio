@@ -17,11 +17,15 @@ The harness serves each built deliverable on loopback and drives the installed C
 | `reduced-motion` | with the preference set: no long animation, no hidden content, no scroll engine | any |
 | `web-vitals-lab` | median of five spaced cold loads, phone viewport, 4x CPU throttle: LCP, CLS, blocking time | over budget **on reliable data**. If the host has more runnable work than cores, or identical loads disagree widely, an over-budget result is reported as an unreliable warning with the range, not as a failure. A slow first tap is a warning, because INP is a field metric |
 | `scroll-motion` | frame intervals and layout shift while scrolling the whole page | more than 5% of frames over 50 ms, or layout shift over 0.1 |
+| `dark-scheme` | a dark capture at phone and desktop size, compared with the light one | the project or the page offers a dark scheme and the two captures are identical |
 | `visual-regression` | pixel difference from accepted baselines | more than 1.5% |
+| `capture:*` | states declared in `qa/flows.mjs` (`export const captures`): a route, a story chapter, an app screen, a scheme or a language | the state cannot be reached, overflows, or differs from its baseline |
 | `bundle` | gzip size of scripts and styles | warning over 300 KB or 60 KB |
 | `flow:*` | the deliverable's own scripted tests in `qa/flows.mjs` | an assertion fails or the page throws |
 
 Mobile adds a TypeScript check, Jest, production bundles for iOS and Android, and flows against a web export. The project target adds ledger integrity, DNA lint, consistency and the asset registry. `creative-studio audit` adds secrets, unsafe source patterns, third-party requests, licences, SBOMs and known vulnerabilities.
+
+**Screenshots are evidence only if they show the screen.** Page captures are taken full-page after the harness has scrolled the page through once, so content that reveals or loads on scroll is present. A page capture still shows only the first state of a page. Everything else (each chapter of a scroll story, each route of an application, each screen of a mobile app, in dark and in Arabic) is a declared capture. This rule exists because an independent review found the first version of this harness reporting passes for pages whose captures were half blank and for an app evidenced by one onboarding screen; see the release report. Look at the files in `.cis/reports/qa/` before reporting: a doubled sun in the story passed every automated check.
 
 **Statuses.** `pass`, `fail`, `warn`, `skipped` and `blocked`. A check that cannot run is `blocked` and the overall verdict becomes `incomplete`, never `pass`.
 

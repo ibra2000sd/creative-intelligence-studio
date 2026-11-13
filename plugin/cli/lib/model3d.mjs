@@ -97,6 +97,28 @@ export function arcTube(radius, tube, a0, a1, { segments = 48, sides = 12 } = {}
   return { positions, normals, uvs, indices };
 }
 
+/** Join several geometries into one, so a part made of pieces is still one mesh and one draw call. */
+export function mergeGeometry(parts) {
+  const out = { positions: [], normals: [], uvs: [], indices: [] };
+  for (const g of parts) {
+    const base = out.positions.length / 3;
+    out.positions.push(...g.positions);
+    out.normals.push(...g.normals);
+    out.uvs.push(...g.uvs);
+    out.indices.push(...g.indices.map((i) => i + base));
+  }
+  return out;
+}
+
+/**
+ * The day arc as a dashed light: rounded dashes along a half circle. Dashes are a quarter longer
+ * than the gaps, and the first and last dashes start exactly at the horizon.
+ */
+export function dashedArc(radius, tube, { dashes = 11, sides = 10 } = {}) {
+  const unit = 180 / (dashes + (dashes - 1) * 0.8);
+  return mergeGeometry(Array.from({ length: dashes }, (_, i) => arcTube(radius, tube, i * unit * 1.8, i * unit * 1.8 + unit, { segments: 8, sides })));
+}
+
 export function sphere(radius, { rings = 14, sides = 20 } = {}) {
   const positions = [];
   const normals = [];
@@ -174,11 +196,11 @@ export function batteryParts(spec = {}) {
     parts: [
       { name: 'Body', material: 'body', geometry: roundedBox(W, H, D, 0.045, 7), translation: [0, 0, 0] },
       { name: 'Fascia', material: 'fascia', geometry: roundedBox(W * 0.8, H * 0.84, 0.012, 0.03, 5), translation: [0, 0, front + 0.004] },
-      { name: 'ArcLight', material: 'arc', geometry: arcTube(arcR, 0.008, 0, 180, { segments: 56, sides: 10 }), translation: [0, arcY, front + 0.012] },
-      { name: 'Horizon', material: 'arc', geometry: roundedBox(arcR * 2 + 0.03, 0.012, 0.01, 0.005, 3), translation: [0, arcY - 0.05, front + 0.012] },
+      // Dashed like the arc everywhere outside the logo, and standing on its horizon.
+      { name: 'ArcLight', material: 'arc', geometry: dashedArc(arcR, 0.008), translation: [0, arcY, front + 0.012] },
+      { name: 'Horizon', material: 'arc', geometry: roundedBox(arcR * 2 + 0.05, 0.012, 0.01, 0.005, 3), translation: [0, arcY - 0.006, front + 0.012] },
       { name: 'Sun', material: 'sun', geometry: sphere(0.026), translation: [Math.cos((116 * Math.PI) / 180) * arcR, arcY + Math.sin((116 * Math.PI) / 180) * arcR, front + 0.016] },
       { name: 'Bracket', material: 'metal', geometry: roundedBox(W * 0.7, H * 0.5, 0.03, 0.01, 3), translation: [0, 0.05, -front - 0.012] },
-      { name: 'Conduit', material: 'metal', geometry: roundedBox(0.05, 0.18, 0.05, 0.02, 4), translation: [W * 0.28, -H / 2 - 0.08, -0.01] },
     ],
   };
 }

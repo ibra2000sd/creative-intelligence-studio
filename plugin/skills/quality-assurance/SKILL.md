@@ -26,7 +26,9 @@ See the description above for triggers. Skip this skill when the request is outs
 5. A defect that fails three runs escalates. Stop and tell the person what you tried.
 6. Never delete or weaken a failing check to get a pass. If a check is wrong, fix the check and say so. If a budget is unrealistic for this deliverable, write the exception and its reason in `qa/budgets.json`; it is still reported as a warning.
 7. Accept visual changes deliberately with `--update-baselines`, after looking at the diff.
-8. Run `creative-studio audit`. Then report: failures, warnings, blocked checks, and the manual audits still outstanding.
+8. Make sure every screen can be seen. Page captures are taken full-page after scrolling the page through, at phone, tablet and desktop size, and in the dark scheme (a dark capture identical to the light one fails). They still show only the first state of each page: for every route, story chapter, app screen or state they cannot reach, declare a capture in `<deliverable>/qa/flows.mjs` (`export const captures`). Each is checked for overflow and baselined.
+9. Open the screenshots in `.cis/reports/qa/` and look at them before reporting. A pass count says the checks ran; it does not say anyone saw the screen. Two suns in one picture pass every automated check.
+10. Run `creative-studio audit`. Then report: failures, warnings, blocked checks, and the manual audits still outstanding.
 
 ## Tools and dependencies
 

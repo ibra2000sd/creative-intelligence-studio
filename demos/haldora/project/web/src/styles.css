@@ -14,7 +14,11 @@ h2 { font-size: var(--text-4xl); }
 h3 { font-size: var(--text-xl); line-height: 1.15; }
 p { margin: 0; text-wrap: pretty; }
 a { color: inherit; }
-:lang(ar) h1, :lang(ar) h2, :lang(ar) h3 { line-height: 1.3; font-weight: 600; }
+/* Arabic has its own hierarchy instead of borrowing the Latin serif and sans contrast: weight and
+   measure carry it. Headlines are bold, statements semibold with open leading, body regular. */
+:lang(ar) h1, :lang(ar) h2 { line-height: 1.25; font-weight: 700; letter-spacing: 0; }
+:lang(ar) h3 { line-height: 1.35; font-weight: 600; letter-spacing: 0; }
+:lang(ar) body, :lang(ar) p { line-height: 1.75; }
 [hidden] { display: none !important; }
 
 .wrap { width: min(100% - var(--grid-margin) * 2, var(--grid-max)); margin-inline: auto; }
@@ -38,11 +42,17 @@ a { color: inherit; }
 .scroll-sentinel { position: absolute; inset-block-start: 0; height: 24px; width: 1px; pointer-events: none; }
 /* The header is solid by default, so it is readable without JavaScript. Once the script has
    confirmed the page is at the top, it turns transparent over the hero artwork and takes the
-   artwork's fixed daylight colours, whatever the colour scheme. */
+   artwork's ink: daylight ink over the day scene, night ink over the night scene. */
+:root { --hero-ink: var(--light-text); --hero-veil: var(--light-bg); }
+/* `night-hero` is set on the root element at build time when the project has night artwork. (A :has()
+   test on the root would be re-evaluated on every DOM change, including each frame of the scroll story.) */
+.night-hero[data-scheme='dark'] { --hero-ink: var(--dark-text); --hero-veil: var(--dark-bg); }
+@media (prefers-color-scheme: dark) { .night-hero:not([data-scheme]) { --hero-ink: var(--dark-text); --hero-veil: var(--dark-bg); } }
 .site-header { position: sticky; inset-block-start: 0; z-index: 50; background: color-mix(in oklab, var(--color-bg) 92%, transparent); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--color-border); transition: background-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), color var(--dur-base) var(--ease-standard); }
-.header-ready .site-header:not(.is-stuck) { background: transparent; backdrop-filter: none; box-shadow: none; color: var(--light-text); }
-.header-ready .site-header:not(.is-stuck) .brand .on-light { display: block; }
-.header-ready .site-header:not(.is-stuck) .brand .on-dark { display: none; }
+.header-ready .site-header:not(.is-stuck) { background: transparent; backdrop-filter: none; box-shadow: none; color: var(--hero-ink); }
+/* A project without night artwork keeps its daylight hero in both schemes, so the logo for light grounds stays. */
+.header-ready:not(.night-hero) .site-header:not(.is-stuck) .brand .on-light { display: block; }
+.header-ready:not(.night-hero) .site-header:not(.is-stuck) .brand .on-dark { display: none; }
 .bar { display: flex; align-items: center; gap: var(--space-6); min-height: 4.5rem; }
 .brand { display: block; flex: none; }
 .brand img { height: 3.75rem; width: auto; margin-inline-start: -1.1rem; }
@@ -68,25 +78,43 @@ a { color: inherit; }
 /* ------------------------------------------------------------------ hero */
 .hero { position: relative; isolation: isolate; min-height: min(100svh, 62rem); margin-block-start: -4.5rem; padding-block: 9rem 6rem; display: grid; align-items: center; overflow: clip; }
 .hero-art { position: absolute; inset: 0; z-index: -1; }
+.hero-scene { position: absolute; inset: 0; }
 .hero-art picture, .hero-art .plane { position: absolute; inset: 0; width: 100%; height: 108%; object-fit: cover; object-position: center bottom; }
+/* The layered wide composition from tablet width up; the single composed picture on phones. */
 .planes { display: none; }
-@media (min-width: 900px) { .planes { display: block; } }
-.hero-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, color-mix(in oklab, var(--light-bg) 55%, transparent), transparent 46%); }
-/* The hero artwork is a fixed daylight scene, so its copy keeps daylight ink in both schemes. */
-.hero-copy { color: var(--light-text); display: grid; gap: var(--space-6); justify-items: start; }
+@media (min-width: 600px) { .planes { display: block; } }
+.hero-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, color-mix(in oklab, var(--hero-veil) 55%, transparent), transparent 46%); }
+/* The copy takes the ink of the scene behind it: day in the light scheme, night in the dark one. */
+.hero-copy { color: var(--hero-ink); display: grid; gap: var(--space-6); justify-items: start; }
 .hero h1 { max-width: 13ch; }
-.hero .lede { color: color-mix(in oklab, var(--light-text) 82%, transparent); font-size: var(--text-xl); max-width: 34ch; line-height: 1.4; }
+.hero .lede { color: color-mix(in oklab, var(--hero-ink) 82%, transparent); font-size: var(--text-xl); max-width: 34ch; line-height: 1.4; }
 .eyebrow { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.06em; text-transform: uppercase; }
 :lang(ar) .eyebrow { font-family: var(--font-text); letter-spacing: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .hero-copy > * { animation: rise var(--dur-cinematic) var(--ease-enter) both; animation-delay: calc(var(--i) * var(--stagger) * 2); }
 @keyframes rise { from { opacity: 0; transform: translateY(1.25rem); } }
+/* The arc gives way to the copy: a script masks the arc plane behind each block of copy, so the
+   dashes never run through the text (see main.js). Without the script the arc is whole. */
+/* On a phone the artwork is a band above the copy, not a picture behind it: the sun and the arc
+   stay whole and the copy sits on the page ground in the page's own colours. */
+@media (max-width: 899px) {
+  .hero { display: block; min-height: 0; padding-block: 0 var(--space-9); }
+  .hero-art { position: relative; inset: auto; z-index: 0; height: min(64svh, 34rem); }
+  .hero-art picture, .hero-art .plane { height: 100%; }
+  .hero-copy { color: var(--color-text); margin-block-start: var(--space-7); }
+  .hero .lede { color: var(--color-text-muted); font-size: var(--text-lg); }
+  .hero .button.primary, [data-scheme='dark'] .hero.has-night .button.primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .scroll-hint { display: none; }
+}
+@media (max-width: 899px) and (prefers-color-scheme: dark) { :root:not([data-scheme]) .hero.has-night .button.primary { background: var(--color-primary); color: var(--color-on-primary); } }
 .scroll-hint { position: absolute; inset-block-end: var(--space-6); inset-inline-start: 50%; translate: -50% 0; font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-surface-raised); opacity: 0.85; }
 [dir='rtl'] .scroll-hint { translate: 50% 0; font-family: var(--font-text); letter-spacing: 0; }
 
 .button { --pad: var(--space-6); display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding-inline: var(--pad); border-radius: 999px; border: 1.5px solid transparent; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard); will-change: transform; }
 .button.primary { background: var(--light-primary); color: var(--light-surface-raised); box-shadow: var(--shadow-1); }
 .button.primary:hover { box-shadow: var(--shadow-2); background: color-mix(in oklab, var(--light-primary) 88%, var(--light-text)); }
+[data-scheme='dark'] .hero.has-night .button.primary { background: var(--dark-primary); color: var(--dark-on-primary); }
+@media (prefers-color-scheme: dark) { :root:not([data-scheme]) .hero.has-night .button.primary { background: var(--dark-primary); color: var(--dark-on-primary); } }
 .button.primary:active { scale: 0.98; }
 .button.ghost { border-color: currentColor; background: transparent; color: inherit; }
 .button.ghost:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
@@ -122,14 +150,19 @@ section:not(.hero) { padding-block: clamp(4.5rem, 10vw, 9rem); }
   .story-frames, .frame, .story-arc { position: absolute; inset: 0; width: 100%; height: 100%; }
   .frame { object-fit: cover; opacity: 0; transition: opacity var(--dur-slow) var(--ease-standard); }
   .frame.is-on { opacity: 1; }
-  .arc-track { fill: none; stroke: var(--light-surface-raised); stroke-width: 1.4; stroke-dasharray: 2 7; stroke-linecap: round; opacity: 0.7; }
-  .arc-ground { stroke: var(--light-surface-raised); stroke-width: 1; opacity: 0.35; }
-  .sun-core { fill: var(--light-surface-raised); }
-  .sun-halo { fill: var(--light-surface-raised); opacity: 0.25; }
+  /* One sun, drawn between the sky and the hills, so it sets behind the land. It is the brand
+     accent over a daytime sky and pale over the low-light skies, where amber would vanish. */
+  .story-visual { --arc-ink: var(--light-surface-raised); }
+  .story-visual[data-tone='day'] { --arc-ink: var(--light-accent); }
+  .arc-track { fill: none; stroke: var(--arc-ink); stroke-width: 1.4; stroke-dasharray: 2 7; stroke-linecap: round; opacity: 0.75; transition: stroke var(--dur-slow) var(--ease-standard); }
+  .sun-core, .sun-halo, .moon { fill: var(--arc-ink); transition: fill var(--dur-slow) var(--ease-standard); }
+  .sun-halo { opacity: 0.22; }
+  .moon { display: none; }
   [data-sun] { transition: transform var(--dur-slow) var(--ease-standard); }
   .is-scrubbed [data-sun] { transition: none; }
-  [data-sun].is-night .sun-halo { opacity: 0.1; }
-  [data-sun].is-night .sun-core { r: 8px; }
+  [data-sun][data-night='true'] .sun-halo { opacity: 0.08; }
+  [data-sun][data-night='true'] .sun-core { display: none; }
+  [data-sun][data-night='true'] .moon { display: block; }
   .story-clock { position: absolute; inset-block-start: var(--space-5); inset-inline-start: var(--space-5); font-family: var(--font-mono); font-size: var(--text-lg); color: var(--light-surface-raised); background: color-mix(in oklab, var(--dark-bg) 55%, transparent); padding: var(--space-1) var(--space-3); border-radius: 999px; backdrop-filter: blur(6px); direction: ltr; }
   /* The sticky picture replaces the per-chapter figures. */
   .chapter-figure { display: none; }
@@ -162,7 +195,10 @@ section:not(.hero) { padding-block: clamp(4.5rem, 10vw, 9rem); }
 .specs div { border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-3); }
 .specs dt { font-size: var(--text-sm); color: var(--color-text-muted); }
 .specs dd { margin: 0; font-family: var(--font-mono); font-size: var(--text-lg); direction: ltr; unicode-bidi: isolate; text-align: start; }
-.scene-frame { position: relative; aspect-ratio: 4 / 3; min-height: 30rem; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-bg); border: 1px solid var(--color-border); box-shadow: var(--shadow-2); }
+/* The value keeps left-to-right order inside itself but sits under its label at the reading edge. */
+[dir='rtl'] .specs dd { text-align: right; }
+/* The width is the column's: with only aspect-ratio and min-height the frame grew wider than its column. */
+.scene-frame { position: relative; width: 100%; min-width: 0; aspect-ratio: 4 / 3; min-height: 30rem; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-bg); border: 1px solid var(--color-border); box-shadow: var(--shadow-2); }
 @media (max-width: 899px) { .scene-frame { aspect-ratio: auto; height: 44rem; max-height: 90svh; } }
 .scene-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity var(--dur-slow) var(--ease-standard); }
 .scene-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity var(--dur-slow) var(--ease-standard); }
@@ -174,7 +210,7 @@ section:not(.hero) { padding-block: clamp(4.5rem, 10vw, 9rem); }
 .quotes { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--grid-gutter); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
 .quote { display: grid; gap: var(--space-5); align-content: space-between; padding: var(--space-8) var(--space-6); border-block-start: 3px solid var(--color-accent); background: var(--color-surface); border-radius: 0 0 var(--radius-md) var(--radius-md); }
 .quote blockquote { margin: 0; font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.3; }
-:lang(ar) .quote blockquote { line-height: 1.6; }
+:lang(ar) .quote blockquote { line-height: 1.7; font-weight: 600; }
 .who { display: grid; font-size: var(--text-sm); }
 .who span { color: var(--color-text-muted); }
 .disclaimer { margin-block-start: var(--space-6); font-size: var(--text-sm); color: var(--color-text-muted); }

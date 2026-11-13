@@ -22,13 +22,13 @@ export default function Devices() {
         renderItem={({ item, index }) => (
           <Animated.View entering={FadeInDown.delay(index * th.motion.staggerMs).duration(th.motion.durationMs.base)}>
             <Link href={{ pathname: '/device/[id]', params: { id: item.id } }} asChild>
-              <Pressable accessibilityRole="button" accessibilityLabel={t.devices.open(item.name)} testID={`device-${item.id}`} style={({ pressed }) => ({ minHeight: 72, flexDirection: 'row', alignItems: 'center', gap: th.space[4], padding: th.space[4], borderRadius: th.radius.lg, borderWidth: 1, borderColor: th.c.border, backgroundColor: pressed ? th.c.surface : th.c.surfaceRaised })}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t.devices.open(item.name ?? t.devices.names[item.nameKey!])} testID={`device-${item.id}`} style={({ pressed }) => ({ minHeight: 72, flexDirection: 'row', alignItems: 'center', gap: th.space[4], padding: th.space[4], borderRadius: th.radius.lg, borderWidth: 1, borderColor: th.c.border, backgroundColor: pressed ? th.c.surface : th.c.surfaceRaised })}>
                 <View style={{ width: 48, height: 48, borderRadius: th.radius.md, alignItems: 'center', justifyContent: 'center', backgroundColor: th.c.surface }}>
                   <Icon name={item.kind} color={th.c.text} />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <T kind="label" style={{ fontSize: th.size.md }}>{item.name}</T>
-                  <T kind="muted">{item.location}</T>
+                  <T kind="label" style={{ fontSize: th.size.md }}>{item.name ?? t.devices.names[item.nameKey!]}</T>
+                  <T kind="muted">{t.devices.places[item.place]}</T>
                 </View>
                 <T kind="label" style={{ color: tone[item.status] }}>{t.devices[item.status]}</T>
               </Pressable>

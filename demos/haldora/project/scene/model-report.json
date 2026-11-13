@@ -26,8 +26,8 @@
     },
     {
       "part": "ArcLight",
-      "triangles": 1120,
-      "vertices": 627
+      "triangles": 1760,
+      "vertices": 1089
     },
     {
       "part": "Horizon",
@@ -43,27 +43,22 @@
       "part": "Bracket",
       "triangles": 588,
       "vertices": 384
-    },
-    {
-      "part": "Conduit",
-      "triangles": 972,
-      "vertices": 600
     }
   ],
   "files": {
     "source": {
       "path": "scene/public/models/cell.source.glb",
-      "bytes": 205248,
+      "bytes": 198088,
       "validation": {
         "errors": 0,
         "warnings": 0,
-        "infos": 7,
+        "infos": 6,
         "hints": 0,
         "messages": [],
         "stats": {
-          "triangles": 7980,
-          "vertices": 4710,
-          "drawCalls": 7,
+          "triangles": 7648,
+          "vertices": 4572,
+          "drawCalls": 6,
           "materials": 5,
           "extensions": [
             "KHR_materials_emissive_strength"
@@ -73,7 +68,7 @@
     },
     "optimised": {
       "path": "scene/public/models/cell.glb",
-      "bytes": 57180,
+      "bytes": 55224,
       "validation": {
         "errors": 0,
         "warnings": 0,
@@ -81,9 +76,9 @@
         "hints": 0,
         "messages": [],
         "stats": {
-          "triangles": 7980,
-          "vertices": 4494,
-          "drawCalls": 7,
+          "triangles": 7648,
+          "vertices": 4396,
+          "drawCalls": 6,
           "materials": 5,
           "extensions": [
             "EXT_meshopt_compression",
@@ -96,7 +91,7 @@
   },
   "optimisation": {
     "technique": "dedup + weld + prune + vertex reorder + EXT_meshopt_compression (quantised)",
-    "savedBytes": 148068,
+    "savedBytes": 142864,
     "ratio": 0.279,
     "requiresRuntimeDecoder": "MeshoptDecoder"
   },
@@ -109,6 +104,6 @@
     "scene/public/fallback/cell-ember.svg",
     "scene/public/fallback/cell-ember.webp"
   ],
-  "generatedAt": "2026-11-12T23:35:44.514Z",
+  "generatedAt": "2026-11-13T11:00:10.084Z",
   "dnaRevision": 1
 }

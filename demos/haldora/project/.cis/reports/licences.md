@@ -1,6 +1,6 @@
 # Third-party software
 
-Generated 2026-11-13T00:11:48.735Z. Direct production dependencies and every package that is not under a permissive licence. Full trees are in the CycloneDX files beside this report.
+Generated 2026-11-13T12:53:30.726Z. Direct production dependencies and every package that is not under a permissive licence. Full trees are in the CycloneDX files beside this report.
 
 | Deliverable | Package | Version | Licence | Class | Relation |
 |---|---|---|---|---|---|
@@ -13,7 +13,7 @@ Generated 2026-11-13T00:11:48.735Z. Direct production dependencies and every pac
 | app | @fontsource/ibm-plex-sans-arabic | 5.3.0 | OFL-1.1 | permissive | direct |
 | app | @fontsource/instrument-sans | 5.3.0 | OFL-1.1 | permissive | direct |
 | app | @fontsource/jetbrains-mono | 5.3.0 | OFL-1.1 | permissive | direct |
-| app | motion | 14.12.0 | MIT | permissive | direct |
+| app | motion | 14.13.0 | MIT | permissive | direct |
 | app | react | 19.3.1 | MIT | permissive | direct |
 | app | react-dom | 19.3.1 | MIT | permissive | direct |
 | scene | @fontsource/fraunces | 5.3.0 | OFL-1.1 | permissive | direct |

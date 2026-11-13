@@ -103,8 +103,13 @@ export function checkProviderPolicy(root, provider, { consent = false } = {}) {
   if (!avail.ok) throw new CisError('E_PROVIDER_UNAVAILABLE', `Provider "${provider.id}" is not usable here: ${avail.reason}.`, { exit: EXIT.BLOCKED });
 }
 
+// The local engine's output is defined by its code as much as by the job: a change to how a recipe
+// draws must reach images generated before it, so the recipe source is part of the cache key.
+const RECIPES_SOURCE = new URL('./imagegen.mjs', import.meta.url);
+let recipesFingerprint = null;
 function cacheKey(job, providerId, dna) {
-  return sha256(JSON.stringify({ job: { ...job, usedIn: undefined }, providerId, color: dna.color, imagery: dna.imagery, v: 2 })).slice(0, 24);
+  if (providerId === 'local-procedural') recipesFingerprint ??= sha256(fs.readFileSync(RECIPES_SOURCE)).slice(0, 16);
+  return sha256(JSON.stringify({ job: { ...job, usedIn: undefined }, providerId, color: dna.color, imagery: dna.imagery, recipes: providerId === 'local-procedural' ? recipesFingerprint : undefined, v: 2 })).slice(0, 24);
 }
 
 /**
@@ -123,7 +128,12 @@ export async function produce(root, brief, dna, { providerId, consent = false, s
   const cacheFile = path.join(paths(root).cache, 'image-jobs.json');
   const cache = exists(cacheFile) ? readJson(cacheFile) : {};
   const results = [];
-  const seenHashes = new Map(loadRegistry(root).assets.flatMap((a) => (a.qa?.checks || []).filter((c) => c.id === 'dhash').map((c) => [c.detail, a.id])));
+  // What is already registered: structure hash and, where recorded, colour signature.
+  const seen = loadRegistry(root).assets.flatMap((a) => {
+    const of = (id) => (a.qa?.checks || []).find((c) => c.id === id)?.detail;
+    const sized = (a.files || []).find((f) => f.width && f.height);
+    return of('dhash') ? [{ id: a.id, hash: of('dhash'), signature: of('colour-signature') || null, aspect: sized ? sized.width / sized.height : null }] : [];
+  });
 
   for (const job of brief.jobs) {
     if (signal?.aborted) {
@@ -198,10 +208,21 @@ export async function produce(root, brief, dna, { providerId, consent = false, s
       if (master) {
         const insp = await raster.inspect(master, { expect: { width: job.width, height: job.height, transparent: job.transparent }, palette: job.transparent && job.layer && job.layer !== 'all' ? [] : palette });
         checks.push(...insp.checks.map((c) => ({ id: c.id, pass: c.pass, detail: c.detail })));
-        const twin = [...seenHashes.entries()].find(([h, id]) => id !== job.id && raster.hamming(h, insp.hash) <= 4);
-        checks.push({ id: 'not-duplicate', pass: !twin, detail: twin ? `visually identical to "${twin[1]}"` : 'no near-identical asset registered' });
+        // A duplicate has the same shapes and the same colours. The same scene at another time of
+        // day, or another layer of it, shares its structure but not its colour and is not one.
+        // The same picture at another shape (a wide hero sky and a 4:3 story sky) is a different deliverable.
+        const aspect = job.width / job.height;
+        const alike = (s) => s.id !== job.id && raster.hamming(s.hash, insp.hash) <= 4 && (!s.signature || raster.signatureDistance(s.signature, insp.signature) < 6) && (!s.aspect || Math.abs(s.aspect / aspect - 1) < 0.03);
+        // A job may declare that it is meant to equal one other asset (the same hills under two skies).
+        // That acknowledges exactly that twin; a likeness to anything else is still a failure.
+        // A declared likeness works in both directions: B "sameAs" A also acknowledges A's likeness to B.
+        const twins = new Set([job.sameAs, ...brief.jobs.filter((j) => j.sameAs === job.id).map((j) => j.id)].filter(Boolean));
+        const twin = seen.find((s) => alike(s) && !twins.has(s.id));
+        const declared = seen.find((s) => twins.has(s.id) && alike(s));
+        checks.push({ id: 'not-duplicate', pass: !twin, detail: twin ? `visually identical to "${twin.id}"` : declared ? `intentionally the same picture as "${declared.id}" (declared in the brief)` : 'no near-identical asset registered' });
         checks.push({ id: 'dhash', pass: true, detail: insp.hash });
-        seenHashes.set(insp.hash, job.id);
+        checks.push({ id: 'colour-signature', pass: true, detail: insp.signature });
+        seen.push({ id: job.id, hash: insp.hash, signature: insp.signature, aspect });
       }
       if (job.maxBytes) {
         for (const fe of files.filter((x) => x.role !== 'source')) checks.push({ id: `byte-budget:${fe.format}`, pass: fe.bytes <= job.maxBytes, detail: `${fe.bytes} bytes, budget ${job.maxBytes}` });

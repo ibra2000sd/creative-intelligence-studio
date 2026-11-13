@@ -20,7 +20,7 @@ See the description above for triggers. Skip this skill when the request is outs
 
 ## Workflow
 
-1. Write `.cis/brand-spec.json`: strategy (what differentiates the brand), the wordmark, at least two concepts with a rationale each, the selected concept with the reason, and the applications to produce.
+1. Write `.cis/brand-spec.json`: strategy (what differentiates the brand), the wordmark, at least two concepts with a rationale each, the selected concept with the reason, and the applications to produce. If the brand has a signature device, specify it under `signature` (how it is constructed, its rules and what never to do with it) so every deliverable draws it the same way. If the brand ships in Arabic, give `arabic` its own specimen text and hierarchy rules: Arabic is designed, not mirrored.
 2. Concepts are parametric: a `symbol` built from a motif (`arc`, `orbit`, `strata`, `grid`, `contour`) or a `monogram`. Choose motifs that carry the direction's signature; adjust `params` rather than accepting defaults.
 3. Run `creative-studio brand build`. Read the manifest summary: every vector master must pass integrity (fills only, outlined wordmark, no raster, no external references, palette colours only).
 4. Open `brand/guidelines.html` and look at it. Check the symbol at its minimum size.

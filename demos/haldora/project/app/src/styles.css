@@ -5,7 +5,8 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-text); font-size: var(--text-md); line-height: var(--leading-text); -webkit-font-smoothing: antialiased; }
 h1, h2 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-display); line-height: var(--leading-display); margin: 0; }
-:lang(ar) h1, :lang(ar) h2 { line-height: 1.35; }
+/* Arabic carries hierarchy by weight, not by a second typeface. */
+:lang(ar) h1, :lang(ar) h2 { line-height: 1.35; font-weight: 700; letter-spacing: 0; }
 h1 { font-size: var(--text-3xl); }
 h2 { font-size: var(--text-lg); line-height: 1.2; }
 p { margin: 0; }
@@ -46,7 +47,8 @@ main { min-width: 0; padding: clamp(1.25rem, 4vw, 3rem); }
 @media (max-width: 859px) {
   .shell { grid-template-columns: 1fr; }
   .side { position: fixed; inset-block: auto 0; inset-inline: 0; z-index: 20; height: auto; flex-direction: row; align-items: center; gap: 0; padding: var(--space-1) var(--space-2) calc(var(--space-1) + env(safe-area-inset-bottom)); border-inline-end: 0; border-block-start: 1px solid var(--color-border); }
-  .side .brand, .side .lang { display: none; }
+  /* The bar is for navigation only; language and appearance are in Settings. */
+  .side .brand, .side-tools { display: none; }
   .side nav { flex: 1; }
   .side nav ul { grid-auto-flow: column; grid-auto-columns: 1fr; }
   .side nav a { flex-direction: column; justify-content: center; gap: 2px; min-height: 56px; padding: 0; font-size: var(--text-xs); }
@@ -104,7 +106,9 @@ input[type='range'] { width: 100%; min-height: 32px; margin: 0; accent-color: va
 .flow-list li { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface); opacity: 0.72; }
 .flow-list li.is-active { opacity: 1; }
 .flow-icon { display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--color-surface-raised); border: 1px solid var(--color-border); }
-.flow-value { font-family: var(--font-mono); font-size: var(--text-sm); }
+.flow-value { display: inline-flex; align-items: baseline; gap: var(--space-2); font-size: var(--text-sm); }
+.flow-value .num { font-family: var(--font-mono); }
+.flow-state { color: var(--color-text-muted); }
 .flow-line { position: absolute; inset-inline-start: calc(var(--space-3) + 1.25rem - 1px); inset-block-start: 100%; width: 2px; height: var(--space-2); background: var(--color-border); }
 .flow-list li:last-child .flow-line { display: none; }
 .flow-list li.is-active .flow-line { background: var(--color-accent); }
@@ -166,3 +170,21 @@ input[role='switch']:checked::after { inset-inline-start: calc(100% - 2rem + 3px
 @media (max-width: 859px) { .toast-region { inset-block-end: 5.5rem; } }
 .toast { display: inline-flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-5); border-radius: 999px; background: var(--color-text); color: var(--color-bg); box-shadow: var(--shadow-3); font-weight: 500; pointer-events: auto; }
 .toast.danger .icon { color: var(--color-warning); filter: brightness(1.6); }
+
+/* Chart: where "now" is, and which part is forecast */
+.plot .now-line { stroke: var(--color-text-muted); stroke-width: 1; stroke-dasharray: 3 4; }
+.plot .now-label { fill: var(--color-text-muted); font-family: var(--font-text); font-size: 12px; font-weight: 600; }
+.chart-note { font-size: var(--text-sm); }
+.inspect { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin: 0; padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); border-inline-start: 3px solid var(--color-accent); font-size: var(--text-sm); }
+.inspect .link-button { padding: 0; }
+/* Settings: display options */
+.display h2 { font-size: var(--text-lg); margin: 0; }
+.display .label { font-size: var(--text-sm); font-weight: 600; }
+/* History on a phone: three columns that fit, instead of five that scroll off-screen */
+@media (max-width: 600px) {
+  .data .optional { display: none; }
+  .data th, .data td { padding-inline: var(--space-3); }
+  .data thead th { padding: 0; white-space: normal; }
+  .sort { padding: 0 var(--space-3); text-align: start; }
+  .meter { min-width: 4.25rem; }
+}

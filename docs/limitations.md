@@ -10,7 +10,7 @@ This is the list of what is not done, not verified or not as good as it should b
 | Native Android build, emulator and device tests | blocked | No Android SDK or `adb` | Android Studio and an emulator or device: `npx expo run:android`; a keystore for store builds |
 | Skill invocation by the model | verified for one skill; triggering not measured | In a desktop app session on 13 November 2026 all 17 skills and both agents were listed and `intake-discovery` loaded through the Skill tool; the other 16 were not each invoked, and no evaluation measures whether Claude chooses the right skill from a plain request. The headless `claude -p` check fails with "OAuth session expired and could not be refreshed" | Log in to the CLI again to repeat the headless check; add trigger evaluations (`claude plugin eval`) |
 | Real image-provider generation (OpenAI) | implemented and tested for one case | One live generation was run with the owner's approval on 13 November 2026: `gpt-image-2`, low quality, 1024 by 1024, one request, about 14 seconds, accepted by every inspection check. Evidence is in `demos/live-provider-check/`. The recorded cost ($0.006) is the adapter's estimate, not the billed amount. Image editing, reference-guided generation, transparent backgrounds, other sizes and qualities, and real rate-limit behaviour are still covered only by the local stand-in | Check the amount on the provider's billing page; run the other cases when a project needs them |
-| Independent creative review of the demonstration | performed by a model; outcome is "revise" | The `creative-reviewer` agent, given only the brief, the DNA, the screenshots and the brand kit, scored the work and recommended **revise**: 1 blocker, 13 major and 11 minor findings (`demos/haldora/project/.cis/reports/creative-review.json`). None of them has been fixed. A model's critique is not a person's, and it is not client approval | Fix the blocker and major findings, re-run QA and the review, then have a person review before gate G6 |
+| Independent creative review of the demonstration | performed three times by a model; latest outcome "revise" with no blocker | The plugin's `creative-reviewer` agent reviewed the work cold, three times, each time a fresh instance with no access to how the work was made (`demos/haldora/reviews/`). Round 1: 1 blocker, 13 major. Round 2: 0 blocker, 9 major; 12 of round 1's 14 serious findings fixed, 2 partly. Round 3: 0 blocker, 7 major; 6 of round 2's 9 majors fixed. Two regressions round 3 found (tablet hero, halo notch at 1024 px) were fixed afterwards and checked by looking at new captures, not by a fourth review. The open majors are listed under "Open design work" below. A model's critique is not a person's, and it is not client approval | A person reviews before gate G6 |
 | Gates G6 (quality) and G7 (acceptance), and a final export | blocked | They need real people | `creative-studio approve G6-quality --actor "<name>"`, then `creative-studio export` |
 | Real client approvals | simulated | Haldora is fictional; gates G0 to G2 were recorded with `--simulated` and are labelled so in every report and in the package | A real client |
 | Screen-reader, real-device and low-powered-hardware testing | not performed | Not automatable here | People and devices |
@@ -18,13 +18,9 @@ This is the list of what is not done, not verified or not as good as it should b
 
 ## Implemented with known weaknesses
 
-The independent review also showed that the QA screenshots prove less than the pass counts suggest. Three points were confirmed by inspecting the files:
+The first independent review showed that the QA screenshots proved less than the pass counts suggested: full-page website captures blank from the middle down, a mobile app evidenced by one onboarding screen (with a "dark" capture byte-identical to the light one), and portal captures of one route only. That is fixed in the harness. Pages are scrolled through before a full-page capture; every page is captured at phone, tablet and desktop size and in dark at phone and desktop size; a dark capture identical to the light one fails; each deliverable declares captures for the states a page capture cannot reach (each story chapter, each portal route, each app screen, in dark and Arabic); and a screenshot is taken only once two consecutive frames are identical. The demonstration now produces about 70 screenshots instead of 28. The first new capture of the portal's History route on a phone immediately failed its overflow check, which is the point of capturing it.
 
-- The full-page website captures are blank from roughly the middle down, because content that reveals on scroll never revealed during capture. Visual-regression baselines for those pages therefore protect the hero and story only.
-- All four mobile captures show the first onboarding screen, and the "dark" one is byte-identical to the light one. The app's Today, Devices and Settings screens, its dark scheme and its Arabic layout have no visual evidence.
-- The portal captures cover the Today route only. The reviewer reported a History table wider than a phone screen, which the overflow check never loaded.
-
-The scripted flows do exercise those screens functionally; what is missing is anyone, or anything, looking at them.
+What this still does not do is judge what is in the picture. A doubled sun passed every automated check; only looking found it.
 
 A defect found late is worth recording as a warning about the method: in the dark colour scheme the website's navigation and logo were nearly invisible over the pale hero artwork. No automated rule failed, because contrast over an image cannot be decided automatically. It was caught only after the harness was changed to report undecided rules as warnings and the screenshot was looked at. It is fixed and now has its own scripted check, but it shows that the manual review listed below is not optional.
 
@@ -44,6 +40,20 @@ A defect found late is worth recording as a warning about the method: in the dar
 | Arabic logo | The wordmark is outlined in Latin script only; opentype.js shaping for Arabic was not relied on | Outline with a shaping engine such as HarfBuzz |
 | Android right-to-left | Layout mirrors immediately on iOS and the web; on Android a complete mirror needs `I18nManager.forceRTL` and a restart, which the template documents but does not automate | Add the restart flow |
 | Product figures and testimonials in the demo | Placeholders and illustrative quotes, labelled as such on the page | Real content |
+
+## Open design work from the latest independent review
+
+These are the third review's major findings that were not addressed, plus three from the second review that were deliberately left. Each is design work on the Haldora demonstration rather than a defect in the plugin's machinery. Details and suggestions are in `demos/haldora/reviews/review-3-revise.json`.
+
+| Finding | Where |
+|---|---|
+| The arc's stroke is a hairline on phones and tablets and in the social assets, so the sun seems to float | website story cards and hero at small sizes, `story.png`, `social-square.png` |
+| The portal's Today chart on a phone is the desktop chart scaled down, with labels of 4 to 5 px | portal, phone |
+| The portal shell and its History page are a standard admin layout with no trace of the direction; History is a table with ISO dates | portal |
+| The app's Devices and device detail screens are unstyled lists with little content | mobile app |
+| The sun's night and dark-scheme rules are not applied everywhere: a grey disc at 21:00 on the app dial, a coral sun in the dark portal, an amber sun on the night-blue guideline cover, stars behind the dark hero headline | app, portal, guidelines, website |
+| The 3D product is a featureless slab; the Dusk finish reads saturated and slightly glossy | 3D scene |
+| No Arabic brand applications, and one headline repeated across all four | `brand/applications/` |
 
 ## Not implemented
 

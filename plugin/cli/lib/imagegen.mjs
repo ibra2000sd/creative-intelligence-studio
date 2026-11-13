@@ -41,12 +41,27 @@ const TIMES = {
   night: { t: 0.72, sky: (c) => [c.dark.bg, c.dark.bg, c.dark.surface, c.dark.surfaceRaised], ground: (c) => [c.dark.surfaceRaised, c.dark.surface, c.dark.bg], body: (c) => c.dark.text },
 };
 
+/** Where the horizon-field recipe puts its sun, so a layout can keep text clear of it. */
+export function horizonSun(w, h, variant, sunAt) {
+  const time = TIMES[variant] || TIMES.noon;
+  const ang = Math.PI * (1 - (sunAt ?? time.t));
+  const x = w / 2 + w * 0.4 * Math.cos(ang);
+  const y = h * 0.66 - h * 0.5 * Math.sin(ang);
+  const r = Math.min(w, h) * (variant === 'night' ? 0.035 : 0.06);
+  // The outer halo never runs off the side of a narrow format.
+  return { x, y, r, halo: Math.max(r * 1.7, Math.min(r * 2.6, x - w * 0.02, w - x - w * 0.02)) };
+}
+
 const RECIPES = {
   /**
    * A horizon with a sun on its arc at a time of day. `layer` isolates one
-   * plane (sky, arc, far, mid, near) on transparency for parallax compositions.
+   * plane (sky, arc, far, mid, near) on transparency for parallax compositions;
+   * `ground` is the three hill planes together, for a composition in which
+   * something else (a scroll-driven sun) passes between sky and land; `track`
+   * and `sun` split the arc layer into the dashed arc alone and the sun or
+   * moon alone, so a page can hide the arc behind its copy without touching the sun.
    */
-  'horizon-field'({ w, h, rand, dna, variant, layer }) {
+  'horizon-field'({ w, h, rand, dna, variant, layer, clear, sunAt }) {
     const c = colors(dna, 'light');
     const time = TIMES[variant] || TIMES.noon;
     const sky = time.sky(c);
@@ -55,23 +70,55 @@ const RECIPES = {
     const cx = w / 2;
     const rx = w * 0.4;
     const ry = h * 0.5;
-    const ang = Math.PI * (1 - time.t);
+    // `sunAt` (0 at sunrise, 1 at sunset) places the sun or moon independently of the sky's time of day.
+    const ang = Math.PI * (1 - (sunAt ?? time.t));
     const sx = cx + rx * Math.cos(ang);
     const sy = horizon - ry * Math.sin(ang);
-    const r = Math.min(w, h) * (variant === 'night' ? 0.035 : 0.06);
+    const { r, halo } = horizonSun(w, h, variant, sunAt);
+    // `clear` is a rectangle reserved for typography: stars are left out of it and the arc stops at its edges.
+    const inClear = (x, y) => clear && x > clear.x && x < clear.x + clear.w && y > clear.y && y < clear.y + clear.h;
     const g = grain(dna);
-    const want = (name) => !layer || layer === 'all' || layer === name;
+    const want = (name) => !layer || layer === 'all' || layer === name || (layer === 'ground' && ['far', 'mid', 'near'].includes(name));
     let body = '';
     if (want('sky')) {
       body += `<rect width="${w}" height="${h}" fill="url(#sky)"/>`;
-      if (variant === 'night') {
-        for (let i = 0; i < 70; i++) body += `<circle cx="${f(rand() * w)}" cy="${f(rand() * horizon * 0.92)}" r="${f(0.6 + rand() * 1.5)}" fill="${c.dark.text}" opacity="${f(0.25 + rand() * 0.6)}"/>`;
-      }
     }
-    if (want('arc')) {
+    if (variant === 'night') {
+      // Stars are always generated, so every layer of a night scene sees the same random sequence.
+      let stars = '';
+      for (let i = 0; i < 70; i++) {
+        const [x, y, sr, so] = [rand() * w, rand() * horizon * 0.92, 0.6 + rand() * 1.5, 0.25 + rand() * 0.6];
+        if (!inClear(x, y)) stars += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(sr)}" fill="${c.dark.text}" opacity="${f(so)}"/>`;
+      }
+      if (want('sky')) body += stars;
+    }
+    if (want('arc') || layer === 'track' || layer === 'sun') {
       // The day arc with hour ticks: the brand's signature device.
-      body += `<path d="M${f(cx - rx)} ${f(horizon)}A${f(rx)} ${f(ry)} 0 0 1 ${f(cx + rx)} ${f(horizon)}" fill="none" stroke="${time.body(c)}" stroke-width="${f(Math.max(1.2, w / 900))}" stroke-dasharray="${f(w / 300)} ${f(w / 110)}" opacity="0.55"/>`;
-      body += `<circle cx="${f(sx)}" cy="${f(sy)}" r="${f(r * 2.6)}" fill="${time.body(c)}" opacity="0.14"/><circle cx="${f(sx)}" cy="${f(sy)}" r="${f(r * 1.6)}" fill="${time.body(c)}" opacity="0.2"/><circle cx="${f(sx)}" cy="${f(sy)}" r="${f(r)}" fill="${time.body(c)}"/>`;
+      let arc = `M${f(cx - rx)} ${f(horizon)}A${f(rx)} ${f(ry)} 0 0 1 ${f(cx + rx)} ${f(horizon)}`;
+      if (clear) {
+        // Trace the arc as short segments and lift the pen while it is inside the reserved rectangle.
+        arc = '';
+        let pen = false;
+        for (let i = 0; i <= 360; i++) {
+          const a = Math.PI * (1 - i / 360);
+          const [x, y] = [cx + rx * Math.cos(a), horizon - ry * Math.sin(a)];
+          if (inClear(x, y)) pen = false;
+          else {
+            arc += `${pen ? 'L' : 'M'}${f(x)} ${f(y)}`;
+            pen = true;
+          }
+        }
+      }
+      if (layer !== 'sun') body += `<path d="${arc}" fill="none" stroke="${time.body(c)}" stroke-width="${f(Math.max(1.2, w / 900))}" stroke-dasharray="${f(w / 300)} ${f(w / 110)}" opacity="0.55"/>`;
+      if (layer === 'track') {
+        // the track alone: no marker
+      } else if (variant === 'night') {
+        // At night the marker is a crescent, never a full disc: the same mark in every deliverable.
+        const k = r * 1.45;
+        body += `<circle cx="${f(sx)}" cy="${f(sy)}" r="${f(k * 2.2)}" fill="${time.body(c)}" opacity="0.07"/><path d="M${f(sx + 0.36 * k)} ${f(sy - 0.93 * k)}A${f(k)} ${f(k)} 0 1 0 ${f(sx + 0.93 * k)} ${f(sy + 0.36 * k)}A${f(0.77 * k)} ${f(0.77 * k)} 0 0 1 ${f(sx + 0.36 * k)} ${f(sy - 0.93 * k)}Z" fill="${time.body(c)}"/>`;
+      } else {
+        body += `<circle cx="${f(sx)}" cy="${f(sy)}" r="${f(halo)}" fill="${time.body(c)}" opacity="0.14"/><circle cx="${f(sx)}" cy="${f(sy)}" r="${f(r * 1.6)}" fill="${time.body(c)}" opacity="0.2"/><circle cx="${f(sx)}" cy="${f(sy)}" r="${f(r)}" fill="${time.body(c)}"/>`;
+      }
     }
     const planes = [['far', horizon - h * 0.02, h * 0.035, ground[0]], ['mid', horizon + h * 0.07, h * 0.045, ground[1]], ['near', horizon + h * 0.19, h * 0.05, ground[2]]];
     for (const [name, y, amp, fill] of planes) {
@@ -212,7 +259,7 @@ export function renderSvg(job, dna, { overlayMarkup = '' } = {}) {
   const w = job.width;
   const h = job.height;
   const seed = job.seed ?? `${dna.project.id}:${job.id}`;
-  const out = recipe({ w, h, rand: rng(`${seed}:${job.recipe}`), dna, variant: job.variant, layer: job.layer, scheme: job.scheme || dna.color.defaultScheme || 'light', motifs });
+  const out = recipe({ w, h, rand: rng(`${seed}:${job.recipe}`), dna, variant: job.variant, layer: job.layer, clear: job.clear, sunAt: job.sunAt, scheme: job.scheme || dna.color.defaultScheme || 'light', motifs });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><defs>${out.defs}</defs>${out.body}${overlayMarkup}</svg>\n`;
-  return { svg, describe: out.describe, seed: String(seed), parameters: { recipe: job.recipe, variant: job.variant || null, layer: job.layer || null, scheme: job.scheme || dna.color.defaultScheme || 'light', width: w, height: h, dnaRevision: dna.revision } };
+  return { svg, describe: out.describe, seed: String(seed), parameters: { recipe: job.recipe, variant: job.variant || null, layer: job.layer || null, ...(job.sunAt !== undefined ? { sunAt: job.sunAt } : {}), scheme: job.scheme || dna.color.defaultScheme || 'light', width: w, height: h, dnaRevision: dna.revision } };
 }

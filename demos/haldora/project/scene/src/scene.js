@@ -19,16 +19,18 @@ const bezier = ([x1, y1, x2, y2]) => (x) => {
 
 // Camera choreography for the embedded scroll sequence: [azimuth, polar, distance, targetY].
 const SHOTS = [
-  { at: 0, view: [0.55, 1.5, 3.1, -0.04] },
+  { at: 0, view: [0.55, 1.5, 3.2, -0.12] },
   { at: 0.5, view: [0.12, 1.52, 1.5, 0.2] },
-  { at: 1, view: [-1.0, 1.48, 2.9, -0.04] },
+  { at: 1, view: [-1.0, 1.48, 3.0, -0.12] },
 ];
 const HOME = SHOTS[0].view;
 
-export async function createScene({ canvas, scene: cfg, state, reduceMotion, embed, onLost }) {
+export async function createScene({ canvas, scene: cfg, state, reduceMotion, embed, shot = false, onLost, onGround }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  // The neutral tone mapper keeps base colours true to their tokens: a finish specified as
+  // chalk should read as chalk, which a filmic curve shifts toward tan.
+  renderer.toneMapping = THREE.NeutralToneMapping;
   renderer.toneMappingExposure = cfg.environment.exposure ?? 1;
   let dpr = Math.min(window.devicePixelRatio || 1, 2);
   renderer.setPixelRatio(dpr);
@@ -40,30 +42,47 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 30);
   const key = new THREE.DirectionalLight(cfg.environment.keyLight, 2.2);
   key.position.set(-2.4, 3.2, 3.4);
-  const fill = new THREE.DirectionalLight(cfg.environment.fillLight, 0.7);
+  const fill = new THREE.DirectionalLight(new THREE.Color(cfg.environment.fillLight).lerp(new THREE.Color(cfg.environment.keyLight), 0.5), 0.7);
   fill.position.set(3, 0.6, 2);
   // A hemisphere light stands in for an environment map: these finishes are matte, and
   // skipping the prefiltered environment removes the costliest start-up step.
-  const sky = new THREE.HemisphereLight(cfg.environment.keyLight, cfg.environment.fillLight, 1.1);
+  // The bounce from below is mostly neutral with a little of the warm fill, so pale finishes are not tinted.
+  const sky = new THREE.HemisphereLight(cfg.environment.keyLight, new THREE.Color(cfg.environment.keyLight).lerp(new THREE.Color(cfg.environment.fillLight), 0.22), 1.1);
   world.add(key, fill, sky);
 
-  // Wall and a soft contact shadow, drawn once to a canvas texture.
+  // The setting: the background is the wall the product hangs on, with a floor and a skirting
+  // board below it. Their colours come from the scheme's surface tokens, unlit, so the room
+  // matches the page around it. A soft contact shadow is drawn once to a canvas texture.
   const scheme = () => document.documentElement.dataset.scheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const day = new THREE.Color(cfg.environment.background);
   const night = new THREE.Color(cfg.semantic.dark.bg);
   const bg = new THREE.Color();
   world.background = bg;
+  const WALL_Z = -0.13;
+  const FLOOR_Y = -0.9;
+  const floorMat = new THREE.MeshBasicMaterial({ toneMapped: false });
+  const skirtMat = new THREE.MeshBasicMaterial({ toneMapped: false });
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(14, 6), floorMat);
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.set(0, FLOOR_Y, WALL_Z + 3);
+  const skirting = new THREE.Mesh(new THREE.BoxGeometry(14, 0.085, 0.014), skirtMat);
+  skirting.position.set(0, FLOOR_Y + 0.0425, WALL_Z + 0.007);
+  // A still is placed on a page of the same wall colour; a floor would end at the picture's edge.
+  if (!shot) world.add(floor, skirting);
+  const tone = (name, dusk) => new THREE.Color(cfg.semantic[scheme()][name]).lerp(new THREE.Color(cfg.semantic.dark[name]), dusk);
   const shadowCanvas = document.createElement('canvas');
   shadowCanvas.width = shadowCanvas.height = 256;
   const g = shadowCanvas.getContext('2d');
   const grad = g.createRadialGradient(128, 128, 10, 128, 128, 128);
-  grad.addColorStop(0, 'rgba(0,0,0,0.2)');
-  grad.addColorStop(1, 'rgba(0,0,0,0)');
+  // White with falling alpha: tinted black it is the shadow on a pale wall, tinted with a raised
+  // surface colour it is the pool of light around the product on a dark wall.
+  grad.addColorStop(0, 'rgba(255,255,255,1)');
+  grad.addColorStop(1, 'rgba(255,255,255,0)');
   g.fillStyle = grad;
   g.fillRect(0, 0, 256, 256);
   const shadowTex = new THREE.CanvasTexture(shadowCanvas);
-  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 1.65), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false }));
-  shadow.position.set(0.05, -0.05, -0.13);
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 1.65), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, toneMapped: false }));
+  shadow.position.set(0.05, -0.05, WALL_Z + 0.002);
   world.add(shadow);
 
   const loader = new GLTFLoader();
@@ -176,17 +195,23 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
   const arcMat = parts.ArcLight.material;
   function setFinish(id, animate = true) {
     const f = cfg.finishes.find((x) => x.id === id) || cfg.finishes[0];
-    const from = { c: bodyMat.color.clone(), m: bodyMat.metalness, r: bodyMat.roughness, a: arcMat.color.clone() };
+    const from = { c: bodyMat.color.clone(), m: bodyMat.metalness, r: bodyMat.roughness, a: arcMat.emissive.clone() };
     const to = { c: new THREE.Color(f.baseColor), a: new THREE.Color(f.accent || cfg.semantic.light.accent) };
     tween(animate ? durations.slow : 0, (p) => {
       bodyMat.color.copy(from.c).lerp(to.c, p);
-      fasciaMat.color.copy(bodyMat.color).multiplyScalar(0.86);
+      fasciaMat.color.copy(bodyMat.color).multiplyScalar(0.94);
       bodyMat.metalness = fasciaMat.metalness = from.m + (f.metalness - from.m) * p;
       bodyMat.roughness = from.r + (f.roughness - from.r) * p;
       fasciaMat.roughness = Math.min(1, bodyMat.roughness + 0.12);
-      arcMat.color.copy(from.a).lerp(to.a, p);
-      arcMat.emissive.copy(arcMat.color);
+      // The arc is a light, not a painted surface: it shows its accent colour exactly, whatever the room light.
+      arcMat.emissive.copy(from.a).lerp(to.a, p);
+      parts.Sun.material.emissive.copy(arcMat.emissive);
     });
+  }
+  for (const m of [arcMat, parts.Sun.material]) {
+    m.color.set(0x000000);
+    m.metalness = 0;
+    m.roughness = 1;
   }
 
   // ---- time of day: the sun travels the arc on the product ----------------
@@ -198,16 +223,28 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
     const angle = Math.PI * (1 - p);
     parts.Sun.position.set(ax + Math.cos(angle) * cfg.model.anchors.arcRadius, ay + Math.sin(angle) * cfg.model.anchors.arcRadius, az);
     const noon = Math.sin(Math.PI * Math.min(1, Math.max(0, p))); // 0 at the ends, 1 at midday
-    const dusk = Math.max(0, (hours - 18.5) / 3.5);
-    key.color.copy(warm).lerp(white, noon);
-    key.intensity = 0.7 + noon * 1.7;
+    // Evening falls quickly: a slow blend from a pale wall to a dark one lingers on grey.
+    const late = Math.min(1, Math.max(0, (hours - 18) / 2.25));
+    const dusk = late * late * (3 - 2 * late);
+    // Warm only near sunrise and sunset; through the day the key light is neutral, so finishes keep their colour.
+    key.color.copy(warm).lerp(white, Math.min(1, noon * 1.6));
+    key.intensity = 0.9 + noon * 2.0;
     key.position.set(-3.2 + p * 6.4, 1.2 + noon * 2.4, 3.2);
     fill.intensity = 0.35 + (1 - noon) * 0.5;
-    sky.intensity = 0.55 + noon * 0.75;
+    sky.intensity = 0.75 + noon * 0.85;
     const base = scheme() === 'dark' ? night : day;
-    bg.copy(base).lerp(night, Math.min(1, dusk));
-    arcMat.emissiveIntensity = 1 + dusk * 2.2;
-    parts.Sun.material.emissiveIntensity = 1.6 + dusk * 2.4;
+    const d = Math.min(1, dusk);
+    bg.copy(base).lerp(night, d);
+    floorMat.color.copy(tone('surface', d));
+    skirtMat.color.copy(tone('border', d));
+    const darkWall = 0.2126 * bg.r + 0.7152 * bg.g + 0.0722 * bg.b < 0.18;
+    shadow.material.color.set(darkWall ? cfg.semantic.dark.surfaceRaised : '#000000');
+    shadow.material.opacity = darkWall ? 0.55 : 0.2;
+    arcMat.emissiveIntensity = 1 + d * 0.5;
+    parts.Sun.material.emissiveIntensity = 1.1 + d * 0.7;
+    // Text laid over the canvas must take its colour from the wall behind it, not from the page scheme.
+    const lum = 0.2126 * bg.r + 0.7152 * bg.g + 0.0722 * bg.b; // Color components are linear
+    onGround?.(lum < 0.18 ? 'dark' : 'light');
     invalidate();
   }
 
@@ -336,6 +373,7 @@ export async function createScene({ canvas, scene: cfg, state, reduceMotion, emb
     get mode() {
       return diag.mode;
     },
+    settled: () => tweens.size === 0,
     info: () => ({ frames: diag.frames, triangles: renderer.info.render.triangles, calls: renderer.info.render.calls, geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, dpr, dprDrops: diag.dprDrops, contextLost: diag.contextLost, pendingTweens: tweens.size, rafActive: scheduled }),
     frameStats: () => {
       const s = [...diag.frameMs].sort((a, b) => a - b);

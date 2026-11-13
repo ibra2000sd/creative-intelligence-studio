@@ -54,6 +54,35 @@ export async function dhash(input) {
   return BigInt('0b' + bits).toString(16).padStart(16, '0');
 }
 
+/**
+ * Colour signature: the average colour and coverage (alpha) of an 8 by 8 grid, as hex. The
+ * difference hash sees only coarse structure, so two pictures with the same shapes in different
+ * colours share a hash, and on transparency a thin arc, a sun and both together look almost alike
+ * to it. The signature tells them apart.
+ */
+export async function colorSignature(input) {
+  const { data } = await sharp()(input).ensureAlpha().resize(8, 8, { fit: 'fill', kernel: 'cubic' }).raw().toBuffer({ resolveWithObject: true });
+  return Buffer.from(data).toString('hex');
+}
+
+/**
+ * How far apart two colour signatures are: the mean absolute difference (0 to 255), or 255 when
+ * any one cell differs strongly, since a mark present in one picture and absent from the other
+ * (a sun beside an arc) makes them different pictures however small it is overall.
+ */
+export function signatureDistance(a, b) {
+  const [x, y] = [Buffer.from(a, 'hex'), Buffer.from(b, 'hex')];
+  if (x.length !== y.length || !x.length) return 255;
+  let sum = 0;
+  let max = 0;
+  for (let i = 0; i < x.length; i++) {
+    const d = Math.abs(x[i] - y[i]);
+    sum += d;
+    if (d > max) max = d;
+  }
+  return max > 40 ? 255 : sum / x.length;
+}
+
 export function hamming(a, b) {
   let x = BigInt('0x' + a) ^ BigInt('0x' + b);
   let n = 0;
@@ -114,7 +143,7 @@ export async function inspect(input, { expect = {}, palette = [] } = {}) {
     const bytes = Buffer.isBuffer(input) ? input.length : fs.statSync(input).size;
     add('byte-budget', bytes <= expect.maxBytes, `${bytes} bytes, budget ${expect.maxBytes}`);
   }
-  return { pass: checks.every((c) => c.pass), checks, meta, adherence, hash: await dhash(input) };
+  return { pass: checks.every((c) => c.pass), checks, meta, adherence, hash: await dhash(input), signature: await colorSignature(input) };
 }
 
 /**

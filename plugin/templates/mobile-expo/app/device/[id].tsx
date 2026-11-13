@@ -12,7 +12,7 @@ export default function DeviceDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const device = DEVICES.find((d) => d.id === id);
   if (!device) return <Screen><T kind="muted">{t.devices.empty}</T></Screen>;
-  const rows: [string, string][] = [[t.devices.location, device.location], [t.devices.firmware, device.firmware]];
+  const rows: [string, string][] = [[t.devices.location, t.devices.places[device.place]], [t.devices.firmware, device.firmware]];
   return (
     <Screen style={{ paddingTop: 0 }}>
       <Animated.View entering={FadeIn.duration(th.motion.durationMs.base)} style={{ gap: th.space[5] }}>
@@ -21,7 +21,7 @@ export default function DeviceDetail() {
             <Icon name={device.kind} size={32} color={th.c.text} />
           </View>
           <View style={{ flex: 1 }}>
-            <T kind="display" accessibilityRole="header" testID="device-title" style={{ fontSize: th.size['2xl'], lineHeight: th.size['2xl'] * 1.2 }}>{device.name}</T>
+            <T kind="display" accessibilityRole="header" testID="device-title" style={{ fontSize: th.size['2xl'], lineHeight: th.size['2xl'] * 1.2 }}>{device.name ?? t.devices.names[device.nameKey!]}</T>
             <T kind="label">{t.devices[device.status]}</T>
           </View>
         </View>

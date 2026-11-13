@@ -202,4 +202,107 @@ export const flows = [
       expect.equal(await page.locator('.stat-value').first().textContent(), a, 'figure settled immediately');
     },
   },
+  {
+    id: 'sun-above-cursor',
+    title: 'Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset',
+    async run({ page, baseUrl, expect }) {
+      await go(page, baseUrl);
+      await page.waitForSelector('.plot .line');
+      const read = () => page.evaluate(() => {
+        const cursor = Number(document.querySelector('.plot .cursor').getAttribute('x1'));
+        const g = document.querySelector('.plot .sun-core').parentElement;
+        const m = new DOMMatrixReadOnly(getComputedStyle(g).transform);
+        return { cursor, sun: m.m41, opacity: Number(getComputedStyle(g).opacity) };
+      });
+      await page.locator('#hour').focus();
+      const seen = [];
+      for (const presses of [0, 8, -20]) {
+        for (let i = 0; i < Math.abs(presses); i++) await page.keyboard.press(presses > 0 ? 'ArrowRight' : 'ArrowLeft');
+        await page.waitForTimeout(1400);
+        const r = await read();
+        expect.near(r.sun, r.cursor, 2.5, `sun is above the cursor at ${await page.locator('.readout b').textContent()}`);
+        expect.ok(r.opacity > 0.9, 'the sun is shown during daylight');
+        seen.push(Math.round(r.cursor));
+      }
+      expect.equal(new Set(seen).size, 3, 'three different times were checked');
+      for (let i = 0; i < 12; i++) await page.keyboard.press('ArrowLeft'); // 01:00
+      await page.waitForTimeout(1200);
+      expect.ok((await read()).opacity < 0.1, 'no sun is drawn at night');
+      return `checked at x = ${seen.join(', ')}`;
+    },
+  },
+  {
+    id: 'one-moment',
+    title: 'Today describes one moment: update time, figures and battery state agree, and the forecast is labelled',
+    async run({ page, baseUrl, expect }) {
+      await go(page, baseUrl);
+      await page.waitForSelector('.plot .line');
+      const now = await page.locator('.readout b').textContent();
+      const head = await page.locator('.page-head .muted').textContent();
+      expect.ok(head.includes(now.slice(0, 2) + ':'), `the update time (${head.trim().slice(0, 24)}) is in the same hour as the figures (${now})`);
+      expect.equal(await page.locator('.inspect').count(), 0, 'nothing says "showing another time" at first');
+      expect.ok((await page.locator('.plot .forecast').count()) >= 1, 'the rest of the day is drawn as a forecast');
+      expect.ok(await page.locator('.plot .now-label').isVisible(), '"Now" is marked on the chart');
+      const battery = await page.locator('.flow-list li').nth(1).locator('.flow-value').textContent();
+      if (/100%/.test(battery)) expect.ok(!/charging/.test(battery), `a full battery is not described as charging ("${battery}")`);
+      await page.locator('#hour').focus();
+      for (let i = 0; i < 6; i++) await page.keyboard.press('ArrowRight');
+      expect.ok(await page.locator('.inspect').isVisible(), 'moving the slider says which moment is shown');
+      expect.match(await page.locator('.inspect').textContent(), /forecast/, 'a later time is called a forecast');
+      await page.locator('.inspect button').click();
+      expect.equal(await page.locator('.readout b').textContent(), now, '"Back to now" returns to the present');
+      return `now ${now}; battery "${battery.trim()}"`;
+    },
+  },
+  {
+    id: 'phone-display-settings',
+    viewport: 'mobile',
+    title: 'Phone: language and appearance are in Settings, and History fits the screen',
+    async run({ page, baseUrl, expect }) {
+      await go(page, baseUrl, '#/settings');
+      const dark = page.locator('#dark-mode');
+      expect.ok(await dark.isVisible(), 'appearance switch is in Settings');
+      await dark.check({ force: true });
+      expect.equal(await page.evaluate(() => document.documentElement.dataset.scheme), 'dark', 'the switch changes the scheme');
+      await dark.uncheck({ force: true });
+      const lang = page.locator('[data-lang-link]');
+      expect.ok(await lang.isVisible(), 'language choice is in Settings');
+      await lang.click();
+      await page.waitForFunction(() => document.documentElement.dir === 'rtl');
+      expect.match(await page.evaluate(() => location.hash), /settings/, 'the page is kept when the language changes');
+      await page.locator('.side nav a[href="#/history"]').click();
+      await page.waitForSelector('table.data');
+      const wide = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect.ok(wide <= 1, `History does not scroll sideways on a phone (${wide}px over)`);
+      const cols = await page.locator('table.data thead th').evaluateAll((ths) => ths.filter((th) => getComputedStyle(th).display !== 'none').length);
+      expect.equal(cols, 3, 'three columns are shown on a phone');
+      const inside = await page.evaluate(() => { const t = document.querySelector('table.data').getBoundingClientRect(); return t.right <= innerWidth + 1 && t.left >= -1; });
+      expect.ok(inside, 'the whole table is inside the screen');
+    },
+  },
+];
+
+// Routes and states a screenshot of the first page does not show. Each is captured, checked for
+// overflow and compared with its accepted baseline.
+const route = (r, q = '', then = async () => {}) => async ({ page, baseUrl }) => {
+  await go(page, baseUrl, `${q}#/${r}`);
+  await page.waitForSelector(r === 'history' ? 'table.data' : r === 'devices' ? '.device' : r === 'settings' ? 'form' : '.plot .line');
+  await then(page);
+};
+const scrub = (steps) => async (page) => {
+  await page.locator('#hour').focus();
+  for (let i = 0; i < steps; i++) await page.keyboard.press('ArrowRight');
+  await page.waitForTimeout(1200);
+};
+
+export const captures = [
+  { id: 'portal-devices', title: 'Devices', run: route('devices') },
+  { id: 'portal-history', title: 'History', run: route('history') },
+  { id: 'portal-settings', title: 'Settings', run: route('settings') },
+  { id: 'portal-forecast', title: 'Today, slider moved to the evening forecast', run: route('overview', '', scrub(11)) },
+  { id: 'portal-devices-mobile', title: 'Devices on a phone', viewport: 'mobile', fullPage: 'tall', run: route('devices') },
+  { id: 'portal-history-mobile', title: 'History on a phone', viewport: 'mobile', fullPage: 'tall', run: route('history') },
+  { id: 'portal-settings-mobile', title: 'Settings on a phone', viewport: 'mobile', fullPage: 'tall', run: route('settings') },
+  { id: 'portal-history-ar-mobile', title: 'History on a phone, Arabic', viewport: 'mobile', fullPage: 'tall', run: route('history', '?lang=ar') },
+  { id: 'portal-settings-ar-mobile-dark', title: 'Settings on a phone, Arabic, dark scheme', viewport: 'mobile', scheme: 'dark', fullPage: 'tall', run: route('settings', '?lang=ar') },
 ];

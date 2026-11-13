@@ -43,9 +43,9 @@ export function totals(points) {
 }
 
 /** Map data to SVG coordinates. Time always runs left to right, in every locale. */
-export function scalePoints(points, key, { width, height, pad = 0, max }) {
+export function scalePoints(points, key, { width, height, pad = 0, padTop = pad, max }) {
   const top = max ?? Math.max(...points.map((p) => p[key]), 0.001);
-  return points.map((p) => [pad + (p.h / 23.5) * (width - pad * 2), height - pad - (p[key] / top) * (height - pad * 2)]);
+  return points.map((p) => [pad + (p.h / 23.5) * (width - pad * 2), height - pad - (p[key] / top) * (height - pad - padTop)]);
 }
 
 export function linePath(xy) {
@@ -62,6 +62,30 @@ export function arcPoint(hour, { cx, cy, rx, ry }) {
   const p = Math.max(0, Math.min(1, (hour - 6) / 14));
   const a = Math.PI * (1 - p);
   return { x: cx + rx * Math.cos(a), y: cy - ry * Math.sin(a), daylight: hour >= 6 && hour <= 20 };
+}
+
+/**
+ * The sun's place over a time axis. The arc stands on sunrise and sunset, and the sun is directly
+ * above its own hour, so the arc and a cursor on the same axis can never disagree.
+ */
+export function sunOnAxis(hour, { x0, x1, cy, ry, sunrise = 6, sunset = 20 }) {
+  const xAt = (h) => x0 + (h / 23.5) * (x1 - x0);
+  const left = xAt(sunrise);
+  const right = xAt(sunset);
+  const cx = (left + right) / 2;
+  const rx = (right - left) / 2;
+  const x = xAt(hour);
+  const u = Math.max(-1, Math.min(1, (x - cx) / rx));
+  return { x, y: cy - ry * Math.sqrt(1 - u * u), daylight: hour >= sunrise && hour <= sunset, left, right, rx };
+}
+
+/** What the battery is doing at a moment. A full battery is full, not "charging". */
+export function batteryState(p) {
+  const net = p.solar - p.home;
+  if (p.battery >= 0.995 && net >= -0.15) return 'full';
+  if (net > 0.15) return 'charging';
+  if (net < -0.15 && p.battery > 0.31) return 'discharging';
+  return 'idle';
 }
 
 export function history(days = 30, seed = 7) {

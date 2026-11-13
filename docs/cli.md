@@ -293,10 +293,14 @@ Build the 3D model, fallbacks and interactive scene.
 ```text
 creative-studio 3d build [--force] [--json]
 creative-studio 3d sync
+creative-studio 3d stills [--json]
 
 Generates the product GLB from procedural geometry with DNA materials,
 optimises it (meshopt), validates source and optimised files with the Khronos
-glTF validator, writes still fallbacks per finish and scaffolds scene/.
+glTF validator, writes drawn still fallbacks per finish and scaffolds scene/.
+After the scene is built (npm run build), "stills" replaces the drawn
+fallbacks with images rendered from the real model, in light and dark, so the
+still and the live view show the same object. Run it again after a DNA change.
 ```
 
 ### preview

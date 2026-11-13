@@ -144,9 +144,12 @@
               "arc",
               "far",
               "mid",
-              "near"
+              "near",
+              "ground",
+              "track",
+              "sun"
             ],
-            "description": "For layered recipes: render one plane on transparency for parallax."
+            "description": "For layered recipes: render one plane on transparency for parallax. horizon-field also offers \"ground\" (all hills), \"track\" (the arc without its sun) and \"sun\" (the sun or moon alone)."
           },
           "quality": {
             "enum": [
@@ -154,6 +157,17 @@
               "medium",
               "high"
             ]
+          },
+          "sameAs": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$",
+            "description": "Id of another asset this job is intentionally the same picture as (for example the same land under a different sky). The duplicate check then accepts that one likeness and no other."
+          },
+          "sunAt": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Where the sun (or, at night, the crescent) sits on the arc: 0 at sunrise, 1 at sunset. Defaults to the variant's time of day. Use it to keep the marker clear of text that sits on the picture."
           }
         }
       }

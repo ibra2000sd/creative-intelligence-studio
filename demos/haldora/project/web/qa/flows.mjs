@@ -37,7 +37,7 @@ export const flows = [
   {
     id: 'header-over-artwork',
     category: 'accessibility',
-    title: 'Dark scheme: the header stays legible over the daylight hero and after scrolling',
+    title: 'Dark scheme: the hero shows its night scene, and the header is legible over it and after scrolling',
     async run({ page, baseUrl, expect }) {
       await page.goto(baseUrl + '/', { waitUntil: 'networkidle' });
       await page.evaluate(() => (document.documentElement.dataset.scheme = 'dark'));
@@ -45,8 +45,17 @@ export const flows = [
       const lum = (rgb) => { const [r, g, b] = rgb.match(/[\d.]+/g).slice(0, 3).map((v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
       const navColor = () => page.locator('#primary-nav a').first().evaluate((el) => getComputedStyle(el).color);
       const atTop = lum(await navColor());
-      expect.ok(atTop < 0.1, `navigation text is dark over the pale artwork (luminance ${atTop.toFixed(3)})`);
-      expect.ok(await page.locator('.brand .on-light').isVisible(), 'the logo for light grounds is shown over the artwork');
+      if (await page.locator('.hero.has-night').count()) {
+        expect.ok(await page.locator('.hero-scene.on-dark').isVisible(), 'the night scene is shown');
+        expect.ok(!(await page.locator('.hero-scene.on-light').isVisible()), 'the daylight scene is hidden');
+        await page.waitForFunction(() => { const i = document.querySelector('.hero-scene.on-dark img.base'); return i.complete && i.naturalWidth > 0; }, null, { timeout: 8000 });
+        expect.ok(atTop > 0.6, `navigation text is light over the night artwork (luminance ${atTop.toFixed(3)})`);
+        expect.ok(lum(await page.locator('.hero h1').evaluate((el) => getComputedStyle(el).color)) > 0.6, 'the headline takes night ink');
+        expect.ok(await page.locator('.brand .on-dark').isVisible(), 'the reversed logo is shown over the night artwork');
+      } else {
+        expect.ok(atTop < 0.1, `navigation text is dark over the pale artwork (luminance ${atTop.toFixed(3)})`);
+        expect.ok(await page.locator('.brand .on-light').isVisible(), 'the logo for light grounds is shown over the artwork');
+      }
       await page.evaluate(() => window.scrollTo(0, innerHeight * 1.5));
       await page.waitForFunction(() => document.querySelector('[data-header]').classList.contains('is-stuck'));
       await page.waitForTimeout(500);
@@ -81,6 +90,9 @@ export const flows = [
     async run({ page, baseUrl, expect }) {
       await page.goto(baseUrl + '/', { waitUntil: 'networkidle' });
       await page.waitForFunction(() => window.__motion?.triggers() > 0, null, { timeout: 8000 });
+      if (!(await page.locator('[data-sun]').count())) return 'this project has no layered story frames, so no scroll-driven sun';
+      const suns = await page.evaluate(() => document.querySelectorAll('.story-visual [data-sun]').length);
+      expect.equal(suns, 1, 'exactly one sun is drawn over the story');
       const first = await sunPos(page);
       const positions = new Set([first]);
       const active = new Set();
@@ -108,8 +120,10 @@ export const flows = [
     id: 'form-validation',
     title: 'Contact form reports errors accessibly and confirms success',
     async run({ page, baseUrl, expect }) {
-      await page.goto(baseUrl + '/#contact', { waitUntil: 'networkidle' });
+      // The form is what is tested, so wait for it rather than for a silent network.
+      await page.goto(baseUrl + '/#contact', { waitUntil: 'load' });
       const form = page.locator('[data-form]');
+      await form.locator('button[type=submit]').waitFor();
       await form.locator('button[type=submit]').click();
       expect.ok(await form.locator('[data-summary-box]').isVisible(), 'error summary is shown');
       expect.equal(await page.evaluate(() => document.activeElement.id), 'f-name', 'focus moves to the first invalid field');
@@ -187,4 +201,39 @@ export const flows = [
       }
     },
   },
+];
+
+// States a page-level screenshot cannot show. `creative-studio test` captures each one, checks it
+// for overflow and compares it with its accepted baseline, so somebody can look at every chapter.
+const chapter = (i, path = '/') => async ({ page, baseUrl }) => {
+  await page.goto(baseUrl + path, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => window.__motion?.triggers() > 0, null, { timeout: 8000 }).catch(() => {});
+  // Centre the chapter, as when it is being read: that is where the sun shows the chapter's time.
+  await page.locator('[data-chapter]').nth(i).evaluate((el) => window.scrollTo({ top: el.getBoundingClientRect().top + scrollY + el.offsetHeight / 2 - innerHeight / 2, behavior: 'instant' }));
+  await page.waitForTimeout(1500);
+};
+const product = (path = '/') => async ({ page, baseUrl }) => {
+  await page.goto(baseUrl + path, { waitUntil: 'networkidle' });
+  await page.locator('#cell').evaluate((el) => window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: 'instant' }));
+  if (await page.locator('[data-scene]').getAttribute('data-scene')) await page.waitForSelector('[data-scene].is-live', { timeout: 25000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+};
+
+const heroAt = (path) => async ({ page, baseUrl }) => {
+  await page.goto(baseUrl + path, { waitUntil: 'load' });
+  await page.waitForTimeout(1800); // the copy's entrance animation, then the arc's cut-out
+};
+
+export const captures = [
+  ...[0, 1, 2, 3].map((i) => ({ id: `story-chapter-${i + 1}`, title: `Scroll story, chapter ${i + 1}`, run: chapter(i) })),
+  { id: 'story-chapter-1-ar', title: 'Scroll story, first chapter, Arabic', run: chapter(0, '/ar/') },
+  { id: 'story-chapter-4-dark', title: 'Scroll story, night chapter, dark scheme', scheme: 'dark', run: chapter(3) },
+  // The hero between the phone and desktop layouts, where its composition changes.
+  ...[[834, 1194, 'tablet'], [1024, 768, 'small laptop']].flatMap(([w, h, name]) => [
+    { id: `hero-${w}`, title: `Hero at ${w} by ${h} (${name})`, viewport: w < 900 ? 'tablet' : 'desktop', size: { width: w, height: h }, run: heroAt('/') },
+    { id: `hero-${w}-ar-dark`, title: `Hero at ${w} by ${h}, Arabic, dark scheme`, viewport: w < 900 ? 'tablet' : 'desktop', size: { width: w, height: h }, scheme: 'dark', run: heroAt('/ar/') },
+  ]),
+  { id: 'product', title: 'Product section with the live 3D view', run: product() },
+  { id: 'product-ar-dark', title: 'Product section, Arabic, dark scheme', scheme: 'dark', run: product('/ar/') },
+  { id: 'product-mobile', title: 'Product section on a phone', viewport: 'mobile', run: product() },
 ];

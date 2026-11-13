@@ -1,11 +1,11 @@
 {
   "name": "creative-intelligence-studio",
   "version": "0.1.0",
-  "builtAt": "2026-11-13T00:52:55.644Z",
+  "builtAt": "2026-11-13T13:02:50.505Z",
   "archive": "creative-intelligence-studio-0.1.0.zip",
-  "bytes": 315176,
+  "bytes": 342146,
   "files": 136,
-  "sha256": "7d4ed0016210eced8e85fa8fe8dcc8b4ff032c8f308a42e8613226331c9c1350",
+  "sha256": "b901e51104d0d03d1b9954586107bad828933f30e94ede3d95dbbe726d3d2304",
   "requires": {
     "node": ">=22",
     "claudeCode": ">=2.1.275"

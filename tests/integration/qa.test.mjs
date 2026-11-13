@@ -13,7 +13,7 @@ import { findChrome, hasCapability } from '../../plugin/cli/lib/deps.mjs';
 const canRun = hasCapability('browser') && Boolean(findChrome());
 const page = (body, css = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fixture</title><link rel="icon" href="data:,"><style>body{margin:0;font:16px/1.5 system-ui;background:#fff;color:#111}a,button{min-height:44px;min-width:44px;display:inline-flex;align-items:center}:focus-visible{outline:3px solid #00f}${css}</style></head><body><main>${body}</main></body></html>`;
 
-async function run(html, { flows } = {}) {
+async function run(html, { flows, fullPage = false } = {}) {
   const dir = tmpDir();
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   let flowsFile;
@@ -23,7 +23,7 @@ async function run(html, { flows } = {}) {
   }
   const server = await serve(dir);
   try {
-    const checks = await runBrowserSuite({ baseUrl: server.url, pages: [{ label: 'fixture', path: '/' }], evidenceDir: path.join(dir, 'evidence'), baselineDir: path.join(dir, 'baselines'), flowsFile, options: { scrollMotion: false, performance: false, fullPage: false, settleMs: 200 } });
+    const checks = await runBrowserSuite({ baseUrl: server.url, pages: [{ label: 'fixture', path: '/' }], evidenceDir: path.join(dir, 'evidence'), baselineDir: path.join(dir, 'baselines'), flowsFile, options: { scrollMotion: false, performance: false, fullPage, settleMs: 200 } });
     return { checks, dir, by: (id) => checks.filter((c) => c.id.startsWith(id)) };
   } finally {
     await server.close();
@@ -37,6 +37,46 @@ test('a clean page passes every generic check', { skip: !canRun && 'needs the br
   assert.ok(checks.some((c) => c.id.startsWith('a11y-axe') && c.status === 'pass'));
   assert.ok(fs.readdirSync(path.join(dir, 'evidence')).some((f) => f.endsWith('.png')), 'screenshots are kept as evidence');
   assert.ok(fs.readdirSync(path.join(dir, 'baselines')).length >= 3, 'first run establishes baselines');
+});
+
+test('a dark scheme that is offered but changes nothing is caught; a page that offers none is not blamed', { skip: !canRun && 'needs the browser engine and a Chromium browser' }, async () => {
+  const body = '<h1>Scheme fixture</h1><p>Readable text.</p>';
+  const none = await run(page(body));
+  assert.ok(none.by('dark-scheme:').length >= 2, 'dark is captured at phone and desktop size');
+  assert.ok(none.by('dark-scheme:').every((c) => c.status === 'skipped'), 'a single-scheme page is skipped, not failed');
+  const broken = await run(page(body).replace('<meta charset="utf-8">', '<meta charset="utf-8"><meta name="color-scheme" content="light dark">'));
+  assert.ok(broken.by('dark-scheme:').every((c) => c.status === 'fail'), 'declares dark, renders the same');
+  assert.match(broken.by('dark-scheme:')[0].summary, /identical to the light one/);
+  const working = await run(page(body, '@media (prefers-color-scheme: dark){body{background:#111;color:#eee}}[data-scheme=dark] body{background:#111;color:#eee}'));
+  assert.ok(working.by('dark-scheme:').every((c) => c.status === 'pass'), 'a page that changes passes');
+  assert.ok(fs.readdirSync(path.join(working.dir, 'evidence')).some((f) => /-mobile-dark\.png$/.test(f)), 'the dark capture is kept at phone size too');
+});
+
+test('a full-page capture with text still invisible is reported as incomplete evidence', { skip: !canRun && 'needs the browser engine and a Chromium browser' }, async () => {
+  const reveal = '<script>new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("in"))).observe(document.querySelector(".late"));document.querySelector(".later").classList.add("in")</script>';
+  const shown = await run(page(`<h1>Shown</h1><p class="later">Revealed on load.</p><div style="height:2400px"></div><p class="late">Revealed near the bottom.</p>${reveal}`, '.later,.late{opacity:0;transition:opacity .2s}.later.in,.late.in{opacity:1}'), { fullPage: true });
+  assert.ok(shown.by('capture-complete:').every((c) => c.status === 'pass'), 'content revealed by scrolling is present after the scroll-through');
+  const never = await run(page('<h1>Shown</h1><p style="opacity:0">Never revealed.</p>'), { fullPage: true });
+  const bad = never.by('capture-complete:').filter((c) => c.status === 'fail');
+  assert.ok(bad.length >= 1, 'text that never appears is reported');
+  assert.match(bad[0].data.hidden.join(' '), /Never revealed/);
+});
+
+test('captures declared by a deliverable are taken, checked for overflow and baselined', { skip: !canRun && 'needs the browser engine and a Chromium browser' }, async () => {
+  const html = page('<h1>Routes</h1><div id="view">home</div><script>addEventListener("hashchange",()=>{document.getElementById("view").innerHTML=location.hash==="#wide"?"<div style=\'width:900px;background:#ddd\'>too wide for a phone</div>":"other"})</script>');
+  const flows = `export const flows = [];
+export const captures = [
+  { id: 'route-other', title: 'Other route', viewport: 'mobile', run: async ({ page, baseUrl }) => { await page.goto(baseUrl + '/#other'); } },
+  { id: 'route-wide', title: 'Wide route', viewport: 'mobile', run: async ({ page, baseUrl }) => { await page.goto(baseUrl + '/'); await page.evaluate(() => { location.hash = '#wide'; }); } },
+  { id: 'route-broken', title: 'Broken', run: async () => { throw new Error('cannot reach this state'); } },
+];`;
+  const { by, dir } = await run(html, { flows });
+  const files = fs.readdirSync(path.join(dir, 'evidence'));
+  assert.ok(files.includes('route-other.png') && files.includes('route-wide.png'), 'each capture is saved under its id');
+  assert.equal(by('layout:capture:route-other')[0].status, 'pass');
+  assert.equal(by('layout:capture:route-wide')[0].status, 'fail', 'overflow on a route the page-level check never loads');
+  assert.equal(by('capture:route-broken')[0].status, 'fail', 'a capture that cannot be taken is reported, not skipped');
+  assert.ok(fs.readdirSync(path.join(dir, 'baselines')).includes('route-other.png'), 'captures get baselines');
 });
 
 test('planted defects are each caught by the check responsible for them', { skip: !canRun && 'needs the browser engine and a Chromium browser' }, async () => {

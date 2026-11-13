@@ -37,11 +37,14 @@ const params = new URLSearchParams(location.search);
 const lang = params.get('lang') === 'ar' ? 'ar' : 'en';
 const t = STRINGS[lang];
 const embed = params.has('embed');
+const shot = params.has('shot'); // the product alone, for rendering still images from the real model
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.documentElement.lang = lang;
 document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 if (params.get('scheme')) document.documentElement.dataset.scheme = params.get('scheme');
 document.body.classList.toggle('embed', embed);
+document.body.classList.toggle('shot', shot);
+const currentScheme = () => document.documentElement.dataset.scheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('scene');
@@ -58,7 +61,9 @@ $('scene-help').textContent = t.help;
 document.title = t.title;
 
 const clock = (h) => `${String(Math.floor(h)).padStart(2, '0')}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
-const finishName = () => scene.finishes.find((f) => f.id === state.finish).name;
+// A finish may carry localised names in the Experience DNA; its plain name is the fallback.
+const nameOf = (f) => f.names?.[lang] || f.name;
+const finishName = () => nameOf(scene.finishes.find((f) => f.id === state.finish));
 
 for (const f of scene.finishes) {
   const label = document.createElement('label');
@@ -68,7 +73,7 @@ for (const f of scene.finishes) {
   dot.className = 'dot';
   dot.style.background = f.baseColor;
   const name = document.createElement('span');
-  name.textContent = f.name;
+  name.textContent = nameOf(f);
   label.append(input, dot, name);
   $('finishes').append(label);
 }
@@ -77,8 +82,18 @@ function describe() {
   $('time-out').textContent = clock(state.time);
   canvas.setAttribute('aria-label', t.label(finishName(), clock(state.time)));
   fallbackImg.alt = t.fallbackAlt(finishName());
-  fallbackImg.src = `fallback/cell-${state.finish}.webp`;
+  // Stills exist per scheme when they were rendered from the model; the light one always exists.
+  const light = `fallback/cell-${state.finish}.webp`;
+  fallbackImg.onerror = () => {
+    fallbackImg.onerror = null;
+    fallbackImg.src = light;
+  };
+  fallbackImg.src = currentScheme() === 'dark' ? `fallback/cell-${state.finish}-dark.webp` : light;
 }
+
+// Captions over the picture take their colour from the ground they sit on.
+const setGround = (ground) => ($('viewport').dataset.ground = ground);
+setGround(currentScheme());
 
 function showFallback(message) {
   state.mode = 'fallback';
@@ -89,6 +104,7 @@ function showFallback(message) {
   $('scene-help').hidden = true;
   status.textContent = message;
   describe();
+  setGround(currentScheme());
   window.__scene = { mode: 'fallback', reason: message };
   parent !== window && parent.postMessage({ type: 'cis-scene-ready', mode: 'fallback' }, location.origin);
 }
@@ -126,7 +142,7 @@ if (params.has('fallback') || navigator.connection?.saveData) {
 } else {
   // The engine is a separate chunk: devices that get the still image never download it.
   import('./scene.js')
-    .then(({ createScene }) => createScene({ canvas, scene, state, reduceMotion, embed, onLost: () => showFallback(t.lost) }))
+    .then(({ createScene }) => createScene({ canvas, scene, state, reduceMotion: reduceMotion || shot, embed, shot, onLost: () => showFallback(t.lost), onGround: setGround }))
     .then((created) => {
       api = created;
       state.mode = 'webgl';
@@ -139,6 +155,16 @@ if (params.has('fallback') || navigator.connection?.saveData) {
     });
 }
 
+// Follow the colour scheme wherever it changes: the device setting, the page's own toggle, or the host page.
+function schemeChanged() {
+  if (state.mode === 'fallback') {
+    describe();
+    setGround(currentScheme());
+  } else api?.setScheme(currentScheme());
+}
+new MutationObserver(schemeChanged).observe(document.documentElement, { attributes: true, attributeFilter: ['data-scheme'] });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', schemeChanged);
+
 // When embedded, the host page drives the camera with scroll progress (0..1)
 // and may switch scheme or pause rendering while off-screen.
 window.addEventListener('message', (e) => {
@@ -147,7 +173,6 @@ window.addEventListener('message', (e) => {
   if (!m || typeof m !== 'object') return;
   if (m.type === 'cis-scene-progress' && typeof m.value === 'number') api?.setProgress(Math.max(0, Math.min(1, m.value)));
   if (m.type === 'cis-scene-scheme' && (m.value === 'light' || m.value === 'dark')) {
-    document.documentElement.dataset.scheme = m.value;
-    api?.setScheme(m.value);
+    document.documentElement.dataset.scheme = m.value; // the observer above applies it
   }
 });

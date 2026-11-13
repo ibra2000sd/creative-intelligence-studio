@@ -168,3 +168,25 @@ export const flows = [
     },
   },
 ];
+
+// States a page-level screenshot does not show: the other finishes, evening light, Arabic, and
+// the still image in the dark scheme. Each is captured, checked for overflow and baselined.
+const live = (query = '', then = async () => {}) => async ({ page, baseUrl }) => {
+  if ((await open(page, baseUrl, query)) === 'webgl') await settled(page);
+  await then(page);
+  if ((await page.evaluate(() => window.__scene.mode)) === 'webgl') await settled(page);
+};
+const pickFinish = (n) => async (page) => {
+  const radios = page.locator('input[name=finish]');
+  if ((await radios.count()) > n) await radios.nth(n).check({ force: true });
+};
+const setTime = (hours) => (page) => page.locator('#time').evaluate((el, v) => { el.value = String(v); el.dispatchEvent(new Event('input', { bubbles: true })); }, hours);
+
+export const captures = [
+  { id: 'scene-finish-2', title: 'Second finish', run: live('', pickFinish(1)) },
+  { id: 'scene-finish-3', title: 'Third finish', run: live('', pickFinish(2)) },
+  { id: 'scene-evening', title: 'Evening light: the room turns dark and captions stay legible', run: live('', setTime(21)) },
+  { id: 'scene-ar', title: 'Arabic', run: live('?lang=ar') },
+  { id: 'scene-ar-mobile-dark', title: 'Arabic on a phone, dark scheme', viewport: 'mobile', scheme: 'dark', run: live('?lang=ar') },
+  { id: 'scene-still-dark', title: 'Still image in the dark scheme', scheme: 'dark', run: live('?fallback=1') },
+];

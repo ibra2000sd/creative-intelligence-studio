@@ -37,7 +37,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:57.272Z",
+          "at": "2026-11-13T01:29:44.119Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:20.247Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:38.803Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:34.731Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -75,6 +90,11 @@
             "detail": "1012220c48806060"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "15152aff15152aff16162aff15152aff14142aff15152aff15162aff14152aff15152aff15152aff19182aff15162aff15162aff15152aff14142aff13142aff13142aff14152aff14142aff15152aff14152aff15152aff13142aff13142aff13142aff13142aff13142aff15152aff18172bff13142aff13142aff13142aff13142aff13142aff13142aff13142aff14152aff13142aff13142aff13142aff111329ff121329ff13142aff13142aff13142aff13142aff13142aff13142aff272330ff1f1f34ff13142aff13142aff13142aff13142aff13142aff13142aff302b34ff2d2d3fff14152bff13142aff13142aff13142aff13142aff13142aff"
+          },
+          {
             "id": "byte-budget:png",
             "pass": true,
             "detail": "260411 bytes, budget 500000"
@@ -90,7 +110,7 @@
       "usedIn": [
         "mobile:store"
       ],
-      "createdAt": "2026-11-11T22:20:57.273Z"
+      "createdAt": "2026-11-13T13:00:34.731Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -128,7 +148,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:58.840Z",
+          "at": "2026-11-13T01:29:45.528Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:21.934Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:40.810Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:36.098Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -166,6 +201,11 @@
             "detail": "3e7c7078b0828383"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "efeae0ffefeae0ffefeae0ffece7ddffebdcc4ffeacea3ffeacc9fffebd4adffefeae0fff0eae0ffeae6deffdad6cfffddc6a8ffe7be85ffe8bf83ffeac998ffefeae0ffefeae0ffe0dcd7ffc4c0c3ffd0b9a3ffe3ba82ffe9c083ffeac998ffefe5d3ffeee5d3ffdbd6d1ffc3c2c7ffcebeb3ffdfb988ffeabf82ffebca98ffe7cfa9ffe5cba8ffdbd0c6ffc8c7cdffcdc5c4ffdfc4a6ffebc591ffebcda0ffd4ba9affc7aa8cffc5b6aeffc0bfc6ffcfccd0ffe7ded3fff0ddc5ffefdec8ffbeafa4ffab9b90ffaca09cffb0aeb7ffcdcacfffefebe6fff3eee6fff1ece2ffc9c0b9ffbeb4adffbfb5b0ffc0bdc0ffd3d0d0ffeeeae4fff1ede5ffefebe3ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "12268 bytes, budget 120000"
@@ -176,7 +216,7 @@
       "usedIn": [
         "app:signin"
       ],
-      "createdAt": "2026-11-11T22:20:58.840Z"
+      "createdAt": "2026-11-13T13:00:36.098Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -201,29 +241,29 @@
         },
         {
           "path": "brand/applications/social-square.svg",
-          "sha256": "4d224686ec19fab57bfbe5ed9699882f1dcb0cda4d4534f670703568627d5691",
-          "bytes": 28175,
+          "sha256": "6c48f24f76bedb402ef187ec22b3adb02f9659bb94af28006bc211af506b99b3",
+          "bytes": 30749,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/og-image.svg",
-          "sha256": "7542f346b514522c07b541856c9b33ee8c90ff1a411e1829b51a52256fc05d20",
-          "bytes": 27730,
+          "sha256": "88bc798520c33fc98566c8140a533bbf66bf00e8a56658595f4ef05fa98b2126",
+          "bytes": 30258,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/story.svg",
-          "sha256": "04f249c2a8ceda35d74e2e963aa1ca984d92cfcd6919a93c5ed0ed524d5bbe2a",
-          "bytes": 28793,
+          "sha256": "6faef3964571835cf0f2cb473f2497e02d828ac7a850f0d5220ab4d7cd057b06",
+          "bytes": 30990,
           "format": "svg",
           "role": "source"
         },
         {
           "path": "brand/applications/presentation-title.svg",
-          "sha256": "c95178e39ee9b1b19ca83abc5fa0959b9a790a2eab2894de8fbc9e8ca28a6f3f",
-          "bytes": 33638,
+          "sha256": "ead72ec245723b6997ad3fcf861925900514b7a9ddefb66c04e3d3823c1ec0c7",
+          "bytes": 34823,
           "format": "svg",
           "role": "source"
         },
@@ -236,57 +276,57 @@
         },
         {
           "path": "brand/applications/png/social-square.png",
-          "sha256": "1399cbc968a1a2def3b06b65ff264f115d7162b5a8f8b529789d939da7fdd8b6",
-          "bytes": 877883,
+          "sha256": "0acf1f2dbb960f7407d9f460607cb69d116f24062be6a3d60a49dc87358f27db",
+          "bytes": 863821,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/social-square.webp",
-          "sha256": "deea2d3f52dcb29f6aa1eaf7404f02d2d24ee587ec568b93e42f4b63ac6315ed",
-          "bytes": 31408,
+          "sha256": "2f838c3d001d8f123172f10ec6c5b16c7147b07202bee8fbbc40b74253c77132",
+          "bytes": 31048,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/og-image.png",
-          "sha256": "a6b7048e48c7fe4402cf86a5442b8f962547a63540abff1a124c95be036afdcd",
-          "bytes": 652491,
+          "sha256": "71d4bd41c0865dd9b69427814f835202ada35c41a19fae6db9ebf701fdbc300c",
+          "bytes": 652149,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/og-image.webp",
-          "sha256": "f890fe233add8959be5517d84211fb591ca5ab6946064d7106511368c0a5e041",
-          "bytes": 24822,
+          "sha256": "e17b1e349b2cc1bd9d4875712af1a3319f7c8b0623b7eb1f8af0a6b3f0f04c1f",
+          "bytes": 24392,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/story.png",
-          "sha256": "775e572e284d3dab052fc55f10f0ab8ba334d9be428a91a86bb8490b0cdb464c",
-          "bytes": 1584557,
+          "sha256": "555ddc323310f2f71737ce112cfd5bf1d8b0cf60752f5a0f7c1d1924395c3030",
+          "bytes": 1570184,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/story.webp",
-          "sha256": "a6f10de581dad6089df5cd327926ca3a72f7b62f34a7e9abfdd081dea28fd2de",
-          "bytes": 40636,
+          "sha256": "e83505a6bbef1747d46d8a6b823026dcdabe4bf4e3f7f450e5189ea91f2fc18d",
+          "bytes": 40382,
           "format": "webp",
           "role": "export"
         },
         {
           "path": "brand/applications/png/presentation-title.png",
-          "sha256": "3d349ac66ceda675d87325e494226e27dd5592a66f507dee44ae7256401a1702",
-          "bytes": 1140106,
+          "sha256": "ef988b467f5e22391d404b77148cc62874c331fd943401a843cb68860e4b3876",
+          "bytes": 1135721,
           "format": "png",
           "role": "export"
         },
         {
           "path": "brand/applications/webp/presentation-title.webp",
-          "sha256": "5ab8226e8adcf912b7cf7b4694e3fe1e9e1983e83183004b707827d79fa95be2",
-          "bytes": 40260,
+          "sha256": "c92a329742007f88bac0c9aba6a310fb167285f92e3f8f0dead0562f9b6bda34",
+          "bytes": 39888,
           "format": "webp",
           "role": "export"
         },
@@ -299,14 +339,14 @@
         },
         {
           "path": "brand/applications/pdf/business-card-front.pdf",
-          "sha256": "2ed152c5787bbc2deaaa46fe5311b34a579f9cf49625dfe9b8e2776ceb5c1c92",
+          "sha256": "49b619c10abd607036442cf89d4a251665c01872d898e799d78ec0c5c538dbc8",
           "bytes": 9473,
           "format": "pdf",
           "role": "export"
         },
         {
           "path": "brand/applications/pdf/business-card-back.pdf",
-          "sha256": "65c562d7d97dcc76fede1274307375957e67532421727ebfa42ba91c9b98ce89",
+          "sha256": "1b05cb953ac5b3f18e77ef9948a739d7d360923fee0a65b04128443c6b841def",
           "bytes": 33151,
           "format": "pdf",
           "role": "export"
@@ -326,22 +366,27 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:18:56.266Z",
+          "at": "2026-11-13T01:28:53.738Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-11T22:20:09.601Z",
+          "at": "2026-11-13T01:48:18.137Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:31:27.341Z",
+          "at": "2026-11-13T10:57:21.396Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:35:40.177Z",
+          "at": "2026-11-13T11:00:06.127Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T11:54:25.385Z",
           "action": "generated",
           "by": "creative-studio brand build"
         }
@@ -367,7 +412,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-12T23:35:40.177Z"
+      "createdAt": "2026-11-13T11:54:25.385Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -378,15 +423,15 @@
       "files": [
         {
           "path": "brand/guidelines.html",
-          "sha256": "eab97c65e8b5084fd7711182c51594e40773cabe237a0a1042151c70706de99f",
-          "bytes": 581916,
+          "sha256": "c2f93428749fbdd2431daf8b2d762a75fa3704929222ea5a98d7dae051ff67cb",
+          "bytes": 669924,
           "format": "html",
           "role": "export"
         },
         {
           "path": "brand/guidelines.pdf",
-          "sha256": "2c6ad174bd47add74b19f3617546cc088a5c414d44f4caa52fc39c544c452225",
-          "bytes": 4402010,
+          "sha256": "1c2bdc0a3e98fb58a2304480b79abbb628a34e3ca701e013a35976e321a65d8c",
+          "bytes": 9282970,
           "format": "pdf",
           "role": "export"
         }
@@ -405,22 +450,27 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:18:56.303Z",
+          "at": "2026-11-13T01:28:53.762Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-11T22:20:09.631Z",
+          "at": "2026-11-13T01:48:18.162Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:31:27.375Z",
+          "at": "2026-11-13T10:57:21.421Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:35:40.198Z",
+          "at": "2026-11-13T11:00:06.150Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T11:54:25.428Z",
           "action": "generated",
           "by": "creative-studio brand build"
         }
@@ -446,7 +496,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-12T23:35:40.199Z"
+      "createdAt": "2026-11-13T11:54:25.428Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -659,22 +709,27 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:18:56.214Z",
+          "at": "2026-11-13T01:28:53.702Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-11T22:20:09.581Z",
+          "at": "2026-11-13T01:48:18.110Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:31:27.299Z",
+          "at": "2026-11-13T10:57:21.370Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:35:40.142Z",
+          "at": "2026-11-13T11:00:06.101Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T11:54:25.361Z",
           "action": "generated",
           "by": "creative-studio brand build"
         }
@@ -700,7 +755,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-12T23:35:40.142Z"
+      "createdAt": "2026-11-13T11:54:25.362Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -872,7 +927,7 @@
         },
         {
           "path": "brand/logo/pdf/haldora-lockup-horizontal.pdf",
-          "sha256": "f231f889de09c0bae54e79388a412598ac951f1578fa65c4dc7dc17d45138b45",
+          "sha256": "9af8eef1f8d3f955b2db3166d857016ae312b5b4c0712c7f77b5a28189d644ab",
           "bytes": 10397,
           "format": "pdf",
           "role": "export"
@@ -892,22 +947,27 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:18:56.197Z",
+          "at": "2026-11-13T01:28:53.673Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-11T22:20:09.549Z",
+          "at": "2026-11-13T01:48:18.071Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:31:27.255Z",
+          "at": "2026-11-13T10:57:21.329Z",
           "action": "generated",
           "by": "creative-studio brand build"
         },
         {
-          "at": "2026-11-12T23:35:40.045Z",
+          "at": "2026-11-13T11:00:06.072Z",
+          "action": "generated",
+          "by": "creative-studio brand build"
+        },
+        {
+          "at": "2026-11-13T11:54:25.331Z",
           "action": "generated",
           "by": "creative-studio brand build"
         }
@@ -933,7 +993,7 @@
       "usedIn": [
         "brand"
       ],
-      "createdAt": "2026-11-12T23:35:40.045Z"
+      "createdAt": "2026-11-13T11:54:25.331Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -944,8 +1004,8 @@
       "files": [
         {
           "path": "assets/generated/campaign-square/campaign-square-1080x1080.png",
-          "sha256": "ae23b3c6d02b67a652b289bb1e70f696dc763657ae47829152fbacce9bc38809",
-          "bytes": 877854,
+          "sha256": "961d8620563f579ee7883298018cb080427c2a78cbc249665334b853d92ec180",
+          "bytes": 865444,
           "format": "png",
           "width": 1080,
           "height": 1080,
@@ -953,8 +1013,8 @@
         },
         {
           "path": "assets/generated/campaign-square/campaign-square-1080x1080.webp",
-          "sha256": "cf69e103b3d5156288dab4b000e0fbc77c1fffc08a7dcb012b2dc5a88a786370",
-          "bytes": 24894,
+          "sha256": "bac7db225d5d759a7fd6950e7361d02b442cdaa6b199bf75c8693a38ac1dc37b",
+          "bytes": 24752,
           "format": "webp",
           "width": 1080,
           "height": 1080,
@@ -980,7 +1040,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:48.418Z",
+          "at": "2026-11-13T01:29:36.613Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:10.469Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:28.789Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:27.356Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1000,7 +1075,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 78.9"
+            "detail": "channel spread 78.7"
           },
           {
             "id": "palette-adherence",
@@ -1015,17 +1090,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "7074623961635931"
+            "detail": "7074623d65635931"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "493940ff493b46ff3b3247ff352b41ff352b41ff352b41ff352b41ff352b41ff744f4bff724e4dff68494eff67464cff67464cff67464cff67464cff67474cff9c655cff9d6960ff9c665dff9c665cff9c655cff9c665dff9b6258ff9a6056ffd0836bffd48d75ffd58d74ffd68c72ffd38870ffd28970ffd79f8effd8a18effe69158ffe28f57ffcd8157ffbf7a56ffda8a57ffe69055ffe8af84ffd3a68aff865e46ff7a5644ff403242ff3d3042ff594242ff7f5a45ff765244ff413241ff1d1d38ff1d1e3bff1a1c3aff1a1c39ff121631ff151732ff1f1f3cff1b1d3aff12132aff13152cff14152cff13142bff131429ff121329ff14152dff14162dff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "877854 bytes, budget 900000"
+            "detail": "865444 bytes, budget 900000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "24894 bytes, budget 900000"
+            "detail": "24752 bytes, budget 900000"
           },
           {
             "id": "text-is-vector",
@@ -1038,7 +1118,7 @@
       "usedIn": [
         "social"
       ],
-      "createdAt": "2026-11-11T22:20:48.418Z"
+      "createdAt": "2026-11-13T13:00:27.356Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1049,8 +1129,8 @@
       "files": [
         {
           "path": "assets/generated/campaign-story/campaign-story-1080x1920.png",
-          "sha256": "6f6ccd6ca5fd817807a60dfb514b5cc9725efe6591fb5e2b44170fa16c5e5b13",
-          "bytes": 1594758,
+          "sha256": "a636efd9f888522a726089272bbf613de3778398f1d5383d2fa6d95742a2b38a",
+          "bytes": 1580999,
           "format": "png",
           "width": 1080,
           "height": 1920,
@@ -1058,8 +1138,8 @@
         },
         {
           "path": "assets/generated/campaign-story/campaign-story-1080x1920.webp",
-          "sha256": "337545ba0edac44cff2e79cade33f406211cc6c27f7d6a469ab633f108425018",
-          "bytes": 30226,
+          "sha256": "839ebb42a170b746103f0e553a1be43c2a05f34d1e0778d57b52bdf8239ab951",
+          "bytes": 29918,
           "format": "webp",
           "width": 1080,
           "height": 1920,
@@ -1085,12 +1165,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:53.365Z",
+          "at": "2026-11-13T01:29:40.855Z",
           "action": "generated",
           "by": "local-procedural"
         },
         {
-          "at": "2026-11-11T22:35:34.218Z",
+          "at": "2026-11-13T10:58:16.224Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:34.459Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:31.517Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1110,7 +1200,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 85.7"
+            "detail": "channel spread 85.6"
           },
           {
             "id": "palette-adherence",
@@ -1125,17 +1215,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "6010075e63635911"
+            "detail": "6010275e63635911"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "8c5c51ff8c5e55ff855857ff825453ff825453ff825453ff825453ff825453ffc47761ffc47861ffc47862ffc37761ffc37761ffc37762ffc37762ffc37762ffe08d5affe18e5cffe18f5dffe18f5dffe18f5dffe18e5cffe18d5affe18d5affe6ab67ffe7ad68ffe5a04bffe7a34fffe4a04dffe39e4affe29a43ffe49b43ffedc280ffebbd7affd39b53ffc69251ffe0a758ffeab15dffe5ad5bffd09a55ff91715dff856759ff4b3948ff493747ff614e50ff8a6d5dff83655aff4c3b48ff211d37ff1f1d3bff1a1c3aff1b1c39ff121530ff171731ff221f3bff1b1d3aff12132aff13142bff14152bff13142bff131429ff121329ff14152dff14162dff"
           },
           {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "1594758 bytes, budget 2200000"
+            "detail": "1580999 bytes, budget 2200000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "30226 bytes, budget 2200000"
+            "detail": "29918 bytes, budget 2200000"
           },
           {
             "id": "text-is-vector",
@@ -1148,7 +1243,7 @@
       "usedIn": [
         "social"
       ],
-      "createdAt": "2026-11-11T22:35:34.219Z"
+      "createdAt": "2026-11-13T13:00:31.517Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1159,8 +1254,8 @@
       "files": [
         {
           "path": "assets/generated/campaign-wide/campaign-wide-1200x630.png",
-          "sha256": "a40dbe26b4bd0c8817698833ca4d72ad0c23b46420b9cf144da3ec90be00bf11",
-          "bytes": 442374,
+          "sha256": "c13155b6589e6d25c1da86c7f11983be880dc421d3461ad786545fa4b929ae31",
+          "bytes": 442150,
           "format": "png",
           "width": 1200,
           "height": 630,
@@ -1168,8 +1263,8 @@
         },
         {
           "path": "assets/generated/campaign-wide/campaign-wide-1200x630.webp",
-          "sha256": "1e13d33cf5a9dd7c0bf991965f87920f75a6d129415825dd438db2cb79c15178",
-          "bytes": 21746,
+          "sha256": "6ba1f3e86cbf695f6025f6373bc0513144c007e91a77650b53d4ed9f8d1b8151",
+          "bytes": 21766,
           "format": "webp",
           "width": 1200,
           "height": 630,
@@ -1195,7 +1290,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:55.743Z",
+          "at": "2026-11-13T01:29:42.842Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:18.666Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:37.154Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:33.472Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1215,7 +1325,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 40.6"
+            "detail": "channel spread 41.0"
           },
           {
             "id": "palette-adherence",
@@ -1233,14 +1343,19 @@
             "detail": "e4eb4b56480e1b31"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "2f2932ff222336ff13142aff13142aff13142aff121329ff121329ff13142aff292632ff1f2034ff121329ff121329ff101228ff1d1d31ff1e1f33ff121329ff27283eff313245ff2e2e42ff2e2e42ff2f2f42ff464656ff2f3043ff14152dff3d3d53ff535364ff3d3d54ff3d3d53ff3b3b52ff3b3c51ff1e1f3bff1b1c38ff46475fff43445cff1c1f3fff1d2040ff1e2041ff1d2040ff202242ff202243ff212345ff222547ff24274aff26294dff25294cff232647ff1f2241ff202242ff1a1c38ff1b1d39ff1d1f3cff1d1f3cff181a33ff1b1d38ff1c1d3aff1a1b36ff13142aff14152bff14152cff131429ff131329ff14152bff15162dff14152bff"
+          },
+          {
             "id": "byte-budget:png",
             "pass": true,
-            "detail": "442374 bytes, budget 600000"
+            "detail": "442150 bytes, budget 600000"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21746 bytes, budget 600000"
+            "detail": "21766 bytes, budget 600000"
           },
           {
             "id": "text-is-vector",
@@ -1254,7 +1369,7 @@
         "social",
         "web:og"
       ],
-      "createdAt": "2026-11-11T22:20:55.743Z"
+      "createdAt": "2026-11-13T13:00:33.472Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1301,7 +1416,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:43.494Z",
+          "at": "2026-11-13T01:29:32.713Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:05.585Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:22.427Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:23.522Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1339,6 +1469,11 @@
             "detail": "40c0c0c0c8e0c0e0"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "ece7deffece7deffebe6dcffebe6ddffece7deffeee8dfffefeae0ffefeae0ffece7ddffebe6dcffeae5dbffeae5dbffebe6dcffeee8dfffefe9e0ffefeae0ffece7deffe7e2d9ffe8e3d9ffeae5dbffebe6dcffece7deffeee8dfffefe9e0ffece7deffebe6dcffe9e4daffe9e4daffebe6dcffebe6dcffede8dfffeee8dfffece7deffece7dcffe9e4d6ffeae5dbffe8e2daffebe5dcffede8dfffeee8dfffeee8deffebe7dcffebe6dcffeae5dbffebe6dcffebe6dcffede8dfffeee8dfffefeae0ffede8dfffebe6dcffebe6ddffece7deffece7deffeee8dfffefe9e0ffefeae0ffefe9e0ffeee8dfffede7deffeee8dfffeee8dfffefe9e0ffefeae0ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "62966 bytes, budget 260000"
@@ -1349,7 +1484,7 @@
       "usedIn": [
         "web:features"
       ],
-      "createdAt": "2026-11-11T22:20:43.494Z"
+      "createdAt": "2026-11-13T13:00:23.522Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1396,7 +1531,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:45.343Z",
+          "at": "2026-11-13T01:29:34.234Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:07.562Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:24.843Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:25.022Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1434,6 +1584,11 @@
             "detail": "00103032746cd800"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "efeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefe9e0ffefe9e0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffede1ccffede1ccffefeae0ffefeae0ffefeae0ffefeae0ffefeae1ffefe9ddffecdbbfffecdbbfffefe9ddffefeae1ffefeae0ffefeae0ffefeae1ffede4d4ffecdabcffeddabcffdfd8d1ffd6d3dcffece7dfffefeae0ffefeadfffecdec4ffecdabbffe6d4bbffcec3c5ffcccbd9ffdad6dbffeae4ddffeae0d3ffe8ddcbffe7dccbffded3ccffdbd1ccffdad4d2ffdcd7d9ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "16048 bytes, budget 200000"
@@ -1445,7 +1600,7 @@
         "web:features",
         "app:empty-state"
       ],
-      "createdAt": "2026-11-11T22:20:45.343Z"
+      "createdAt": "2026-11-13T13:00:25.022Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1492,7 +1647,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:44.389Z",
+          "at": "2026-11-13T01:29:33.452Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:06.576Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:23.472Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:24.262Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1530,6 +1700,11 @@
             "detail": "0039963cf49a7000"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "efeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffefeae0ffe0dbd7ffede7deffece7deffe6e1dbffe0ddd7ffdcd8d5ffeae4ddffeae5ddffdcba8affe0b06cffdcbf99ffdbc6aeffd9ccbbffdcbe94ffe0a755ffddb886ff6b67afffab8470ffe29e3affcc9350ffa07f7cff6966b3ff957a86ffd49747ff585ec2ff5d5cb8ff7b5688ff8d4761ff9c4044ff904559ff73528fff6d559dffae3924ff934f36ff4c8b68ff538565ff8c563affab3b20ffad3a21ff7c6244ff3c706aff3b836eff36746eff32626bff325d6bff34616cff3a776dff3a8871ff292b63ff292b63ff292b63ff292b63ff292b63ff292b63ff292b63ff292b63ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "16200 bytes, budget 200000"
@@ -1540,7 +1715,7 @@
       "usedIn": [
         "web:features"
       ],
-      "createdAt": "2026-11-11T22:20:44.389Z"
+      "createdAt": "2026-11-13T13:00:24.262Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1587,7 +1762,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:20.801Z",
+          "at": "2026-11-13T01:28:58.318Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:26.275Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:32.114Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:51.662Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1617,12 +1807,17 @@
           {
             "id": "not-duplicate",
             "pass": true,
-            "detail": "no near-identical asset registered"
+            "detail": "intentionally the same picture as \"hero-sun\" (declared in the brief)"
           },
           {
             "id": "dhash",
             "pass": true,
             "detail": "0c0c080000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000bb872d22bb872d22000000000000000000000000000000000000000000000000d7973654d797365400000000000000000000000000000000000000010000000055381c0955381c0900000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
           },
           {
             "id": "byte-budget:webp",
@@ -1635,7 +1830,7 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-11T22:20:20.801Z"
+      "createdAt": "2026-11-13T12:59:51.662Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1673,7 +1868,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:21.925Z",
+          "at": "2026-11-13T01:28:59.119Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:27.373Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:33.255Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:52.455Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1711,6 +1921,11 @@
             "detail": "00000000405d0000"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d2d241c2d2d272d000000000000000000000000000000000000000000000000d2ccc7ffcfc8c3fac3bebae9cbc5c1f4b2ada9d1827e7b99a5a09cc285807d9bd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ffd2ccc7ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "12338 bytes, budget 120000"
@@ -1721,7 +1936,7 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-11T22:20:21.925Z"
+      "createdAt": "2026-11-13T12:59:52.455Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1759,7 +1974,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:23.034Z",
+          "at": "2026-11-13T01:28:59.927Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:28.486Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:34.670Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:53.233Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1797,6 +2027,11 @@
             "detail": "00000000000a5a00"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012929293139393c505f5d6183555555390000000f2a2a2a060f0f0f10a19da3e0b4b1b7ffb3afb5ffb4b0b6ffaeaab0f8afabb1f899969bd5a6a1a8e6b3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ffb3afb5ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "12732 bytes, budget 120000"
@@ -1807,7 +2042,7 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-11T22:20:23.034Z"
+      "createdAt": "2026-11-13T12:59:53.233Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1854,7 +2089,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:27.064Z",
+          "at": "2026-11-13T01:29:03.440Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:32.440Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:39.078Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:56.299Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1892,6 +2142,11 @@
             "detail": "30301448a2b23736"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "ede0c9ffede0cbffeddfc8ffebd5afffebd5afffeddfc8ffede0c9ffede0c9ffeee8d9ffeee8d9ffeee5d7ffeacda2ffeacda2ffeee5d7ffeee8d9ffeee8d9fff2efe6fff2efe6fff2eee6fff1ece2fff1ece2fff2eee6fff2efe6fff2efe6fff7f4edfff7f4eefff6f3edfff7f4eefff6f4eefff6f3edfff6f3edfff6f3edfff1eae0ffede7dcfff8f0e4fff6eee3fff8f0e3fff8f1e3fff8f0e3fff8f1e3ffcdc7c0ffc8c2beffc8c2beffc1bcbaffcdc7bfffdad2c6ffd4cdc4ffdad2c6ffa8a5abffa9a6adffaca9adffa5a2a9ffa9a7acffa9a7acffa39ea9ff9b99a4ff89889aff8f8c9eff918f9fff8c8a9cff8d8c9dff8d8c9dff868599ff868599ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "15112 bytes, budget 200000"
@@ -1908,7 +2163,7 @@
         "web:hero",
         "mobile:onboarding"
       ],
-      "createdAt": "2026-11-11T22:20:27.064Z"
+      "createdAt": "2026-11-13T12:59:56.299Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -1946,7 +2201,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:24.143Z",
+          "at": "2026-11-13T01:29:00.735Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:29.554Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:35.857Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:54.018Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -1984,6 +2254,11 @@
             "detail": "00000000000088c9"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002323233900000007000000001111111d1111110f0f0f0f1146464f775454609a8c8c9fff838293ee717180cd89899bfb878799f6868697f38c8c9eff8b8b9dff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "12350 bytes, budget 120000"
@@ -1994,7 +2269,891 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-11T22:20:24.143Z"
+      "createdAt": "2026-11-13T12:59:54.018Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-arc",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, arc plane at night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-arc/hero-night-arc-2400x1500.webp",
+          "sha256": "42caa584284dcbc30cbf77b833ab8df9b60773ac2756ec1d233815d0d729b20c",
+          "bytes": 17616,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "arc",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:21.034Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:52.321Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:40.967Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T11:00:07.986Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:01.693Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:10.791Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 40.9"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"hero-night-sun\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "080c000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000005f5f5f085f5f5f08000000000000000000000000000000000000000000000000deded127deded127000000000000000000000000000000000000000100000000000000010000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "17616 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:10.791Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-far",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, far plane at night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-far/hero-night-far-2400x1500.webp",
+          "sha256": "bae3fe879fb5dfdc1fb850c0330ef0829f9d1e38557efacd2df3a3000234ea2d",
+          "bytes": 12164,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "far",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:22.388Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:53.637Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:03.199Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:11.610Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 38.4"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000005a0000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000005000000000000000000000000000000021e2140c625294ef725284df525284df71e223fca202341d11e213dc724264aec272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12164 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:11.610Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-mid",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, mid plane at night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-mid/hero-night-mid-2400x1500.webp",
+          "sha256": "f807c2a37c300a92c2bac4147a48b00c1f985540edcaaade339c1e25b4edffae",
+          "bytes": 12836,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "mid",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:23.349Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:54.743Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:04.325Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:12.393Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 27.1"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000602d00"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004080c3d0d0d1b700808143e00000000000000000000000000000005000000021d1f3eff1d1f3eff1c1e3dfa181b37e11c1e3bf4171a35da1b1d3cf8191b37e51d1f3eff1d1f3eff1d1f3eff1d1f3eff1d1f3eff1d1f3eff1d1f3eff1d1f3eff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12836 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:12.393Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-mobile",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, single composed image for small screens",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.webp",
+          "sha256": "f46aa6955b4250ed3ca28cf5467eff64ad22e19c93257ff6ef2e2eac85d3b7f9",
+          "bytes": 12078,
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/hero-night-mobile/hero-night-mobile-1080x1440.avif",
+          "sha256": "9d0639df925afce55d376f19097b8402b510f3ea3243a6bd7af29e6bcfb27a26",
+          "bytes": 6502,
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": null,
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 1080,
+          "height": 1440,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:27.951Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:59.123Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:09.446Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:15.717Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1080x1440, required 1080x1440"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 16.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0c0c09514082ca80"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "141529ff14152aff141529ff262839ff1e2032ff141529ff141529ff141529ff14152aff14152aff14152aff393a47ff2b2d3dff141529ff14152aff14152aff16172fff171830ff16172fff16172fff171930ff16172fff171830ff16172fff1a1d39ff1a1d39ff1a1d39ff1a1d38ff1a1d38ff1a1d39ff1a1d39ff1a1d39ff212243ff212243ff1f2343ff1f2343ff212243ff202243ff212243ff212243ff232648ff212445ff232749ff25284bff24274aff26284cff24274aff25284bff1b1d39ff191a35ff181a32ff1b1c38ff1a1c37ff1c1d39ff191b35ff1c1f3cff15172cff141529ff141528ff141529ff141529ff141529ff131428ff15162cff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12078 bytes, budget 200000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "6502 bytes, budget 200000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:15.717Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-near",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, near plane at night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-near/hero-night-near-2400x1500.webp",
+          "sha256": "ce4f1481162b4237108ba9d99028ac502af7db9e6b857a34bd24290c92186569",
+          "bytes": 12688,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "near",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:24.596Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:55.821Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:05.629Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:13.202Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 16.0"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000001101"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b06060f540a0a1790080a15780508105e0909126c060912700000091a101125d814152cff14152bff14152bff14152bff14152bff14152bff121327ec"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12688 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:13.202Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-sky",
+      "kind": "raster",
+      "purpose": "Website hero in the dark scheme, sky plane at night",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-sky/hero-night-sky-2400x1500.webp",
+          "sha256": "1d9511ab374826e0f6d59c8dabecc2be5a95cc3aa6fc1d0a3a5aca929fd839f4",
+          "bytes": 11580,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        },
+        {
+          "path": "assets/generated/hero-night-sky/hero-night-sky-2400x1500.avif",
+          "sha256": "cee5855c2d4cad9a4ad1a06145eee1914a228c570b22cbf5c74ec14d693c7a23",
+          "bytes": 3100,
+          "format": "avif",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "sky",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:19.823Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:50.905Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:00.517Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:09.947Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 15.2"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000000004a000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff181831ff181831ff181831ff181831ff181831ff181831ff181831ff181831ff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff212244ff222345ff202244ff212244ff212244ff222345ff202244ff202244ff25284bff25284bff25284bff25284bff25284bff25284bff25284bff25284bff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "11580 bytes, budget 220000"
+          },
+          {
+            "id": "byte-budget:avif",
+            "pass": true,
+            "detail": "3100 bytes, budget 220000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:09.947Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-sun",
+      "kind": "raster",
+      "purpose": "Website hero, night sun or moon alone, on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-sun/hero-night-sun-2400x1500.webp",
+          "sha256": "cbadcf58143e6100ea138a5a3239382b5795a229d9a2567027d5d27a84ae2f8a",
+          "bytes": 12042,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "sun",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T12:26:15.150Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:27:20.223Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:18.909Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 38.1"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"hero-night-arc\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "080c000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000005f5f5f085f5f5f08000000000000000000000000000000000000000000000000e4e4d626e4e4d626000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "12042 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:18.909Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-night-track",
+      "kind": "raster",
+      "purpose": "Website hero, night arc without its sun, on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-night-track/hero-night-track-2400x1500.webp",
+          "sha256": "506817964f885f7820965cbd7c5c33627ae3493749535faedb4a53e617e5c92f",
+          "bytes": 13148,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "track",
+          "sunAt": 0.5,
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T12:26:13.721Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:27:18.749Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:18.122Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 16.4"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"hero-track\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "13148 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:18.122Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2041,7 +3200,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:19.574Z",
+          "at": "2026-11-13T01:28:57.388Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:24.737Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:30.651Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:50.799Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2079,6 +3253,11 @@
             "detail": "0000000000000000"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "f4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffaecd4fffaecd5fffaecd5fffaecd5fffaecd5fffaecd5fffaecd5fffaecd5fffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cfff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "12346 bytes, budget 220000"
@@ -2094,7 +3273,209 @@
       "usedIn": [
         "web:hero"
       ],
-      "createdAt": "2026-11-11T22:20:19.575Z"
+      "createdAt": "2026-11-13T12:59:50.800Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-sun",
+      "kind": "raster",
+      "purpose": "Website hero, sun or moon alone, on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-sun/hero-sun-2400x1500.webp",
+          "sha256": "363927504b82151c7938663f2ffd4d3ee63890a20b9614aaf3085e2c12ae79db",
+          "bytes": 17010,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "sun",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T12:26:12.345Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:27:17.363Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:17.335Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 50.3"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"hero-arc\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0c0c080000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000bb872d22bb872d22000000000000000000000000000000000000000000000000da963453da96345300000000000000000000000000000000000000000000000055381c0955381c0900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "17010 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:17.335Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hero-track",
+      "kind": "raster",
+      "purpose": "Website hero, arc without its sun, on transparency",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/hero-track/hero-track-2400x1500.webp",
+          "sha256": "d6f8bdf0746449efc3bcd0f4bda18e0b921d7b999121998bb192743fd6f90a41",
+          "bytes": 16900,
+          "format": "webp",
+          "width": 2400,
+          "height": 1500,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "track",
+          "scheme": "light",
+          "width": 2400,
+          "height": 1500,
+          "dnaRevision": 1
+        },
+        "seed": "hero",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T12:26:11.011Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:27:16.046Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:16.534Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "2400x1500, required 2400x1500"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 13.0"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"hero-night-track\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "16900 bytes, budget 120000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:hero"
+      ],
+      "createdAt": "2026-11-13T13:00:16.534Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2105,17 +3486,24 @@
       "files": [
         {
           "path": "scene/public/models/cell.glb",
-          "sha256": "f3100a5c24d4fdc6cd3418ae1526f5be32ff6c5daec488f147059afce9f43b9f",
-          "bytes": 57180,
+          "sha256": "926a230269dfcf75ed9f1fa69673303736706d8d2bdc1fa51e65730061282a35",
+          "bytes": 55224,
           "format": "glb",
           "role": "export"
         },
         {
           "path": "scene/public/models/cell.source.glb",
-          "sha256": "3b2c57e62481bddca69cc0d95687f4345f0624ac5f8ca8642f49523ae274c08c",
-          "bytes": 205248,
+          "sha256": "5ea9bfbcb668f9c77f166d4b1cfb8330f7bf4dfb34a9111a86fa9260c089b86c",
+          "bytes": 198088,
           "format": "glb",
           "role": "source"
+        },
+        {
+          "path": "scene/public/fallback/cell-chalk-dark.webp",
+          "sha256": "89a79263133a1e6f166dc091371da67309868bd177472192bdb39d06644a2358",
+          "bytes": 6990,
+          "format": "webp",
+          "role": "fallback"
         },
         {
           "path": "scene/public/fallback/cell-chalk.svg",
@@ -2126,8 +3514,15 @@
         },
         {
           "path": "scene/public/fallback/cell-chalk.webp",
-          "sha256": "8cab50b8df37d40d6a04768080c4be4973d259b826c3fe079d145cf85ebd594b",
-          "bytes": 3900,
+          "sha256": "148caf489781aed16ce9784df7f56c041d7110d8e9bbc1b62c363aaf996f1702",
+          "bytes": 6298,
+          "format": "webp",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-dusk-dark.webp",
+          "sha256": "bbfa95dd0e98faeefc5b37a39833c873e7c5ad8655dc7fdfcc439ca0aaf5b1b4",
+          "bytes": 6422,
           "format": "webp",
           "role": "fallback"
         },
@@ -2140,8 +3535,15 @@
         },
         {
           "path": "scene/public/fallback/cell-dusk.webp",
-          "sha256": "2e9cda9004a80dda72c90b4c704ca604e4d28dceda3bfe929949e4ec47a3b31a",
-          "bytes": 5440,
+          "sha256": "06cf678a199fff0cbb9859d3f02aae98f8bbc620f3524adfd708ebf7b5baeef1",
+          "bytes": 8308,
+          "format": "webp",
+          "role": "fallback"
+        },
+        {
+          "path": "scene/public/fallback/cell-ember-dark.webp",
+          "sha256": "2db88e2ce204f8fb5584fb6f3931915a9f3ee6eb85acb4660e0c18fc92aa45b2",
+          "bytes": 7424,
           "format": "webp",
           "role": "fallback"
         },
@@ -2154,8 +3556,8 @@
         },
         {
           "path": "scene/public/fallback/cell-ember.webp",
-          "sha256": "a397e8be0cf5f37152d0f4c0fee0302e75ec9113535481f8a4fcafbf259d5f19",
-          "bytes": 5422,
+          "sha256": "404e9c0f6f2efb2b2bf1efadb635f6dc72f6bbce56b2fab8170fb0241ebfed33",
+          "bytes": 8344,
           "format": "webp",
           "role": "fallback"
         }
@@ -2177,44 +3579,34 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:28:04.779Z",
+          "at": "2026-11-13T01:29:47.017Z",
           "action": "generated",
           "by": "creative-studio 3d build"
         },
         {
-          "at": "2026-11-11T22:28:31.435Z",
+          "at": "2026-11-13T01:30:02.743Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
+        },
+        {
+          "at": "2026-11-13T01:48:20.611Z",
           "action": "generated",
           "by": "creative-studio 3d build"
         },
         {
-          "at": "2026-11-11T22:35:35.761Z",
+          "at": "2026-11-13T01:48:34.195Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
+        },
+        {
+          "at": "2026-11-13T11:00:10.090Z",
           "action": "generated",
           "by": "creative-studio 3d build"
         },
         {
-          "at": "2026-11-11T22:42:44.828Z",
-          "action": "generated",
-          "by": "creative-studio 3d build"
-        },
-        {
-          "at": "2026-11-11T22:45:01.300Z",
-          "action": "generated",
-          "by": "creative-studio 3d build"
-        },
-        {
-          "at": "2026-11-11T22:47:39.778Z",
-          "action": "generated",
-          "by": "creative-studio 3d build"
-        },
-        {
-          "at": "2026-11-12T23:31:31.309Z",
-          "action": "generated",
-          "by": "creative-studio 3d build"
-        },
-        {
-          "at": "2026-11-12T23:35:44.521Z",
-          "action": "generated",
-          "by": "creative-studio 3d build"
+          "at": "2026-11-13T11:00:23.432Z",
+          "action": "edited",
+          "by": "creative-studio 3d stills"
         }
       ],
       "rights": {
@@ -2241,7 +3633,7 @@
         "scene",
         "web:product"
       ],
-      "createdAt": "2026-11-12T23:35:44.521Z"
+      "createdAt": "2026-11-13T11:00:10.090Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2288,7 +3680,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:42.489Z",
+          "at": "2026-11-13T01:29:31.891Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:04.564Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:21.206Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:22.707Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2326,6 +3733,11 @@
             "detail": "49493a6969134969"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "dcd7d7ffe0dcd9ffddd8d8ffdcd7d7ffdcd6d1ffddd8d8ffe0dcd9ffdcd7d7ffe1dbd6ffece7defff4e7d5ffede4d5ffe0dcd9ffdfdbd8ffe7e4deffe0dcd9ffe4dcd3fff4e9d8fff6edddffeee2d4ffddd8d8ffefe9e2ffdfdbd8ffddd8d8fff2e4cbfff4e7d3ffede4d7ffdbd5d0ffdcd7d7ffddd8d8ffe0dcd9ffdcd7d7ffdcd7d7ffe0dcd9ffddd8d8ffdcd7d7ffdcd7d7ffddd8d8ffe0dcd9ffdcd6d1ffddd8d8ffdfdbd8ffece6e2ffe0dcd9ffddd8d8ffe2dedaffe7e4deffe1dbd6ffe0dcd9ffece6e2ffdfdbd8ffddd8d8ffe0dcd9ffeee8e1ffe3ded6ffddd9d6ffdcd6d1ffddd8d8ffe0dcd9ffdcd6d1ffdcd7d7ffeee3d2ffeee2d4ffdcd7d7ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "55792 bytes, budget 260000"
@@ -2337,7 +3749,7 @@
         "web:contact",
         "brand"
       ],
-      "createdAt": "2026-11-11T22:20:42.489Z"
+      "createdAt": "2026-11-13T13:00:22.707Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2348,8 +3760,8 @@
       "files": [
         {
           "path": "assets/generated/story-dawn/story-dawn-1600x1200.webp",
-          "sha256": "4f0d40d43eb0cd7bb368c35f83c3d2f9b0f7fd5d97b18e9f9ed2ee085e6e96dd",
-          "bytes": 21376,
+          "sha256": "11aed22c5a59ce79b32dfed3488810a94af18d818b5f94f2c394d14d463df06b",
+          "bytes": 21356,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -2357,8 +3769,8 @@
         },
         {
           "path": "assets/generated/story-dawn/story-dawn-1600x1200.avif",
-          "sha256": "e87d2dac885e90b7870d5ec8e158e8d321dcd1f988f2e32768e67ee29cafa46e",
-          "bytes": 9894,
+          "sha256": "e16b43068c0e63d46ed903712764871405bd04af91a74c8a6e0bae290088dbb4",
+          "bytes": 9743,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -2384,7 +3796,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:30.814Z",
+          "at": "2026-11-13T01:29:06.743Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:36.336Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:43.772Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:59:59.276Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2419,17 +3846,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "0000404065e34104"
+            "detail": "0000015065e34104"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ff7f5453ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffc17760ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffdf8d59ffe08e5affdf8d59ffe8b06effe7ae6dffe29840ffe29a43ffe29a43ffe29a43ffe29a43ffe29a43ffeac388ffeac287ffdfa657ffca9853ffdda759ffe5ae5cffe5ae5cffd6a158ff8a6f5eff7c5f58ff533b47ff423342ff604a4dff886b5dff85695bff56424bff191933ff1a1c37ff181b35ff1a1d38ff1c1e3bff1d1e3bff1e1f3bff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21376 bytes, budget 200000"
+            "detail": "21356 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "9894 bytes, budget 200000"
+            "detail": "9743 bytes, budget 200000"
           }
         ]
       },
@@ -2437,7 +3869,229 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-11T22:20:30.814Z"
+      "createdAt": "2026-11-13T12:59:59.276Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dawn-ground",
+      "kind": "raster",
+      "purpose": "Scroll story, dawn: hills on transparency, in front of the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dawn-ground/story-dawn-ground-1600x1200.webp",
+          "sha256": "6c005539a42d8237105f88b8bfb4e1ca274be0481d9a4e7814019a127a849f2c",
+          "bytes": 10330,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dawn",
+          "layer": "ground",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:28.898Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:00.244Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:41.694Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T11:00:08.539Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:16.666Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:19.721Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 28.7"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000183c4104"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c100b0b2e1300000d00000000000000000909091a281f2a91433139b9543d48fe4b374aff3f2f3dd632252d9d372631a54b3643ee1a1934ff1b1d39ff191c37ff1a1d3aff1d1f3eff1e1f3eff1f203eff1d1f3eff14152bff14152bff14152bff14152cff16172fff14152cff14152cff16172fff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "10330 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:19.721Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dawn-sky",
+      "kind": "raster",
+      "purpose": "Scroll story, dawn: sky only, behind the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dawn-sky/story-dawn-sky-1600x1200.webp",
+          "sha256": "a72f1b18f93f65f1a42b1e60b53f57cf25ee0b6b525a1a25199e7f268b711190",
+          "bytes": 9394,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dawn",
+          "layer": "sky",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:28.274Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:59.530Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:15.765Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:19.214Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 42.3"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "835555ff835555ff835555ff835555ff835555ff835555ff835555ff835555ffc77b65ffc77b65ffc77b65ffc77b65ffc77b65ffc77b65ffc77b65ffc77b65ffe6915cffe6915cffe6915cffe6915cffe6915cffe6915cffe6915cffe6915cffe89e45ffe89e45ffe89e45ffe89e45ffe89e45ffe89e45ffe89e45ffe89e45ffecb360ffecb360ffecb360ffecb360ffecb360ffecb360ffecb360ffecb360ffefcb93ffefcb93ffefcb93ffefcb93ffefcb93ffefcb93ffefcb93ffefcb93fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3fff0d1a3ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "9394 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:19.214Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2448,8 +4102,8 @@
       "files": [
         {
           "path": "assets/generated/story-dusk/story-dusk-1600x1200.webp",
-          "sha256": "f204ac0d17614f126773da9d23e99feb518dea0d763da101b3234a023cb62192",
-          "bytes": 21188,
+          "sha256": "377321b2eb4c003126b481e8a49b5ac12715015c6d28c4e2a786794625aa60f3",
+          "bytes": 21214,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -2457,8 +4111,8 @@
         },
         {
           "path": "assets/generated/story-dusk/story-dusk-1600x1200.avif",
-          "sha256": "3ccae8c3e52ee6cd0ff0dc4d7cc1791796e13abf7039e8b56346fe54e81ed764",
-          "bytes": 9889,
+          "sha256": "e8d5d188c7cca7b2db4fb0fa25a962f7b4799c723d2bc041171a8043197db227",
+          "bytes": 9800,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -2484,7 +4138,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:38.071Z",
+          "at": "2026-11-13T01:29:12.573Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:43.772Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:51.958Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:04.920Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2504,7 +4173,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 77.5"
+            "detail": "channel spread 77.4"
           },
           {
             "id": "palette-adherence",
@@ -2519,17 +4188,22 @@
           {
             "id": "dhash",
             "pass": true,
-            "detail": "0000410565e34204"
+            "detail": "0000420565e34204"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff342c41ff68474dff68474dff68474dff68474dff68474dff68474dff68474dff68474dff996257ff9a6358ff996257ff996257ff996257ff996257ff9a6358ff996257ffcd7c63ffcd7c63ffcd7c63ffcd7c63ffcd7c63ffcc7a61ffd49884ffd49984ffe18e58ffe28e58ffd98a57ffc47d55ffd98958ffe18d55ffe8ac81ffd8a380ff835b44ff714f45ff443443ff382d42ff563f41ff7e5843ff7b5745ff4a3944ff191933ff191c37ff181b35ff1a1d38ff1c1e3bff1c1e3bff1d1f3cff1c1e3bff141529ff141529ff141529ff14152aff16172eff14152aff14152bff15162dff"
           },
           {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "21188 bytes, budget 200000"
+            "detail": "21214 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "9889 bytes, budget 200000"
+            "detail": "9800 bytes, budget 200000"
           }
         ]
       },
@@ -2537,7 +4211,219 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-11T22:20:38.071Z"
+      "createdAt": "2026-11-13T13:00:04.920Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dusk-ground",
+      "kind": "raster",
+      "purpose": "Scroll story, dusk: hills on transparency, in front of the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dusk-ground/story-dusk-ground-1600x1200.webp",
+          "sha256": "366dbd25a7d5faac8c1069e6b46534f8c5d1a40ffe076044809222432aa3e3da",
+          "bytes": 9878,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dusk",
+          "layer": "ground",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:30.588Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:02.489Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:19.286Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:21.412Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 28.0"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "intentionally the same picture as \"story-dawn-ground\" (declared in the brief)"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000183c4204"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0b0b0b2e0000000d00000000000000000909091a231c2691372934b9453444fe3d3145ff34293ad62a202b9d2c222ca53f2f40ee1a1934ff1b1d39ff191c37ff1a1d3aff1d1f3eff1d1f3eff1e203fff1d1f3eff14152bff14152bff14152bff14152cff16172fff14152cff14152cff16172fff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "9878 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:21.412Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-dusk-sky",
+      "kind": "raster",
+      "purpose": "Scroll story, dusk: sky only, behind the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-dusk-sky/story-dusk-sky-1600x1200.webp",
+          "sha256": "486d175f5a5ea8326e15242646eb828084cb47d306b922ae581eb58af4f42281",
+          "bytes": 9358,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "dusk",
+          "layer": "sky",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:30.082Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:01.813Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:18.499Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:20.905Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 65.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "352d42ff352d42ff352d42ff352d42ff352d42ff352d42ff352d42ff352d42ff6a4950ff6a4950ff6a4950ff6a4950ff6a4950ff6a4950ff6a4950ff6a4950ff9e645aff9e645aff9e645aff9e645aff9e645aff9e645aff9e645aff9e645affd38166ffd38166ffd38166ffd38166ffd38166ffd38166ffd38166ffd38166ffe7935bffe7935bffe7935bffe7935bffe7935bffe7935bffe7935bffe7935bffe89f41ffe89f41ffe89f41ffe89f41ffe89f41ffe89f41ffe89f41ffe89f41ffe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23affe8a23aff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "9358 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:20.905Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2548,8 +4434,8 @@
       "files": [
         {
           "path": "assets/generated/story-night/story-night-1600x1200.webp",
-          "sha256": "88d7c26ae2d786a9481a7f7e751dcd8e871636f92eaac2aa1e89118e8ed18cfe",
-          "bytes": 14186,
+          "sha256": "88c0519e4d77ab60cd73146a8a9fd22ecae45fbf25307e8ae3ccf151ab8f4d84",
+          "bytes": 14100,
           "format": "webp",
           "width": 1600,
           "height": 1200,
@@ -2557,8 +4443,8 @@
         },
         {
           "path": "assets/generated/story-night/story-night-1600x1200.avif",
-          "sha256": "e492a6e036322ccacca24612354d34bf047a70fb153827f13c87e65f1706bce1",
-          "bytes": 7242,
+          "sha256": "43ba3fbe9b0c1abed1f419e7624f2c65db2f7b89383d279a8e8d250a0c56520b",
+          "bytes": 7191,
           "format": "avif",
           "width": 1600,
           "height": 1200,
@@ -2584,7 +4470,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:42.009Z",
+          "at": "2026-11-13T01:29:17.227Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:47.606Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:56.606Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:07.905Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2604,7 +4505,7 @@
           {
             "id": "not-blank",
             "pass": true,
-            "detail": "channel spread 15.4"
+            "detail": "channel spread 16.5"
           },
           {
             "id": "palette-adherence",
@@ -2622,14 +4523,19 @@
             "detail": "000b2b00002dc540"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff141529ff1d1e31ff212336ff131429ff16172eff17182fff16172eff16172eff15162dff323345ff414151ff13142bff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff1b1d38ff202241ff202241ff202241ff202241ff202241ff202241ff202241ff202241ff212546ff232648ff26294dff25284bff25284bff222647ff222647ff222647ff1c1e3bff1a1c37ff1a1c36ff1a1d38ff1c1e3bff1c1e3bff1b1d3aff181b34ff15162dff14152bff141529ff141529ff141529ff14152aff141529ff141529ff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
-            "detail": "14186 bytes, budget 200000"
+            "detail": "14100 bytes, budget 200000"
           },
           {
             "id": "byte-budget:avif",
             "pass": true,
-            "detail": "7242 bytes, budget 200000"
+            "detail": "7191 bytes, budget 200000"
           }
         ]
       },
@@ -2637,7 +4543,219 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-11T22:20:42.009Z"
+      "createdAt": "2026-11-13T13:00:07.905Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-night-ground",
+      "kind": "raster",
+      "purpose": "Scroll story, night: hills on transparency, in front of the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-night-ground/story-night-ground-1600x1200.webp",
+          "sha256": "15776664f78e514e0fb34aabb1ace07e7237395526d369b92fe678945f152842",
+          "bytes": 9076,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "ground",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:31.539Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:03.936Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:20.631Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:22.362Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 29.9"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000000000131c340"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000001500000006000000000000000000000005000007220000000d212546f524284dff25284cf41c1d38b3191b31a0202242e324284bff232546f61d1f3eff1a1d39ff1a1c38ff1b1d3aff1d1f3eff1d1f3eff1c1e3cff191c36ff15162dff14152cff14152bff14152bff14152bff14152bff14152bff14152bff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "9076 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:22.362Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-night-sky",
+      "kind": "raster",
+      "purpose": "Scroll story, night: sky only, behind the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-night-sky/story-night-sky-1600x1200.webp",
+          "sha256": "ee87c41036e5318740234e91d1534e71a20969161a143c18cab2f9345f5946db",
+          "bytes": 6908,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "night",
+          "layer": "sky",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:31.023Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:03.109Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:19.903Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:21.842Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 15.3"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "000000a009000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff14152bff181831ff181831ff181831ff181831ff181831ff181831ff181831ff181831ff1c1e3bff1c1e3bff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff1b1d3aff202244ff212345ff222345ff222345ff212244ff202244ff212345ff212244ff26294dff26294dff26294dff26294dff26294dff26294dff26294dff26294dff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff272a50ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "6908 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:21.842Z"
     },
     {
       "schemaVersion": "1.0.0",
@@ -2684,7 +4802,22 @@
       },
       "history": [
         {
-          "at": "2026-11-11T22:20:34.244Z",
+          "at": "2026-11-13T01:29:09.578Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:57:40.129Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:25:47.910Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:02.018Z",
           "action": "generated",
           "by": "local-procedural"
         }
@@ -2722,6 +4855,11 @@
             "detail": "3032308221634104"
           },
           {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "ede1caffede1caffede1caffebd6b2ffebd6b2ffede1caffede1caffede1caffeee7daffeee7daffeee8dcffeaca9cffeaca9cffeee8dcffeee7daffeee7dafff1ede5fff1ede5fff1ede5fff1eadefff1eadefff1ede5fff1ede5fff1ede5fff6f4edfff6f4edfff5f4edfff5f4edfff5f4edfff5f4edfff6f4edfff6f4edfff6efe4fff6efe4fff4ede3ffeee9dffff4eee2fff6efe4fff6efe4fff2ece0ffd8d0c5ffd6cfc5ffcac4bfffc2bebbffcbc6c0ffd8d1c5ffd8d0c6ffcac4bfff9b98a4ffa2a0a8ff9f9da7ffa7a4abffaeabafffaeabaeffafacafffaeabaeff88879aff89879aff88879aff8a889aff908d9eff8a889bff8b889bff918e9eff"
+          },
+          {
             "id": "byte-budget:webp",
             "pass": true,
             "detail": "18426 bytes, budget 200000"
@@ -2737,7 +4875,219 @@
       "usedIn": [
         "web:story"
       ],
-      "createdAt": "2026-11-11T22:20:34.244Z"
+      "createdAt": "2026-11-13T13:00:02.018Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-noon-ground",
+      "kind": "raster",
+      "purpose": "Scroll story, noon: hills on transparency, in front of the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-noon-ground/story-noon-ground-1600x1200.webp",
+          "sha256": "d6a42357bc6e5c154d6fbce16e19bca20a930169eba3c1f65f0797498d530003",
+          "bytes": 10106,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "ground",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:29.737Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:01.373Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:17.833Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:20.549Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "alpha",
+            "pass": true,
+            "detail": "alpha channel present"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 85.2"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "00000000181c4104"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001515150c2626262e2727270d00000000000000001d1d1d1a75727291a29e9db9cdc7c3fecdc9c6ffafaba9d6837e7e9d8b8686a5c4bdbbee9f9ca9ffa7a4adffa3a2acffaba8b1ffb3afb5ffb2afb5ffb4b0b6ffb3afb5ff8b8b9dff8b8b9dff8b8b9dff8d8d9eff9292a2ff8c8c9eff8e8d9fff9492a1ff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "10106 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:20.549Z"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "story-noon-sky",
+      "kind": "raster",
+      "purpose": "Scroll story, noon: sky only, behind the scroll-driven sun",
+      "dnaRevision": 1,
+      "files": [
+        {
+          "path": "assets/generated/story-noon-sky/story-noon-sky-1600x1200.webp",
+          "sha256": "ae8316c46147d8627b39fb29e3464aa22e15029b5da2e683cbf45acee2e75a98",
+          "bytes": 7032,
+          "format": "webp",
+          "width": 1600,
+          "height": 1200,
+          "role": "export"
+        }
+      ],
+      "origin": {
+        "type": "generated",
+        "provider": "local-procedural",
+        "model": "cis-procedural-1",
+        "parameters": {
+          "recipe": "horizon-field",
+          "variant": "noon",
+          "layer": "sky",
+          "scheme": "light",
+          "width": 1600,
+          "height": 1200,
+          "dnaRevision": 1
+        },
+        "seed": "story",
+        "costUsd": 0,
+        "simulated": false
+      },
+      "history": [
+        {
+          "at": "2026-11-13T01:29:29.229Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T10:58:00.670Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T12:26:17.130Z",
+          "action": "generated",
+          "by": "local-procedural"
+        },
+        {
+          "at": "2026-11-13T13:00:20.053Z",
+          "action": "generated",
+          "by": "local-procedural"
+        }
+      ],
+      "rights": {
+        "status": "cleared",
+        "notes": "Generated locally from project parameters; no third-party content."
+      },
+      "qa": {
+        "status": "passed",
+        "checks": [
+          {
+            "id": "dimensions",
+            "pass": true,
+            "detail": "1600x1200, required 1600x1200"
+          },
+          {
+            "id": "not-blank",
+            "pass": true,
+            "detail": "channel spread 14.6"
+          },
+          {
+            "id": "palette-adherence",
+            "pass": true,
+            "detail": "100% of sampled pixels lie on the brand palette or between two of its colours"
+          },
+          {
+            "id": "not-duplicate",
+            "pass": true,
+            "detail": "no near-identical asset registered"
+          },
+          {
+            "id": "dhash",
+            "pass": true,
+            "detail": "0000000000000000"
+          },
+          {
+            "id": "colour-signature",
+            "pass": true,
+            "detail": "f4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff4e6cffff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff5eee1fff9f4eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafff8f5eafffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffefaf4fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffdf6e9fffaecd3fffaecd3fffaecd3fffaecd3fffaecd3fffaecd3fffaecd3fffaecd3fffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cffffae9cfff"
+          },
+          {
+            "id": "byte-budget:webp",
+            "pass": true,
+            "detail": "7032 bytes, budget 160000"
+          }
+        ]
+      },
+      "clientApproval": "pending",
+      "usedIn": [
+        "web:story"
+      ],
+      "createdAt": "2026-11-13T13:00:20.053Z"
     }
   ]
 }

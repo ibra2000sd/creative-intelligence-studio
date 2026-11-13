@@ -14,8 +14,16 @@ canvas:focus-visible { box-shadow: inset 0 0 0 3px var(--color-focus); }
 .fallback { object-fit: contain; }
 [hidden] { display: none !important; }
 
-.help { position: absolute; inset-inline: var(--space-4); bottom: var(--space-3); margin: 0; font-size: var(--text-xs); color: var(--color-text-muted); pointer-events: none; }
-.status { position: absolute; inset-inline-start: var(--space-4); top: var(--space-4); margin: 0; font-size: var(--text-sm); color: var(--color-text-muted); }
+/* Captions lie over the picture, so they take the ink of the ground behind them (set by the
+   scene: a light-scheme room turns dark at dusk), not the ink of the page scheme. */
+.help { position: absolute; inset-inline: var(--space-4); bottom: var(--space-3); margin: 0; font-size: var(--text-xs); color: var(--light-text-muted); pointer-events: none; }
+.status { position: absolute; inset-inline-start: var(--space-4); top: var(--space-4); margin: 0; font-size: var(--text-sm); color: var(--light-text-muted); }
+.viewport[data-ground='dark'] .help, .viewport[data-ground='dark'] .status { color: var(--dark-text-muted); }
+.viewport[data-ground='light'] { background: var(--light-bg); }
+.viewport[data-ground='dark'] { background: var(--dark-bg); }
+/* Still-rendering mode: the product alone. */
+.shot .stage { grid-template-columns: 1fr; }
+.shot .panel, .shot .help, .shot .status { display: none; }
 
 .panel { display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-8) var(--space-6); background: var(--color-surface-raised); border-inline-start: 1px solid var(--color-border); overflow: auto; }
 .panel h1 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-display); letter-spacing: var(--tracking-display); font-weight: 600; margin: 0; }
@@ -28,7 +36,8 @@ legend, label { font-size: var(--text-sm); font-weight: 600; padding: 0; margin-
 .swatch:has(input:checked) { border-color: var(--color-primary); background: var(--color-surface); box-shadow: inset 0 0 0 1px var(--color-primary); }
 .swatch:has(input:focus-visible) { outline: 3px solid var(--color-focus); outline-offset: 2px; }
 .field { display: grid; gap: var(--space-2); }
-input[type='range'] { width: 100%; accent-color: var(--color-primary); min-height: 32px; margin: 0; }
+/* Time runs left to right in every language: the control mirrors the arc, not the reading order. */
+input[type='range'] { width: 100%; accent-color: var(--color-primary); min-height: 32px; margin: 0; direction: ltr; }
 input[type='range']:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; border-radius: var(--radius-sm); }
 output { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted); }
 .button { align-self: flex-start; min-height: 44px; padding: 0 var(--space-5); border-radius: 999px; border: 1px solid var(--color-border); background: transparent; color: inherit; font: inherit; font-size: var(--text-sm); cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard); }

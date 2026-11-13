@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-11-12T23:45:39.113Z",
+  "ranAt": "2026-11-13T11:15:37.414Z",
   "mode": "full",
   "commands": [
     {
@@ -147,6 +147,10 @@
       "exit": 0
     },
     {
+      "command": "creative-studio 3d stills",
+      "exit": 0
+    },
+    {
       "command": "creative-studio task done scene-3d",
       "exit": 0
     },
@@ -216,7 +220,7 @@
     },
     {
       "command": "creative-studio test --update-baselines",
-      "exit": 1
+      "exit": 0
     },
     {
       "command": "creative-studio audit",

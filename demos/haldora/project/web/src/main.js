@@ -24,13 +24,72 @@ function setScheme(next) {
     } catch {
       /* private mode: the choice lasts for this page only */
     }
-    $('iframe[data-scene-frame]')?.contentWindow?.postMessage({ type: 'cis-scene-scheme', value: next }, location.origin);
   };
   if (motionOK && document.startViewTransition) document.startViewTransition(apply);
   else apply();
 }
+// However the scheme changes (the button, another script, a test harness), the embedded 3D scene is told.
+new MutationObserver(() => $('iframe[data-scene-frame]')?.contentWindow?.postMessage({ type: 'cis-scene-scheme', value: currentScheme() }, location.origin)).observe(root, { attributes: true, attributeFilter: ['data-scheme'] });
 themeButton?.setAttribute('aria-pressed', String(currentScheme() === 'dark'));
 themeButton?.addEventListener('click', () => setScheme(currentScheme() === 'dark' ? 'light' : 'dark'));
+
+// ------------------------------------------------------- arc gives way -------
+// The hero's arc plane is masked behind the copy: one hole per block (eyebrow, headline, lede, actions),
+// each as wide as its longest line of text rather than its element box, so no dash shows between lines
+// and the sun beside the copy is never clipped. Recomputed when the layout or scheme changes and while
+// the hero is on screen.
+const arcPlanes = $$('.hero .plane.track');
+const heroCopy = $$('.hero-copy > *');
+let holeQueued = false;
+function holeArc() {
+  holeQueued = false;
+  const range = document.createRange();
+  const union = (rects) => {
+    const rs = rects.filter((r) => r.width && r.height);
+    if (!rs.length) return null;
+    const left = Math.min(...rs.map((r) => r.left));
+    const top = Math.min(...rs.map((r) => r.top));
+    return { left, top, width: Math.max(...rs.map((r) => r.right)) - left, height: Math.max(...rs.map((r) => r.bottom)) - top };
+  };
+  const boxes = heroCopy
+    .map((el) => {
+      if (el.children.length) return union([...el.children].map((c) => c.getBoundingClientRect()));
+      range.selectNodeContents(el);
+      return union([...range.getClientRects()]);
+    })
+    .filter(Boolean);
+  if (!boxes.length) return;
+  const pad = 10; // less than half the space between blocks, so neighbouring holes never overlap
+  const fill = 'linear-gradient(#000, #000)';
+  for (const plane of arcPlanes) {
+    const p = plane.getBoundingClientRect();
+    if (!p.width) continue; // the plane of the scheme that is not shown
+    const holes = boxes.map((r) => ({ x: r.left - p.left - pad, y: r.top - p.top - pad, w: r.width + pad * 2, h: r.height + pad * 2 }));
+    const s = plane.style;
+    s.maskImage = s.webkitMaskImage = [fill, ...holes.map(() => fill)].join(', ');
+    s.maskSize = s.webkitMaskSize = ['100% 100%', ...holes.map((h) => `${h.w.toFixed(1)}px ${h.h.toFixed(1)}px`)].join(', ');
+    s.maskPosition = s.webkitMaskPosition = ['0 0', ...holes.map((h) => `${h.x.toFixed(1)}px ${h.y.toFixed(1)}px`)].join(', ');
+    s.maskRepeat = s.webkitMaskRepeat = 'no-repeat';
+    s.maskComposite = 'exclude';
+    s.webkitMaskComposite = 'xor';
+  }
+}
+const queueHole = () => {
+  if (holeQueued) return;
+  holeQueued = true;
+  requestAnimationFrame(holeArc);
+};
+if (arcPlanes.length && heroCopy.length) {
+  queueHole();
+  addEventListener('resize', queueHole);
+  document.fonts?.ready.then(queueHole);
+  new MutationObserver(queueHole).observe(root, { attributes: true, attributeFilter: ['data-scheme'] });
+  let heroVisible = true;
+  new IntersectionObserver(([e]) => (heroVisible = e.isIntersecting)).observe($('[data-hero]'));
+  addEventListener('scroll', () => heroVisible && queueHole(), { passive: true });
+  // The copy's entrance animation moves it for a moment after load.
+  setTimeout(queueHole, 1600);
+}
 
 // ----------------------------------------------------------------- menu -----
 const menuButton = $('[data-menu]');
@@ -164,15 +223,19 @@ const story = $('[data-story]');
 const chapters = $$('[data-chapter]');
 const sun = $('[data-sun]');
 const clock = $('[data-clock]');
+const storyVisual = $('[data-story-visual]');
 
 function activate(i) {
   chapters.forEach((ch, k) => ch.classList.toggle('is-active', k === i));
-  $$('.frame', story).forEach((f, k) => f.classList.toggle('is-on', k === i));
+  // Sky and ground are separate stacks of frames; both show the active chapter.
+  for (const stack of $$('[data-frames]', story)) [...stack.children].forEach((f, k) => f.classList.toggle('is-on', k === i));
   const ch = chapters[i];
-  const pt = arcPoint(Number(ch.dataset.p));
-  sun?.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
-  sun?.classList.toggle('is-night', ch.dataset.night === 'true');
+  if (storyVisual) storyVisual.dataset.tone = ch.dataset.tone;
   if (clock) clock.textContent = ch.dataset.time;
+  if (!sun || story.classList.contains('is-scrubbed')) return; // while scrubbing, the timeline owns the sun
+  const pt = arcPoint(Number(ch.dataset.p));
+  sun.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+  sun.dataset.night = ch.dataset.night;
 }
 
 async function enhanceMotion() {
@@ -189,26 +252,45 @@ async function enhanceMotion() {
     gsap.to('.hero-copy', { yPercent: -14, opacity: 0.2, ease: 'none', scrollTrigger: { trigger: '[data-hero]', start: '55% top', end: 'bottom top', scrub: true } });
 
     // Story: the sun travels its arc with scroll position; frames cross-fade by chapter.
-    story.classList.add('is-scrubbed');
-    const proxy = { p: Number(chapters[0].dataset.p) };
-    const place = () => {
-      const pt = arcPoint(proxy.p);
-      sun.setAttribute('transform', `translate(${pt.x.toFixed(2)} ${pt.y.toFixed(2)})`);
-    };
-    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.chapters', start: 'top 55%', end: 'bottom 55%', scrub: 0.5 } });
-    chapters.forEach((ch, i) => {
-      if (i === 0) return;
-      const night = ch.dataset.night === 'true';
-      // Night chapters: the sun sets first, then reappears as a moon.
-      if (night) tl.to(proxy, { p: 1.04, duration: 0.6, onUpdate: place }, i - 1).set(proxy, { p: Number(ch.dataset.p) }, i - 0.4).call(place, null, i - 0.4);
-      else tl.to(proxy, { p: Number(ch.dataset.p), duration: 1, onUpdate: place }, i - 1);
-    });
-    const triggers = chapters.map((ch, i) => ScrollTrigger.create({ trigger: ch, start: 'top 55%', end: 'bottom 55%', onToggle: (self) => self.isActive && activate(i) }));
+    // Without layered frames there is no separate sun: the illustrations carry their own.
+    let tl = null;
+    if (sun) {
+      story.classList.add('is-scrubbed');
+      // `night` is part of the animated state, so scrubbing backwards restores the sun.
+      const proxy = { p: Number(chapters[0].dataset.p), night: chapters[0].dataset.night === 'true' ? 1 : 0 };
+      let shown = -1;
+      const place = () => {
+        const pt = arcPoint(proxy.p);
+        sun.setAttribute('transform', `translate(${pt.x.toFixed(2)} ${pt.y.toFixed(2)})`);
+        const night = String(proxy.night >= 0.5);
+        if (sun.dataset.night !== night) sun.dataset.night = night;
+        // The picture, the clock and the marked chapter follow the same timeline as the sun, so they
+        // cannot disagree with it, however the page was scrolled (a jump to the top included).
+        const i = Math.max(0, Math.min(chapters.length - 1, Math.round(tl ? tl.time() : 0)));
+        if (i !== shown) activate((shown = i));
+      };
+      // The timeline runs from the first chapter centred in the window to the last chapter centred,
+      // one unit per chapter: the sun is at a chapter's time exactly when that chapter is being read.
+      const centred = (el) => el.getBoundingClientRect().top + window.scrollY + el.offsetHeight / 2 - window.innerHeight / 2;
+      tl = gsap.timeline({ defaults: { ease: 'none' }, onUpdate: place, scrollTrigger: { trigger: '.chapters', start: () => centred(chapters[0]), end: () => centred(chapters.at(-1)), invalidateOnRefresh: true, scrub: 0.5 } });
+      chapters.forEach((ch, i) => {
+        if (i === 0) return;
+        const night = ch.dataset.night === 'true';
+        // Into a night chapter the sun sets behind the hills first, then a moon rises from the other side.
+        if (night) tl.to(proxy, { p: 1.14, duration: 0.5 }, i - 1).set(proxy, { p: -0.14, night: 1 }, i - 0.5).to(proxy, { p: Number(ch.dataset.p), duration: 0.5 }, i - 0.5);
+        else tl.to(proxy, { p: Number(ch.dataset.p), night: 0, duration: 1 }, i - 1);
+      });
+      place();
+    }
+    // Without a scroll-driven sun, chapters switch the picture as they pass the middle of the window.
+    const triggers = sun ? [] : chapters.map((ch, i) => ScrollTrigger.create({ trigger: ch, start: 'top 55%', end: 'bottom 55%', onToggle: (self) => self.isActive && activate(i) }));
 
     // 3D product: scroll position drives the camera through three shots.
     const productTrigger = sceneFrame && ScrollTrigger.create({ trigger: '[data-product]', start: 'top 70%', end: 'bottom 30%', onUpdate: (self) => sceneWindow?.postMessage({ type: 'cis-scene-progress', value: self.progress }, location.origin) });
     return () => {
       story.classList.remove('is-scrubbed');
+      tl?.scrollTrigger?.kill();
+      tl?.kill();
       triggers.forEach((t) => t.kill());
       productTrigger?.kill();
     };

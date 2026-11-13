@@ -48,10 +48,14 @@ export function snapshot(hour: number, reservePct = 30): Snapshot {
 
 export const clock = (h: number) => `${String(Math.floor(h)).padStart(2, '0')}:${h % 1 ? '30' : '00'}`;
 
-export type Device = { id: string; kind: string; name: string; location: string; status: 'online' | 'offline' | 'attention'; firmware: string };
+// Product names are brand names and stay as written; a generic device and every place are keys
+// into the interface strings, so they are translated with the rest of the app.
+export type Place = 'garage' | 'fuseBoard' | 'driveway' | 'loft';
+export type Device = { id: string; kind: string; name?: string; nameKey?: 'carCharger' | 'roofInverter'; place: Place; status: 'online' | 'offline' | 'attention'; firmware: string };
 
 export const DEVICES: Device[] = [
-  { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', location: 'Garage', status: 'online', firmware: '2.4.1' },
-  { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', location: 'Fuse board', status: 'online', firmware: '1.9.0' },
-  { id: 'ev-1', kind: 'car', name: 'Car charger', location: 'Driveway', status: 'attention', firmware: '3.0.2' },
+  { id: 'cell-1', kind: 'battery', name: 'Haldora Cell', place: 'garage', status: 'online', firmware: '2.4.1' },
+  { id: 'sense-1', kind: 'plug', name: 'Haldora Sense', place: 'fuseBoard', status: 'online', firmware: '1.9.0' },
+  { id: 'ev-1', kind: 'car', nameKey: 'carCharger', place: 'driveway', status: 'attention', firmware: '3.0.2' },
+  { id: 'roof-1', kind: 'sun', nameKey: 'roofInverter', place: 'loft', status: 'offline', firmware: '5.2.0' },
 ];

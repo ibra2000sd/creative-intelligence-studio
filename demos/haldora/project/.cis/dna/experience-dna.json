@@ -267,7 +267,8 @@
       "license": "OFL-1.1",
       "weights": [
         400,
-        600
+        600,
+        700
       ]
     },
     "scale": {
@@ -397,7 +398,10 @@
         "baseColor": "#F6F1E7",
         "metalness": 0.05,
         "roughness": 0.62,
-        "accent": "#E9A23B"
+        "accent": "#E9A23B",
+        "names": {
+          "ar": "طباشيري"
+        }
       },
       {
         "id": "dusk",
@@ -405,7 +409,10 @@
         "baseColor": "#2A2D66",
         "metalness": 0.2,
         "roughness": 0.48,
-        "accent": "#E9A23B"
+        "accent": "#E9A23B",
+        "names": {
+          "ar": "غسق"
+        }
       },
       {
         "id": "ember",
@@ -413,7 +420,10 @@
         "baseColor": "#B5381F",
         "metalness": 0.1,
         "roughness": 0.55,
-        "accent": "#FFFDF8"
+        "accent": "#FFFDF8",
+        "names": {
+          "ar": "جمر"
+        }
       }
     ],
     "environment": {
@@ -509,5 +519,5 @@
       "note": "Launch markets are the UK and the UAE."
     }
   ],
-  "updatedAt": "2026-11-12T23:34:08.622Z"
+  "updatedAt": "2026-11-13T10:59:26.470Z"
 }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { dayCurve, totals, scalePoints, linePath, areaPath, arcPoint, history, sortRows, paginate, filterRows, validateSettings, formatNumber, clock } from '../src/logic.js';
+import { dayCurve, totals, scalePoints, linePath, areaPath, arcPoint, sunOnAxis, batteryState, history, sortRows, paginate, filterRows, validateSettings, formatNumber, clock } from '../src/logic.js';
 
 test('dayCurve is deterministic and physically sensible', () => {
   const a = dayCurve(3);
@@ -69,4 +69,31 @@ test('formatting', () => {
   assert.match(formatNumber(12.34, 'ar'), /^12/, 'Latin digits in Arabic');
   assert.equal(clock(6.5), '06:30');
   assert.equal(clock(18), '18:00');
+});
+
+test('sunOnAxis: the arc stands on sunrise and sunset and the sun is above its own hour', () => {
+  const box = { x0: 28, x1: 692, cy: 272, ry: 250 };
+  const xAt = (h) => 28 + (h / 23.5) * (692 - 28);
+  for (const h of [6, 9.5, 13, 17, 20]) assert.ok(Math.abs(sunOnAxis(h, box).x - xAt(h)) < 1e-9, `sun is above ${h}:00`);
+  assert.ok(Math.abs(sunOnAxis(6, box).y - 272) < 1e-6 && Math.abs(sunOnAxis(20, box).y - 272) < 1e-6, 'feet on the axis at sunrise and sunset');
+  assert.ok(Math.abs(sunOnAxis(13, box).y - 22) < 1e-6, 'highest at the middle of the day');
+  assert.equal(sunOnAxis(2, box).daylight, false);
+  assert.equal(sunOnAxis(12, box).daylight, true);
+  assert.ok(Math.abs(sunOnAxis(6, box).left - xAt(6)) < 1e-9 && Math.abs(sunOnAxis(6, box).right - xAt(20)) < 1e-9);
+});
+
+test('batteryState: a full battery is not described as charging', () => {
+  assert.equal(batteryState({ solar: 4.6, home: 0.5, battery: 1 }), 'full');
+  assert.equal(batteryState({ solar: 4.6, home: 0.5, battery: 0.6 }), 'charging');
+  assert.equal(batteryState({ solar: 0, home: 1.8, battery: 0.6 }), 'discharging');
+  assert.equal(batteryState({ solar: 0, home: 1.8, battery: 1 }), 'discharging');
+  assert.equal(batteryState({ solar: 0.5, home: 0.5, battery: 0.5 }), 'idle');
+  assert.equal(batteryState({ solar: 0, home: 1.8, battery: 0.3 }), 'idle');
+});
+
+test('scalePoints: head-room above the series when padTop is given', () => {
+  const pts = [{ h: 0, v: 0 }, { h: 23.5, v: 10 }];
+  const xy = scalePoints(pts, 'v', { width: 100, height: 100, pad: 10, padTop: 40, max: 10 });
+  assert.deepEqual(xy[0], [10, 90]);
+  assert.deepEqual(xy[1], [90, 40]);
 });

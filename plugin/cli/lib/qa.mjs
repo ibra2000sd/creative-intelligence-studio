@@ -312,13 +312,126 @@ async function checkScrollMotion(page, label) {
   return check(`scroll-motion:${label}`, 'motion', janky || shifted ? 'fail' : res.over33 / res.samples > 0.08 ? 'warn' : 'pass', `Scrolling ${res.scrolledPx}px: median frame ${res.medianMs.toFixed(1)}ms, p95 ${res.p95Ms.toFixed(1)}ms, ${res.over33} of ${res.samples} frames over 33ms, layout shift ${res.cls}`, { severity: 'major', measurement: 'lab', data: { ...res, conditions: 'Desktop viewport, this machine\'s GPU, headless Chrome. Not a low-powered device.' } });
 }
 
+/**
+ * Scroll the whole page once and return to the top, so content that reveals,
+ * loads or starts on scroll is present in a full-page capture. Without this a
+ * full-page screenshot of a page with scroll reveals is mostly blank.
+ */
+async function prime(page) {
+  await page.evaluate(async () => {
+    const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+    const el = document.scrollingElement || document.documentElement;
+    // Two rendered frames per step: intersection observers report after a frame is drawn, and a
+    // timer alone sometimes moved on before a reveal had registered.
+    const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const step = Math.max(200, Math.floor(innerHeight * 0.5));
+    for (let y = 0; y < el.scrollHeight; y += step) {
+      window.scrollTo({ top: y, behavior: 'instant' });
+      await frames();
+      await pause(80);
+    }
+    window.scrollTo({ top: el.scrollHeight, behavior: 'instant' });
+    await pause(250);
+    await Promise.all([...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); setTimeout(r, 4000); })));
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  });
+  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(500);
+}
+
+/** Text that is still invisible (opacity below 0.2) in what a full-page capture shows: missing evidence. */
+async function checkHiddenText(page, label) {
+  const hidden = await page.evaluate(() => {
+    const scope = document.querySelector('main') || document.body;
+    return [...scope.querySelectorAll('h1,h2,h3,h4,p,li,dt,dd,label,blockquote')]
+      .filter((el) => {
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height || !el.textContent.trim() || el.closest('[aria-hidden="true"],[hidden]')) return false;
+        for (let n = el; n && n !== document.documentElement; n = n.parentElement) if (Number(getComputedStyle(n).opacity) < 0.2) return true;
+        return false;
+      })
+      .slice(0, 6)
+      .map((el) => `${el.tagName.toLowerCase()} "${el.textContent.trim().slice(0, 40)}"`);
+  });
+  return check(`capture-complete:${label}`, 'visual', hidden.length ? 'fail' : 'pass', hidden.length ? `${hidden.length} text element(s) still invisible when the page was captured: the screenshot does not show the whole page` : 'Every text element was visible when the page was captured', { severity: 'major', measurement: 'lab', data: { hidden } });
+}
+
 async function screenshots(page, dir, label, { fullPage = false } = {}) {
   fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, `${label}.png`);
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(250);
-  await page.screenshot({ path: file, fullPage, animations: 'disabled' });
+  if (fullPage) await prime(page);
+  else {
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.waitForTimeout(250);
+  }
+  await shoot(page, file, fullPage);
   return file;
+}
+
+/**
+ * Take one screenshot. `fullPage: 'tall'` is for application shells with bars fixed to the screen
+ * edge: the window is made as tall as the document for the shot, so a bottom bar is drawn at the
+ * bottom of the picture instead of across the middle of it. Pages whose layout is sized from the
+ * viewport height (a full-screen hero) should use plain full-page capture.
+ */
+async function shoot(page, file, fullPage) {
+  if (fullPage !== 'tall') return settledShot(page, file, { fullPage: Boolean(fullPage) });
+  const size = page.viewportSize();
+  const height = await page.evaluate(() => Math.min(8000, Math.max(document.documentElement.scrollHeight, innerHeight)));
+  await page.setViewportSize({ width: size.width, height });
+  await page.waitForTimeout(250);
+  try {
+    return await settledShot(page, file, {});
+  } finally {
+    await page.setViewportSize(size);
+  }
+}
+
+/**
+ * Screenshot once the picture has stopped changing: shoot, wait, shoot again, and keep going until
+ * two shots in a row are identical (or the tries run out). Something still loading or settling
+ * when the shutter fires, such as an embedded 3D view replacing its poster, would otherwise make
+ * the same build produce different evidence from one run to the next.
+ */
+async function settledShot(page, file, opts, { tries = 6, gapMs = 450 } = {}) {
+  let last = await page.screenshot({ ...opts, animations: 'disabled' });
+  for (let i = 1; i < tries; i++) {
+    await page.waitForTimeout(gapMs);
+    const next = await page.screenshot({ ...opts, animations: 'disabled' });
+    const same = next.equals(last);
+    last = next;
+    if (same) break;
+  }
+  fs.writeFileSync(file, last);
+  return last;
+}
+
+/** Does the page itself say it supports a dark scheme (a colour-scheme declaration or a dark rule in its styles)? */
+function declaresDark(page) {
+  return page.evaluate(() => {
+    if (/dark/.test(document.querySelector('meta[name="color-scheme"]')?.content || '')) return true;
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try {
+        rules = sheet.cssRules;
+      } catch {
+        continue; // a stylesheet from another origin cannot be read
+      }
+      for (const rule of rules) if (/prefers-color-scheme:\s*dark|data-scheme=.?dark/.test(rule.cssText)) return true;
+    }
+    return false;
+  });
+}
+
+/** Put the page in a colour scheme the way a visitor's device or the page's own toggle would. */
+async function setScheme(page, scheme) {
+  await page.emulateMedia({ colorScheme: scheme });
+  await page.evaluate((s) => (document.documentElement.dataset.scheme = s), scheme);
+  await page.waitForTimeout(300);
+  // Colours are measured only once they have finished changing: contrast read halfway through a
+  // colour transition is a mixture of the two schemes and fails for no reason.
+  await page.waitForFunction(() => !document.getAnimations().some((a) => a.playState === 'running' && typeof CSSTransition !== 'undefined' && a instanceof CSSTransition), null, { timeout: 4000 }).catch(() => {});
+  await page.waitForTimeout(150);
 }
 
 async function checkVisualRegression(file, baselineDir, label, { update, threshold = 0.015 }) {
@@ -366,7 +479,12 @@ export async function runBrowserSuite({ baseUrl, pages, evidenceDir, baselineDir
   try {
     for (const pg of pages) {
       const url = baseUrl + pg.path;
-      for (const [vpName, viewport] of Object.entries(VIEWPORTS)) {
+      // A phone app is not judged at desktop width: a target may narrow the viewports, and the
+      // single-viewport checks (axe, keyboard, scroll motion) then run at its widest one.
+      const names = options.viewports || Object.keys(VIEWPORTS);
+      const primary = names.includes('desktop') ? 'desktop' : names[names.length - 1];
+      for (const vpName of names) {
+        const viewport = VIEWPORTS[vpName];
         const label = `${pg.label}@${vpName}`;
         const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, hasTouch: vpName !== 'desktop', isMobile: vpName === 'mobile', reducedMotion: 'no-preference' });
         const page = await ctx.newPage();
@@ -380,16 +498,24 @@ export async function runBrowserSuite({ baseUrl, pages, evidenceDir, baselineDir
             const dir = await page.evaluate(() => ({ dir: document.documentElement.dir, lang: document.documentElement.lang, computed: getComputedStyle(document.body).direction }));
             checks.push(check(`rtl:${label}`, 'visual', dir.dir === 'rtl' && dir.computed === 'rtl' ? 'pass' : 'fail', `Document direction is ${dir.dir || 'unset'} (computed ${dir.computed}), language ${dir.lang}`, { severity: 'critical', measurement: 'lab', data: dir }));
           }
-          const shot = await screenshots(page, evidenceDir, label.replace(/[@/]/g, '-'), { fullPage: vpName === 'desktop' && options.fullPage !== false });
+          const fullPage = options.fullPage ?? true; // false, true, or 'tall' for application shells
+          const shot = await screenshots(page, evidenceDir, label.replace(/[@/]/g, '-'), { fullPage });
+          if (fullPage) checks.push(await checkHiddenText(page, label));
           if (options.visualRegression !== false && baselineDir) checks.push(await checkVisualRegression(shot, baselineDir, label, { update: updateBaselines }));
-          if (vpName === 'desktop') {
-            checks.push(await checkAxe(page, `${pg.label}:light`));
-            await page.evaluate(() => (document.documentElement.dataset.scheme = 'dark'));
-            await page.waitForTimeout(700);
-            checks.push(await checkAxe(page, `${pg.label}:dark`));
-            await screenshots(page, evidenceDir, `${pg.label}-desktop-dark`);
-            await page.evaluate(() => (document.documentElement.dataset.scheme = 'light'));
-            await page.waitForTimeout(300);
+          if (vpName === primary) checks.push(await checkAxe(page, `${pg.label}:light`));
+          if (vpName !== 'tablet') {
+            // Dark is captured at phone and desktop size, and compared with the light capture:
+            // a "dark" screenshot identical to the light one is evidence of nothing.
+            await setScheme(page, 'dark');
+            if (vpName === primary) checks.push(await checkAxe(page, `${pg.label}:dark`));
+            const dark = await screenshots(page, evidenceDir, `${pg.label}-${vpName}-dark`, { fullPage });
+            const same = fs.readFileSync(dark).equals(fs.readFileSync(shot));
+            // Only a page that offers a dark scheme is expected to change: the project says so, or the page declares it.
+            const offered = options.expectDark ?? (await declaresDark(page));
+            checks.push(check(`dark-scheme:${label}`, 'visual', !same ? 'pass' : offered ? 'fail' : 'skipped', !same ? 'The page renders differently in the dark scheme' : offered ? 'The dark-scheme capture is identical to the light one: the page offers a dark scheme but did not respond to it' : 'The page offers no dark scheme', { severity: 'major', measurement: 'lab', evidence: [dark] }));
+            await setScheme(page, 'light');
+          }
+          if (vpName === primary) {
             checks.push(await checkKeyboard(page, pg.label));
             if (options.scrollMotion !== false) checks.push(await checkScrollMotion(page, pg.label));
           }
@@ -406,6 +532,32 @@ export async function runBrowserSuite({ baseUrl, pages, evidenceDir, baselineDir
 
     if (flowsFile && exists(flowsFile)) {
       const mod = await import(pathToFileURL(flowsFile).href + `?t=${Date.now()}`);
+      // Captures: states a page-level screenshot cannot reach (a route, a chapter, a screen of an
+      // app), declared by the deliverable. Each is checked for overflow and compared with its baseline.
+      for (const cap of mod.captures || []) {
+        const vp = cap.viewport || 'desktop';
+        // A capture may name an exact window size for a width the standard viewports do not cover.
+        const ctx = await browser.newContext({ viewport: cap.size || VIEWPORTS[vp], deviceScaleFactor: 1, hasTouch: vp !== 'desktop', isMobile: vp === 'mobile', reducedMotion: 'no-preference', colorScheme: cap.scheme || 'light', locale: cap.locale || 'en-GB' });
+        const page = await ctx.newPage();
+        const log = instrument(page);
+        const label = `capture:${cap.id}`;
+        try {
+          await cap.run({ page, baseUrl, ctx });
+          if (cap.scheme) await page.evaluate((s) => (document.documentElement.dataset.scheme = s), cap.scheme);
+          await page.waitForTimeout(cap.settleMs ?? 600);
+          if (log.exceptions.length) throw new Error(`uncaught exception: ${log.exceptions[0]}`);
+          checks.push(await checkOverflow(page, label));
+          fs.mkdirSync(evidenceDir, { recursive: true });
+          const file = path.join(evidenceDir, `${cap.id}.png`);
+          await shoot(page, file, cap.fullPage || false);
+          if (options.visualRegression !== false && baselineDir) checks.push(await checkVisualRegression(file, baselineDir, label, { update: updateBaselines }));
+          else checks.push(check(`captured:${cap.id}`, 'visual', 'pass', cap.title || cap.id, { measurement: 'lab', evidence: [file] }));
+        } catch (e) {
+          checks.push(check(label, 'visual', 'fail', `${cap.title || cap.id}: could not be captured: ${String(e.message || e).split('\n')[0].slice(0, 240)}`, { severity: 'major', measurement: 'lab' }));
+        } finally {
+          await ctx.close();
+        }
+      }
       for (const flow of mod.flows || []) {
         const ctx = await browser.newContext({ viewport: VIEWPORTS[flow.viewport || 'desktop'], hasTouch: flow.viewport === 'mobile', isMobile: flow.viewport === 'mobile', reducedMotion: flow.reducedMotion ? 'reduce' : 'no-preference', locale: flow.locale || 'en-GB' });
         const page = await ctx.newPage();

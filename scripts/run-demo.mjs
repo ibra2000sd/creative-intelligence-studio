@@ -124,6 +124,9 @@ task('scene-3d', () => {
   if (FULL) {
     install(path.join(DIR, 'scene'));
     sh('npm', ['run', 'build'], path.join(DIR, 'scene'));
+    // Replace the drawn fallbacks with stills rendered from the built model. Needs a browser with
+    // WebGL; without one the drawn fallbacks stay and the command says so.
+    cs(['3d', 'stills'], { allowFail: true });
   }
 });
 

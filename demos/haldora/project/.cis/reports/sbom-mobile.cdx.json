@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-11-13T00:11:43.332Z",
+    "timestamp": "2026-11-13T12:53:26.455Z",
     "component": {
       "type": "application",
       "name": "haldora-launch/mobile"
@@ -3644,8 +3644,8 @@
     {
       "type": "library",
       "name": "electron-to-chromium",
-      "version": "1.5.483",
-      "purl": "pkg:npm/electron-to-chromium@1.5.483",
+      "version": "1.5.484",
+      "purl": "pkg:npm/electron-to-chromium@1.5.484",
       "licenses": [
         {
           "license": {

@@ -61,7 +61,7 @@ async function testBrowserTarget(root, id, flags, dna) {
   const evidenceDir = path.join(paths(root).reports, 'qa', id);
   fs.rmSync(evidenceDir, { recursive: true, force: true });
   try {
-    const options = id === 'scene' ? { scrollMotion: false, fullPage: false, settleMs: 2200 } : id === 'mobile' ? { scrollMotion: false, fullPage: false, settleMs: 1500, performance: false } : id === 'web' ? { settleMs: 1200 } : {};
+    const options = id === 'scene' ? { scrollMotion: false, fullPage: false, settleMs: 2200 } : id === 'mobile' ? { scrollMotion: false, fullPage: false, settleMs: 1500, performance: false, viewports: ['mobile', 'tablet'] } : id === 'web' ? { settleMs: 1200 } : { fullPage: 'tall' };
     // A deliverable may declare a budget exception, but only together with its reason.
     const budgetFile = path.join(root, t.dir, 'qa', 'budgets.json');
     let budgets = null;
@@ -69,6 +69,8 @@ async function testBrowserTarget(root, id, flags, dna) {
       budgets = readJson(budgetFile);
       if (!budgets.rationale || budgets.rationale.length < 40) throw new CisError('E_BUDGET_EXCEPTION', `${path.relative(root, budgetFile)} must explain its exception in a "rationale" of at least 40 characters.`);
     }
+    // The Experience DNA defines a dark scheme, so every deliverable is expected to respond to it.
+    options.expectDark = Boolean(dna.color?.semantic?.dark);
     const res = await runBrowserSuite({ baseUrl: server.url, budgets, pages: pagesFor(id, root), evidenceDir, baselineDir: path.join(root, t.dir, 'qa', 'baselines'), flowsFile: path.join(root, t.dir, 'qa', 'flows.mjs'), minTargetPx: dna.accessibility.minTargetPx, updateBaselines: Boolean(flags['update-baselines']), options });
     for (const c of res) {
       if (c.evidence) c.evidence = c.evidence.map((e) => path.relative(root, e));

@@ -24,7 +24,11 @@ export function arcPosition(time) {
   return { p: ((hours + 24 - 20) % 24) / 9, night: true };
 }
 
-export function arcPoint(p, { cx = 200, cy = 250, rx = 170, ry = 190 } = {}) {
+// The story arc uses the same construction as the illustrations (horizon at 66% of the
+// height, radii 40% of the width and 50% of the height), so the sun meets the painted horizon.
+export const STORY_ARC = { cx: 200, cy: 198, rx: 160, ry: 150 };
+
+export function arcPoint(p, { cx, cy, rx, ry } = STORY_ARC) {
   const a = Math.PI * (1 - p);
   return { x: cx + rx * Math.cos(a), y: cy - ry * Math.sin(a) };
 }
@@ -46,8 +50,8 @@ export function renderHead({ content, locale, base, dna }) {
     <link rel="apple-touch-icon" href="${base}brand/apple-touch-icon.png" />
     ${others.map((l) => `<link rel="alternate" hreflang="${esc(l)}" href="${url(l)}" vite-ignore />`).join('\n    ')}
     <link rel="alternate" hreflang="${esc(locale)}" href="${url(locale)}" vite-ignore />
-    <link rel="preload" as="image" href="${base}assets/hero-sky.avif" type="image/avif" media="(min-width: 900px)" fetchpriority="high" />
-    <link rel="preload" as="image" href="${base}assets/hero-mobile.avif" type="image/avif" media="(max-width: 899px)" fetchpriority="high" />`;
+    <link rel="preload" as="image" href="${base}assets/hero-sky.avif" type="image/avif" media="(min-width: 600px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="${base}assets/hero-mobile.avif" type="image/avif" media="(max-width: 599px)" fetchpriority="high" />`;
 }
 
 function header({ c, content, locale, base, dna, icons }) {
@@ -72,18 +76,27 @@ function header({ c, content, locale, base, dna, icons }) {
 </header>`;
 }
 
-function hero({ c, base }) {
+function hero({ c, base, has }) {
   const h = c.hero;
-  const plane = (id, depth) => `<img class="plane" data-depth="${depth}" src="${base}assets/${id}.webp" alt="" width="2400" height="1500" loading="lazy" decoding="async" />`;
-  return `<section class="hero" id="top" data-hero>
+  const plane = (id, depth, cls = '') => `<img class="plane${cls ? ` ${cls}` : ''}" data-depth="${depth}" src="${base}assets/${id}.webp" alt="" width="2400" height="1500" loading="lazy" decoding="async" />`;
+  // With separate track and sun planes, only the track gives way to the copy; otherwise the whole arc plane does.
+  const arcPlanes = (prefix) => (has(`assets/${prefix}-track.webp`) && has(`assets/${prefix}-sun.webp`) ? plane(`${prefix}-track`, 0.1, 'track') + plane(`${prefix}-sun`, 0.1) : plane(`${prefix}-arc`, 0.1, 'track'));
+  // One scene per colour scheme: daylight for light, the same horizon at night for dark.
+  // Only the scene that is displayed is fetched (the other is lazy and not rendered).
+  const scene = (prefix, cls, eager) => `<div class="hero-scene ${cls}">
+      <picture>
+        <source media="(min-width: 600px)" type="image/avif" srcset="${base}assets/${prefix}-sky.avif" />
+        <source media="(min-width: 600px)" type="image/webp" srcset="${base}assets/${prefix}-sky.webp" />
+        <source type="image/avif" srcset="${base}assets/${prefix}-mobile.avif" />
+        <img class="plane base" data-depth="0.04" src="${base}assets/${prefix}-mobile.webp" alt="" width="1080" height="1440" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" />
+      </picture>
+      <div class="planes">${arcPlanes(prefix)}${plane(`${prefix}-far`, 0.18)}${plane(`${prefix}-mid`, 0.3)}${plane(`${prefix}-near`, 0.46)}</div>
+    </div>`;
+  const night = has('assets/hero-night-sky.webp') && has('assets/hero-night-mobile.webp');
+  return `<section class="hero${night ? ' has-night' : ''}" id="top" data-hero>
   <div class="hero-art" aria-hidden="true">
-    <picture>
-      <source media="(min-width: 900px)" type="image/avif" srcset="${base}assets/hero-sky.avif" />
-      <source media="(min-width: 900px)" type="image/webp" srcset="${base}assets/hero-sky.webp" />
-      <source type="image/avif" srcset="${base}assets/hero-mobile.avif" />
-      <img class="plane base" data-depth="0.04" src="${base}assets/hero-mobile.webp" alt="" width="1080" height="1440" fetchpriority="high" decoding="async" />
-    </picture>
-    <div class="planes">${plane('hero-arc', 0.1)}${plane('hero-far', 0.18)}${plane('hero-mid', 0.3)}${plane('hero-near', 0.46)}</div>
+    ${scene('hero', night ? 'on-light' : '', true)}
+    ${night ? scene('hero-night', 'on-dark', false) : ''}
   </div>
   <div class="wrap hero-copy">
     <p class="eyebrow" style="--i:0">${esc(h.eyebrow)}</p>
@@ -98,8 +111,13 @@ function hero({ c, base }) {
 </section>`;
 }
 
-function story({ c, base, locale }) {
+function story({ c, base, locale, has }) {
   const s = c.story;
+  // Layered frames (sky, then the scroll-driven sun, then the hills) when the project has them.
+  // Otherwise the composed illustrations, which carry their own painted sun, are shown as they are.
+  const layered = s.chapters.every((ch) => has(`assets/story-${ch.id}-sky.webp`) && has(`assets/story-${ch.id}-ground.webp`));
+  const tone = (time) => { const hr = Number(String(time).split(':')[0]); return hr >= 9 && hr < 16 ? 'day' : 'low'; };
+  const layer = (ch, i, kind) => `<img class="frame${i === 0 ? ' is-on' : ''}" src="${base}assets/story-${esc(ch.id)}-${kind}.webp" alt="" width="1600" height="1200" ${i > 0 ? 'loading="lazy"' : ''} decoding="async" />`;
   const nf = new Intl.NumberFormat(locale === 'ar' ? 'ar-u-nu-latn' : locale, { maximumFractionDigits: 1 });
   const img = (ch, cls, lazy = true) => `<img class="${cls}" src="${base}assets/${esc(ch.image || `story-${ch.id}`)}.webp" alt="" width="1600" height="1200" ${lazy ? 'loading="lazy"' : ''} decoding="async" />`;
   const first = arcPosition(s.chapters[0].time);
@@ -108,20 +126,24 @@ function story({ c, base, locale }) {
   <div class="wrap">
     <header class="section-head reveal"><h2 id="story-title">${esc(s.title)}</h2><p class="lede">${esc(s.intro)}</p></header>
     <div class="story-grid">
-      <div class="story-visual" aria-hidden="true" data-story-visual>
-        <div class="story-frames">${s.chapters.map((ch, i) => img(ch, `frame${i === 0 ? ' is-on' : ''}`, i > 0)).join('')}</div>
-        <svg class="story-arc" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
-          <path class="arc-track" d="M30 250A170 190 0 0 1 370 250" />
-          <path class="arc-ground" d="M14 250H386" />
-          <g data-sun transform="translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})"><circle class="sun-halo" r="22" /><circle class="sun-core" r="11" /></g>
+      <div class="story-visual" aria-hidden="true" data-story-visual data-tone="${tone(s.chapters[0].time)}">
+        ${
+          layered
+            ? `<div class="story-frames" data-frames>${s.chapters.map((ch, i) => layer(ch, i, 'sky')).join('')}</div>
+        <svg class="story-arc" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+          <path class="arc-track" d="M${STORY_ARC.cx - STORY_ARC.rx} ${STORY_ARC.cy}A${STORY_ARC.rx} ${STORY_ARC.ry} 0 0 1 ${STORY_ARC.cx + STORY_ARC.rx} ${STORY_ARC.cy}" />
+          <g data-sun data-night="${first.night}" transform="translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})"><circle class="sun-halo" r="27" /><circle class="sun-core" r="14" /><path class="moon" d="M4 -10.2A11 11 0 1 0 10.2 4A8.5 8.5 0 0 1 4 -10.2Z" /></g>
         </svg>
+        <div class="story-frames" data-frames>${s.chapters.map((ch, i) => layer(ch, i, 'ground')).join('')}</div>`
+            : `<div class="story-frames" data-frames>${s.chapters.map((ch, i) => img(ch, `frame${i === 0 ? ' is-on' : ''}`, i > 0)).join('')}</div>`
+        }
         <p class="story-clock" data-clock>${esc(s.chapters[0].time)}</p>
       </div>
       <ol class="chapters">
         ${s.chapters
           .map((ch, i) => {
             const pos = arcPosition(ch.time);
-            return `<li class="chapter${i === 0 ? ' is-active' : ''}" data-chapter data-p="${pos.p.toFixed(3)}" data-night="${pos.night}" data-time="${esc(ch.time)}">
+            return `<li class="chapter${i === 0 ? ' is-active' : ''}" data-chapter data-p="${pos.p.toFixed(3)}" data-night="${pos.night}" data-tone="${tone(ch.time)}" data-time="${esc(ch.time)}">
           <figure class="chapter-figure">${img(ch, 'chapter-img')}</figure>
           <p class="chapter-time"><time datetime="${esc(ch.time)}">${esc(ch.time)}</time></p>
           <h3>${esc(ch.title)}</h3>
@@ -155,9 +177,12 @@ function features({ c, base, icons }) {
 </section>`;
 }
 
-function product({ c, base, locale, dna, hasScene }) {
+function product({ c, base, locale, dna, hasScene, has }) {
   const p = c.product;
   const finish = dna.finishes[0];
+  const still = `scene/fallback/cell-${finish.id}`;
+  const darkStill = has(`${still}-dark.webp`);
+  const poster = (file, cls) => `<img class="scene-poster${cls}" src="${base}${esc(file)}" alt="${esc(p.fallbackAlt)}" width="900" height="900" loading="lazy" decoding="async" />`;
   return `<section class="product" id="cell" aria-labelledby="product-title" data-product>
   <div class="wrap product-grid">
     <div class="product-copy reveal">
@@ -166,7 +191,7 @@ function product({ c, base, locale, dna, hasScene }) {
       <dl class="specs">${p.specs.map((s) => `<div><dt>${esc(s.label)}</dt><dd>${esc(s.value)}</dd></div>`).join('')}</dl>
     </div>
     <div class="scene-frame" data-scene="${hasScene ? `${base}scene/index.html?embed=1&lang=${esc(locale)}` : ''}">
-      ${hasScene ? `<img class="scene-poster" src="${base}scene/fallback/cell-${esc(finish.id)}.webp" alt="${esc(p.fallbackAlt)}" width="900" height="900" loading="lazy" decoding="async" />` : ''}
+      ${hasScene ? poster(`${still}.webp`, darkStill ? ' on-light' : '') + (darkStill ? poster(`${still}-dark.webp`, ' on-dark') : '') : ''}
       ${p.hint && hasScene ? `<p class="scene-hint">${esc(p.hint)}</p>` : ''}
     </div>
   </div>
@@ -202,9 +227,10 @@ function contact({ c, base, icons }) {
 </section>`;
 }
 
-export function renderPage({ content, locale, base = '', dna, icons, hasScene = true }) {
+/** `has(file)` reports whether a file exists under public/, so optional artwork is only referenced when present. */
+export function renderPage({ content, locale, base = '', dna, icons, hasScene = true, has = () => false }) {
   const c = content.locales[locale];
-  const ctx = { c, content, locale, base, dna, icons, hasScene };
+  const ctx = { c, content, locale, base, dna, icons, hasScene, has };
   return `<a class="skip-link" href="#main">${esc(c.ui.skip)}</a>
 ${header(ctx)}
 <main id="main">

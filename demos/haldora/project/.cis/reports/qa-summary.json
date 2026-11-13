@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13T00:11:38.768Z",
+  "generatedAt": "2026-11-13T13:02:34.585Z",
   "environment": {
     "tool": "creative-studio 0.1.0",
-    "node": "v22.14.0",
+    "node": "v23.9.0",
     "platform": "darwin 22.6.0 x64",
     "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
     "browser": "Google Chrome"
@@ -25,30 +25,30 @@
           "id": "bundle:app",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 112.6KB gzip, CSS 5.3KB gzip, 69 files, 4.42MB on disk",
+          "summary": "JS 113.2KB gzip, CSS 5.5KB gzip, 89 files, 4.67MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 115320,
-            "cssGzipBytes": 5418,
-            "totalBytes": 4630876,
-            "files": 69,
+            "jsGzipBytes": 115953,
+            "cssGzipBytes": 5655,
+            "totalBytes": 4897696,
+            "files": 89,
             "biggest": [
               {
                 "file": "assets/campaign-story.png",
-                "bytes": 1594758
+                "bytes": 1580999
               },
               {
                 "file": "assets/campaign-square.png",
-                "bytes": 877854
+                "bytes": 865444
               },
               {
                 "file": "assets/campaign-wide.png",
-                "bytes": 442374
+                "bytes": 442150
               },
               {
-                "file": "assets/index-BXKk-mx3.js",
-                "bytes": 307885
+                "file": "assets/index-BPVP-hsJ.js",
+                "bytes": 310895
               },
               {
                 "file": "assets/app-store-feature.png",
@@ -87,13 +87,41 @@
           }
         },
         {
+          "id": "capture-complete:portal@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:portal@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/app/portal-mobile-dark.png"
           ]
         },
         {
@@ -133,11 +161,28 @@
           }
         },
         {
+          "id": "capture-complete:portal@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-tablet.png"
           ]
@@ -168,11 +213,28 @@
           }
         },
         {
+          "id": "capture-complete:portal@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-desktop.png"
           ]
@@ -181,7 +243,7 @@
           "id": "a11y-axe:portal:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (4)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (5)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -191,7 +253,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 4,
+                "nodes": 5,
                 "sample": [
                   {
                     "target": "text[x=\"28\"]",
@@ -215,7 +277,7 @@
           "id": "a11y-axe:portal:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (4)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (5)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -225,7 +287,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 4,
+                "nodes": 5,
                 "sample": [
                   {
                     "target": "text[x=\"28\"]",
@@ -244,6 +306,17 @@
             ],
             "passes": 29
           }
+        },
+        {
+          "id": "dark-scheme:portal@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/app/portal-desktop-dark.png"
+          ]
         },
         {
           "id": "keyboard:portal",
@@ -279,7 +352,7 @@
           "id": "scroll-motion:portal",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 55px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 110px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
@@ -289,7 +362,7 @@
             "over33": 0,
             "over50": 0,
             "cls": 0,
-            "scrolledPx": 55,
+            "scrolledPx": 110,
             "engine": null,
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -311,59 +384,55 @@
           "id": "web-vitals-lab:portal",
           "category": "performance",
           "status": "warn",
-          "summary": "Lab: LCP 1248ms, CLS 0.0004, TBT 363ms, first tap 320ms (median of 5). Over the default budget (TBT 363ms > 300ms) but within this deliverable's documented exception: Application shell: evaluating the React runtime and rendering the first screen takes 0.5 to 0.7 seconds of main-thread time under 4x CPU throttling on the reference machine (more in Arabic, which loads an extra typeface) and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Next step if field data shows slow first interactions: route-level code splitting and deferring the chart until after first paint.",
+          "summary": "Lab: LCP 1140ms, CLS 0.0004, TBT 273ms, first tap 232ms (median of 5); first scripted tap took 232ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
-            "lcpMs": 1248,
+            "lcpMs": 1140,
             "cls": 0.0004,
-            "tbtMs": 363,
-            "interactionMs": 320,
-            "domNodes": 221,
+            "tbtMs": 273,
+            "interactionMs": 232,
+            "domNodes": 224,
             "requests": 13,
             "runs": [
               {
-                "lcpMs": 1540,
+                "lcpMs": 1140,
                 "cls": 0.0004,
-                "tbtMs": 223,
-                "interactionMs": 320
+                "tbtMs": 310,
+                "interactionMs": 232
               },
               {
-                "lcpMs": 1088,
+                "lcpMs": 1008,
                 "cls": 0.0004,
-                "tbtMs": 273,
+                "tbtMs": 242,
+                "interactionMs": 224
+              },
+              {
+                "lcpMs": 1084,
+                "cls": 0.0004,
+                "tbtMs": 264,
                 "interactionMs": 248
               },
               {
-                "lcpMs": 1720,
+                "lcpMs": 1208,
                 "cls": 0.0004,
-                "tbtMs": 686,
-                "interactionMs": 424
+                "tbtMs": 273,
+                "interactionMs": 224
               },
               {
-                "lcpMs": 1248,
+                "lcpMs": 1176,
                 "cls": 0.0004,
-                "tbtMs": 563,
-                "interactionMs": 656
-              },
-              {
-                "lcpMs": 1244,
-                "cls": 0.0004,
-                "tbtMs": 363,
+                "tbtMs": 304,
                 "interactionMs": 240
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 3.35,
+            "hostLoadPerCore": 0.62,
             "blockingTimeRangeMs": [
-              223,
-              686
+              242,
+              310
             ],
-            "reliable": false,
-            "exception": {
-              "tbtMs": 750,
-              "rationale": "Application shell: evaluating the React runtime and rendering the first screen takes 0.5 to 0.7 seconds of main-thread time under 4x CPU throttling on the reference machine (more in Arabic, which loads an extra typeface) and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Next step if field data shows slow first interactions: route-level code splitting and deferring the chart until after first paint."
-            }
+            "reliable": true
           }
         },
         {
@@ -375,7 +444,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 15
           }
         },
         {
@@ -405,13 +474,41 @@
           }
         },
         {
+          "id": "capture-complete:portal-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal-ar@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-ar-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:portal-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/app/portal-ar-mobile-dark.png"
           ]
         },
         {
@@ -434,7 +531,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 15
           }
         },
         {
@@ -464,11 +561,28 @@
           }
         },
         {
+          "id": "capture-complete:portal-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal-ar@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-ar-tablet.png"
           ]
@@ -482,7 +596,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 13
+            "requests": 15
           }
         },
         {
@@ -512,11 +626,28 @@
           }
         },
         {
+          "id": "capture-complete:portal-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:portal-ar@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/app/portal-ar-desktop.png"
           ]
@@ -590,6 +721,17 @@
           }
         },
         {
+          "id": "dark-scheme:portal-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/app/portal-ar-desktop-dark.png"
+          ]
+        },
+        {
           "id": "keyboard:portal-ar",
           "category": "accessibility",
           "status": "pass",
@@ -623,17 +765,17 @@
           "id": "scroll-motion:portal-ar",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 69px: median frame 16.7ms, p95 16.8ms, 0 of 151 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 125px: median frame 16.7ms, p95 16.7ms, 0 of 151 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
             "samples": 151,
-            "medianMs": 16.699999999999818,
-            "p95Ms": 16.799999999999272,
+            "medianMs": 16.69999999999891,
+            "p95Ms": 16.700000000000728,
             "over33": 0,
             "over50": 0,
             "cls": 0,
-            "scrolledPx": 69,
+            "scrolledPx": 125,
             "engine": null,
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -655,60 +797,317 @@
           "id": "web-vitals-lab:portal-ar",
           "category": "performance",
           "status": "warn",
-          "summary": "Lab: LCP 1700ms, CLS 0.0007, TBT 515ms, first tap 384ms (median of 5). Over the default budget (TBT 515ms > 300ms) but within this deliverable's documented exception: Application shell: evaluating the React runtime and rendering the first screen takes 0.5 to 0.7 seconds of main-thread time under 4x CPU throttling on the reference machine (more in Arabic, which loads an extra typeface) and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Next step if field data shows slow first interactions: route-level code splitting and deferring the chart until after first paint.",
+          "summary": "Lab: LCP 1084ms, CLS 0.0006, TBT 289ms, first tap 248ms (median of 5); first scripted tap took 248ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
-            "lcpMs": 1700,
-            "cls": 0.0007,
-            "tbtMs": 515,
-            "interactionMs": 384,
-            "domNodes": 221,
-            "requests": 13,
+            "lcpMs": 1084,
+            "cls": 0.0006,
+            "tbtMs": 289,
+            "interactionMs": 248,
+            "domNodes": 224,
+            "requests": 15,
             "runs": [
               {
-                "lcpMs": 2072,
-                "cls": 0.0007,
-                "tbtMs": 777,
-                "interactionMs": 712
-              },
-              {
-                "lcpMs": 3064,
-                "cls": 0.0007,
-                "tbtMs": 760,
-                "interactionMs": 952
-              },
-              {
-                "lcpMs": 1700,
-                "cls": 0.0007,
-                "tbtMs": 515,
-                "interactionMs": 272
-              },
-              {
-                "lcpMs": 1516,
+                "lcpMs": 1236,
                 "cls": 0.0006,
-                "tbtMs": 391,
-                "interactionMs": 312
+                "tbtMs": 381,
+                "interactionMs": 248
               },
               {
-                "lcpMs": 1368,
-                "cls": 0.0007,
-                "tbtMs": 397,
-                "interactionMs": 384
+                "lcpMs": 1016,
+                "cls": 0.0006,
+                "tbtMs": 245,
+                "interactionMs": 240
+              },
+              {
+                "lcpMs": 1084,
+                "cls": 0.0006,
+                "tbtMs": 301,
+                "interactionMs": 256
+              },
+              {
+                "lcpMs": 992,
+                "cls": 0.0006,
+                "tbtMs": 235,
+                "interactionMs": 248
+              },
+              {
+                "lcpMs": 1100,
+                "cls": 0.0006,
+                "tbtMs": 289,
+                "interactionMs": 232
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 2.47,
+            "hostLoadPerCore": 0.5,
             "blockingTimeRangeMs": [
-              391,
-              777
+              235,
+              381
             ],
-            "reliable": false,
-            "exception": {
-              "tbtMs": 750,
-              "rationale": "Application shell: evaluating the React runtime and rendering the first screen takes 0.5 to 0.7 seconds of main-thread time under 4x CPU throttling on the reference machine (more in Arabic, which loads an extra typeface) and no measurable blocking unthrottled. Users are signed-in customers on repeat visits with a warm cache. Next step if field data shows slow first interactions: route-level code splitting and deferring the chart until after first paint."
-            }
+            "reliable": true
           }
+        },
+        {
+          "id": "layout:capture:portal-devices",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-devices",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-devices.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-history",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-history",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-history.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-settings",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-settings",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-settings.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-forecast",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-forecast",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-forecast.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-devices-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-devices-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-devices-mobile.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-history-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-history-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-history-mobile.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-settings-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-settings-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-settings-mobile.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-history-ar-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-history-ar-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-history-ar-mobile.png"
+          ]
+        },
+        {
+          "id": "layout:capture:portal-settings-ar-mobile-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:portal-settings-ar-mobile-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/app/portal-settings-ar-mobile-dark.png"
+          ]
         },
         {
           "id": "flow:navigation",
@@ -718,7 +1117,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2380
+            "ms": 2308
           }
         },
         {
@@ -729,7 +1128,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 5185
+            "ms": 5009
           }
         },
         {
@@ -740,7 +1139,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2715
+            "ms": 2210
           }
         },
         {
@@ -751,7 +1150,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1785
+            "ms": 1592
           }
         },
         {
@@ -762,7 +1161,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1684
+            "ms": 2005
           }
         },
         {
@@ -773,7 +1172,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 655
+            "ms": 1039
           }
         },
         {
@@ -784,7 +1183,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1014
+            "ms": 859
           }
         },
         {
@@ -795,7 +1194,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4130
+            "ms": 3977
           }
         },
         {
@@ -806,7 +1205,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 921
+            "ms": 1330
           }
         },
         {
@@ -817,7 +1216,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1413
+            "ms": 1370
           }
         },
         {
@@ -828,7 +1227,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1844
+            "ms": 2061
           }
         },
         {
@@ -839,7 +1238,40 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2076
+            "ms": 1914
+          }
+        },
+        {
+          "id": "flow:sun-above-cursor",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Chart: the sun stays directly above the time cursor, and the arc stands on sunrise and sunset: checked at x = 395, 508, 226",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 6864
+          }
+        },
+        {
+          "id": "flow:one-moment",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Today describes one moment: update time, figures and battery state agree, and the forecast is labelled: now 13:00; battery \"100%full\"",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 1382
+          }
+        },
+        {
+          "id": "flow:phone-display-settings",
+          "category": "functional",
+          "status": "pass",
+          "summary": "Phone: language and appearance are in Settings, and History fits the screen",
+          "severity": "critical",
+          "measurement": "lab",
+          "data": {
+            "ms": 2077
           }
         }
       ]
@@ -867,7 +1299,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "> cis-mobile-app@1.0.0 test\n> jest --ci\n\n\n\nTest Suites: 3 passed, 3 total\nTests:       19 passed, 19 total\nSnapshots:   0 total\nTime:        9.829 s\nRan all test suites."
+            "tail": "> cis-mobile-app@1.0.0 test\n> jest --ci\n\n\n\nTest Suites: 3 passed, 3 total\nTests:       19 passed, 19 total\nSnapshots:   0 total\nTime:        4.713 s\nRan all test suites."
           }
         },
         {
@@ -878,7 +1310,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "node_modules/expo-router/assets/react-navigation/elements/search-icon.png (7 variations | 592B)\nnode_modules/expo-router/assets/sitemap.png (465B)\nnode_modules/expo-router/assets/unmatched.png (4.8KB)\n\n› android bundles (1):\n_expo/static/js/android/entry-2bf723b2b2a869d83ec59584fd6e442b.hbc (4MB)\n\n› ios bundles (1):\n_expo/static/js/ios/entry-597a2958aaf9362b1abc7cc469696be2.hbc (4MB)\n\n› Files (1):\nmetadata.json (4.1KB)\n\nExported: dist-native"
+            "tail": "node_modules/expo-router/assets/react-navigation/elements/search-icon.png (7 variations | 592B)\nnode_modules/expo-router/assets/sitemap.png (465B)\nnode_modules/expo-router/assets/unmatched.png (4.8KB)\n\n› android bundles (1):\n_expo/static/js/android/entry-e463ce38cf7bc6a47cd2f7b24b97a1c6.hbc (4MB)\n\n› ios bundles (1):\n_expo/static/js/ios/entry-2d054fab7dec10e25a7eb853daff8cc0.hbc (4MB)\n\n› Files (1):\nmetadata.json (4.1KB)\n\nExported: dist-native"
           }
         },
         {
@@ -889,7 +1321,7 @@
           "severity": "critical",
           "measurement": "static",
           "data": {
-            "tail": "_expo/static/js/web/_layout-b5a6cd13b090dda02d52c72876b020fa.js (1.1KB)\n_expo/static/js/web/[id]-73306868d0ade382c31fc3c283e3e32c.js (1.7KB)\n_expo/static/js/web/devices-8ebb7a18d5b22e961c78804717757310.js (2KB)\n_expo/static/js/web/entry-8438e0f87c2bb01e845b6938b95ecf13.js (1.1MB)\n_expo/static/js/web/index-60c047d34f7f8a209469513743ec44f2.js (5.7KB)\n_expo/static/js/web/onboarding-b78607604a1057e778b5153a7318ae9c.js (5KB)\n_expo/static/js/web/settings-863fe49f5087d185400e5a42aab7891e.js (7.2KB)\n\n› Files (3):\nfavicon.ico (15KB)\nindex.html (1.4KB)\nmetadata.json (49B)\n\nExported: dist-web"
+            "tail": "_expo/static/js/web/_layout-dd966c67d759f00ff26aca46f2e2b6c8.js (1.2KB)\n_expo/static/js/web/[id]-d4e2a14132fd7defb3f6a6832ae2ae93.js (1.7KB)\n_expo/static/js/web/devices-1feb8b0f8f92ae56493af7f7c8f79bd2.js (2.1KB)\n_expo/static/js/web/entry-0dc35d250c21d138dafe466544aa43b1.js (1.1MB)\n_expo/static/js/web/index-60c047d34f7f8a209469513743ec44f2.js (5.7KB)\n_expo/static/js/web/onboarding-b78607604a1057e778b5153a7318ae9c.js (5KB)\n_expo/static/js/web/settings-23bd73faa004325499f11ec5f9a5e727.js (7KB)\n\n› Files (3):\nfavicon.ico (15KB)\nindex.html (1.4KB)\nmetadata.json (49B)\n\nExported: dist-web"
           }
         },
         {
@@ -905,8 +1337,8 @@
                 "platform": "ios",
                 "files": [
                   {
-                    "file": "entry-597a2958aaf9362b1abc7cc469696be2.hbc",
-                    "bytes": 4035365
+                    "file": "entry-2d054fab7dec10e25a7eb853daff8cc0.hbc",
+                    "bytes": 4036807
                   }
                 ]
               },
@@ -914,8 +1346,8 @@
                 "platform": "android",
                 "files": [
                   {
-                    "file": "entry-2bf723b2b2a869d83ec59584fd6e442b.hbc",
-                    "bytes": 4025273
+                    "file": "entry-e463ce38cf7bc6a47cd2f7b24b97a1c6.hbc",
+                    "bytes": 4026685
                   }
                 ]
               }
@@ -980,11 +1412,28 @@
         {
           "id": "visual-regression:app-web@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/mobile/app-web-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:app-web@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/mobile/app-web-mobile-dark.png"
           ]
         },
         {
@@ -1026,63 +1475,21 @@
         {
           "id": "visual-regression:app-web@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/mobile/app-web-tablet.png"
           ]
         },
         {
-          "id": "load:app-web@desktop",
-          "category": "functional",
-          "status": "pass",
-          "summary": "No console errors, exceptions, failed requests or broken images",
-          "severity": "critical",
-          "measurement": "lab",
-          "data": {
-            "problems": [],
-            "requests": 13
-          }
-        },
-        {
-          "id": "layout:app-web@desktop",
-          "category": "visual",
-          "status": "pass",
-          "summary": "No horizontal overflow or clipped text",
-          "severity": "major",
-          "measurement": "lab",
-          "data": {
-            "wide": 0,
-            "offenders": [],
-            "clipped": []
-          }
-        },
-        {
-          "id": "visual-regression:app-web@desktop",
-          "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
-          "measurement": "lab",
-          "evidence": [
-            ".cis/reports/qa/mobile/app-web-desktop.png"
-          ]
-        },
-        {
           "id": "a11y-axe:app-web:light",
-          "category": "accessibility",
-          "status": "pass",
-          "summary": "No WCAG 2.2 A/AA violations detectable by axe-core",
-          "severity": "minor",
-          "measurement": "lab",
-          "data": {
-            "violations": [],
-            "incomplete": [],
-            "passes": 19
-          }
-        },
-        {
-          "id": "a11y-axe:app-web:dark",
           "category": "accessibility",
           "status": "pass",
           "summary": "No WCAG 2.2 A/AA violations detectable by axe-core",
@@ -1126,6 +1533,424 @@
           }
         },
         {
+          "id": "layout:capture:app-today",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-today",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-today.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-today-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-today-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-today-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-today-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-today-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-today-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-today-evening",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-today-evening",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-today-evening.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-devices",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-devices",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-devices.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-devices-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-devices-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-devices-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-devices-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-devices-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-devices-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-device-detail",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-device-detail",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-device-detail.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-device-detail-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-device-detail-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-device-detail-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-device-detail-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-device-detail-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-device-detail-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-settings",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-settings",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-settings.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-settings-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-settings-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-settings-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-settings-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-settings-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.048% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.00048000972171588285,
+            "regions": [
+              {
+                "row": 2,
+                "col": 5,
+                "changed": 0.030419715055833654
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-settings-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:app-settings-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:app-settings-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.048% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.00048000972171588285,
+            "regions": [
+              {
+                "row": 2,
+                "col": 5,
+                "changed": 0.030419715055833654
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/mobile/app-settings-ar-dark.png"
+          ]
+        },
+        {
           "id": "flow:onboarding-swipe",
           "category": "motion",
           "status": "pass",
@@ -1133,7 +1958,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2540
+            "ms": 1779
           }
         },
         {
@@ -1144,7 +1969,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2697
+            "ms": 2230
           }
         },
         {
@@ -1155,7 +1980,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4658
+            "ms": 3958
           }
         },
         {
@@ -1166,7 +1991,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2300
+            "ms": 2138
           }
         },
         {
@@ -1177,7 +2002,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3095
+            "ms": 3147
           }
         },
         {
@@ -1188,7 +2013,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2788
+            "ms": 3032
           }
         },
         {
@@ -1199,7 +2024,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2406
+            "ms": 2499
           }
         }
       ]
@@ -1212,7 +2037,7 @@
           "id": "ledger-integrity",
           "category": "delivery",
           "status": "pass",
-          "summary": "Event ledger hash chain intact (124 events)",
+          "summary": "Event ledger hash chain intact (275 events)",
           "severity": "critical",
           "measurement": "static"
         },
@@ -1281,7 +2106,7 @@
           "id": "asset-registry",
           "category": "delivery",
           "status": "pass",
-          "summary": "24 assets, 112 files: every file exists and matches its registered hash",
+          "summary": "42 assets, 135 files: every file exists and matches its registered hash",
           "severity": "major",
           "measurement": "static",
           "data": {
@@ -1306,26 +2131,26 @@
           "id": "bundle:scene",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 167.5KB gzip, CSS 2.6KB gzip, 22 files, 1.11MB on disk",
+          "summary": "JS 167.0KB gzip, CSS 2.7KB gzip, 25 files, 1.13MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 171567,
-            "cssGzipBytes": 2673,
-            "totalBytes": 1166559,
-            "files": 22,
+            "jsGzipBytes": 171031,
+            "cssGzipBytes": 2743,
+            "totalBytes": 1188311,
+            "files": 25,
             "biggest": [
               {
-                "file": "assets/scene-DdLxwdzM.js",
-                "bytes": 670671
+                "file": "assets/scene-XkGCSQWt.js",
+                "bytes": 671546
               },
               {
                 "file": "models/cell.source.glb",
-                "bytes": 205248
+                "bytes": 198088
               },
               {
                 "file": "models/cell.glb",
-                "bytes": 57180
+                "bytes": 55224
               },
               {
                 "file": "assets/fraunces-latin-600-normal-DL5QCzvS.woff",
@@ -1370,11 +2195,28 @@
         {
           "id": "visual-regression:scene@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:scene@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/scene/scene-mobile-dark.png"
           ]
         },
         {
@@ -1416,9 +2258,15 @@
         {
           "id": "visual-regression:scene@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-tablet.png"
           ]
@@ -1451,9 +2299,15 @@
         {
           "id": "visual-regression:scene@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-desktop.png"
           ]
@@ -1511,6 +2365,17 @@
           }
         },
         {
+          "id": "dark-scheme:scene@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/scene/scene-desktop-dark.png"
+          ]
+        },
+        {
           "id": "keyboard:scene",
           "category": "accessibility",
           "status": "pass",
@@ -1547,55 +2412,55 @@
           "id": "web-vitals-lab:scene",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 416ms, CLS 0, TBT 254ms, first tap 24ms (median of 5)",
+          "summary": "Lab: LCP 336ms, CLS 0, TBT 195ms, first tap 24ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 416,
+            "lcpMs": 336,
             "cls": 0,
-            "tbtMs": 254,
+            "tbtMs": 195,
             "interactionMs": 24,
             "domNodes": 38,
             "requests": 9,
             "runs": [
               {
-                "lcpMs": 416,
+                "lcpMs": 384,
                 "cls": 0,
-                "tbtMs": 223,
-                "interactionMs": 24
+                "tbtMs": 228,
+                "interactionMs": 16
               },
               {
-                "lcpMs": 472,
-                "cls": 0,
-                "tbtMs": 705,
-                "interactionMs": 24
-              },
-              {
-                "lcpMs": 380,
-                "cls": 0,
-                "tbtMs": 254,
-                "interactionMs": 24
-              },
-              {
-                "lcpMs": 364,
+                "lcpMs": 352,
                 "cls": 0,
                 "tbtMs": 216,
-                "interactionMs": 32
+                "interactionMs": 24
               },
               {
-                "lcpMs": 1572,
+                "lcpMs": 320,
                 "cls": 0,
-                "tbtMs": 841,
-                "interactionMs": 48
+                "tbtMs": 137,
+                "interactionMs": 24
+              },
+              {
+                "lcpMs": 304,
+                "cls": 0,
+                "tbtMs": 175,
+                "interactionMs": 24
+              },
+              {
+                "lcpMs": 336,
+                "cls": 0,
+                "tbtMs": 195,
+                "interactionMs": 16
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 1.21,
+            "hostLoadPerCore": 0.46,
             "blockingTimeRangeMs": [
-              216,
-              841
+              137,
+              228
             ],
-            "reliable": false
+            "reliable": true
           }
         },
         {
@@ -1626,11 +2491,28 @@
         {
           "id": "visual-regression:scene-still@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-still-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:scene-still@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-mobile-dark.png"
           ]
         },
         {
@@ -1672,9 +2554,15 @@
         {
           "id": "visual-regression:scene-still@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-still-tablet.png"
           ]
@@ -1707,9 +2595,15 @@
         {
           "id": "visual-regression:scene-still@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/scene/scene-still-desktop.png"
           ]
@@ -1767,6 +2661,17 @@
           }
         },
         {
+          "id": "dark-scheme:scene-still@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-desktop-dark.png"
+          ]
+        },
+        {
           "id": "keyboard:scene-still",
           "category": "accessibility",
           "status": "pass",
@@ -1800,66 +2705,240 @@
           "id": "web-vitals-lab:scene-still",
           "category": "performance",
           "status": "pass",
-          "summary": "Lab: LCP 568ms, CLS 0, TBT 3ms (median of 5)",
+          "summary": "Lab: LCP 260ms, CLS 0, TBT 0ms (median of 5)",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 568,
+            "lcpMs": 260,
             "cls": 0,
-            "tbtMs": 3,
+            "tbtMs": 0,
             "interactionMs": null,
             "domNodes": 38,
             "requests": 7,
             "runs": [
               {
-                "lcpMs": 324,
+                "lcpMs": 332,
                 "cls": 0,
                 "tbtMs": 0,
                 "interactionMs": null
               },
               {
-                "lcpMs": 520,
-                "cls": 0,
-                "tbtMs": 3,
-                "interactionMs": null
-              },
-              {
-                "lcpMs": 988,
-                "cls": 0,
-                "tbtMs": 4,
-                "interactionMs": null
-              },
-              {
-                "lcpMs": 584,
+                "lcpMs": 264,
                 "cls": 0,
                 "tbtMs": 0,
                 "interactionMs": null
               },
               {
-                "lcpMs": 568,
+                "lcpMs": 232,
                 "cls": 0,
-                "tbtMs": 29,
+                "tbtMs": 0,
+                "interactionMs": null
+              },
+              {
+                "lcpMs": 260,
+                "cls": 0,
+                "tbtMs": 0,
+                "interactionMs": null
+              },
+              {
+                "lcpMs": 232,
+                "cls": 0,
+                "tbtMs": 0,
                 "interactionMs": null
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 1.22,
+            "hostLoadPerCore": 0.45,
             "blockingTimeRangeMs": [
               0,
-              29
+              0
             ],
-            "reliable": false
+            "reliable": true
           }
+        },
+        {
+          "id": "layout:capture:scene-finish-2",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-finish-2",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-finish-2.png"
+          ]
+        },
+        {
+          "id": "layout:capture:scene-finish-3",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-finish-3",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-finish-3.png"
+          ]
+        },
+        {
+          "id": "layout:capture:scene-evening",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-evening",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-evening.png"
+          ]
+        },
+        {
+          "id": "layout:capture:scene-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:scene-ar-mobile-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-ar-mobile-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-ar-mobile-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:scene-still-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:scene-still-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/scene/scene-still-dark.png"
+          ]
         },
         {
           "id": "flow:renders-webgl",
           "category": "functional",
           "status": "pass",
-          "summary": "The model loads and renders with WebGL: 7982 triangles in 8 draw calls; 25 distinct tones read back from the canvas",
+          "summary": "The model loads and renders with WebGL: 7664 triangles in 9 draw calls; 20 distinct tones read back from the canvas",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4519
+            "ms": 3972
           }
         },
         {
@@ -1870,7 +2949,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3368
+            "ms": 2836
           }
         },
         {
@@ -1881,7 +2960,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2503
+            "ms": 2201
           }
         },
         {
@@ -1892,7 +2971,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1224
+            "ms": 754
           }
         },
         {
@@ -1903,7 +2982,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 2193
+            "ms": 1674
           }
         },
         {
@@ -1914,7 +2993,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1704
+            "ms": 1584
           }
         },
         {
@@ -1925,7 +3004,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1528
+            "ms": 1482
           }
         },
         {
@@ -1936,7 +3015,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 696
+            "ms": 732
           }
         },
         {
@@ -1947,18 +3026,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4425
+            "ms": 4411
           }
         },
         {
           "id": "flow:resource-cleanup",
           "category": "performance",
           "status": "pass",
-          "summary": "Disposing the scene releases GPU geometry and textures: 8 geometries and 2 textures released",
+          "summary": "Disposing the scene releases GPU geometry and textures: 9 geometries and 2 textures released",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1870
+            "ms": 1453
           }
         }
       ]
@@ -1971,7 +3050,7 @@
           "id": "secrets",
           "category": "security",
           "status": "pass",
-          "summary": "No secrets found in 202 text files",
+          "summary": "No secrets found in 201 text files",
           "severity": "critical",
           "measurement": "static",
           "data": {
@@ -2241,7 +3320,7 @@
           "id": "ledger-integrity",
           "category": "security",
           "status": "pass",
-          "summary": "Audit trail intact: 125 hash-chained events",
+          "summary": "Audit trail intact: 232 hash-chained events",
           "severity": "critical",
           "measurement": "static"
         },
@@ -2249,7 +3328,7 @@
           "id": "asset-rights",
           "category": "delivery",
           "status": "pass",
-          "summary": "All 24 registered assets have recorded origin and rights",
+          "summary": "All 42 registered assets have recorded origin and rights",
           "severity": "critical",
           "measurement": "static"
         },
@@ -2278,38 +3357,38 @@
           "id": "bundle:web",
           "category": "performance",
           "status": "pass",
-          "summary": "JS 48.0KB gzip, CSS 5.4KB gzip, 72 files, 4.43MB on disk",
+          "summary": "JS 48.7KB gzip, CSS 5.7KB gzip, 95 files, 4.55MB on disk",
           "severity": "minor",
           "measurement": "static",
           "data": {
-            "jsGzipBytes": 49195,
-            "cssGzipBytes": 5535,
-            "totalBytes": 4647244,
-            "files": 72,
+            "jsGzipBytes": 49914,
+            "cssGzipBytes": 5870,
+            "totalBytes": 4772582,
+            "files": 95,
             "biggest": [
               {
                 "file": "assets/campaign-story.png",
-                "bytes": 1594758
+                "bytes": 1580999
               },
               {
                 "file": "assets/campaign-square.png",
-                "bytes": 877854
+                "bytes": 865444
               },
               {
                 "file": "assets/campaign-wide.png",
-                "bytes": 442374
+                "bytes": 442150
               },
               {
                 "file": "assets/app-store-feature.png",
                 "bytes": 260411
               },
               {
-                "file": "assets/model-cell.glb",
-                "bytes": 205248
-              },
-              {
                 "file": "assets/gsap-C2W12wA9.js",
                 "bytes": 70358
+              },
+              {
+                "file": "assets/feature-contour.webp",
+                "bytes": 62966
               }
             ]
           }
@@ -2323,7 +3402,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 17
+            "requests": 18
           }
         },
         {
@@ -2340,13 +3419,41 @@
           }
         },
         {
+          "id": "capture-complete:home@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:home@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/web/home-mobile-dark.png"
           ]
         },
         {
@@ -2369,7 +3476,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 17
+            "requests": 24
           }
         },
         {
@@ -2386,11 +3493,28 @@
           }
         },
         {
+          "id": "capture-complete:home@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-tablet.png"
           ]
@@ -2404,7 +3528,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 25
+            "requests": 30
           }
         },
         {
@@ -2421,11 +3545,28 @@
           }
         },
         {
+          "id": "capture-complete:home@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-desktop.png"
           ]
@@ -2434,7 +3575,7 @@
           "id": "a11y-axe:home:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (12)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (27)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -2444,7 +3585,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 12,
+                "nodes": 27,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -2461,14 +3602,14 @@
                 ]
               }
             ],
-            "passes": 29
+            "passes": 31
           }
         },
         {
           "id": "a11y-axe:home:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (12)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (27)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -2478,7 +3619,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 12,
+                "nodes": 27,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -2495,19 +3636,30 @@
                 ]
               }
             ],
-            "passes": 29
+            "passes": 31
           }
+        },
+        {
+          "id": "dark-scheme:home@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/web/home-desktop-dark.png"
+          ]
         },
         {
           "id": "keyboard:home",
           "category": "accessibility",
           "status": "pass",
-          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "summary": "11 tab stops reached in order, each with a visible focus indicator and none obscured",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "expected": 14,
-            "reached": 14,
+            "expected": 15,
+            "reached": 11,
             "order": [
               "a[#main]:Skip to content",
               "a[#top]:",
@@ -2519,10 +3671,7 @@
               "button:Switch between light and",
               "a[#day]:See a day with Haldora",
               "a[#cell]:Meet the Cell",
-              "input#f-name:name",
-              "input#f-email:email",
-              "select#f-home:House with solar panelsH",
-              "button:Send my question"
+              "iframe:"
             ],
             "noIndicator": [],
             "obscured": []
@@ -2532,21 +3681,21 @@
           "id": "scroll-motion:home",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 1 of 454 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 6967px: median frame 16.7ms, p95 16.8ms, 1 of 459 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "samples": 454,
-            "medianMs": 16.69999999999891,
-            "p95Ms": 16.799999999999272,
+            "samples": 459,
+            "medianMs": 16.69999999999709,
+            "p95Ms": 16.799999999995634,
             "over33": 1,
-            "over50": 1,
+            "over50": 0,
             "cls": 0,
             "scrolledPx": 6967,
             "engine": {
               "engine": "gsap",
               "version": "3.15.1",
-              "triggers": 12
+              "triggers": 15
             },
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -2567,56 +3716,56 @@
         {
           "id": "web-vitals-lab:home",
           "category": "performance",
-          "status": "warn",
-          "summary": "Lab figures unreliable: host load was 3.07 per core and blocking time ranged 137 to 2273ms across five identical loads. Median LCP 952ms, CLS 0, TBT 316ms, first tap 272ms (median of 5) would be over budget (TBT 316ms > 300ms). Re-run on an idle machine before drawing a conclusion.",
-          "severity": "minor",
+          "status": "pass",
+          "summary": "Lab: LCP 484ms, CLS 0, TBT 196ms, first tap 192ms (median of 5)",
+          "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 952,
+            "lcpMs": 484,
             "cls": 0,
-            "tbtMs": 316,
-            "interactionMs": 272,
-            "domNodes": 279,
-            "requests": 17,
+            "tbtMs": 196,
+            "interactionMs": 192,
+            "domNodes": 299,
+            "requests": 18,
             "runs": [
               {
-                "lcpMs": 1340,
+                "lcpMs": 568,
                 "cls": 0,
-                "tbtMs": 316,
-                "interactionMs": 272
-              },
-              {
-                "lcpMs": 952,
-                "cls": 0,
-                "tbtMs": 137,
+                "tbtMs": 167,
                 "interactionMs": 208
               },
               {
-                "lcpMs": 644,
+                "lcpMs": 484,
                 "cls": 0,
-                "tbtMs": 162,
-                "interactionMs": 312
+                "tbtMs": 280,
+                "interactionMs": 176
               },
               {
-                "lcpMs": 648,
+                "lcpMs": 356,
                 "cls": 0,
-                "tbtMs": 597,
-                "interactionMs": 608
+                "tbtMs": 139,
+                "interactionMs": 192
               },
               {
-                "lcpMs": 1908,
+                "lcpMs": 428,
                 "cls": 0,
-                "tbtMs": 2273,
-                "interactionMs": 272
+                "tbtMs": 196,
+                "interactionMs": 192
+              },
+              {
+                "lcpMs": 576,
+                "cls": 0,
+                "tbtMs": 236,
+                "interactionMs": 192
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 3.07,
+            "hostLoadPerCore": 0.43,
             "blockingTimeRangeMs": [
-              137,
-              2273
+              139,
+              280
             ],
-            "reliable": false
+            "reliable": true
           }
         },
         {
@@ -2628,7 +3777,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 16
+            "requests": 20
           }
         },
         {
@@ -2658,13 +3807,41 @@
           }
         },
         {
+          "id": "capture-complete:home-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home-ar@mobile",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-ar-mobile.png"
+          ]
+        },
+        {
+          "id": "dark-scheme:home-ar@mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/web/home-ar-mobile-dark.png"
           ]
         },
         {
@@ -2687,7 +3864,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 16
+            "requests": 25
           }
         },
         {
@@ -2717,11 +3894,28 @@
           }
         },
         {
+          "id": "capture-complete:home-ar@tablet",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home-ar@tablet",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-ar-tablet.png"
           ]
@@ -2735,7 +3929,7 @@
           "measurement": "lab",
           "data": {
             "problems": [],
-            "requests": 24
+            "requests": 31
           }
         },
         {
@@ -2765,11 +3959,28 @@
           }
         },
         {
+          "id": "capture-complete:home-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Every text element was visible when the page was captured",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "hidden": []
+          }
+        },
+        {
           "id": "visual-regression:home-ar@desktop",
           "category": "visual",
-          "status": "skipped",
-          "summary": "Baseline updated",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
           "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
           "evidence": [
             ".cis/reports/qa/web/home-ar-desktop.png"
           ]
@@ -2778,7 +3989,7 @@
           "id": "a11y-axe:home-ar:light",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (4)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (10)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -2788,7 +3999,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 4,
+                "nodes": 10,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -2805,14 +4016,14 @@
                 ]
               }
             ],
-            "passes": 29
+            "passes": 31
           }
         },
         {
           "id": "a11y-axe:home-ar:dark",
           "category": "accessibility",
           "status": "warn",
-          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (4)",
+          "summary": "1 rule(s) axe could not decide and a person must check: color-contrast (10)",
           "severity": "minor",
           "measurement": "lab",
           "data": {
@@ -2822,7 +4033,7 @@
                 "id": "color-contrast",
                 "impact": "serious",
                 "help": "Elements must meet minimum color contrast ratio thresholds",
-                "nodes": 4,
+                "nodes": 10,
                 "sample": [
                   {
                     "target": "li:nth-child(1) > a[href$=\"#day\"]",
@@ -2839,19 +4050,30 @@
                 ]
               }
             ],
-            "passes": 29
+            "passes": 31
           }
+        },
+        {
+          "id": "dark-scheme:home-ar@desktop",
+          "category": "visual",
+          "status": "pass",
+          "summary": "The page renders differently in the dark scheme",
+          "severity": "major",
+          "measurement": "lab",
+          "evidence": [
+            ".cis/reports/qa/web/home-ar-desktop-dark.png"
+          ]
         },
         {
           "id": "keyboard:home-ar",
           "category": "accessibility",
           "status": "pass",
-          "summary": "14 tab stops reached in order, each with a visible focus indicator and none obscured",
+          "summary": "11 tab stops reached in order, each with a visible focus indicator and none obscured",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "expected": 14,
-            "reached": 14,
+            "expected": 15,
+            "reached": 11,
             "order": [
               "a[#main]:انتقل إلى المحتوى",
               "a[#top]:",
@@ -2863,10 +4085,7 @@
               "button:التبديل بين الوضعين الفا",
               "a[#day]:شاهد يوماً مع هالدورا",
               "a[#cell]:تعرّف على البطارية",
-              "input#f-name:name",
-              "input#f-email:email",
-              "select#f-home:بيت عليه ألواح شمسيةبيت ",
-              "button:أرسل سؤالي"
+              "iframe:"
             ],
             "noIndicator": [],
             "obscured": []
@@ -2876,21 +4095,21 @@
           "id": "scroll-motion:home-ar",
           "category": "motion",
           "status": "pass",
-          "summary": "Scrolling 6914px: median frame 16.7ms, p95 16.7ms, 1 of 454 frames over 33ms, layout shift 0",
+          "summary": "Scrolling 7007px: median frame 16.7ms, p95 16.7ms, 1 of 462 frames over 33ms, layout shift 0",
           "severity": "major",
           "measurement": "lab",
           "data": {
-            "samples": 454,
-            "medianMs": 16.69999999999891,
-            "p95Ms": 16.700000000000728,
+            "samples": 462,
+            "medianMs": 16.69999999999709,
+            "p95Ms": 16.700000000004366,
             "over33": 1,
             "over50": 0,
             "cls": 0,
-            "scrolledPx": 6914,
+            "scrolledPx": 7007,
             "engine": {
               "engine": "gsap",
               "version": "3.15.1",
-              "triggers": 12
+              "triggers": 15
             },
             "conditions": "Desktop viewport, this machine's GPU, headless Chrome. Not a low-powered device."
           }
@@ -2911,57 +4130,455 @@
         {
           "id": "web-vitals-lab:home-ar",
           "category": "performance",
-          "status": "warn",
-          "summary": "Lab: LCP 1924ms, CLS 0.0123, TBT 150ms, first tap 208ms (median of 5); first scripted tap took 208ms to paint under 4x throttling (the 200ms INP threshold applies to field data; investigate on a real device)",
-          "severity": "minor",
+          "status": "pass",
+          "summary": "Lab: LCP 416ms, CLS 0, TBT 229ms, first tap 192ms (median of 5)",
+          "severity": "major",
           "measurement": "lab",
           "data": {
-            "lcpMs": 1924,
-            "cls": 0.0123,
-            "tbtMs": 150,
-            "interactionMs": 208,
-            "domNodes": 279,
-            "requests": 16,
+            "lcpMs": 416,
+            "cls": 0,
+            "tbtMs": 229,
+            "interactionMs": 192,
+            "domNodes": 299,
+            "requests": 20,
             "runs": [
               {
-                "lcpMs": 1072,
+                "lcpMs": 372,
                 "cls": 0,
-                "tbtMs": 124,
-                "interactionMs": 208
+                "tbtMs": 301,
+                "interactionMs": 176
               },
               {
-                "lcpMs": 1924,
-                "cls": 0.0123,
-                "tbtMs": 170,
-                "interactionMs": 184
-              },
-              {
-                "lcpMs": 1028,
-                "cls": 0.0123,
-                "tbtMs": 150,
-                "interactionMs": 184
-              },
-              {
-                "lcpMs": 2116,
-                "cls": 0.0123,
-                "tbtMs": 563,
-                "interactionMs": 224
-              },
-              {
-                "lcpMs": 2592,
+                "lcpMs": 468,
                 "cls": 0,
-                "tbtMs": 122,
-                "interactionMs": 608
+                "tbtMs": 229,
+                "interactionMs": 192
+              },
+              {
+                "lcpMs": 508,
+                "cls": 0,
+                "tbtMs": 248,
+                "interactionMs": 176
+              },
+              {
+                "lcpMs": 416,
+                "cls": 0,
+                "tbtMs": 189,
+                "interactionMs": 200
+              },
+              {
+                "lcpMs": 392,
+                "cls": 0,
+                "tbtMs": 216,
+                "interactionMs": 200
               }
             ],
             "conditions": "Median of 5 cold loads. Mobile viewport 390x844 @2x, 4x CPU throttling, loopback network (no latency). Lab numbers from this machine; not field data.",
-            "hostLoadPerCore": 1.94,
+            "hostLoadPerCore": 0.68,
             "blockingTimeRangeMs": [
-              122,
-              563
+              189,
+              301
             ],
-            "reliable": false
+            "reliable": true
           }
+        },
+        {
+          "id": "layout:capture:story-chapter-1",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-1",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-1.png"
+          ]
+        },
+        {
+          "id": "layout:capture:story-chapter-2",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-2",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-2.png"
+          ]
+        },
+        {
+          "id": "layout:capture:story-chapter-3",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-3",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-3.png"
+          ]
+        },
+        {
+          "id": "layout:capture:story-chapter-4",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-4",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-4.png"
+          ]
+        },
+        {
+          "id": "layout:capture:story-chapter-1-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-1-ar",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-1-ar.png"
+          ]
+        },
+        {
+          "id": "layout:capture:story-chapter-4-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:story-chapter-4-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/story-chapter-4-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:hero-834",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:hero-834",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/hero-834.png"
+          ]
+        },
+        {
+          "id": "layout:capture:hero-834-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:hero-834-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/hero-834-ar-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:hero-1024",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:hero-1024",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.334% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0.0033365885416666665,
+            "regions": [
+              {
+                "row": 4,
+                "col": 3,
+                "changed": 0.06363932291666667
+              },
+              {
+                "row": 4,
+                "col": 1,
+                "changed": 0.062093098958333336
+              },
+              {
+                "row": 4,
+                "col": 2,
+                "changed": 0.046468098958333336
+              },
+              {
+                "row": 4,
+                "col": 0,
+                "changed": 0.035725911458333336
+              }
+            ],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/hero-1024.png"
+          ]
+        },
+        {
+          "id": "layout:capture:hero-1024-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:hero-1024-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/hero-1024-ar-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:product",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:product",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/product.png"
+          ]
+        },
+        {
+          "id": "layout:capture:product-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:product-ar-dark",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/product-ar-dark.png"
+          ]
+        },
+        {
+          "id": "layout:capture:product-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "No horizontal overflow or clipped text",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "wide": 0,
+            "offenders": [],
+            "clipped": []
+          }
+        },
+        {
+          "id": "visual-regression:capture:product-mobile",
+          "category": "visual",
+          "status": "pass",
+          "summary": "Matches the accepted baseline (0.000% difference)",
+          "severity": "major",
+          "measurement": "lab",
+          "data": {
+            "changedRatio": 0,
+            "regions": [],
+            "threshold": 0.015
+          },
+          "evidence": [
+            ".cis/reports/qa/web/product-mobile.png"
+          ]
         },
         {
           "id": "flow:nav-anchors",
@@ -2971,7 +4588,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 5948
+            "ms": 3046
           }
         },
         {
@@ -2982,18 +4599,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4475
+            "ms": 2390
           }
         },
         {
           "id": "flow:header-over-artwork",
           "category": "accessibility",
           "status": "pass",
-          "summary": "Dark scheme: the header stays legible over the daylight hero and after scrolling",
+          "summary": "Dark scheme: the hero shows its night scene, and the header is legible over it and after scrolling",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3428
+            "ms": 2756
           }
         },
         {
@@ -3004,18 +4621,18 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3493
+            "ms": 2309
           }
         },
         {
           "id": "flow:story-scroll",
           "category": "motion",
           "status": "pass",
-          "summary": "Scroll drives the day story: sun moves on its arc, chapters and frames change: 4 chapters, 5 sun positions, reversible",
+          "summary": "Scroll drives the day story: sun moves on its arc, chapters and frames change: 4 chapters, 4 sun positions, reversible",
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 9513
+            "ms": 8469
           }
         },
         {
@@ -3026,7 +4643,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 4031
+            "ms": 2029
           }
         },
         {
@@ -3037,7 +4654,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 1929
+            "ms": 1013
           }
         },
         {
@@ -3048,7 +4665,7 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3694
+            "ms": 2863
           }
         },
         {
@@ -3059,17 +4676,17 @@
           "severity": "critical",
           "measurement": "lab",
           "data": {
-            "ms": 3159
+            "ms": 3120
           }
         }
       ]
     }
   ],
   "totals": {
-    "pass": 147,
+    "pass": 278,
     "fail": 0,
-    "warn": 18,
-    "skipped": 21,
+    "warn": 16,
+    "skipped": 0,
     "blocked": 2
   },
   "verdict": "incomplete",

@@ -127,6 +127,22 @@ test('the project budget stops paid generation before the call is made', () => {
   assert.match(cs(['images', 'estimate', '--provider', 'mock'], { cwd: dir, env: { CIS_ALLOW_MOCK: '1' } }).stdout, /Total estimate/);
 });
 
+test('a declared twin is accepted in both directions, and only that twin', () => {
+  const dir = project();
+  const base = { recipe: 'horizon-field', variant: 'dusk', layer: 'ground', seed: 'twins', transparent: true, formats: ['png'] };
+  withBrief(dir, brief([job('hills-a', base), job('hills-b', { ...base, sameAs: 'hills-a' })]));
+  let r = cs(['images', 'generate', '--json'], { cwd: dir });
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.json.results[1].checks.find((c) => c.id === 'not-duplicate').detail, /intentionally the same picture as "hills-a"/);
+  // Regenerating the first one later must not be blamed for resembling the second.
+  r = cs(['images', 'generate', '--json', '--force'], { cwd: dir });
+  assert.equal(r.status, 0, r.out);
+  withBrief(dir, brief([job('hills-a', base), job('hills-b', { ...base, sameAs: 'hills-a' }), job('hills-c', base)]));
+  r = cs(['images', 'generate', '--json'], { cwd: dir });
+  assert.equal(r.status, 1, 'a third copy that declares nothing is still a duplicate');
+  assert.match(r.json.results.find((x) => x.id === 'hills-c').error, /not-duplicate/);
+});
+
 test('remote providers obey the brief: deny refuses, ask needs consent, a missing key is reported', () => {
   const deny = fixture('brief.json');
   deny.constraints.externalUploads = 'deny';
