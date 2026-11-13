@@ -31,7 +31,8 @@ This repository contains the plugin, its tests, a complete demonstration for a f
 | Interactive 3D scene and model pipeline | implemented and tested |
 | QA harness, security audit, SBOM | implemented; the harness has its own tests |
 | Revisions and export | implemented and tested |
-| Independent creative review, final client gates | left open in the demonstration: they need people |
+| Independent creative review | performed by the plugin's reviewer agent (a model, not a person): recommendation **revise**, with 1 blocker and 13 major findings. See [docs/release-report.md](docs/release-report.md) |
+| Final quality and acceptance gates | open: they need people |
 
 The full account, including everything that did not pass, is in [docs/release-report.md](docs/release-report.md) and [docs/limitations.md](docs/limitations.md).
 

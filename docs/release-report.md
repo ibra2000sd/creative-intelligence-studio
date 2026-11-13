@@ -4,7 +4,7 @@
 
 ## Summary
 
-The plugin is built, validated, installed and exercised end to end on a fictional client. From one brief and one Experience DNA it produced a brand identity, a bilingual marketing website with a scroll-driven story, a customer portal, a mobile app, 19 generated image assets and an interactive 3D product scene, and checked them with its own QA harness. The final automated verdict for the demonstration is **incomplete**, not pass: nothing fails, but native mobile builds could not run on this machine and are reported as blocked. Three things are deliberately left to people: the independent creative review and the two final gates.
+The plugin is built, validated, installed and exercised end to end on a fictional client. From one brief and one Experience DNA it produced a brand identity, a bilingual marketing website with a scroll-driven story, a customer portal, a mobile app, 19 generated image assets and an interactive 3D product scene, and checked them with its own QA harness. The final automated verdict for the demonstration is **incomplete**, not pass: nothing fails, but native mobile builds could not run on this machine and are reported as blocked. An independent review by the plugin's reviewer agent then recommended **revise** (one blocker, thirteen major findings; see below), and none of its findings has been fixed. The two final gates are left to people.
 
 ## Verification performed
 
@@ -15,16 +15,16 @@ The plugin is built, validated, installed and exercised end to end on a fictiona
 | Installation | `claude plugin marketplace add`, `claude plugin install creative-intelligence-studio@creative-intelligence-studio` | Installed, enabled, user scope |
 | Discovery | `claude plugin details creative-intelligence-studio` | 17 skills, 2 agents, 1 hook; about 2,300 always-on tokens |
 | Skill invocation by the model | Skill tool in a desktop app session, 13 November 2026 | One skill verified: `creative-intelligence-studio:intake-discovery` loaded with its instructions, all 17 skills and both agents were listed, and `creative-studio --version` resolved from the plugin on the PATH. Whether Claude picks the right skill unprompted from a plain request was not measured. The headless `claude -p` check still fails with "OAuth session expired and could not be refreshed" |
-| Unit, integration, security suites | `pnpm test` | 80 of 80 pass |
+| Unit, integration, security suites | `pnpm test` | 81 of 81 pass |
 | End to end and regression | `pnpm test:e2e` | 9 of 9 pass; the demonstration reproduces from its inputs in an empty directory |
 | Portal logic | `npm test` in `app/` | 8 of 8 pass |
 | Mobile | `tsc --noEmit`, `jest`, `expo export` | type check clean; 19 of 19 tests; Hermes bundles for iOS (3.85 MB) and Android (3.84 MB) |
 | Full demonstration | `node scripts/run-demo.mjs --full --refresh` | 62 commands; the run completed. One command, `creative-studio test`, exited 1 because its verdict is incomplete (see below), and the runner reports that instead of stopping. Log in `demos/haldora/full-run.log` |
 | Deliverable QA | `creative-studio test` | 147 pass, 0 fail, 18 warn, 2 blocked, 21 skipped (baselines accepted in this run) |
 | Security audit | `creative-studio audit` | pass: 16 pass, 0 fail, 2 warn, 0 blocked |
-| Ledger | `creative-studio ledger verify` | 127 events, chain intact |
-| Draft package | `creative-studio export --draft` | 593 files, 39.2 MB, read back and verified; 21 open issues listed inside |
-| Release archive | `node scripts/package-release.mjs` | `release/creative-intelligence-studio-0.1.0.zip`, 136 files, 307 KB, SHA-256 in `release/*.sha256` |
+| Ledger | `creative-studio ledger verify` | 133 events, chain intact |
+| Draft package | `creative-studio export --draft` | 594 files, 39.2 MB, read back and verified; 36 open issues listed inside, 14 of them the review's blocker and major findings. A final export is refused, by the open gate and by the review's blocker |
+| Release archive | `node scripts/package-release.mjs` | `release/creative-intelligence-studio-0.1.0.zip`, 136 files, 308 KB, SHA-256 in `release/*.sha256` |
 | Live image provider | `creative-studio images generate --provider openai --consent` (one job, low quality) | generated on the first request in 14 s; 5 of 5 inspection checks pass; estimate $0.006; key absent from registry, ledger and cost records |
 
 ## Demonstration results by target
@@ -47,6 +47,23 @@ Images: 19 of 19 jobs accepted; cost $0.00; one job was first rejected for excee
 Scroll frame timing (lab, this machine's GPU): median 16.7 ms, 95th percentile 16.8 ms, 1 of 454 frames over 33 ms, layout shift 0.
 Third-party requests in built pages: none.
 
+## Independent creative review
+
+Run on 13 November 2026 by the plugin's `creative-reviewer` agent, which was given the project directory and nothing about how the work was made. It opened all 28 QA screenshots, the brand exports and the guidelines, and also rendered the existing builds itself because the screenshots were incomplete. Its review passes `creative-studio review check` and is in `demos/haldora/project/.cis/reports/creative-review.json`. It is a model's evaluation, not a person's and not an approval.
+
+Recommendation: **revise**. Scores out of 5: brand alignment 4; design coherence, visual hierarchy, typography, originality, interaction clarity and asset quality 3; presentation polish and professional readiness 2; motion not assessed (still images only).
+
+Findings: 1 blocker, 13 major, 11 minor, 3 notes. None is fixed. The ones that change what this report can claim:
+
+- **Blocker: the website's scroll story shows two suns and two arcs.** Each illustration contains its own sun, and the scroll-driven sun is drawn on top at a different position. Confirmed in the existing desktop capture. The signature section of the site is visibly wrong, and no automated check noticed.
+- **The QA screenshots do not show what they were taken to show.** The lower half of the full-page website captures is blank, all four mobile captures show one onboarding screen, and the mobile "dark" capture is byte-identical to the light one. Confirmed by inspection. Details are in [limitations.md](limitations.md).
+- **Dark scheme is finished only in the portal.** The website hero and the 3D stage stay cream; help text on the scene measures about 1.9:1.
+- **Arabic is mechanically right and mirrored in its details:** left-aligned values under right-aligned labels, untranslated finish names, mixed numerals, one typeface doing every job, and a switch overlapping its label in the app.
+- **The 3D product is weak** (finish colour off-token, floating unit, a still that shows a different object), and the portal's arc disagrees with its own time cursor by about an hour.
+- **Demo data is inconsistent** between the portal and the app, and within the portal's Today screen.
+
+The reviewer's supplementary captures were not made by the QA harness; findings that rest on them (marked in the JSON) should be re-checked once the harness captures those screens.
+
 ## Acceptance criteria
 
 | Criterion | Status | Evidence |
@@ -60,10 +77,10 @@ Third-party requests in built pages: none.
 | Functional brand workflow | met | brand manifest; end-to-end test |
 | Functional web workflow | met | 9 and 12 flows |
 | Asset pipeline with a real or local engine | met | registry; asset tests; one live paid generation through the OpenAI adapter (`demos/live-provider-check/`) |
-| Verified animated website | met | story-scroll flow; scroll-motion check |
+| Verified animated website | met functionally; **visual defect open** | story-scroll flow; scroll-motion check. The review found a doubled sun in the story that the flows do not detect |
 | Verified interactive 3D experience | met | 10 scene flows including pixel read-back |
 | Genuinely implemented mobile workflow | partly met | real Expo project, tests, platform bundles, browser flows. **Native builds blocked** |
-| Real automated tests | met | 116 tests across the suites |
+| Real automated tests | met | 117 tests across the suites |
 | Representative integration tests | met | integration and end-to-end suites |
 | Accessibility checks | met for automation | axe, keyboard, focus, target size, reduced motion; manual audit outstanding |
 | Security checks | met | adversarial suite; audit |
@@ -105,4 +122,4 @@ Thirty-six are recorded by phase in `docs/implementation-ledger.json`. The ones 
 
 ## What is not working or not done
 
-See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; live coverage of the paid image provider beyond one generation; automatic skill triggering from plain requests (not measured); the independent creative review and final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.
+See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; live coverage of the paid image provider beyond one generation; automatic skill triggering from plain requests (not measured); the fixes the independent creative review asked for; screenshots that cover every screen; the final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.

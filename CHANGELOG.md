@@ -12,6 +12,7 @@ First release.
 - 13 versioned JSON Schema contracts and a built-in validator.
 - Orchestrator: classification, plan graph with handoff contracts and five approval gates, retries with escalation, recovery, hash-chained ledger, checkpoints.
 - Experience DNA: semantic lint, tokens for web, React Native and 3D, revisions, fingerprint, cross-deliverable consistency.
+- Delivery packages carry the independent creative review: its blocker and major findings are listed as open issues, and a blocker finding or a "rework" recommendation stops a final export.
 - Brand engine, image engine with provider adapters (local procedural, OpenAI, mock), 3D asset pipeline.
 - Templates: marketing website, web application, Expo mobile app, Three.js scene.
 - QA harness, security and licence audit with SBOM, design-to-code comparison, revision management, export.

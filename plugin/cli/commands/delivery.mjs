@@ -182,6 +182,21 @@ async function exportCmd({ flags }) {
   else if (qa.verdict === 'fail') blockers.push(`QA verdict is FAIL (${qa.totals.fail} failing check(s)).`);
   const gate = state?.gates.find((g) => g.id === 'G6-quality');
   if (!gate || gate.status !== 'approved') blockers.push('Gate G6-quality (quality evidence reviewed) has not been approved by a person.');
+  // An independent review is evidence the package must carry: its blocker findings stop a final
+  // export, and everything it rated blocker or major is listed as an open issue in a draft.
+  const reviewFile = path.join(p.reports, 'creative-review.json');
+  let review = null;
+  try {
+    review = exists(reviewFile) ? readJson(reviewFile) : null;
+  } catch {
+    blockers.push('The creative review file could not be read: run `creative-studio review check`.');
+  }
+  const reviewFindings = (review?.findings || []).filter((f) => ['blocker', 'major'].includes(f.severity));
+  const reviewBlockers = reviewFindings.filter((f) => f.severity === 'blocker');
+  if (review && (review.recommendation === 'rework' || reviewBlockers.length)) {
+    blockers.push(`The creative review by ${review.reviewer} recommends "${review.recommendation}" with ${reviewBlockers.length} blocker finding(s); fix them and have the work reviewed again.`);
+  }
+  const reviewIssues = reviewFindings.map((f) => `REVIEW ${f.severity.toUpperCase()} ${String(f.where).slice(0, 140)}: ${String(f.issue).slice(0, 220)}`);
   const reg = verifyRegistry(root);
   for (const pr of reg.problems) blockers.push(`Asset ${pr.asset}: ${pr.problem} (${pr.file})`);
   const led = verifyLedger(root);
@@ -218,7 +233,8 @@ async function exportCmd({ flags }) {
     deliverables: included,
     approvals: gates,
     quality: qa ? { verdict: qa.verdict, totals: qa.totals, manualAuditsOutstanding: qa.manualAuditsOutstanding } : null,
-    openIssues: [...blockers, ...notCovered],
+    creativeReview: review ? { reviewer: review.reviewer, independent: review.independent === true, reviewedAt: review.reviewedAt, recommendation: review.recommendation, findings: Object.fromEntries(['blocker', 'major', 'minor', 'note'].map((k) => [k, (review.findings || []).filter((f) => f.severity === k).length])) } : null,
+    openIssues: [...blockers, ...reviewIssues, ...notCovered],
     assets: { registered: reg.count, files: reg.files },
     ledger: { events: led.count, intact: led.ok },
     files: entries.map((e) => ({ path: e.name, bytes: fs.statSync(e.file).size, sha256: sha256File(e.file) })).sort((a, b) => a.path.localeCompare(b.path)),
@@ -244,6 +260,8 @@ ${simulated.length ? `\nGates marked simulated (${simulated.join(', ')}) were re
 ## Quality
 
 ${qa ? `Automated verdict: **${qa.verdict}** (${qa.totals.pass} pass, ${qa.totals.fail} fail, ${qa.totals.warn} warn, ${qa.totals.blocked} blocked). Automated checks are evidence, not client acceptance.` : 'No QA summary was available.'}
+
+${review ? `Creative review by ${review.reviewer}${review.independent === true ? ' (independent)' : ''}: recommendation **${review.recommendation}**; ${manifest.creativeReview.findings.blocker} blocker, ${manifest.creativeReview.findings.major} major, ${manifest.creativeReview.findings.minor} minor finding(s). Full text in \`evidence/creative-review.json\`. A review is an evaluation, not an approval.` : 'No creative review has been recorded for this project.'}
 
 ### Open issues and things automation could not check
 

@@ -371,10 +371,13 @@
           "schema": "creative-review"
         }
       ],
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "maxAttempts": 3,
-      "command": "creative-studio review check"
+      "command": "creative-studio review check",
+      "startedAt": "2026-11-13T00:27:57.628Z",
+      "finishedAt": "2026-11-13T00:47:09.984Z",
+      "evidence": []
     },
     {
       "id": "export",
@@ -463,5 +466,5 @@
       "status": "pending"
     }
   ],
-  "updatedAt": "2026-11-12T23:45:36.307Z"
+  "updatedAt": "2026-11-13T00:47:09.986Z"
 }

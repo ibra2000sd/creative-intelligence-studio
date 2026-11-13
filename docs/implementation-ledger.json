@@ -342,7 +342,7 @@
     {
       "id": "I",
       "title": "Demonstration, documentation, release packaging, final verification",
-      "status": "implemented-and-tested",
+      "status": "implemented-not-fully-tested",
       "completed": [
         "Reproducible demo runner, showcase built from real outputs, documentation in English and Arabic, release archive with checksum, plugin installed from a local marketplace"
       ],
@@ -357,7 +357,7 @@
       "testsExecuted": [
         "node scripts/run-demo.mjs --full",
         "tests/e2e/demo-pipeline.test.mjs in a clean directory",
-        "pnpm test (80 of 80)",
+        "pnpm test (81 of 81)",
         "pnpm test:e2e (9 of 9)",
         "claude plugin validate; claude plugin install; claude plugin details"
       ],
@@ -367,16 +367,19 @@
         "docs/release-report.md",
         "demos/haldora/final-qa.log",
         "demos/haldora/project/.cis/reports/qa-summary.json (147 pass, 0 fail, 18 warn, 2 blocked, 21 skipped; verdict incomplete)",
-        "demos/haldora/project/.cis/reports/security.json (16 pass, 0 fail, 2 warn; verdict pass)"
+        "demos/haldora/project/.cis/reports/security.json (16 pass, 0 fail, 2 warn; verdict pass)",
+        "demos/haldora/project/.cis/reports/creative-review.json"
       ],
       "defectsDiscovered": [
-        "First clean reproduction stopped at the consistency check"
+        "First clean reproduction stopped at the consistency check",
+        "Review: website scroll story draws two suns and two arcs (open)",
+        "Review: full-page QA captures blank below the story; mobile captures show one screen and the dark capture is identical to the light one (open)"
       ],
       "defectsFixed": [
         "Yes"
       ],
       "blockers": [
-        "Independent creative review and gates G6 and G7 need people",
+        "Independent creative review performed by the reviewer agent on 2026-11-13: recommendation 'revise', 1 blocker, 13 major, 11 minor findings, none fixed. Gates G6 and G7 need people.",
         "Skill invocation is verified for one skill only (intake-discovery, loaded through the Skill tool in a desktop session on 2026-11-13); automatic triggering from plain requests is not measured and the headless `claude -p` check still fails on an expired OAuth session.",
         "Lab performance numbers were taken on a loaded desktop (load average near 20) and should be regenerated on an idle machine."
       ],

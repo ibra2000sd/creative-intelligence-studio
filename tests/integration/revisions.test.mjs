@@ -93,6 +93,25 @@ test('export: a final package needs evidence and approval; a draft says what is 
   assert.match(fs.readFileSync(path.join(dir, 'export/DELIVERY.md'), 'utf8'), /\(DRAFT\)/);
 });
 
+test('export: a creative review is carried into the package and its blocker findings stop a final export', () => {
+  const dir = withAssets();
+  const crit = Object.fromEntries(['designCoherence', 'brandAlignment', 'visualHierarchy', 'typography', 'originality', 'motionQuality', 'interactionClarity', 'assetQuality', 'presentationPolish', 'professionalReadiness'].map((k, i) => [k, { score: 2 + (i % 2), reason: 'Specific observation about the work under review.' }]));
+  const finding = (severity, issue) => ({ severity, where: 'web: story section', issue, suggestion: 'Fix it.' });
+  writeJson(path.join(dir, '.cis/reports/creative-review.json'), { schemaVersion: '1.0.0', reviewer: 'Independent Reviewer', independent: true, evaluationOnly: true, reviewedAt: '2026-11-13T10:00:00Z', subject: ['web'], evidenceViewed: ['.cis/reports/qa/web/home-desktop.png'], criteria: crit, findings: [finding('blocker', 'Two suns are drawn at once.'), finding('major', 'Dark hero stays light.'), finding('minor', 'A widow in the headline.')], recommendation: 'revise' });
+  const final = cs(['export'], { cwd: dir });
+  assert.equal(final.status, 3);
+  assert.match(final.stderr, /creative review by Independent Reviewer recommends "revise" with 1 blocker/);
+  assert.equal(cs(['export', '--draft'], { cwd: dir }).status, 0);
+  const manifest = readJson(path.join(dir, 'export/delivery-manifest.json'));
+  assert.deepEqual(manifest.creativeReview.findings, { blocker: 1, major: 1, minor: 1, note: 0 });
+  assert.ok(manifest.openIssues.some((i) => /^REVIEW BLOCKER .*Two suns/.test(i)));
+  assert.ok(manifest.openIssues.some((i) => /^REVIEW MAJOR .*Dark hero/.test(i)));
+  assert.ok(!manifest.openIssues.some((i) => /widow/.test(i)), 'minor findings stay in the review file');
+  const md = fs.readFileSync(path.join(dir, 'export/DELIVERY.md'), 'utf8');
+  assert.match(md, /recommendation \*\*revise\*\*; 1 blocker, 1 major, 1 minor/);
+  assert.match(md, /not an approval/);
+});
+
 test('simulated approvals stay labelled all the way into the package', () => {
   const dir = project({ dna: false });
   cs(['task', 'start', 'intake'], { cwd: dir });

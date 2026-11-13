@@ -10,13 +10,21 @@ This is the list of what is not done, not verified or not as good as it should b
 | Native Android build, emulator and device tests | blocked | No Android SDK or `adb` | Android Studio and an emulator or device: `npx expo run:android`; a keystore for store builds |
 | Skill invocation by the model | verified for one skill; triggering not measured | In a desktop app session on 13 November 2026 all 17 skills and both agents were listed and `intake-discovery` loaded through the Skill tool; the other 16 were not each invoked, and no evaluation measures whether Claude chooses the right skill from a plain request. The headless `claude -p` check fails with "OAuth session expired and could not be refreshed" | Log in to the CLI again to repeat the headless check; add trigger evaluations (`claude plugin eval`) |
 | Real image-provider generation (OpenAI) | implemented and tested for one case | One live generation was run with the owner's approval on 13 November 2026: `gpt-image-2`, low quality, 1024 by 1024, one request, about 14 seconds, accepted by every inspection check. Evidence is in `demos/live-provider-check/`. The recorded cost ($0.006) is the adapter's estimate, not the billed amount. Image editing, reference-guided generation, transparent backgrounds, other sizes and qualities, and real rate-limit behaviour are still covered only by the local stand-in | Check the amount on the provider's billing page; run the other cases when a project needs them |
-| Independent creative review of the demonstration | not performed | It must come from a reviewer who did not make the work; writing one myself and marking it independent would be false | Run the `creative-reviewer` agent or have a person write `.cis/reports/creative-review.json` |
+| Independent creative review of the demonstration | performed by a model; outcome is "revise" | The `creative-reviewer` agent, given only the brief, the DNA, the screenshots and the brand kit, scored the work and recommended **revise**: 1 blocker, 13 major and 11 minor findings (`demos/haldora/project/.cis/reports/creative-review.json`). None of them has been fixed. A model's critique is not a person's, and it is not client approval | Fix the blocker and major findings, re-run QA and the review, then have a person review before gate G6 |
 | Gates G6 (quality) and G7 (acceptance), and a final export | blocked | They need real people | `creative-studio approve G6-quality --actor "<name>"`, then `creative-studio export` |
 | Real client approvals | simulated | Haldora is fictional; gates G0 to G2 were recorded with `--simulated` and are labelled so in every report and in the package | A real client |
 | Screen-reader, real-device and low-powered-hardware testing | not performed | Not automatable here | People and devices |
 | Field Core Web Vitals | not available | They exist only for a live site with real visitors | Launch, then read field data |
 
 ## Implemented with known weaknesses
+
+The independent review also showed that the QA screenshots prove less than the pass counts suggest. Three points were confirmed by inspecting the files:
+
+- The full-page website captures are blank from roughly the middle down, because content that reveals on scroll never revealed during capture. Visual-regression baselines for those pages therefore protect the hero and story only.
+- All four mobile captures show the first onboarding screen, and the "dark" one is byte-identical to the light one. The app's Today, Devices and Settings screens, its dark scheme and its Arabic layout have no visual evidence.
+- The portal captures cover the Today route only. The reviewer reported a History table wider than a phone screen, which the overflow check never loaded.
+
+The scripted flows do exercise those screens functionally; what is missing is anyone, or anything, looking at them.
 
 A defect found late is worth recording as a warning about the method: in the dark colour scheme the website's navigation and logo were nearly invisible over the pale hero artwork. No automated rule failed, because contrast over an image cannot be decided automatically. It was caught only after the harness was changed to report undecided rules as warnings and the screenshot was looked at. It is fixed and now has its own scripted check, but it shows that the manual review listed below is not optional.
 
