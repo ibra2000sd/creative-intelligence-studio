@@ -19,7 +19,7 @@ The plugin is built, validated, installed and exercised end to end on a fictiona
 | End to end and regression | `pnpm test:e2e` | 9 of 9 pass; the demonstration reproduces from its inputs in an empty directory |
 | Portal logic | `npm test` in `app/` | 8 of 8 pass |
 | Mobile | `tsc --noEmit`, `jest`, `expo export` | type check clean; 19 of 19 tests; Hermes bundles for iOS (3.85 MB) and Android (3.84 MB) |
-| Full demonstration | `node scripts/run-demo.mjs --full --refresh` | 62 commands, exit 0; log in `demos/haldora/full-run.log` |
+| Full demonstration | `node scripts/run-demo.mjs --full --refresh` | 62 commands; the run completed. One command, `creative-studio test`, exited 1 because its verdict is incomplete (see below), and the runner reports that instead of stopping. Log in `demos/haldora/full-run.log` |
 | Deliverable QA | `creative-studio test` | 147 pass, 0 fail, 18 warn, 2 blocked, 21 skipped (baselines accepted in this run) |
 | Security audit | `creative-studio audit` | pass: 16 pass, 0 fail, 2 warn, 0 blocked |
 | Ledger | `creative-studio ledger verify` | 127 events, chain intact |
@@ -53,7 +53,7 @@ Third-party requests in built pages: none.
 | Plugin installs in a compatible environment | met | `claude plugin install`, `claude plugin list` |
 | Skill discovery | met | `claude plugin details`: 17 skills |
 | Skill invocation | **not verified** | headless CLI could not authenticate |
-| Valid configuration schemas | met | 15 schemas; contract tests; Ajv parity |
+| Valid configuration schemas | met | 13 schemas; contract tests; Ajv parity |
 | Working orchestration | met | lifecycle tests; demo run |
 | Experience DNA persistence | met | revisions archived; propagation test |
 | Functional brand workflow | met | brand manifest; end-to-end test |

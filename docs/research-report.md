@@ -43,7 +43,7 @@ Static checks: 184 Python files parsed, 180 valid; the 4 failures are one defect
 |---|---|---|
 | 17 specialists including print packaging, copywriting and integrations | 16 specialists; print packaging and standalone copywriting are not separate skills | We only ship skills backed by working commands and tests. Print production (dielines, CMYK proofing) is not implemented and is listed as a limitation. |
 | Motion ladder ending in Rive | Rive is documented as an extension, not bundled | It needs an authored `.riv` asset and its runtime; we would have had nothing real to test. |
-| JSON or Zod schemas "to be written" | 15 JSON Schemas with a built-in validator, cross-checked against Ajv in tests | The plugin must validate immediately after install with no dependencies. |
+| JSON or Zod schemas "to be written" | 13 JSON Schemas with a built-in validator, cross-checked against Ajv in tests | The plugin must validate immediately after install with no dependencies. |
 | CLI `plan / generate / build / verify / report / package` | 28 commands grouped by project, orchestration, DNA, production, quality and delivery | Finer commands make each step individually testable and resumable. |
 
 ## 3. Plugin and skill specifications

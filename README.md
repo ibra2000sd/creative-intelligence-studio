@@ -8,7 +8,7 @@ This repository contains the plugin, its tests, a complete demonstration for a f
 
 | | |
 |---|---|
-| Plugin | `plugin/`: 17 skills, 2 agents, 1 hook, the `creative-studio` CLI (28 commands, zero-dependency core), 15 JSON Schema contracts, 4 project templates |
+| Plugin | `plugin/`: 17 skills, 2 agents, 1 hook, the `creative-studio` CLI (28 commands, zero-dependency core), 13 JSON Schema contracts, 4 project templates |
 | Demonstration | `demos/haldora/`: inputs, the generated project, and the log of the last full run |
 | Showcase | `showcase/index.html`: a page built only from the demonstration's real outputs and reports |
 | Tests | `tests/`: unit, integration, security, end-to-end and regression suites |

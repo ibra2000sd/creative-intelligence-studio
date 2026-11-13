@@ -36,7 +36,7 @@ Creative Intelligence Studio (CIS) is a Claude Code plugin plus a command-line e
 | Orchestrator and specialists | `plugin/skills/*/SKILL.md` | 17 skills; references are loaded only when needed |
 | Agents | `plugin/agents/` | `creative-reviewer` (independent critique), `source-auditor` (read-only audit of third-party material) |
 | Hook | `plugin/hooks/` | Checks shell uploads against the project's policy, only inside a project |
-| Contracts | `plugin/schemas/*.schema.json` | 15 versioned JSON Schemas |
+| Contracts | `plugin/schemas/*.schema.json` | 13 versioned JSON Schemas |
 | Engine | `plugin/cli/` | `main.mjs`, `commands/` (7 modules, 28 commands), `lib/` (zero-dependency core) |
 | Templates | `plugin/templates/` | `web-marketing`, `web-app`, `mobile-expo`, `scene-3d` |
 | Optional engines | `plugin/runtime/package.json` | Pinned versions, installed by `creative-studio setup` |

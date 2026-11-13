@@ -9,7 +9,7 @@ First release.
 ### Added
 - Claude Code plugin `creative-intelligence-studio`: 17 skills, 2 agents (`creative-reviewer`, `source-auditor`), 1 hook (upload guard).
 - `creative-studio` CLI with 28 commands and a zero-dependency core; optional engines installed by `creative-studio setup`.
-- 15 versioned JSON Schema contracts and a built-in validator.
+- 13 versioned JSON Schema contracts and a built-in validator.
 - Orchestrator: classification, plan graph with handoff contracts and five approval gates, retries with escalation, recovery, hash-chained ledger, checkpoints.
 - Experience DNA: semantic lint, tokens for web, React Native and 3D, revisions, fingerprint, cross-deliverable consistency.
 - Brand engine, image engine with provider adapters (local procedural, OpenAI, mock), 3D asset pipeline.
