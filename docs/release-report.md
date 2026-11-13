@@ -14,7 +14,7 @@ The plugin is built, validated, installed and exercised end to end on a fictiona
 | Marketplace manifest | `claude plugin validate .` | Validation passed |
 | Installation | `claude plugin marketplace add`, `claude plugin install creative-intelligence-studio@creative-intelligence-studio` | Installed, enabled, user scope |
 | Discovery | `claude plugin details creative-intelligence-studio` | 17 skills, 2 agents, 1 hook; about 2,300 always-on tokens |
-| Skill invocation by the model | `claude -p ...` (headless) | **Not verified.** The standalone CLI answered "OAuth session expired and could not be refreshed". Start a new session and run `/creative-intelligence-studio:creative-studio` to confirm |
+| Skill invocation by the model | Skill tool in a desktop app session, 13 November 2026 | One skill verified: `creative-intelligence-studio:intake-discovery` loaded with its instructions, all 17 skills and both agents were listed, and `creative-studio --version` resolved from the plugin on the PATH. Whether Claude picks the right skill unprompted from a plain request was not measured. The headless `claude -p` check still fails with "OAuth session expired and could not be refreshed" |
 | Unit, integration, security suites | `pnpm test` | 80 of 80 pass |
 | End to end and regression | `pnpm test:e2e` | 9 of 9 pass; the demonstration reproduces from its inputs in an empty directory |
 | Portal logic | `npm test` in `app/` | 8 of 8 pass |
@@ -53,7 +53,7 @@ Third-party requests in built pages: none.
 |---|---|---|
 | Plugin installs in a compatible environment | met | `claude plugin install`, `claude plugin list` |
 | Skill discovery | met | `claude plugin details`: 17 skills |
-| Skill invocation | **not verified** | headless CLI could not authenticate |
+| Skill invocation | met for one skill | loaded through the Skill tool in a live session; automatic triggering from plain requests not measured |
 | Valid configuration schemas | met | 13 schemas; contract tests; Ajv parity |
 | Working orchestration | met | lifecycle tests; demo run |
 | Experience DNA persistence | met | revisions archived; propagation test |
@@ -105,4 +105,4 @@ Thirty-six are recorded by phase in `docs/implementation-ledger.json`. The ones 
 
 ## What is not working or not done
 
-See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; live coverage of the paid image provider beyond one generation; model-driven skill invocation (unverified); the independent creative review and final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.
+See [limitations.md](limitations.md) for the complete list. In short: native mobile builds; live coverage of the paid image provider beyond one generation; automatic skill triggering from plain requests (not measured); the independent creative review and final gates; reliable performance numbers; print production; and the frameworks and providers listed there as not implemented.

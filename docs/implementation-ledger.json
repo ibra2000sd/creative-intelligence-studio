@@ -377,7 +377,7 @@
       ],
       "blockers": [
         "Independent creative review and gates G6 and G7 need people",
-        "Skill invocation by the model in a live session was not verified: the headless `claude -p` check failed with 'OAuth session expired and could not be refreshed'. Discovery (17 skills, 2 agents, 1 hook) and manifest validation are verified.",
+        "Skill invocation is verified for one skill only (intake-discovery, loaded through the Skill tool in a desktop session on 2026-11-13); automatic triggering from plain requests is not measured and the headless `claude -p` check still fails on an expired OAuth session.",
         "Lab performance numbers were taken on a loaded desktop (load average near 20) and should be regenerated on an idle machine."
       ],
       "next": [
