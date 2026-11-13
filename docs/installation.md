@@ -13,13 +13,24 @@
 
 ## Install the plugin
 
-From a checkout of this repository:
+From GitHub (Claude Code fetches the marketplace from the repository):
 
 ```bash
-claude plugin validate ./plugin
-claude plugin marketplace add /absolute/path/to/creative-intelligence-studio
+claude plugin marketplace add ibra2000sd/creative-intelligence-studio
 claude plugin install creative-intelligence-studio@creative-intelligence-studio
 claude plugin list
+```
+
+From the release archive: download `creative-intelligence-studio-0.1.0.zip` and its `.sha256` from https://github.com/ibra2000sd/creative-intelligence-studio/releases/latest, check the checksum (`shasum -a 256 -c creative-intelligence-studio-0.1.0.zip.sha256` on macOS, `sha256sum -c` on Linux), unzip it, then `claude plugin marketplace add /absolute/path/to/the/unzipped/folder` and install as above.
+
+From a clone:
+
+```bash
+git clone https://github.com/ibra2000sd/creative-intelligence-studio.git
+cd creative-intelligence-studio
+claude plugin validate ./plugin
+claude plugin marketplace add "$(pwd)"
+claude plugin install creative-intelligence-studio@creative-intelligence-studio
 ```
 
 To try it for one session without installing: `claude --plugin-dir /absolute/path/to/creative-intelligence-studio/plugin`.

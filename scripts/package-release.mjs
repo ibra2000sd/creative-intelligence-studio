@@ -13,8 +13,10 @@ const { name, version } = JSON.parse(fs.readFileSync(path.join(plugin, '.claude-
 const out = path.join(REPO, 'release');
 fs.mkdirSync(out, { recursive: true });
 const files = walk(plugin).filter((f) => !/\.DS_Store$/.test(f));
-const entries = files.map((f) => ({ name: `${name}/${path.relative(plugin, f).split(path.sep).join('/')}`, file: f }));
-for (const extra of ['CHANGELOG.md', 'LICENSE']) entries.push({ name: `${name}/${extra}`, file: path.join(REPO, extra) });
+// The archive is a self-contained marketplace: unzip it and `claude plugin marketplace add <folder>`.
+// Its root holds the marketplace manifest, which points at ./plugin, beside the licence and notes.
+const entries = files.map((f) => ({ name: `${name}/plugin/${path.relative(plugin, f).split(path.sep).join('/')}`, file: f }));
+for (const extra of ['.claude-plugin/marketplace.json', 'CHANGELOG.md', 'LICENSE', 'README.md']) entries.push({ name: `${name}/${extra}`, file: path.join(REPO, extra) });
 const zip = path.join(out, `${name}-${version}.zip`);
 const res = writeZip(zip, entries.filter((e, i, a) => a.findIndex((x) => x.name === e.name) === i));
 const listed = listZip(zip);

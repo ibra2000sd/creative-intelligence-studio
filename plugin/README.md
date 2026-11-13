@@ -8,11 +8,11 @@ A Claude Code plugin for creative engineering. One validated **Experience DNA** 
 ## Install
 
 ```bash
-claude plugin marketplace add <path-or-repo-of-this-marketplace>
+claude plugin marketplace add ibra2000sd/creative-intelligence-studio
 claude plugin install creative-intelligence-studio@creative-intelligence-studio
 ```
 
-In a session: `/plugin install creative-intelligence-studio --marketplace <owner>/<repo>`.
+In a session: `/plugin marketplace add ibra2000sd/creative-intelligence-studio`, then `/plugin install creative-intelligence-studio@creative-intelligence-studio`. Source, releases and documentation: https://github.com/ibra2000sd/creative-intelligence-studio.
 
 ## Quick start
 

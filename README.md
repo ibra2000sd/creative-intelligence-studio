@@ -46,12 +46,14 @@ node scripts/run-demo.mjs --full      # also install, build, test and audit ever
 pnpm test && pnpm test:e2e            # the system's own tests
 ```
 
-Install the plugin into Claude Code:
+Install the plugin into Claude Code, straight from GitHub:
 
 ```bash
-claude plugin marketplace add "$(pwd)"
+claude plugin marketplace add ibra2000sd/creative-intelligence-studio
 claude plugin install creative-intelligence-studio@creative-intelligence-studio
 ```
+
+Or download `creative-intelligence-studio-0.1.0.zip` from the [latest release](https://github.com/ibra2000sd/creative-intelligence-studio/releases/latest), check it against the `.sha256` file published beside it, unzip it and run `claude plugin marketplace add <unzipped folder>`. From a clone of this repository, `claude plugin marketplace add "$(pwd)"` works the same way.
 
 Then describe a project to Claude, or drive it yourself:
 

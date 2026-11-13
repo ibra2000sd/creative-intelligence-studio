@@ -13,7 +13,7 @@
 <div dir="ltr">
 
 ```bash
-claude plugin marketplace add /path/to/creative-intelligence-studio
+claude plugin marketplace add ibra2000sd/creative-intelligence-studio
 claude plugin install creative-intelligence-studio@creative-intelligence-studio
 creative-studio doctor
 creative-studio setup

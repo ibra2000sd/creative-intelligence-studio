@@ -26,7 +26,7 @@ The work was reviewed six times by the plugin's independent reviewer agent, with
 | Security audit | `creative-studio audit` | pass: 16 pass, 0 fail, 2 warn, 0 blocked |
 | Ledger | `creative-studio ledger verify` | 432 events, chain intact |
 | Draft package | `creative-studio export --draft` | 745 files, 44.8 MB, read back and verified; 26 open issues listed inside, 7 of them the latest review's major findings. A final export is refused while gate G6 is open |
-| Release archive | `node scripts/package-release.mjs` | `release/creative-intelligence-studio-0.1.0.zip`, 137 files, 345 KB, SHA-256 in `release/*.sha256` |
+| Release archive | `node scripts/package-release.mjs` | `release/creative-intelligence-studio-0.1.0.zip`, 140 files, 351 KB, SHA-256 in `release/*.sha256`. The archive is a self-contained marketplace (manifest plus `plugin/`): it was unzipped, checked against its checksum and validated with `claude plugin validate` |
 | Live image provider | `creative-studio images generate --provider openai --consent` (one job, low quality) | generated on the first request in 14 s; 5 of 5 inspection checks pass; estimate $0.006; key absent from registry, ledger and cost records |
 
 ## Demonstration results by target
